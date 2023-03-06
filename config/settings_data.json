@@ -1,0 +1,41 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {},
+        "block_order": [],
+        "settings": {
+          "menu": "main-menu",
+          "logo": "",
+          "background_color": "",
+          "foreground_color": "",
+          "search_placeholder": "Search products"
+        },
+        "disabled": null
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "menu": {
+            "type": "menu",
+            "settings": {
+              "menu": "main-menu",
+              "align": "center"
+            },
+            "disabled": null
+          }
+        },
+        "block_order": [
+          "menu"
+        ],
+        "settings": {
+          "show_copyright": true,
+          "show_powered_by": true,
+          "align_copyright": "right"
+        },
+        "disabled": null
+      }
+    }
+  }
+}

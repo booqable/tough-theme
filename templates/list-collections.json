@@ -1,0 +1,27 @@
+{
+  "name": "Collections",
+  "sections": {
+    "list-collections": {
+      "type": "list-collections",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "heading": "No collections",
+        "text": "Unfortunately, we couldn’t find any collections.",
+        "button_label": "Browse all products"
+      },
+      "disabled": null
+    },
+    "date-picker": {
+      "type": "date-picker",
+      "blocks": {},
+      "block_order": [],
+      "settings": {},
+      "disabled": null
+    }
+  },
+  "order": [
+    "date-picker",
+    "list-collections"
+  ]
+}

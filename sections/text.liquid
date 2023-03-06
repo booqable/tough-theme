@@ -1,0 +1,45 @@
+<style>
+  .text-{{ section.key }} {
+    text-align: {{ section.settings.align }};
+  }
+</style>
+
+<div class="bq-content rx-content text-{{ section.key }}">
+  {{ section.settings.text }}
+</div>
+
+{% schema %}
+{
+  "name": "Text",
+  "description": "Display text in various styles.",
+  "tag": "div",
+  "class": "text",
+  "settings": [
+    {
+      "type": "contentEditor",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ]
+}
+{% endschema %}

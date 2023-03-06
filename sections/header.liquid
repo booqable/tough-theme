@@ -1,0 +1,245 @@
+{{ "header.css" | asset_url | stylesheet_tag }}
+{{ "list-menu.css" | asset_url | stylesheet_tag }}
+
+<style>
+  {% if section.settings.background_color != blank %}
+    .header,
+    .header__wrapper,
+    .header__nav .list-submenu__container,
+    .header-search__input,
+    .header-floating-menu__wrapper,
+    .header-search__wrapper {
+      background-color: {{ section.settings.background_color }};
+    }
+
+    .header-search__input:autofill,
+    .header-search__input:-webkit-autofill {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.foreground_color != blank %}
+    .header__text-logo,
+    .header__nav-item,
+    .header-search__input,
+    .header-search__icon,
+    .header-cart .bq-icon-cart::before,
+    .header-floating-menu__icon,
+    .header__nav .list-menu__item .list-menu__item-caret {
+      color: {{ section.settings.foreground_color }};
+    }
+
+    .header-search__input {
+      border-color: {{ section.settings.foreground_color }};
+    }
+
+    .header-search__input::placeholder {
+      color: {{ section.settings.foreground_color | append: "B3"  }};
+    }
+
+    .header-search__input:focus {
+      border-color: {{ section.settings.foreground_color }};
+    }
+
+    .header__nav-item:hover {
+      text-decoration-color: {{ section.settings.foreground_color }};
+    }
+  {% endif %}
+</style>
+
+<div class="header__wrapper {% if section.settings.menu != blank %}header__wrapper--with-menu{% endif %}">
+  <div class="header__link-container">
+    <a href="{{ routes.root_url }}" class="header__link">
+      {% if section.settings.logo.url != blank %}
+        <img
+          src="{{ section.settings.logo | image_url }}"
+          alt="{{ shop.name }}"
+          class="header__image-logo"
+        >
+      {% elsif section.settings.custom_title != blank %}
+        <h1 class="header__text-logo">{{ section.settings.custom_title }}</h1>
+      {% elsif shop.logo_url != blank %}
+        <img
+          src="{{ shop.logo_url }}"
+          alt="{{ shop.name }}"
+          class="header__image-logo"
+        >
+      {% else %}
+        <h1 class="header__text-logo">{{ shop.name }}</h1>
+      {% endif %}
+    </a>
+  </div>
+  {% if section.settings.menu != blank %}
+    <nav class="header__nav header__nav--desktop">
+      <ul class="list-menu list-menu--horizontal">
+        {% for link in section.settings.menu.items %}
+          <li class="list-menu__item">
+            <a href="{{ link.url }}" class="header__nav-item">
+              {{ link.title }}
+              {% if link.items_count > 0 %}
+                <i class="fa-regular fa-chevron-down list-menu__item-caret"></i>
+              {% endif %}
+            </a>
+            {% if link.items_count > 0 %}
+              <div class="list-submenu">
+                <ul class="list-submenu__container">
+                  {% for childlink in link.items %}
+                    <li class="list-menu__item">
+                      <a href="{{ childlink.url }}" class="header__nav-item">
+                        {{ childlink.title }}
+                        {% if childlink.items_count > 0 %}
+                          <i class="fa-regular fa-chevron-right list-menu__item-caret"></i>
+                        {% endif %}
+                      </a>
+                      {% if childlink.items_count > 0 %}
+                        <div class="list-submenu">
+                          <ul class="list-submenu__container">
+                            {% for grandchildlink in childlink.items %}
+                              <li class="list-menu__item">
+                                <a href="{{ grandchildlink.url }}" class="header__nav-item">
+                                  {{ grandchildlink.title }}
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+  <div class="header-search">
+    <input type="checkbox" id="floating-search">
+    <label for="floating-search" class="header-search__trigger">
+      <i class="fa-light fa-magnifying-glass header-search__icon open"></i>
+    </label>
+    <div class="header-search__wrapper">
+      <form id="search" action="{{ routes.search_url }}" role="search">
+        <div class="header-search__input-wrapper">
+          <i class="fa-light fa-magnifying-glass header-search__icon"></i>
+          <input type="search" name="q" class="header-search__input" placeholder="{{ section.settings.search_placeholder }}">
+        </div>
+        <label class="header-search__trigger" for="floating-search">
+          <i class="fa-light fa-xmark header-search__icon close"></i>
+        </label>
+      </form>
+    </div>
+  </div>
+  <div class="header-cart">
+    {{ cart_button }}
+    <i class="fa-regular fa-spinner-third fa-spin"></i>
+  </div>
+  {% if section.settings.menu != blank %}
+    <div class="header-floating-menu">
+      <input type="checkbox" id="floating-menu-trigger">
+      <label for="floating-menu-trigger" class="header-floating-menu__trigger">
+        <i class="fa-regular fa-bars header-floating-menu__icon open"></i>
+        <i class="fa-regular fa-xmark header-floating-menu__icon close"></i>
+      </label>
+      <div class="header__nav header__nav--mobile header-floating-menu__wrapper">
+        <ul class="list-menu list-menu--vertical">
+          {% for link in section.settings.menu.items %}
+            <li class="list-menu__item">
+              <a href="{{ link.url }}" class="header__nav-item">
+                {{ link.title }}
+              </a>
+              {% if link.items_count > 0 %}
+                <input type="checkbox" id="floating-child-{{ forloop.index }}">
+                <label for="floating-child-{{ forloop.index }}">
+                  <i class="fa-regular fa-angle-down list-menu__item-caret"></i>
+                </label>
+                <ul class="list-submenu">
+                  {% for childlink in link.items %}
+                    <li class="list-menu__item">
+                      <a href="{{ childlink.url }}" class="header__nav-item">
+                        {{ childlink.title }}
+                      </a>
+                      {% if childlink.items_count > 0 %}
+                        <input type="checkbox" id="floating-grandchild-{{ forloop.index }}">
+                        <label for="floating-grandchild-{{ forloop.index }}">
+                          <i class="fa-regular fa-angle-down list-menu__item-caret"></i>
+                        </label>
+                        <ul class="list-submenu">
+                          {% for grandchildlink in childlink.items %}
+                            <li class="list-menu__item">
+                              <a href="{{ grandchildlink.url }}" class="header__nav-item">
+                                {{ grandchildlink.title }}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "header",
+  "templates": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Translations"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search placeholder",
+      "default": "Search products"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "Custom title",
+      "description": "Note: Header logo always overrides this title"
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "placeholder": "Default"
+    },
+    {
+      "type": "color",
+      "id": "foreground_color",
+      "label": "Foreground color",
+      "placeholder": "Default"
+    }
+  ]
+}
+{% endschema %}

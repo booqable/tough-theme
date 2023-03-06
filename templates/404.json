@@ -1,0 +1,54 @@
+{
+  "name": "404",
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "text": "404",
+            "size": "lg"
+          },
+          "disabled": null
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Oops, the page you're looking for does not exist.",
+            "size": "md"
+          },
+          "disabled": null
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "text": "Go to Homepage",
+            "url": "booqable://root/",
+            "use_solid_button": true,
+            "size": "md"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "background_image": "",
+        "fluid_width": true,
+        "overlay_enabled": true,
+        "overlay_color": "#D9E3F0",
+        "vertical_spacing": "md",
+        "overlay_opacity": 60,
+        "content_align": "left"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "image-banner"
+  ]
+}

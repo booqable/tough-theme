@@ -1,0 +1,83 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 20px auto;
+}
+
+.pagination i {
+  font-size: 14px;
+}
+
+.pagination span {
+  text-align: center;
+
+  border: 1px solid var(--color-border);
+
+  cursor: pointer;
+}
+
+.pagination span:not(:first-child) {
+  margin-left: -1px;
+}
+
+.pagination span a {
+  display: inline-block;
+
+  color: var(--color-primary-foreground);
+
+  padding: 10px 15px;
+
+  font-weight: var(--font-weight-semibold);
+
+  text-decoration: none;
+}
+
+.pagination .page:not(.current):hover,
+.pagination .prev:not([data-enabled="false"]):hover,
+.pagination .next:not([data-enabled="false"]):hover {
+  box-shadow: inset 0px 0px 400px 110px rgba(0, 0, 0, 0.12);
+}
+
+.pagination .current {
+  position: relative;
+
+  background-color: var(--color-accent-background);
+  border-color: var(--color-accent-background);
+
+  color: var(--color-accent-foreground);
+
+  z-index: 1;
+}
+
+.pagination .prev {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.pagination .next {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.pagination span[data-enabled="false"],
+.pagination .deco,
+.pagination .current {
+  cursor: initial;
+
+  pointer-events: none;
+}
+
+.pagination .deco,
+.pagination .current {
+  padding: 10px 15px;
+}
+
+.pagination .deco {
+  color: var(--color-primary-foreground)
+}
+
+.pagination span[data-enabled="false"] a {
+  color: var(--color-placeholder);
+}

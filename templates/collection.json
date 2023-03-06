@@ -1,0 +1,29 @@
+{
+  "name": "Collection",
+  "sections": {
+    "collection-page": {
+      "type": "collection-page",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "show_collection_name": true,
+        "heading": "No products",
+        "text": "Unfortunately, we couldn’t find any products in this collection.",
+        "button_label": "Browse all products",
+        "sidebar_toggle": "Menu"
+      },
+      "disabled": null
+    },
+    "date-picker": {
+      "type": "date-picker",
+      "blocks": {},
+      "block_order": [],
+      "settings": {},
+      "disabled": null
+    }
+  },
+  "order": [
+    "date-picker",
+    "collection-page"
+  ]
+}

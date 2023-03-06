@@ -1,0 +1,27 @@
+{{ "cleanstate.css" | asset_url | stylesheet_tag }}
+
+<style>
+  .cleanstate-{{ section.key }} .bq-button {
+    background-color: var(--color-accent-background);
+    color: var(--color-accent-foreground);
+
+    {% if section.settings.button_background %}
+      background-color: {{ section.settings.button_background }};
+    {% endif %}
+
+    {% if section.settings.label_color %}
+      color: {{ section.settings.label_color }};
+    {% endif %}
+  }
+</style>
+
+<div class="cleanstate-{{ section.key }} cleanstate">
+  <h2 class="cleanstate__title">{{ section.settings.heading }}</h2>
+  <p class="cleanstate__description">{{ section.settings.text }}</p>
+  <a
+    href="{{ routes.all_products_collection_url }}"
+    class="bq-button bq-button--solid bq-button--size-md"
+  >
+    {{ section.settings.button_label }}
+  </a>
+</div>

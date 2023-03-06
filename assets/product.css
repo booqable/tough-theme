@@ -1,0 +1,150 @@
+.carousel .product, .carousel .product-cleanstate {
+  min-width: 196px;
+  max-width: 196px;
+}
+
+.product a {
+  text-decoration: none;
+}
+
+.product a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-foreground);
+}
+
+.product .product__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 240px;
+
+  border-radius: var(--border-radius-md);
+
+  margin-bottom: 8px;
+}
+
+.product .product__image-container:empty {
+  background-color: var(--color-image-placeholder);
+}
+
+.product .product__image:not(.focal-image) {
+  display: block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  margin: 0 auto;
+}
+
+.product .product__name {
+  font-size: 20px;
+  line-height: 28px;
+
+  font-weight: var(--font-weight-semibold);
+
+  margin-bottom: 4px;
+
+  color: var(--color-primary-foreground);
+}
+
+.product bq-product-availability {
+  display: block;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  font-weight: var(--font-weight-bold);
+
+  margin-bottom: 8px;
+
+  color: var(--color-white);
+}
+
+.product bq-product-availability::part(availability-container) {
+  padding: 2px 12px;
+
+  border-radius: var(--border-radius-md);
+}
+
+.product bq-product-availability::part(available) {
+  background-color: var(--color-green);
+}
+
+.product bq-product-availability::part(unavailable) {
+  background-color: var(--color-red);
+}
+
+.product bq-product-price-label {
+  display: block;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  color: var(--color-placeholder);
+
+  margin: 0;
+}
+
+.product bq-product-price {
+  display: block;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  font-weight: var(--font-weight-bold);
+
+  color: var(--color-primary-foreground);
+
+  margin: 0;
+}
+
+.product-cleanstate {
+  max-width: 320px;
+  min-width: 196px;
+
+  width: 100%;
+}
+
+[class^="product-cleanstate__"] {
+  display: flex;
+}
+
+.product-cleanstate__image {
+  height: 240px;
+
+  border-radius: var(--border-radius-md);
+
+  margin-bottom: 8px;
+}
+
+.product-cleanstate__availability {
+  height: 20px;
+  width: 30%;
+
+  margin-bottom: 8px;
+}
+
+.product-cleanstate__name {
+  height: 28px;
+  width: 35%;
+
+  margin-bottom: 4px;
+}
+
+.product-cleanstate__price {
+  height: 24px;
+  width: 15%;
+}
+
+@media (min-width: 820px) {
+  .carousel .product, .carousel .product-cleanstate {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .product .product__image-container, .product-cleanstate .product-cleanstate__image {
+    height: 320px;
+  }
+}

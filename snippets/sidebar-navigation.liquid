@@ -1,0 +1,79 @@
+{{ "sidebar-navigation.css" | asset_url | stylesheet_tag }}
+
+{% if mode == "mobile" %}
+  <input type="checkbox" id="sidebar-toggle">
+  <label for="sidebar-toggle" class="sidebar-toggle-element">
+    {{ toggle }}
+  </label>
+{% endif %}
+<div class="sidebar-navigation {% if sticky == true %}sidebar-navigation--sticky{% endif %}">
+  <div class="sidebar-navigation__wrapper">
+    {% if mode == "mobile" %}
+      <div class="sidebar-navigation__header">
+        <h2 class="sidebar-navigation__title">{{ toggle }}</h2>
+        <label for="sidebar-toggle">
+          <div class="sidebar-navigation__close">
+            <i class="fa-regular fa-xmark"></i>
+          </div>
+        </label>
+      </div>
+    {% endif %}
+    <div class="sidebar-navigation__inner">
+      {% for block in menus %}
+        {% if block.settings.menu != blank %}
+          {% assign menu_index = forloop.index %}
+          {% assign menu = block.settings.menu %}
+          <div id="{{ block.id }}" class="sidebar-navigation-menu">
+            {% if block.settings.title != blank %}
+              <h3 class="sidebar-navigation-menu__title">{{ block.settings.title }}</h3>
+            {% endif %}
+            <ul class="list-menu list-menu--vertical">
+              {% for link in menu.items %}
+                {% assign url = link.url | strip %}
+                <li class="list-menu__item">
+                  <a href="{{ link.url }}" class="sidebar-navigation-menu__link {% if current_url == url %}sidebar-navigation-menu__link--current{% endif %}">
+                    {% if current_url == url %}<i class="fa-regular fa-caret-right"></i>{% endif %}{{ link.title }}
+                  </a>
+                  {% if link.items_count > 0 %}
+                    <input type="checkbox" id="sidebar-navigation-menu-child-{{ menu_index }}-{{ forloop.index }}{% if mode == "mobile" %}-mobile{% endif %}" {% if mode == "desktop" %}checked{% endif %}>
+                    <label for="sidebar-navigation-menu-child-{{ menu_index }}-{{ forloop.index }}{% if mode == "mobile" %}-mobile{% endif %}">
+                      <i class="fa-regular fa-angle-down list-menu__item-caret"></i>
+                    </label>
+                    <ul class="list-submenu">
+                      {% for childlink in link.items %}
+                        {% assign url = childlink.url | strip %}
+                        <li class="list-menu__item">
+                          <a href="{{ childlink.url }}" class="sidebar-navigation-menu__link {% if url == current_url %}sidebar-navigation-menu__link--current{% endif %}">
+                            {% if url == current_url %}<i class="fa-regular fa-caret-right"></i>{% endif %}{{ childlink.title }}
+                          </a>
+                          {% if childlink.items_count > 0 %}
+                            <input type="checkbox" id="sidebar-navigation-menu-grandchild-{{ menu_index }}-{{ forloop.index }}{% if mode == "mobile" %}-mobile{% endif %}" {% if mode == "desktop" %}checked{% endif %}>
+                            <label for="sidebar-navigation-menu-grandchild-{{ menu_index }}-{{ forloop.index }}{% if mode == "mobile" %}-mobile{% endif %}">
+                              <i class="fa-regular fa-angle-down list-menu__item-caret"></i>
+                            </label>
+                            <ul class="list-submenu">
+                              {% for grandchildlink in childlink.items %}
+                                {% assign url = grandchildlink.url | strip %}
+                                <li class="list-menu__item">
+                                  <a href="{{ grandchildlink.url }}" class="sidebar-navigation-menu__link {% if url == current_url %}sidebar-navigation-menu__link--current{% endif %}">
+                                    {% if url == current_url %}<i class="fa-regular fa-caret-right"></i>{% endif %}{{ grandchildlink.title }}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          {% render "sidebar-navigation-preview", id: block.id, title: block.settings.title %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

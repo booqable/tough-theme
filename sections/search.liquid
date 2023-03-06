@@ -1,0 +1,93 @@
+{{ "search.css" | asset_url | stylesheet_tag }}
+{{ "product.css" | asset_url | stylesheet_tag }}
+
+{% if results_count > 0 %}
+<h1 class="search__title">{{ section.settings.search_results_title }} “{{ query }}”</h1>
+{% endif %}
+{% paginate results %}
+  <div class="search-results {% if results_count == 0 %}no-results{% endif %}">
+    {% if results_count == 0 %}
+      {% include "cleanstate" %}
+    {% else %}
+      {% for result in results %}
+        {% assign image = result.images.first %}
+        {% if settings.use_focal_images %}
+          {% assign focal = image.coordinates %}
+        {% endif %}
+        <div class="product">
+          <a href="{{ result.url }}" class="product__image-container">{% if image.url != blank %}{{ image.url | image_tag:
+            loading: 'lazy',
+            class: 'product__image',
+            alt: result.name,
+            widths: '600, 750',
+            sizes: '(max-width: 490px) 750px, 600px',
+            focal: focal
+          }}{% endif %}</a>
+          {{ result | product_availability }}
+          <a href="{{ result.url }}">
+            <h3 class="product__name">{{ result.name }}</h3>
+          </a>
+          {{ result | product_price_label }}
+          {{ result | product_price }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% if paginate.pages > 1 %}
+    {% include "pagination" %}
+  {% endif %}
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Results",
+  "tag": "section",
+  "class": "search",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Translations"
+    },
+    {
+      "type": "text",
+      "id": "search_results_title",
+      "label": "Search results title",
+      "default": "Search results for"
+    },
+    {
+      "type": "header",
+      "content": "Cleanstate"
+    },
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text"
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "type": "textarea"
+    },
+    {
+      "id": "button_label",
+      "label": "Button label",
+      "type": "text"
+    },
+    {
+      "id": "button_background",
+      "label": "Button background color",
+      "type": "color",
+      "placeholder": "Default"
+    },
+    {
+      "id": "label_color",
+      "label": "Button label color",
+      "type": "color",
+      "placeholder": "Default"
+    }
+  ],
+  "templates": ["search"],
+  "important": true,
+  "unique": true
+}
+{% endschema %}

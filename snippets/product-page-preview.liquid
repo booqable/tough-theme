@@ -1,0 +1,53 @@
+<div class="product-gallery">
+  <div class="product-gallery__preview carousel carousel--snap-center">
+    <div class="product-gallery__preview-inner carousel__inner infinite-scroll">
+      {% for i in (1..5) %}
+        <div class="product-gallery__preview-item carousel__item"></div>
+      {% endfor %}
+    </div>
+    <div class="carousel__controls">
+      <div class="carousel__control prev">
+        <i class="fa-light fa-arrow-left"></i>
+      </div>
+      <div class="carousel__control next">
+        <i class="fa-light fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+  <div class="product-gallery__items carousel carousel--snap-center">
+    <div class="carousel__inner">
+      {% for i in (1..5) %}
+        <div class="product-gallery__item-container carousel__item"></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="product-info">
+  <div class="product-info__title">
+    <span class="skeleton"></span>
+  </div>
+  <div class="product-button">
+    <div class="product-button__period">
+      <span class="skeleton"></span>
+    </div>
+    <div class="product-button__price">
+      <span class="skeleton"></span>
+    </div>
+    <div class="product-button__add-to-cart-container">
+      <span class="product-button__qty skeleton"></span>
+      <span class="product-button__add-to-cart-button skeleton"></span>
+    </div>
+  </div>
+</div>
+<div class="product-description">
+  <div class="product-description__label">
+    <span class="skeleton"></span>
+  </div>
+  <div class="product-description__content-container">
+    {% for i in (1..3) %}
+      <div class="product-description__content-item">
+        <span class="skeleton"></span>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,143 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Kylie",
+    "theme_version": "0.1.0",
+    "theme_author": "Booqable"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Accent background color",
+        "info": "Background for solid buttons, date picker, and shopping cart.\n\nNote: if the color is not set the company branding color will be applied.",
+        "default": "#395DB8"
+      },
+      {
+        "type": "color",
+        "id": "accent_foreground_color",
+        "label": "Accent foreground color",
+        "info": "For text used on top of accent background color",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "color",
+        "id": "primary_background_color",
+        "label": "Primary background color",
+        "info": "Primary background color for your store",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "primary_foreground_color",
+        "label": "Primary foreground color",
+        "info": "For text used on top of primary background color",
+        "default": "#0C2747"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link color",
+        "info": "Used for text links and non-solid buttons",
+        "default": "#395DB8"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading",
+        "info": "Font used for headers",
+        "default": "source-sans-pro"
+      },
+      {
+        "type": "font_picker",
+        "id": "body_font",
+        "label": "Body",
+        "info": "Font used for texts",
+        "default": "source-sans-pro"
+      }
+    ]
+  },
+  {
+    "name": "Images",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "use_focal_images",
+        "label": "Use focal images",
+        "info": "Display point focused images for products instead of full sized"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "info": "https://twitter.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook",
+        "info": "https://facebook.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "https://pinterest.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram",
+        "info": "https://instagram.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "TikTok",
+        "info": "https://tiktok.com/@booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr",
+        "info": "https://booqable.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat",
+        "info": "https://snapchat.com/add/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "YouTube",
+        "info": "https://youtube.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo",
+        "info": "https://vimeo.com/booqable"
+      }
+    ]
+  }
+]

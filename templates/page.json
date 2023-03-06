@@ -1,0 +1,33 @@
+{
+  "name": "Page",
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "{{ page.title }}", "size": "lg" },
+          "disabled": false
+        }
+      },
+      "block_order": ["heading"],
+      "settings": {
+        "fluid_width": false,
+        "overlay_enabled": false,
+        "overlay_color": "#000000",
+        "vertical_spacing": "md",
+        "overlay_opacity": 60,
+        "content_align": "left"
+      },
+      "disabled": false
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": { "text": "{{ page.content }}", "align": "left" },
+      "disabled": false
+    }
+  },
+  "order": ["image-banner", "text"]
+}

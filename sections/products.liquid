@@ -1,0 +1,161 @@
+{{ "products.css" | asset_url | stylesheet_tag }}
+{{ "product.css" | asset_url | stylesheet_tag }}
+{{ "carousels.css" | asset_url | stylesheet_tag }}
+
+{% if section.settings.collection != blank %}
+  {% assign data = section.settings.collection.items %}
+  {% if section.settings.collection.items_count > 0 %}
+    {% assign data_exists = true %}
+  {% else %}
+    {% assign data_exists = false %}
+  {% endif %}
+  {% assign data_type = "collection" %}
+{% else %}
+  {% assign data = section.blocks %}
+  {% if data.size > 0 and data.first.settings.product != blank %}
+    {% assign data_exists = true %}
+  {% else %}
+    {% assign data_exists = false %}
+  {% endif %}
+  {% assign data_type = "blocks" %}
+{% endif %}
+
+{% if section.settings.title %}
+  <h2 class="products__title">{{ section.settings.title }}</h2>
+{% endif %}
+{% if data_exists %}
+  {% if section.settings.use_carousel %}
+    <div class="carousel carousel--snap-{{ section.settings.snap }}">
+      <div class="carousel__inner {% if section.settings.infinite_scroll %}infinite-scroll{% endif %}">
+        {% include "products-inner" %}
+      </div>
+      <div class="carousel__controls">
+        <div class="carousel__control prev">
+          <i class="fa-regular fa-arrow-left"></i>
+        </div>
+        <div class="carousel__control next">
+          <i class="fa-regular fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    {% if section.settings.use_pagination and data_type == "collection" %}
+      {% assign per_page = section.settings.paginate_per | times: 1 %}
+      {% assign key = section.key %}
+      {% paginate data by per_page page_param: key %}
+        <div class="products__inner">
+          {% include "products-inner" %}
+        </div>
+        {% if paginate.pages > 1 %}
+          {% include "pagination" %}
+        {% endif %}
+      {% endpaginate %}
+    {% else %}
+      <div class="products__inner">
+        {% include "products-inner" %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% else %}
+  <div class="products__cleanstate">
+    {% for block in (1..3) %}
+      <div id="{{ section.blocks.first.id }}" class="product-cleanstate">
+        <div class="product-cleanstate__image skeleton"></div>
+        <div class="product-cleanstate__availability skeleton"></div>
+        <div class="product-cleanstate__name skeleton"></div>
+        <div class="product-cleanstate__price skeleton"></div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Products",
+  "description": "Display products from a collection or individually in a list or carousel layout.",
+  "tag": "section",
+  "class": "products",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Note: The collection takes precedence over \"Product\" blocks"
+    },
+    {
+      "type": "header",
+      "content": "Pagination"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_pagination",
+      "label": "Paginate products",
+      "info": "Note: Not applicable for \"Product\" blocks"
+    },
+    {
+      "type": "number",
+      "id": "paginate_per",
+      "label": "Products per page",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Carousel"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_carousel",
+      "label": "Use carousel",
+      "info": "Note: Not applicable when pagination enabled"
+    },
+    {
+      "type": "checkbox",
+      "id": "infinite_scroll",
+      "label": "Infinite loop scrolling"
+    },
+    {
+      "type": "select",
+      "id": "snap",
+      "label": "Items alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

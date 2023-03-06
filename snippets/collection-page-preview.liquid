@@ -1,0 +1,35 @@
+{% if preview %}
+  {% assign current_url = request_fullpath | strip %}
+{% else %}
+  {% assign current_url = request_path | strip %}
+{% endif %}
+
+<div class="collection-page__wrapper {% if section.blocks.size > 0 %}collection-page__wrapper--with-sidebar{% endif %}">
+  <div class="collection-page__sidebar-navigation">
+    {% if section.blocks.size > 0 %}
+      {% render "sidebar-navigation", menus: section.blocks, sticky: section.settings.sticky_sidebar, mode: "desktop", current_url: current_url %}
+    {% endif %}
+  </div>
+  <div class="collection-page__inner">
+    <div class="collection-page__header">
+      <div class="collection-page__title">
+        <span class="skeleton"></span>
+      </div>
+      <div class="collection-page__sidebar-navigation--mobile">
+        {% if section.blocks.size > 0 %}
+          {% render "sidebar-navigation", menus: section.blocks, sticky: section.settings.sticky_sidebar, mode: "mobile", toggle: section.settings.sidebar_toggle %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="collection-page__items">
+      {% for item in (1..6) %}
+        <div class="product-cleanstate">
+          <div class="product-cleanstate__image skeleton"></div>
+          <div class="product-cleanstate__availability skeleton"></div>
+          <div class="product-cleanstate__name skeleton"></div>
+          <div class="product-cleanstate__price skeleton"></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

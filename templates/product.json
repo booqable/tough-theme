@@ -1,0 +1,26 @@
+{
+  "name": "Product",
+  "sections": {
+    "product-page": {
+      "type": "product-page",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "variation_label": "Variation",
+        "description_label": "Description"
+      },
+      "disabled": null
+    },
+    "date-picker": {
+      "type": "date-picker",
+      "blocks": {},
+      "block_order": [],
+      "settings": {},
+      "disabled": null
+    }
+  },
+  "order": [
+    "date-picker",
+    "product-page"
+  ]
+}

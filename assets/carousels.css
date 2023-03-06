@@ -1,0 +1,97 @@
+.carousel {
+  position: relative;
+}
+
+.carousel.carousel--snap-start .carousel__item {
+  scroll-snap-align: start;
+}
+
+.carousel.carousel--snap-center .carousel__item {
+  scroll-snap-align: center;
+}
+
+.carousel.carousel--snap-end .carousel__item {
+  scroll-snap-align: end;
+}
+
+.carousel__inner {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 0 var(--horizontal-padding);
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--horizontal-padding);
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__item {
+  scroll-snap-stop: always;
+}
+
+.carousel__controls {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-50%);
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.carousel__control {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(3px);
+
+  pointer-events: all;
+}
+
+.carousel__control.hidden {
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+.carouse__control i {
+  font-size: 24px;
+
+  color: var(--color-primary-foreground);
+}
+
+@media (min-width: 820px) {
+  .carousel__inner {
+    gap: 32px;
+  }
+}

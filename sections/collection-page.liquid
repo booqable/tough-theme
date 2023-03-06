@@ -1,0 +1,157 @@
+{{ "collection-page.css" | asset_url | stylesheet_tag }}
+{{ "product.css" | asset_url | stylesheet_tag }}
+{{ "cleanstate.css" | asset_url | stylesheet_tag }}
+
+{% if preview %}
+  {% assign current_url = request_fullpath | strip %}
+{% else %}
+  {% assign current_url = request_path | strip %}
+{% endif %}
+
+{% if canonical_url contains "/1?" or canonical_url contains "/1#" %}
+  {% include "collection-page-preview" %}
+{% else %}
+  <div class="collection-page__wrapper {% if section.blocks.size > 0 %}collection-page__wrapper--with-sidebar{% endif %}">
+    <div class="collection-page__sidebar-navigation">
+      {% if section.blocks.size > 0 %}
+        {% render "sidebar-navigation", menus: section.blocks, sticky: section.settings.sticky_sidebar, mode: "desktop", current_url: current_url %}
+      {% endif %}
+    </div>
+    <div class="collection-page__inner">
+      <div class="collection-page__header">
+        {% if section.settings.show_collection_name %}
+          <h1 class="collection-page__title">{{ collection.name }}</h1>
+        {% endif %}
+        <div class="collection-page__sidebar-navigation--mobile">
+          {% if section.blocks.size > 0 %}
+            {% render "sidebar-navigation", menus: section.blocks, sticky: section.settings.sticky_sidebar, mode: "mobile", toggle: section.settings.sidebar_toggle %}
+          {% endif %}
+        </div>
+      </div>
+      {% if collection.items_count > 0 %}
+        {% assign paginate_object = collection.items %}
+        {% paginate paginate_object %}
+          <div class="collection-page__items">
+            {% for item in paginate_object %}
+              {% assign image = item.images.first %}
+              {% if settings.use_focal_images %}
+                {% assign focal = image.coordinates %}
+              {% endif %}
+              <div class="product">
+                <a href="{{ item.url }}" class="product__image-container">{% if image != blank %}{{ image.url | image_tag:
+                  loading: 'lazy',
+                  class: 'product__image',
+                  widths: '500, 700',
+                  sizes: '(max-width: 489px) 700px, 500px',
+                  focal: focal,
+                  alt: item.name
+                }}{% endif %}</a>
+                {{ item | product_availability }}
+                <a href="{{ item.url }}">
+                  <h3 class="product__name">{{ item.name }}</h3>
+                </a>
+                {{ item | product_price_label }}
+                {{ item | product_price }}
+              </div>
+            {% endfor %}
+          </div>
+          {% if paginate.pages > 1 %}
+            <div class="collection-page__pagination">
+              {% include "pagination" %}
+            </div>
+          {% endif %}
+        {% endpaginate %}
+      {% else %}
+        {% include "cleanstate" %}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product list",
+  "tag": "section",
+  "class": "collection-page",
+  "templates": ["collection"],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_name",
+      "label": "Show collection name",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sidebar"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_sidebar",
+      "label": "Enable sticky sidebar"
+    },
+    {
+      "type": "text",
+      "id": "sidebar_toggle",
+      "label": "Menu toggle label",
+      "default": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Cleanstate"
+    },
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text"
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "type": "textarea"
+    },
+    {
+      "id": "button_label",
+      "label": "Button label",
+      "type": "text"
+    },
+    {
+      "id": "button_background",
+      "label": "Button background color",
+      "type": "color",
+      "placeholder": "Default"
+    },
+    {
+      "id": "label_color",
+      "label": "Button label color",
+      "type": "color",
+      "placeholder": "Default"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "sidebar-menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text"
+        },
+        {
+          "id": "menu",
+          "label": "Menu",
+          "type": "menu"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "important": true,
+  "unique": true
+}
+{% endschema %}

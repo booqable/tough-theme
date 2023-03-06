@@ -1,0 +1,39 @@
+{{ "pagination.css" | asset_url | stylesheet_tag }}
+
+<div class="pagination">
+  <span class="prev" data-enabled="{% if paginate.previous != blank %}true{% else %}false{% endif %}">
+    <a
+      href="{% if paginate.previous != blank %}{{
+        paginate.previous.url
+      }}{% else %}#{% endif %}"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </a>
+  </span>
+  {% for part in paginate.parts %}
+    {% assign title_to_page = part.title | times: 1 %}
+    {% assign current_to_page = paginate.current_page | times: 1 %}
+    {% if part.is_link %}
+      <span class="page">
+        {{ part.title | link_to: part.url }}
+      </span>
+    {% elsif current_to_page == title_to_page %}
+      <span class="page current">
+        {{ part.title }}
+      </span>
+    {% else %}
+      <span class="deco">
+        {{ part.title }}
+      </span>
+    {% endif %}
+  {% endfor %}
+  <span class="next" data-enabled="{% if paginate.next != blank %}true{% else %}false{% endif %}">
+    <a
+      href="{% if paginate.next != blank %}{{
+        paginate.next.url
+      }}{% else %}#{% endif %}"
+    >
+      <i class="fa-solid fa-chevron-right"></i>
+    </a>
+  </span>
+</div>

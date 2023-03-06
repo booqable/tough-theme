@@ -1,0 +1,77 @@
+{{ "collections.css" | asset_url | stylesheet_tag }}
+
+{% if section.settings.title %}
+  <h2 class="collections__title">{{ section.settings.title }}</h2>
+{% endif %}
+{% if section.settings.enable_show_more %}
+  <a href="{{ routes.collections_url }}" class="collections__show-more">
+    {{ section.settings.show_more_label }}
+    <i class="fa-regular fa-chevron-right"></i>
+  </a>
+{% endif %}
+<div class="collections__list">
+  {% if section.blocks.size >= 1 and section.blocks.first.settings.collection != blank %}
+    {% for block in section.blocks %}
+      <a id="{{ block.id }}" href="{{ block.settings.collection.url }}">
+        <div class="collection">
+          {% if block.settings.collection.image.url != blank %}
+            {{ block.settings.collection.image.url | image_tag:
+              loading: 'lazy',
+              class: 'collection__image',
+              widths: '450, 550, 650',
+              sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+              alt: block.settings.collection.name
+            }}
+          {% endif %}
+          <h3 class="collection__name">{{ block.settings.collection.name }}</h3>
+        </div>
+      </a>
+    {% endfor %}
+  {% else %}
+    {% for block in (1..2) %}
+      <div id="{{ section.blocks.first.id }}" class="collection-cleanstate skeleton"></div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Collections",
+  "description": "Display a list of collections.",
+  "tag": "section",
+  "class": "collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Collections"
+    },
+    {
+      "type": "text",
+      "id": "show_more_label",
+      "label": "Show more label",
+      "default": "Browse all collections"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_show_more",
+      "label": "Enable show more"
+    }
+  ],
+  "max_blocks": 16,
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

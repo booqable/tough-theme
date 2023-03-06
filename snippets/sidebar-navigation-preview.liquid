@@ -1,0 +1,8 @@
+<div id="{{ id }}" class="sidebar-navigation-menu">
+  {% if title != blank %}
+    <h3 class="sidebar-navigation-menu__title">{{ title }}</h3>
+  {% endif %}
+  {% for line in (1..4) %}
+    <div class="sidebar-navigation-menu__cleanstate skeleton"></div>
+  {% endfor %}
+</div>

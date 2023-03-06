@@ -1,0 +1,215 @@
+.date-location {
+  max-width: calc(var(--max-width) + var(--horizontal-padding) * 2);
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 16px var(--horizontal-padding);
+}
+
+.date-location bq-date-picker::part(cleanstate) {
+  display: flex;
+  align-items: center;
+
+  text-align: left;
+
+  padding: 12px 24px;
+
+  border-radius: var(--border-radius-sm);
+
+  cursor: pointer;
+
+  min-height: 56px;
+}
+
+.date-location bq-date-picker::part(calendar-icon) {
+  max-width: 24px;
+  max-height: 24px;
+
+  width: 100%;
+
+  margin-right: 16px;
+
+  color: var(--color-accent-foreground);
+}
+
+.date-location bq-date-picker::part(chevron-icon) {
+  max-height: 24px;
+  max-width: 12px;
+
+  width: 100%;
+
+  color: var(--color-accent-foreground);
+}
+
+.date-location bq-date-picker::part(cleanstate-labels) {
+  width: 100%;
+
+  margin-right: 16px;
+}
+
+.date-location bq-date-picker::part(cleanstate-title) {
+  font-size: 18px;
+  line-height: 28px;
+
+  margin: 0;
+
+  font-weight: var(--font-weight-semibold);
+
+  color: var(--color-accent-foreground);
+}
+
+.date-location bq-date-picker::part(cleanstate-description) {
+  font-size: 16px;
+  line-height: 24px;
+
+  margin: 0;
+
+  color: var(--color-accent-foreground);
+}
+
+.date-location bq-date-picker::part(wrapper) {
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  background-color: var(--color-white);
+
+  padding: 8px 0;
+
+  box-shadow: 0 1px 2px rgba(33, 59, 71, 0.12),
+      0 4px 12px rgba(33, 59, 71, 0.12);
+
+  border-radius: var(--border-radius-sm);
+}
+
+.date-location bq-date-picker::part(section) {
+  cursor: pointer;
+
+  padding: 0 12px;
+}
+
+.date-location bq-date-picker::part(from-section),
+.date-location bq-date-picker::part(pickup-section) {
+  border-right: 1px solid #DDE1E3;
+}
+
+.date-location bq-date-picker::part(from-section),
+.date-location bq-date-picker::part(pickup-section),
+.date-location bq-date-picker::part(till-section),
+.date-location bq-date-picker::part(return-section) {
+  text-align: left;
+
+  padding: 0 12px;
+}
+
+.date-location bq-date-picker::part(pickup-section) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.date-location bq-date-picker::part(return-section) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.date-location bq-date-picker::part(from-label),
+.date-location bq-date-picker::part(till-label),
+.date-location bq-date-picker::part(pickup-label),
+.date-location bq-date-picker::part(return-label) {
+  font-size: 16px;
+  line-height: 24px;
+
+  font-weight: var(--font-weight-semibold);
+
+  color: var(--color-typo);
+
+  margin: 0;
+}
+
+.date-location bq-date-picker::part(from-value),
+.date-location bq-date-picker::part(till-value),
+.date-location bq-date-picker::part(pickup-value),
+.date-location bq-date-picker::part(return-value) {
+  font-size: 16px;
+  line-height: 24px;
+
+  font-weight: var(--font-weight-regular);
+
+  color: var(--color-typo);
+
+  margin: 0;
+}
+
+.date-location bq-date-picker::part(from-value),
+.date-location bq-date-picker::part(till-value) {
+  font-weight: var(--font-weight-semibold);
+}
+
+.date-location bq-date-picker::part(from-value--empty),
+.date-location bq-date-picker::part(till-value--empty),
+.date-location bq-date-picker::part(pickup-value--empty),
+.date-location bq-date-picker::part(return-value--empty) {
+  font-size: 16px;
+  line-height: 24px;
+
+  font-weight: var(--font-weight-regular);
+
+  color: var(--color-placeholder);
+
+  margin: 0;
+}
+
+@media (min-width: 820px) {
+  .date-location bq-date-picker::part(wrapper) {
+    padding: 16px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    background-color: var(--color-white);
+  }
+
+  .date-location bq-date-picker::part(has-locations) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .date-location bq-date-picker::part(pickup-section) {
+    grid-column-start: initial;
+    grid-column-end: initial;
+    grid-row-start: initial;
+    grid-row-end: initial;
+  }
+
+  .date-location bq-date-picker::part(return-section) {
+    grid-column-start: initial;
+    grid-column-end: initial;
+    grid-row-start: initial;
+    grid-row-end: initial;
+  }
+
+  .date-location bq-date-picker::part(has-locations)::part(till-section) {
+    border-right: 1px solid #DDE1E3;
+  }
+
+  .date-location bq-date-picker::part(from-label),
+  .date-location bq-date-picker::part(till-label),
+  .date-location bq-date-picker::part(pickup-label),
+  .date-location bq-date-picker::part(return-label) {
+    display: block;
+  }
+
+  .date-location bq-date-picker::part(from-value),
+  .date-location bq-date-picker::part(till-value),
+  .date-location bq-date-picker::part(pickup-value),
+  .date-location bq-date-picker::part(return-value) {
+    font-weight: var(--font-weight-regular);
+  }
+
+  .date-location bq-date-picker::part(section) {
+    padding: 0 24px;
+  }
+}

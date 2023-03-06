@@ -1,0 +1,88 @@
+{{ "form.css" | asset_url | stylesheet_tag }}
+
+<style>
+  .form__field, .form__textarea, .form__field::placeholder, .form__textarea::placeholder {
+    font-family: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+  }
+
+  .bq-button--{{ section.key }} {
+    background-color: var(--color-accent-background);
+    color: var(--color-accent-foreground);
+  }
+
+  {% if section.settings.button_color != blank %}
+    .bq-button--{{ section.key }} {
+      background-color: {{ section.settings.button_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.button_label_color != blank %}
+    .bq-button--{{ section.key }} {
+      color: {{ section.settings.button_label_color }};
+    }
+  {% endif %}
+</style>
+
+<div id="{{ section.key }}" class="form__inner">
+  <h2 class="form__title">{{ section.settings.title }}</h2>
+  {% form 'contact' %}
+    <div class="form__sender-name">
+      <label class="form__label" for="author">{{ section.settings.name_label | append: ' *'  }}</label>
+      <input
+        id="author"
+        name="form[author]"
+        title="{{ section.settings.name_label }}"
+        class="form__field {% if form.errors.author %}error{% endif %}"
+        type="text"
+        placeholder="{{ section.settings.name_placeholder }}"
+        {% if form.errors != blank %}
+          value="{{ form.author }}"
+        {% endif %}
+      >
+    </div>
+    <div class="form__sender-email">
+      <label class="form__label" for="email">{{ section.settings.email_label | append: ' *'  }}</label>
+      <input
+        id="email"
+        type="email"
+        name="form[email]"
+        pattern="^[a-zA-Z0-9!#$%&'*+\.\/=?^_`{|}~-]+@[\w-]+\.+[\w-]{2,16}$"
+        title="(e.g. mail@domain.com)"
+        class="form__field {% if form.errors.email %}error{% endif %}"
+        placeholder="{{ section.settings.email_placeholder }}"
+        {% if form.errors != blank %}
+          value="{{ form.email }}"
+        {% endif %}
+      >
+    </div>
+    <div class="form__message">
+      <label class="form__label" for="body">{{ section.settings.message_label | append: ' *'  }}</label>
+      <textarea 
+        id="body"
+        name="form[body]" 
+        title="{{ section.settings.message_label }}" 
+        class="form__textarea {% if form.errors.body %}error{% endif %}" 
+        rows="5"
+      >{% if form.errors != blank %}{{ form.body | strip }}{% endif %}</textarea>
+    </div>
+    <div class="form__info">
+      {% if form.posted_successfully %}
+        <p class="success">
+          <i class="fa-solid fa-circle-check"></i> {{ section.settings.success_message }}
+        </p>
+      {% endif %}
+      {% if form.errors != blank %}
+        <p class="error">
+          <i class="fa-solid fa-circle-exclamation"></i> {{ section.settings.error_message }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="form__submit">
+      <button
+        class="bq-button bq-button--size-lg bq-button--solid bq-button--{{ section.key }} bq-button--submit"
+      >
+        {{ section.settings.button_label }}
+      </button>
+    </div>
+  {% endform %}
+</div>

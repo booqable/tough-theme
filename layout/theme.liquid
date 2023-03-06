@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% comment %} Base stylesheets {% endcomment %}
+  {{ "base.css" | asset_url | stylesheet_tag }}
+  {{ "rx.css" | asset_url | stylesheet_tag }}
+  {% comment %} Fonts {% endcomment %}
+  <script src="https://kit.fontawesome.com/ff3b3de2b5.js" crossorigin="anonymous"></script>
+  {{ content_for_header }}
+  {% if settings.heading_font != blank or settings.body_font != blank %}
+    <link rel="preconnect" href="https://fonts.bunny.net">
+  {% endif %}
+  {% if settings.heading_font != blank %}
+    {{ settings.heading_font | font_link }}
+  {% endif %}
+  {% if settings.body_font != blank %}
+    {{ settings.body_font | font_link }}
+  {% endif %}
+  {% comment %} Color palette related styles {% endcomment %}
+  <style>
+    :root {
+      --color-accent-background: {% if settings.primary_color != blank %}{{ settings.primary_color }}{% else %}{{ branding_color }}{% endif %};
+      --color-accent-foreground: {{ settings.accent_foreground_color }};
+      --color-primary-background: {{ settings.primary_background_color }};
+      --color-primary-foreground: {{ settings.primary_foreground_color }};
+      --color-link: {{ settings.link_color }};
+      --color-placeholder: {{ settings.primary_foreground_color | append: "B3" }};
+      --color-image-placeholder: {{ settings.primary_foreground_color | append: "1A" }};
+      --color-body-alternative: {{ settings.primary_foreground_color | append: "99" }};
+      --color-border: {{ settings.primary_foreground_color | append: "66" }};
+
+      {% if settings.heading_font != blank %}
+        --font-heading: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
+      {% endif %}
+      {% if settings.body_font != blank %}
+        --font-body: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
+      {% endif %}
+    }
+  </style>
+
+  {% if page_title == blank %}
+    <title>{{ shop.name }}</title>
+    <meta property="og:title" content="{{ shop.name }}">
+    <meta name="twitter:title" content="{{ shop.name }}">
+  {% else %}
+    <title>{{ page_title }}</title>
+    <meta property="og:title" content="{{ page_title }}">
+    <meta name="twitter:title" content="{{ page_title }}">
+  {% endif %}
+  {% if page_description != blank %}
+    <meta name="description" content="{{ page_description }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+  {% endif %}
+  <meta name="twitter:card" content="summary">
+  <meta property="og:locale" content="{{ locale }}">
+
+  {% if product == blank %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ canonical_url }}">
+  {% else %}
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="{{ product.url }}">
+
+    {% assign image = product.images.first %}
+    {% if image.url != blank %}
+      <meta property="og:image" content="{{ image.url | image_url }}">
+      <meta property="og:image:secure_url" content="{{ image.url | image_url }}">
+      <meta property="og:image:alt" content="{{ product.name }}">
+      <meta name="twitter:image" content="{{ image.url | image_url }}">
+      <meta name="twitter:image:alt" content="{{ product.name }}">
+    {% endif %}
+  {% endif %}
+</head>
+<body>
+
+  {% section 'header' %}
+
+  <main id="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  <script src="{{ "lazysizes.min.js" | asset_url }}" defer></script>
+  <script src="{{ "focus-point.min.js" | asset_url }}" defer></script>
+  <script src="{{ "index.js" | asset_url }}" defer></script>
+  <script src="{{ "carousels.js" | asset_url }}" defer></script>
+  <script src="{{ "menus.js" | asset_url }}" defer></script>
+
+  {{ content_for_body }}
+
+</body>
+</html>

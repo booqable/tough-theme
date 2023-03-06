@@ -1,0 +1,356 @@
+{{ "image-banner.css" | asset_url | stylesheet_tag }}
+{{ "date-picker.css" | asset_url | stylesheet_tag }}
+
+<style>
+  {% if section.settings.background_color != blank and section.settings.fluid_width == true %}
+    .image-banner-{{ section.key }}.image-banner__wrapper {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.background_color != blank %}
+    .image-banner-{{ section.key }} .image-banner__inner {
+      background-color: {{ section.settings.background_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.overlay_color != blank %}
+    .image-banner-{{ section.key }} .image-banner__overlay {
+      background-color: {{ section.settings.overlay_color }};
+    }
+  {% endif %}
+
+  {% if section.settings.overlay_opacity != blank %}
+    .image-banner-{{ section.key }} .image-banner__overlay {
+      opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    }
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "heading" %}
+        .image-banner-{{ section.key }} #{{ block.id }}{
+          color: var(--color-primary-foreground);
+
+          {% if block.settings.color != blank %}
+            color: {{ block.settings.color }};
+          {% endif %}
+        }
+      {% when "text" %}
+        .image-banner-{{ section.key }} #{{ block.id }} {
+          color: var(--color-primary-foreground);
+
+          {% if block.settings.color != blank %}
+            color: {{ block.settings.color }};
+          {% endif %}
+        }
+      {% when "button" %}
+        .image-banner-{{ section.key }} #{{ block.id }} {
+          color: var(--color-primary-foreground);
+
+          {% if block.settings.use_solid_button %}
+            background-color: var(--color-accent-background);
+            color: var(--color-accent-foreground);
+          {% endif %}
+
+          {% if block.settings.use_solid_button and block.settings.background_color != blank %}
+            background-color: {{ block.settings.background_color }};
+          {% endif %}
+
+          {% if block.settings.label_color != blank %}
+            color: {{ block.settings.label_color }};
+          {% endif %}
+        }
+    {% endcase %}
+  {% endfor %}
+</style>
+
+<div class="image-banner-{{ section.key }} image-banner__wrapper {% if section.settings.fluid_width %}image-banner__wrapper--fluid-width{% endif %}">
+  {% if section.settings.background_image.url != blank and section.settings.fluid_width == true %}
+    {{ section.settings.background_image.url | image_tag:
+      loading: 'lazy',
+      class: 'image-banner__background',
+      widths: '900, 1400, 2500'
+    }}
+  {% endif %}
+  <div class="image-banner__inner image-banner__inner--align-{{ section.settings.content_align }} image-banner__inner--spacing-{{ section.settings.vertical_spacing }}">
+    {% if section.settings.background_image.url != blank and section.settings.fluid_width == false %}
+      {{ section.settings.background_image.url | image_tag:
+        loading: 'lazy',
+        class: 'image-banner__background',
+        widths: '700, 900, 1400'
+      }}
+    {% endif %}
+    {% if section.settings.overlay_enabled %}
+      <span class="image-banner__overlay"></span>
+    {% endif %}
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "heading" %}
+          <h1 id="{{ block.id }}" class="image-banner__title image-banner__title--size-{{ block.settings.size }}">{{ block.settings.text | escape }}</h1>
+        {% when "text" %}
+          <p id="{{ block.id }}" class="image-banner__text image-banner__text--size-{{ block.settings.size }}">{{ block.settings.text | escape }}</p>
+        {% when "button" %}
+          <div class="image-banner__button-container image-banner__button-container--align-{{ section.settings.content_align }}">
+            <a id="{{ block.id }}" class="bq-button bq-button--size-{{ block.settings.size }} {% if block.settings.use_solid_button %}bq-button--solid{% endif %}" href="{{ block.settings.url }}" {% if block.settings.use_new_tab %}target="_blank"{% endif %}>
+              {{ block.settings.text | escape }}
+            </a>
+          </div>
+        {% when "date-picker" %}
+          <div id="{{ block.id }}" class="date-location">
+            <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Banner",
+  "description": "Display a block of content with an image background.",
+  "tag": "section",
+  "class": "image-banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "checkbox",
+      "id": "fluid_width",
+      "label": "Fluid width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "placeholder": "Default"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "overlay_enabled",
+      "label": "Enable overlay",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Color",
+      "default": "#000000",
+      "placeholder": "Transparent"
+    },
+    {
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "id": "overlay_opacity",
+      "label": "Opacity",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "content_align",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "vertical_spacing",
+      "label": "Vertical spacing",
+      "options": [
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        }
+      ],
+      "default": "md"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Hire from us",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "placeholder": "Default"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            }
+          ],
+          "default": "md"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "default": "Tell something about your company, describe what you do and what makes you unique.",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "default": "#000000",
+          "label": "Color",
+          "placeholder": "Transparent"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            }
+          ],
+          "default": "md"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Shop collection",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "id": "use_new_tab",
+          "type": "checkbox",
+          "label": "Open in a new tab"
+        },
+        {
+          "id": "use_solid_button",
+          "type": "checkbox",
+          "label": "Use solid button",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "label": "Label color",
+          "placeholder": "Default"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "placeholder": "Default"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            }
+          ],
+          "default": "md"
+        }
+      ]
+    },
+    {
+      "type": "date-picker",
+      "name": "Date Picker",
+      "settings": []
+    }
+  ]
+}
+{% endschema %}

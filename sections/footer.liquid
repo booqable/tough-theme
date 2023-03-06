@@ -1,0 +1,221 @@
+{{ "footer.css" | asset_url | stylesheet_tag }}
+
+<!-- Icons -->
+{% assign fa = "paypal,stripe,ideal,alipay" | split: "," %}
+{% assign svg = "p24,eps,bancontact,giropay" | split: "," %}
+
+<div class="footer__content">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "socials" %}
+        {% include "socials" %}
+      {% when "menu" %}
+        <nav id="{{ block.id }}" class="footer__nav">
+          <ul class="list-menu footer__menu footer__menu--align-{{ block.settings.align }}">
+            {% for link in block.settings.menu.items %}
+              <li class="list-menu__item">
+                <a href="{{ link.url }}" class="footer__nav-item">{{ link.title }}</a>
+                {% if link.items_count > 0 %}
+                  <div class="list-menu list-menu--vertical footer__submenu">
+                    {% for childlink in link.items %}
+                      <a href="{{ childlink.url }}" class="footer__nav-subitem">{{ childlink.title }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% when "payment-methods" %}
+        {% if payment_methods.size > 0 %}
+          <div id="{{ block.id }}" class="footer__payment-methods footer__payment-methods--align-{{ block.settings.align }}">
+            {% for provider in payment_methods %}
+              {% case provider %}
+                {% when "paypal" %}
+                  <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                {% when "creditcard" %}
+                  <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                  <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+                  <i class="fa-brands fa-cc-amex" title="American Express"></i>
+                {% when "ideal" %}
+                  <i class="fa-brands fa-ideal" title="iDEAL"></i>
+                {% when "alipay" %}
+                  <i class="fa-brands fa-alipay" title="Alipay"></i>
+                {% when "p24" %}
+                  {% include "p24-icon" %}
+                {% when "eps" %}
+                  {% include "eps-icon" %}
+                {% when "bancontact" %}
+                  {% include "bancontact-icon" %}
+                {% when "giropay" %}
+                  {% include "giropay-icon" %}
+              {% endcase %}
+            {% endfor %}
+          </div>
+      {% endif %}
+    {% endcase %}
+  {% endfor %}
+  {% if section.settings.show_copyright %}
+    <div class="footer__bottom">
+      <div class="footer__copyright footer__copyright--align-{{ section.settings.align_copyright }}">
+        &copy; {{ "now" | date: "%Y" }}, {{ shop.name }}{% if section.settings.show_powered_by %} | <a href="https://booqable.com/?source=Shop&campaign=Cart" target="_blank" title="Powered by Booqable Rental Software">Powered by Booqable</a>{% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "class": "footer",
+  "templates": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Copyright"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copyright",
+      "label": "Show copyright"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_powered_by",
+      "label": "Show Powered by Booqable"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "socials",
+      "name": "Socials",
+      "settings": [
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "header",
+          "content": "Icon"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            }
+          ],
+          "default": "md"
+        },
+        {
+          "type": "select",
+          "id": "spacing",
+          "label": "Spacing",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "md",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            }
+          ],
+          "default": "md"
+        }
+      ]
+    },
+    {
+      "type": "payment-methods",
+      "name": "Payment methods",
+      "settings": [
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "id": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "menu",
+          "id": "menu",
+          "label": "Menu",
+          "info": "Note: Only 1 level of submenu is supported."
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

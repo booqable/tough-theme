@@ -1,0 +1,37 @@
+{% for item in data %}
+  {% case data_type %}
+    {% when "collection" %}
+      {% assign product = item %}
+    {% when "blocks" %}
+      {% assign product = item.settings.product %}
+  {% endcase %}
+  {% if product != blank %}
+    {% assign image = product.images.first %}
+    {% if settings.use_focal_images %}
+      {% assign focal = image.coordinates %}
+    {% endif %}
+    <div id="{{ product.id }}" class="product {% if section.settings.use_carousel %}carousel__item{% endif %}">
+      <a href="{{ product.url }}" class="product__image-container">{% if image != blank %}{{ image.url | image_tag:
+        loading: 'lazy',
+        class: 'product__image',
+        widths: '500, 700',
+        sizes: '(max-width: 490px) 700px, 500px',
+        focal: focal,
+        alt: product.name
+      }}{% endif %}</a>
+      {{ product | product_availability }}
+      <a href="{{ product.url }}">
+        <h3 class="product__name">{{ product.name }}</h3>
+      </a>
+      {{ product | product_price_label }}
+      {{ product | product_price }}
+    </div>
+  {% else %}
+    <div class="product-cleanstate {% if section.settings.use_carousel %}carousel__item{% endif %}">
+      <div class="product-cleanstate__image skeleton"></div>
+      <div class="product-cleanstate__availability skeleton"></div>
+      <div class="product-cleanstate__name skeleton"></div>
+      <div class="product-cleanstate__price skeleton"></div>
+    </div>
+  {% endif %}
+{% endfor %}
