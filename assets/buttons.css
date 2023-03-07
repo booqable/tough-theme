@@ -1,0 +1,32 @@
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-sm);
+	color: currentColor;
+	border: none;
+	background: none;
+	cursor: pointer;
+	transition: all var(--transition-duration-2) var(--transition-function-ease-in-out);
+}
+
+.button.button--primary {
+	color: var(--color-black, #0B1A26);
+	background-color: var(--color-yellow, #F4B841);
+}
+
+.button.button--secondary {
+}
+
+.button.button--outlined {
+}
+
+.button.button--small {
+	padding: 10px 20px;
+}
+
+.button.button--large {
+	padding: 12px 24px;
+}

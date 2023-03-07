@@ -1,15 +1,15 @@
-const triggers = document.querySelectorAll(".list-menu__item:has(.list-submenu)");
+// const triggers = document.querySelectorAll(".menu__item:has(.menu__dropdown)");
 
-const handleMeasure = (e) => {
-  const submenu = e.target.querySelector(".list-submenu");
+// const handleMeasure = (e) => {
+//   const submenu = e.target.querySelector(".menu__dropdown");
 
-  const { y, height } = submenu.getBoundingClientRect();
+//   const { y, height } = submenu.getBoundingClientRect();
 
-  if (y + height > window.innerHeight) {
-    submenu.classList.add("list-submenu--bottom");
-  }
-};
+//   if (y + height > window.innerHeight) {
+//     submenu.classList.add("menu__dropdown--bottom");
+//   }
+// };
 
-triggers.forEach((trigger) => {
-  trigger.addEventListener("mouseenter", handleMeasure);
-});
+// triggers.forEach((trigger) => {
+//   trigger.addEventListener("mouseenter", handleMeasure);
+// });

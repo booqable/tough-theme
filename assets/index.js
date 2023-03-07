@@ -54,13 +54,13 @@ const handleScroll = () => {
       headerHeight += previewBar.getBoundingClientRect().height;
     }
 
-    header.classList.add("fixed");
-    contentContainer.style.marginTop = `${headerHeight}px`;
+    // header.classList.add("fixed");
+    // contentContainer.style.marginTop = `${headerHeight}px`;
   }
 
   if (window.scrollY === 0) {
-    header.classList.remove("fixed");
-    contentContainer.style.marginTop = 0;
+    // header.classList.remove("fixed");
+    // contentContainer.style.marginTop = 0;
   }
 };
 
