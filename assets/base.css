@@ -66,6 +66,7 @@ html{
 
 body {
   background-color: var(--color-primary-background);
+	padding-top: var(--header-height);
 }
 
 h1,

@@ -55,17 +55,33 @@
 	{%- endcase -%}
 {%- endcapture -%}
 
+{%- capture svg_sprite -%}
+	<svg display="none">
+		<defs>
+			<g id="img-frame-256">
+				<path xmlns="http://www.w3.org/2000/svg" fill="#0B1A26" d="M15.3333 18.0002C14.2309 17.9992 13.1455 17.7267 12.1733 17.2069L11.8733 17.0402C9.8005 15.9257 8.10113 14.2263 6.98667 12.1535L6.82 11.8535C6.28655 10.8758 6.00475 9.78064 6 8.66684V8.22018C5.99972 7.86482 6.14131 7.52404 6.39333 7.27351L7.52 6.14684C7.62942 6.03658 7.78387 5.98343 7.93797 6.00302C8.09207 6.02261 8.22832 6.11271 8.30667 6.24685L9.80667 8.82018C9.95835 9.0821 9.91455 9.41335 9.7 9.62684L8.44 10.8869C8.33536 10.9903 8.31098 11.1502 8.38 11.2802L8.61333 11.7202C9.45136 13.2725 10.7262 14.545 12.28 15.3802L12.72 15.6202C12.85 15.6892 13.0099 15.6648 13.1133 15.5602L14.3733 14.3002C14.5868 14.0857 14.9181 14.0419 15.18 14.1935L17.7533 15.6935C17.8875 15.7719 17.9776 15.9081 17.9971 16.0622C18.0167 16.2163 17.9636 16.3708 17.8533 16.4802L16.7267 17.6069C16.4761 17.8589 16.1353 18.0005 15.78 18.0002H15.3333Z"/>
+			</g>
+		</defs>
+	</svg>
+{%- endcapture -%}
+
+
 {%- if hide_top_bar != true -%}
     {%- capture anoncement_bar -%}
-        <div class="header__anoncement-bar anoncement-bar js-anoncement-bar">
+        <div class="header__anoncement-bar anoncement-bar">
 			<div class="anoncement-bar__container container">
 				<div class="anoncement-bar__info">
+					{{top_bar_image}}
 					{%- if top_bar_image != blank -%}
 						<img
 							src="{{ top_bar_image | image_url }}"
 							alt="{{- top_bar_image.alt -}}"
 							class="anoncement-bar__icon"
 						>
+					{%- else -%}
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1">
+							<use xlink:href="#img-frame-256"></use>
+						</svg>
 					{%- endif -%}
 
 					{%- if top_bar_text != blank -%}
@@ -264,7 +280,9 @@
 	</div>
 {%- endcapture -%}
 
-<div class="header__wrapper{% if sticky_header %} js-header-sticky{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
+{{- svg_sprite -}}
+
+<div class="header__wrapper{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
 
 	{{- anoncement_bar -}}
 
@@ -282,6 +300,12 @@
 		</div>
 	</div>
 </div>
+
+<script>
+  	{%- if sticky_header -%}
+		document.querySelector('.header').classList.add('header-sticky')
+	{%- endif -%}
+</script>
 
 {% schema %}
     {

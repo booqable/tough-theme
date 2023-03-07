@@ -1,18 +1,18 @@
 .header {
   position: relative;
   z-index: 1000;
+  container: header / inline-size;
+  transform: var(--header-transform);
+	transition: transform var(--transition-duration-2) var(--transition-function-ease-out);
   border-bottom: 1px solid rgba(var(--color-white-rgb), 0.2);
+  margin-bottom: -1px;
 }
 
-.header--sticky {
+.header-sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-}
-
-.page-scrolled {
-	padding-top: var(--header-height, 72px);
 }
 
 .anoncement-bar {
@@ -59,18 +59,6 @@
 .anoncement-bar__menu-item {
   display: inline-flex;
   padding: 0 5px;
-}
-
-.page-scrolled .anoncement-bar {
-  height: 0;
-  padding: 0;
-  visibility: hidden;
-  opacity: 0;
-	transition: height var(--transition-duration-2) var(--transition-function-linear);
-}
-
-.header__wrapper{
-  container: header / inline-size;
 }
 
 .header__content {
@@ -282,10 +270,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
-  /* display: none; */
 }
 
 .bq-cart-button__line-count {
@@ -300,61 +284,11 @@
   color: var(--color-accent-foreground);
 }
 
-/* .header-floating-menu {
-  display: none;
-}
-
-.header-floating-menu #floating-menu-trigger {
-  display: none;
-} */
-
-/* .menu__opener-icon,
-.header-floating-menu__icon {
-  color: var(--color-primary-foreground);
-
-  font-size: 24px;
-} */
-
-.header-floating-menu__wrapper {
-  visibility: hidden;
-  pointer-events: none;
-
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-
-  opacity: 0;
-  transform: translateY(30px);
-
-  transition: visibility 0s linear 300ms, opacity 300ms, transform 250ms;
-
-  height: 100vh;
-
-  background-color: var(--color-primary-background);
-
-  overflow-y: auto;
-}
-
 .bq-cart {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-#floating-menu-trigger:not(:checked)
-  + .header-floating-menu__trigger
-  .header-floating-menu__icon.close {
-  /* display: none; */
-}
-
-#floating-menu-trigger:checked
-  + .header-floating-menu__trigger
-  .header-floating-menu__icon.open {
-  /* display: none; */
-}
-
-
 
 @container (min-width: 667px) {
   .anoncement-bar__container {
@@ -373,6 +307,14 @@
 @container (min-width: 1100px) {
   .anoncement-bar__container {
     grid-template-columns: 1fr 60% 1fr;
+  }
+
+  .header__content--padding-top {
+    padding-top: var(--padding-top, 16px);
+  }
+
+  .header__content--padding-bottom {
+    padding-bottom: var(--padding-bottom, 16px);
   }
 
   .header__content-inner {
@@ -452,86 +394,3 @@
     padding: 0 29px 0 0;
   }
 }
-
-
-/* @media (max-width: 762px) {
-  .header__wrapper {
-    grid-template-columns: 1fr repeat(2, 50px);
-  }
-
-  .header__wrapper--with-menu {
-    grid-template-columns: 1fr repeat(3, 50px);
-  }
-
-  .header__nav--desktop {
-    display: none;
-  }
-
-  .header__search-trigger {
-    display: block;
-  }
-
- .header__search-wrapper {
-    display: flex;
-    align-items: center;
-
-    padding: 8px 16px;
-
-    height: 100%;
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    background-color: var(--color-primary-background);
-
-    opacity: 0;
-    transform: scale(0.92);
-    visibility: hidden;
-    pointer-events: none;
-    transition: visibility 0s linear 300ms, opacity 300ms linear 50ms,
-      transform 250ms;
-
-    z-index: 2;
-  }
-
-
-
-  .header__search-wrapper .header__search-input-wrapper {
-    width: 100%;
-  }
-
-  .header-search #floating-search:checked ~ .header__search-wrapper {
-    visibility: visible;
-    pointer-events: all;
-
-    opacity: 1;
-    transform: scale(1);
-
-    transition: visibility 0s linear 0s, opacity 300ms, transform 250ms;
-  }
-
-  .header-floating-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .header-floating-menu
-    #floating-menu-trigger:checked
-    ~ .header-floating-menu__wrapper {
-    visibility: visible;
-    pointer-events: all;
-
-    opacity: 1;
-    transform: translateY(0);
-
-    transition: visibility 0s linear 0s, opacity 300ms, transform 250ms;
-  }
-
-  .header__image-logo {
-    max-width: 100%;
-  }
-} */
