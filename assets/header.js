@@ -4,6 +4,11 @@ const selectors = {
 	topBar: ".anoncement-bar"
 };
 
+const classes = {
+	resizeClass: "resize-active",
+	loaded: "loaded"
+};
+
 const modifiers = {
 	scrolled: "page-scrolled"
 };
@@ -25,65 +30,85 @@ class StickyHeader {
 	initElements() {
 		this.previewBar = this.container.querySelector(selectors.previewBar);
 		this.topBar = this.container.querySelector(selectors.topBar);
+		this.body = document.querySelector(selectors.body);
 		this.lastScroll = 0;
+		this.timer = undefined;
 	}
 
 	initEvents() {
-		window.addEventListener("scroll", this.initHeaderScroll.bind(this));
-		window.addEventListener("resize", this.initHeaderHeight.bind(this));
-		this.initHeaderHeight();
+		window.addEventListener("scroll", this.setPropsHeaderOnScroll.bind(this));
+		window.addEventListener("resize", this.getHeaderHeight.bind(this));
+		window.addEventListener("resize", this.setResizeClass.bind(this));
+		window.addEventListener("DOMContentLoaded", this.removeLoadingClass.bind(this));
+		this.getHeaderHeight();
 	}
 
-	initHeaderScroll() {
+	// get height of header
+	getHeaderHeight() {
+		const headerHeight = this.container.getBoundingClientRect().height;
+
+		document.documentElement.style.setProperty(
+			"--header-height",
+			`${Math.floor(headerHeight) - 1}px`
+		);
+	}
+
+	// set class while resize window
+	setResizeClass() {
+		this.body.classList.add(classes.resizeClass);
+		clearTimeout(this.timer);
+
+		this.timer = setTimeout(() => {
+			this.body.classList.remove(classes.resizeClass);
+		}, 200);
+	};
+
+	// remove class after loading content
+	removeLoadingClass() {
+		this.body.classList.add(classes.loaded);
+	}
+
+	// set properties when scroll page
+	setPropsHeaderOnScroll() {
 		if (!this.topBar) {
 			return false;
 		}
 
-		const body = document.querySelector(selectors.body);
 		this.currentScroll = window.scrollY;
 
 		if (this.currentScroll <= 180) {
-			body.classList.remove(modifiers.scrolled);
+			this.body.classList.remove(modifiers.scrolled);
 			document.documentElement.style.setProperty(
 				'--header-transform',
-				'translateY(0)'
+				'0px'
 			);
 			return;
 		}
 
 		if (
 			this.currentScroll > this.lastScroll &&
-			!body.classList.contains(modifiers.scrolled)
+			!this.body.classList.contains(modifiers.scrolled)
 		) {
 			// down
-			body.classList.add(modifiers.scrolled);
+			this.body.classList.add(modifiers.scrolled);
 			document.documentElement.style.setProperty(
 				'--header-transform',
-				`translateY(-${this.topBar.offsetHeight}px)`
+				`-${this.topBar.offsetHeight}px`
 			);
 		} else if (
 			this.currentScroll < this.lastScroll - 10 &&
-			body.classList.contains(modifiers.scrolled)
+			this.body.classList.contains(modifiers.scrolled)
 		) {
 			// up
-			body.classList.remove(modifiers.scrolled);
+			this.body.classList.remove(modifiers.scrolled);
 			document.documentElement.style.setProperty(
 				'--header-transform',
-				'translateY(0)'
+				'0px'
 			);
 		}
 
 		this.lastScroll = this.currentScroll;
 
-	}
-
-	initHeaderHeight() {
-		const headerHeight = this.container.getBoundingClientRect().height;
-
-		document.documentElement.style.setProperty(
-			"--header-height",
-			`${Math.floor(headerHeight)}px`
-		);
 	}
 }
 
