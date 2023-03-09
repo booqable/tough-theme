@@ -1,16 +1,21 @@
 const selectors = {
 	body: "body",
 	previewBar: ".preview-bar__container",
-	topBar: ".anoncement-bar"
+	topBar: ".anoncement-bar",
+	menu: ".menu",
+	menuTrigger: "#mobile-menu-trigger",
+	input: "input[type=checkbox]"
 };
 
 const classes = {
-	resizeClass: "resize-active",
-	loaded: "loaded"
+	menuOpener: "menu__opener"
 };
 
 const modifiers = {
-	scrolled: "page-scrolled"
+	loaded: "loaded",
+	resizeClass: "resize-active",
+	scrolled: "page-scrolled",
+	menuOpened: "menu-opened"
 };
 
 class StickyHeader {
@@ -28,11 +33,13 @@ class StickyHeader {
 	}
 
 	initElements() {
-		this.previewBar = this.container.querySelector(selectors.previewBar);
-		this.topBar = this.container.querySelector(selectors.topBar);
 		this.body = document.querySelector(selectors.body);
+		this.topBar = this.container.querySelector(selectors.topBar);
+		this.menu = this.container.querySelector(selectors.menu);
 		this.lastScroll = 0;
 		this.timer = undefined;
+
+		this.getHeaderHeight();
 	}
 
 	initEvents() {
@@ -40,12 +47,17 @@ class StickyHeader {
 		window.addEventListener("resize", this.getHeaderHeight.bind(this));
 		window.addEventListener("resize", this.setResizeClass.bind(this));
 		window.addEventListener("DOMContentLoaded", this.removeLoadingClass.bind(this));
-		this.getHeaderHeight();
+		document.addEventListener("click", this.closeDropdownMenu.bind(this));
 	}
 
 	// get height of header
 	getHeaderHeight() {
+		const previewBar = document.querySelector(selectors.previewBar);
 		const headerHeight = this.container.getBoundingClientRect().height;
+
+		if (previewBar) {
+			headerHeight += previewBar.getBoundingClientRect().height;
+		}
 
 		document.documentElement.style.setProperty(
 			"--header-height",
@@ -55,17 +67,36 @@ class StickyHeader {
 
 	// set class while resize window
 	setResizeClass() {
-		this.body.classList.add(classes.resizeClass);
+		this.body.classList.add(modifiers.resizeClass);
 		clearTimeout(this.timer);
 
 		this.timer = setTimeout(() => {
-			this.body.classList.remove(classes.resizeClass);
+			this.body.classList.remove(modifiers.resizeClass);
 		}, 200);
 	};
 
 	// remove class after loading content
 	removeLoadingClass() {
-		this.body.classList.add(classes.loaded);
+		this.body.classList.add(modifiers.loaded);
+	}
+
+	// toggle class on click on mobile menu trigger and close all dropdowns when menu closed
+	closeDropdownMenu(e) {
+		let target = e.target;
+		const menuTrigger = target.parentElement.querySelector(selectors.menuTrigger);
+		const className = target.classList.contains(classes.menuOpener);
+		const openers = [...this.menu.querySelectorAll(selectors.input)]
+
+		if (!className) { target = e.target.closest(selectors.menuTrigger) }
+
+		!menuTrigger?.checked ? (
+			target.classList.remove(modifiers.menuOpened),
+			openers.forEach((opener) => {
+				opener.checked = false
+			})
+		) : (
+			!className ? target.classList.add(modifiers.menuOpened) : null
+		)
 	}
 
 	// set properties when scroll page
