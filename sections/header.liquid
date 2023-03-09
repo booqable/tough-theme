@@ -3,14 +3,6 @@
 <link rel="preload" href="{{ 'buttons.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 {%- assign search_placeholder       = section.settings.search_placeholder -%}
-{%- assign hide_top_bar             = section.settings.hide_top_bar -%}
-{%- assign top_bar_image            = section.settings.top_bar_image -%}
-{%- assign top_bar_text             = section.settings.top_bar_text -%}
-{%- assign top_bar_phone            = section.settings.top_bar_phone -%}
-{%- assign top_bar_message          = section.settings.top_bar_message -%}
-{%- assign top_bar_menu             = section.settings.top_bar_menu -%}
-{%- assign top_bar_background 		= section.settings.top_bar_background -%}
-{%- assign top_bar_foreground 		= section.settings.top_bar_foreground -%}
 {%- assign logo                     = section.settings.logo -%}
 {%- assign custom_title 			= section.settings.custom_title -%}
 {%- assign menu 					= section.settings.menu -%}
@@ -25,8 +17,6 @@
 {%- assign sticky_header 			= section.settings.sticky_header -%}
 
 {%- capture variables -%}
-    --color-top-bar-background: {{ top_bar_background }};
-    --color-top-bar-foreground: {{ top_bar_foreground }};
     --color-header-background: {{ header_background }};
     --color-header-foreground: {{ header_foreground }};
     --padding-top: {{ padding_top }}px;
@@ -54,60 +44,6 @@
 			--translate: translateX(100%);
 	{%- endcase -%}
 {%- endcapture -%}
-
-{%- if hide_top_bar != true -%}
-    {%- capture anoncement_bar -%}
-        <div class="header__anoncement-bar anoncement-bar">
-			<div class="anoncement-bar__container container">
-				<div class="anoncement-bar__info">
-					{%- if top_bar_image != blank -%}
-						<img
-							src="{{ top_bar_image | image_url }}"
-							alt="{{- top_bar_image.alt -}}"
-							class="anoncement-bar__icon"
-						>
-					{%- endif -%}
-
-					{%- if top_bar_text != blank -%}
-						<span class="anoncement-bar__text">
-							{{- top_bar_text -}}
-						</span>
-					{%- endif -%}
-
-					{%- if top_bar_phone != blank -%}
-						<span class="anoncement-bar__phone">
-							<a href="tel:{{ top_bar_phone | remove: '+' | remove: ' ' }}" class="anoncement-bar__phone-link">
-								{{- top_bar_phone -}}
-							</a>
-						</span>
-					{%- endif -%}
-				</div>
-
-				<span class="anoncement-bar__text">
-					{%- if top_bar_message != blank -%}
-						{{- top_bar_message -}}
-					{%- endif -%}
-				</span>
-
-				<nav class="anoncement-bar__menu">
-					{%- if top_bar_menu != blank -%}
-						<ul class="anoncement-bar__menu-list">
-							{%- for link in top_bar_menu.items -%}
-								{%- if link != blank -%}
-									<li class="anoncement-bar__menu-item">
-										<a href="{{ link.url }}" class="anoncement-bar__menu-link">
-											{{- link.title -}}
-										</a>
-									</li>
-								{%- endif -%}
-							{%- endfor -%}
-						</ul>
-					{%- endif -%}
-				</nav>
-			</div>
-        </div>
-    {%- endcapture -%}
-{%- endif -%}
 
 {%- capture header_login -%}
 	<div class="header__login">
@@ -267,9 +203,6 @@
 {%- endcapture -%}
 
 <div class="header__wrapper{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
-
-	{{- anoncement_bar -}}
-
 	<div class="header__content{% if padding_top != 0 or padding_top_mobile != 0 %} header__content--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} header__content--padding-bottom{%- endif -%}">
 		<div class="header__container container">
 			<div class="header__content-inner">
@@ -285,11 +218,18 @@
 	</div>
 </div>
 
-<script>
-  	{%- if sticky_header -%}
-		document.querySelector('.header').classList.add('header-sticky')
-	{%- endif -%}
-</script>
+{%- if sticky_header -%}
+	<script>
+		const header = document.querySelector('.header');
+		const topBar = document.querySelector('.anoncement-bar');
+
+		if (topBar) {
+			topBar.classList.add('anoncement-bar--sticky')
+		}
+
+		header.classList.add('header--sticky')
+	</script>
+{%- endif -%}
 
 {% schema %}
     {
@@ -310,59 +250,7 @@
             },
             {
                 "type": "header",
-                "content": "Announcement bar"
-            },
-            {
-                "type": "checkbox",
-                "id": "hide_top_bar",
-                "default": false,
-                "label": "Hide bar"
-            },
-            {
-                "type": "image_picker",
-                "id": "top_bar_image",
-                "label": "Image"
-            },
-            {
-                "type": "text",
-                "id": "top_bar_text",
-                "label": "Text",
-                "default": "Call Us 24/7"
-            },
-            {
-                "type": "text",
-                "id": "top_bar_phone",
-                "label": "Phone number",
-                "default": "+1 755 302 8549",
-                "info": "This field accepts only numbers, sign '+' and spaces"
-            },
-            {
-                "type": "contentEditor",
-                "id": "top_bar_message",
-                "label": "Message",
-                "default": "Free shipping from €50"
-            },
-            {
-                "type": "menu",
-                "id": "top_bar_menu",
-                "label": "Anoncement menu",
-                "info": "Use menus with one or couple of links max"
-            },
-            {
-                "type": "color",
-                "id": "top_bar_background",
-                "label": "Background color",
-				"default": "#F4B841"
-            },
-            {
-                "type": "color",
-                "id": "top_bar_foreground",
-                "label": "Foreground color",
-				"default": "#0B1A26"
-            },
-            {
-                "type": "header",
-                "content": "Header"
+                "content": "Header settings"
             },
 			{
                 "type": "checkbox",

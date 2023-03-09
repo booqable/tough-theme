@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Kylie",
+    "theme_name": "Taugh",
     "theme_version": "0.1.0",
     "theme_author": "Booqable"
   },
@@ -13,7 +13,7 @@
         "id": "primary_color",
         "label": "Accent background color",
         "info": "Background for solid buttons, date picker, and shopping cart.\n\nNote: if the color is not set the company branding color will be applied.",
-        "default": "#395DB8"
+        "default": "#F4B841"
       },
       {
         "type": "color",
@@ -37,7 +37,7 @@
         "id": "primary_foreground_color",
         "label": "Primary foreground color",
         "info": "For text used on top of primary background color",
-        "default": "#0C2747"
+        "default": "#0B1A26"
       },
       {
         "type": "divider"
@@ -47,7 +47,7 @@
         "id": "link_color",
         "label": "Link color",
         "info": "Used for text links and non-solid buttons",
-        "default": "#395DB8"
+        "default": "#F4B841"
       }
     ]
   },
@@ -59,14 +59,14 @@
         "id": "heading_font",
         "label": "Heading",
         "info": "Font used for headers",
-        "default": "source-sans-pro"
+        "default": "barlow"
       },
       {
         "type": "font_picker",
         "id": "body_font",
         "label": "Body",
         "info": "Font used for texts",
-        "default": "source-sans-pro"
+        "default": "barlow"
       }
     ]
   },

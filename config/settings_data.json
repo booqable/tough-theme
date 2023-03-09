@@ -1,16 +1,41 @@
 {
   "current": {
     "sections": {
+      "top-bar": {
+        "type": "top-bar",
+        "blocks": {},
+        "block_order": [],
+        "settings": {
+          "padding_top": "9",
+          "padding_top_mobile": "9",
+          "padding_bottom": "9",
+          "padding_bottom_mobile": "9",
+          "top_bar_background": "#F4B841",
+          "top_bar_foreground": "#0B1A26",
+          "top_bar_image": "",
+          "top_bar_menu": "",
+          "top_bar_message": "Free shipping from €50",
+          "top_bar_phone": "+1 755 302 8549",
+          "top_bar_text": "Call Us 24/7"
+        }
+      },
       "header": {
         "type": "header",
         "blocks": {},
         "block_order": [],
         "settings": {
-          "menu": "main-menu",
+          "header_background": "#0B1A26",
+          "header_foreground": "#FFFFFF",
           "logo": "",
-          "background_color": "",
-          "foreground_color": "",
-          "search_placeholder": "Search products"
+          "menu": "main-menu",
+          "menu_position": "left-center",
+          "menu_position_mobile": "right",
+          "padding_top": "16",
+          "padding_top_mobile": "16",
+          "padding_bottom": "16",
+          "padding_bottom_mobile": "16",
+          "search_placeholder": "Search",
+          "sticky_header": true
         },
         "disabled": null
       },
