@@ -27,15 +27,15 @@
   {%- case menu_position -%}
     {%- when 'left' -%}
       --justify-content: flex-start;
-  	{%- when 'left-center' -%}
-			--justify-content: center;
-		{%- when 'left-right' -%}
-			--justify-content: flex-end;
+    {%- when 'left-center' -%}
+      --justify-content: center;
+    {%- when 'left-right' -%}
+      --justify-content: flex-end;
     {%- when 'left-below' -%}
       --justify-content: flex-start;
     {%- when 'center-left' -%}
       --justify-content: flex-start;
-	{%- endcase -%}
+  {%- endcase -%}
 
 	{%- case menu_position_mobile -%}
     {%- when 'left' -%}
@@ -139,32 +139,45 @@
   {%- endcapture -%}
 {%- endif -%}
 
+{% comment %} Logo component {% endcomment %}
 {%- capture header_logo -%}
-  <div class="header__logo-wrapper">
-    <a href="{{ routes.root_url }}" class="header__logo">
-      {%- if logo != blank -%}
+  {%- if logo != blank -%}
+    <div class="header__logo-wrapper">
+      <a href="{{ routes.root_url }}" class="header__logo">
         <img
-          src="{{ logo | image_url }}"
+          src="{{ logo | image_url: 'master' }}"
           alt="{{ shop.name }}"
           class="header__logo-image"
         >
-      {%- elsif custom_title != blank -%}
-        <h1 class="header__logo-text">
+      </a>
+    </div>
+  {%- elsif custom_title != blank -%}
+    <div class="header__logo-wrapper">
+      <a href="{{ routes.root_url }}" class="header__logo">
+        <h2 class="header__logo-text">
           {{- custom_title -}}
-        </h1>
-      {%- elsif shop.logo_url != blank -%}
+        </h2>
+      </a>
+    </div>
+  {%- elsif shop.logo_url != blank -%}
+    <div class="header__logo-wrapper">
+      <a href="{{ routes.root_url }}" class="header__logo">
         <img
           src="{{ shop.logo_url }}"
           alt="{{ shop.name }}"
           class="header__logo-image"
         >
-      {%- else -%}
-        <h1 class="header__logo-text">
+      </a>
+    </div>
+  {%- else -%}
+    <div class="header__logo-wrapper">
+      <a href="{{ routes.root_url }}" class="header__logo">
+        <h2 class="header__logo-text">
           {{- shop.name -}}
-        </h1>
-      {%- endif -%}
-    </a>
-  </div>
+        </h2>
+      </a>
+    </div>
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- capture header_search -%}
@@ -250,7 +263,7 @@
       },
       {
         "type": "header",
-        "content": "Header settings"
+        "content": "General settings"
       },
       {
         "type": "checkbox",
@@ -323,14 +336,14 @@
         "id": "padding_top",
         "label": "Padding top",
         "default": "16",
-        "info": "Use positive numbers only"
+        "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom",
         "label": "Padding bottom",
         "default": "16",
-        "info": "Use positive numbers only"
+        "info": "Note: Use positive numbers only"
       },
       {
         "type": "header",
@@ -357,14 +370,14 @@
         "id": "padding_top_mobile",
         "label": "Padding top",
         "default": "16",
-        "info": "Use positive numbers only"
+        "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "default": "16",
-        "info": "Use positive numbers only"
+        "info": "Note: Use positive numbers only"
       }
     ]
   }

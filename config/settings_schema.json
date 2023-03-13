@@ -1,7 +1,7 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Taugh",
+    "theme_name": "Tough",
     "theme_version": "0.1.0",
     "theme_author": "Booqable"
   },
@@ -86,57 +86,67 @@
     "settings": [
       {
         "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter",
-        "info": "https://twitter.com/booqable"
-      },
-      {
-        "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook",
-        "info": "https://facebook.com/booqable"
-      },
-      {
-        "type": "text",
-        "id": "social_pinterest_link",
-        "label": "Pinterest",
-        "info": "https://pinterest.com/booqable"
+        "default": "https://",
+        "info": "Example: https://facebook.com/booqable"
       },
       {
         "type": "text",
         "id": "social_instagram_link",
         "label": "Instagram",
-        "info": "https://instagram.com/booqable"
+        "default": "https://",
+        "info": "Example: https://instagram.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter",
+        "default": "https://",
+        "info": "Example: https://twitter.com/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin",
+        "default": "https://",
+        "info": "Example: https://www.linkedin.com/company/booqable"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest",
+        "info": "Example: https://pinterest.com/booqable"
       },
       {
         "type": "text",
         "id": "social_tiktok_link",
         "label": "TikTok",
-        "info": "https://tiktok.com/@booqable"
+        "info": "Example: https://tiktok.com/@booqable"
       },
       {
         "type": "text",
         "id": "social_tumblr_link",
         "label": "Tumblr",
-        "info": "https://booqable.tumblr.com"
+        "info": "Example: https://booqable.tumblr.com"
       },
       {
         "type": "text",
         "id": "social_snapchat_link",
         "label": "Snapchat",
-        "info": "https://snapchat.com/add/booqable"
+        "info": "Example: https://snapchat.com/add/booqable"
       },
       {
         "type": "text",
         "id": "social_youtube_link",
         "label": "YouTube",
-        "info": "https://youtube.com/booqable"
+        "info": "Example: https://youtube.com/booqable"
       },
       {
         "type": "text",
         "id": "social_vimeo_link",
         "label": "Vimeo",
-        "info": "https://vimeo.com/booqable"
+        "info": "Example: https://vimeo.com/booqable"
       }
     ]
   }

@@ -82,6 +82,10 @@
     display: flex;
     align-items: center;
   }
+
+  .anoncement-bar__menu {
+    justify-content: flex-end;
+  }
 }
 
 @media (min-width: 1100px) {

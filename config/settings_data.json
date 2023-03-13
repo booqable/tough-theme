@@ -12,7 +12,7 @@
           "padding_bottom_mobile": "9",
           "top_bar_background": "#F4B841",
           "top_bar_foreground": "#0B1A26",
-          "top_bar_image": "",
+          "top_bar_image": "booqable://assets/icon-phone.svg",
           "top_bar_menu": "",
           "top_bar_message": "Free shipping from €50",
           "top_bar_phone": "+1 755 302 8549",
@@ -26,7 +26,6 @@
         "settings": {
           "header_background": "#0B1A26",
           "header_foreground": "#FFFFFF",
-          "logo": "",
           "menu": "main-menu",
           "menu_position": "left-center",
           "menu_position_mobile": "right",
