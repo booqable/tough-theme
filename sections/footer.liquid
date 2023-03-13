@@ -1,15 +1,15 @@
 {{ "footer.css" | asset_url | stylesheet_tag }}
 
-{%- assign logo                     = section.settings.logo -%}
-{%- assign custom_title 			= section.settings.custom_title -%}
-{%- assign bottom_menu 				= section.settings.bottom_menu -%}
-{%- assign footer_background 		= section.settings.footer_background -%}
-{%- assign footer_foreground 		= section.settings.footer_foreground -%}
-{%- assign hide_copy 					= section.settings.hide_copy -%}
-{%- assign padding_top 				= section.settings.padding_top -%}
-{%- assign padding_bottom 			= section.settings.padding_bottom -%}
-{%- assign padding_top_mobile 		= section.settings.padding_top_mobile -%}
-{%- assign padding_bottom_mobile 	= section.settings.padding_bottom_mobile -%}
+{%- assign logo						= section.settings.logo -%}
+{%- assign custom_title				= section.settings.custom_title -%}
+{%- assign bottom_menu				= section.settings.bottom_menu -%}
+{%- assign footer_background		= section.settings.footer_background -%}
+{%- assign footer_foreground		= section.settings.footer_foreground -%}
+{%- assign hide_copy				= section.settings.hide_copy -%}
+{%- assign padding_top				= section.settings.padding_top -%}
+{%- assign padding_bottom			= section.settings.padding_bottom -%}
+{%- assign padding_top_mobile		= section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile	= section.settings.padding_bottom_mobile -%}
 
 {% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
@@ -66,10 +66,10 @@
 {%- capture footer_menu -%}
 	<nav class="footer__menu">
 		{%- for block in section.blocks -%}
-			{%- assign heading 				= block.settings.heading -%}
-			{%- assign menu 				= block.settings.menu -%}
-			{%- assign menu_align 			= block.settings.menu_align -%}
-			{%- assign links_color 			= block.settings.links_color -%}
+			{%- assign heading				= block.settings.heading -%}
+			{%- assign menu					= block.settings.menu -%}
+			{%- assign menu_align			= block.settings.menu_align -%}
+			{%- assign links_color			= block.settings.links_color -%}
 
 			{%- capture menu_variables -%}
 				{%- case menu_align -%}
@@ -112,10 +112,10 @@
 {%- capture footer_icons -%}
 	<div class="footer__icons">
 		{%- for block in section.blocks -%}
-			{%- assign social_size 			= block.settings.social_size -%}
-			{%- assign social_spacing 		= block.settings.social_spacing -%}
-			{%- assign payment_size 		= block.settings.payment_size -%}
-			{%- assign payment_spacing 		= block.settings.payment_spacing -%}
+			{%- assign social_size			= block.settings.social_size -%}
+			{%- assign social_spacing		= block.settings.social_spacing -%}
+			{%- assign payment_size			= block.settings.payment_size -%}
+			{%- assign payment_spacing		= block.settings.payment_spacing -%}
 
 			{%- capture social_variables -%}
 				{%- case social_size -%}
