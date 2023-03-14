@@ -20,19 +20,81 @@
           "menu": {
             "type": "menu",
             "settings": {
-              "menu": "main-menu",
-              "align": "center"
-            },
-            "disabled": null
+              "heading": "Column One",
+              "links_color": true,
+              "menu": "column-1",
+              "menu_align": "left"
+            }
+          },
+          "menu_789456": {
+            "type": "menu",
+            "settings": {
+              "heading": "Column Two",
+              "links_color": false,
+              "menu": "column-1",
+              "menu_align": "left"
+            }
+          },
+          "menu_789457": {
+            "type": "menu",
+            "settings": {
+              "heading": "Column Three",
+              "links_color": false,
+              "menu": "column-1",
+              "menu_align": "left"
+            }
+          },
+          "menu_789458": {
+            "type": "menu",
+            "settings": {
+              "heading": "Column Four",
+              "links_color": false,
+              "menu": "column-1",
+              "menu_align": "left"
+            }
+          },
+          "menu_789459": {
+            "type": "menu",
+            "settings": {
+              "heading": "Column Five",
+              "links_color": false,
+              "menu": "column-1",
+              "menu_align": "left"
+            }
+          },
+          "socials": {
+            "type": "socials",
+            "settings": {
+              "social_size": "md",
+              "social_spacing": "lg"
+            }
+          },
+          "payment-methods": {
+            "type": "payment-methods",
+            "settings": {
+              "payment_size": "md",
+              "payment_spacing": "md"
+            }
           }
         },
         "block_order": [
-          "menu"
+          "menu",
+          "menu_789456",
+          "menu_789457",
+          "menu_789458",
+          "menu_789459",
+          "socials",
+          "payment-methods"
         ],
         "settings": {
-          "show_copyright": true,
-          "show_powered_by": true,
-          "align_copyright": "right"
+          "bottom_menu": "bottom-menu",
+          "hide_copy": false,
+          "footer_background": "#FFFFFF",
+          "footer_foreground": "#4E5D78",
+          "padding_bottom": "80",
+          "padding_bottom_mobile": "24",
+          "padding_top": "80",
+          "padding_top_mobile": "24"
         },
         "disabled": null
       }
