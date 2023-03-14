@@ -1,6 +1,18 @@
 {
   "name": "Home",
   "sections": {
+    "hero": {
+      "type": "hero",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "padding_top":"50",
+        "padding_bottom":"50",
+        "padding_top_mobile":"20",
+        "padding_bottom_mobile":"20"
+      },
+      "disabled": null
+    },
     "image-banner": {
       "type": "image-banner",
       "blocks": {
