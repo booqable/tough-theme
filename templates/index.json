@@ -3,13 +3,33 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "title": "Rent heavy equipment",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+            "button_label_1": "Check out products",
+            "button_label_2": "More info",
+            "text_position": "middle-left",
+            "text_position_mobile": "top-left",
+            "background": "#0B1A26",
+            "show_overlay": true,
+            "overlay_color": "#0B1A26",
+            "overlay_opacity": 100
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
       "settings": {
-        "padding_top":"50",
-        "padding_bottom":"50",
-        "padding_top_mobile":"20",
-        "padding_bottom_mobile":"20"
+        "availability": "Check availability:",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_mobile": 47,
+        "padding_bottom_mobile": 23
       },
       "disabled": null
     },
