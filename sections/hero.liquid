@@ -4,8 +4,9 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign availability_image    = section.settings.availability_image -%}
-{%- assign availability_text     = section.settings.availability_text -%}
+{%- assign bottom_image          = section.settings.bottom_image -%}
+{%- assign bottom_text           = section.settings.bottom_text -%}
+{%- assign slider_length         = nil -%}
 
 {%- capture variables -%}
   --padding-top: {{ padding_top }}px;
@@ -16,7 +17,18 @@
 
 {%- if section.blocks.size > 0 -%}
   <div class="hero__wrapper" style="{{- variables | escape -}}">
+    {%- if section.blocks.size > 1 -%}
+      <div class="hero__slider" aria-label="Gallery">
+        <ul class="hero__slider-wrapper">
+    {%- endif -%}
+
     {%- for block in section.blocks -%}
+      {%- assign first                = forloop.first -%}
+      {%- assign last                 = forloop.last -%}
+      {%- assign index                = forloop.index -%}
+      {%- assign index0               = forloop.index0 -%}
+      {%- assign length               = forloop.length -%}
+      {%- assign slider_length        = length | minus: 1 | times: 100 -%}
       {%- assign title                = block.settings.title -%}
       {%- assign description          = block.settings.description -%}
       {%- assign button_label_1       = block.settings.button_label_1 -%}
@@ -31,6 +43,10 @@
       {%- assign show_overlay         = block.settings.show_overlay -%}
       {%- assign overlay_color        = block.settings.overlay_color -%}
       {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
+
+      {%- capture slide_variables -%}
+        --slider-length: -{{ slider_length }}%;
+      {%- endcapture -%}
 
       {%- capture text_variables -%}
         {%- case text_position -%}
@@ -104,38 +120,65 @@
             --text-justify-content-mobile: flex-start;
             --text-align-items-mobile: flex-start;
             --text-align-mobile: left;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: 0;
+            --margin-right-mobile: auto;
           {%- when 'top-center' -%}
             --text-justify-content-mobile: center;
             --text-align-items-mobile: flex-start;
             --text-align-mobile: center;
+            --text-hero-width-mobile: none;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: auto;
           {%- when 'top-right' -%}
             --text-justify-content-mobile: flex-end;
             --text-align-items-mobile: flex-start;
             --text-align-mobile: right;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: 0;
           {%- when 'middle-left' -%}
             --text-justify-content-mobile: flex-start;
             --text-align-items-mobile: center;
             --text-align-mobile: left;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: 0;
+            --margin-right-mobile: auto;
           {%- when 'center' -%}
             --text-justify-content-mobile: center;
             --text-align-items-mobile: center;
             --text-align-mobile: center;
+            --text-hero-width-mobile: none;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: auto;
           {%- when 'middle-right' -%}
             --text-justify-content-mobile: flex-end;
             --text-align-items-mobile: center;
             --text-align-mobile: right;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: 0;
           {%- when 'bottom-left' -%}
             --text-justify-content-mobile: flex-start;
             --text-align-items-mobile: flex-end;
             --text-align-mobile: left;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: 0;
+            --margin-right-mobile: auto;
           {%- when 'bottom-center' -%}
             --text-justify-content-mobile: center;
             --text-align-items-mobile: flex-end;
             --text-align-mobile: center;
+            --text-hero-width-mobile: none;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: auto;
           {%- when 'bottom-right' -%}
             --text-justify-content-mobile: flex-end;
             --text-align-items-mobile: flex-end;
             --text-align-mobile: right;
+            --text-hero-width-mobile: 360px;
+            --margin-left-mobile: auto;
+            --margin-right-mobile: 0;
         {%- endcase -%}
       {%- endcapture -%}
 
@@ -146,8 +189,30 @@
       {%- endcapture -%}
 
       {%- if section.blocks.size > 1 -%}
-        <div class="hero__slider carousel">
-          <div class="hero__slider-inner carousel__inner">
+        <li class="hero__slide" id="slide-{{- index -}}" style="{{- slide_variables | escape -}}">
+          <div class="hero__navigation">
+            {%- assign prev_id = index | minus: 1 -%}
+            {%- assign next_id = index | plus: 1 -%}
+            {%- assign prev_text = 'Prev' -%}
+            {%- assign next_text = 'Next' -%}
+
+            {%- if first -%}
+              {%-assign prev_id = length -%}
+              {%-assign prev_text = 'Last' -%}
+            {%- endif -%}
+
+            {%- if last -%}
+              {%- assign next_id = length | minus: index0 -%}
+              {%- assign next_text = 'First' -%}
+            {%- endif -%}
+
+            <a href="#slide-{{- prev_id -}}" class="hero__nav-button hero__nav-prev">
+              {{- prev_text }} slide
+            </a>
+            <a href="#slide-{{- next_id -}}" class="hero__nav-button hero__nav-next">
+              {{- next_text }} slide
+            </a>
+          </div>
       {%- endif -%}
 
       <div
@@ -178,25 +243,28 @@
           </div>
         </div>
 
-        {%- if availability_image != blank or availability_text != blank -%}
-          <div class="hero__available">
-            {%- if availability_image != blank -%}
-              <img
-                src="{{ availability_image | image_url: 'master' }}"
-                alt="{{ availability_image.alt }}"
-                class="hero__available-image"
-              >
-            {%- endif -%}
+        {% unless section.blocks.size > 1 %}
+          {%- if bottom_image != blank or bottom_text != blank -%}
+            <div class="hero__bottom">
+              {%- if bottom_image != blank -%}
+                <img
+                  src="{{ bottom_image | image_url: 'master' }}"
+                  alt="{{ bottom_image.alt }}"
+                  class="hero__bottom-image"
+                >
+              {%- endif -%}
 
-            {%- if availability_text != blank -%}
-              <span class="hero__available-text text-medium">{{- availability_text -}}</span>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+              {%- if bottom_text != blank -%}
+                <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {% endunless %}
+
       </div>
 
-      {%- if image != blank or image_mobile != blank -%}
-        <div class="hero__images" style="{{- image_variables | escape -}}">
+      <div class="hero__images" style="{{- image_variables | escape -}}">
+        {%- if image != blank or image_mobile != blank -%}
           {%- if image != blank -%}
             <div class="hero__image-wrapper hero__image-wrapper--desktop{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
               {{ image.url | image_tag:
@@ -216,58 +284,73 @@
               }}
             </div>
           {%- endif -%}
-        </div>
-      {%- endif -%}
+        {%- endif -%}
+      </div>
 
       {%- if section.blocks.size > 1 -%}
+          <div class="hero__counter container">
+            {%- for i in (1..length) -%}
+              {%- if i == index -%}
+                <span class="hero__slide-count">{{- i -}}</span>
+                |
+                <span class="hero__slide-summary">{{- length -}}</span>
+              {%- endif -%}
+
+            {%- endfor -%}
           </div>
 
-          <div class="hero__slider-controls carousel__controls">
-            <div class="hero__slider-control carousel__control prev">
-              <i class="fa-regular fa-arrow-left"></i>
-            </div>
-            <div class="hero__slider-control carousel__control next">
-              <i class="fa-regular fa-arrow-right"></i>
-            </div>
+          <div class="hero__pagination container">
+            <ol class="hero__pagination-list">
+              {%- for i in (1..length) -%}
+                <li class="hero__pagination-item">
+                  <a href="#slide-{{- i -}}" class="hero__pagination-button{% if i == index %} active{%- endif -%}">
+                    Go to slide {{ i -}}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ol>
           </div>
-        </div>
+        </li>
+
       {%- endif -%}
+
     {%- endfor -%}
+
+    {%- if section.blocks.size > 1 -%}
+        </ul>
+
+        <div class="hero__pagination container">
+            <ol class="hero__pagination-list">
+              {%- for i in (1..length) -%}
+                <li class="hero__pagination-item">
+                  <a href="#slide-{{- i -}}" class="hero__pagination-button">
+                    Go to slide {{ i -}}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ol>
+          </div>
+
+        {%- if bottom_image != blank or bottom_text != blank -%}
+          <div class="hero__bottom container">
+            {%- if bottom_image != blank -%}
+              <img
+                src="{{ bottom_image | image_url: 'master' }}"
+                alt="{{ bottom_image.alt }}"
+                class="hero__bottom-image"
+              >
+            {%- endif -%}
+
+            {%- if bottom_text != blank -%}
+              <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+    {%- endif -%}
   </div>
 {%- endif -%}
-
-<script>
-  const blocks = [...document.querySelectorAll('.hero__images')];
-  let color;
-
-  const hexToRgb = hex =>
-    hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-      .substring(1).match(/.{2}/g)
-      .map(x => parseInt(x, 16))
-
-
-  blocks.forEach(block => {
-    let data = block.getAttribute('style'),
-        dataObj = data.split(';').reduce((obj, str, index) => {
-          let strParts = str.split(':');
-
-          if (strParts[0] && strParts[1]) {
-            obj[strParts[0].replace(/\s+/g, '')
-                          .replace('--', '')
-                          .replaceAll('-', '_')] = strParts[1].trim();
-          }
-          return obj;
-        }, {});
-
-    color = dataObj.color_hero_overlay;
-
-    block.style.setProperty(
-      '--color-hero-overlay-rgb',
-      `${hexToRgb(color)}`
-    );
-  })
-</script>
 
 {% schema %}
   {
@@ -474,14 +557,14 @@
       },
       {
         "type": "text",
-        "id": "availability_text",
-        "label": "Text",
+        "id": "bottom_text",
+        "label": "Bottom text",
         "default": "Check availability:"
       },
       {
         "type": "image_picker",
-        "id": "availability_image",
-        "label": "Image"
+        "id": "bottom_image",
+        "label": "Bottom image"
       },
       {
         "type": "header",
