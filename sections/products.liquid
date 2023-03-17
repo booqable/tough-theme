@@ -1,6 +1,6 @@
 {{ "products.css" | asset_url | stylesheet_tag }}
 {{ "product.css" | asset_url | stylesheet_tag }}
-{{ "carousels.css" | asset_url | stylesheet_tag }}
+{% comment %} {{ "carousels.css" | asset_url | stylesheet_tag }} {% endcomment %}
 
 {% if section.settings.collection != blank %}
   {% assign data = section.settings.collection.items %}

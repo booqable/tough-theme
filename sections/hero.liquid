@@ -1,4 +1,5 @@
 <link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ 'carousel.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -6,6 +7,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign bottom_image          = section.settings.bottom_image -%}
 {%- assign bottom_text           = section.settings.bottom_text -%}
+{%- assign timer                 = section.settings.timer -%}
 {%- assign slider_length         = nil -%}
 
 {%- capture variables -%}
@@ -13,328 +15,352 @@
   --padding-bottom: {{ padding_bottom }}px;
   --padding-top-mobile: {{ padding_top_mobile }}px;
   --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  --auto-rotate-timer: {{ timer }}s;
+{%- endcapture -%}
+
+{%- capture datepicker_label -%}
+  {%- if bottom_image != blank or bottom_text != blank -%}
+
+    <div class="hero__bottom container">
+      {%- if bottom_image != blank -%}
+        <img
+          src="{{ bottom_image | image_url: 'master' }}"
+          alt="{{ bottom_image.alt }}"
+          class="hero__bottom-image"
+        >
+      {%- endif -%}
+
+      {%- if bottom_text != blank -%}
+        <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
+      {%- endif -%}
+
+    </div>
+
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- if section.blocks.size > 0 -%}
   <div class="hero__wrapper" style="{{- variables | escape -}}">
+
     {%- if section.blocks.size > 1 -%}
-      <div class="hero__slider" aria-label="Gallery">
-        <ul class="hero__slider-wrapper">
+      <div class="carousel" aria-label="Gallery">
+        <ul class="carousel__wrapper">
     {%- endif -%}
 
-    {%- for block in section.blocks -%}
-      {%- assign first                = forloop.first -%}
-      {%- assign last                 = forloop.last -%}
-      {%- assign index                = forloop.index -%}
-      {%- assign index0               = forloop.index0 -%}
-      {%- assign length               = forloop.length -%}
-      {%- assign slider_length        = length | minus: 1 | times: 100 -%}
-      {%- assign title                = block.settings.title -%}
-      {%- assign description          = block.settings.description -%}
-      {%- assign button_label_1       = block.settings.button_label_1 -%}
-      {%- assign button_url_1         = block.settings.button_url_1 -%}
-      {%- assign button_label_2       = block.settings.button_label_2 -%}
-      {%- assign button_url_2         = block.settings.button_url_2 -%}
-      {%- assign text_position        = block.settings.text_position -%}
-      {%- assign text_position_mobile = block.settings.text_position_mobile -%}
-      {%- assign image                = block.settings.image -%}
-      {%- assign image_mobile         = block.settings.image_mobile -%}
-      {%- assign background           = block.settings.background -%}
-      {%- assign show_overlay         = block.settings.show_overlay -%}
-      {%- assign overlay_color        = block.settings.overlay_color -%}
-      {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
+          {%- for block in section.blocks -%}
+            {%- assign first                = forloop.first -%}
+            {%- assign last                 = forloop.last -%}
+            {%- assign index                = forloop.index -%}
+            {%- assign index0               = forloop.index0 -%}
+            {%- assign length               = forloop.length -%}
+            {%- assign slider_length        = length | minus: 1 | times: 100 -%}
+            {%- assign title                = block.settings.title -%}
+            {%- assign description          = block.settings.description -%}
+            {%- assign button_label_1       = block.settings.button_label_1 -%}
+            {%- assign button_url_1         = block.settings.button_url_1 -%}
+            {%- assign button_label_2       = block.settings.button_label_2 -%}
+            {%- assign button_url_2         = block.settings.button_url_2 -%}
+            {%- assign text_position        = block.settings.text_position -%}
+            {%- assign text_position_mobile = block.settings.text_position_mobile -%}
+            {%- assign image                = block.settings.image -%}
+            {%- assign image_mobile         = block.settings.image_mobile -%}
+            {%- assign background           = block.settings.background -%}
+            {%- assign show_overlay         = block.settings.show_overlay -%}
+            {%- assign overlay_color        = block.settings.overlay_color -%}
+            {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
 
-      {%- capture slide_variables -%}
-        --slider-length: -{{ slider_length }}%;
-      {%- endcapture -%}
+            {%- capture slide_variables -%}
+              --slider-length: -{{ slider_length }}%;
+            {%- endcapture -%}
 
-      {%- capture text_variables -%}
-        {%- case text_position -%}
-          {%- when 'top-left' -%}
-            --text-justify-content: flex-start;
-            --text-align-items: flex-start;
-            --text-align: left;
-            --text-hero-width: 360px;
-            --margin-left: 0;
-            --margin-right: auto;
-          {%- when 'top-center' -%}
-            --text-justify-content: center;
-            --text-align-items: flex-start;
-            --text-align: center;
-            --text-hero-width: none;
-            --margin-left: auto;
-            --margin-right: auto;
-          {%- when 'top-right' -%}
-            --text-justify-content: flex-end;
-            --text-align-items: flex-start;
-            --text-align: right;
-            --text-hero-width: 360px;
-            --margin-left: auto;
-            --margin-right: 0;
-          {%- when 'middle-left' -%}
-            --text-justify-content: flex-start;
-            --text-align-items: center;
-            --text-align: left;
-            --text-hero-width: 360px;
-            --margin-left: 0;
-            --margin-right: auto;
-          {%- when 'center' -%}
-            --text-justify-content: center;
-            --text-align-items: center;
-            --text-align: center;
-            --text-hero-width: none;
-            --margin-left: auto;
-            --margin-right: auto;
-          {%- when 'middle-right' -%}
-            --text-justify-content: flex-end;
-            --text-align-items: center;
-            --text-align: right;
-            --text-hero-width: 360px;
-            --margin-left: auto;
-            --margin-right: 0;
-          {%- when 'bottom-left' -%}
-            --text-justify-content: flex-start;
-            --text-align-items: flex-end;
-            --text-align: left;
-            --text-hero-width: 360px;
-            --margin-left: 0;
-            --margin-right: auto;
-          {%- when 'bottom-center' -%}
-            --text-justify-content: center;
-            --text-align-items: flex-end;
-            --text-align: center;
-            --text-hero-width: none;
-            --margin-left: auto;
-            --margin-right: auto;
-          {%- when 'bottom-right' -%}
-            --text-justify-content: flex-end;
-            --text-align-items: flex-end;
-            --text-align: right;
-            --text-hero-width: 360px;
-            --margin-left: auto;
-            --margin-right: 0;
-        {%- endcase -%}
+            {%- capture text_variables -%}
+              {%- case text_position -%}
+                {%- when 'top-left' -%}
+                  --text-justify-content: flex-start;
+                  --text-align-items: flex-start;
+                  --text-align: left;
+                  --text-hero-width: 360px;
+                  --margin-left: 0;
+                  --margin-right: auto;
+                {%- when 'top-center' -%}
+                  --text-justify-content: center;
+                  --text-align-items: flex-start;
+                  --text-align: center;
+                  --text-hero-width: none;
+                  --margin-left: auto;
+                  --margin-right: auto;
+                {%- when 'top-right' -%}
+                  --text-justify-content: flex-end;
+                  --text-align-items: flex-start;
+                  --text-align: right;
+                  --text-hero-width: 360px;
+                  --margin-left: auto;
+                  --margin-right: 0;
+                {%- when 'middle-left' -%}
+                  --text-justify-content: flex-start;
+                  --text-align-items: center;
+                  --text-align: left;
+                  --text-hero-width: 360px;
+                  --margin-left: 0;
+                  --margin-right: auto;
+                {%- when 'center' -%}
+                  --text-justify-content: center;
+                  --text-align-items: center;
+                  --text-align: center;
+                  --text-hero-width: none;
+                  --margin-left: auto;
+                  --margin-right: auto;
+                {%- when 'middle-right' -%}
+                  --text-justify-content: flex-end;
+                  --text-align-items: center;
+                  --text-align: right;
+                  --text-hero-width: 360px;
+                  --margin-left: auto;
+                  --margin-right: 0;
+                {%- when 'bottom-left' -%}
+                  --text-justify-content: flex-start;
+                  --text-align-items: flex-end;
+                  --text-align: left;
+                  --text-hero-width: 360px;
+                  --margin-left: 0;
+                  --margin-right: auto;
+                {%- when 'bottom-center' -%}
+                  --text-justify-content: center;
+                  --text-align-items: flex-end;
+                  --text-align: center;
+                  --text-hero-width: none;
+                  --margin-left: auto;
+                  --margin-right: auto;
+                {%- when 'bottom-right' -%}
+                  --text-justify-content: flex-end;
+                  --text-align-items: flex-end;
+                  --text-align: right;
+                  --text-hero-width: 360px;
+                  --margin-left: auto;
+                  --margin-right: 0;
+              {%- endcase -%}
 
-        {%- case text_position_mobile -%}
-          {%- when 'top-left' -%}
-            --text-justify-content-mobile: flex-start;
-            --text-align-items-mobile: flex-start;
-            --text-align-mobile: left;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: 0;
-            --margin-right-mobile: auto;
-          {%- when 'top-center' -%}
-            --text-justify-content-mobile: center;
-            --text-align-items-mobile: flex-start;
-            --text-align-mobile: center;
-            --text-hero-width-mobile: none;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: auto;
-          {%- when 'top-right' -%}
-            --text-justify-content-mobile: flex-end;
-            --text-align-items-mobile: flex-start;
-            --text-align-mobile: right;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: 0;
-          {%- when 'middle-left' -%}
-            --text-justify-content-mobile: flex-start;
-            --text-align-items-mobile: center;
-            --text-align-mobile: left;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: 0;
-            --margin-right-mobile: auto;
-          {%- when 'center' -%}
-            --text-justify-content-mobile: center;
-            --text-align-items-mobile: center;
-            --text-align-mobile: center;
-            --text-hero-width-mobile: none;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: auto;
-          {%- when 'middle-right' -%}
-            --text-justify-content-mobile: flex-end;
-            --text-align-items-mobile: center;
-            --text-align-mobile: right;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: 0;
-          {%- when 'bottom-left' -%}
-            --text-justify-content-mobile: flex-start;
-            --text-align-items-mobile: flex-end;
-            --text-align-mobile: left;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: 0;
-            --margin-right-mobile: auto;
-          {%- when 'bottom-center' -%}
-            --text-justify-content-mobile: center;
-            --text-align-items-mobile: flex-end;
-            --text-align-mobile: center;
-            --text-hero-width-mobile: none;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: auto;
-          {%- when 'bottom-right' -%}
-            --text-justify-content-mobile: flex-end;
-            --text-align-items-mobile: flex-end;
-            --text-align-mobile: right;
-            --text-hero-width-mobile: 360px;
-            --margin-left-mobile: auto;
-            --margin-right-mobile: 0;
-        {%- endcase -%}
-      {%- endcapture -%}
+              {%- case text_position_mobile -%}
+                {%- when 'top-left' -%}
+                  --text-justify-content-mobile: flex-start;
+                  --text-align-items-mobile: flex-start;
+                  --text-align-mobile: left;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: 0;
+                  --margin-right-mobile: auto;
+                {%- when 'top-center' -%}
+                  --text-justify-content-mobile: center;
+                  --text-align-items-mobile: flex-start;
+                  --text-align-mobile: center;
+                  --text-hero-width-mobile: none;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: auto;
+                {%- when 'top-right' -%}
+                  --text-justify-content-mobile: flex-end;
+                  --text-align-items-mobile: flex-start;
+                  --text-align-mobile: right;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: 0;
+                {%- when 'middle-left' -%}
+                  --text-justify-content-mobile: flex-start;
+                  --text-align-items-mobile: center;
+                  --text-align-mobile: left;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: 0;
+                  --margin-right-mobile: auto;
+                {%- when 'center' -%}
+                  --text-justify-content-mobile: center;
+                  --text-align-items-mobile: center;
+                  --text-align-mobile: center;
+                  --text-hero-width-mobile: none;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: auto;
+                {%- when 'middle-right' -%}
+                  --text-justify-content-mobile: flex-end;
+                  --text-align-items-mobile: center;
+                  --text-align-mobile: right;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: 0;
+                {%- when 'bottom-left' -%}
+                  --text-justify-content-mobile: flex-start;
+                  --text-align-items-mobile: flex-end;
+                  --text-align-mobile: left;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: 0;
+                  --margin-right-mobile: auto;
+                {%- when 'bottom-center' -%}
+                  --text-justify-content-mobile: center;
+                  --text-align-items-mobile: flex-end;
+                  --text-align-mobile: center;
+                  --text-hero-width-mobile: none;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: auto;
+                {%- when 'bottom-right' -%}
+                  --text-justify-content-mobile: flex-end;
+                  --text-align-items-mobile: flex-end;
+                  --text-align-mobile: right;
+                  --text-hero-width-mobile: 360px;
+                  --margin-left-mobile: auto;
+                  --margin-right-mobile: 0;
+              {%- endcase -%}
+            {%- endcapture -%}
 
-      {%- capture image_variables -%}
-        --color-hero-background: {{ background }};
-        --color-hero-overlay: {{ overlay_color }};
-        --opacity-hero-overlay: {{ overlay_opacity }}%;
-      {%- endcapture -%}
+            {%- capture image_variables -%}
+              --color-hero-background: {{ background }};
+              --color-hero-overlay: {{ overlay_color }};
+              --opacity-hero-overlay: {{ overlay_opacity }}%;
+            {%- endcapture -%}
 
-      {%- if section.blocks.size > 1 -%}
-        <li class="hero__slide" id="slide-{{- index -}}" style="{{- slide_variables | escape -}}">
-          <div class="hero__navigation">
-            {%- assign prev_id = index | minus: 1 -%}
-            {%- assign next_id = index | plus: 1 -%}
-            {%- assign prev_text = 'Prev' -%}
-            {%- assign next_text = 'Next' -%}
 
-            {%- if first -%}
-              {%-assign prev_id = length -%}
-              {%-assign prev_text = 'Last' -%}
+            {%- if section.blocks.size > 1 -%}
+
+              {%- capture carousel_arrows -%}
+                <div class="carousel__arrows">
+                  {%- assign prev_id = index | minus: 1 -%}
+                  {%- assign next_id = index | plus: 1 -%}
+                  {%- assign prev_text = 'Prev' -%}
+                  {%- assign next_text = 'Next' -%}
+
+                  {%- if first -%}
+                    {%-assign prev_id = length -%}
+                    {%-assign prev_text = 'Last' -%}
+                  {%- endif -%}
+
+                  {%- if last -%}
+                    {%- assign next_id = length | minus: index0 -%}
+                    {%- assign next_text = 'First' -%}
+                  {%- endif -%}
+
+                  <a href="#slide-{{- prev_id -}}" class="carousel__arrow carousel__arrow-prev">
+                    {{- prev_text }} slide
+                  </a>
+                  <a href="#slide-{{- next_id -}}" class="carousel__arrow carousel__arrow-next">
+                    {{- next_text }} slide
+                  </a>
+                </div>
+              {%- endcapture -%}
+
+              {%- capture carousel_bullets -%}
+                <div class="carousel__bullets container">
+                  <ol class="carousel__bullets-list">
+                    {%- for i in (1..length) -%}
+                      <li class="carousel__bullets-item">
+                        <a href="#slide-{{- i -}}" class="carousel__bullet{% if i == index %} active{%- endif -%}
+                        ">
+                          Go to slide {{ i -}}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ol>
+                </div>
+              {%- endcapture -%}
+
+              {%- capture carousel_counter -%}
+                <div class="carousel__counter container">
+                  {%- for i in (1..length) -%}
+                    {%- if i == index -%}
+                      <span class="carousel__slide-count">{{- i -}}</span>
+                      |
+                      <span class="carousel__slide-summary">{{- length -}}</span>
+                    {%- endif -%}
+
+                  {%- endfor -%}
+                </div>
+              {%- endcapture -%}
+
+
+
+              <li class="carousel__slide" id="slide-{{- index -}}" style="{{- slide_variables | escape -}}">
+
+                {{- carousel_arrows -}}
+
             {%- endif -%}
 
-            {%- if last -%}
-              {%- assign next_id = length | minus: index0 -%}
-              {%- assign next_text = 'First' -%}
-            {%- endif -%}
-
-            <a href="#slide-{{- prev_id -}}" class="hero__nav-button hero__nav-prev">
-              {{- prev_text }} slide
-            </a>
-            <a href="#slide-{{- next_id -}}" class="hero__nav-button hero__nav-next">
-              {{- next_text }} slide
-            </a>
-          </div>
-      {%- endif -%}
-
-      <div
-        class="hero__container container{% if padding_top != 0 or padding_top_mobile != 0 %} hero__container--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} hero__container--padding-bottom{%- endif -%}"
-        style="{{- text_variables | escape -}}"
-      >
-        <div class="hero__inner">
-          <div class="hero__content">
-            {%- if title != blank -%}
-              <h1 class="hero__title">{{- title -}}</h1>
-            {%- endif -%}
-
-            {%- if description != blank -%}
-              <div class="hero__description text-medium">{{- description -}}</div>
-            {%- endif -%}
-
-            {%- if button_label_1 != blank and button_url_1 != blank or button_label_2 != blank and button_url_2 != blank -%}
-              <div class="hero__buttons">
-                {%- if button_label_1 != blank and button_url_1 != blank -%}
-                  <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_label_1 -}}</a>
-                {%- endif -%}
-
-                {%- if button_label_2 != blank and button_url_2 != blank -%}
-                  <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_label_2 -}}</a>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-          </div>
-        </div>
-
-        {% unless section.blocks.size > 1 %}
-          {%- if bottom_image != blank or bottom_text != blank -%}
-            <div class="hero__bottom">
-              {%- if bottom_image != blank -%}
-                <img
-                  src="{{ bottom_image | image_url: 'master' }}"
-                  alt="{{ bottom_image.alt }}"
-                  class="hero__bottom-image"
+                <div
+                  class="hero__container container{% if padding_top != 0 or padding_top_mobile != 0 %} hero__container--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} hero__container--padding-bottom{%- endif -%}"
+                  style="{{- text_variables | escape -}}"
                 >
-              {%- endif -%}
+                  <div class="hero__inner">
+                    <div class="hero__content">
 
-              {%- if bottom_text != blank -%}
-                <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-        {% endunless %}
+                      {%- if title != blank -%}
+                        <h1 class="hero__title">{{- title -}}</h1>
+                      {%- endif -%}
 
-      </div>
+                      {%- if description != blank -%}
+                        <div class="hero__description text-medium">{{- description -}}</div>
+                      {%- endif -%}
 
-      <div class="hero__images" style="{{- image_variables | escape -}}">
-        {%- if image != blank or image_mobile != blank -%}
-          {%- if image != blank -%}
-            <div class="hero__image-wrapper hero__image-wrapper--desktop{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
-              {{ image.url | image_tag:
-                loading: 'lazy',
-                class: 'hero__image',
-                widths: '990, 1400, 1900, 2500'
-              }}
-            </div>
-          {%- endif -%}
+                      {%- if button_label_1 != blank and button_url_1 != blank or button_label_2 != blank and button_url_2 != blank -%}
+                        <div class="hero__buttons">
 
-          {%- if image_mobile != blank -%}
-            <div class="hero__image-wrapper hero__image-wrapper--mobile{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
-              {{ image_mobile.url | image_tag:
-                loading: 'lazy',
-                class: 'hero__image',
-                widths: '320, 480, 567'
-              }}
-            </div>
-          {%- endif -%}
-        {%- endif -%}
-      </div>
+                          {%- if button_label_1 != blank and button_url_1 != blank -%}
+                            <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_label_1 -}}</a>
+                          {%- endif -%}
+
+                          {%- if button_label_2 != blank and button_url_2 != blank -%}
+                            <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_label_2 -}}</a>
+                          {%- endif -%}
+
+                        </div>
+                      {%- endif -%}
+
+                    </div>
+                  </div>
+
+                  {% unless section.blocks.size > 1 %}
+
+                    {{- datepicker_label -}}
+
+                  {% endunless %}
+
+                </div>
+
+                <div class="hero__images" style="{{- image_variables | escape -}}">
+                  {%- if image != blank or image_mobile != blank -%}
+
+                    {%- if image != blank -%}
+                      <div class="hero__image-wrapper hero__image-wrapper--desktop{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
+                        {{ image.url | image_tag:
+                          loading: 'lazy',
+                          class: 'hero__image',
+                          widths: '990, 1400, 1900, 2500'
+                        }}
+                      </div>
+                    {%- endif -%}
+
+                    {%- if image_mobile != blank -%}
+                      <div class="hero__image-wrapper hero__image-wrapper--mobile{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
+                        {{ image_mobile.url | image_tag:
+                          loading: 'lazy',
+                          class: 'hero__image',
+                          widths: '320, 480, 567'
+                        }}
+                      </div>
+                    {%- endif -%}
+
+                  {%- endif -%}
+                </div>
+
+            {%- if section.blocks.size > 1 -%}
+
+                {{- carousel_counter -}}
+
+                {{- carousel_bullets -}}
+
+              </li>
+            {%- endif -%}
+
+          {%- endfor -%}
 
       {%- if section.blocks.size > 1 -%}
-          <div class="hero__counter container">
-            {%- for i in (1..length) -%}
-              {%- if i == index -%}
-                <span class="hero__slide-count">{{- i -}}</span>
-                |
-                <span class="hero__slide-summary">{{- length -}}</span>
-              {%- endif -%}
-
-            {%- endfor -%}
-          </div>
-
-        </li>
-
-      {%- endif -%}
-
-    {%- endfor -%}
-
-    {%- if section.blocks.size > 1 -%}
         </ul>
 
-        <div class="hero__pagination container">
-          <ol class="hero__pagination-list">
-            {%- for i in (1..length) -%}
-              <li class="hero__pagination-item">
-                <a href="#slide-{{- i -}}" class="hero__pagination-button">
-                  Go to slide {{ i -}}
-                </a>
-              </li>
-            {%- endfor -%}
-          </ol>
-        </div>
+        {{- carousel_bullets -}}
 
-        {%- if bottom_image != blank or bottom_text != blank -%}
-          <div class="hero__bottom container">
-            {%- if bottom_image != blank -%}
-              <img
-                src="{{ bottom_image | image_url: 'master' }}"
-                alt="{{ bottom_image.alt }}"
-                class="hero__bottom-image"
-              >
-            {%- endif -%}
-
-            {%- if bottom_text != blank -%}
-              <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
-            {%- endif -%}
-          </div>
-        {%- endif -%}
+        {{- datepicker_label -}}
 
       </div>
     {%- endif -%}
@@ -554,6 +580,19 @@
         "type": "image_picker",
         "id": "bottom_image",
         "label": "Bottom image"
+      },
+      {
+        "type": "header",
+        "content": "Carousel settings"
+      },
+      {
+        "type": "number",
+        "id": "timer",
+        "label": "Timer",
+        "min": 0,
+        "max": 100,
+        "default": 5,
+        "info": "Note: Use only positive numbers for pauses between rotating slides. 0 to turn off auto rotate"
       },
       {
         "type": "header",
