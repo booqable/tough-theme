@@ -1,6 +1,21 @@
 const selectors = {
+  slider: '.hero__slider',
   images: '.hero__images',
-  slides: '.hero__navigation'
+  navigation: '.hero__navigation',
+  switchers: '.hero__pagination-item',
+  switcherActive: '.hero__pagination-item.active'
+}
+
+const classes = {
+  switcher: 'hero__pagination-item',
+  active: 'active'
+}
+
+const props = {
+  cssVar: '--color-hero-overlay-rgb',
+  animationNext: 'tonext',
+  animationStart: 'tostart',
+  animationSnap: 'snap'
 }
 
 class Hero {
@@ -13,76 +28,103 @@ class Hero {
 
     this.initElements();
     this.initEvents();
-    this.convertHexToRgb();
-    this.inViewPort();
   }
 
   initElements() {
     this.images = [...this.container.querySelectorAll(selectors.images)];
-    this.slides = [...this.container.querySelectorAll(selectors.slides)];
     this.color = null;
-    this.timer = 0;
+
+    this.slider = this.container.querySelector(selectors.slider);
+    this.switchers = [...this.container.querySelectorAll(selectors.switchers)];
+    this.switcherParent = [...this.switchers];
+    this.navigation = [...this.container.querySelectorAll(selectors.navigation)];
+    this.target = this.switchers[0].firstElementChild;
+    this.interval = null;
   }
 
   initEvents() {
+    this.convertHexToRgb();
+
+    if (!this.slider) return null;
+
+    this.activeSwitcher();
+    document.addEventListener("click", this.toggleSwitcher.bind(this));
+    this.slider.addEventListener("mouseenter", this.animationOff.bind(this));
+    this.slider.addEventListener("mouseleave", this.animationOn.bind(this));
   }
 
-  myTimer() {
-    console.log('my timer')
+  animationOff() {
+    clearInterval(this.interval)
+
+    this.navigation.forEach(element => {
+      element.style.animationName = 'none'
+    });
   }
 
-  inViewPort() {
-    if (!this.slides.length) return false;
+  animationOn() {
+    this.nextSwitcher();
 
-    this.slides.forEach((slide, i) => {
+    this.navigation.forEach((element, index, array) => {
+      index !== array.length - 1
+        ? element.style.animationName = `${props.animationNext}, ${props.animationSnap}`
+        : element.style.animationName = `${props.animationStart}, ${props.animationSnap}`
+    });
+  }
 
-      // slide.addEventListener('animationend', function(e) {
-      //   console.log('ended');
-      //   clearInterval(slide.interval);
-      //   this.timer = 0;
-      // });
+  // trigger(el, eventType) {
+  //   if (typeof eventType === 'string' && typeof el[eventType] === 'function') {
+  //     el[eventType]();
+  //   } else {
+  //     const event =
+  //       typeof eventType === 'string'
+  //         ? new Event(eventType, {bubbles: true})
+  //         : eventType;
+  //     el.dispatchEvent(event);
+  //   }
+  // }
 
-
-      slide.addEventListener('animationstart', function(e) {
-        console.log('started');
-        this.timer = 4000;
-
-        const myTimer = () => {
-          console.log('my timer')
-        }
-
-        setInterval(myTimer(), this.timer);
-        // console.log(myTimer())
-      });
-
-      // slide.addEventListener('onanimate', function(e) {
-      //   console.log(e.timeStamp);
-      // });
-
-    // });
-
-
-
-
-      // let bounding = slide.getBoundingClientRect();
-
-      // console.log(i);
-
-      // this.timer = setInterval(() => {
-      //   if (bounding.top >= 0
-      //       && bounding.left >= 0
-      //       && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-      //       && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-
-      //       console.log(i + ' Element is in the viewport!');
-      //   } else {
-
-      //     console.log(i + ' Element is NOT in the viewport!');
-      //   }
-      // }, 4000);
-
+  activeSwitcher() {
+    this.switchers.forEach(switcher => {
+      switcher.classList.remove(classes.active);
+      this.target.parentElement.classList.add(classes.active);
     })
+
+    this.nextSwitcher();
+
   }
+
+  nextSwitcher() {
+    this.switcherActive = this.container.querySelector(selectors.switcherActive);
+
+    // if (this.interval) return null;
+
+    this.interval = setInterval(() => {
+      let next;
+
+      !this.switcherParent.slice(-1)[0].classList.contains(classes.active)
+        ? next = this.switcherActive.nextElementSibling
+        : next = this.switcherParent[0];
+
+      if (next) {
+        this.switcherActive.classList.remove(classes.active)
+        next.classList.add(classes.active)
+        this.switcherActive = next
+      } else {
+        clearInterval(this.interval)
+      }
+    }, 4000);
+  }
+
+  toggleSwitcher(e) {
+    this.target = e.target;
+
+    if (!this.target.parentElement.classList.contains(classes.switcher)) return null;
+
+    clearInterval(this.interval)
+
+    this.activeSwitcher();
+  }
+
 
   convertHexToRgb() {
     if (!this.images.length) return false;
@@ -109,7 +151,7 @@ class Hero {
       this.color = dataObj.color_hero_overlay;
 
       image.style.setProperty(
-        '--color-hero-overlay-rgb',
+        `${props.cssVar}`,
         `${hexToRgb(this.color)}`
       );
     })

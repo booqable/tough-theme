@@ -157,7 +157,7 @@
   }
 }
 
-@keyframes switcher {
+/* @keyframes switcher {
   0% {
     opacity: 0;
   }
@@ -176,7 +176,7 @@
   86% {
     opacity: 0;
   }
-}
+} */
 
 .hero__slider {
   position: relative;
@@ -265,7 +265,7 @@
 
 .hero__slider:hover .hero__navigation,
 .hero__slider:focus-within .hero__navigation {
-  animation-name: none;
+  /* animation-name: none; */
 }
 
 .hero__counter {
@@ -304,15 +304,15 @@
 }
 
 .hero__slide .hero__pagination-button {
-  opacity: 0;
+  /* opacity: 0; */
 }
 
-.hero__slide .hero__pagination-button.active {
-  /* opacity: 1; */
-  animation-name: switcher;
+.hero__pagination-item.active .hero__pagination-button {
+  opacity: 1;
+  /* animation-name: switcher;
   animation-timing-function: ease;
   animation-duration: 3.9s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite; */
 }
 
 

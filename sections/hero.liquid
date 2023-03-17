@@ -299,17 +299,6 @@
             {%- endfor -%}
           </div>
 
-          <div class="hero__pagination container">
-            <ol class="hero__pagination-list">
-              {%- for i in (1..length) -%}
-                <li class="hero__pagination-item">
-                  <a href="#slide-{{- i -}}" class="hero__pagination-button{% if i == index %} active{%- endif -%}">
-                    Go to slide {{ i -}}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ol>
-          </div>
         </li>
 
       {%- endif -%}
@@ -320,16 +309,16 @@
         </ul>
 
         <div class="hero__pagination container">
-            <ol class="hero__pagination-list">
-              {%- for i in (1..length) -%}
-                <li class="hero__pagination-item">
-                  <a href="#slide-{{- i -}}" class="hero__pagination-button">
-                    Go to slide {{ i -}}
-                  </a>
-                </li>
-              {%- endfor -%}
-            </ol>
-          </div>
+          <ol class="hero__pagination-list">
+            {%- for i in (1..length) -%}
+              <li class="hero__pagination-item">
+                <a href="#slide-{{- i -}}" class="hero__pagination-button">
+                  Go to slide {{ i -}}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ol>
+        </div>
 
         {%- if bottom_image != blank or bottom_text != blank -%}
           <div class="hero__bottom container">
