@@ -7,7 +7,7 @@
 
 .header--sticky {
   position: fixed;
-  top: var(--top-bar-height, 32px);
+  top: var(--announcement-bar-height, 32px);
   left: 0;
   right: 0;
   transform: translateY(var(--header-transform));

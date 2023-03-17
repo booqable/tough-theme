@@ -9,8 +9,8 @@
 }
 
 .anoncement-bar__wrapper {
-  color: var(--color-top-bar-foreground, #0B1A26);
-  background-color: var(--color-top-bar-background, #F4B841);
+  color: var(--color-announcement-bar-foreground, #0B1A26);
+  background-color: var(--color-announcement-bar-background, #F4B841);
   font-size: 14px;
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-xs);

@@ -40,6 +40,8 @@
 	{%- case menu_position_mobile -%}
     {%- when 'left' -%}
       --translate: translateX(-100%);
+    {%- when 'left' -%}
+      --translate: translate(0, -100%);
 		{%- when 'right' -%}
 			--translate: translateX(100%);
 	{%- endcase -%}
@@ -54,7 +56,7 @@
 
 {%- if menu != blank -%}
   {%- capture header_menu -%}
-    <div class="header__nav-wrapper">
+    <div class="header__nav-wrapper header__nav-wrapper--{{- menu_position_mobile -}}">
       <input type="checkbox" id="mobile-menu-trigger" style="display: none;">
       <label for="mobile-menu-trigger" class="menu__opener">
         <span></span>
@@ -355,6 +357,10 @@
         "label": "Menu appearance",
         "options": [
           {
+            "value": "top",
+            "label": "From top"
+          },
+          {
             "value": "left",
             "label": "From left"
           },
@@ -363,7 +369,7 @@
             "label": "From right"
           }
         ],
-        "default": "left"
+        "default": "top"
       },
       {
         "type": "number",

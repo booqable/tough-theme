@@ -1,64 +1,64 @@
-<link rel="preload" href="{{ 'top-bar.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ 'announcement-bar.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-{%- assign hide_top_bar           = section.settings.hide_top_bar -%}
-{%- assign top_bar_image          = section.settings.top_bar_image -%}
-{%- assign top_bar_text           = section.settings.top_bar_text -%}
-{%- assign top_bar_phone          = section.settings.top_bar_phone -%}
-{%- assign top_bar_message        = section.settings.top_bar_message -%}
-{%- assign top_bar_menu           = section.settings.top_bar_menu -%}
-{%- assign top_bar_background     = section.settings.top_bar_background -%}
-{%- assign top_bar_foreground     = section.settings.top_bar_foreground -%}
-{%- assign padding_top            = section.settings.padding_top -%}
-{%- assign padding_bottom         = section.settings.padding_bottom -%}
-{%- assign padding_top_mobile     = section.settings.padding_top_mobile -%}
-{%- assign padding_bottom_mobile  = section.settings.padding_bottom_mobile -%}
+{%- assign hide_announcement_bar        = section.settings.hide_announcement_bar -%}
+{%- assign announcement_bar_image       = section.settings.announcement_bar_image -%}
+{%- assign announcement_bar_text        = section.settings.announcement_bar_text -%}
+{%- assign announcement_bar_phone       = section.settings.announcement_bar_phone -%}
+{%- assign announcement_bar_message     = section.settings.announcement_bar_message -%}
+{%- assign announcement_bar_menu        = section.settings.announcement_bar_menu -%}
+{%- assign announcement_bar_background  = section.settings.announcement_bar_background -%}
+{%- assign announcement_bar_foreground  = section.settings.announcement_bar_foreground -%}
+{%- assign padding_top                  = section.settings.padding_top -%}
+{%- assign padding_bottom               = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile           = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile        = section.settings.padding_bottom_mobile -%}
 
 {%- capture variables -%}
-  --color-top-bar-background: {{ top_bar_background }};
-  --color-top-bar-foreground: {{ top_bar_foreground }};
+  --color-announcement-bar-background: {{ announcement_bar_background }};
+  --color-announcement-bar-foreground: {{ announcement_bar_foreground }};
   --padding-top: {{ padding_top }}px;
   --padding-bottom: {{ padding_bottom }}px;
   --padding-top-mobile: {{ padding_top_mobile }}px;
   --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
 {%- endcapture -%}
 
-{%- if hide_top_bar != true -%}
+{%- if hide_announcement_bar != true -%}
   <div class="anoncement-bar__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} anoncement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} anoncement-bar__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
     <div class="anoncement-bar__container container">
       <div class="anoncement-bar__info">
-        {%- if top_bar_image != blank -%}
+        {%- if announcement_bar_image != blank -%}
           <img
-            src="{{ top_bar_image | image_url }}"
-            alt="{{- top_bar_image.alt -}}"
+            src="{{ announcement_bar_image | image_url }}"
+            alt="{{- announcement_bar_image.alt -}}"
             class="anoncement-bar__icon"
           >
         {%- endif -%}
 
-        {%- if top_bar_text != blank -%}
+        {%- if announcement_bar_text != blank -%}
           <span class="anoncement-bar__text">
-            {{- top_bar_text -}}
+            {{- announcement_bar_text -}}
           </span>
         {%- endif -%}
 
-        {%- if top_bar_phone != blank -%}
+        {%- if announcement_bar_phone != blank -%}
           <span class="anoncement-bar__phone">
-            <a href="tel:{{ top_bar_phone | remove: '+' | remove: ' ' }}" class="anoncement-bar__phone-link" style="font-size: 14px">
-              {{- top_bar_phone -}}
+            <a href="tel:{{ announcement_bar_phone | remove: '+' | remove: ' ' }}" class="anoncement-bar__phone-link" style="font-size: 14px">
+              {{- announcement_bar_phone -}}
             </a>
           </span>
         {%- endif -%}
       </div>
 
       <span class="anoncement-bar__text">
-        {%- if top_bar_message != blank -%}
-          {{- top_bar_message -}}
+        {%- if announcement_bar_message != blank -%}
+          {{- announcement_bar_message -}}
         {%- endif -%}
       </span>
 
       <nav class="anoncement-bar__menu">
-        {%- if top_bar_menu != blank -%}
+        {%- if announcement_bar_menu != blank -%}
           <ul class="anoncement-bar__menu-list">
-            {%- for link in top_bar_menu.items -%}
+            {%- for link in announcement_bar_menu.items -%}
               {%- if link != blank -%}
                 <li class="anoncement-bar__menu-item">
                   <a href="{{ link.url }}" class="anoncement-bar__menu-link">
@@ -87,49 +87,49 @@
       },
       {
         "type": "checkbox",
-        "id": "hide_top_bar",
+        "id": "hide_announcement_bar",
         "default": false,
         "label": "Hide bar"
       },
       {
         "type": "image_picker",
-        "id": "top_bar_image",
+        "id": "announcement_bar_image",
         "label": "Image"
       },
       {
         "type": "text",
-        "id": "top_bar_text",
+        "id": "announcement_bar_text",
         "label": "Text",
         "default": "Call Us 24/7"
       },
       {
         "type": "text",
-        "id": "top_bar_phone",
+        "id": "announcement_bar_phone",
         "label": "Phone number",
         "default": "+1 755 302 8549",
         "info": "Note: This field accepts only numbers, sign '+' and spaces"
       },
       {
         "type": "contentEditor",
-        "id": "top_bar_message",
+        "id": "announcement_bar_message",
         "label": "Message",
         "default": "Free shipping from €50"
       },
       {
         "type": "menu",
-        "id": "top_bar_menu",
+        "id": "announcement_bar_menu",
         "label": "Anoncement menu",
         "info": "Note: Use menus with one or couple of links max"
       },
       {
         "type": "color",
-        "id": "top_bar_background",
+        "id": "announcement_bar_background",
         "label": "Background color",
         "default": "#F4B841"
       },
       {
         "type": "color",
-        "id": "top_bar_foreground",
+        "id": "announcement_bar_foreground",
         "label": "Foreground color",
         "default": "#0B1A26"
       },

@@ -1,12 +1,18 @@
 const selects = {
   body: "body",
   previewBar: ".preview-bar__container",
-  topBar: ".anoncement-bar"
+  announcementBar: ".anoncement-bar"
 };
 
 const modifiers = {
   scrolled: "page-scrolled"
 };
+
+const props = {
+  transform: '--header-transform',
+  height: '--header-height',
+  barHeight: '--announcement-bar-height'
+}
 
 const minHeight = 180;
 
@@ -27,7 +33,7 @@ class Header {
   initElements() {
     this.body = document.querySelector(selects.body);
     this.previewBar = document.querySelector(selects.previewBar);
-    this.topBar = document.querySelector(selects.topBar);
+    this.announcementBar = document.querySelector(selects.announcementBar);
     this.lastScroll = 0;
 
     setTimeout(() => {
@@ -43,12 +49,12 @@ class Header {
   // getting height of header
   getHeaderHeight() {
     let headerHeight = this.container.getBoundingClientRect().height,
-      topBarHeight = 0,
+      announcementBarHeight = 0,
       previewBarHeight = 0;
 
-    if (this.topBar) {
-      topBarHeight = this.topBar.getBoundingClientRect().height;
-      headerHeight += topBarHeight;
+    if (this.announcementBar) {
+      announcementBarHeight = this.announcementBar.getBoundingClientRect().height;
+      headerHeight += announcementBarHeight;
     }
 
     if (this.previewBar) {
@@ -57,19 +63,19 @@ class Header {
     }
 
     document.documentElement.style.setProperty(
-      "--header-height",
+      `${props.height}`,
       `${Math.floor(headerHeight) - 1}px`
     );
 
     document.documentElement.style.setProperty(
-      "--top-bar-height",
-      `${topBarHeight}px`
+      `${props.barHeight}`,
+      `${announcementBarHeight}px`
     );
   }
 
   // setting properties when scroll page
   setPropsOnScroll() {
-    if (!this.topBar) {
+    if (!this.announcementBar) {
       return false;
     }
 
@@ -78,8 +84,8 @@ class Header {
     if (this.currentScroll <= minHeight) {
       this.body.classList.remove(modifiers.scrolled);
       document.documentElement.style.setProperty(
-        '--header-transform',
-        '0px'
+        `${props.transform}`,
+        '0'
       );
       return;
     }
@@ -91,8 +97,8 @@ class Header {
       // down
       this.body.classList.add(modifiers.scrolled);
       document.documentElement.style.setProperty(
-        '--header-transform',
-        `-${this.topBar.offsetHeight}px`
+        `${props.transform}`,
+        `-${this.announcementBar.offsetHeight}px`
       );
     } else if (
       this.currentScroll < this.lastScroll - 10 &&
@@ -101,8 +107,8 @@ class Header {
       // up
       this.body.classList.remove(modifiers.scrolled);
       document.documentElement.style.setProperty(
-        '--header-transform',
-        '0px'
+        `${props.transform}`,
+        '0'
       );
     }
 
