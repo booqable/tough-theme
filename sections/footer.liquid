@@ -23,7 +23,7 @@
 
 {% comment %} Logo component {% endcomment %}
 {%- capture footer_logo -%}
-  {%- if logo != blank -%}
+  {%- if logo.url != blank -%}
     <div class="footer__logo-wrapper">
       <a href="{{ routes.root_url }}" class="footer__logo">
         <img

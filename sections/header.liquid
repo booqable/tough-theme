@@ -2,19 +2,19 @@
 <link rel="preload" href="{{ 'mega-menu.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="{{ 'buttons.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-{%- assign search_placeholder   = section.settings.search_placeholder -%}
-{%- assign logo                 = section.settings.logo -%}
-{%- assign custom_title         = section.settings.custom_title -%}
-{%- assign menu                 = section.settings.menu -%}
-{%- assign menu_position        = section.settings.menu_position -%}
-{%- assign menu_position_mobile = section.settings.menu_position_mobile -%}
-{%- assign header_background    = section.settings.header_background -%}
-{%- assign header_foreground    = section.settings.header_foreground -%}
-{%- assign padding_top          = section.settings.padding_top -%}
-{%- assign padding_bottom       = section.settings.padding_bottom -%}
-{%- assign padding_top_mobile   = section.settings.padding_top_mobile -%}
+{%- assign search_placeholder    = section.settings.search_placeholder -%}
+{%- assign logo                  = section.settings.logo -%}
+{%- assign custom_title          = section.settings.custom_title -%}
+{%- assign menu                  = section.settings.menu -%}
+{%- assign menu_position         = section.settings.menu_position -%}
+{%- assign menu_position_mobile  = section.settings.menu_position_mobile -%}
+{%- assign header_background     = section.settings.header_background -%}
+{%- assign header_foreground     = section.settings.header_foreground -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign sticky_header        = section.settings.sticky_header -%}
+{%- assign sticky_header         = section.settings.sticky_header -%}
 
 {%- capture variables -%}
   --color-header-background: {{ header_background }};
@@ -40,7 +40,7 @@
 	{%- case menu_position_mobile -%}
     {%- when 'left' -%}
       --translate: translateX(-100%);
-    {%- when 'left' -%}
+    {%- when 'top' -%}
       --translate: translate(0, -100%);
 		{%- when 'right' -%}
 			--translate: translateX(100%);
@@ -54,6 +54,7 @@
   </div>
 {%- endcapture -%}
 
+{% comment %} Menu component {% endcomment %}
 {%- if menu != blank -%}
   {%- capture header_menu -%}
     <div class="header__nav-wrapper header__nav-wrapper--{{- menu_position_mobile -}}">
@@ -143,7 +144,7 @@
 
 {% comment %} Logo component {% endcomment %}
 {%- capture header_logo -%}
-  {%- if logo != blank -%}
+  {%- if logo.url != blank -%}
     <div class="header__logo-wrapper">
       <a href="{{ routes.root_url }}" class="header__logo">
         <img
@@ -182,6 +183,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
+{% comment %} Search component {% endcomment %}
 {%- capture header_search -%}
   <div class="header__search">
     <input type="checkbox" id="floating-search" style="display: none">
@@ -203,6 +205,7 @@
   </div>
 {%- endcapture -%}
 
+{% comment %} Right side links component {% endcomment %}
 {%- capture header_links -%}
   <div class="header__links">
     {{- header_search -}}

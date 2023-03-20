@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;
   transform: translateY(var(--header-transform));
   transition: transform var(--transition-duration-2) var(--transition-function-ease-out);
 }

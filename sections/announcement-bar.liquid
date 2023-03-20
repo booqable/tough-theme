@@ -26,7 +26,8 @@
   <div class="anoncement-bar__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} anoncement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} anoncement-bar__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
     <div class="anoncement-bar__container container">
       <div class="anoncement-bar__info">
-        {%- if announcement_bar_image != blank -%}
+
+        {%- if announcement_bar_image.url != blank -%}
           <img
             src="{{ announcement_bar_image | image_url }}"
             alt="{{- announcement_bar_image.alt -}}"
@@ -47,6 +48,7 @@
             </a>
           </span>
         {%- endif -%}
+
       </div>
 
       <span class="anoncement-bar__text">
@@ -56,6 +58,7 @@
       </span>
 
       <nav class="anoncement-bar__menu">
+
         {%- if announcement_bar_menu != blank -%}
           <ul class="anoncement-bar__menu-list">
             {%- for link in announcement_bar_menu.items -%}
@@ -69,6 +72,7 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
+
       </nav>
     </div>
   </div>
