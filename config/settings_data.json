@@ -27,7 +27,7 @@
           "header_foreground": "#FFFFFF",
           "menu": "main-menu",
           "menu_position": "left-center",
-          "menu_position_mobile": "right",
+          "menu_position_mobile": "top",
           "padding_top": "16",
           "padding_top_mobile": "16",
           "padding_bottom": "16",

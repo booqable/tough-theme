@@ -194,6 +194,7 @@
 .header__login {
   text-align: center;
   padding: 30px 0;
+  width: 100vw;
 }
 
 .header__links .header__login {

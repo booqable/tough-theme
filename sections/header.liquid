@@ -1,6 +1,5 @@
 <link rel="preload" href="{{ 'header.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="{{ 'mega-menu.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="{{ 'buttons.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
@@ -41,16 +40,19 @@
     {%- when 'left' -%}
       --translate: translateX(-100%);
     {%- when 'top' -%}
-      --translate: translate(0, -100%);
+      --translate: translate(0, 0%);
 		{%- when 'right' -%}
 			--translate: translateX(100%);
 	{%- endcase -%}
 {%- endcapture -%}
 
+{% comment %} Login component {% endcomment %}
 {%- capture header_login -%}
   <div class="header__login">
-    <button class="button">Log in</button>
+    {% comment %} <button class="button">Log in</button> {% endcomment %}
+    <button class="button button--secondary">Sign up</button>
     <button class="button button--primary button--small">Sign up</button>
+    <button class="button button--outlined button--small">Sign up</button>
   </div>
 {%- endcapture -%}
 

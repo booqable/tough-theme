@@ -15,7 +15,19 @@
   --text-primary: #0B1A26;
   --text-secondary: #4E5D78;
   --text-accent: #F4B841;
+  --text-accent-rgb: 244, 184, 65;
+  --text-accent-hover: #E5AD3D;
+  --text-accent-active: #D6A239;
 
+  --background-primary: #0B1A26;
+  --background-accent: #F4B841;
+  --background-accent-rgb: 244, 184, 65;
+  --background-accent-hover: #E5AD3D;
+  --background-accent-active: #D6A239;
+
+  --color-border-accent: #F4B841;
+  --color-border-accent-hover: #E5AD3D;
+  --color-border-accent-active: #D6A239;
   --color-border-blue-gray: #4E5D78;
   --color-border-light-gray: #E1E4E8;
 
@@ -25,6 +37,14 @@
   --color-yellow: #F4B841;
   --color-white: #ffffff;
   --color-white-rgb: 255, 255, 255;
+
+  /* Font sizes */
+  --font-size-h1: 3.5rem;
+  --font-size-h2: 3rem;
+  --font-size-h3: 2.5rem;
+  --font-size-h4: 2rem;
+  --font-size-h5: 1.5rem;
+  --font-size-h6: 1.25rem;
 
   /* Font weights */
   --font-weight-regular: 400;
@@ -103,13 +123,56 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: var(--font-heading) !important;
   color: var(--color-primary-foreground);
+  margin-bottom: 1.5625rem;;
+}
+
+h1,
+.h1 {
+  font-size: var(--font-size-h1);
+  line-height: 1.2;
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2);
+  line-height: 1.2;
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-h3);
+  line-height: 1.2;
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-h4);
+  line-height: 1.3;
+}
+
+h5,
+.h5{
+  font-size: var(--font-size-h5);
+  line-height: 1.4;
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size-h6);
+  line-height: 1.4;
 }
 
 input {
-  font-family: var(--font-body, sans-serif);
+  font-size: var(--font-body, sans-serif);
 }
 
 a {
@@ -129,6 +192,107 @@ ol {
 ul{
   list-style: none;
 }
+
+.text-large {
+  font-size: 1.25rem;
+  line-height: var(--line-height-lg);
+}
+
+.text-medium {
+  font-size: 1.125rem;
+  line-height: var(--line-height-lg);
+}
+
+.text-regular {
+  font-size: 1rem;
+  line-height: var(--line-height-lg);
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: var(--line-height-lg);
+}
+
+.text-tiny {
+  font-size: 0.75rem;
+  line-height: var(--line-height-lg);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  color: currentColor;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: all var(--transition-duration-2) var(--transition-function-ease-in-out);
+}
+
+.button.button--primary {
+  color: var(--text-primary, #0B1A26);
+  background-color: var(--background-accent, #F4B841);
+  border-color: var(--color-border-accent, #F4B841);
+}
+
+.button.button--primary:hover {
+  background-color: var(--background-accent-hover, #E6AD3D);
+  border-color: var(--color-border-accent-hover, #E6AD3D);
+}
+
+.button.button--primary:active {
+  background-color: var(--background-accent-active, #D6A239);
+  border-color: var(--color-border-accent-active, #D6A239);
+}
+
+.button.button--secondary {
+  color: var(--text-accent, #F4B841);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.button.button--secondary:hover {
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.button.button--secondary:active {
+  font-weight: var(--font-weight-bold, 700);
+}
+
+.button.button--outlined {
+  color: var(--text-primary, #0B1A26);
+  border-color: var(--color-border-accent, #F4B841);
+}
+
+.button.button--outlined:hover {
+  background: rgba(var(--background-accent-rgb), 0.32);
+}
+
+.button.button--outlined:active {
+  background: rgba(var(--background-accent-rgb), 0.56);
+}
+
+.button.button--small {
+  padding: 8px 18px;
+}
+
+.button.button--large {
+  padding: 14px 24px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--horizontal-padding);
+}
+
+
+
+
+
 
 .bq-sidebar-head *,
 .bq-branded.bq-title,
@@ -246,11 +410,4 @@ ul{
 
 [data-focus="true"] {
   box-shadow: 0 0 0 3px #395db899;
-}
-
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--horizontal-padding);
 }
