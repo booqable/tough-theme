@@ -36,33 +36,59 @@
     {%- when 'center-left' -%}
       --justify-content: flex-start;
   {%- endcase -%}
+
+  {%- case menu_position_mobile -%}
+    {%- when 'left' -%}
+      --menu-transform: translate(-100%, 0);
+      --menu-width: 0;
+      --menu-left: 0;
+      --menu-right: auto;
+      --menu-max-height: none;
+    {%- when 'right' -%}
+      --menu-transform: translate(100%, 0);
+      --menu-width: 0;
+      --menu-left: auto;
+      --menu-right: 0;
+      --menu-max-height: none;
+    {%- when 'top' -%}
+      --menu-transform: translate(0, -100%);
+      --menu-width: 100%;
+      --menu-left: 0;
+      --menu-right: 0;
+      --menu-max-height: 0;
+  {%- endcase -%}
+{%- endcapture -%}
+
+{% comment %} Login component {% endcomment %}
+{%- capture header_login -%}
+  <div class="header__login">
+    <div class="header__login-item">
+      <a href="" class="header__login-button">
+        {%- include 'icon-user' -%}
+        Log in
+      </a>
+    </div>
+    <div class="header__login-item">
+      <a href="" class="header__login-button text-accent">Create account</a>
+    </div>
+  </div>
 {%- endcapture -%}
 
 {% comment %} Account component {% endcomment %}
 {%- capture header_account -%}
   <div class="header__account">
-    <button class="button">
+    <a href="" class="header__account-link">
       {%- include 'icon-user' -%}
-    </button>
+    </a>
   </div>
 {%- endcapture -%}
 
 {% comment %} Mobile menu bottom component {% endcomment %}
 {%- capture menu_bottom -%}
   <div class="menu__bottom">
-    <div class="header__login">
-      <div class="header__login-button">
-        <a href="">
-          {%- include 'icon-user' -%}
-          Log in
-        </a>
-      </div>
-      <div class="header__login-button">
-        <a href="" class="text-accent">Create account</a>
-      </div>
-    </div>
+    {{- header_login -}}
 
-    <div class="header__icons">
+    <div class="menu__icons">
       {%- for block in section.blocks -%}
         {%- assign social_size      = block.settings.social_size -%}
         {%- assign social_spacing   = block.settings.social_spacing -%}
@@ -112,43 +138,13 @@
         {%- case block.type -%}
 
           {%- when "socials" -%}
-            <div class="header__social" style="{{- social_variables | escape -}}">
+            <div class="menu__social" style="{{- social_variables | escape -}}">
               {%- include "socials" -%}
             </div>
 
           {%- when "payment-methods" -%}
-            <div class="header__payments" style="{{- payment_variables | escape -}}">
-              {%- if payment_methods.size > 0 -%}
-                <div class="header__payment">
-                  {%- for provider in payment_methods -%}
-                    {%- case provider -%}
-                      {%- when "paypal" -%}
-                        <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-                      {%- when "creditcard" -%}
-                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                        <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-                        <i class="fa-brands fa-cc-amex" title="American Express"></i>
-                      {%- when "ideal" -%}
-                        <i class="fa-brands fa-ideal" title="iDEAL"></i>
-                      {%- when "alipay" -%}
-                        <i class="fa-brands fa-alipay" title="Alipay"></i>
-                      {%- when "p24" -%}
-                        {%- include "p24-icon" -%}
-                      {%- when "eps" -%}
-                        {%- include "eps-icon" -%}
-                      {%- when "bancontact" -%}
-                        {%- include "bancontact-icon" -%}
-                      {%- when "giropay" -%}
-                        {%- include "giropay-icon" -%}
-                    {%- endcase -%}
-                  {%- endfor -%}
-                </div>
-              {%- else -%}
-                <div class="header__payment">
-                  <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-                  <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-                </div>
-              {%- endif -%}
+            <div class="menu__payments payments" style="{{- payment_variables | escape -}}">
+              {%- include "payments" -%}
             </div>
         {%- endcase -%}
       {%- endfor -%}
@@ -159,13 +155,14 @@
 {% comment %} Menu component {% endcomment %}
 {%- if menu != blank -%}
   {%- capture header_menu -%}
-    <div class="header__nav-wrapper mobile-menu-{{- menu_position_mobile }}">
+    <div class="header__nav-wrapper">
       <input type="checkbox" id="mobile-menu-trigger" style="display: none;">
       <label for="mobile-menu-trigger" class="menu__opener">
         <span></span>
       </label>
 
-      <nav class="header__nav menu" style="display: none;">
+      <nav class="header__nav menu{% if menu_position_mobile == "top" %} menu-top{%- endif -%}" style="display: none;">
+        <div class="menu__wrapper">
         <ul class="header__nav-list menu__list">
           {%- for link in menu.items -%}
             {%- assign link_index = forloop.index -%}
@@ -185,67 +182,71 @@
                   </label>
 
                   <div class="menu__dropdown" style="display: none;">
+                    <div class="menu__dropdown-wrapper">
 
-                    {%- unless menu_position_mobile == "top" -%}
-                      <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
-                        <i class="menu__item-icon">
-                          {%- include 'icon-arrow-down' -%}
-                        </i>
-                        Back
-                      </label>
-                    {%- endunless -%}
+                      {%- unless menu_position_mobile == "top" -%}
+                        <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
+                          <i class="menu__item-icon">
+                            {%- include 'icon-arrow-down' -%}
+                          </i>
+                          Back
+                        </label>
+                      {%- endunless -%}
 
-                    <ul class="menu__dropdown-list">
-                      {%- for childlink in link.items -%}
-                        {%- assign childlink_index = forloop.index -%}
+                      <ul class="menu__dropdown-list">
+                        {%- for childlink in link.items -%}
+                          {%- assign childlink_index = forloop.index -%}
 
-                        {%- if childlink != blank -%}
-                          <li class="menu__dropdown-item">
-                            <a href="{{ childlink.url }}" class="menu__dropdown-link">
-                              {{- childlink.title -}}
-                            </a>
+                          {%- if childlink != blank -%}
+                            <li class="menu__dropdown-item">
+                              <a href="{{ childlink.url }}" class="menu__dropdown-link">
+                                {{- childlink.title -}}
+                              </a>
 
-                            {%- if childlink.items_count > 0 -%}
-                              <input type="checkbox" id="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" style="display: none;">
-                              <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
-                                <i class="menu__item-icon">
-                                  {%- include 'icon-arrow-down' -%}
-                                </i>
-                              </label>
+                              {%- if childlink.items_count > 0 -%}
+                                <input type="checkbox" id="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" style="display: none;">
+                                <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
+                                  <i class="menu__item-icon">
+                                    {%- include 'icon-arrow-down' -%}
+                                  </i>
+                                </label>
 
-                              <div class="menu__dropdown">
+                                <div class="menu__dropdown">
+                                  <div class="menu__dropdown-wrapper">
 
-                                {%- unless menu_position_mobile == "top" -%}
-                                  <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
-                                    <i class="menu__item-icon">
-                                      {%- include 'icon-arrow-down' -%}
-                                    </i>
-                                    Back
-                                  </label>
-                                {%- endunless -%}
+                                    {%- unless menu_position_mobile == "top" -%}
+                                      <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
+                                        <i class="menu__item-icon">
+                                          {%- include 'icon-arrow-down' -%}
+                                        </i>
+                                        Back
+                                      </label>
+                                    {%- endunless -%}
 
-                                <ul class="menu__dropdown-list">
-                                  {%- for grandchildlink in childlink.items -%}
+                                    <ul class="menu__dropdown-list">
+                                      {%- for grandchildlink in childlink.items -%}
 
-                                    {%- if grandchildlink != blank -%}
-                                      <li class="menu__dropdown-item">
-                                        <a href="{{ grandchildlink.url }}" class="menu__dropdown-link">
-                                          {{- grandchildlink.title -}}
-                                        </a>
-                                      </li>
-                                    {%- endif -%}
+                                        {%- if grandchildlink != blank -%}
+                                          <li class="menu__dropdown-item">
+                                            <a href="{{ grandchildlink.url }}" class="menu__dropdown-link">
+                                              {{- grandchildlink.title -}}
+                                            </a>
+                                          </li>
+                                        {%- endif -%}
 
-                                  {%- endfor -%}
-                                </ul>
+                                      {%- endfor -%}
+                                    </ul>
 
-                              </div>
-                            {%- endif -%}
+                                  </div>
+                                </div>
+                              {%- endif -%}
 
-                          </li>
-                        {%- endif -%}
+                            </li>
+                          {%- endif -%}
 
-                      {%- endfor -%}
-                    </ul>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
                   </div>
                 {%- endif -%}
 
@@ -256,6 +257,7 @@
         </ul>
 
         {{- menu_bottom -}}
+        </div>
       </nav>
     </div>
   {%- endcapture -%}
@@ -605,12 +607,12 @@
             "label": "From top"
           },
           {
-            "value": "left",
-            "label": "From left"
-          },
-          {
             "value": "right",
             "label": "From right"
+          },
+          {
+            "value": "left",
+            "label": "From left"
           }
         ],
         "default": "top"

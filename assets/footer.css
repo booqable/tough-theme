@@ -49,7 +49,11 @@
 }
 
 .footer__menu-link:hover {
-  color: var(--text-accent, #F4B841);
+  color: var(--text-accent-hover, #E5AD3D);
+}
+
+.footer__menu-link:active {
+  color: var(--text-accent-active, #D6A239);
 }
 
 .footer__menu-link--accent {
@@ -57,7 +61,11 @@
 }
 
 .footer__menu-link--accent:hover {
-  color: var(--text-secondary, #4E5D78);
+  color: var(--text-accent-hover, #E5AD3D);
+}
+
+.footer__menu-link--accent:active {
+  color: var(--text-accent-active, #D6A239);
 }
 
 .footer__bottom {
@@ -86,24 +94,28 @@
   padding: 0 0 0 16px;
 }
 
-.footer__social-list {
+.footer__social .social-networks {
   display: flex;
   margin: 0 calc(-1 * var(--social-spacing));
 }
 
-.footer__social-list .social-networks__item {
+.footer__social .social-networks__item {
   margin: 0 var(--social-spacing, 6px);
 }
 
-.social-networks__link:hover {
-  color: var(--text-accent, #F4B841);
+.footer__social .social-networks__link:hover {
+  color: var(--text-accent-hover, #E5AD3D);
+}
+
+.footer__social .social-networks__link:active {
+  color: var(--text-accent-active, #D6A239);
 }
 
 .footer__payments {
   font-size: var(--payment-size, 32px);
 }
 
-.footer__payment {
+.footer__payments .payment {
   margin: 0 calc(-1 * var(--payment-spacing));
 }
 
@@ -159,7 +171,6 @@
     display: flex;
     margin: 0 -15px;
   }
-
 
   .footer__menu-heading {
     text-align: left;

@@ -20,7 +20,22 @@
       },
       "header": {
         "type": "header",
-        "blocks": {},
+        "blocks": {
+          "socials": {
+            "type": "socials",
+            "settings": {
+              "social_size": "md",
+              "social_spacing": "lg"
+            }
+          },
+          "payment-methods": {
+            "type": "payment-methods",
+            "settings": {
+              "payment_size": "md",
+              "payment_spacing": "md"
+            }
+          }
+        },
         "block_order": [],
         "settings": {
           "header_background": "#0B1A26",

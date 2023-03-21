@@ -1,6 +1,7 @@
 const modificators = {
   loaded: "loaded",
-  resizeClass: "resize-active"
+  resizeClass: "resize-active",
+  scrolled: "scrolled"
 };
 
 class Primary {
@@ -22,8 +23,14 @@ class Primary {
   }
 
   initEvents() {
+    window.addEventListener("scroll", this.setClassAfterScroll.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("DOMContentLoaded", this.setLoadedClass.bind(this));
+  }
+
+  // adding class when page was scrolled
+  setClassAfterScroll() {
+    this.container.classList.add(modificators.scrolled);
   }
 
   // adding class while resizing window

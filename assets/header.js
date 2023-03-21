@@ -5,7 +5,7 @@ const selects = {
 };
 
 const modifiers = {
-  scrolled: "page-scrolled"
+  scrolled: "scroll-down"
 };
 
 const props = {
