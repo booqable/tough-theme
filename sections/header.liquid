@@ -4,6 +4,7 @@
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
 {%- assign custom_title          = section.settings.custom_title -%}
+{%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
 {%- assign menu                  = section.settings.menu -%}
 {%- assign menu_position         = section.settings.menu_position -%}
 {%- assign menu_position_mobile  = section.settings.menu_position_mobile -%}
@@ -35,31 +36,130 @@
     {%- when 'center-left' -%}
       --justify-content: flex-start;
   {%- endcase -%}
-
-	{%- case menu_position_mobile -%}
-    {%- when 'left' -%}
-      --translate: translateX(-100%);
-    {%- when 'top' -%}
-      --translate: translate(0, 0%);
-		{%- when 'right' -%}
-			--translate: translateX(100%);
-	{%- endcase -%}
 {%- endcapture -%}
 
-{% comment %} Login component {% endcomment %}
-{%- capture header_login -%}
-  <div class="header__login">
-    {% comment %} <button class="button">Log in</button> {% endcomment %}
-    <button class="button button--secondary">Sign up</button>
-    <button class="button button--primary button--small">Sign up</button>
-    <button class="button button--outlined button--small">Sign up</button>
+{% comment %} Account component {% endcomment %}
+{%- capture header_account -%}
+  <div class="header__account">
+    <button class="button">
+      {%- include 'icon-user' -%}
+    </button>
+  </div>
+{%- endcapture -%}
+
+{% comment %} Mobile menu bottom component {% endcomment %}
+{%- capture menu_bottom -%}
+  <div class="menu__bottom">
+    <div class="header__login">
+      <div class="header__login-button">
+        <a href="">
+          {%- include 'icon-user' -%}
+          Log in
+        </a>
+      </div>
+      <div class="header__login-button">
+        <a href="" class="text-accent">Create account</a>
+      </div>
+    </div>
+
+    <div class="header__icons">
+      {%- for block in section.blocks -%}
+        {%- assign social_size      = block.settings.social_size -%}
+        {%- assign social_spacing   = block.settings.social_spacing -%}
+        {%- assign payment_size     = block.settings.payment_size -%}
+        {%- assign payment_spacing  = block.settings.payment_spacing -%}
+
+        {%- capture social_variables -%}
+          {%- case social_size -%}
+            {%- when 'sm' -%}
+              --social-size: 18px;
+            {%- when 'md' -%}
+              --social-size: 21px;
+            {%- when 'lg' -%}
+              --social-size: 24px;
+          {%- endcase -%}
+
+          {%- case social_spacing -%}
+            {%- when 'sm' -%}
+              --social-spacing: 5px;
+            {%- when 'md' -%}
+              --social-spacing: 7px;
+            {%- when 'lg' -%}
+              --social-spacing: 9px;
+          {%- endcase -%}
+        {%- endcapture -%}
+
+        {%- capture payment_variables -%}
+          {%- case payment_size -%}
+            {%- when 'sm' -%}
+              --payment-size: 30px;
+            {%- when 'md' -%}
+              --payment-size: 32px;
+            {%- when 'lg' -%}
+              --payment-size: 34px;
+          {%- endcase -%}
+
+          {%- case payment_spacing -%}
+            {%- when 'sm' -%}
+              --payment-spacing: 2px;
+            {%- when 'md' -%}
+              --payment-spacing: 3px;
+            {%- when 'lg' -%}
+              --payment-spacing: 4px;
+          {%- endcase -%}
+        {%- endcapture -%}
+
+        {%- case block.type -%}
+
+          {%- when "socials" -%}
+            <div class="header__social" style="{{- social_variables | escape -}}">
+              {%- include "socials" -%}
+            </div>
+
+          {%- when "payment-methods" -%}
+            <div class="header__payments" style="{{- payment_variables | escape -}}">
+              {%- if payment_methods.size > 0 -%}
+                <div class="header__payment">
+                  {%- for provider in payment_methods -%}
+                    {%- case provider -%}
+                      {%- when "paypal" -%}
+                        <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                      {%- when "creditcard" -%}
+                        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+                        <i class="fa-brands fa-cc-amex" title="American Express"></i>
+                      {%- when "ideal" -%}
+                        <i class="fa-brands fa-ideal" title="iDEAL"></i>
+                      {%- when "alipay" -%}
+                        <i class="fa-brands fa-alipay" title="Alipay"></i>
+                      {%- when "p24" -%}
+                        {%- include "p24-icon" -%}
+                      {%- when "eps" -%}
+                        {%- include "eps-icon" -%}
+                      {%- when "bancontact" -%}
+                        {%- include "bancontact-icon" -%}
+                      {%- when "giropay" -%}
+                        {%- include "giropay-icon" -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </div>
+              {%- else -%}
+                <div class="header__payment">
+                  <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+                  <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+                </div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
   </div>
 {%- endcapture -%}
 
 {% comment %} Menu component {% endcomment %}
 {%- if menu != blank -%}
   {%- capture header_menu -%}
-    <div class="header__nav-wrapper header__nav-wrapper--{{- menu_position_mobile -}}">
+    <div class="header__nav-wrapper mobile-menu-{{- menu_position_mobile }}">
       <input type="checkbox" id="mobile-menu-trigger" style="display: none;">
       <label for="mobile-menu-trigger" class="menu__opener">
         <span></span>
@@ -79,16 +179,21 @@
                 {%- if link.items_count > 0 -%}
                   <input type="checkbox" id="dropdown-menu-trigger-{{- link_index -}}" style="display: none;">
                   <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
-                    <i class="fa-regular fa-chevron-down menu__item-icon"></i>
+                    <i class="menu__item-icon">
+                      {%- include 'icon-arrow-down' -%}
+                    </i>
                   </label>
-                {%- endif -%}
 
-                {%- if link.items_count > 0 -%}
                   <div class="menu__dropdown" style="display: none;">
-                    <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
-                      <i class="fa-regular fa-chevron-down menu__item-icon"></i>
-                      Back
-                    </label>
+
+                    {%- unless menu_position_mobile == "top" -%}
+                      <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
+                        <i class="menu__item-icon">
+                          {%- include 'icon-arrow-down' -%}
+                        </i>
+                        Back
+                      </label>
+                    {%- endunless -%}
 
                     <ul class="menu__dropdown-list">
                       {%- for childlink in link.items -%}
@@ -101,21 +206,27 @@
                             </a>
 
                             {%- if childlink.items_count > 0 -%}
-                              <input type="checkbox" id="dropdown-childmenu-trigger-{{- childlink_index -}}" style="display: none;">
-                              <label for="dropdown-childmenu-trigger-{{- childlink_index -}}" class="menu__dropdown-opener">
-                                <i class="fa-regular fa-chevron-down menu__item-icon"></i>
+                              <input type="checkbox" id="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" style="display: none;">
+                              <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
+                                <i class="menu__item-icon">
+                                  {%- include 'icon-arrow-down' -%}
+                                </i>
                               </label>
-                            {%- endif -%}
 
-                            {%- if childlink.items_count > 0 -%}
                               <div class="menu__dropdown">
-                                <label for="dropdown-childmenu-trigger-{{- childlink_index -}}" class="menu__dropdown-opener">
-                                  <i class="fa-regular fa-chevron-down menu__item-icon"></i>
-                                  Back
-                                </label>
+
+                                {%- unless menu_position_mobile == "top" -%}
+                                  <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
+                                    <i class="menu__item-icon">
+                                      {%- include 'icon-arrow-down' -%}
+                                    </i>
+                                    Back
+                                  </label>
+                                {%- endunless -%}
 
                                 <ul class="menu__dropdown-list">
                                   {%- for grandchildlink in childlink.items -%}
+
                                     {%- if grandchildlink != blank -%}
                                       <li class="menu__dropdown-item">
                                         <a href="{{ grandchildlink.url }}" class="menu__dropdown-link">
@@ -123,22 +234,28 @@
                                         </a>
                                       </li>
                                     {%- endif -%}
+
                                   {%- endfor -%}
                                 </ul>
+
                               </div>
                             {%- endif -%}
+
                           </li>
                         {%- endif -%}
+
                       {%- endfor -%}
                     </ul>
                   </div>
                 {%- endif -%}
+
               </li>
             {%- endif -%}
+
           {%- endfor -%}
         </ul>
 
-        {{- header_login -}}
+        {{- menu_bottom -}}
       </nav>
     </div>
   {%- endcapture -%}
@@ -190,13 +307,15 @@
   <div class="header__search">
     <input type="checkbox" id="floating-search" style="display: none">
     <label for="floating-search" class="header__search-trigger">
-      <i class="fa-light fa-magnifying-glass header__search-icon open"></i>
+      {%- include 'icon-search' -%}
     </label>
 
     <div class="header__search-wrapper" style="display: none">
       <form id="search" action="{{ routes.search_url }}" role="search">
         <div class="header__search-input-wrapper">
-          <i class="fa-light fa-magnifying-glass header__search-icon"></i>
+          <i class="header__search-icon">
+            {%- include 'icon-search' -%}
+          </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
         <label class="header__search-trigger" for="floating-search">
@@ -212,7 +331,7 @@
   <div class="header__links">
     {{- header_search -}}
 
-    {{- header_login -}}
+    {{- header_account -}}
 
     <div class="header__cart">
       {{- cart_button -}}
@@ -225,7 +344,7 @@
 <div class="header__wrapper{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
   <div class="header__content{% if padding_top != 0 or padding_top_mobile != 0 %} header__content--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
-      <div class="header__content-inner">
+      <div class="header__content-inner{% if menu != blank %} header__mobile-menu-opener-{{- menu_opener_mobile -}}{%- endif -%}">
 
         {{- header_logo -}}
 
@@ -257,6 +376,110 @@
     "tag": "header",
     "class": "header",
     "templates": [],
+    "blocks":[
+      {
+        "type": "socials",
+        "name": "Socials",
+        "limit": 1,
+        "settings":[
+          {
+            "type": "header",
+            "content": "Icon settings"
+          },
+          {
+            "type": "select",
+            "id": "social_size",
+            "label": "Size",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Medium"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "md"
+          },
+          {
+            "type": "select",
+            "id": "social_spacing",
+            "label": "Spacing",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Medium"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "lg"
+          }
+        ]
+      },
+      {
+        "type": "payment-methods",
+        "name": "Payment methods",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Icon settings"
+          },
+          {
+            "type": "select",
+            "id": "payment_size",
+            "label": "Size",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Medium"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "md"
+          },
+          {
+            "type": "select",
+            "id": "payment_spacing",
+            "label": "Spacing",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Medium"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "md"
+          }
+        ]
+      }
+    ],
     "settings": [
       {
         "type": "header",
@@ -355,6 +578,22 @@
       {
         "type": "header",
         "content": "Mobile settings"
+      },
+      {
+        "type": "select",
+        "id": "menu_opener_mobile",
+        "label": "Menu opener position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
       },
       {
         "type": "select",

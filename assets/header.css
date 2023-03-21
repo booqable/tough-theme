@@ -34,10 +34,18 @@
 .header__content-inner {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
-  grid-template-areas:
-    "column-1 column-3 column-2";
-  gap: 0px 15px;
+  gap: 0px 8px;
   align-items: center;
+}
+
+.header__mobile-menu-opener-left {
+  grid-template-areas:
+  "column-2 column-1 column-3";
+}
+
+.header__mobile-menu-opener-right {
+  grid-template-areas:
+  "column-1 column-3 column-2";
 }
 
 .header__logo-wrapper {
@@ -192,20 +200,18 @@
 }
 
 .header__login {
-  text-align: center;
-  padding: 30px 0;
+  padding: 24px 24px 18px;
   width: 100vw;
+  font-size: 18px;
 }
 
-.header__links .header__login {
-  display: none;
+.header__login-button:not(:last-child) {
+  padding: 0 0 21px;
 }
 
-.header__login .button {
-  margin-left: 12px;
+.header__login-button svg {
+  margin: 0 5px -5px 0;
 }
-
-
 
 .header__cart {
   display: flex;
