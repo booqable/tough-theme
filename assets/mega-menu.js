@@ -1,6 +1,5 @@
 const selector = {
   menuTrigger: "#mobile-menu-trigger",
-  dropdownMenu: ".menu__dropdown-list",
   input: "input[type=checkbox]"
 };
 
@@ -10,10 +9,6 @@ const classes = {
 
 const modifier = {
   menuOpened: "menu-opened"
-};
-
-const properties = {
-  height: "--dropdown-height"
 };
 
 class Menu {
@@ -32,30 +27,10 @@ class Menu {
 
   initElements() {
     this.openers = [...this.container.querySelectorAll(selector.input)]
-    this.menus = [...this.container.querySelectorAll(selector.dropdownMenu)]
   }
 
   initEvents() {
-    setTimeout(() => {
-      this.setMenuHeight();
-    }, 1000);
-
     document.addEventListener("click", this.closeDropdownMenu.bind(this));
-  }
-
-  setMenuHeight() {
-    if (!this.menus.length) return false;
-
-    this.menus.forEach(menu => {
-      let height = menu.getBoundingClientRect().height;
-
-      console.log(height);
-
-      menu.style.setProperty(
-        `${properties.height}`,
-        `${height}px`
-      );
-    })
   }
 
   // toggle class on click on mobile menu trigger and close all dropdowns when menu closed

@@ -119,15 +119,19 @@
   visibility: hidden;
 	pointer-events: none;
 	margin: 0;
-	padding: 15px 0 0;
-	position: absolute;
-	top: 100%;
+	padding: 0;
+	position: fixed;
+	top: var(--header-height, 104px);
 	left: 50%;
-  transform: translate(-70%, 0%);
-	min-width: 340px;
+  transform: translate(-47%, 0%);
+	min-width: calc(100vw - 60px);
 	opacity: 0;
 	transition: visibility var(--transition-duration-1) var(--transition-function-linear),
 		opacity var(--transition-duration-2);
+}
+
+.scrolled .header__search-wrapper {
+	top: calc(var(--header-height, 104px) - var(--announcement-bar-height, 32px));
 }
 
 .header__search-wrapper form {
@@ -149,9 +153,8 @@
 .header__search-input-wrapper .header__search-icon {
   position: absolute;
   top: 50%;
-  bottom: 50%;
-  left: 16px;
-  transform: translateY(-50%);
+  left: 10px;
+  transform: translateY(-60%);
   z-index: 1;
 }
 
@@ -179,6 +182,7 @@
   -webkit-appearance: none;
   height: 12px;
   width: 12px;
+  margin-left: 10px;
   border-radius: 50%;
   background-color: var(--color-primary-foreground);
   background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
@@ -234,8 +238,9 @@
 
 .header__login {
   padding: 24px 24px 18px;
-  width: 100vw;
   font-size: 18px;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .header__login-item:not(:last-child) {
@@ -311,14 +316,12 @@
 }
 
 .resize-active .header__search-wrapper {
-  display: none !important;
+  /* display: none !important; */
 }
 
 @media (min-width: 576px) {
   .header__search-wrapper {
-    left: auto;
-    right: 10px;
-    transform: translate(0, 0);
+    min-width: calc(100vw - 160px);
   }
 }
 
@@ -329,6 +332,10 @@
 
   .header__content--padding-bottom {
     padding-bottom: var(--padding-bottom, 16px);
+  }
+
+  .header__search-wrapper {
+    min-width: 800px;
   }
 }
 

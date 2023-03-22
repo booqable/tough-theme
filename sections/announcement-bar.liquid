@@ -33,6 +33,10 @@
             alt="{{- announcement_bar_image.alt -}}"
             class="anoncement-bar__icon"
           >
+        {%- else -%}
+          <i class="anoncement-bar__icon">
+            {%- include 'icon-phone' -%}
+          </i>
         {%- endif -%}
 
         {%- if announcement_bar_text != blank -%}

@@ -6,16 +6,17 @@
         "blocks": {},
         "block_order": [],
         "settings": {
+          "hide_announcement_bar": false,
+          "announcement_bar_background": "#F4B841",
+          "announcement_bar_foreground": "#0B1A26",
+          "announcement_bar_menu": "",
+          "announcement_bar_message": "Free shipping from €50",
+          "announcement_bar_phone": "+1 755 302 8549",
+          "announcement_bar_text": "Call Us 24/7",
           "padding_top": "9",
           "padding_top_mobile": "9",
           "padding_bottom": "9",
-          "padding_bottom_mobile": "9",
-          "top_bar_background": "#F4B841",
-          "top_bar_foreground": "#0B1A26",
-          "top_bar_menu": "",
-          "top_bar_message": "Free shipping from €50",
-          "top_bar_phone": "+1 755 302 8549",
-          "top_bar_text": "Call Us 24/7"
+          "padding_bottom_mobile": "9"
         }
       },
       "header": {
@@ -36,7 +37,10 @@
             }
           }
         },
-        "block_order": [],
+        "block_order": [
+          "socials",
+          "payment-methods"
+        ],
         "settings": {
           "header_background": "#0B1A26",
           "header_foreground": "#FFFFFF",
