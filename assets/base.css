@@ -11,34 +11,7 @@
   --color-red: #f85454;
   --color-backdrop: #0c2747b3;
   --color-typo: #0c2747;
-
-  --text-primary: #0B1A26;
-  --text-secondary: #4E5D78;
-  --text-accent: #F4B841;
-  --text-accent-rgb: 244, 184, 65;
-  --text-accent-hover: #E5AD3D;
-  --text-accent-active: #D6A239;
-
-  --background-primary: #0B1A26;
-  --background-secondary: #4E5D78;
-  --background-accent: #F4B841;
-  --background-accent-rgb: 244, 184, 65;
-  --background-accent-hover: #E5AD3D;
-  --background-accent-active: #D6A239;
-
-  --color-border-secondary: #4E5D78;
-  --color-border-accent: #F4B841;
-  --color-border-accent-hover: #E5AD3D;
-  --color-border-accent-active: #D6A239;
-  --color-border-blue-gray: #4E5D78;
-  --color-border-light-gray: #E1E4E8;
-
-  --color-black: #0B1A26;
-  --color-blue-gray: #4E5D78;
-  --color-grey: #B2B4B8;
-  --color-yellow: #F4B841;
   --color-white: #ffffff;
-  --color-white-rgb: 255, 255, 255;
 
   /* Font sizes */
   --font-size-h1: 3.5rem;
@@ -221,15 +194,15 @@ ul{
 }
 
 .text-accent {
-  color: var(--text-accent, #F4B841);
+  color: var(--color-accent-background, #F4B841);
 }
 
 .text-accent:hover {
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .text-accent:active {
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .button {
@@ -248,23 +221,23 @@ ul{
 }
 
 .button.button--primary {
-  color: var(--text-primary, #0B1A26);
-  background-color: var(--background-accent, #F4B841);
-  border-color: var(--color-border-accent, #F4B841);
+  color: var(--color-accent-foreground, #0B1A26);
+  background-color: var(--color-accent-background, #F4B841);
+  border-color: var(--color-accent-background, #F4B841);
 }
 
 .button.button--primary:hover {
-  background-color: var(--background-accent-hover, #E6AD3D);
-  border-color: var(--color-border-accent-hover, #E6AD3D);
+  background-color: var(--color-accent-background-hover, #E6AD3D);
+  border-color: var(--color-accent-background-hover, #E6AD3D);
 }
 
 .button.button--primary:active {
-  background-color: var(--background-accent-active, #D6A239);
-  border-color: var(--color-border-accent-active, #D6A239);
+  background-color: var(--color-accent-background-active, #D6A239);
+  border-color: var(--color-accent-background-active, #D6A239);
 }
 
 .button.button--secondary {
-  color: var(--text-accent, #F4B841);
+  color: var(--color-accent-background, #F4B841);
   font-weight: var(--font-weight-semibold, 600);
 }
 
@@ -277,16 +250,16 @@ ul{
 }
 
 .button.button--outlined {
-  color: var(--text-primary, #0B1A26);
-  border-color: var(--color-border-accent, #F4B841);
+  color: var(--color-accent-foreground, #0B1A26);
+  border-color: var(--color-accent-background, #F4B841);
 }
 
 .button.button--outlined:hover {
-  background: rgba(var(--background-accent-rgb), 0.32);
+  background: var(--color-accent-secondary-background-hover, rgba(244, 184, 65, 0.32));
 }
 
 .button.button--outlined:active {
-  background: rgba(var(--background-accent-rgb), 0.56);
+  background: var(--color-accent-secondary-background-active, rgba(244, 184, 65, 0.56));
 }
 
 .button.button--small {

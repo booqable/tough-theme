@@ -9,45 +9,94 @@
     "name": "Colors",
     "settings": [
       {
-        "type": "color",
-        "id": "primary_color",
-        "label": "Accent background color",
-        "info": "Background for solid buttons, date picker, and shopping cart.\n\nNote: if the color is not set the company branding color will be applied.",
-        "default": "#F4B841"
-      },
-      {
-        "type": "color",
-        "id": "accent_foreground_color",
-        "label": "Accent foreground color",
-        "info": "For text used on top of accent background color",
-        "default": "#FFFFFF"
-      },
-      {
-        "type": "divider"
+        "type": "header",
+        "content": "Basic colors"
       },
       {
         "type": "color",
         "id": "primary_background_color",
         "label": "Primary background color",
-        "info": "Primary background color for your store",
+        "info": "Primary background color for the store",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "primary_foreground_color",
         "label": "Primary foreground color",
-        "info": "For text used on top of primary background color",
+        "info": "For text used over the primary background color",
         "default": "#0B1A26"
       },
       {
-        "type": "divider"
+        "type": "color",
+        "id": "secondary_foreground_color",
+        "label": "Secondary foreground color",
+        "info": "To highlight individual elements of text, that used over the primary background color",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "third_foreground_color",
+        "label": "Third foreground color",
+        "info": "To highlight individual elements of text, that used over the primary background color",
+        "default": "#B2B4B8"
+      },
+      {
+        "type": "header",
+        "content": "UI elements colors"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Accent background color",
+        "info": "Background for solid buttons, date picker, shopping cart, etc.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#F4B841"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_hover",
+        "label": "Accent background color on hover",
+        "info": "Background for solid buttons, date picker, shopping cart, etc. on hover.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#E5AD3D"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_active",
+        "label": "Accent background color on click",
+        "info": "Background for solid buttons, date picker, shopping cart, etc. on click.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#D6A239"
+      },
+      {
+        "type": "color",
+        "id": "accent_foreground_color",
+        "label": "Accent foreground color",
+        "info": "For text used over the accent background color",
+        "default": "#0B1A26"
       },
       {
         "type": "color",
         "id": "link_color",
-        "label": "Link color",
-        "info": "Used for text links and non-solid buttons",
+        "label": "Links color",
+        "info": "For text links and non-solid buttons",
         "default": "#F4B841"
+      },
+      {
+        "type": "color",
+        "id": "placeholder_color",
+        "label": "Placeholder color",
+        "info": "For placeholders of input fields",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "border_color_primary",
+        "label": "Primary border color",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "border_color_secondary",
+        "label": "Secondary border color",
+        "default": "#E1E4E8"
       }
     ]
   },

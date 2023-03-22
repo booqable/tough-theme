@@ -6,7 +6,7 @@
 .footer__wrapper {
   color: var(--color-footer-foreground, #4E5D78);
   background-color: var(--color-footer-background, #FFFFFF);
-  border-top: 1px solid var(--color-border-light-gray);
+  border-top: 1px solid var(--color-border-secondary, #E1E4E8);
 }
 
 .footer__wrapper--padding-top {
@@ -34,7 +34,7 @@
   font-size: 16px;
   display: block;
   padding: 0 0 18px;
-  color: var(--text-primary, #0B1A26);
+  color: var(--color-primary-foreground, #0B1A26);
   font-weight: var(--font-weight-semibold, 600);
   text-align: var(--menu-align, left);
 }
@@ -49,34 +49,34 @@
 }
 
 .footer__menu-link:hover {
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .footer__menu-link:active {
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .footer__menu-link--accent {
-  color: var(--text-accent, #F4B841);
+  color: var(--color-accent-background, #F4B841);
 }
 
 .footer__menu-link--accent:hover {
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .footer__menu-link--accent:active {
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .footer__bottom {
-  border-top: 1px solid var(--color-border-light-gray);
+  border-top: 1px solid var(--color-border-secondary, #E1E4E8);
   display: flex;
   flex-direction: column-reverse;
   padding: 0 0 40px;
 }
 
 .footer__copy {
-  color: var(--color-grey, #B2B4B8);
+  color: var(--color-third-foreground, #B2B4B8);
 }
 
 .footer__icons {
@@ -86,7 +86,7 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 10px 0 30px;
-  color: var(--text-primary, #0B1A26);
+  color: var(--color-primary-foreground, #0B1A26);
 }
 
 .footer__social {
@@ -104,11 +104,11 @@
 }
 
 .footer__social .social-networks__link:hover {
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .footer__social .social-networks__link:active {
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .footer__payments {

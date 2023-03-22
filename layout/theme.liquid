@@ -22,15 +22,21 @@
   {% comment %} Color palette related styles {% endcomment %}
   <style>
     :root {
-      --color-accent-background: {% if settings.primary_color != blank %}{{ settings.primary_color }}{% else %}{{ branding_color }}{% endif %};
-      --color-accent-foreground: {{ settings.accent_foreground_color }};
       --color-primary-background: {{ settings.primary_background_color }};
       --color-primary-foreground: {{ settings.primary_foreground_color }};
+      --color-secondary-foreground: {{ settings.secondary_foreground_color }};
+      --color-third-foreground: {{ settings.third_foreground_color }};
+      --color-accent-background: {% if settings.primary_color != blank %}{{ settings.primary_color }}{% else %}{{ branding_color }}{% endif %};
+      --color-accent-background-hover: {% if settings.primary_color_hover != blank %}{{ settings.primary_color_hover }}{% else %}{{ branding_color | append: "CC" }}{% endif %};
+      --color-accent-background-active: {% if settings.primary_color_active != blank %}{{ settings.primary_color_active }}{% else %}{{ branding_color | append: "A6" }}{% endif %};
+      --color-accent-secondary-background-hover: {{ settings.primary_color | append: "52" }};
+      --color-accent-secondary-background-active: {{ settings.primary_color | append: "8F" }};
+      --color-accent-foreground: {{ settings.accent_foreground_color }};
       --color-link: {{ settings.link_color }};
-      --color-placeholder: {{ settings.primary_foreground_color | append: "B3" }};
-      --color-image-placeholder: {{ settings.primary_foreground_color | append: "1A" }};
-      --color-body-alternative: {{ settings.primary_foreground_color | append: "99" }};
-      --color-border: {{ settings.primary_foreground_color | append: "66" }};
+      --color-placeholder: {{ settings.placeholder_color }};
+      --color-border: {{ settings.border_color_primary }};
+      --color-border-secondary: {{ settings.border_color_secondary }};
+      --color-image-placeholder: {{ settings.primary_foreground_color | append: "0F" }};
 
       {% if settings.heading_font != blank %}
         --font-heading: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};

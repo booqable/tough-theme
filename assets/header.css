@@ -1,7 +1,7 @@
 .header {
   position: relative;
   z-index: 1000;
-  border-bottom: 1px solid rgba(var(--color-white-rgb), 0.2);
+  border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.2));
   margin-bottom: -1px;
 }
 
@@ -108,11 +108,11 @@
 }
 
 .header__search-trigger:hover g {
-  stroke: var(--text-accent-hover, #E5AD3D);
+  stroke: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .header__search-trigger:active g {
-  stroke: var(--text-accent-active, #D6A239);
+  stroke: var(--color-accent-background-active, #D6A239);
 }
 
 .header__search-wrapper {
@@ -229,11 +229,11 @@
 }
 
 .header__account-link:hover g {
-  stroke: var(--text-accent-hover, #E5AD3D);
+  stroke: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .header__account-link:active g {
-  stroke: var(--text-accent-active, #E5AD3D);
+  stroke: var(--color-accent-background-active, #E5AD3D);
 }
 
 .header__login {
@@ -256,11 +256,11 @@
 }
 
 .header__login-button:hover {
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .header__login-button:active {
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .header__login-button g {
@@ -268,11 +268,11 @@
 }
 
 .header__login-button:hover g {
-  stroke: var(--text-accent-hover, #E5AD3D);
+  stroke: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .header__login-button:active g {
-  stroke: var(--text-accent-active, #D6A239);
+  stroke: var(--color-accent-background-active, #D6A239);
 }
 
 .header__cart {
@@ -291,18 +291,18 @@
 }
 
 .header__cart .bq-icon-cart::before {
-  color: var(--color-accent-foreground);
+  color: var(--color-header-foreground, #fff);
   transition: all var(--transition-duration-2) var(--transition-function-ease-out);
 }
 
 .bq-cart-button:hover .bq-icon-cart::before {
   opacity: 1;
-  color: var(--text-accent-hover, #E5AD3D);
+  color: var(--color-accent-background-hover, #E5AD3D);
 }
 
 .bq-cart-button:active .bq-icon-cart::before {
   opacity: 1;
-  color: var(--text-accent-active, #D6A239);
+  color: var(--color-accent-background-active, #D6A239);
 }
 
 .bq-cart {
@@ -406,7 +406,7 @@
     left: 50%;
     top: 0;
     transform: translate(-50%, 0);
-    background: var(--color-border-blue-gray);
+    background: var(--color-border, #4E5D78);
   }
 
   .header__login {
