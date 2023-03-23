@@ -1,7 +1,7 @@
 const selects = {
   body: "body",
   previewBar: ".preview-bar__container",
-  announcementBar: ".anoncement-bar"
+  announcementBar: ".announcement-bar"
 };
 
 const modifiers = {

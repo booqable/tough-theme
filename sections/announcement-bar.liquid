@@ -13,6 +13,7 @@
 {%- assign padding_top_mobile           = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile        = section.settings.padding_bottom_mobile -%}
 
+{% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
   --color-announcement-bar-background: {{ announcement_bar_background }};
   --color-announcement-bar-foreground: {{ announcement_bar_foreground }};
@@ -23,31 +24,31 @@
 {%- endcapture -%}
 
 {%- if hide_announcement_bar != true -%}
-  <div class="anoncement-bar__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} anoncement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} anoncement-bar__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
-    <div class="anoncement-bar__container container">
-      <div class="anoncement-bar__info">
+  <div class="announcement-bar__wrapper{% if announcement_bar_background != blank %} announcement-bar-background{% endif %}{% if announcement_bar_foreground != blank %} announcement-bar-color{% endif %}{% if padding_top != 0 or padding_top_mobile != 0 %} announcement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} announcement-bar__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+    <div class="announcement-bar__container container">
+      <div class="announcement-bar__info">
 
         {%- if announcement_bar_image.url != blank -%}
           <img
             src="{{ announcement_bar_image | image_url }}"
             alt="{{- announcement_bar_image.alt -}}"
-            class="anoncement-bar__icon"
+            class="announcement-bar__icon"
           >
         {%- else -%}
-          <i class="anoncement-bar__icon">
+          <i class="announcement-bar__icon">
             {%- include 'icon-phone' -%}
           </i>
         {%- endif -%}
 
         {%- if announcement_bar_text != blank -%}
-          <span class="anoncement-bar__text">
+          <span class="announcement-bar__text">
             {{- announcement_bar_text -}}
           </span>
         {%- endif -%}
 
         {%- if announcement_bar_phone != blank -%}
-          <span class="anoncement-bar__phone">
-            <a href="tel:{{ announcement_bar_phone | remove: '+' | remove: ' ' }}" class="anoncement-bar__phone-link" style="font-size: 14px">
+          <span class="announcement-bar__phone">
+            <a href="tel:{{ announcement_bar_phone | remove: '+' | remove: ' ' }}" class="announcement-bar__phone-link" style="font-size: 14px">
               {{- announcement_bar_phone -}}
             </a>
           </span>
@@ -55,20 +56,20 @@
 
       </div>
 
-      <span class="anoncement-bar__text">
+      <span class="announcement-bar__text">
         {%- if announcement_bar_message != blank -%}
           {{- announcement_bar_message -}}
         {%- endif -%}
       </span>
 
-      <nav class="anoncement-bar__menu">
+      <nav class="announcement-bar__menu">
 
         {%- if announcement_bar_menu != blank -%}
-          <ul class="anoncement-bar__menu-list">
+          <ul class="announcement-bar__menu-list">
             {%- for link in announcement_bar_menu.items -%}
               {%- if link != blank -%}
-                <li class="anoncement-bar__menu-item">
-                  <a href="{{ link.url }}" class="anoncement-bar__menu-link">
+                <li class="announcement-bar__menu-item">
+                  <a href="{{ link.url }}" class="announcement-bar__menu-link">
                     {{- link.title -}}
                   </a>
                 </li>
@@ -86,8 +87,7 @@
   {
     "name": "Announcement bar",
     "tag": "section",
-    "class": "anoncement-bar",
-    "templates": [],
+    "class": "announcement-bar",
     "settings": [
       {
         "type": "header",

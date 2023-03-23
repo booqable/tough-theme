@@ -77,8 +77,8 @@ html{
 
 body {
   background-color: var(--color-primary-background);
-  padding-top: var(--header-height);
   color: var(--color-primary-foreground);
+  padding-top: var(--header-height);
   display: flex;
   flex-direction: column;
   min-height: 100%;

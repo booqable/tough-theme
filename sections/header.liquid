@@ -16,6 +16,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign sticky_header         = section.settings.sticky_header -%}
 
+{% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
   --color-header-background: {{ header_background }};
   --color-header-foreground: {{ header_foreground }};
@@ -26,15 +27,15 @@
 
   {%- case menu_position -%}
     {%- when 'left' -%}
-      --justify-content: flex-start;
+      --header-justify-content: flex-start;
     {%- when 'left-center' -%}
-      --justify-content: center;
+      --header-justify-content: center;
     {%- when 'left-right' -%}
-      --justify-content: flex-end;
+      --header-justify-content: flex-end;
     {%- when 'left-below' -%}
-      --justify-content: flex-start;
+      --header-justify-content: flex-start;
     {%- when 'center-left' -%}
-      --justify-content: flex-start;
+      --header-justify-content: flex-start;
   {%- endcase -%}
 
   {%- case menu_position_mobile -%}
@@ -100,7 +101,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% comment %} Login component {% endcomment %}
+{% comment %} Login buttons component {% endcomment %}
 {%- capture header_login -%}
   <div class="header__login">
     <div class="header__login-item">
@@ -127,43 +128,44 @@
         {%- assign payment_size     = block.settings.payment_size -%}
         {%- assign payment_spacing  = block.settings.payment_spacing -%}
 
+        {% comment %} CSS variables {% endcomment %}
         {%- capture social_variables -%}
           {%- case social_size -%}
             {%- when 'sm' -%}
-              --social-size: 18px;
+              --header-social-size: 18px;
             {%- when 'md' -%}
-              --social-size: 21px;
+              --header-social-size: 21px;
             {%- when 'lg' -%}
-              --social-size: 24px;
+              --header-social-size: 24px;
           {%- endcase -%}
 
           {%- case social_spacing -%}
             {%- when 'sm' -%}
-              --social-spacing: 5px;
+              --header-social-spacing: 5px;
             {%- when 'md' -%}
-              --social-spacing: 7px;
+              --header-social-spacing: 7px;
             {%- when 'lg' -%}
-              --social-spacing: 9px;
+              --header-social-spacing: 9px;
           {%- endcase -%}
         {%- endcapture -%}
 
         {%- capture payment_variables -%}
           {%- case payment_size -%}
             {%- when 'sm' -%}
-              --payment-size: 30px;
+              --header-payment-size: 30px;
             {%- when 'md' -%}
-              --payment-size: 32px;
+              --header-payment-size: 32px;
             {%- when 'lg' -%}
-              --payment-size: 34px;
+              --header-payment-size: 34px;
           {%- endcase -%}
 
           {%- case payment_spacing -%}
             {%- when 'sm' -%}
-              --payment-spacing: 2px;
+              --header-payment-spacing: 2px;
             {%- when 'md' -%}
-              --payment-spacing: 3px;
+              --header-payment-spacing: 3px;
             {%- when 'lg' -%}
-              --payment-spacing: 4px;
+              --header-payment-spacing: 4px;
           {%- endcase -%}
         {%- endcapture -%}
 
@@ -334,7 +336,7 @@
   </div>
 {%- endcapture -%}
 
-{% comment %} Right side links component {% endcomment %}
+{% comment %} Right side buttons component {% endcomment %}
 {%- capture header_links -%}
   <div class="header__links">
     {{- header_search -}}
@@ -349,7 +351,7 @@
   </div>
 {%- endcapture -%}
 
-<div class="header__wrapper{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
+<div class="header__wrapper{% if header_background != blank %} header-background{% endif %}{% if header_foreground != blank %} header-color{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
   <div class="header__content{% if padding_top != 0 or padding_top_mobile != 0 %} header__content--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
       <div class="header__content-inner{% if menu != blank %} header__mobile-menu-opener-{{- menu_opener_mobile -}}{%- endif -%}">
@@ -368,10 +370,10 @@
 {%- if sticky_header -%}
   <script>
     const header = document.querySelector('.header');
-    const topBar = document.querySelector('.anoncement-bar');
+    const topBar = document.querySelector('.announcement-bar');
 
     if (topBar) {
-      topBar.classList.add('anoncement-bar--sticky')
+      topBar.classList.add('announcement-bar--sticky')
     }
 
     header.classList.add('header--sticky')

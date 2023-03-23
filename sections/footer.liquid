@@ -74,11 +74,11 @@
       {%- capture menu_variables -%}
         {%- case menu_align -%}
           {%- when 'left' -%}
-            --menu-align: left;
+            --footer-menu-align: left;
           {%- when 'center' -%}
-            --menu-align: center;
+            --footer-menu-align: center;
           {%- when 'right' -%}
-            --menu-align: right;
+            --footer-menu-align: right;
         {%- endcase -%}
       {%- endcapture -%}
 
@@ -108,7 +108,7 @@
   </nav>
 {%- endcapture -%}
 
-{% comment %} Payments component {% endcomment %}
+{% comment %} Payments and social component {% endcomment %}
 {%- capture footer_icons -%}
   <div class="footer__icons">
     {%- for block in section.blocks -%}
@@ -117,43 +117,44 @@
       {%- assign payment_size     = block.settings.payment_size -%}
       {%- assign payment_spacing  = block.settings.payment_spacing -%}
 
+      {% comment %} CSS variables {% endcomment %}
       {%- capture social_variables -%}
         {%- case social_size -%}
           {%- when 'sm' -%}
-            --social-size: 18px;
+            --footer-social-size: 18px;
           {%- when 'md' -%}
-            --social-size: 21px;
+            --footer-social-size: 21px;
           {%- when 'lg' -%}
-            --social-size: 24px;
+            --footer-social-size: 24px;
         {%- endcase -%}
 
         {%- case social_spacing -%}
           {%- when 'sm' -%}
-            --social-spacing: 5px;
+            --footer-social-spacing: 5px;
           {%- when 'md' -%}
-            --social-spacing: 7px;
+            --footer-social-spacing: 7px;
           {%- when 'lg' -%}
-            --social-spacing: 9px;
+            --footer-social-spacing: 9px;
         {%- endcase -%}
       {%- endcapture -%}
 
       {%- capture payment_variables -%}
         {%- case payment_size -%}
           {%- when 'sm' -%}
-            --payment-size: 30px;
+            --footer-payment-size: 30px;
           {%- when 'md' -%}
-            --payment-size: 32px;
+            --footer-payment-size: 32px;
           {%- when 'lg' -%}
-            --payment-size: 34px;
+            --footer-payment-size: 34px;
         {%- endcase -%}
 
         {%- case payment_spacing -%}
           {%- when 'sm' -%}
-            --payment-spacing: 2px;
+            --footer-payment-spacing: 2px;
           {%- when 'md' -%}
-            --payment-spacing: 3px;
+            --footer-payment-spacing: 3px;
           {%- when 'lg' -%}
-            --payment-spacing: 4px;
+            --footer-payment-spacing: 4px;
         {%- endcase -%}
       {%- endcapture -%}
 
@@ -192,7 +193,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="footer__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} footer__wrapper--padding-bottom{%- endif -%}"  style="{{- variables | escape -}}">
+<div class="footer__wrapper{% if footer_background != blank %} footer-background{% endif %}{% if footer_foreground != blank %} footer-color{% endif %}{% if padding_top != 0 or padding_top_mobile != 0 %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} footer__wrapper--padding-bottom{%- endif -%}"  style="{{- variables | escape -}}">
   <div class="footer__container container">
     <div class="footer__top{% if footer_logo != blank %} footer__top--with-logo{%- endif -%}">
 
