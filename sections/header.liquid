@@ -6,6 +6,7 @@
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
 {%- assign menu                  = section.settings.menu -%}
+{%- assign menu_dropdown_style   = section.settings.menu_dropdown_style -%}
 {%- assign menu_position         = section.settings.menu_position -%}
 {%- assign menu_position_mobile  = section.settings.menu_position_mobile -%}
 {%- assign header_background     = section.settings.header_background -%}
@@ -195,7 +196,7 @@
         <span></span>
       </label>
 
-      <nav class="header__nav menu{% if menu_position_mobile == "top" %} menu-top{%- endif -%}" style="display: none;">
+      <nav class="header__nav menu{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} menu-top{%- endif -%}" style="display: none;">
         <div class="menu__wrapper">
           <ul class="header__nav-list menu__list">
             {%- for link in menu.items -%}
@@ -319,9 +320,7 @@
           </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
-        <label class="header__search-trigger" for="floating-search">
-          <i class="fa-light fa-xmark header__search-icon close"></i>
-        </label>
+        <label class="header__search-trigger" for="floating-search"></label>
       </form>
     </div>
   </div>
@@ -526,12 +525,14 @@
         "type": "color",
         "id": "header_background",
         "label": "Background color",
+        "info": "Note: If this color is empty, there will be applied default color.",
         "default": "#0E1B2A"
       },
       {
         "type": "color",
         "id": "header_foreground",
         "label": "Foreground color",
+        "info": "Note: If this color is empty, there will be applied default color.",
         "default": "#FFFFFF"
       },
       {
@@ -572,6 +573,22 @@
         "default": "left-center"
       },
       {
+        "type": "select",
+        "id": "menu_dropdown_style",
+        "label": "Dropdown menu style",
+        "options": [
+          {
+            "value": "short",
+            "label": "Short menu"
+          },
+          {
+            "value": "full",
+            "label": "Full width menu"
+          }
+        ],
+        "default": "full"
+      },
+      {
         "type": "number",
         "id": "padding_top",
         "label": "Padding top",
@@ -582,7 +599,7 @@
         "type": "number",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "default": "16",
+        "default": "12",
         "info": "Note: Use positive numbers only"
       },
       {

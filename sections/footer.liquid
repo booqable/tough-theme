@@ -1,20 +1,22 @@
 {{ "footer.css" | asset_url | stylesheet_tag }}
 
-{%- assign logo	                  = section.settings.logo -%}
-{%- assign custom_title	          = section.settings.custom_title -%}
-{%- assign bottom_menu            = section.settings.bottom_menu -%}
-{%- assign footer_background      = section.settings.footer_background -%}
-{%- assign footer_foreground      = section.settings.footer_foreground -%}
-{%- assign hide_copy              = section.settings.hide_copy -%}
-{%- assign padding_top            = section.settings.padding_top -%}
-{%- assign padding_bottom         = section.settings.padding_bottom -%}
-{%- assign padding_top_mobile     = section.settings.padding_top_mobile -%}
-{%- assign padding_bottom_mobile  = section.settings.padding_bottom_mobile -%}
+{%- assign logo	                       = section.settings.logo -%}
+{%- assign custom_title	               = section.settings.custom_title -%}
+{%- assign bottom_menu                 = section.settings.bottom_menu -%}
+{%- assign footer_background           = section.settings.footer_background -%}
+{%- assign footer_foreground           = section.settings.footer_foreground -%}
+{%- assign footer_foreground_secondary = section.settings.footer_foreground_secondary -%}
+{%- assign hide_copy                   = section.settings.hide_copy -%}
+{%- assign padding_top                 = section.settings.padding_top -%}
+{%- assign padding_bottom              = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile          = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile       = section.settings.padding_bottom_mobile -%}
 
 {% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
   --color-footer-background: {{ footer_background }};
   --color-footer-foreground: {{ footer_foreground }};
+  --color-footer-foreground-secondary: {{ footer_foreground_secondary }};
   --padding-top: {{ padding_top }}px;
   --padding-bottom: {{ padding_bottom }}px;
   --padding-top-mobile: {{ padding_top_mobile }}px;
@@ -193,7 +195,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="footer__wrapper{% if footer_background != blank %} footer-background{% endif %}{% if footer_foreground != blank %} footer-color{% endif %}{% if padding_top != 0 or padding_top_mobile != 0 %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} footer__wrapper--padding-bottom{%- endif -%}"  style="{{- variables | escape -}}">
+<div class="footer__wrapper{% if footer_background != blank %} footer-background{% endif %}{% if footer_foreground != blank %} footer-color{% endif %}{% if footer_foreground_secondary != blank %} footer-color-secondary{% endif %}{% if padding_top != 0 or padding_top_mobile != 0 %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} footer__wrapper--padding-bottom{%- endif -%}"  style="{{- variables | escape -}}">
   <div class="footer__container container">
     <div class="footer__top{% if footer_logo != blank %} footer__top--with-logo{%- endif -%}">
 
@@ -250,13 +252,22 @@
         "type": "color",
         "id": "footer_background",
         "label": "Background color",
-        "default": "#0E1B2A"
+        "info": "Note: If this color is empty, there will be applied default color.",
+        "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "footer_foreground",
         "label": "Foreground color",
-        "default": "#FFFFFF"
+        "info": "Note: If this color is empty, there will be applied default color.",
+        "default": "#0B1A26"
+      },
+      {
+        "type": "color",
+        "id": "footer_foreground_secondary",
+        "label": "Secondary foreground color",
+        "info": "Note: If this color is empty, there will be applied default color.",
+        "default": "#4E5D78"
       },
       {
         "type": "checkbox",
