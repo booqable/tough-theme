@@ -2,16 +2,6 @@
   container: bar / inline-size;
 }
 
-.announcement-bar--sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  transform: translateY(var(--header-transform));
-  transition: transform var(--transition-duration-2) var(--transition-function-ease-out);
-}
-
 .announcement-bar__wrapper {
   color: var(--color-accent-foreground, #0B1A26);
   background-color: var(--color-accent-background, #F4B841);

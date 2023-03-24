@@ -380,12 +380,6 @@
 {%- if sticky_header -%}
   <script>
     const header = document.querySelector('.header');
-    const topBar = document.querySelector('.announcement-bar');
-
-    if (topBar) {
-      topBar.classList.add('announcement-bar--sticky')
-    }
-
     header.classList.add('header--sticky')
   </script>
 {%- endif -%}
@@ -393,9 +387,8 @@
 {% schema %}
   {
     "name": "Header",
-    "tag": "header",
-    "class": "header",
-    "templates": [],
+    "tag": "section",
+    "class": "header__wrapper",
     "blocks":[
       {
         "type": "socials",

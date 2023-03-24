@@ -104,7 +104,7 @@ const handleMessages = ({ type, data, isTrusted }) => {
 document.addEventListener("DOMContentLoaded", () => {
   // Initializers
   initFocalImages();
-  initSearch();
+  // initSearch();
 });
 
 window.addEventListener("scroll", handleScroll);

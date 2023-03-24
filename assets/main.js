@@ -1,10 +1,9 @@
 const modificators = {
   loaded: "loaded",
-  resizeClass: "resize-active",
-  scrolled: "scrolled"
+  resizeClass: "resize-active"
 };
 
-class Primary {
+class Main {
   constructor(container) {
     this.container = container;
   }
@@ -14,23 +13,10 @@ class Primary {
       return false;
     }
 
-    this.initElements();
-    this.initEvents();
-  }
-
-  initElements() {
     this.timer = undefined;
-  }
 
-  initEvents() {
-    window.addEventListener("scroll", this.setClassAfterScroll.bind(this));
+    this.setLoadedClass();
     window.addEventListener("resize", this.setResizeClass.bind(this));
-    window.addEventListener("DOMContentLoaded", this.setLoadedClass.bind(this));
-  }
-
-  // adding class when page was scrolled
-  setClassAfterScroll() {
-    this.container.classList.add(modificators.scrolled);
   }
 
   // adding class while resizing window
@@ -49,6 +35,8 @@ class Primary {
   }
 }
 
-const primary = new Primary(document.querySelector('body'));
+const main = new Main(document.querySelector('body'));
 
-primary.init();
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") main.init();
+});

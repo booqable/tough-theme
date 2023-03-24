@@ -83,8 +83,10 @@
 </head>
 <body>
 
-  {% section 'announcement-bar' %}
-  {% section 'header' %}
+  <header class="header">
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+  </header>
 
   <main id="main">
     {{ content_for_layout }}

@@ -11,7 +11,8 @@ const modifiers = {
 const props = {
   transform: '--header-transform',
   height: '--header-height',
-  barHeight: '--announcement-bar-height'
+  barHeight: '--announcement-bar-height',
+  previewHeight: '--preview-bar-height'
 }
 
 const minHeight = 180;
@@ -36,9 +37,10 @@ class Header {
     this.announcementBar = document.querySelector(selects.announcementBar);
     this.lastScroll = 0;
 
-    setTimeout(() => {
-      this.getHeaderHeight();
-    }, 100); // header height fix on load on iPhone
+    // setTimeout(() => {
+    this.getHeaderHeight();
+    // this.getHeaderHeight();
+    // }, 100); // header height fix on load on iPhone
   }
 
   initEvents() {
@@ -54,12 +56,22 @@ class Header {
 
     if (this.announcementBar) {
       announcementBarHeight = this.announcementBar.getBoundingClientRect().height;
-      headerHeight += announcementBarHeight;
+      // headerHeight += announcementBarHeight;
+
+      document.documentElement.style.setProperty(
+        `${props.barHeight}`,
+        `${announcementBarHeight}px`
+      );
     }
 
     if (this.previewBar) {
       previewBarHeight = this.previewBar.getBoundingClientRect().height;
-      headerHeight += previewBarHeight;
+      // headerHeight += previewBarHeight;
+
+      document.documentElement.style.setProperty(
+        `${props.previewHeight}`,
+        `${previewBarHeight}px`
+      );
     }
 
     document.documentElement.style.setProperty(
@@ -67,10 +79,6 @@ class Header {
       `${Math.floor(headerHeight) - 1}px`
     );
 
-    document.documentElement.style.setProperty(
-      `${props.barHeight}`,
-      `${announcementBarHeight}px`
-    );
   }
 
   // setting properties when scroll page
@@ -119,4 +127,7 @@ class Header {
 
 const stickyHeader = new Header(document.querySelector('.header--sticky'));
 
-stickyHeader.init();
+document.addEventListener("readystatechange", (event) => {
+  if (event.target.readyState === "complete") stickyHeader.init();
+});
+
