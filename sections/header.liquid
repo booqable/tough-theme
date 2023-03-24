@@ -329,9 +329,20 @@
 {% comment %} Account component {% endcomment %}
 {%- capture header_account -%}
   <div class="header__account">
-    <a href="" class="header__account-link">
+    <input type="checkbox" id="account-opener" style="display: none">
+    <label for="account-opener" class="header__account-opener">
       {%- include 'icon-user' -%}
-    </a>
+    </label>
+    <div class="header__account-drop-wrapper">
+      <div class="header__account-drop">
+        <a href="" class="header__account-link">
+          Login
+        </a>
+        <a href="" class="header__account-link">
+          Create account
+        </a>
+      </div>
+    </div>
   </div>
 {%- endcapture -%}
 

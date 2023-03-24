@@ -577,6 +577,10 @@
     width: 100%;
   }
 
+  .menu__item:hover > .menu__link {
+    font-weight: var(--font-weight-semibold, 600);
+  }
+
   .menu__bottom {
     display: none;
   }
