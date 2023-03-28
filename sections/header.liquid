@@ -234,9 +234,59 @@
                         <ul class="menu__dropdown-list">
                           {%- for childlink in link.items -%}
                             {%- assign childlink_index = forloop.index -%}
+                            {%- assign link_name = childlink.title | downcase | strip -%}
 
                             {%- if childlink != blank -%}
                               <li class="menu__dropdown-item">
+
+                                {%- for block in section.blocks -%}
+                                  {%- assign promo_title        = block.settings.promo_title | downcase | strip -%}
+
+                                  {%- if promo_title == link_name -%}
+                                    {%- assign promo_image      = block.settings.promo_image -%}
+                                    {%- assign promo_product    = block.settings.promo_product -%}
+                                    {%- assign promo_collection = block.settings.promo_collection -%}
+
+                                    {{product_image}}
+
+                                    {%- case block.type -%}
+                                      {%- when "promo" -%}
+
+                                        <div class="menu__dropdown-promo">
+                                          {%- if promo_product != blank -%}
+                                            {%- assign promo_image  = promo_product.images.first -%}
+
+                                              <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
+                                                <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
+                                                  {% if promo_image != blank %}
+                                                    {{ promo_image.url | image_tag:
+                                                      loading: 'lazy',
+                                                      class: 'menu__dropdown-promo-image',
+                                                      widths: '320',
+                                                      sizes: '320px',
+                                                      alt: promo_product.name
+                                                    }}
+                                                  {% endif %}
+                                                </a>
+                                              </div>
+                                          {%- elsif promo_collection != blank -%}
+                                            <div class="menu__dropdown-promo-collection">
+                                                {%- include 'product-card' -%}
+                                            </div>
+                                          {%- else -%}
+                                            {{ promo_image.url | image_tag:
+                                              loading: 'lazy',
+                                              class: 'menu__dropdown-promo-image',
+                                              widths: '320',
+                                              sizes: '320px',
+                                              alt: promo_product.name
+                                            }}
+                                          {%- endif -%}
+                                      </div>
+
+                                    {%- endcase -%}
+                                  {%- endif -%}
+                                {%- endfor -%}
 
                                 {%- if childlink.items_count > 0 -%}
                                   <input type="checkbox" id="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" style="display: none;">
@@ -391,6 +441,41 @@
     "class": "header__wrapper",
     "blocks":[
       {
+        "type": "promo",
+        "name": "Promo block",
+        "settings":[
+          {
+            "type": "header",
+            "content": "Promo content"
+          },
+          {
+            "type": "text",
+            "id": "promo_title",
+            "label": "Promo title",
+            "default": "Catalog 1.4",
+            "info": "Note: IMPORTANT! This title should be equal to the name of a menu item, that has to display a promo block"
+          },
+          {
+            "type": "product",
+            "id": "promo_product",
+            "label": "Product",
+            "info": "Note: The product takes precedence over \"Collection\""
+          },
+          {
+            "type": "collection",
+            "id": "promo_collection",
+            "label": "Collection",
+            "info": "Note: The collection takes precedence over \"Image\""
+          },
+          {
+            "type": "image_picker",
+            "id": "promo_image",
+            "label": "Image",
+            "info": "Note: The image has the lowest priority"
+          }
+        ]
+      },
+      {
         "type": "socials",
         "name": "Socials",
         "limit": 1,
@@ -529,15 +614,13 @@
         "type": "color",
         "id": "header_background",
         "label": "Background color",
-        "info": "Note: If this color is empty, there will be applied default color.",
-        "default": "#0E1B2A"
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "color",
         "id": "header_foreground",
         "label": "Foreground color",
-        "info": "Note: If this color is empty, there will be applied default color.",
-        "default": "#FFFFFF"
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "menu",

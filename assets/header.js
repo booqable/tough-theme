@@ -125,7 +125,7 @@ class Header {
   }
 }
 
-const stickyHeader = new Header(document.querySelector('.header--sticky'));
+const stickyHeader = new Header(document.querySelector('.header'));
 
 document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") stickyHeader.init();

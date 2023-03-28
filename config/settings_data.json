@@ -7,8 +7,6 @@
         "block_order": [],
         "settings": {
           "hide_announcement_bar": false,
-          "announcement_bar_background": "#F4B841",
-          "announcement_bar_foreground": "#0B1A26",
           "announcement_bar_menu": "",
           "announcement_bar_message": "Free shipping from €50",
           "announcement_bar_phone": "+1 755 302 8549",
@@ -22,6 +20,12 @@
       "header": {
         "type": "header",
         "blocks": {
+          "promo": {
+            "type": "promo",
+            "settings": {
+              "promo_title": "Catalog 1.4"
+            }
+          },
           "socials": {
             "type": "socials",
             "settings": {
@@ -39,11 +43,10 @@
         },
         "block_order": [
           "socials",
-          "payment-methods"
+          "payment-methods",
+          "promo"
         ],
         "settings": {
-          "header_background": "#0B1A26",
-          "header_foreground": "#FFFFFF",
           "menu": "main-menu",
           "menu_dropdown_style": "full",
           "menu_position": "left-center",
@@ -132,9 +135,6 @@
         "settings": {
           "bottom_menu": "bottom-menu",
           "hide_copy": false,
-          "footer_background": "#FFFFFF",
-          "footer_foreground": "#0B1A26",
-          "footer_foreground_secondary": "#4E5D78",
           "padding_bottom": "80",
           "padding_bottom_mobile": "24",
           "padding_top": "80",

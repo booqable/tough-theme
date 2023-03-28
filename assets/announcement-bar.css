@@ -1,5 +1,7 @@
 .announcement-bar {
   container: bar / inline-size;
+  position: relative;
+  z-index: 1;
 }
 
 .announcement-bar__wrapper {
