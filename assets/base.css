@@ -285,7 +285,9 @@ img {
   padding: 0 var(--horizontal-padding);
 }
 
-
+.overflow-hidden {
+  overflow: hidden;
+}
 
 
 

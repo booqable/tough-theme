@@ -47,7 +47,9 @@
           "promo"
         ],
         "settings": {
+          "login_placeholder": "Log in",
           "menu": "main-menu",
+          "menu_back_placeholder": "Back",
           "menu_dropdown_style": "full",
           "menu_position": "left-center",
           "menu_position_mobile": "top",
@@ -56,6 +58,7 @@
           "padding_bottom": "12",
           "padding_bottom_mobile": "16",
           "search_placeholder": "Search",
+          "signup_placeholder": "Create account",
           "sticky_header": true
         },
         "disabled": null

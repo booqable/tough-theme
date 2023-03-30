@@ -1,29 +1,30 @@
-<link rel="preload" href="{{ 'announcement-bar.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
 {%- assign hide_announcement_bar        = section.settings.hide_announcement_bar -%}
-{%- assign announcement_bar_image       = section.settings.announcement_bar_image -%}
-{%- assign announcement_bar_text        = section.settings.announcement_bar_text -%}
-{%- assign announcement_bar_phone       = section.settings.announcement_bar_phone -%}
-{%- assign announcement_bar_message     = section.settings.announcement_bar_message -%}
-{%- assign announcement_bar_menu        = section.settings.announcement_bar_menu -%}
-{%- assign announcement_bar_background  = section.settings.announcement_bar_background -%}
-{%- assign announcement_bar_foreground  = section.settings.announcement_bar_foreground -%}
-{%- assign padding_top                  = section.settings.padding_top -%}
-{%- assign padding_bottom               = section.settings.padding_bottom -%}
-{%- assign padding_top_mobile           = section.settings.padding_top_mobile -%}
-{%- assign padding_bottom_mobile        = section.settings.padding_bottom_mobile -%}
-
-{% comment %} CSS variables {% endcomment %}
-{%- capture variables -%}
-  --color-announcement-bar-background: {{ announcement_bar_background }};
-  --color-announcement-bar-foreground: {{ announcement_bar_foreground }};
-  --padding-top: {{ padding_top }}px;
-  --padding-bottom: {{ padding_bottom }}px;
-  --padding-top-mobile: {{ padding_top_mobile }}px;
-  --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-{%- endcapture -%}
 
 {%- if hide_announcement_bar != true -%}
+  <link rel="preload" href="{{ 'announcement-bar.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  {%- assign announcement_bar_image       = section.settings.announcement_bar_image -%}
+  {%- assign announcement_bar_text        = section.settings.announcement_bar_text -%}
+  {%- assign announcement_bar_phone       = section.settings.announcement_bar_phone -%}
+  {%- assign announcement_bar_message     = section.settings.announcement_bar_message -%}
+  {%- assign announcement_bar_menu        = section.settings.announcement_bar_menu -%}
+  {%- assign announcement_bar_background  = section.settings.announcement_bar_background -%}
+  {%- assign announcement_bar_foreground  = section.settings.announcement_bar_foreground -%}
+  {%- assign padding_top                  = section.settings.padding_top -%}
+  {%- assign padding_bottom               = section.settings.padding_bottom -%}
+  {%- assign padding_top_mobile           = section.settings.padding_top_mobile -%}
+  {%- assign padding_bottom_mobile        = section.settings.padding_bottom_mobile -%}
+
+  {% comment %} CSS variables {% endcomment %}
+  {%- capture variables -%}
+    --color-announcement-bar-background: {{ announcement_bar_background }};
+    --color-announcement-bar-foreground: {{ announcement_bar_foreground }};
+    --padding-top: {{ padding_top }}px;
+    --padding-bottom: {{ padding_bottom }}px;
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endcapture -%}
+
   <div class="announcement-bar__wrapper{% if announcement_bar_background != blank %} announcement-bar-background{% endif %}{% if announcement_bar_foreground != blank %} announcement-bar-color{% endif %}{% if padding_top != 0 or padding_top_mobile != 0 %} announcement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} announcement-bar__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
     <div class="announcement-bar__container container">
       <div class="announcement-bar__info">

@@ -2,6 +2,9 @@
 <link rel="preload" href="{{ 'mega-menu.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
+{%- assign login_placeholder     = section.settings.login_placeholder -%}
+{%- assign signup_placeholder    = section.settings.signup_placeholder -%}
+{%- assign menu_back_placeholder = section.settings.menu_back_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
@@ -108,11 +111,11 @@
     <div class="header__login-item">
       <a href="" class="header__login-button">
         {%- include 'icon-user' -%}
-        Log in
+        {{- login_placeholder -}}
       </a>
     </div>
     <div class="header__login-item">
-      <a href="" class="header__login-button text-accent">Create account</a>
+      <a href="" class="header__login-button text-accent">{{- signup_placeholder -}}</a>
     </div>
   </div>
 {%- endcapture -%}
@@ -196,7 +199,7 @@
         <span></span>
       </label>
 
-      <nav class="header__nav menu{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} menu-top{%- endif -%}" style="display: none;">
+      <nav class="header__nav menu{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} mobile-menu-top{%- endif -%}" style="display: none;">
         <div class="menu__wrapper">
           <ul class="header__nav-list menu__list">
             {%- for link in menu.items -%}
@@ -227,7 +230,7 @@
                             <i class="menu__item-icon">
                               {%- include 'icon-arrow-down' -%}
                             </i>
-                            Back
+                            {{- menu_back_placeholder -}}
                           </label>
                         {%- endunless -%}
 
@@ -247,42 +250,42 @@
                                     {%- assign promo_product    = block.settings.promo_product -%}
                                     {%- assign promo_collection = block.settings.promo_collection -%}
 
-                                    {{product_image}}
-
                                     {%- case block.type -%}
                                       {%- when "promo" -%}
 
                                         <div class="menu__dropdown-promo">
-                                          {%- if promo_product != blank -%}
-                                            {%- assign promo_image  = promo_product.images.first -%}
+                                          <div class="menu__dropdown-promo-wrapper">
+                                            {%- if promo_product != blank -%}
+                                              {%- assign promo_image  = promo_product.images.first -%}
 
-                                              <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
-                                                <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
-                                                  {% if promo_image != blank %}
-                                                    {{ promo_image.url | image_tag:
-                                                      loading: 'lazy',
-                                                      class: 'menu__dropdown-promo-image',
-                                                      widths: '320',
-                                                      sizes: '320px',
-                                                      alt: promo_product.name
-                                                    }}
-                                                  {% endif %}
-                                                </a>
+                                                <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
+                                                  <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
+                                                    {% if promo_image != blank %}
+                                                      {{ promo_image.url | image_tag:
+                                                        loading: 'lazy',
+                                                        class: 'menu__dropdown-promo-image',
+                                                        widths: '320',
+                                                        sizes: '320px',
+                                                        alt: promo_product.name
+                                                      }}
+                                                    {% endif %}
+                                                  </a>
+                                                </div>
+                                            {%- elsif promo_collection != blank -%}
+                                              <div class="menu__dropdown-promo-collection">
+                                                  {%- include 'product-card' -%}
                                               </div>
-                                          {%- elsif promo_collection != blank -%}
-                                            <div class="menu__dropdown-promo-collection">
-                                                {%- include 'product-card' -%}
-                                            </div>
-                                          {%- else -%}
-                                            {{ promo_image.url | image_tag:
-                                              loading: 'lazy',
-                                              class: 'menu__dropdown-promo-image',
-                                              widths: '320',
-                                              sizes: '320px',
-                                              alt: promo_product.name
-                                            }}
-                                          {%- endif -%}
-                                      </div>
+                                            {%- else -%}
+                                              {{ promo_image.url | image_tag:
+                                                loading: 'lazy',
+                                                class: 'menu__dropdown-promo-image',
+                                                widths: '320',
+                                                sizes: '320px',
+                                                alt: promo_product.name
+                                              }}
+                                            {%- endif -%}
+                                          </div>
+                                        </div>
 
                                     {%- endcase -%}
                                   {%- endif -%}
@@ -310,7 +313,7 @@
                                           <i class="menu__item-icon">
                                             {%- include 'icon-arrow-down' -%}
                                           </i>
-                                          Back
+                                          {{- menu_back_placeholder -}}
                                         </label>
                                       {%- endunless -%}
 
@@ -386,10 +389,10 @@
     <div class="header__account-drop-wrapper">
       <div class="header__account-drop">
         <a href="" class="header__account-link">
-          Login
+          {{- login_placeholder -}}
         </a>
         <a href="" class="header__account-link">
-          Create account
+          {{- signup_placeholder -}}
         </a>
       </div>
     </div>
@@ -411,7 +414,7 @@
   </div>
 {%- endcapture -%}
 
-<div class="header__wrapper{% if header_background != blank %} header-background{% endif %}{% if header_foreground != blank %} header-color{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
+<div class="header__inner{% if header_background != blank %} header-background{% endif %}{% if header_foreground != blank %} header-color{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
   <div class="header__content{% if padding_top != 0 or padding_top_mobile != 0 %} header__content--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
       <div class="header__content-inner{% if menu != blank %} header__mobile-menu-opener-{{- menu_opener_mobile -}}{%- endif -%}">
@@ -588,6 +591,25 @@
         "id": "search_placeholder",
         "label": "Search placeholder",
         "default": "Search"
+      },
+      {
+        "type": "text",
+        "id": "login_placeholder",
+        "label": "Login button label",
+        "default": "Log in"
+      },
+      {
+        "type": "text",
+        "id": "signup_placeholder",
+        "label": "Create account button label",
+        "default": "Create account"
+      },
+      {
+        "type": "text",
+        "id": "menu_back_placeholder",
+        "label": "Button 'Back' label",
+        "info": "Note: This button is in the mobile dropdown menu in 'From left' or 'From right' menu appearance mode",
+        "default": "Back"
       },
       {
         "type": "header",
