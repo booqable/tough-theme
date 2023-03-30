@@ -44,6 +44,15 @@
       {% if settings.body_font != blank %}
         --font-body: {{ settings.body_font.family }}, {{ settings.body_font.fallback_families }};
       {% endif %}
+
+      --font-size-h1: {{ settings.h1_size }}px;
+      --font-size-h2: {{ settings.h2_size }}px;
+      --font-size-h3: {{ settings.h3_size }}px;
+      --font-size-h4: {{ settings.h4_size }}px;
+      --font-size-h5: {{ settings.h5_size }}px;
+      --font-size-h6: {{ settings.h6_size }}px;
+
+      {%- if settings.animation_duration != blank -%}--animation-duration: {{- settings.animation_duration -}}ms{%- endif -%};
     }
   </style>
 
@@ -83,7 +92,7 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" id="header">
     {% section 'announcement-bar' %}
     {% section 'header' %}
   </header>

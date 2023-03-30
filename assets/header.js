@@ -67,6 +67,7 @@ class Header {
   }
 
   initEvents() {
+    this.setHeaderFixed();
     this.getHeaderHeight();
     this.setMenuBottomPosition();
 
@@ -76,6 +77,10 @@ class Header {
     window.addEventListener("resize", this.getHeaderHeight.bind(this));
     window.addEventListener("resize", this.setMenuBottomPosition.bind(this));
     window.addEventListener("resize", this.closeMobileMenuResize.bind(this));
+  }
+
+  setHeaderFixed() {
+    this.isSticky ? this.container.style.position = "fixed" : false
   }
 
   // getting height of header and set css variables
@@ -209,26 +214,28 @@ class Header {
     this.openers.forEach(opener => opener.checked = false)
   }
 
+  // closing modals of search and account on menu hover
   closeHeaderModals(e) {
     if (!this.menuItems.length) return false;
 
     let target = e.target,
         targetTrigger,
-        items;
+        items = [];
 
     switch (target.classList[0]) {
       case classes.menuItem:
-        if (!target.firstElementChild.classList.contains(classes.menuLink)) {
-          items = [...this.container.querySelectorAll(selector.menuItem)];
-          targetTrigger = target.firstElementChild;
-        }
+        !target.firstElementChild.classList.contains(classes.menuLink)
+          ? (items = [...this.container.querySelectorAll(selector.menuItem)],
+            targetTrigger = target.firstElementChild)
+          : false
 
         break;
 
       case classes.menuLink:
-        if (target.parentElement.firstElementChild.classList.contains(classes.menuLink)) {
-          return false;
-        }
+        target.parentElement.firstElementChild.classList.contains(classes.menuLink)
+          ? false
+          : (items = [...this.container.querySelectorAll(selector.menuLink)],
+            targetTrigger = target.parentElement.firstElementChild)
 
         break;
 
@@ -242,12 +249,10 @@ class Header {
     if (!items.length) return false;
 
     items.forEach(item => {
-      if (target === item) {
-        if (targetTrigger) {
-          this.accountTrigger.checked = false;
-          this.searchTrigger.checked = false;
-        }
-      }
+      target === item && targetTrigger
+        ? (this.accountTrigger.checked = false,
+          this.searchTrigger.checked = false)
+        : null
     })
   }
 

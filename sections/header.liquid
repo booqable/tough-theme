@@ -256,33 +256,61 @@
                                         <div class="menu__dropdown-promo">
                                           <div class="menu__dropdown-promo-wrapper">
                                             {%- if promo_product != blank -%}
-                                              {%- assign promo_image  = promo_product.images.first -%}
+                                              {%- assign promo_image = promo_product.images.first -%}
 
                                                 <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
                                                   <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
-                                                    {% if promo_image != blank %}
-                                                      {{ promo_image.url | image_tag:
+                                                    {%- if promo_image != blank -%}
+                                                      {{- promo_image.url | image_tag:
                                                         loading: 'lazy',
                                                         class: 'menu__dropdown-promo-image',
                                                         widths: '320',
                                                         sizes: '320px',
                                                         alt: promo_product.name
-                                                      }}
-                                                    {% endif %}
+                                                      -}}
+                                                    {%- endif -%}
+                                                    <span class="menu__dropdown-promo-product-title">
+                                                      <span class="menu__dropdown-promo-product-name">
+                                                        {{- promo_product.name -}}
+                                                      </span>
+                                                    </span>
                                                   </a>
                                                 </div>
                                             {%- elsif promo_collection != blank -%}
+                                              {%- assign first_product = promo_collection.products | first -%}
+
+                                              {%- if promo_collection.image -%}
+                                                {%- assign promo_image = promo_collection.image -%}
+                                              {%- elsif first_product and first_product.images.first != empty -%}
+                                                {%- assign promo_image = first_product.images.first -%}
+                                              {%- endif -%}
+
                                               <div class="menu__dropdown-promo-collection">
-                                                  {%- include 'product-card' -%}
+                                                  <a href="{{ promo_collection.url }}" class="menu__dropdown-promo-image-link">
+                                                    {%- if promo_image != blank -%}
+                                                      {{- promo_image.url | image_tag:
+                                                        loading: 'lazy',
+                                                        class: 'menu__dropdown-promo-image',
+                                                        widths: '320',
+                                                        sizes: '320px',
+                                                        alt: promo_collection.name
+                                                      -}}
+                                                    {%- endif -%}
+                                                    <span class="menu__dropdown-promo-collection-title">
+                                                      <span class="menu__dropdown-promo-collection-name">
+                                                        {{- promo_collection.name -}}
+                                                      </span>
+                                                    </span>
+                                                  </a>
                                               </div>
                                             {%- else -%}
-                                              {{ promo_image.url | image_tag:
+                                              {{- promo_image.url | image_tag:
                                                 loading: 'lazy',
                                                 class: 'menu__dropdown-promo-image',
                                                 widths: '320',
                                                 sizes: '320px',
                                                 alt: promo_product.name
-                                              }}
+                                              -}}
                                             {%- endif -%}
                                           </div>
                                         </div>
@@ -701,14 +729,18 @@
         "type": "number",
         "id": "padding_top",
         "label": "Padding top",
-        "default": "16",
+        "min": 0,
+        "max": 100,
+        "default": 16,
         "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "default": "12",
+        "min": 0,
+        "max": 100,
+        "default": 12,
         "info": "Note: Use positive numbers only"
       },
       {
@@ -755,14 +787,18 @@
         "type": "number",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "default": "16",
+        "min": 0,
+        "max": 100,
+        "default": 16,
         "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "default": "16",
+        "min": 0,
+        "max": 100,
+        "default": 16,
         "info": "Note: Use positive numbers only"
       }
     ]

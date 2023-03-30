@@ -7,37 +7,37 @@
   <h6>Heading 6</h6>
 
   <div class="text-examples" style="padding: 20px 0">
-    <div class="text-large" style="font-weight: 900">Text large - Extra bold</div>
-    <div class="text-large" style="font-weight: 700">Text large - Bold</div>
-    <div class="text-large" style="font-weight: 600">Text large - Semi bold</div>
-    <div class="text-large" style="font-weight: 500">Text large - Medium</div>
-    <div class="text-large" style="font-weight: 400">Text large - Normal</div>
-    <div class="text-large" style="font-weight: 300">Text large - Light</div>
-    <div class="text-medium" style="font-weight: 900">Text medium - Extra bold</div>
-    <div class="text-medium" style="font-weight: 700">Text medium - Bold</div>
-    <div class="text-medium" style="font-weight: 600">Text medium - Semi bold</div>
-    <div class="text-medium" style="font-weight: 500">Text medium - Medium</div>
-    <div class="text-medium" style="font-weight: 400">Text medium - Normal</div>
-    <div class="text-medium" style="font-weight: 300">Text medium - Light</div>
-    <div class="text-regular" style="font-weight: 900">Text regular - Extra bold</div>
-    <div class="text-regular" style="font-weight: 700">Text regular - Bold</div>
-    <div class="text-regular" style="font-weight: 600">Text regular - Semi bold</div>
-    <div class="text-regular" style="font-weight: 500">Text regular - Medium</div>
-    <div class="text-regular" style="font-weight: 400">Text regular - Normal</div>
-    <div class="text-regular" style="font-weight: 300">Text regular - Light</div>
-    <div class="text-small" style="font-weight: 900">Text small - Extra bold</div>
-    <div class="text-small" style="font-weight: 700">Text small - Bold</div>
-    <div class="text-small" style="font-weight: 600">Text small - Semi bold</div>
-    <div class="text-small" style="font-weight: 500">Text small - Medium</div>
-    <div class="text-small" style="font-weight: 400">Text small - Normal</div>
-    <div class="text-small" style="font-weight: 300">Text small - Light</div>
-    <div class="text-tiny" style="font-weight: 900">Text tiny - Extra bold</div>
-    <div class="text-tiny" style="font-weight: 700">Text tiny - Bold</div>
-    <div class="text-tiny" style="font-weight: 600">Text tiny - Semi bold</div>
-    <div class="text-tiny" style="font-weight: 500">Text tiny - Medium</div>
-    <div class="text-tiny" style="font-weight: 400">Text tiny - Normal</div>
-    <div class="text-tiny" style="font-weight: 300">Text tiny - Light</div>
-    <div class="text-accent text-regular" style="font-weight: 400">Text accent</div>
+    <div class="text-large text-weight--extrabold">Text large - Extra bold</div>
+    <div class="text-large text-weight--bold">Text large - Bold</div>
+    <div class="text-large text-weight--semibold">Text large - Semi bold</div>
+    <div class="text-large text-weight--medium">Text large - Medium</div>
+    <div class="text-large text-weight--regular">Text large - Normal</div>
+    <div class="text-large text-weight--light">Text large - Light</div>
+    <div class="text-medium text-weight--extrabold">Text medium - Extra bold</div>
+    <div class="text-medium text-weight--bold">Text medium - Bold</div>
+    <div class="text-medium text-weight--semibold">Text medium - Semi bold</div>
+    <div class="text-medium text-weight--medium">Text medium - Medium</div>
+    <div class="text-medium text-weight--regular">Text medium - Normal</div>
+    <div class="text-medium text-weight--light">Text medium - Light</div>
+    <div class="text-regular text-weight--extrabold">Text regular - Extra bold</div>
+    <div class="text-regular text-weight--bold">Text regular - Bold</div>
+    <div class="text-regular text-weight--semibold">Text regular - Semi bold</div>
+    <div class="text-regular text-weight--medium">Text regular - Medium</div>
+    <div class="text-regular text-weight--regular">Text regular - Normal</div>
+    <div class="text-regular text-weight--light">Text regular - Light</div>
+    <div class="text-small text-weight--extrabold">Text small - Extra bold</div>
+    <div class="text-small text-weight--bold">Text small - Bold</div>
+    <div class="text-small text-weight--semibold">Text small - Semi bold</div>
+    <div class="text-small text-weight--medium">Text small - Medium</div>
+    <div class="text-small text-weight--regular">Text small - Normal</div>
+    <div class="text-small text-weight--light">Text small - Light</div>
+    <div class="text-tiny text-weight--extrabold">Text tiny - Extra bold</div>
+    <div class="text-tiny text-weight--bold">Text tiny - Bold</div>
+    <div class="text-tiny text-weight--semibold">Text tiny - Semi bold</div>
+    <div class="text-tiny text-weight--medium">Text tiny - Medium</div>
+    <div class="text-tiny text-weight--regular">Text tiny - Normal</div>
+    <div class="text-tiny text-weight--light">Text tiny - Light</div>
+    <div class="text-accent text-regular">Text accent</div>
   </div>
 
   <div class="buttons-examples" style="display: flex; flex-direction: column; padding: 0 0 20px">
@@ -51,14 +51,22 @@
     </span>
     <span>
       <a href="#!" class="button button--secondary">Button
-        {{ icon-arrow-right-orange | asset_url }}
+        {%- include 'icon-arrow-right' -%}
       </a>
       <a href="#!" class="button button--secondary">Button
-        {{ icon-arrow-right-orange | asset_url }}
+        {%- include 'icon-arrow-right' -%}
       </a>
     </span>
   </div>
-
+  <div class="box-shadows-example" style="margin: 0 -16px; padding: 20px">
+    <span class="box-shadow-xxs" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-xs" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-sm" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-md" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-lg" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-xl" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+    <span class="box-shadow-xxl" style="background: #fff; display: inline-block; vertical-align: top; width: 140px; height: 140px; margin: 16px"></span>
+  </div>
 
 </div>
 
