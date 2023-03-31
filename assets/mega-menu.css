@@ -924,6 +924,7 @@
     top: 0;
     bottom: 0;
     overflow: hidden;
+    background: var(--color-image-placeholder);
   }
 
   .menu-wide .menu__dropdown-promo img {
