@@ -26,6 +26,7 @@
       --color-primary-foreground: {{ settings.primary_foreground_color }};
       --color-secondary-foreground: {{ settings.secondary_foreground_color }};
       --color-third-foreground: {{ settings.third_foreground_color }};
+      --color-fourth-foreground: {{ settings.fourth_foreground_color }};
       --color-accent-background: {% if settings.primary_color != blank %}{{ settings.primary_color }}{% else %}{{ branding_color }}{% endif %};
       --color-accent-background-hover: {% if settings.primary_color_hover != blank %}{{ settings.primary_color_hover }}{% else %}{{ branding_color | append: "CC" }}{% endif %};
       --color-accent-background-active: {% if settings.primary_color_active != blank %}{{ settings.primary_color_active }}{% else %}{{ branding_color | append: "A6" }}{% endif %};

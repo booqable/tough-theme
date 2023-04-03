@@ -19,6 +19,7 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign sticky_header         = section.settings.sticky_header -%}
+{%- assign image_placeholder     = settings.image_placeholder -%}
 
 {% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
@@ -256,7 +257,11 @@
                                         <div class="menu__dropdown-promo">
                                           <div class="menu__dropdown-promo-wrapper">
                                             {%- if promo_product != blank -%}
-                                              {%- assign promo_image = promo_product.images.first -%}
+                                              {%- if promo_product.images.first != blank -%}
+                                                {%- assign promo_image = promo_product.images.first -%}
+                                              {%- else -%}
+                                                {%- assign promo_image = image_placeholder -%}
+                                              {%- endif -%}
 
                                                 <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
                                                   <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
@@ -283,6 +288,8 @@
                                                 {%- assign promo_image = promo_collection.image -%}
                                               {%- elsif first_product and first_product.images.first != empty -%}
                                                 {%- assign promo_image = first_product.images.first -%}
+                                              {%- else -%}
+                                                {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
                                               <div class="menu__dropdown-promo-collection">
@@ -303,13 +310,21 @@
                                                     </span>
                                                   </a>
                                               </div>
-                                            {%- else -%}
+                                            {%- elsif promo_image != blank -%}
                                               {{- promo_image.url | image_tag:
                                                 loading: 'lazy',
                                                 class: 'menu__dropdown-promo-image',
                                                 widths: '320',
                                                 sizes: '320px',
-                                                alt: promo_product.name
+                                                alt: 'Promotion image'
+                                              -}}
+                                            {%- else -%}
+                                              {{- image_placeholder.url | image_tag:
+                                                loading: 'lazy',
+                                                class: 'menu__dropdown-promo-image',
+                                                widths: '320',
+                                                sizes: '320px',
+                                                alt: 'Placeholder image'
                                               -}}
                                             {%- endif -%}
                                           </div>

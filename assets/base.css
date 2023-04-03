@@ -61,10 +61,29 @@
   font-family: var(--font-body);
 }
 
-html{
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-backround, #0B1A26) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  background: var(--color-primary-backround, #0B1A26);
+}
+
+html {
   overflow-x: hidden;
   height: 100%;
 }
+
 
 body {
   background-color: var(--color-primary-background);
@@ -73,6 +92,10 @@ body {
   flex-direction: column;
   min-height: 100%;
   width: 100%;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
 }
 
 body > * {
@@ -276,6 +299,7 @@ img {
 
 .button.button--secondary:hover {
   font-weight: var(--font-weight-bold, 700);
+  text-decoration: none;
 }
 
 .button.button--outlined {
