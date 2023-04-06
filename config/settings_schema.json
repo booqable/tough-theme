@@ -30,15 +30,22 @@
         "type": "color",
         "id": "secondary_foreground_color",
         "label": "Secondary foreground color",
-        "info": "To highlight individual elements of text, that used over the primary background color",
+        "info": "To highlight individual elements of text. Used over the primary background color",
         "default": "#4E5D78"
       },
       {
         "type": "color",
         "id": "third_foreground_color",
         "label": "Third foreground color",
-        "info": "To highlight individual elements of text, that used over the primary background color",
+        "info": "To highlight individual elements of text. Used over the primary background color",
         "default": "#B2B4B8"
+      },
+      {
+        "type": "color",
+        "id": "fourth_foreground_color",
+        "label": "Fourth foreground color",
+        "info": "To highlight individual elements of text that are in the background",
+        "default": "#E1E4E8"
       },
       {
         "type": "header",
@@ -203,6 +210,12 @@
         "id": "use_focal_images",
         "label": "Use focal images",
         "info": "Display point focused images for products instead of full sized"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_placeholder",
+        "label": "Image placeholder",
+        "info": "This image displays on products and collections if they don't have any images"
       }
     ]
   },

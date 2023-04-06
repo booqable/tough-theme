@@ -19,6 +19,7 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign sticky_header         = section.settings.sticky_header -%}
+{%- assign image_placeholder     = settings.image_placeholder -%}
 
 {% comment %} CSS variables {% endcomment %}
 {%- capture variables -%}
@@ -194,8 +195,8 @@
 {%- if menu != blank -%}
   {%- capture header_menu -%}
     <div class="header__nav-wrapper">
-      <input type="checkbox" id="mobile-menu-trigger" style="display: none;">
-      <label for="mobile-menu-trigger" class="menu__opener">
+      <input type="checkbox" id="mobile-menu-opener" style="display: none;">
+      <label for="mobile-menu-opener" class="menu__opener">
         <span></span>
       </label>
 
@@ -206,7 +207,7 @@
               {%- assign link_index = forloop.index -%}
 
               {%- if link != blank -%}
-                <li class="menu__item">
+                <li class="menu__item{% if link.items_count > 0 %} has-dropdown{%- endif -%}">
 
                   {%- if link.items_count > 0 -%}
                     <input type="checkbox" id="dropdown-menu-trigger-{{- link_index -}}" style="display: none;">
@@ -256,26 +257,30 @@
                                         <div class="menu__dropdown-promo">
                                           <div class="menu__dropdown-promo-wrapper">
                                             {%- if promo_product != blank -%}
-                                              {%- assign promo_image = promo_product.images.first -%}
+                                              {%- if promo_product.images.first != blank -%}
+                                                {%- assign promo_image = promo_product.images.first -%}
+                                              {%- else -%}
+                                                {%- assign promo_image = image_placeholder -%}
+                                              {%- endif -%}
 
-                                                <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
-                                                  <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
-                                                    {%- if promo_image != blank -%}
-                                                      {{- promo_image.url | image_tag:
-                                                        loading: 'lazy',
-                                                        class: 'menu__dropdown-promo-image',
-                                                        widths: '320',
-                                                        sizes: '320px',
-                                                        alt: promo_product.name
-                                                      -}}
-                                                    {%- endif -%}
-                                                    <span class="menu__dropdown-promo-product-title">
-                                                      <span class="menu__dropdown-promo-product-name">
-                                                        {{- promo_product.name -}}
-                                                      </span>
+                                              <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
+                                                <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
+                                                  {%- if promo_image != blank -%}
+                                                    {{- promo_image.url | image_tag:
+                                                      loading: 'lazy',
+                                                      class: 'menu__dropdown-promo-image',
+                                                      widths: '320',
+                                                      sizes: '320px',
+                                                      alt: promo_product.name
+                                                    -}}
+                                                  {%- endif -%}
+                                                  <span class="menu__dropdown-promo-product-title">
+                                                    <span class="menu__dropdown-promo-product-name">
+                                                      {{- promo_product.name -}}
                                                     </span>
-                                                  </a>
-                                                </div>
+                                                  </span>
+                                                </a>
+                                              </div>
                                             {%- elsif promo_collection != blank -%}
                                               {%- assign first_product = promo_collection.products | first -%}
 
@@ -283,6 +288,8 @@
                                                 {%- assign promo_image = promo_collection.image -%}
                                               {%- elsif first_product and first_product.images.first != empty -%}
                                                 {%- assign promo_image = first_product.images.first -%}
+                                              {%- else -%}
+                                                {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
                                               <div class="menu__dropdown-promo-collection">
@@ -303,15 +310,23 @@
                                                     </span>
                                                   </a>
                                               </div>
-                                            {%- else -%}
-                                              {{- promo_image.url | image_tag:
-                                                loading: 'lazy',
-                                                class: 'menu__dropdown-promo-image',
-                                                widths: '320',
-                                                sizes: '320px',
-                                                alt: promo_product.name
-                                              -}}
-                                            {%- endif -%}
+                                              {%- elsif promo_image.url != blank -%}
+                                                {{- promo_image.url | image_tag:
+                                                  loading: 'lazy',
+                                                  class: 'menu__dropdown-promo-image',
+                                                  widths: '320',
+                                                  sizes: '320px',
+                                                  alt: 'Promotion image'
+                                                -}}
+                                              {%- elsif image_placeholder.url != blank -%}
+                                                {{- image_placeholder.url | image_tag:
+                                                  loading: 'lazy',
+                                                  class: 'menu__dropdown-promo-image',
+                                                  widths: '320',
+                                                  sizes: '320px',
+                                                  alt: 'Placeholder image'
+                                                -}}
+                                              {%- endif -%}
                                           </div>
                                         </div>
 
@@ -388,8 +403,8 @@
 {% comment %} Search component {% endcomment %}
 {%- capture header_search -%}
   <div class="header__search">
-    <input type="checkbox" id="floating-search" style="display: none">
-    <label for="floating-search" class="header__search-trigger">
+    <input type="checkbox" id="search-opener" style="display: none">
+    <label for="search-opener" class="header__search-opener">
       {%- include 'icon-search' -%}
     </label>
 
@@ -401,7 +416,7 @@
           </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
-        <label class="header__search-trigger" for="floating-search"></label>
+        <label class="header__search-opener" for="search-opener"></label>
       </form>
     </div>
   </div>
