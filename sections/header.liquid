@@ -192,9 +192,9 @@
 {%- endcapture -%}
 
 {% comment %} Menu component {% endcomment %}
-{%- if menu != blank -%}
-  {%- capture header_menu -%}
-    <div class="header__nav-wrapper">
+{%- capture header_menu -%}
+  <div class="header__nav-wrapper">
+    {%- if menu != blank -%}
       <input type="checkbox" id="mobile-menu-opener" style="display: none;">
       <label for="mobile-menu-opener" class="menu__opener">
         <span></span>
@@ -396,9 +396,9 @@
           {{- menu_bottom -}}
         </div>
       </nav>
-    </div>
-  {%- endcapture -%}
-{%- endif -%}
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
 
 {% comment %} Search component {% endcomment %}
 {%- capture header_search -%}
