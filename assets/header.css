@@ -553,7 +553,7 @@
 }
 
 .scrolled-down .header--sticky .header__search-wrapper {
-  top: calc(var(--header-height, 73px) - var(--announcement-bar-height, 0) - 1px);
+  top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 1px);
 }
 
 @media (min-width: 576px) {
@@ -729,6 +729,6 @@
   }
 
   .scrolled-down .header--sticky .header__search-wrapper {
-    top: calc(var(--header-height, 73px) - var(--announcement-bar-height, 0));
+    top: calc(var(--header-height, 73px) - var(--announcement-height, 0));
   }
 }

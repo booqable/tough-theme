@@ -1,36 +1,36 @@
-const keys = {
+const key = {
   body: "body",
-  previewBar: ".preview-bar__container",
-  announcementBar: ".announcement-bar",
+  bar: ".announcement-bar",
+  view: ".preview-bar__container",
   header: ".header",
   headerNav: ".header__nav-wrapper",
   menu: ".menu",
   menuItem: ".menu__item",
   menuDrop: ".has-dropdown",
   menuBottom: ".header-menu-bottom",
-  menuBtn: "#mobile-menu-opener",
+  menuOpener: "#mobile-menu-opener",
   search: ".header__search",
-  searchBtn: "#search-opener",
-  acc: ".header__account",
-  accBtn: "#account-opener",
-  input: "input[type=checkbox]"
+  searchOpener: "#search-opener",
+  account: ".header__account",
+  accountOpener: "#account-opener",
+  checkbox: "input[type=checkbox]"
 };
 
-const cls = {
+const classes = {
   sticky: "header--sticky"
 };
 
-const mods = {
+const modificator = {
   scroll: "scrolled-down",
   overflow: "overflow-hidden",
   active: "active"
 };
 
-const prop = {
+const vars = {
   height: '--header-height',
-  barHeight: '--announcement-bar-height',
-  lnkHeight: '--menu-link-height',
-  prwHeight: '--preview-bar-height',
+  barHeight: '--announcement-height',
+  viewHeight: '--preview-height',
+  linkHeight: '--menu-position',
   transform: '--header-transform'
 }
 
@@ -38,12 +38,12 @@ const minHeight = 180;
 const mediaQuery = 1100;
 
 class Header {
-  constructor(container) {
-    this.c = container;
+  constructor(section) {
+    this.section = section;
   }
 
   init() {
-    if (!this.c) {
+    if (!this.section) {
       return false;
     }
 
@@ -53,18 +53,18 @@ class Header {
 
   elements() {
     this.doc = document.documentElement;
-    this.body = document.querySelector(keys.body);
-    this.prwBar = document.querySelector(keys.previewBar);
-    this.ancBar = this.c.querySelector(keys.announcementBar);
-    this.menu = this.c.querySelector(keys.menu);
-    this.bottom = this.c.querySelector(keys.menuBottom);
-    this.item = this.c.querySelector(keys.menuItem);
-    this.items = [...this.c.querySelectorAll(keys.menuDrop)];
-    this.menuBtn = this.c.querySelector(keys.menuBtn);
-    this.srchBtn = this.c.querySelector(keys.searchBtn);
-    this.accBtn = this.c.querySelector(keys.accBtn);
-    this.btnArr = [...this.menu.querySelectorAll(keys.input)];
-    this.sticky = this.c.classList.contains(cls.sticky);
+    this.body = document.querySelector(key.body);
+    this.view = document.querySelector(key.view);
+    this.bar = this.section.querySelector(key.bar);
+    this.menu = this.section.querySelector(key.menu);
+    this.bottom = this.section.querySelector(key.menuBottom);
+    this.item = this.section.querySelector(key.menuItem);
+    this.items = [...this.section.querySelectorAll(key.menuDrop)];
+    this.menuOpener = this.section.querySelector(key.menuOpener);
+    this.searchOpener = this.section.querySelector(key.searchOpener);
+    this.accountOpener = this.section.querySelector(key.accountOpener);
+    this.dropOpeners = [...this.menu.querySelectorAll(key.checkbox)];
+    this.sticky = this.section.classList.contains(classes.sticky);
     this.last = 0;
   }
 
@@ -85,7 +85,7 @@ class Header {
   headerFixed() {
     if (!this.sticky) return false;
 
-    this.c.style.position = "fixed"
+    this.section.style.position = "fixed"
   }
 
   cssVar(key, val) {
@@ -97,68 +97,69 @@ class Header {
 
   // getting height of header and set css variables
   headerHeight() {
-    let h = this.c.getBoundingClientRect().height,
-        a = 0,
-        p = 0;
+    let height = this.section.getBoundingClientRect().height,
+        barHeight = 0,
+        viewHeight = 0;
 
-    if (this.ancBar) {
-      a = this.ancBar.getBoundingClientRect().height;
-      this.cssVar(prop.barHeight, Math.floor(a));
+    if (this.bar) {
+      barHeight = this.bar.getBoundingClientRect().height;
+      this.cssVar(vars.barHeight, Math.floor(barHeight));
     }
 
-    if (this.prwBar) {
-      p = this.prwBar.getBoundingClientRect().height;
+    if (this.view) {
+      viewHeight = this.view.getBoundingClientRect().height;
 
-      if (this.sticky) h += p;
+      if (this.sticky) height += viewHeight;
 
-      this.cssVar(prop.prwHeight, Math.floor(p));
+      this.cssVar(vars.viewHeight, Math.floor(viewHeight));
     }
 
-    this.cssVar(prop.height, Math.floor(h));
+    this.cssVar(vars.height, Math.floor(height));
   }
 
   // setting properties when scroll page
   scrollProps() {
-    if (!this.ancBar) return false;
+    if (!this.bar) return false;
 
-    let inScroll = this.body.classList.contains(mods.scroll),
-          curr = window.scrollY,
-          h = this.ancBar.getBoundingClientRect().height;
+    let isScroll = this.body.classList.contains(modificator.scroll),
+        current = window.scrollY,
+        height = this.bar.getBoundingClientRect().height;
 
-    if (curr <= minHeight) {
-      this.body.classList.remove(mods.scroll);
-      this.cssVar(prop.transform, 0);
+    if (current <= minHeight) {
+      this.body.classList.remove(modificator.scroll);
+      this.cssVar(vars.transform, 0);
 
       return;
     }
 
-    if (curr > this.last && !inScroll) { // down
-      this.body.classList.add(mods.scroll);
-      this.cssVar(prop.transform, -h);
-    } else if (curr < this.last - 10 && inScroll) { // up
-      this.body.classList.remove(mods.scroll);
-      this.cssVar(prop.transform, 0)
+    if (current > this.last && !isScroll) { // down
+      this.body.classList.add(modificator.scroll);
+      this.cssVar(vars.transform, -height);
+
+    } else if (current < this.last - 10 && isScroll) { // up
+      this.body.classList.remove(modificator.scroll);
+      this.cssVar(vars.transform, 0)
     }
 
-    this.last = curr;
+    this.last = current;
   }
 
   // add css variable when desktop menu is in bottom mode for menu positioning
   menuPosition() {
     if (!this.bottom) return false;
 
-    let h = this.item.getBoundingClientRect().height;
+    let height = this.item.getBoundingClientRect().height;
 
-    this.cssVar(prop.lnkHeight, h);
+    this.cssVar(vars.linkHeight, height);
   }
 
   // adding overflow:hidden when menu opened while header is not sticky on mobile
   menuOverflow(e) {
-    const t = e.target.previousElementSibling;
+    const target = e.target.previousElementSibling;
 
-    if (t !== this.menuBtn) return false;
+    if (target !== this.menuOpener) return false;
 
-    this.menuBtn.checked ? this.closeMenu() : this.addOverflow()
+    this.menuOpener.checked ? this.closeMenu() : this.addOverflow()
   }
 
   closeMenu() {
@@ -169,44 +170,44 @@ class Header {
   closeMenuResize() {
     if (window.innerWidth >= mediaQuery) {
       this.closeMenu(),
-      this.menuBtn.checked = false
+      this.menuOpener.checked = false
     }
   }
 
   // closing all dropdowns when mobile menu closed
   closeMobileDrop() {
-    this.btnArr.forEach(btn => btn.checked = false)
+    this.dropOpeners.forEach(opener => opener.checked = false)
   }
 
   // closing modals of search and account, and mobile menu on click on header icons
   closeModals(e) {
-    this.killModal(e, this.srchBtn, keys.search);
-    this.killModal(e, this.accBtn, keys.acc);
+    this.killModal(e, this.searchOpener, key.search);
+    this.killModal(e, this.accountOpener, key.account);
 
-    let t = e.target,
-        acc = this.accBtn,
-        srh = this.srchBtn,
-        chk = this.menuBtn.checked,
-        blk = keys.header;
+    let target = e.target,
+        accountOpener = this.accountOpener,
+        searchOpener = this.searchOpener,
+        checked = this.menuOpener.checked,
+        block = key.header;
 
-    if (t === acc && chk || t === srh && chk) {
-      blk = keys.headerNav;
+    if (target === accountOpener && checked || target === searchOpener && checked) {
+      block = key.headerNav;
       this.closeMobileDrop();
       this.removeOverflow();
-      this.killModal(e, this.menuBtn, blk);
+      this.killModal(e, this.menuOpener, block);
     }
   }
 
   // closing modal window on click outside it
-  killModal(e, el, sel) {
-    if (!el) return false;
+  killModal(e, elem, parent) {
+    if (!elem) return false;
 
-    let t = e.target,
-        p = t.closest(sel);
+    let target = e.target,
+        parentElem = target.closest(parent);
 
-    if (p !== null) return false;
+    if (parentElem !== null) return false;
 
-    el.checked = false;
+    elem.checked = false;
   }
 
   // closing modal windows of header on hover and add class on menu items on desktop
@@ -214,42 +215,42 @@ class Header {
     if (!this.items.length) return false;
 
     const event = e => {
-      const t = e.target,
+      const target = e.target,
             type = e.type,
             time = 500;
 
       switch (type) {
         case "mouseenter":
           this.closeModals(e);
-          t.classList.add(mods.active);
+          target.classList.add(modificator.active);
 
           break;
 
         case "mouseleave":
           setTimeout(() => {
-            t.classList.remove(mods.active);
+            target.classList.remove(modificator.active);
           }, time);
 
           break;
       }
     }
 
-    this.items.forEach((trigger) => {
-      trigger.addEventListener('mouseenter', event);
-      trigger.addEventListener('mouseleave', event);
+    this.items.forEach((item) => {
+      item.addEventListener('mouseenter', event);
+      item.addEventListener('mouseleave', event);
     });
   }
 
   addOverflow() {
     if (this.sticky) return false;
 
-    this.doc.classList.add(mods.overflow);
+    this.doc.classList.add(modificator.overflow);
   }
 
   removeOverflow() {
     if (this.sticky) return false;
 
-    this.doc.classList.remove(mods.overflow);
+    this.doc.classList.remove(modificator.overflow);
   }
 }
 
