@@ -53,14 +53,9 @@ const handleScroll = () => {
     if (previewBar) {
       headerHeight += previewBar.getBoundingClientRect().height;
     }
-
-    // header.classList.add("fixed");
-    // contentContainer.style.marginTop = `${headerHeight}px`;
   }
 
   if (window.scrollY === 0) {
-    // header.classList.remove("fixed");
-    // contentContainer.style.marginTop = 0;
   }
 };
 
@@ -104,7 +99,6 @@ const handleMessages = ({ type, data, isTrusted }) => {
 document.addEventListener("DOMContentLoaded", () => {
   // Initializers
   initFocalImages();
-  // initSearch();
 });
 
 window.addEventListener("scroll", handleScroll);
