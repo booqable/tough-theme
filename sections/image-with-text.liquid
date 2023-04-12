@@ -1,0 +1,327 @@
+{{ "image-with-text.css" | asset_url | stylesheet_tag }}
+
+{%- assign tag                   = section.settings.tag -%}
+{%- assign title                 = section.settings.title -%}
+{%- assign description           = section.settings.description -%}
+{%- assign button_1              = section.settings.button_1 -%}
+{%- assign button_2              = section.settings.button_2 -%}
+{%- assign button_url_1          = section.settings.button_url_1 -%}
+{%- assign button_url_val_1      = section.settings.button_url_1.url -%}
+{%- assign button_url_2          = section.settings.button_url_2 -%}
+{%- assign button_url_val_2      = section.settings.button_url_2.val-%}
+{%- assign color                 = section.settings.color -%}
+{%- assign color_heading         = section.settings.color_heading -%}
+{%- assign background            = section.settings.background -%}
+{%- assign margin_top            = section.settings.margin_top -%}
+{%- assign margin_bottom         = section.settings.margin_bottom -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign hide_image            = section.settings.hide_image -%}
+{%- assign image                 = section.settings.image -%}
+{%- assign image_position        = section.settings.image_position -%}
+{%- assign image_bg              = section.settings.image_bg -%}
+{%- assign image_placeholder     = settings.image_placeholder -%}
+
+{% comment %} CSS variables {% endcomment %}
+{%- capture variables -%}
+  {%- if color != blank -%}
+    --color-third-foreground: {{ color }};
+  {%- endif -%}
+  {%- if color_heading != blank -%}
+    --color-primary-background: {{ color_heading }};
+  {%- endif -%}
+  {%- if background != blank -%}
+    --color-primary-foreground: {{ background }};
+  {%- endif -%}
+  {%- if margin_top != blank -%}
+    --margin-top: {{ margin_top }}px;
+  {%- endif -%}
+  {%- if margin_bottom != blank -%}
+    --margin-bottom: {{ margin_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+
+  {%- case image_position -%}
+    {%- when 'left' -%}
+      --flex-direction-mobile: column-reverse;
+      --flex-direction: row-reverse;
+      --justify-content: flex-end;
+      --left: -35px;
+      --right: auto;
+      --left-image: 55px;
+      --right-image: auto;
+      --margin-right: auto;
+      --margin-left: 0;
+    {%- when 'right' -%}
+      --flex-direction-mobile: column;
+      --flex-direction: row;
+      --justify-content: flex-start;
+      --left: auto;
+      --right: -35px;
+      --left-image: auto;
+      --right-image: 55px;
+      --margin-right: 0;
+      --margin-left: auto;
+  {%- endcase -%}
+{%- endcapture -%}
+
+<div
+  class="image-text__wrapper{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if margin_bottom != blank %} image-text__wrapper--margin-bottom{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  <div class="image-text__container container">
+    <div class="image-text__columns">
+      <div class="image-text__col">
+        {%- if tag != blank -%}
+          <span class="image-text__tag">{{- tag -}}</span>
+        {%- endif -%}
+
+        {%- if title != blank -%}
+          <h2 class="image-text__title">{{- title -}}</h2>
+        {%- endif -%}
+
+        {%- if description != blank -%}
+          <div class="image-text__description">{{- description -}}</div>
+        {%- endif -%}
+
+        <div class="image-text__buttons">
+          {%- if button_1 != blank and button_url_1 != blank -%}
+            <a href="{{ button_url_1 }}" class="image-text__button button button--primary button--large">
+              {{- button_1 -}}
+            </a>
+          {%- endif -%}
+
+          {%- if button_2 != blank and button_url_2 != blank -%}
+            <a href="{{ button_url_2 }}" class="image-text__button button button--secondary button--large">
+              {{- button_2 -}}
+              {%- include 'icon-arrow-right' -%}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- unless hide_image -%}
+        <div class="image-text__col">
+          <div class="image-text__holder{% if image_placeholder == blank and image == blank %} no-image{% endif %}">
+            <div class="image-text__image-wrapper">
+              {%- if image.url != blank -%}
+                {{- image.url | image_tag:
+                  loading: 'lazy',
+                  class: 'image-text__image',
+                  widths: '450, 550, 700',
+                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 700px',
+                  alt: image.alt
+                -}}
+              {%- elsif image_placeholder != blank -%}
+                {{- image_placeholder.url | image_tag:
+                  loading: 'lazy',
+                  class: 'image-text__image',
+                  widths: '450, 550, 700',
+                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 700px',
+                  alt: image_placeholder.alt
+                -}}
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+    </div>
+  </div>
+  {%- if image_bg.url != blank -%}
+    <div class="image-text__bg-image">
+      {{- image_bg.url | image_tag:
+        loading: 'lazy',
+        class: 'image-text__bg-image',
+        widths: '450, 550, 650',
+        sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+        alt: image_bg.alt
+      -}}
+    </div>
+  {%- else -%}
+    <div class="image-text__bg-image">
+      {%- include 'image-background-web' -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Image with Text",
+    "description": "Display sectiion with image and text",
+    "tag": "section",
+    "class": "image-text",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "tag",
+        "label": "Tag",
+        "default": "Tagline"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Medium length section heading goes here"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+      },
+      {
+        "type": "text",
+        "id": "button_1",
+        "label": "Label of button 1",
+        "info": "Note: If the label and URL are empty - the button absent",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_1",
+        "label": "URL of button 1"
+      },
+      {
+        "type": "text",
+        "id": "button_2",
+        "label": "Label of button 2",
+        "info": "Note: If the label and URL are empty - the button absent",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_2",
+        "label": "URL of button 2"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color_heading",
+        "label": "Title color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_image",
+        "default": false,
+        "label": "Hide image"
+      },
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Image position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_bg",
+        "label": "Image background",
+        "info": "Note: This image displays behind of content, and is applied to this section only"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "margin_top",
+        "label": "Margin top",
+        "min": 0,
+        "max": 150,
+        "info": "Note: You can use both negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom",
+        "label": "Margin bottom",
+        "min": 0,
+        "max": 150,
+        "info": "Note: You can use both negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 98,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 98,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 56,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 56,
+        "info": "Note: Use positive numbers only"
+      }
+    ],
+    "blocks": []
+  }
+{% endschema %}

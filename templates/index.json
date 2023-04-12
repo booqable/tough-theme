@@ -1,6 +1,26 @@
 {
   "name": "Home",
   "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "background": "#0E1B2A",
+        "button_1": "Button",
+        "button_2": "Button",
+        "color": "#FFFFFF",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
+        "hide_image": false,
+        "padding_top": 98,
+        "padding_top_mobile": 56,
+        "padding_bottom": 98,
+        "padding_bottom_mobile": 56,
+        "tag": "Tagline",
+        "title": "Medium length section heading goes here"
+      },
+      "disabled": null
+    },
     "image-banner": {
       "type": "image-banner",
       "blocks": {
