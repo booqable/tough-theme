@@ -24,7 +24,8 @@ class Header {
     };
 
     this.classes = {
-      sticky: "header--sticky"
+      sticky: "header--sticky",
+      notSticky: "header--not-sticky"
     };
 
     this.modificator = {
@@ -65,6 +66,7 @@ class Header {
     this.accountOpener = this.section.querySelector(this.selector.accountOpener);
     this.dropOpeners = [...this.menu.querySelectorAll(this.selector.checkbox)];
     this.sticky = this.section.classList.contains(this.classes.sticky);
+    this.notSticky = this.section.classList.contains(this.classes.notSticky);
     this.last = 0;
   }
 
@@ -181,17 +183,17 @@ class Header {
 
   // closing modals of search and account, and mobile menu on click on header icons
   closeModals(e) {
-    this.killModal(e, this.searchOpener, key.search);
-    this.killModal(e, this.accountOpener, key.account);
+    this.killModal(e, this.searchOpener, this.selector.search);
+    this.killModal(e, this.accountOpener, this.selector.account);
 
     let target = e.target,
         accountOpener = this.accountOpener,
         searchOpener = this.searchOpener,
         checked = this.menuOpener.checked,
-        block = key.header;
+        block = this.selector.header;
 
     if (target === accountOpener && checked || target === searchOpener && checked) {
-      block = key.headerNav;
+      block = this.selector.headerNav;
       this.closeMobileDrop();
       this.removeOverflow();
       this.killModal(e, this.menuOpener, block);
@@ -242,15 +244,22 @@ class Header {
   }
 
   addOverflow() {
-    if (this.sticky) return false;
-
     this.doc.classList.add(this.modificator.overflow);
+
+    if (!this.notSticky) return false;
+
+    this.section.classList.add(this.classes.sticky);
+    this.section.style.position = "fixed"
   }
 
   removeOverflow() {
-    if (this.sticky) return false;
+    this.doc.removeAttribute('class');
 
-    this.doc.classList.remove(this.modificator.overflow);
+    if (!this.notSticky) return false;
+
+    this.section.classList.remove(this.classes.sticky);
+    window.scrollTo(0, 0);
+    this.section.removeAttribute('style');
   }
 }
 

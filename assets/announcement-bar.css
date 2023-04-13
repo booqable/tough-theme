@@ -1,5 +1,4 @@
 .announcement-bar {
-  container: bar / inline-size;
   position: relative;
   z-index: 1;
 }
@@ -8,16 +7,16 @@
   color: var(--color-accent-foreground, #0B1A26);
   background-color: var(--color-accent-background, #F4B841);
   font-size: 14px;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-xs);
+  font-weight: var(--font-weight-medium, 500);
+  line-height: var(--line-height-xs, 1);
 }
 
 .announcement-bar__wrapper--padding-top {
-  padding-top: var(--padding-top-mobile, 9px);
+  padding-top: var(--padding-top-mobile, 0);
 }
 
 .announcement-bar__wrapper--padding-bottom {
-  padding-bottom: var(--padding-bottom-mobile, 9px);
+  padding-bottom: var(--padding-bottom-mobile, 0);
 }
 
 .announcement-bar__container {
@@ -68,25 +67,13 @@
   display: none;
 }
 
-.announcement-bar-background.announcement-bar__wrapper {
-  background-color: var(--color-announcement-bar-background, #F4B841);
-}
-
-.announcement-bar-color.announcement-bar__wrapper {
-  color: var(--color-announcement-bar-foreground, #0B1A26);
-}
-
-.announcement-bar-color .announcement-bar__icon path {
-  fill: var(--color-announcement-bar-foreground, #0B1A26);
-}
-
-@container (min-width: 667px) {
+@media (min-width: 667px) {
   .announcement-bar__wrapper--padding-top {
-    padding-top: var(--padding-top, 9px);
+    padding-top: var(--padding-top, 0);
   }
 
   .announcement-bar__wrapper--padding-bottom {
-    padding-bottom: var(--padding-bottom, 9px);
+    padding-bottom: var(--padding-bottom, 0);
   }
 
   .announcement-bar__container {
@@ -108,7 +95,7 @@
   }
 }
 
-@container (min-width: 1100px) {
+@media (min-width: 1100px) {
   .announcement-bar__container {
     grid-template-columns: 1fr 60% 1fr;
   }
