@@ -1,29 +1,55 @@
 {{ "footer.css" | asset_url | stylesheet_tag }}
 
-{%- assign logo	                  = section.settings.logo -%}
-{%- assign custom_title	          = section.settings.custom_title -%}
-{%- assign bottom_menu            = section.settings.bottom_menu -%}
-{%- assign footer_background      = section.settings.footer_background -%}
-{%- assign footer_foreground      = section.settings.footer_foreground -%}
-{%- assign hide_copy              = section.settings.hide_copy -%}
-{%- assign padding_top            = section.settings.padding_top -%}
-{%- assign padding_bottom         = section.settings.padding_bottom -%}
-{%- assign padding_top_mobile     = section.settings.padding_top_mobile -%}
-{%- assign padding_bottom_mobile  = section.settings.padding_bottom_mobile -%}
+{%- assign logo	                       = section.settings.logo -%}
+{%- assign custom_title	               = section.settings.custom_title -%}
+{%- assign bottom_menu                 = section.settings.bottom_menu -%}
+{%- assign footer_background           = section.settings.footer_background -%}
+{%- assign footer_foreground           = section.settings.footer_foreground -%}
+{%- assign footer_foreground_secondary = section.settings.footer_foreground_secondary -%}
+{%- assign footer_foreground_third     = section.settings.footer_foreground_third -%}
+{%- assign footer_border               = section.settings.footer_border -%}
+{%- assign hide_copy                   = section.settings.hide_copy -%}
+{%- assign hide_menu                   = section.settings.hide_menu -%}
+{%- assign padding_top                 = section.settings.padding_top -%}
+{%- assign padding_bottom              = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile          = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile       = section.settings.padding_bottom_mobile -%}
 
-{% comment %} CSS variables {% endcomment %}
+{% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  --color-footer-background: {{ footer_background }};
-  --color-footer-foreground: {{ footer_foreground }};
-  --padding-top: {{ padding_top }}px;
-  --padding-bottom: {{ padding_bottom }}px;
-  --padding-top-mobile: {{ padding_top_mobile }}px;
-  --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- if footer_background != blank -%}
+    --color-primary-background: {{ footer_background }};
+  {%- endif -%}
+  {%- if footer_foreground != blank -%}
+    --color-primary-foreground: {{ footer_foreground }};
+  {%- endif -%}
+  {%- if footer_foreground_secondary != blank -%}
+    --color-secondary-foreground: {{ footer_foreground_secondary }};
+  {%- endif -%}
+  {%- if footer_foreground_third != blank -%}
+    --color-third-foreground: {{ footer_foreground_third }};
+  {%- endif -%}
+  {%- if footer_border != blank -%}
+    --color-border-secondary: {{ footer_border }};
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
 {%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
 
 {% comment %} Logo component {% endcomment %}
 {%- capture footer_logo -%}
-  {%- if logo != blank -%}
+  {%- if logo.url != blank -%}
     <div class="footer__logo-wrapper">
       <a href="{{ routes.root_url }}" class="footer__logo">
         <img
@@ -74,18 +100,18 @@
       {%- capture menu_variables -%}
         {%- case menu_align -%}
           {%- when 'left' -%}
-            --menu-align: left;
+            --footer-menu-align: left;
           {%- when 'center' -%}
-            --menu-align: center;
+            --footer-menu-align: center;
           {%- when 'right' -%}
-            --menu-align: right;
+            --footer-menu-align: right;
         {%- endcase -%}
       {%- endcapture -%}
 
       {% case block.type %}
         {% when "menu" %}
           {%- if menu != blank -%}
-            <div class="footer__menu-instance" style="{{- menu_variables | escape -}}">
+            <div class="footer__menu-wrapper" style="{{- menu_variables | escape -}}">
               <strong class="footer__menu-heading">
                 {{- heading -}}
               </strong>
@@ -108,7 +134,7 @@
   </nav>
 {%- endcapture -%}
 
-{% comment %} Payments component {% endcomment %}
+{% comment %} Payments and social component {% endcomment %}
 {%- capture footer_icons -%}
   <div class="footer__icons">
     {%- for block in section.blocks -%}
@@ -117,87 +143,59 @@
       {%- assign payment_size     = block.settings.payment_size -%}
       {%- assign payment_spacing  = block.settings.payment_spacing -%}
 
+      {% comment %} CSS variables start {% endcomment %}
       {%- capture social_variables -%}
         {%- case social_size -%}
           {%- when 'sm' -%}
-            --social-size: 18px;
+            --footer-social-size: 18px;
           {%- when 'md' -%}
-            --social-size: 21px;
+            --footer-social-size: 21px;
           {%- when 'lg' -%}
-            --social-size: 24px;
+            --footer-social-size: 24px;
         {%- endcase -%}
 
         {%- case social_spacing -%}
           {%- when 'sm' -%}
-            --social-spacing: 5px;
+            --footer-social-spacing: 5px;
           {%- when 'md' -%}
-            --social-spacing: 7px;
+            --footer-social-spacing: 7px;
           {%- when 'lg' -%}
-            --social-spacing: 9px;
+            --footer-social-spacing: 9px;
         {%- endcase -%}
       {%- endcapture -%}
 
       {%- capture payment_variables -%}
         {%- case payment_size -%}
           {%- when 'sm' -%}
-            --payment-size: 30px;
+            --footer-payment-size: 30px;
           {%- when 'md' -%}
-            --payment-size: 32px;
+            --footer-payment-size: 32px;
           {%- when 'lg' -%}
-            --payment-size: 34px;
+            --footer-payment-size: 34px;
         {%- endcase -%}
 
         {%- case payment_spacing -%}
           {%- when 'sm' -%}
-            --payment-spacing: 2px;
+            --footer-payment-spacing: 2px;
           {%- when 'md' -%}
-            --payment-spacing: 3px;
+            --footer-payment-spacing: 3px;
           {%- when 'lg' -%}
-            --payment-spacing: 4px;
+            --footer-payment-spacing: 4px;
         {%- endcase -%}
       {%- endcapture -%}
+      {% comment %} CSS variables end {% endcomment %}
 
       {%- case block.type -%}
 
-      {%- when "socials" -%}
-        <div class="footer__social" style="{{- social_variables | escape -}}">
-          {%- include "socials" -%}
-        </div>
+        {%- when "socials" -%}
+          <div class="footer__social" style="{{- social_variables | escape -}}">
+            {%- include "socials" -%}
+          </div>
 
-      {%- when "payment-methods" -%}
-        <div class="footer__payments" style="{{- payment_variables | escape -}}">
-          {%- if payment_methods.size > 0 -%}
-            <div class="footer__payment">
-              {%- for provider in payment_methods -%}
-                {%- case provider -%}
-                  {%- when "paypal" -%}
-                    <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-                  {%- when "creditcard" -%}
-                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-                    <i class="fa-brands fa-cc-amex" title="American Express"></i>
-                  {%- when "ideal" -%}
-                    <i class="fa-brands fa-ideal" title="iDEAL"></i>
-                  {%- when "alipay" -%}
-                    <i class="fa-brands fa-alipay" title="Alipay"></i>
-                  {%- when "p24" -%}
-                    {%- include "p24-icon" -%}
-                  {%- when "eps" -%}
-                    {%- include "eps-icon" -%}
-                  {%- when "bancontact" -%}
-                    {%- include "bancontact-icon" -%}
-                  {%- when "giropay" -%}
-                    {%- include "giropay-icon" -%}
-                {%- endcase -%}
-              {%- endfor -%}
-            </div>
-          {%- else -%}
-            <div class="footer__payment">
-              <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
-              <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-            </div>
-          {%- endif -%}
-        </div>
+        {%- when "payment-methods" -%}
+          <div class="footer__payments payments" style="{{- payment_variables | escape -}}">
+            {%- include "payments" -%}
+          </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -222,7 +220,10 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="footer__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} footer__wrapper--padding-bottom{%- endif -%}"  style="{{- variables | escape -}}">
+<div
+     class="footer__wrapper{% if padding_top != blank or padding_top_mobile != blank %} footer__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} footer__wrapper--padding-bottom{%- endif -%}"
+     style="{{- variables | escape -}}"
+>
   <div class="footer__container container">
     <div class="footer__top{% if footer_logo != blank %} footer__top--with-logo{%- endif -%}">
 
@@ -232,14 +233,19 @@
 
     </div>
 
-    <div class="footer__bottom{% if hide_copy %} footer__bottom--copyright-hidden{%- endif -%}">
-      {%- unless hide_copy -%}
+    <div class="footer__bottom{% if hide_copy and hide_menu %} footer__bottom--copyright-hidden{%- endif -%}">
+      {%- unless hide_copy and hide_menu -%}
         <div class="footer__copy">
-          <p>{{ "now" | date: "%Y" }} Booqable. All right reserved.</p>
+          {%- unless hide_copy -%}
+            <p>{{ "now" | date: "%Y" }} Booqable. All right reserved.</p>
+          {%- endunless -%}
 
-          {{- footer_bottom_menu -}}
+          {%- unless hide_menu -%}
+            {{- footer_bottom_menu -}}
+          {%- endunless -%}
         </div>
       {%- endunless -%}
+
 
       {{- footer_icons -}}
 
@@ -279,19 +285,43 @@
         "type": "color",
         "id": "footer_background",
         "label": "Background color",
-        "default": "#0E1B2A"
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "color",
         "id": "footer_foreground",
-        "label": "Foreground color",
-        "default": "#FFFFFF"
+        "label": "Foreground primary color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "footer_foreground_secondary",
+        "label": "Foreground secondary color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "footer_foreground_third",
+        "label": "Foreground third color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only. Used for bottom text of footer."
+      },
+      {
+        "type": "color",
+        "id": "footer_border",
+        "label": "Border color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only."
       },
       {
         "type": "checkbox",
         "id": "hide_copy",
         "default": false,
         "label": "Hide copyright"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_menu",
+        "default": false,
+        "label": "Hide bottom menu"
       },
       {
         "type": "header",
@@ -301,14 +331,18 @@
         "type": "number",
         "id": "padding_top",
         "label": "Padding top",
-        "default": "80",
+        "min": 0,
+        "max": 100,
+        "default": 80,
         "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "default": "80",
+        "min": 0,
+        "max": 100,
+        "default": 80,
         "info": "Note: Use positive numbers only"
       },
       {
@@ -319,14 +353,18 @@
         "type": "number",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "default": "24",
+        "min": 0,
+        "max": 100,
+        "default": 24,
         "info": "Note: Use positive numbers only"
       },
       {
         "type": "number",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "default": "24",
+        "min": 0,
+        "max": 100,
+        "default": 24,
         "info": "Note: Use positive numbers only"
       }
     ],

@@ -9,51 +9,111 @@
     "name": "Colors",
     "settings": [
       {
-        "type": "color",
-        "id": "primary_color",
-        "label": "Accent background color",
-        "info": "Background for solid buttons, date picker, and shopping cart.\n\nNote: if the color is not set the company branding color will be applied.",
-        "default": "#F4B841"
-      },
-      {
-        "type": "color",
-        "id": "accent_foreground_color",
-        "label": "Accent foreground color",
-        "info": "For text used on top of accent background color",
-        "default": "#FFFFFF"
-      },
-      {
-        "type": "divider"
+        "type": "header",
+        "content": "Basic colors"
       },
       {
         "type": "color",
         "id": "primary_background_color",
         "label": "Primary background color",
-        "info": "Primary background color for your store",
+        "info": "Primary background color for the store",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
         "id": "primary_foreground_color",
         "label": "Primary foreground color",
-        "info": "For text used on top of primary background color",
+        "info": "For text used over the primary background color",
         "default": "#0B1A26"
       },
       {
-        "type": "divider"
+        "type": "color",
+        "id": "secondary_foreground_color",
+        "label": "Secondary foreground color",
+        "info": "To highlight individual elements of text. Used over the primary background color",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "third_foreground_color",
+        "label": "Third foreground color",
+        "info": "To highlight individual elements of text. Used over the primary background color",
+        "default": "#B2B4B8"
+      },
+      {
+        "type": "color",
+        "id": "fourth_foreground_color",
+        "label": "Fourth foreground color",
+        "info": "To highlight individual elements of text that are in the background",
+        "default": "#E1E4E8"
+      },
+      {
+        "type": "header",
+        "content": "UI elements colors"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Accent background color",
+        "info": "Background for solid buttons, date picker, shopping cart, etc.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#F4B841"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_hover",
+        "label": "Accent background color on hover state",
+        "info": "Background for solid buttons, date picker, shopping cart, etc. on hover.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#E5AD3D"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_active",
+        "label": "Accent background color on active state",
+        "info": "Background for solid buttons, date picker, shopping cart, etc. on click.\n\n Note: If the color is not set the company branding color will be applied.",
+        "default": "#D6A239"
+      },
+      {
+        "type": "color",
+        "id": "accent_foreground_color",
+        "label": "Accent foreground color",
+        "info": "For text used over the accent background color",
+        "default": "#0B1A26"
       },
       {
         "type": "color",
         "id": "link_color",
-        "label": "Link color",
-        "info": "Used for text links and non-solid buttons",
+        "label": "Links color",
+        "info": "For text links and non-solid buttons",
         "default": "#F4B841"
+      },
+      {
+        "type": "color",
+        "id": "placeholder_color",
+        "label": "Placeholder color",
+        "info": "For placeholders of input fields",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "border_color_primary",
+        "label": "Primary border color",
+        "default": "#4E5D78"
+      },
+      {
+        "type": "color",
+        "id": "border_color_secondary",
+        "label": "Secondary border color",
+        "default": "#E1E4E8"
       }
     ]
   },
   {
     "name": "Typography",
     "settings": [
+      {
+        "type": "header",
+        "content": "Font family"
+      },
       {
         "type": "font_picker",
         "id": "heading_font",
@@ -67,6 +127,78 @@
         "label": "Body",
         "info": "Font used for texts",
         "default": "barlow"
+      },
+      {
+        "type": "header",
+        "content": "Font sizes"
+      },
+      {
+        "type": "number",
+        "id": "h1_size",
+        "label": "Header 1",
+        "min": 40,
+        "max": 80,
+        "default": 56,
+        "info": "Use positive numbers between 40 and 80 only"
+      },
+      {
+        "type": "number",
+        "id": "h2_size",
+        "label": "Header 2",
+        "min": 30,
+        "max": 70,
+        "default": 48,
+        "info": "Use positive numbers between 30 and 70 only"
+      },
+      {
+        "type": "number",
+        "id": "h3_size",
+        "label": "Header 3",
+        "min": 25,
+        "max": 65,
+        "default": 40,
+        "info": "Use positive numbers between 25 and 65 only"
+      },
+      {
+        "type": "number",
+        "id": "h4_size",
+        "label": "Header 4",
+        "min": 20,
+        "max": 50,
+        "default": 32,
+        "info": "Use positive numbers between 20 and 50 only"
+      },
+      {
+        "type": "number",
+        "id": "h5_size",
+        "label": "Header 5",
+        "min": 18,
+        "max": 32,
+        "default": 24,
+        "info": "Use positive numbers between 18 and 32 only"
+      },
+      {
+        "type": "number",
+        "id": "h6_size",
+        "label": "Header 6",
+        "min": 16,
+        "max": 26,
+        "default": 20,
+        "info": "Use positive numbers between 16 and 26 only"
+      }
+    ]
+  },
+  {
+    "name": "Animation",
+    "settings": [
+      {
+        "type": "number",
+        "id": "animation_duration",
+        "label": "Duration",
+        "min": 0,
+        "max": 10000,
+        "default": 200,
+        "info": "Important note: Time counts in milliseconds, 1 second equals 1000 milliseconds. If this field is empty, by default, all animations use a 200ms duration. This time is used for changing colors of UI elements, opening menu, modals, etc. You can use positive numbers between 0 and 10000 only"
       }
     ]
   },
@@ -78,6 +210,12 @@
         "id": "use_focal_images",
         "label": "Use focal images",
         "info": "Display point focused images for products instead of full sized"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_placeholder",
+        "label": "Image placeholder",
+        "info": "This image displays on products and collections if they don't have any images"
       }
     ]
   },
