@@ -84,7 +84,6 @@ html {
   height: 100%;
 }
 
-
 body {
   background-color: var(--color-primary-background, #FFFFFF);
   color: var(--color-primary-foreground, #0B1A26);

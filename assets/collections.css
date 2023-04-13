@@ -2,7 +2,6 @@
   color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
   line-height: 1.5;
-  container: collection / inline-size;
 }
 
 .collections__wrapper--padding-top {
@@ -59,9 +58,6 @@
   content: "";
   display: block;
   padding-bottom: 69%;
-}
-
-.collections__link {
 }
 
 .collections__heading {
@@ -124,7 +120,7 @@
   object-fit: cover;
 }
 
-@container (min-width: 768px) {
+@media (min-width: 768px) {
   .collections__top {
     display: flex;
     justify-content: space-between;
@@ -159,7 +155,7 @@
   }
 }
 
-@container (min-width: 1100px) {
+@media (min-width: 1100px) {
   .collections__list {
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
@@ -197,5 +193,4 @@
   .collections__item:after {
     padding-bottom: 148%;
   }
-
 }

@@ -223,14 +223,13 @@
       ],
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tagline": "Our collections",
+        "tag": "Our collections",
         "title": "We can service yo in each category",
-        "title_background": "We can service you in each category",
+        "title_bg": "Category",
         "padding_bottom": 96,
         "padding_bottom_mobile": 40,
         "padding_top": 80,
-        "padding_top_mobile": 40,
-        "view_all_label": "Label of button"
+        "padding_top_mobile": 40
       },
       "disabled": null
     }

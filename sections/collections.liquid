@@ -13,15 +13,27 @@
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign image_placeholder     = settings.image_placeholder -%}
 
-  {% comment %} CSS variables {% endcomment %}
+  {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
-    --padding-top: {{ padding_top }}px;
-    --padding-bottom: {{ padding_bottom }}px;
-    --padding-top-mobile: {{ padding_top_mobile }}px;
-    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- if padding_top != blank -%}
+      --padding-top: {{ padding_top }}px;
+    {%- endif -%}
+    {%- if padding_bottom != blank -%}
+      --padding-bottom: {{ padding_bottom }}px;
+    {%- endif -%}
+    {%- if padding_top_mobile != blank -%}
+      --padding-top-mobile: {{ padding_top_mobile }}px;
+    {%- endif -%}
+    {%- if padding_bottom_mobile != blank -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- endif -%}
   {%- endcapture -%}
+  {% comment %} CSS variables end {% endcomment %}
 
-  <div class="collections__wrapper{% if padding_top != 0 or padding_top_mobile != 0 %} collections__wrapper--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} collections__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+  <div
+    class="collections__wrapper{% if padding_top != blank or padding_top_mobile != blank %} collections__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} collections__wrapper--padding-bottom{%- endif -%}"
+    style="{{- variables | escape -}}"
+  >
     <div class="collections__container container">
       <div class="collections__top">
         <div class="collections__col">
@@ -48,7 +60,6 @@
               {{- view_all -}}
             </a>
           {%- endif -%}
-
         </div>
       </div>
 
@@ -84,7 +95,6 @@
                 </a>
               </h3>
             </li>
-
           {%- else -%}
             {%- assign image = image_placeholder -%}
 
@@ -100,13 +110,11 @@
               </span>
             </li>
           {%- endif -%}
-
         {%- endfor -%}
       </div>
     </div>
   </div>
 {%- endif -%}
-
 
 {% schema %}
   {
