@@ -44,7 +44,7 @@
         "type": "color",
         "id": "fourth_foreground_color",
         "label": "Fourth foreground color",
-        "info": "To highlight individual elements of text that are in the background. Used over the primary background color",
+        "info": "To highlight individual elements of text that are in the background",
         "default": "#E1E4E8"
       },
       {

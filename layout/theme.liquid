@@ -38,6 +38,7 @@
       --color-border: {{ settings.border_color_primary }};
       --color-border-secondary: {{ settings.border_color_secondary }};
       --color-image-placeholder: {{ settings.primary_foreground_color | append: "0F" }};
+      --color-image-placeholder-lt: {{ settings.primary_background_color | append: "0F" }};
 
       {% if settings.heading_font != blank %}
         --font-heading: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};

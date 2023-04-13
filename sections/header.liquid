@@ -14,6 +14,7 @@
 {%- assign menu_position_mobile  = section.settings.menu_position_mobile -%}
 {%- assign header_background     = section.settings.header_background -%}
 {%- assign header_foreground     = section.settings.header_foreground -%}
+{%- assign header_border         = section.settings.header_border -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
@@ -21,14 +22,29 @@
 {%- assign sticky_header         = section.settings.sticky_header -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
-{% comment %} CSS variables {% endcomment %}
+{% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  --color-header-background: {{ header_background }};
-  --color-header-foreground: {{ header_foreground }};
-  --padding-top: {{ padding_top }}px;
-  --padding-bottom: {{ padding_bottom }}px;
-  --padding-top-mobile: {{ padding_top_mobile }}px;
-  --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- if header_background != blank -%}
+    --color-primary-foreground: {{ header_background }};
+  {%- endif -%}
+  {%- if header_foreground != blank -%}
+    --color-primary-background: {{ header_foreground }};
+  {%- endif -%}
+  {%- if header_border != blank -%}
+    --color-border: {{ header_border }};
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
 
   {%- case menu_position -%}
     {%- when 'left' -%}
@@ -64,6 +80,7 @@
       --menu-max-height: 0;
   {%- endcase -%}
 {%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
 
 {% comment %} Logo component {% endcomment %}
 {%- capture header_logo -%}
@@ -133,7 +150,7 @@
         {%- assign payment_size     = block.settings.payment_size -%}
         {%- assign payment_spacing  = block.settings.payment_spacing -%}
 
-        {% comment %} CSS variables {% endcomment %}
+        {% comment %} CSS variables start {% endcomment %}
         {%- capture social_variables -%}
           {%- case social_size -%}
             {%- when 'sm' -%}
@@ -173,6 +190,7 @@
               --header-payment-spacing: 4px;
           {%- endcase -%}
         {%- endcapture -%}
+        {% comment %} CSS variables end {% endcomment %}
 
         {%- case block.type -%}
 
@@ -192,22 +210,22 @@
 {%- endcapture -%}
 
 {% comment %} Menu component {% endcomment %}
-{%- if menu != blank -%}
-  {%- capture header_menu -%}
-    <div class="header__nav-wrapper">
-      <input type="checkbox" id="mobile-menu-trigger" style="display: none;">
-      <label for="mobile-menu-trigger" class="menu__opener">
+{%- capture header_menu -%}
+  <div class="header__nav-wrapper">
+    {%- if menu != blank -%}
+      <input type="checkbox" id="mobile-menu-opener" style="display: none;">
+      <label for="mobile-menu-opener" class="menu__opener">
         <span></span>
       </label>
 
-      <nav class="header__nav menu{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} mobile-menu-top{%- endif -%}" style="display: none;">
+      <nav class="header__nav menu{% if padding_bottom != blank %} menu--position{% endif %}{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} mobile-menu-top{%- endif -%}" style="display: none;">
         <div class="menu__wrapper">
           <ul class="header__nav-list menu__list">
             {%- for link in menu.items -%}
               {%- assign link_index = forloop.index -%}
 
               {%- if link != blank -%}
-                <li class="menu__item">
+                <li class="menu__item{% if link.items_count > 0 %} has-dropdown{%- endif -%}">
 
                   {%- if link.items_count > 0 -%}
                     <input type="checkbox" id="dropdown-menu-trigger-{{- link_index -}}" style="display: none;">
@@ -254,8 +272,8 @@
                                     {%- case block.type -%}
                                       {%- when "promo" -%}
 
-                                        <div class="menu__dropdown-promo">
-                                          <div class="menu__dropdown-promo-wrapper">
+                                        <div class="menu__promo">
+                                          <div class="menu__promo-wrapper">
                                             {%- if promo_product != blank -%}
                                               {%- if promo_product.images.first != blank -%}
                                                 {%- assign promo_image = promo_product.images.first -%}
@@ -263,24 +281,24 @@
                                                 {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
-                                                <div id="{{ promo_product.id }}" class="menu__dropdown-promo-product">
-                                                  <a href="{{ promo_product.url }}" class="menu__dropdown-promo-image-link">
-                                                    {%- if promo_image != blank -%}
-                                                      {{- promo_image.url | image_tag:
-                                                        loading: 'lazy',
-                                                        class: 'menu__dropdown-promo-image',
-                                                        widths: '320',
-                                                        sizes: '320px',
-                                                        alt: promo_product.name
-                                                      -}}
-                                                    {%- endif -%}
-                                                    <span class="menu__dropdown-promo-product-title">
-                                                      <span class="menu__dropdown-promo-product-name">
-                                                        {{- promo_product.name -}}
-                                                      </span>
+                                              <div id="{{ promo_product.id }}" class="menu__promo-product">
+                                                <a href="{{ promo_product.url }}" class="menu__promo-image-link">
+                                                  {%- if promo_image != blank -%}
+                                                    {{- promo_image.url | image_tag:
+                                                      loading: 'lazy',
+                                                      class: 'menu__promo-image',
+                                                      widths: '320',
+                                                      sizes: '320px',
+                                                      alt: promo_product.name
+                                                    -}}
+                                                  {%- endif -%}
+                                                  <span class="menu__promo-product-title">
+                                                    <span class="menu__promo-product-name">
+                                                      {{- promo_product.name -}}
                                                     </span>
-                                                  </a>
-                                                </div>
+                                                  </span>
+                                                </a>
+                                              </div>
                                             {%- elsif promo_collection != blank -%}
                                               {%- assign first_product = promo_collection.products | first -%}
 
@@ -292,36 +310,36 @@
                                                 {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
-                                              <div class="menu__dropdown-promo-collection">
-                                                  <a href="{{ promo_collection.url }}" class="menu__dropdown-promo-image-link">
+                                              <div class="menu__promo-collection">
+                                                  <a href="{{ promo_collection.url }}" class="menu__promo-image-link">
                                                     {%- if promo_image != blank -%}
                                                       {{- promo_image.url | image_tag:
                                                         loading: 'lazy',
-                                                        class: 'menu__dropdown-promo-image',
+                                                        class: 'menu__promo-image',
                                                         widths: '320',
                                                         sizes: '320px',
                                                         alt: promo_collection.name
                                                       -}}
                                                     {%- endif -%}
-                                                    <span class="menu__dropdown-promo-collection-title">
-                                                      <span class="menu__dropdown-promo-collection-name">
+                                                    <span class="menu__promo-collection-title">
+                                                      <span class="menu__promo-collection-name">
                                                         {{- promo_collection.name -}}
                                                       </span>
                                                     </span>
                                                   </a>
                                               </div>
-                                            {%- elsif promo_image != blank -%}
+                                            {%- elsif promo_image.url != blank -%}
                                               {{- promo_image.url | image_tag:
                                                 loading: 'lazy',
-                                                class: 'menu__dropdown-promo-image',
+                                                class: 'menu__promo-image',
                                                 widths: '320',
                                                 sizes: '320px',
                                                 alt: 'Promotion image'
                                               -}}
-                                            {%- else -%}
+                                            {%- elsif image_placeholder.url != blank -%}
                                               {{- image_placeholder.url | image_tag:
                                                 loading: 'lazy',
-                                                class: 'menu__dropdown-promo-image',
+                                                class: 'menu__promo-image',
                                                 widths: '320',
                                                 sizes: '320px',
                                                 alt: 'Placeholder image'
@@ -362,7 +380,6 @@
 
                                       <ul class="menu__dropdown-list">
                                         {%- for grandchildlink in childlink.items -%}
-
                                           {%- if grandchildlink != blank -%}
                                             <li class="menu__dropdown-item">
                                               <a href="{{ grandchildlink.url }}" class="menu__dropdown-link">
@@ -370,10 +387,8 @@
                                               </a>
                                             </li>
                                           {%- endif -%}
-
                                         {%- endfor -%}
                                       </ul>
-
                                     </div>
                                   </div>
                                 {%- endif -%}
@@ -396,15 +411,15 @@
           {{- menu_bottom -}}
         </div>
       </nav>
-    </div>
-  {%- endcapture -%}
-{%- endif -%}
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
 
 {% comment %} Search component {% endcomment %}
 {%- capture header_search -%}
   <div class="header__search">
-    <input type="checkbox" id="floating-search" style="display: none">
-    <label for="floating-search" class="header__search-trigger">
+    <input type="checkbox" id="search-opener" style="display: none">
+    <label for="search-opener" class="header__search-opener">
       {%- include 'icon-search' -%}
     </label>
 
@@ -416,7 +431,7 @@
           </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
-        <label class="header__search-trigger" for="floating-search"></label>
+        <label class="header__search-opener" for="search-opener"></label>
       </form>
     </div>
   </div>
@@ -429,6 +444,7 @@
     <label for="account-opener" class="header__account-opener">
       {%- include 'icon-user' -%}
     </label>
+
     <div class="header__account-drop-wrapper">
       <div class="header__account-drop">
         <a href="" class="header__account-link">
@@ -457,8 +473,11 @@
   </div>
 {%- endcapture -%}
 
-<div class="header__inner{% if header_background != blank %} header-background{% endif %}{% if header_foreground != blank %} header-color{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}" style="{{- variables | escape -}}">
-  <div class="header__content{% if padding_top != 0 or padding_top_mobile != 0 %} header__content--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} header__content--padding-bottom{%- endif -%}">
+<div
+  class="header__inner{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' %} header-menu-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  <div class="header__content{% if padding_top != blank or padding_top_mobile != blank %} header__content--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
       <div class="header__content-inner{% if menu != blank %} header__mobile-menu-opener-{{- menu_opener_mobile -}}{%- endif -%}">
 
@@ -477,6 +496,11 @@
   <script>
     const header = document.querySelector('.header');
     header.classList.add('header--sticky')
+  </script>
+{%- else -%}
+  <script>
+    const header = document.querySelector('.header');
+    header.classList.add('header--not-sticky')
   </script>
 {%- endif -%}
 
@@ -686,6 +710,12 @@
         "id": "header_foreground",
         "label": "Foreground color",
         "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "header_border",
+        "label": "Border color",
+        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
       },
       {
         "type": "menu",

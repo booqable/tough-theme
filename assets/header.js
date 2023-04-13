@@ -1,273 +1,270 @@
-const selector = {
-  body: "body",
-  previewBar: ".preview-bar__container",
-  announcementBar: ".announcement-bar",
-  menuBottom: ".header-menu-bottom",
-  menu: ".menu",
-  menuItem: ".menu__item",
-  menuLink: ".menu__link",
-  input: "input[type=checkbox]",
-  menuTrigger: "#mobile-menu-trigger",
-  searchTrigger: "#floating-search",
-  accountTrigger: "#account-opener"
-};
-
-const classes = {
-  headerSticky: "header--sticky",
-  menuItem: "menu__item",
-  menuLink: "menu__link",
-  menuOpener: "menu__dropdown-opener"
-};
-
-const modifiers = {
-  scrolled: "scroll-down",
-  overflow: "overflow-hidden"
-};
-
-const props = {
-  height: '--header-height',
-  barHeight: '--announcement-bar-height',
-  linkHeight: '--menu-link-height',
-  previewHeight: '--preview-bar-height',
-  transform: '--header-transform'
-}
-
-const minHeight = 180;
-const mobilePoint = 1100;
-
 class Header {
-  constructor(container) {
-    this.container = container;
+  constructor(section) {
+    this.section = section;
+
+    this.minHeight = 180;
+    this.mediaQuery = 1100;
+
+    this.selector = {
+      body: "body",
+      bar: ".announcement-bar",
+      view: ".preview-bar__container",
+      header: ".header",
+      headerNav: ".header__nav-wrapper",
+      menu: ".menu",
+      menuItem: ".menu__item",
+      menuDrop: ".has-dropdown",
+      menuBottom: ".header-menu-bottom",
+      menuOpener: "#mobile-menu-opener",
+      search: ".header__search",
+      searchOpener: "#search-opener",
+      account: ".header__account",
+      accountOpener: "#account-opener",
+      checkbox: "input[type=checkbox]"
+    };
+
+    this.classes = {
+      sticky: "header--sticky",
+      notSticky: "header--not-sticky"
+    };
+
+    this.modificator = {
+      scroll: "scrolled-down",
+      overflow: "overflow-hidden",
+      active: "active"
+    };
+
+    this.props = {
+      height: '--header-height',
+      barHeight: '--announcement-height',
+      viewHeight: '--preview-height',
+      linkHeight: '--menu-position',
+      transform: '--header-transform'
+    };
   }
 
   init() {
-    if (!this.container) {
+    if (!this.section) {
       return false;
     }
 
-    this.initElements();
-    this.initEvents();
+    this.elements();
+    this.events();
   }
 
-  initElements() {
-    this.html = document.documentElement;
-    this.body = document.querySelector(selector.body);
-    this.previewBar = document.querySelector(selector.previewBar);
-    this.announcementBar = this.container.querySelector(selector.announcementBar);
-    this.isSticky = this.container.classList.contains(classes.headerSticky);
-    this.isMenuBottom = this.container.querySelector(selector.menuBottom);
-    this.menu = this.container.querySelector(selector.menu);
-    this.menuTrigger = this.container.querySelector(selector.menuTrigger);
-    this.menuItem = this.container.querySelector(selector.menuItem);
-    this.menuItems = [...this.container.querySelectorAll(selector.menuItem)];
-    this.openers = [...this.menu.querySelectorAll(selector.input)];
-    this.searchTrigger = this.container.querySelector(selector.searchTrigger);
-    this.accountTrigger = this.container.querySelector(selector.accountTrigger);
-    this.lastScroll = 0;
+  elements() {
+    this.doc = document.documentElement;
+    this.body = document.querySelector(this.selector.body);
+    this.view = document.querySelector(this.selector.view);
+    this.bar = this.section.querySelector(this.selector.bar);
+    this.menu = this.section.querySelector(this.selector.menu);
+    this.bottom = this.section.querySelector(this.selector.menuBottom);
+    this.item = this.section.querySelector(this.selector.menuItem);
+    this.items = [...this.section.querySelectorAll(this.selector.menuDrop)];
+    this.menuOpener = this.section.querySelector(this.selector.menuOpener);
+    this.searchOpener = this.section.querySelector(this.selector.searchOpener);
+    this.accountOpener = this.section.querySelector(this.selector.accountOpener);
+    this.dropOpeners = [...this.menu.querySelectorAll(this.selector.checkbox)];
+    this.sticky = this.section.classList.contains(this.classes.sticky);
+    this.notSticky = this.section.classList.contains(this.classes.notSticky);
+    this.last = 0;
   }
 
-  initEvents() {
-    this.setHeaderFixed();
-    this.getHeaderHeight();
-    this.setMenuBottomPosition();
+  events() {
+    this.headerFixed();
+    this.headerHeight();
+    this.menuPosition();
+    this.hoverClose();
 
-    document.addEventListener("click", this.headerIconsClick.bind(this));
-    document.addEventListener("mouseover", this.closeHeaderModals.bind(this));
-    window.addEventListener("scroll", this.setPropsOnScroll.bind(this));
-    window.addEventListener("resize", this.getHeaderHeight.bind(this));
-    window.addEventListener("resize", this.setMenuBottomPosition.bind(this));
-    window.addEventListener("resize", this.closeMobileMenuResize.bind(this));
+    document.addEventListener("click", this.menuOverflow.bind(this));
+    document.addEventListener("click", this.closeModals.bind(this));
+    window.addEventListener("scroll", this.scrollProps.bind(this));
+    window.addEventListener("resize", this.headerHeight.bind(this));
+    window.addEventListener("resize", this.menuPosition.bind(this));
+    window.addEventListener("resize", this.closeMenuResize.bind(this));
   }
 
-  setHeaderFixed() {
-    this.isSticky ? this.container.style.position = "fixed" : false
+  headerFixed() {
+    if (!this.sticky) return false;
+
+    this.section.style.position = "fixed"
+  }
+
+  cssVar(key, val) {
+    this.doc.style.setProperty(
+      `${key}`,
+      `${val}px`
+    );
   }
 
   // getting height of header and set css variables
-  getHeaderHeight() {
-    let headerHeight = this.container.getBoundingClientRect().height,
-        announcementBarHeight = 0,
-        previewBarHeight = 0;
+  headerHeight() {
+    let height = this.section.getBoundingClientRect().height,
+        barHeight = 0,
+        viewHeight = 0;
 
-    if (this.announcementBar) {
-      announcementBarHeight = this.announcementBar.getBoundingClientRect().height;
-
-      this.html.style.setProperty(
-        `${props.barHeight}`,
-        `${announcementBarHeight}px`
-      );
+    if (this.bar) {
+      barHeight = this.bar.getBoundingClientRect().height;
+      this.cssVar(this.props.barHeight, Math.floor(barHeight));
     }
 
-    if (this.previewBar) {
-      previewBarHeight = this.previewBar.getBoundingClientRect().height;
-      headerHeight += previewBarHeight;
+    if (this.view) {
+      viewHeight = this.view.getBoundingClientRect().height;
 
-      this.html.style.setProperty(
-        `${props.previewHeight}`,
-        `${previewBarHeight}px`
-      );
+      if (this.sticky) height += viewHeight;
+
+      this.cssVar(this.props.viewHeight, Math.floor(viewHeight));
     }
 
-    this.html.style.setProperty(
-      `${props.height}`,
-      `${Math.floor(headerHeight) - 1}px`
-    );
+    this.cssVar(this.props.height, Math.floor(height));
   }
 
   // setting properties when scroll page
-  setPropsOnScroll() {
-    if (!this.announcementBar) return false;
+  scrollProps() {
+    if (!this.bar) return false;
 
-    this.isScrolled = this.body.classList.contains(modifiers.scrolled);
-    this.currentScroll = window.scrollY;
+    let isScroll = this.body.classList.contains(this.modificator.scroll),
+        current = window.scrollY,
+        height = this.bar.getBoundingClientRect().height;
 
-    if (this.currentScroll <= minHeight) {
-      this.body.classList.remove(modifiers.scrolled);
-      this.html.style.setProperty(
-        `${props.transform}`,
-        '0'
-      );
+    if (current <= this.minHeight) {
+      this.body.classList.remove(this.modificator.scroll);
+      this.cssVar(this.props.transform, 0);
+
       return;
     }
 
-    this.currentScroll > this.lastScroll && !this.isScrolled
-      ? // down
-        (this.body.classList.add(modifiers.scrolled),
-        this.html.style.setProperty(
-          `${props.transform}`,
-          `-${this.announcementBar.offsetHeight}px`
-        ))
-      : this.currentScroll < this.lastScroll - 10 && this.isScrolled
-        ? // up
-          (this.body.classList.remove(modifiers.scrolled),
-          this.html.style.setProperty(
-            `${props.transform}`,
-            '0'
-          ))
-      : null
+    if (current > this.last && !isScroll) { // down
+      this.body.classList.add(this.modificator.scroll);
+      this.cssVar(this.props.transform, -height);
 
-    this.lastScroll = this.currentScroll;
+    } else if (current < this.last - 10 && isScroll) { // up
+      this.body.classList.remove(this.modificator.scroll);
+      this.cssVar(this.props.transform, 0)
+    }
 
+    this.last = current;
   }
 
   // add css variable when desktop menu is in bottom mode for menu positioning
-  setMenuBottomPosition() {
-    if (!this.isMenuBottom) return false;
+  menuPosition() {
+    if (!this.bottom) return false;
 
-    let itemHeight = this.menuItem.getBoundingClientRect().height;
+    let height = this.item.getBoundingClientRect().height;
 
-    this.html.style.setProperty(
-      `${props.linkHeight}`,
-      `${itemHeight}px`
-    );
+    this.cssVar(this.props.linkHeight, height);
   }
 
   // adding overflow:hidden when menu opened while header is not sticky on mobile
+  menuOverflow(e) {
+    const target = e.target.previousElementSibling;
+
+    if (target !== this.menuOpener) return false;
+
+    this.menuOpener.checked ? this.closeMenu() : this.addOverflow()
+  }
+
+  closeMenu() {
+    this.removeOverflow();
+    this.closeMobileDrop();
+  }
+
+  closeMenuResize() {
+    if (window.innerWidth >= this.mediaQuery) {
+      this.closeMenu(),
+      this.menuOpener.checked = false
+    }
+  }
+
+  // closing all dropdowns when mobile menu closed
+  closeMobileDrop() {
+    this.dropOpeners.forEach(opener => opener.checked = false)
+  }
+
   // closing modals of search and account, and mobile menu on click on header icons
-  // closing all dropdowns when menu closed on mobile
-  headerIconsClick(e) {
+  closeModals(e) {
+    this.killModal(e, this.searchOpener, this.selector.search);
+    this.killModal(e, this.accountOpener, this.selector.account);
+
     let target = e.target,
-        targetTrigger = target.previousElementSibling;
+        accountOpener = this.accountOpener,
+        searchOpener = this.searchOpener,
+        checked = this.menuOpener.checked,
+        block = this.selector.header;
 
-    switch (targetTrigger) {
-      case this.menuTrigger:
-        this.accountTrigger.checked = false;
-        this.searchTrigger.checked = false;
-
-        this.menuTrigger.checked
-          ? this.closeMobileMenu()
-          : this.addOverflow()
-
-        break;
-
-      case this.searchTrigger:
-        this.menuTrigger.checked = false;
-        this.accountTrigger.checked = false;
-        this.closeMobileDropMenu();
-        this.removeOverflow();
-
-        break;
-
-      case this.accountTrigger:
-        this.menuTrigger.checked = false;
-        this.searchTrigger.checked = false;
-        this.closeMobileDropMenu();
-        this.removeOverflow();
-
-        break;
-    }
-  }
-
-  closeMobileMenu() {
+    if (target === accountOpener && checked || target === searchOpener && checked) {
+      block = this.selector.headerNav;
+      this.closeMobileDrop();
       this.removeOverflow();
-      this.closeMobileDropMenu();
+      this.killModal(e, this.menuOpener, block);
+    }
   }
 
-  closeMobileMenuResize() {
-    window.innerWidth >= mobilePoint
-      ? (this.closeMobileMenu(),
-        this.menuTrigger.checked = false)
-      : null
-  }
-
-  closeMobileDropMenu() {
-    this.openers.forEach(opener => opener.checked = false)
-  }
-
-  // closing modals of search and account on menu hover
-  closeHeaderModals(e) {
-    if (!this.menuItems.length) return false;
+  // closing modal window on click outside it
+  killModal(e, elem, parent) {
+    if (!elem) return false;
 
     let target = e.target,
-        targetTrigger,
-        items = [];
+        parentElem = target.closest(parent);
 
-    switch (target.classList[0]) {
-      case classes.menuItem:
-        !target.firstElementChild.classList.contains(classes.menuLink)
-          ? (items = [...this.container.querySelectorAll(selector.menuItem)],
-            targetTrigger = target.firstElementChild)
-          : false
+    if (parentElem !== null) return false;
 
-        break;
+    elem.checked = false;
+  }
 
-      case classes.menuLink:
-        target.parentElement.firstElementChild.classList.contains(classes.menuLink)
-          ? false
-          : (items = [...this.container.querySelectorAll(selector.menuLink)],
-            targetTrigger = target.parentElement.firstElementChild)
+  // closing modal windows of header on hover and add class on menu items on desktop
+  hoverClose() {
+    if (!this.items.length) return false;
 
-        break;
+    const event = e => {
+      const target = e.target,
+            type = e.type,
+            time = 500;
 
-      case classes.menuOpener:
-        items = [...this.container.querySelectorAll(selector.menuLink)];
-        targetTrigger = target.parentElement.firstElementChild;
+      switch (type) {
+        case "mouseenter":
+          this.closeModals(e);
+          target.classList.add(this.modificator.active);
 
-        break;
+          break;
+
+        case "mouseleave":
+          setTimeout(() => {
+            target.classList.remove(this.modificator.active);
+          }, time);
+
+          break;
+      }
     }
 
-    if (!items.length) return false;
-
-    items.forEach(item => {
-      target === item && targetTrigger
-        ? (this.accountTrigger.checked = false,
-          this.searchTrigger.checked = false)
-        : null
-    })
+    this.items.forEach((item) => {
+      item.addEventListener('mouseenter', event);
+      item.addEventListener('mouseleave', event);
+    });
   }
 
   addOverflow() {
-    !this.isSticky ? this.html.classList.add(modifiers.overflow) : null
+    this.doc.classList.add(this.modificator.overflow);
+
+    if (!this.notSticky) return false;
+
+    this.section.classList.add(this.classes.sticky);
+    this.section.style.position = "fixed"
   }
 
   removeOverflow() {
-    !this.isSticky ? this.html.classList.remove(modifiers.overflow) : null
+    this.doc.removeAttribute('class');
+
+    if (!this.notSticky) return false;
+
+    this.section.classList.remove(this.classes.sticky);
+    window.scrollTo(0, 0);
+    this.section.removeAttribute('style');
   }
 }
 
 const stickyHeader = new Header(document.querySelector('.header'));
 
-document.addEventListener("readystatechange", (event) => {
-  if (event.target.readyState === "complete") stickyHeader.init();
+document.addEventListener("readystatechange", (e) => {
+  if (e.target.readyState === "complete") stickyHeader.init();
 });
-
