@@ -210,6 +210,48 @@
         "columns_count": 3
       },
       "disabled": null
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_535502": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542",
+        "collection_535502"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "tag": "Our collections",
+        "title": "We can service yo in each category",
+        "title_bg": "Category",
+        "padding_bottom": 96,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_top_mobile": 40
+      },
+      "disabled": null
     }
   },
   "order": [
