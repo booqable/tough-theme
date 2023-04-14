@@ -102,7 +102,6 @@
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-
 <div
   class="image-text__wrapper{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if margin_bottom != blank %} image-text__wrapper--margin-bottom{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"

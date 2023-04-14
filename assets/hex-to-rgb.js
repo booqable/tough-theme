@@ -18,19 +18,8 @@ class ToRgb {
             .substring(1).match(/.{2}/g)
             .map(x => parseInt(x, 16))
 
-    const doc = document.documentElement;
-
-    let hex = getComputedStyle(this.section)
+    const hex = getComputedStyle(this.section)
                 .getPropertyValue(this.options.hex).trim();
-
-    console.log(this.options.hex);
-    console.log(this.section);
-    console.log(hex);
-
-    // if (hex) {
-    //   hex = getComputedStyle(doc)
-    //           .getPropertyValue(this.options.hex).trim();
-    // }
 
     const rgb = `${hexToRgb(hex)}`;
 
@@ -39,5 +28,3 @@ class ToRgb {
 }
 
 window.ToRgb = ToRgb
-
-
