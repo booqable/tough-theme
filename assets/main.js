@@ -1,11 +1,11 @@
-const modificators = {
-  loaded: "loaded",
-  resizeClass: "resize-active"
-};
-
 class Main {
   constructor(container) {
     this.container = container;
+
+    this.modificators = {
+      loaded: "loaded",
+      resizeClass: "resize-active"
+    };
   }
 
   init() {
@@ -21,17 +21,17 @@ class Main {
 
   // adding class while resizing window
   setResizeClass() {
-    this.container.classList.add(modificators.resizeClass);
+    this.container.classList.add(this.modificators.resizeClass);
     clearTimeout(this.timer);
 
     this.timer = setTimeout(() => {
-      this.container.classList.remove(modificators.resizeClass);
+      this.container.classList.remove(this.modificators.resizeClass);
     }, 500);
   }
 
   // adding class after loading content
   setLoadedClass() {
-    this.container.classList.add(modificators.loaded);
+    this.container.classList.add(this.modificators.loaded);
   }
 }
 

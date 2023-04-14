@@ -1,45 +1,46 @@
-const key = {
-  body: "body",
-  bar: ".announcement-bar",
-  view: ".preview-bar__container",
-  header: ".header",
-  headerNav: ".header__nav-wrapper",
-  menu: ".menu",
-  menuItem: ".menu__item",
-  menuDrop: ".has-dropdown",
-  menuBottom: ".header-menu-bottom",
-  menuOpener: "#mobile-menu-opener",
-  search: ".header__search",
-  searchOpener: "#search-opener",
-  account: ".header__account",
-  accountOpener: "#account-opener",
-  checkbox: "input[type=checkbox]"
-};
-
-const classes = {
-  sticky: "header--sticky"
-};
-
-const modificator = {
-  scroll: "scrolled-down",
-  overflow: "overflow-hidden",
-  active: "active"
-};
-
-const vars = {
-  height: '--header-height',
-  barHeight: '--announcement-height',
-  viewHeight: '--preview-height',
-  linkHeight: '--menu-position',
-  transform: '--header-transform'
-}
-
-const minHeight = 180;
-const mediaQuery = 1100;
-
 class Header {
   constructor(section) {
     this.section = section;
+
+    this.minHeight = 180;
+    this.mediaQuery = 1100;
+
+    this.selector = {
+      body: "body",
+      bar: ".announcement-bar",
+      view: ".preview-bar__container",
+      header: ".header",
+      headerNav: ".header__nav-wrapper",
+      menu: ".menu",
+      menuItem: ".menu__item",
+      menuDrop: ".has-dropdown",
+      menuBottom: ".header-menu-bottom",
+      menuOpener: "#mobile-menu-opener",
+      search: ".header__search",
+      searchOpener: "#search-opener",
+      account: ".header__account",
+      accountOpener: "#account-opener",
+      checkbox: "input[type=checkbox]"
+    };
+
+    this.classes = {
+      sticky: "header--sticky",
+      notSticky: "header--not-sticky"
+    };
+
+    this.modificator = {
+      scroll: "scrolled-down",
+      overflow: "overflow-hidden",
+      active: "active"
+    };
+
+    this.props = {
+      height: '--header-height',
+      barHeight: '--announcement-height',
+      viewHeight: '--preview-height',
+      linkHeight: '--menu-position',
+      transform: '--header-transform'
+    };
   }
 
   init() {
@@ -53,18 +54,19 @@ class Header {
 
   elements() {
     this.doc = document.documentElement;
-    this.body = document.querySelector(key.body);
-    this.view = document.querySelector(key.view);
-    this.bar = this.section.querySelector(key.bar);
-    this.menu = this.section.querySelector(key.menu);
-    this.bottom = this.section.querySelector(key.menuBottom);
-    this.item = this.section.querySelector(key.menuItem);
-    this.items = [...this.section.querySelectorAll(key.menuDrop)];
-    this.menuOpener = this.section.querySelector(key.menuOpener);
-    this.searchOpener = this.section.querySelector(key.searchOpener);
-    this.accountOpener = this.section.querySelector(key.accountOpener);
-    this.dropOpeners = [...this.menu.querySelectorAll(key.checkbox)];
-    this.sticky = this.section.classList.contains(classes.sticky);
+    this.body = document.querySelector(this.selector.body);
+    this.view = document.querySelector(this.selector.view);
+    this.bar = this.section.querySelector(this.selector.bar);
+    this.menu = this.section.querySelector(this.selector.menu);
+    this.bottom = this.section.querySelector(this.selector.menuBottom);
+    this.item = this.section.querySelector(this.selector.menuItem);
+    this.items = [...this.section.querySelectorAll(this.selector.menuDrop)];
+    this.menuOpener = this.section.querySelector(this.selector.menuOpener);
+    this.searchOpener = this.section.querySelector(this.selector.searchOpener);
+    this.accountOpener = this.section.querySelector(this.selector.accountOpener);
+    this.dropOpeners = [...this.menu.querySelectorAll(this.selector.checkbox)];
+    this.sticky = this.section.classList.contains(this.classes.sticky);
+    this.notSticky = this.section.classList.contains(this.classes.notSticky);
     this.last = 0;
   }
 
@@ -103,7 +105,7 @@ class Header {
 
     if (this.bar) {
       barHeight = this.bar.getBoundingClientRect().height;
-      this.cssVar(vars.barHeight, Math.floor(barHeight));
+      this.cssVar(this.props.barHeight, Math.floor(barHeight));
     }
 
     if (this.view) {
@@ -111,34 +113,34 @@ class Header {
 
       if (this.sticky) height += viewHeight;
 
-      this.cssVar(vars.viewHeight, Math.floor(viewHeight));
+      this.cssVar(this.props.viewHeight, Math.floor(viewHeight));
     }
 
-    this.cssVar(vars.height, Math.floor(height));
+    this.cssVar(this.props.height, Math.floor(height));
   }
 
   // setting properties when scroll page
   scrollProps() {
     if (!this.bar) return false;
 
-    let isScroll = this.body.classList.contains(modificator.scroll),
+    let isScroll = this.body.classList.contains(this.modificator.scroll),
         current = window.scrollY,
         height = this.bar.getBoundingClientRect().height;
 
-    if (current <= minHeight) {
-      this.body.classList.remove(modificator.scroll);
-      this.cssVar(vars.transform, 0);
+    if (current <= this.minHeight) {
+      this.body.classList.remove(this.modificator.scroll);
+      this.cssVar(this.props.transform, 0);
 
       return;
     }
 
     if (current > this.last && !isScroll) { // down
-      this.body.classList.add(modificator.scroll);
-      this.cssVar(vars.transform, -height);
+      this.body.classList.add(this.modificator.scroll);
+      this.cssVar(this.props.transform, -height);
 
     } else if (current < this.last - 10 && isScroll) { // up
-      this.body.classList.remove(modificator.scroll);
-      this.cssVar(vars.transform, 0)
+      this.body.classList.remove(this.modificator.scroll);
+      this.cssVar(this.props.transform, 0)
     }
 
     this.last = current;
@@ -150,7 +152,7 @@ class Header {
 
     let height = this.item.getBoundingClientRect().height;
 
-    this.cssVar(vars.linkHeight, height);
+    this.cssVar(this.props.linkHeight, height);
   }
 
   // adding overflow:hidden when menu opened while header is not sticky on mobile
@@ -168,7 +170,7 @@ class Header {
   }
 
   closeMenuResize() {
-    if (window.innerWidth >= mediaQuery) {
+    if (window.innerWidth >= this.mediaQuery) {
       this.closeMenu(),
       this.menuOpener.checked = false
     }
@@ -181,17 +183,17 @@ class Header {
 
   // closing modals of search and account, and mobile menu on click on header icons
   closeModals(e) {
-    this.killModal(e, this.searchOpener, key.search);
-    this.killModal(e, this.accountOpener, key.account);
+    this.killModal(e, this.searchOpener, this.selector.search);
+    this.killModal(e, this.accountOpener, this.selector.account);
 
     let target = e.target,
         accountOpener = this.accountOpener,
         searchOpener = this.searchOpener,
         checked = this.menuOpener.checked,
-        block = key.header;
+        block = this.selector.header;
 
     if (target === accountOpener && checked || target === searchOpener && checked) {
-      block = key.headerNav;
+      block = this.selector.headerNav;
       this.closeMobileDrop();
       this.removeOverflow();
       this.killModal(e, this.menuOpener, block);
@@ -222,13 +224,13 @@ class Header {
       switch (type) {
         case "mouseenter":
           this.closeModals(e);
-          target.classList.add(modificator.active);
+          target.classList.add(this.modificator.active);
 
           break;
 
         case "mouseleave":
           setTimeout(() => {
-            target.classList.remove(modificator.active);
+            target.classList.remove(this.modificator.active);
           }, time);
 
           break;
@@ -242,15 +244,22 @@ class Header {
   }
 
   addOverflow() {
-    if (this.sticky) return false;
+    this.doc.classList.add(this.modificator.overflow);
 
-    this.doc.classList.add(modificator.overflow);
+    if (!this.notSticky) return false;
+
+    this.section.classList.add(this.classes.sticky);
+    this.section.style.position = "fixed"
   }
 
   removeOverflow() {
-    if (this.sticky) return false;
+    this.doc.removeAttribute('class');
 
-    this.doc.classList.remove(modificator.overflow);
+    if (!this.notSticky) return false;
+
+    this.section.classList.remove(this.classes.sticky);
+    window.scrollTo(0, 0);
+    this.section.removeAttribute('style');
   }
 }
 
@@ -259,4 +268,3 @@ const stickyHeader = new Header(document.querySelector('.header'));
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") stickyHeader.init();
 });
-
