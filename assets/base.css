@@ -79,7 +79,7 @@
   background: var(--color-primary-foreground, #0B1A26);
 }
 
-html{
+html {
   overflow-x: hidden;
   height: 100%;
 }
