@@ -6,9 +6,7 @@
 {%- assign button_1              = section.settings.button_1 -%}
 {%- assign button_2              = section.settings.button_2 -%}
 {%- assign button_url_1          = section.settings.button_url_1 -%}
-{%- assign button_url_val_1      = section.settings.button_url_1.url -%}
 {%- assign button_url_2          = section.settings.button_url_2 -%}
-{%- assign button_url_val_2      = section.settings.button_url_2.val-%}
 {%- assign color                 = section.settings.color -%}
 {%- assign color_heading         = section.settings.color_heading -%}
 {%- assign background            = section.settings.background -%}
@@ -24,7 +22,7 @@
 {%- assign image_bg              = section.settings.image_bg -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
-{% comment %} CSS variables {% endcomment %}
+{% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if color != blank -%}
     --color-third-foreground: {{ color }};
@@ -59,24 +57,51 @@
       --flex-direction-mobile: column-reverse;
       --flex-direction: row-reverse;
       --justify-content: flex-end;
+      --margin-right: auto;
+      --margin-left: 0;
+      --margin-top: 0;
+      --margin-bottom: 50px;
       --left: -35px;
       --right: auto;
       --left-image: 55px;
       --right-image: auto;
-      --margin-right: auto;
-      --margin-left: 0;
+      --left-bg: auto;
+      --right-bg: -15%;
+      --top-bg: auto;
+      --bottom-bg: 0;
+      --rotate-bg: 71.35% 59.5%;
+      --left-overlay: calc(100% - 200px);
+      --right-overlay: auto;
+      --direction-overlay: left;
+      --transform-overlay: translate(-50%, 0);
     {%- when 'right' -%}
       --flex-direction-mobile: column;
       --flex-direction: row;
       --justify-content: flex-start;
+      --margin-right: 0;
+      --margin-left: auto;
+      --margin-top: 50px;
+      --margin-bottom: 0;
       --left: auto;
       --right: -35px;
       --left-image: auto;
       --right-image: 55px;
-      --margin-right: 0;
-      --margin-left: auto;
-  {%- endcase -%}
+      --left-bg: -15%;
+      --right-bg: auto;
+      --top-bg: 0;
+      --bottom-bg: auto;
+      --rotate-bg: 28.65% 40.5%;
+      --left-overlay: calc(100% - 60px);
+      --right-overlay: auto;
+      --direction-overlay: left;
+      --left-overlay: auto;
+      --right-overlay: calc(100% - 200px);
+      --direction-overlay: right;
+      --transform-overlay: translate(-40%, 0);
+    {%- endcase -%}
 {%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
 
 <div
   class="image-text__wrapper{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if margin_bottom != blank %} image-text__wrapper--margin-bottom{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
@@ -105,7 +130,7 @@
           {%- endif -%}
 
           {%- if button_2 != blank and button_url_2 != blank -%}
-            <a href="{{ button_url_2 }}" class="image-text__button button button--secondary button--large">
+            <a href="{{ button_url_2 }}" class="image-text__button button button--secondary">
               {{- button_2 -}}
               {%- include 'icon-arrow-right' -%}
             </a>
@@ -141,7 +166,7 @@
     </div>
   </div>
   {%- if image_bg.url != blank -%}
-    <div class="image-text__bg-image">
+    <div class="image-text__bg-image-wrapper">
       {{- image_bg.url | image_tag:
         loading: 'lazy',
         class: 'image-text__bg-image',
@@ -149,10 +174,12 @@
         sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
         alt: image_bg.alt
       -}}
+      <div class="image-text__bg-overlay container"></div>
     </div>
   {%- else -%}
-    <div class="image-text__bg-image">
+    <div class="image-text__bg-image-wrapper">
       {%- include 'image-background-web' -%}
+      <div class="image-text__bg-overlay container"></div>
     </div>
   {%- endif -%}
 </div>
