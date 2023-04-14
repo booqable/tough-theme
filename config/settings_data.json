@@ -1,16 +1,64 @@
 {
   "current": {
     "sections": {
-      "header": {
-        "type": "header",
+      "announcement-bar": {
+        "type": "announcement-bar",
         "blocks": {},
         "block_order": [],
         "settings": {
+          "hide_bar": false,
+          "bar_message": "Free shipping from €50",
+          "bar_phone": "+1 755 302 8549",
+          "bar_text": "Call Us 24/7",
+          "padding_top": "9",
+          "padding_top_mobile": "9",
+          "padding_bottom": "9",
+          "padding_bottom_mobile": "9"
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "promo": {
+            "type": "promo",
+            "settings": {
+              "promo_title": "Catalog 1.4"
+            }
+          },
+          "socials": {
+            "type": "socials",
+            "settings": {
+              "social_size": "md",
+              "social_spacing": "lg"
+            }
+          },
+          "payment-methods": {
+            "type": "payment-methods",
+            "settings": {
+              "payment_size": "md",
+              "payment_spacing": "md"
+            }
+          }
+        },
+        "block_order": [
+          "socials",
+          "payment-methods",
+          "promo"
+        ],
+        "settings": {
+          "login_placeholder": "Log in",
           "menu": "main-menu",
-          "logo": "",
-          "background_color": "",
-          "foreground_color": "",
-          "search_placeholder": "Search products"
+          "menu_back_placeholder": "Back",
+          "menu_dropdown_style": "full",
+          "menu_position": "left-center",
+          "menu_position_mobile": "top",
+          "padding_top": "16",
+          "padding_top_mobile": "16",
+          "padding_bottom": "12",
+          "padding_bottom_mobile": "16",
+          "search_placeholder": "Search",
+          "signup_placeholder": "Create account",
+          "sticky_header": true
         },
         "disabled": null
       },
@@ -89,8 +137,6 @@
         "settings": {
           "bottom_menu": "bottom-menu",
           "hide_copy": false,
-          "footer_background": "#FFFFFF",
-          "footer_foreground": "#4E5D78",
           "padding_bottom": "80",
           "padding_bottom_mobile": "24",
           "padding_top": "80",

@@ -1,0 +1,26 @@
+{%- if payment_methods.size > 0 -%}
+  <div class="payment">
+    {%- for provider in payment_methods -%}
+      {%- case provider -%}
+        {%- when "paypal" -%}
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        {%- when "creditcard" -%}
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+          <i class="fa-brands fa-cc-amex" title="American Express"></i>
+        {%- when "ideal" -%}
+          <i class="fa-brands fa-ideal" title="iDEAL"></i>
+        {%- when "alipay" -%}
+          <i class="fa-brands fa-alipay" title="Alipay"></i>
+        {%- when "p24" -%}
+          {%- include "p24-icon" -%}
+        {%- when "eps" -%}
+          {%- include "eps-icon" -%}
+        {%- when "bancontact" -%}
+          {%- include "bancontact-icon" -%}
+        {%- when "giropay" -%}
+          {%- include "giropay-icon" -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
