@@ -100,6 +100,15 @@
   padding-bottom: 50px;
 }
 
+.hero .carousel__button path {
+  fill: var(--title-color, #FFFFFF);
+}
+
+.hero .carousel__bullet,
+.hero .carousel__bullet:hover {
+  background: var(--title-color, #FFFFFF);
+}
+
 @media (min-width: 992px) {
   .hero__container--padding-top {
     padding-top: var(--padding-top, 80px);

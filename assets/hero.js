@@ -25,3 +25,9 @@ class Hero {
     hero.init();
   });
 })();
+
+// document.addEventListener("readystatechange", (e) => {
+//   if (e.target.readyState === "complete") {
+//     initSection()
+//   }
+// });
