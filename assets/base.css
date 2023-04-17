@@ -62,7 +62,7 @@
 }
 
 * {
-  scrollbar-width: thin;
+  scrollbar-width: 0;
   scrollbar-color: var(--color-primary-foreground, #0B1A26) transparent;
 }
 
@@ -75,7 +75,6 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: transparent;
   background: var(--color-primary-foreground, #0B1A26);
 }
 

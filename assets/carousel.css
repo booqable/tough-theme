@@ -95,14 +95,14 @@
 .carousel__arrows {
   position: absolute;
   z-index: 1;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  height: 100px;
   scroll-snap-align: center;
   animation-name: tonext, snap;
   animation-timing-function: ease;
-  animation-duration: var(--auto-rotate-timer, 5s);
+  animation-duration: var(--rotate-timer, 5s);
   animation-iteration-count: infinite;
 }
 
@@ -123,7 +123,7 @@
 
 .carousel__counter {
   position: absolute;
-  bottom: 20px;
+  bottom: 42px;
   left: 0;
   z-index: 2;
 }
@@ -169,15 +169,13 @@
 .carousel__arrow-prev,
 .carousel__arrow-next {
   position: absolute;
-  top: 50%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
   font-size: 0;
   outline: 0;
-
-  pointer-events: none;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .carousel::before,
@@ -187,7 +185,7 @@
 
 .carousel::after,
 .carousel__arrow-next {
-  right: 0;
+  left: 60px;
 }
 
 

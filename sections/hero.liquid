@@ -33,7 +33,6 @@
 
     {%- if section.blocks.size > 1 -%}
       <div class="carousel" aria-label="Gallery">
-        <ul class="carousel__wrapper">
     {%- endif -%}
 
           {%- for block in section.blocks -%}
@@ -78,6 +77,7 @@
                   --text-align-items: flex-start;
                   --text-align: left;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 0;
                   --margin-left: 0;
                   --margin-right: auto;
                 {%- when 'top-center' -%}
@@ -85,6 +85,7 @@
                   --text-align-items: flex-start;
                   --text-align: center;
                   --text-hero-width: none;
+                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: auto;
                 {%- when 'top-right' -%}
@@ -92,6 +93,7 @@
                   --text-align-items: flex-start;
                   --text-align: right;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: 0;
                 {%- when 'middle-left' -%}
@@ -99,6 +101,7 @@
                   --text-align-items: center;
                   --text-align: left;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 42px;
                   --margin-left: 0;
                   --margin-right: auto;
                 {%- when 'center' -%}
@@ -106,6 +109,7 @@
                   --text-align-items: center;
                   --text-align: center;
                   --text-hero-width: none;
+                  --text-padding-bottom: 42px;
                   --margin-left: auto;
                   --margin-right: auto;
                 {%- when 'middle-right' -%}
@@ -113,6 +117,7 @@
                   --text-align-items: center;
                   --text-align: right;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 42px;
                   --margin-left: auto;
                   --margin-right: 0;
                 {%- when 'bottom-left' -%}
@@ -120,6 +125,7 @@
                   --text-align-items: flex-end;
                   --text-align: left;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 0;
                   --margin-left: 0;
                   --margin-right: auto;
                 {%- when 'bottom-center' -%}
@@ -127,6 +133,7 @@
                   --text-align-items: flex-end;
                   --text-align: center;
                   --text-hero-width: none;
+                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: auto;
                 {%- when 'bottom-right' -%}
@@ -134,6 +141,7 @@
                   --text-align-items: flex-end;
                   --text-align: right;
                   --text-hero-width: 360px;
+                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: 0;
               {%- endcase -%}
@@ -144,6 +152,7 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'top-center' -%}
@@ -151,6 +160,7 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'top-right' -%}
@@ -158,6 +168,7 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
                 {%- when 'middle-left' -%}
@@ -165,6 +176,7 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 30px;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'center' -%}
@@ -172,6 +184,7 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
+                  --text-padding-bottom-mobile: 30px;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'middle-right' -%}
@@ -179,6 +192,7 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 30px;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
                 {%- when 'bottom-left' -%}
@@ -186,6 +200,7 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'bottom-center' -%}
@@ -193,6 +208,7 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'bottom-right' -%}
@@ -200,14 +216,19 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 360px;
+                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
               {%- endcase -%}
             {%- endcapture -%}
 
             {%- capture image_variables -%}
-              --color-primary-foreground: {{ background }};
-              --opacity-hero-overlay: {{ overlay_opacity }}%;
+              {%- if background != blank -%}
+                --color-primary-foreground: {{ background }};
+              {%- endif -%}
+              {%- if overlay_opacity != blank -%}
+                --opacity-overlay: {{ overlay_opacity }}%;
+              {%- endif -%}
             {%- endcapture -%}
             {% comment %} CSS variables end {% endcomment %}
 
@@ -230,24 +251,24 @@
                     {%- assign next_text = 'First' -%}
                   {%- endif -%}
 
-                  <a href="#slide-{{- prev_id -}}" class="carousel__arrow carousel__arrow-prev">
+                  <label for="slide-{{- prev_id -}}" class="carousel__arrow carousel__arrow-prev" aria-hidden="true">
                     {{- prev_text }} slide
-                  </a>
-                  <a href="#slide-{{- next_id -}}" class="carousel__arrow carousel__arrow-next">
+                  </label>
+                  <label for="slide-{{- next_id -}}" class="carousel__arrow carousel__arrow-next" aria-hidden="true">
                     {{- next_text }} slide
-                  </a>
+                  </label>
                 </div>
               {%- endcapture -%}
 
               {%- capture carousel_bullets -%}
-                <div class="carousel__bullets container">
+                <div class="carousel__bullets container" aria-label="Carousel navigation" aria-hidden="true">
                   <ol class="carousel__bullets-list">
                     {%- for i in (1..length) -%}
                       <li class="carousel__bullets-item">
-                        <a href="#slide-{{- i -}}" class="carousel__bullet{% if i == index %} active{%- endif -%}
+                        <label for="slide-{{- i -}}" class="carousel__bullet{% if i == index %} active{%- endif -%}
                         ">
                           Go to slide {{ i -}}
-                        </a>
+                        </label>
                       </li>
                     {%- endfor -%}
                   </ol>
@@ -267,9 +288,9 @@
                 </div>
               {%- endcapture -%}
 
-              <li class="carousel__slide" id="slide-{{- index -}}" style="{{- slide_variables | escape -}}">
+              <input class="carousel-active" type="radio" id="slide-{{- index -}}" name="slide" aria-hidden="true" hidden checked="checked">
 
-                {{- carousel_arrows -}}
+              <div class="carousel__slide" style="{{- slide_variables | escape -}}">
 
             {%- endif -%}
 
@@ -332,18 +353,18 @@
                 </div>
 
             {%- if section.blocks.size > 1 -%}
-
-                {{- carousel_counter -}}
+                {{- carousel_arrows -}}
 
                 {{- carousel_bullets -}}
 
-              </li>
+                {{- carousel_counter -}}
+
+              </div>
             {%- endif -%}
 
           {%- endfor -%}
 
       {%- if section.blocks.size > 1 -%}
-        </ul>
 
         {{- carousel_bullets -}}
 
@@ -416,21 +437,18 @@
           },
           {
             "type": "color",
+            "id": "background",
+            "label": "Background color"
+          },
+          {
+            "type": "color",
             "id": "color",
-            "label": "Foreground color",
-            "default": "#B2B4B8"
+            "label": "Foreground color"
           },
           {
             "type": "color",
             "id": "title_color",
-            "label": "Title color",
-            "default": "#FFFFFF"
-          },
-          {
-            "type": "color",
-            "id": "background",
-            "label": "Background color",
-            "default": "#0B1A26"
+            "label": "Title color"
           },
           {
             "type": "header",
@@ -588,7 +606,7 @@
         "label": "Padding top",
         "min": 0,
         "max": 100,
-        "default": 20,
+        "default": 35,
         "info": "Note: Use positive numbers only"
       },
       {
@@ -597,7 +615,7 @@
         "label": "Padding bottom",
         "min": 0,
         "max": 100,
-        "default": 20,
+        "default": 36,
         "info": "Note: Use positive numbers only"
       },
       {
