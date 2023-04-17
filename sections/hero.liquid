@@ -5,39 +5,28 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign bottom_image          = section.settings.bottom_image -%}
-{%- assign bottom_text           = section.settings.bottom_text -%}
 {%- assign timer                 = section.settings.timer -%}
 {%- assign slider_length         = nil -%}
 
+{% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  --padding-top: {{ padding_top }}px;
-  --padding-bottom: {{ padding_bottom }}px;
-  --padding-top-mobile: {{ padding_top_mobile }}px;
-  --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-  --auto-rotate-timer: {{ timer }}s;
-{%- endcapture -%}
-
-{%- capture datepicker_label -%}
-  {%- if bottom_image != blank or bottom_text != blank -%}
-
-    <div class="hero__bottom container">
-      {%- if bottom_image != blank -%}
-        <img
-          src="{{ bottom_image | image_url: 'master' }}"
-          alt="{{ bottom_image.alt }}"
-          class="hero__bottom-image"
-        >
-      {%- endif -%}
-
-      {%- if bottom_text != blank -%}
-        <span class="hero__bottom-text text-medium">{{- bottom_text -}}</span>
-      {%- endif -%}
-
-    </div>
-
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+  {%- if timer != blank -%}
+    --rotate-timer: {{ timer }}s;
   {%- endif -%}
 {%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
 
 {%- if section.blocks.size > 0 -%}
   <div class="hero__wrapper" style="{{- variables | escape -}}">
@@ -56,24 +45,33 @@
             {%- assign slider_length        = length | minus: 1 | times: 100 -%}
             {%- assign title                = block.settings.title -%}
             {%- assign description          = block.settings.description -%}
-            {%- assign button_label_1       = block.settings.button_label_1 -%}
+            {%- assign button_1             = block.settings.button_1 -%}
             {%- assign button_url_1         = block.settings.button_url_1 -%}
-            {%- assign button_label_2       = block.settings.button_label_2 -%}
+            {%- assign button_2             = block.settings.button_2 -%}
             {%- assign button_url_2         = block.settings.button_url_2 -%}
             {%- assign text_position        = block.settings.text_position -%}
             {%- assign text_position_mobile = block.settings.text_position_mobile -%}
             {%- assign image                = block.settings.image -%}
             {%- assign image_mobile         = block.settings.image_mobile -%}
             {%- assign background           = block.settings.background -%}
+            {%- assign color                = block.settings.color -%}
+            {%- assign title_color          = block.settings.title_color -%}
             {%- assign show_overlay         = block.settings.show_overlay -%}
-            {%- assign overlay_color        = block.settings.overlay_color -%}
             {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
 
+            {% comment %} CSS variables start {% endcomment %}
             {%- capture slide_variables -%}
               --slider-length: -{{ slider_length }}%;
             {%- endcapture -%}
 
             {%- capture text_variables -%}
+              {%- if color != blank -%}
+                --color: {{ color }};
+              {%- endif -%}
+              {%- if title_color != blank -%}
+                --title-color: {{ title_color }};
+              {%- endif -%}
+
               {%- case text_position -%}
                 {%- when 'top-left' -%}
                   --text-justify-content: flex-start;
@@ -208,11 +206,10 @@
             {%- endcapture -%}
 
             {%- capture image_variables -%}
-              --color-hero-background: {{ background }};
-              --color-hero-overlay: {{ overlay_color }};
+              --color-primary-foreground: {{ background }};
               --opacity-hero-overlay: {{ overlay_opacity }}%;
             {%- endcapture -%}
-
+            {% comment %} CSS variables end {% endcomment %}
 
             {%- if section.blocks.size > 1 -%}
 
@@ -270,8 +267,6 @@
                 </div>
               {%- endcapture -%}
 
-
-
               <li class="carousel__slide" id="slide-{{- index -}}" style="{{- slide_variables | escape -}}">
 
                 {{- carousel_arrows -}}
@@ -279,12 +274,11 @@
             {%- endif -%}
 
                 <div
-                  class="hero__container container{% if padding_top != 0 or padding_top_mobile != 0 %} hero__container--padding-top{% endif %}{% if padding_bottom != 0 or padding_bottom_mobile != 0 %} hero__container--padding-bottom{%- endif -%}"
+                  class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}"
                   style="{{- text_variables | escape -}}"
                 >
                   <div class="hero__inner">
                     <div class="hero__content">
-
                       {%- if title != blank -%}
                         <h1 class="hero__title">{{- title -}}</h1>
                       {%- endif -%}
@@ -293,15 +287,15 @@
                         <div class="hero__description text-medium">{{- description -}}</div>
                       {%- endif -%}
 
-                      {%- if button_label_1 != blank and button_url_1 != blank or button_label_2 != blank and button_url_2 != blank -%}
+                      {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
                         <div class="hero__buttons">
 
-                          {%- if button_label_1 != blank and button_url_1 != blank -%}
-                            <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_label_1 -}}</a>
+                          {%- if button_1 != blank and button_url_1 != blank -%}
+                            <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
                           {%- endif -%}
 
-                          {%- if button_label_2 != blank and button_url_2 != blank -%}
-                            <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_label_2 -}}</a>
+                          {%- if button_2 != blank and button_url_2 != blank -%}
+                            <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
                           {%- endif -%}
 
                         </div>
@@ -309,13 +303,6 @@
 
                     </div>
                   </div>
-
-                  {% unless section.blocks.size > 1 %}
-
-                    {{- datepicker_label -}}
-
-                  {% endunless %}
-
                 </div>
 
                 <div class="hero__images" style="{{- image_variables | escape -}}">
@@ -360,8 +347,6 @@
 
         {{- carousel_bullets -}}
 
-        {{- datepicker_label -}}
-
       </div>
     {%- endif -%}
   </div>
@@ -401,7 +386,7 @@
           },
           {
             "type": "text",
-            "id": "button_label_1",
+            "id": "button_1",
             "label": "Label",
             "default": "Check out products"
           },
@@ -416,7 +401,7 @@
           },
           {
             "type": "text",
-            "id": "button_label_2",
+            "id": "button_2",
             "label": "Label",
             "default": "More info"
           },
@@ -427,7 +412,19 @@
           },
           {
             "type": "header",
-            "content": "Background settings"
+            "content": "Colors settings"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "label": "Foreground color",
+            "default": "#B2B4B8"
+          },
+          {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title color",
+            "default": "#FFFFFF"
           },
           {
             "type": "color",
@@ -436,16 +433,14 @@
             "default": "#0B1A26"
           },
           {
+            "type": "header",
+            "content": "Overlay settings"
+          },
+          {
             "type": "checkbox",
             "id": "show_overlay",
             "default": true,
             "label": "Show overlay"
-          },
-          {
-            "type": "color",
-            "id": "overlay_color",
-            "label": "Overlay color",
-            "default": "#0B1A26"
           },
           {
             "type": "number",
@@ -569,17 +564,6 @@
       {
         "type": "header",
         "content": "General settings"
-      },
-      {
-        "type": "text",
-        "id": "bottom_text",
-        "label": "Bottom text",
-        "default": "Check availability:"
-      },
-      {
-        "type": "image_picker",
-        "id": "bottom_image",
-        "label": "Bottom image"
       },
       {
         "type": "header",

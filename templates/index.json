@@ -13,9 +13,7 @@
             "button_label_2": "More info",
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "background": "#0B1A26",
             "show_overlay": true,
-            "overlay_color": "#0B1A26",
             "overlay_opacity": 100
           },
           "disabled": null
@@ -267,6 +265,7 @@
     }
   },
   "order": [
+    "hero",
     "image-banner",
     "date-picker",
     "columns",
