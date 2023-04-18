@@ -6,7 +6,6 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign timer                 = section.settings.timer -%}
-{%- assign slider_length         = nil -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -22,9 +21,6 @@
   {%- if padding_bottom_mobile != blank -%}
     --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
   {%- endif -%}
-  {%- if timer != blank -%}
-    --rotate-timer: {{ timer }}s;
-  {%- endif -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
@@ -33,6 +29,7 @@
 
     {%- if section.blocks.size > 1 -%}
       <div class="hero__carousel carousel" aria-label="Gallery">
+        <input class="carousel__timer" type="hidden" name="hidden" id="timer" value="{{- timer -}}">
     {%- endif -%}
 
         {%- for block in section.blocks -%}
@@ -41,7 +38,6 @@
           {%- assign index                = forloop.index -%}
           {%- assign index0               = forloop.index0 -%}
           {%- assign length               = forloop.length -%}
-          {%- assign slider_length        = length | minus: 1 | times: 100 -%}
           {%- assign title                = block.settings.title -%}
           {%- assign description          = block.settings.description -%}
           {%- assign button_1             = block.settings.button_1 -%}
@@ -59,10 +55,6 @@
           {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
 
           {% comment %} CSS variables start {% endcomment %}
-          {%- capture slide_variables -%}
-            --slider-length: -{{ slider_length }}%;
-          {%- endcapture -%}
-
           {%- capture text_variables -%}
             {%- if color != blank -%}
               --color: {{ color }};
@@ -234,7 +226,7 @@
 
           {%- if section.blocks.size > 1 -%}
 
-            {%- capture carousel_arrows -%}
+            {%- capture carousel_buttons -%}
               <div class="carousel__buttons" aria-label="Carousel navigation" aria-hidden="true">
                 {%- assign prev_id = index | minus: 1 -%}
                 {%- assign next_id = index | plus: 1 -%}
@@ -257,16 +249,16 @@
             {%- endcapture -%}
 
             {%- capture carousel_bullets -%}
-              <ul class="carousel__bullets-list" aria-label="Carousel navigation" aria-hidden="true">
+              <ul class="carousel__bullets" aria-label="Carousel navigation" aria-hidden="true">
                 {%- for i in (1..length) -%}
-                  <li class="carousel__bullets-item">
+                  <li class="carousel__bullet-item">
                     {% style %}
-                      [id^="slide-{{- i -}}"]:checked ~ .carousel__bullets-list .carousel__bullet[for="slide-{{- i -}}"] {
+                      [id^="slide-{{- i -}}"]:checked ~ .carousel__bullets .carousel__bullet[for="slide-{{- i -}}"] {
                         opacity: 1;
                       }
                     {% endstyle %}
 
-                    <label for="slide-{{- i -}}" class="carousel-indicator carousel__bullet" title="Jump to slide #{{- i -}}">
+                    <label for="slide-{{- i -}}" class="carousel__bullet" title="Jump to slide #{{- i -}}">
                       Go to slide {{ i -}}
                     </label>
                   </li>
@@ -287,10 +279,10 @@
               </div>
             {%- endcapture -%}
 
-            <input class="carousel-trigger" type="radio" id="slide-{{- index -}}" name="slide" aria-hidden="true" hidden{% if index == 1 %} checked="checked"{%- endif -%}>
+            <input class="carousel__trigger" type="radio" id="slide-{{- index -}}" name="slide" aria-hidden="true" hidden{% if index == 1 %} checked="checked"{%- endif -%}>
 
-            <div class="carousel__slide" style="{{- slide_variables | escape -}}">
-              {{- carousel_arrows -}}
+            <div class="carousel__slide">
+              {{- carousel_buttons -}}
           {%- endif -%}
 
               <div
@@ -309,7 +301,6 @@
 
                     {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
                       <div class="hero__buttons">
-
                         {%- if button_1 != blank and button_url_1 != blank -%}
                           <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
                         {%- endif -%}
@@ -317,7 +308,6 @@
                         {%- if button_2 != blank and button_url_2 != blank -%}
                           <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
                         {%- endif -%}
-
                       </div>
                     {%- endif -%}
 
@@ -329,7 +319,7 @@
                 {%- if image != blank or image_mobile != blank -%}
 
                   {%- if image != blank -%}
-                    <div class="hero__image-wrapper hero__image-wrapper--desktop{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
+                    <div class="hero__image-wrapper{% if image_mobile != blank %} hero__image-wrapper--desktop{% endif %}{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
                       {{ image.url | image_tag:
                         loading: 'lazy',
                         class: 'hero__image',
@@ -353,10 +343,8 @@
 
           {%- if section.blocks.size > 1 -%}
               {{- carousel_counter -}}
-
             </div>
           {%- endif -%}
-
         {%- endfor -%}
 
       {%- if section.blocks.size > 1 -%}
@@ -587,7 +575,7 @@
         "min": 0,
         "max": 100,
         "default": 5,
-        "info": "Note: Use only positive numbers for pauses between rotating slides. 0 to turn off auto rotate"
+        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate"
       },
       {
         "type": "header",

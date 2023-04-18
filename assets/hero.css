@@ -104,6 +104,10 @@
   fill: var(--title-color, #FFFFFF);
 }
 
+.hero .carousel__counter {
+  color: var(--title-color, #FFFFFF);
+}
+
 .hero .carousel__bullet,
 .hero .carousel__bullet:hover {
   background: var(--title-color, #FFFFFF);
