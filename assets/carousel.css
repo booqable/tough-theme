@@ -12,6 +12,11 @@
   transition: opacity 0.6s ease-in-out;
   width: 100%;
   height: 100%;
+  display: none;
+}
+
+.carousel__slide:first-child {
+  display: block;
 }
 
 .carousel__trigger:checked + .carousel__slide {
@@ -125,6 +130,10 @@
 .carousel__slide-divider,
 .carousel__slide-divider + .carousel__slide-count {
   opacity: 0.4;
+}
+
+.carousel.initialized .carousel__slide {
+  display: block;
 }
 
 @media (min-width: 768px) {

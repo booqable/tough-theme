@@ -3,13 +3,14 @@ class Hero {
     this.section = section;
 
     this.selector = {
-      image: ".hero__images",
+      image: ".hero__vision",
       button: ".carousel__trigger",
       timer: ".carousel__timer"
     }
 
     this.classes = {
-      next: "next"
+      next: "next",
+      init: "initialized"
     }
 
     this.id = {
@@ -39,8 +40,15 @@ class Hero {
 
   events() {
     this.toRgb();
+    this.slider();
     this.event();
     this.autoRotate();
+  }
+
+  slider () {
+    if (!this.timer) return false;
+
+    this.timer.parentElement.classList.add(this.classes.init);
   }
 
   toRgb() {

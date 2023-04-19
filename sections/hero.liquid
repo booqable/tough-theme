@@ -1,6 +1,9 @@
 <link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="{{ 'carousel.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+{%- assign show_arrows           = section.settings.show_arrows -%}
+{%- assign show_bullets          = section.settings.show_bullets -%}
+{%- assign show_counter          = section.settings.show_counter -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
@@ -46,6 +49,8 @@
           {%- assign button_url_2         = block.settings.button_url_2 -%}
           {%- assign text_position        = block.settings.text_position -%}
           {%- assign text_position_mobile = block.settings.text_position_mobile -%}
+          {%- assign video_url            = block.settings.video_url | split: "?v=" | last -%}
+          {%- assign video_id             = video_url | strip -%}
           {%- assign image                = block.settings.image -%}
           {%- assign image_mobile         = block.settings.image_mobile -%}
           {%- assign background           = block.settings.background -%}
@@ -68,7 +73,7 @@
                 --text-justify-content: flex-start;
                 --text-align-items: flex-start;
                 --text-align: left;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 0;
                 --margin-left: 0;
                 --margin-right: auto;
@@ -84,7 +89,7 @@
                 --text-justify-content: flex-end;
                 --text-align-items: flex-start;
                 --text-align: right;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 0;
                 --margin-left: auto;
                 --margin-right: 0;
@@ -92,7 +97,7 @@
                 --text-justify-content: flex-start;
                 --text-align-items: center;
                 --text-align: left;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 42px;
                 --margin-left: 0;
                 --margin-right: auto;
@@ -108,7 +113,7 @@
                 --text-justify-content: flex-end;
                 --text-align-items: center;
                 --text-align: right;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 42px;
                 --margin-left: auto;
                 --margin-right: 0;
@@ -116,7 +121,7 @@
                 --text-justify-content: flex-start;
                 --text-align-items: flex-end;
                 --text-align: left;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 0;
                 --margin-left: 0;
                 --margin-right: auto;
@@ -132,7 +137,7 @@
                 --text-justify-content: flex-end;
                 --text-align-items: flex-end;
                 --text-align: right;
-                --text-hero-width: 360px;
+                --text-hero-width: 400px;
                 --text-padding-bottom: 0;
                 --margin-left: auto;
                 --margin-right: 0;
@@ -143,7 +148,7 @@
                 --text-justify-content-mobile: flex-start;
                 --text-align-items-mobile: flex-start;
                 --text-align-mobile: left;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 0;
                 --margin-left-mobile: 0;
                 --margin-right-mobile: auto;
@@ -159,7 +164,7 @@
                 --text-justify-content-mobile: flex-end;
                 --text-align-items-mobile: flex-start;
                 --text-align-mobile: right;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 0;
                 --margin-left-mobile: auto;
                 --margin-right-mobile: 0;
@@ -167,7 +172,7 @@
                 --text-justify-content-mobile: flex-start;
                 --text-align-items-mobile: center;
                 --text-align-mobile: left;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 36px;
                 --margin-left-mobile: 0;
                 --margin-right-mobile: auto;
@@ -183,7 +188,7 @@
                 --text-justify-content-mobile: flex-end;
                 --text-align-items-mobile: center;
                 --text-align-mobile: right;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 36px;
                 --margin-left-mobile: auto;
                 --margin-right-mobile: 0;
@@ -191,7 +196,7 @@
                 --text-justify-content-mobile: flex-start;
                 --text-align-items-mobile: flex-end;
                 --text-align-mobile: left;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 0;
                 --margin-left-mobile: 0;
                 --margin-right-mobile: auto;
@@ -207,7 +212,7 @@
                 --text-justify-content-mobile: flex-end;
                 --text-align-items-mobile: flex-end;
                 --text-align-mobile: right;
-                --text-hero-width-mobile: 360px;
+                --text-hero-width-mobile: 400px;
                 --text-padding-bottom-mobile: 0;
                 --margin-left-mobile: auto;
                 --margin-right-mobile: 0;
@@ -226,58 +231,64 @@
 
           {%- if section.blocks.size > 1 -%}
 
-            {%- capture carousel_buttons -%}
-              <div class="carousel__buttons" aria-label="Carousel navigation" aria-hidden="true">
-                {%- assign prev_id = index | minus: 1 -%}
-                {%- assign next_id = index | plus: 1 -%}
+            {%- if show_arrows -%}
+              {%- capture carousel_buttons -%}
+                <div class="carousel__buttons" aria-label="Carousel navigation" aria-hidden="true">
+                  {%- assign prev_id = index | minus: 1 -%}
+                  {%- assign next_id = index | plus: 1 -%}
 
-                {%- if first -%}
-                  {%-assign prev_id = length -%}
-                {%- endif -%}
-
-                {%- if last -%}
-                  {%- assign next_id = length | minus: index0 -%}
-                {%- endif -%}
-
-                <label for="slide-{{- prev_id -}}" class="carousel__button prev" title="Prev">
-                  {%- include 'icon-arrow-right' -%}
-                </label>
-                <label for="slide-{{- next_id -}}" class="carousel__button next" title="Next">
-                  {%- include 'icon-arrow-right' -%}
-                </label>
-              </div>
-            {%- endcapture -%}
-
-            {%- capture carousel_bullets -%}
-              <ul class="carousel__bullets" aria-label="Carousel navigation" aria-hidden="true">
-                {%- for i in (1..length) -%}
-                  <li class="carousel__bullet-item">
-                    {% style %}
-                      [id^="slide-{{- i -}}"]:checked ~ .carousel__bullets .carousel__bullet[for="slide-{{- i -}}"] {
-                        opacity: 1;
-                      }
-                    {% endstyle %}
-
-                    <label for="slide-{{- i -}}" class="carousel__bullet" title="Jump to slide #{{- i -}}">
-                      Go to slide {{ i -}}
-                    </label>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            {%- endcapture -%}
-
-            {%- capture carousel_counter -%}
-              <div class="carousel__counter">
-                {%- for i in (1..length) -%}
-                  {%- if i == index -%}
-                    <span class="carousel__slide-count">{%- if length < 10 -%}0{%- endif -%}{{- i -}}</span>
-                    <span class="carousel__slide-divider">|</span>
-                    <span class="carousel__slide-count">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
+                  {%- if first -%}
+                    {%-assign prev_id = length -%}
                   {%- endif -%}
 
-                {%- endfor -%}
-              </div>
-            {%- endcapture -%}
+                  {%- if last -%}
+                    {%- assign next_id = length | minus: index0 -%}
+                  {%- endif -%}
+
+                  <label for="slide-{{- prev_id -}}" class="carousel__button prev" title="Prev">
+                    {%- include 'icon-arrow-right' -%}
+                  </label>
+                  <label for="slide-{{- next_id -}}" class="carousel__button next" title="Next">
+                    {%- include 'icon-arrow-right' -%}
+                  </label>
+                </div>
+              {%- endcapture -%}
+            {%- endif -%}
+
+            {%- if show_bullets -%}
+              {%- capture carousel_bullets -%}
+                <ul class="carousel__bullets" aria-label="Carousel navigation" aria-hidden="true">
+                  {%- for i in (1..length) -%}
+                    <li class="carousel__bullet-item">
+                      {% style %}
+                        [id^="slide-{{- i -}}"]:checked ~ .carousel__bullets .carousel__bullet[for="slide-{{- i -}}"] {
+                          opacity: 1;
+                        }
+                      {% endstyle %}
+
+                      <label for="slide-{{- i -}}" class="carousel__bullet" title="Jump to slide #{{- i -}}">
+                        Go to slide {{ i -}}
+                      </label>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endcapture -%}
+            {%- endif -%}
+
+            {%- if show_counter -%}
+              {%- capture carousel_counter -%}
+                <div class="carousel__counter">
+                  {%- for i in (1..length) -%}
+                    {%- if i == index -%}
+                      <span class="carousel__slide-count">{%- if length < 10 -%}0{%- endif -%}{{- i -}}</span>
+                      <span class="carousel__slide-divider">|</span>
+                      <span class="carousel__slide-count">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
+                    {%- endif -%}
+
+                  {%- endfor -%}
+                </div>
+              {%- endcapture -%}
+            {%- endif -%}
 
             <input class="carousel__trigger" type="radio" id="slide-{{- index -}}" name="slide" aria-hidden="true" hidden{% if index == 1 %} checked="checked"{%- endif -%}>
 
@@ -285,60 +296,77 @@
               {{- carousel_buttons -}}
           {%- endif -%}
 
-              <div
-                class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}"
-                style="{{- text_variables | escape -}}"
-              >
-                <div class="hero__inner">
-                  <div class="hero__content">
-                    {%- if title != blank -%}
-                      <h1 class="hero__title">{{- title -}}</h1>
-                    {%- endif -%}
+              <div class="hero__inner">
+                <div
+                  class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}"
+                  style="{{- text_variables | escape -}}"
+                >
+                  <div class="hero__text-area">
+                    <div class="hero__content">
+                      {%- if title != blank -%}
+                        <h1 class="hero__title">{{- title -}}</h1>
+                      {%- endif -%}
 
-                    {%- if description != blank -%}
-                      <div class="hero__description text-medium">{{- description -}}</div>
-                    {%- endif -%}
+                      {%- if description != blank -%}
+                        <div class="hero__description text-medium">{{- description -}}</div>
+                      {%- endif -%}
 
-                    {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
-                      <div class="hero__buttons">
-                        {%- if button_1 != blank and button_url_1 != blank -%}
-                          <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
-                        {%- endif -%}
+                      {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+                        <div class="hero__buttons">
+                          {%- if button_1 != blank and button_url_1 != blank -%}
+                            <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
+                          {%- endif -%}
 
-                        {%- if button_2 != blank and button_url_2 != blank -%}
-                          <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
-                        {%- endif -%}
+                          {%- if button_2 != blank and button_url_2 != blank -%}
+                            <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hero__vision" style="{{- image_variables | escape -}}">
+                  {%- if video_url != blank -%}
+                    <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                      <iframe
+                        class="hero__video"
+                        width="988"
+                        height="556"
+                        src="https://www.youtube.com/embed/{{- video_id -}}?playlist={{- video_id -}}&autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&playsinline=1&enablejsapi=1&iv_load_policy=3&modestbranding=1"
+                        title="YouTube video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; muted; encrypted-media; gyroscope"
+                        allowfullscreen
+                        loop
+                        mute
+                        playsinline
+                      >
+                      </iframe>
+                    </div>
+                  {%- elsif image != blank or image_mobile != blank -%}
+                    {%- if image != blank -%}
+                      <div class="hero__vision-wrapper{% if image_mobile != blank %} hero__vision-wrapper--desktop{% endif %}{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                        {{ image.url | image_tag:
+                          loading: 'lazy',
+                          class: 'hero__image',
+                          widths: '990, 1400, 1900, 2500'
+                        }}
                       </div>
                     {%- endif -%}
 
-                  </div>
+                    {%- if image_mobile != blank -%}
+                      <div class="hero__vision-wrapper hero__vision-wrapper--mobile{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                        {{ image_mobile.url | image_tag:
+                          loading: 'lazy',
+                          class: 'hero__image',
+                          widths: '320, 480, 567'
+                        }}
+                      </div>
+                    {%- endif -%}
+                  {%- endif -%}
                 </div>
-              </div>
-
-              <div class="hero__images" style="{{- image_variables | escape -}}">
-                {%- if image != blank or image_mobile != blank -%}
-
-                  {%- if image != blank -%}
-                    <div class="hero__image-wrapper{% if image_mobile != blank %} hero__image-wrapper--desktop{% endif %}{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
-                      {{ image.url | image_tag:
-                        loading: 'lazy',
-                        class: 'hero__image',
-                        widths: '990, 1400, 1900, 2500'
-                      }}
-                    </div>
-                  {%- endif -%}
-
-                  {%- if image_mobile != blank -%}
-                    <div class="hero__image-wrapper hero__image-wrapper--mobile{%if show_overlay %} hero__image-wrapper--overlay{%- endif -%}">
-                      {{ image_mobile.url | image_tag:
-                        loading: 'lazy',
-                        class: 'hero__image',
-                        widths: '320, 480, 567'
-                      }}
-                    </div>
-                  {%- endif -%}
-
-                {%- endif -%}
               </div>
 
           {%- if section.blocks.size > 1 -%}
@@ -419,17 +447,37 @@
           {
             "type": "color",
             "id": "background",
-            "label": "Background color"
+            "label": "Background color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
           },
           {
             "type": "color",
             "id": "color",
-            "label": "Foreground color"
+            "label": "Foreground color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
           },
           {
             "type": "color",
             "id": "title_color",
-            "label": "Title color"
+            "label": "Title color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "header",
+            "content": "Video settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Note: This feature works with Youtube videos only. URL must be copied from Youtube video page and pasted to the field below. Preferable video's dimension 16:9. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0"
+          },
+          {
+            "type": "url",
+            "id": "video_url",
+            "label": "URL to video"
+          },
+          {
+            "type": "paragraph",
+            "content": "Note: The video takes precedence over 'Image' and only this one will be displaying on both desktop and mobile"
           },
           {
             "type": "header",
@@ -501,6 +549,7 @@
           {
             "type": "image_picker",
             "id": "image",
+            "info": "Note: The image has the lowest priority",
             "label": "Image"
           },
           {
@@ -554,6 +603,7 @@
           {
             "type": "image_picker",
             "id": "image_mobile",
+            "info": "Note: The image has the lowest priority",
             "label": "Image"
           }
         ]
@@ -562,20 +612,38 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Carousel settings"
       },
       {
-        "type": "header",
-        "content": "Carousel settings"
+        "type": "paragraph",
+        "content": "Note: Below settings of carousel work only when there are more than 1 blocks (slides) in this section, and then the carousel appears automatically"
       },
       {
         "type": "number",
         "id": "timer",
-        "label": "Timer",
+        "label": "Auto-rotate timer",
         "min": 0,
         "max": 100,
         "default": 5,
-        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate"
+        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "default": true,
+        "label": "Show left/right buttons"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_bullets",
+        "default": true,
+        "label": "Show navigation bullets"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_counter",
+        "default": true,
+        "label": "Show counter of slides"
       },
       {
         "type": "header",
