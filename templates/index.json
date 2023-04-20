@@ -43,9 +43,28 @@
         "vertical_spacing": "lg",
         "overlay_opacity": "40",
         "content_align": "center",
-        "background_image": "booqable://assets/background-abstract.jpeg"
+        "background_image": "booqable://assets/image-background-abstract.jpeg"
       },
       "disabled": false
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
+        "hide_image": false,
+        "image_position": "right",
+        "padding_top": 98,
+        "padding_top_mobile": 56,
+        "padding_bottom": 98,
+        "padding_bottom_mobile": 56,
+        "tag": "Tagline",
+        "title": "Medium length section heading goes here"
+      },
+      "disabled": null
     },
     "date-picker": {
       "type": "date-picker",
@@ -102,7 +121,7 @@
         "button"
       ],
       "settings": {
-        "background_image": "booqable://assets/background-abstract-alt.jpeg",
+        "background_image": "booqable://assets/image-background-abstract-alt.jpeg",
         "fluid_width": false,
         "overlay_enabled": true,
         "overlay_color": "#D9E3F0",
@@ -151,7 +170,7 @@
             "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
             "button_size": "md",
             "title": "Column 1",
-            "image": "booqable://assets/background-mountains.jpeg",
+            "image": "booqable://assets/image-background-mountains.jpeg",
             "use_solid_button": false
           },
           "disabled": null
@@ -163,7 +182,7 @@
             "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
             "button_size": "md",
             "title": "Column 2",
-            "image": "booqable://assets/background-mountains.jpeg",
+            "image": "booqable://assets/image-background-mountains.jpeg",
             "use_solid_button": true
           },
           "disabled": null
@@ -175,7 +194,7 @@
             "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
             "button_size": "md",
             "title": "Column 3",
-            "image": "booqable://assets/background-mountains.jpeg",
+            "image": "booqable://assets/image-background-mountains.jpeg",
             "use_solid_button": true
           },
           "disabled": null
@@ -224,7 +243,7 @@
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "tag": "Our collections",
-        "title": "We can service yo in each category",
+        "title": "We can service you in each category",
         "title_bg": "Category",
         "padding_bottom": 96,
         "padding_bottom_mobile": 40,
@@ -235,6 +254,8 @@
     }
   },
   "order": [
+    "collections",
+    "image-with-text",
     "image-banner",
     "date-picker",
     "columns",
