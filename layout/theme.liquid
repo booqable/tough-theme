@@ -37,8 +37,8 @@
       --color-placeholder: {{ settings.placeholder_color }};
       --color-border: {{ settings.border_color_primary }};
       --color-border-secondary: {{ settings.border_color_secondary }};
-      --color-image-placeholder: {{ settings.primary_foreground_color | append: "0F" }};
-      --color-image-placeholder-lt: {{ settings.primary_background_color | append: "0F" }};
+      --color-image-placeholder: {{ settings.primary_foreground_color | append: "33" }};
+      --color-image-placeholder-lt: {{ settings.primary_background_color | append: "33" }};
 
       {% if settings.heading_font != blank %}
         --font-heading: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
@@ -118,6 +118,7 @@
   <script src="{{ "main.js" | asset_url }}" defer></script>
   <script src="{{ "header.js" | asset_url }}" defer></script>
   <script src="{{ "hero.js" | asset_url }}" defer></script>
+  <script src="{{ "image-with-text.js" | asset_url }}" defer></script>
   <script src="{{ "lazysizes.min.js" | asset_url }}" defer></script>
   <script src="{{ "focus-point.min.js" | asset_url }}" defer></script>
   <script src="{{ "index.js" | asset_url }}" defer></script>

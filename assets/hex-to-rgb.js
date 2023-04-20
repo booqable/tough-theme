@@ -1,4 +1,3 @@
-
 class ToRgb {
   constructor(section, options) {
     this.section = section;
