@@ -8,6 +8,7 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign ui_color              = section.settings.ui_color -%}
 {%- assign timer                 = section.settings.timer -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -23,6 +24,9 @@
   {%- endif -%}
   {%- if padding_bottom_mobile != blank -%}
     --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+  {%- if ui_color != blank -%}
+    --ui-color: {{ ui_color }};
   {%- endif -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
@@ -62,7 +66,7 @@
           {% comment %} CSS variables start {% endcomment %}
           {%- capture text_variables -%}
             {%- if color != blank -%}
-              --color: {{ color }};
+              --color-third-foreground: {{ color }};
             {%- endif -%}
             {%- if title_color != blank -%}
               --title-color: {{ title_color }};
@@ -330,20 +334,8 @@
                 <div class="hero__vision" style="{{- image_variables | escape -}}">
                   {%- if video_url != blank -%}
                     <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
-                      <iframe
-                        class="hero__video"
-                        width="988"
-                        height="556"
-                        src="https://www.youtube.com/embed/{{- video_id -}}?playlist={{- video_id -}}&autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&playsinline=1&enablejsapi=1&iv_load_policy=3&modestbranding=1"
-                        title="YouTube video"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; muted; encrypted-media; gyroscope"
-                        allowfullscreen
-                        loop
-                        mute
-                        playsinline
-                      >
-                      </iframe>
+                      <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="hero__video-id" type="hidden" name="hidden">
+                      <div id="player-{{- block.id -}}" class="hero__video"></div>
                     </div>
                   {%- elsif image != blank or image_mobile != blank -%}
                     {%- if image != blank -%}
@@ -616,7 +608,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Note: Below settings of carousel work only when there are more than 1 blocks (slides) in this section, and then the carousel appears automatically"
+        "content": "Note: The carousel appears automatically when there are more than 1 block (slide) in this section, and then below settings of the carousel is working"
       },
       {
         "type": "number",
@@ -644,6 +636,12 @@
         "id": "show_counter",
         "default": true,
         "label": "Show counter of slides"
+      },
+      {
+        "type": "color",
+        "id": "ui_color",
+        "label": "UI color",
+        "info": "Note: Used for changing the color of carousel navigation buttons and counter. This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "header",

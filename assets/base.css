@@ -7,12 +7,12 @@
   --border-radius-lg: 20px;
 
   /* Colors */
+  --color-primary-foreground-rgb: 11, 26, 38;
   --color-green: #8fcc40;
   --color-red: #f85454;
   --color-backdrop: #0c2747b3;
   --color-typo: #0c2747;
   --color-black: #0B1A26;
-  --color-black-rgb: 11, 26, 38;
   --color-white: #ffffff;
 
   /* Font weights */

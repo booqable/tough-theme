@@ -12,16 +12,15 @@
   transition: opacity 0.6s ease-in-out;
   width: 100%;
   height: 100%;
-  display: none;
 }
 
-.carousel__slide:first-child {
-  display: block;
+.carousel__slide:not(:first-of-type) {
+  display: none;
 }
 
 .carousel__trigger:checked + .carousel__slide {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: all;
   position: static;
 }
 
@@ -132,7 +131,8 @@
   opacity: 0.4;
 }
 
-.carousel.initialized .carousel__slide {
+.carousel.initialized .carousel__slide,
+.carousel.initialized .carousel__slide:not(:first-of-type) {
   display: block;
 }
 

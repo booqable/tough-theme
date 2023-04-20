@@ -91,6 +91,15 @@
       <meta name="twitter:image:alt" content="{{ product.name }}">
     {% endif %}
   {% endif %}
+
+  <script>
+    // Loading the IFrame Player API code asynchronously.
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
 </head>
 <body>
 
