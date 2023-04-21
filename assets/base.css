@@ -7,6 +7,7 @@
   --border-radius-lg: 20px;
 
   /* Colors */
+  --color-primary-background-rgb: 255, 255, 255;
   --color-green: #8fcc40;
   --color-red: #f85454;
   --color-backdrop: #0c2747b3;
