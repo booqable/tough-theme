@@ -53,8 +53,9 @@
           {%- assign button_url_2         = block.settings.button_url_2 -%}
           {%- assign text_position        = block.settings.text_position -%}
           {%- assign text_position_mobile = block.settings.text_position_mobile -%}
-          {%- assign video_url            = block.settings.video_url | split: "?v=" | last -%}
-          {%- assign video_id             = video_url | strip -%}
+          {%- assign video_url            = block.settings.video_url | split: "?v=" -%}
+          {%- assign video_type           = video_url | first | strip -%}
+          {%- assign video_id             = video_url | last | strip -%}
           {%- assign image                = block.settings.image -%}
           {%- assign image_mobile         = block.settings.image_mobile -%}
           {%- assign background           = block.settings.background -%}
@@ -332,7 +333,7 @@
                 </div>
 
                 <div class="hero__vision" style="{{- image_variables | escape -}}">
-                  {%- if video_url != blank -%}
+                  {%- if video_url != blank and video_type contains "www.youtube.com" -%}
                     <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
                       <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="hero__video-id" type="hidden" name="hidden">
                       <div id="player-{{- block.id -}}" class="hero__video"></div>
