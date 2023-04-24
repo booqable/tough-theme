@@ -106,6 +106,53 @@
       "settings": {},
       "disabled": null
     },
+    "partners": {
+      "type": "partners",
+      "blocks": {
+        "partner": {
+          "type": "partner",
+          "settings": {},
+          "disabled": null
+        },
+        "partner_478138": {
+          "type": "partner",
+          "settings": {},
+          "disabled": null
+        },
+        "partner_478148": {
+          "type": "partner",
+          "settings": {},
+          "disabled": null
+        },
+        "partner_478178": {
+          "type": "partner",
+          "settings": {},
+          "disabled": null
+        },
+        "partner_478118": {
+          "type": "partner",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "partner",
+        "partner_478138",
+        "partner_478148",
+        "partner_478178",
+        "partner_478118"
+      ],
+      "settings": {
+        "title": "Used by the world's most average companies",
+        "text_position": "left",
+        "text_position_mobile": "center",
+        "padding_top": 96,
+        "padding_top_mobile": 60,
+        "padding_bottom": 84,
+        "padding_bottom_mobile": 29
+      },
+      "disabled": false
+    },
     "products": {
       "type": "products",
       "blocks": {},
@@ -288,6 +335,7 @@
   },
   "order": [
     "hero",
+    "partners",
     "collections",
     "image-with-text",
     "image-banner",
