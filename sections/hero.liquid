@@ -53,9 +53,7 @@
           {%- assign button_url_2         = block.settings.button_url_2 -%}
           {%- assign text_position        = block.settings.text_position -%}
           {%- assign text_position_mobile = block.settings.text_position_mobile -%}
-          {%- assign video_url            = block.settings.video_url | split: "?v=" -%}
-          {%- assign video_type           = video_url | first | strip -%}
-          {%- assign video_id             = video_url | last | strip -%}
+          {%- assign video_url            = block.settings.video_url | strip -%}
           {%- assign image                = block.settings.image -%}
           {%- assign image_mobile         = block.settings.image_mobile -%}
           {%- assign background           = block.settings.background -%}
@@ -333,11 +331,34 @@
                 </div>
 
                 <div class="hero__vision" style="{{- image_variables | escape -}}">
-                  {%- if video_url != blank and video_type contains "www.youtube.com" -%}
+                  {%- if video_url contains "youtube.com" -%}
+                    {%- assign video_drop = video_url | split: "?v=" -%}
+                    {%- assign video_id   = video_drop | last | strip -%}
+
                     <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
                       <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="hero__video-id" type="hidden" name="hidden">
                       <div id="player-{{- block.id -}}" class="hero__video"></div>
                     </div>
+
+                  {%- elsif video_url contains "vimeo.com" -%}
+                    {%- assign video_drop = video_url | split: "/" -%}
+                    {%- assign video_id   = video_drop | last | strip -%}
+
+                    <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                      <iframe
+                        class="hero__video"
+                        src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
+                        width="988"
+                        height="556"
+                        frameborder="0"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen
+                        autoplay
+                        muted
+                        loop
+                      ></iframe>
+                    </div>
+
                   {%- elsif image != blank or image_mobile != blank -%}
                     {%- if image != blank -%}
                       <div class="hero__vision-wrapper{% if image_mobile != blank %} hero__vision-wrapper--desktop{% endif %}{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
@@ -461,7 +482,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Note: This feature works with Youtube videos only. URL must be copied from Youtube video page and pasted to the field below. Preferable video's dimension 16:9. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0"
+            "content": "Note: This feature works with Youtube and Vimeo videos only. URL must be copied from Youtube or Vimeo video page and pasted and created a new link in the field below. Preferable video's dimension 16:9. For better page performance the video mustn't be too heavy. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0 or https://vimeo.com/43652787"
           },
           {
             "type": "url",
