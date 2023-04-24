@@ -1,0 +1,237 @@
+{%- unless section.blocks.size == 0 -%}
+
+  {{ "partners.css" | asset_url | stylesheet_tag }}
+
+  {%- assign title                 = section.settings.title -%}
+  {%- assign text_position         = section.settings.text_position -%}
+  {%- assign text_position_mobile  = section.settings.text_position_mobile -%}
+  {%- assign color                 = section.settings.color -%}
+  {%- assign background            = section.settings.background -%}
+  {%- assign padding_top           = section.settings.padding_top -%}
+  {%- assign padding_bottom        = section.settings.padding_bottom -%}
+  {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+  {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+  {%- assign image_placeholder     = settings.image_placeholder -%}
+
+  {% comment %} CSS variables start {% endcomment %}
+  {%- capture variables -%}
+    {%- if color != blank -%}
+      --color-secondary-foreground: {{ color }};
+    {%- endif -%}
+    {%- if background != blank -%}
+      --color-primary-foreground: {{ background }};
+    {%- endif -%}
+    {%- if padding_top != blank -%}
+      --padding-top: {{ padding_top }}px;
+    {%- endif -%}
+    {%- if padding_bottom != blank -%}
+      --padding-bottom: {{ padding_bottom }}px;
+    {%- endif -%}
+    {%- if padding_top_mobile != blank -%}
+      --padding-top-mobile: {{ padding_top_mobile }}px;
+    {%- endif -%}
+    {%- if padding_bottom_mobile != blank -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- endif -%}
+
+    {%- case text_position -%}
+      {%- when 'left' -%}
+        --text-align: left;
+      {%- when 'center' -%}
+        --text-align: center;
+      {%- when 'right' -%}
+        --text-align: right;
+    {%- endcase -%}
+
+    {%- case text_position_mobile -%}
+      {%- when 'left' -%}
+        --text-align-mobile: left;
+        --padding-x: 0;
+      {%- when 'center' -%}
+        --text-align-mobile: center;
+        --padding-x: 16px;
+      {%- when 'right' -%}
+        --text-align-mobile: right;
+        --padding-x: 0;
+    {%- endcase -%}
+  {%- endcapture -%}
+  {% comment %} CSS variables end {% endcomment %}
+
+  <div
+    class="partners__wrapper{% if padding_top != blank or padding_top_mobile != blank %} partners__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} partners__wrapper--padding-bottom{%- endif -%}"
+    style="{{- variables | escape -}}"
+  >
+    <div class="partners__container container">
+      <div class="partners__columns">
+        {%- if title != blank -%}
+          <div class="partners__col">
+            <h2 class="partners__title h5">{{- title -}}</h2>
+          </div>
+        {%- endif -%}
+
+        {%- if section.blocks.size >= 1 -%}
+          <div class="partners__col partners__logos">
+            {%- for block in section.blocks -%}
+              {%- assign image = block.settings.image -%}
+
+              <div class="partners__image-wrapper{% if image_placeholder == blank and image == blank %} no-image{% endif %}">
+                {%- if image.url != blank -%}
+                  {{- image.url | image_tag:
+                    loading: 'lazy',
+                    class: 'partners__image',
+                    widths: '160',
+                    sizes: '160px',
+                    alt: image.alt
+                  -}}
+                {%- elsif image_placeholder != blank -%}
+                  {{- image_placeholder.url | image_tag:
+                    loading: 'lazy',
+                    class: 'partners__image',
+                    widths: '160',
+                    sizes: '160px',
+                    alt: image_placeholder.alt
+                  -}}
+                {%- endif -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endunless -%}
+
+
+{% schema %}
+  {
+    "name": "Partners",
+    "description": "Display section with partners logos",
+    "tag": "section",
+    "class": "partners",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Note: This section is visible only when there is at least 1 block (partner's logo)"
+      },
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Used by the world's most average companies"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text positioning",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 96,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 84,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "select",
+        "id": "text_position_mobile",
+        "label": "Text positioning",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 60,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 29,
+        "info": "Note: Use positive numbers only"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "partner",
+        "name": "Partner",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Partner's logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
