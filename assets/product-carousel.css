@@ -45,7 +45,8 @@
   vertical-align: top;
   font-size: 0;
   line-height: 0;
-  text-indent: -1000px;
+  text-indent: -9999px;
+  overflow: hidden;
   border-radius: 50%;
   width: 8px;
   height: 8px;
@@ -74,6 +75,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-indent: -9999px;
   transition: border var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 

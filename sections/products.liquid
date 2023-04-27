@@ -80,8 +80,6 @@
       </div>
 
       <div class="products__list{% if carousel %} products__carousel{%- endif -%}">
-        {% comment %} {%- if carousel -%}
-        {%- endif -%} {% endcomment %}
 
         {%- for item in items -%}
           {%- assign first                = forloop.first -%}
@@ -112,9 +110,11 @@
                 {%- endif -%}
 
                 <label for="item-{{- prev_id -}}" class="carousel__button prev" title="Prev">
+                  Previous slide
                   {%- include 'icon-arrow-right-full' -%}
                 </label>
                 <label for="item-{{- next_id -}}" class="carousel__button next" title="Next">
+                  Next slide
                   {%- include 'icon-arrow-right-full' -%}
                 </label>
               </div>
@@ -214,7 +214,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Note: The carousel appears automatically when there are more than 1 block (slide) in this section, and then below settings of the carousel is working"
+        "content": "Note: The carousel appears automatically when there are more than 1 product in this section, and then below settings of the carousel is working"
       },
       {
         "type": "checkbox",
