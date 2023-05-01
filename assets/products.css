@@ -1,76 +1,3 @@
-/* .products {
-  max-width: calc(var(--max-width) + var(--horizontal-padding) * 2 + 10px);
-  width: 100%;
-
-  margin: 16px auto;
-}
-
-.products__title {
-  font-size: 36px;
-  line-height: 44px;
-
-  font-weight: var(--font-weight-semibold);
-
-  color: var(--color-primary-foreground);
-
-  margin-bottom: 24px;
-  padding: 0 var(--horizontal-padding);
-}
-
-.products__inner {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-
-  justify-content: center;
-
-  gap: 16px;
-  padding: 0 var(--horizontal-padding);
-}
-
-.products__inner .product {
-  max-width: none;
-}
-
-.products__cleanstate {
-  display: flex;
-  align-items: center;
-
-  padding: 0 var(--horizontal-padding);
-  overflow-x: auto;
-
-  gap: 16px;
-}
-
-@media (min-width: 576px) {
-  .products__inner {
-    justify-content: start;
-  }
-
-  .products__inner .product {
-    max-width: 320px;
-  }
-}
-
-@media (min-width: 820px) {
-  .products {
-    padding: 0 var(--horizontal-padding);
-  }
-
-  .products .carousel__inner {
-    padding: 0;
-  }
-
-  .products__title {
-    padding: 0;
-  }
-
-  .products__inner {
-    gap: 32px;
-
-    padding: 0;
-  }
-} */
-
 .products {
   color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
@@ -111,10 +38,6 @@
 .products__list {
   padding: 24px 0 0;
   display: flex;
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fill, minmax(299px, 1fr)); */
-  /* justify-content: center; */
-  /* gap: 16px; */
 }
 
 @media (min-width: 992px) {
@@ -143,23 +66,10 @@
 
   .products__list {
     padding: 37px 0 0;
-    display: flex;
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px; */
   }
-
-  /* .products__item:last-child {
-    margin-bottom: 8px;
-  } */
 }
 
-@media (min-width: 1100px) {
-  .products__list {
-    /* grid-template-columns: repeat(4, 1fr);
-    gap: 32px; */
-  }
-
+@media (min-width: 1200px) {
   .products__wrapper--padding-top {
     padding-top: var(--padding-top, 112px);
   }
@@ -168,15 +78,7 @@
     padding-bottom: var(--padding-bottom, 112px);
   }
 
-  .products__col {
-    /* width: 50%; */
-  }
-
   .products__tag {
     margin: 0 0 16px;
   }
-
-  /* .products__item:after {
-    padding-bottom: 148%;
-  } */
 }

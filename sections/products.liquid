@@ -80,86 +80,55 @@
       </div>
 
       <div class="products__list{% if carousel %} products__carousel{%- endif -%}">
+        <div class="products__carousel-wrapper">
 
-        {%- for item in items -%}
-          {%- assign first                = forloop.first -%}
-          {%- assign last                 = forloop.last -%}
-          {%- assign index                = forloop.index -%}
-          {%- assign index0               = forloop.index0 -%}
-          {%- assign length               = forloop.length -%}
+          {%- for item in items -%}
+            {% case items_type %}
+              {% when "blocks" %}
+                {% assign product = item.settings.product %}
+              {% when "collection" %}
+                {% assign product = item %}
+            {% endcase %}
 
-          {% case items_type %}
-            {% when "blocks" %}
-              {% assign product = item.settings.product %}
-            {% when "collection" %}
-              {% assign product = item %}
-          {% endcase %}
-
-          {%- if show_arrows and carousel -%}
-            {%- capture carousel_buttons -%}
-              <div class="carousel__buttons" aria-label="Carousel navigation" aria-hidden="true">
-                {%- assign prev_id = index | minus: 1 -%}
-                {%- assign next_id = index | plus: 1 -%}
-
-                {%- if first -%}
-                  {%-assign prev_id = length -%}
-                {%- endif -%}
-
-                {%- if last -%}
-                  {%- assign next_id = length | minus: index0 -%}
-                {%- endif -%}
-
-                <label for="item-{{- prev_id -}}" class="carousel__button prev" title="Prev">
-                  Previous slide
-                  {%- include 'icon-arrow-right-full' -%}
-                </label>
-                <label for="item-{{- next_id -}}" class="carousel__button next" title="Next">
-                  Next slide
-                  {%- include 'icon-arrow-right-full' -%}
-                </label>
+            {%- if carousel -%}
+              <div class="products__carousel-item">
+                <div class="products__carousel-inner">
+            {%- endif -%}
+                  {%- include 'product-card' -%}
+            {%- if carousel -%}
+                </div>
               </div>
-            {%- endcapture -%}
-          {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
 
-          {%- if show_bullets and carousel -%}
-            {%- capture carousel_bullets -%}
-              <ul class="carousel__bullets" aria-label="Carousel navigation" aria-hidden="true">
-                {%- for i in (1..length) -%}
-                  <li class="carousel__bullet-item">
-                    {% style %}
-                      [id^="item-{{- i -}}"]:checked ~ .carousel__bullets .carousel__bullet[for="item-{{- i -}}"] {
-                        background: var(--color-primary-foreground, #0B1A26);
-                      }
-                    {% endstyle %}
+        </div>
 
-                    <label for="item-{{- i -}}" class="carousel__bullet" title="Jump to slide #{{- i -}}">
-                      Go to slide {{ i -}}
-                    </label>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            {%- endcapture -%}
-          {%- endif -%}
-
-          {%- if carousel -%}
-            <input type="radio" name="slider" class="products__carousel-radio" id="item-{{- index -}}"{% if first %} checked{%- endif -%}>
-            <div class="products__carousel-item">
-              {{- carousel_buttons -}}
-
-              <div class="products__carousel-inner">
-          {%- endif -%}
-
-                {%- include 'product-card' -%}
-
-          {%- if carousel -%}
-              </div>
+        {%- if carousel -%}
+          {%- if show_arrows -%}
+            <div class="carousel__buttons" aria-label="Carousel navigation" aria-hidden="true">
+              <span class="carousel__button prev" title="Prev slide">
+                Previous slide
+                {%- include 'icon-arrow-right-full' -%}
+              </span>
+              <span class="carousel__button next" title="Next slide">
+                Next slide
+                {%- include 'icon-arrow-right-full' -%}
+              </span>
             </div>
           {%- endif -%}
 
-        {%- endfor -%}
+          {%- if show_bullets -%}
+            <div class="carousel__bullets" aria-label="Carousel navigation" aria-hidden="true">
+              {%- for item in items -%}
+                {%- assign first = forloop.first -%}
+                {%- assign index = forloop.index -%}
 
-        {%- if carousel -%}
-          {{- carousel_bullets -}}
+                <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+                  Go to slide {{ index -}}
+                </span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
         {%- endif -%}
       </div>
     </div>

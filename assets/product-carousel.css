@@ -1,15 +1,37 @@
 :root {
-  --product-width: 318px;
-  --product-width-mobile: 314px;
+  --slide-width: 318px;
+  --slide-width-mobile: 314px;
 }
 
 .products__carousel {
+  position: relative;
+  scrollbar-width: none !important;
+  scrollbar-color: transparent transparent !important;
+}
+
+.products__carousel *::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.products__carousel *::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.products__carousel *::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+
+.products__carousel-wrapper {
   margin: 0 -16px;
   padding-bottom: 95px;
   width: calc(100% + 32px);
   height: 100%;
-  position: relative;
-  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 16px 0 0;
+  scroll-behavior: smooth !important;
+  -ms-overflow-style: none;
   display: flex;
   align-items: stretch;
 }
@@ -20,23 +42,27 @@
 }
 
 .products__carousel-item {
-  display: inline-block;
-  min-width: var(--product-width-mobile);
+  min-width: var(--slide-width-mobile);
   transition: all calc(var(--animation-duration, 200ms) + 200ms) var(--transition-function-ease);
-  margin-left: calc(-1 * var(--product-width-mobile));
   padding: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.products__carousel-item:last-child {
+  min-width: calc(var(--slide-width-mobile) + 16px);
+}
+
+.products__carousel-item:last-child .products__carousel-inner {
+  padding-right: 16px;
 }
 
 .carousel__bullets {
   position: absolute;
-  left: 16px;
+  left: 0;
   bottom: 0;
   display: flex;
   margin: 0 -4px;
-}
-
-.carousel__bullet-item {
-  margin: 0 4px;
 }
 
 .carousel__bullet {
@@ -48,21 +74,23 @@
   text-indent: -9999px;
   overflow: hidden;
   border-radius: 50%;
+  margin: 0 4px 20px;
   width: 8px;
   height: 8px;
   background: var(--color-fourth-foreground, #E1E4E8);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
+.carousel__bullet.active {
+  background: var(--color-primary-foreground, #0B1A26);
+}
+
 .carousel__buttons {
   position: absolute;
-  right: 16px;
+  right: 0;
   bottom: 0;
   margin: 0 -8px;
   display: flex;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .carousel__button {
@@ -86,6 +114,7 @@
 .carousel__button svg {
   width: 16px;
   height: 16px;
+  pointer-events: none;
 }
 
 .carousel__button.prev svg {
@@ -96,38 +125,15 @@
   fill: var(--color-primary-foreground, #0B1A26);
 }
 
-.products__carousel-radio {
-  display: none;
-}
-
-.products__carousel-radio:checked + .products__carousel-item {
-  left: 0;
-  margin-left: 0;
-  margin-right: var(--product-width-mobile);
-  min-width: var(--product-width-mobile);
-}
-
-.products__carousel-radio:checked + .products__carousel-item ~ .products__carousel-item {
-  min-width: var(--product-width-mobile);
-  left: var(--product-width-mobile);
-  margin-left: calc(-1 * var(--product-width-mobile));
-  margin-right: var(--product-width-mobile);
-}
-
-.products__carousel-radio:checked + .products__carousel-item .carousel__buttons {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
 .products__carousel .product-card {
   height: 100%;
 }
 
 @media (min-width: 992px) {
-  .products__carousel {
+  .products__carousel-wrapper {
     margin: 0 -32px;
     width: calc(100% + 64px);
+    scroll-padding: 0 32px 0 0;
   }
 
   .products__carousel-inner {
@@ -135,46 +141,34 @@
   }
 
   .products__carousel-item {
-    min-width: var(--product-width);
-    margin-left: calc(-1 * var(--product-width));
+    min-width: var(--slide-width);
   }
 
-  .carousel__buttons {
-    right: 32px;
+  .products__carousel-item:last-child {
+    min-width: calc(var(--slide-width) + 32px);
   }
 
-  .carousel__bullets {
-    left: 32px;
-  }
-
-  .products__carousel-radio:checked + .products__carousel-item {
-    margin-right: var(--product-width);
-    min-width: var(--product-width);
-  }
-
-  .products__carousel-radio:checked + .products__carousel-item ~ .products__carousel-item {
-    min-width: var(--product-width);
-    left: var(--product-width);
-    margin-left: calc(-1 * var(--product-width));
-    margin-right: var(--product-width);
+  .products__carousel-item:last-child .products__carousel-inner {
+    padding-right: 32px;
   }
 }
 
 @media (min-width: 1273px) {
-  .products__carousel {
+  .products__carousel-wrapper {
     margin: 0;
     width: 100%;
+    scroll-padding: 0;
   }
 
   .products__carousel-inner {
     padding: 0 32px 0 0;
   }
 
-  .carousel__buttons {
-    right: 0;
+  .products__carousel-item:last-child {
+    min-width: calc(var(--slide-width) - 32px);
   }
 
-  .carousel__bullets {
-    left: 0;
+  .products__carousel-item:last-child .products__carousel-inner {
+    padding-right: 0;
   }
 }
