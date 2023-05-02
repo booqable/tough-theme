@@ -3,25 +3,25 @@
   --slide-width-mobile: 314px;
 }
 
-.products__carousel {
+.carousel {
   position: relative;
   scrollbar-width: none !important;
   scrollbar-color: transparent transparent !important;
 }
 
-.products__carousel *::-webkit-scrollbar {
+.carousel *::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.products__carousel *::-webkit-scrollbar-track {
+.carousel *::-webkit-scrollbar-track {
   background: transparent !important;
 }
 
-.products__carousel *::-webkit-scrollbar-thumb {
+.carousel *::-webkit-scrollbar-thumb {
   background: transparent !important;
 }
 
-.products__carousel-wrapper {
+.carousel__wrapper {
   margin: 0 -16px;
   padding-bottom: 95px;
   width: calc(100% + 32px);
@@ -36,12 +36,12 @@
   align-items: stretch;
 }
 
-.products__carousel-inner {
+.carousel__inner {
   padding: 0 0 0 16px;
   height: 100%;
 }
 
-.products__carousel-item {
+.carousel__item {
   min-width: var(--slide-width-mobile);
   transition: all calc(var(--animation-duration, 200ms) + 200ms) var(--transition-function-ease);
   padding: 0;
@@ -49,15 +49,15 @@
   scroll-snap-stop: always;
 }
 
-.products__carousel-item:last-child {
+.carousel__item:last-child {
   min-width: calc(var(--slide-width-mobile) + 16px);
 }
 
-.products__carousel-item:last-child .products__carousel-inner {
+.carousel__item:last-child .carousel__inner {
   padding-right: 16px;
 }
 
-.carousel__bullets {
+.carousel__pagination {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -85,7 +85,7 @@
   background: var(--color-primary-foreground, #0B1A26);
 }
 
-.carousel__buttons {
+.carousel__navigation {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -125,50 +125,50 @@
   fill: var(--color-primary-foreground, #0B1A26);
 }
 
-.products__carousel .product-card {
+.carousel .product-card {
   height: 100%;
 }
 
 @media (min-width: 992px) {
-  .products__carousel-wrapper {
+  .carousel__wrapper {
     margin: 0 -32px;
     width: calc(100% + 64px);
     scroll-padding: 0 32px 0 0;
   }
 
-  .products__carousel-inner {
+  .carousel__inner {
     padding: 0 0 0 32px;
   }
 
-  .products__carousel-item {
+  .carousel__item {
     min-width: var(--slide-width);
   }
 
-  .products__carousel-item:last-child {
+  .carousel__item:last-child {
     min-width: calc(var(--slide-width) + 32px);
   }
 
-  .products__carousel-item:last-child .products__carousel-inner {
+  .carousel__item:last-child .carousel__inner {
     padding-right: 32px;
   }
 }
 
 @media (min-width: 1273px) {
-  .products__carousel-wrapper {
+  .carousel__wrapper {
     margin: 0;
     width: 100%;
     scroll-padding: 0;
   }
 
-  .products__carousel-inner {
+  .carousel__inner {
     padding: 0 32px 0 0;
   }
 
-  .products__carousel-item:last-child {
+  .carousel__item:last-child {
     min-width: calc(var(--slide-width) - 32px);
   }
 
-  .products__carousel-item:last-child .products__carousel-inner {
+  .carousel__item:last-child .carousel__inner {
     padding-right: 0;
   }
 }

@@ -126,15 +126,16 @@
       "block_order": [],
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "items": 6,
-        "show_arrows": true,
-        "show_bullets": true,
+        "limit": 6,
+        "show_navigation": true,
+        "show_pagination": true,
         "padding_top": 112,
         "padding_top_mobile": 40,
         "padding_bottom": 112,
         "padding_bottom_mobile": 40,
         "tag": "Tagline",
         "title": "Products",
+        "timer": 5,
         "view_all": "View all"
       },
       "disabled": null

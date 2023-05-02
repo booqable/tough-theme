@@ -4,8 +4,9 @@ class Carousel {
 
     this.selector = {
       pagItem: ".carousel__bullet",
-      box: ".products__carousel-wrapper",
-      item: ".products__carousel-item"
+      box: ".carousel__wrapper",
+      item: ".carousel__item",
+      timer: ".carousel__timer"
     }
 
     this.classes = {
@@ -29,17 +30,79 @@ class Carousel {
 
     this.elements();
     this.events();
+    this.variables();
   }
 
   elements() {
     this.box = this.block.querySelector(this.selector.box);
     this.item = this.block.querySelector(this.selector.item);
+    this.items = [...this.block.querySelectorAll(this.selector.item)];
     this.arr = [...this.block.querySelectorAll(this.selector.pagItem)];
   }
 
+  variables() {
+    this.timer = this.block.querySelector(this.selector.timer).value * 1000;
+    this.interval;
+  }
+
   events() {
+    this.autoRotate(this.timer);
+    this.pauseRotate();
+
     document.addEventListener("click", this.navigation.bind(this));
     document.addEventListener("click", this.pagination.bind(this));
+  }
+
+  pauseRotate() {
+    if (!this.items.length) return false;
+
+    const event = e => {
+      switch (e.type) {
+        case "mouseenter":
+          clearInterval(this.interval)
+
+          break;
+        case "mouseleave":
+          this.autoRotate(this.timer);
+
+          break;
+      }
+    }
+
+    this.box.addEventListener('mouseenter', event);
+    this.box.addEventListener('mouseleave', event);
+  }
+
+  autoRotate(time) {
+    if (time === 0 ) return false;
+
+    this.interval = setInterval(() => {
+      this.eventRotate()
+    }, time)
+
+    return () => {
+      clearInterval(this.interval)
+    }
+  }
+
+  eventRotate(e) {
+    if (this.items.length < 2) return false;
+
+    const width = this.item.getBoundingClientRect().width,
+          scroll = this.box.scrollWidth,
+          client = this.box.clientWidth
+
+    let val,
+        i,
+        left = this.box.scrollLeft;
+
+    if (this.arr.length) {
+      left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
+      this.pagination(e, i)
+    }
+
+    val = left + client >= scroll ? left = 0 : left += width
+    this.scrollTo(val);
   }
 
   navigation(e) {
@@ -61,31 +124,17 @@ class Carousel {
 
     switch (true) {
       case list.contains(this.classes.prev):
-        val = left === 0 ? scroll : left - width;
-
-        left === 0 ? i = this.arr.length : i = Math.ceil(left / width)
-
+        left === 0 ? i = Math.ceil((scroll - client) / width + 1) : i = Math.ceil(left / width)
         this.pagination(e, i)
+
+        val = left === 0 ? scroll : left - width;
 
         break;
       case list.contains(this.classes.next):
-        val = left >= scroll - client ? left = 0 : left + width;
-
-        if(left + width >= scroll - client) {
-          i = this.arr.length
-        } else {
-          console.log(left);
-          console.log(width);
-          console.log(Math.floor(left / width + 1));
-          // if (left < width) {
-          //   i = 1
-          // } else {
-            i = Math.floor(left / width + 1)
-          // }
-          // console.log(i);
-        }
-
+        left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
         this.pagination(e, i)
+
+        val = left >= scroll - client ? left = 0 : left + width;
 
         break;
       case list.contains(this.classes.pag):
@@ -98,8 +147,8 @@ class Carousel {
   }
 
   pagination(e, i) {
-    const target = e.target,
-          isEl = target.classList.contains(this.classes.pag);
+    const target = e?.target,
+          isEl = target?.classList.contains(this.classes.pag);
 
     if (!isEl && i === undefined) return false;
 
@@ -121,7 +170,7 @@ class Carousel {
   }
 }
 
-function initCarousel(selector = ".products__carousel") {
+function initCarousel(selector = ".carousel") {
   const sections = [...document.querySelectorAll(selector)];
 
   if (!sections.length) return false;
