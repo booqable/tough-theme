@@ -158,11 +158,18 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "collection": "all",
-        "snap": "center",
-        "paginate_per": 12,
-        "use_carousel": true,
-        "title": "Featured products"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "limit": 6,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 112,
+        "padding_top_mobile": 40,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 40,
+        "tag": "Tagline",
+        "title": "Products",
+        "timer": 5,
+        "view_all": "View all"
       },
       "disabled": null
     },
@@ -338,11 +345,11 @@
     "partners",
     "collections",
     "image-with-text",
+    "products",
     "image-banner",
     "date-picker",
     "columns",
     "spacer",
-    "products",
     "spacer_988332",
     "image-banner_478138",
     "spacer_868256"

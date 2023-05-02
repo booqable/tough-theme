@@ -1,161 +1,280 @@
-{{ "products.css" | asset_url | stylesheet_tag }}
-{{ "product.css" | asset_url | stylesheet_tag }}
-{% comment %} {{ "carousels.css" | asset_url | stylesheet_tag }} {% endcomment %}
+{%- assign collection = section.settings.collection -%}
+{%- assign blocks = section.blocks -%}
 
-{% if section.settings.collection != blank %}
-  {% assign data = section.settings.collection.items %}
-  {% if section.settings.collection.items_count > 0 %}
-    {% assign data_exists = true %}
-  {% else %}
-    {% assign data_exists = false %}
-  {% endif %}
-  {% assign data_type = "collection" %}
-{% else %}
-  {% assign data = section.blocks %}
-  {% if data.size > 0 and data.first.settings.product != blank %}
-    {% assign data_exists = true %}
-  {% else %}
-    {% assign data_exists = false %}
-  {% endif %}
-  {% assign data_type = "blocks" %}
-{% endif %}
+{%- if blocks.size > 0 or collection.items_count > 0 -%}
 
-{% if section.settings.title %}
-  <h2 class="products__title">{{ section.settings.title }}</h2>
-{% endif %}
-{% if data_exists %}
-  {% if section.settings.use_carousel %}
-    <div class="carousel carousel--snap-{{ section.settings.snap }}">
-      <div class="carousel__inner {% if section.settings.infinite_scroll %}infinite-scroll{% endif %}">
-        {% include "products-inner" %}
+  {{ "products.css" | asset_url | stylesheet_tag }}
+  {{ "product-card.css" | asset_url | stylesheet_tag }}
+
+  {%- assign tag                   = section.settings.tag -%}
+  {%- assign title                 = section.settings.title -%}
+  {%- assign description           = section.settings.description -%}
+  {%- assign view_all              = section.settings.view_all -%}
+  {%- assign limit                 = section.settings.limit -%}
+  {%- assign show_navigation       = section.settings.show_navigation -%}
+  {%- assign show_pagination       = section.settings.show_pagination -%}
+  {%- assign padding_top           = section.settings.padding_top -%}
+  {%- assign padding_bottom        = section.settings.padding_bottom -%}
+  {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+  {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+  {%- assign timer                 = section.settings.timer -%}
+
+  {%- if collection != blank -%}
+    {%- assign items = collection.items -%}
+    {%- assign items_type = "collection" -%}
+  {%- else -%}
+    {%- assign items = blocks -%}
+    {%- assign items_type = "blocks" -%}
+  {%- endif -%}
+
+  {%- assign carousel = false -%}
+
+  {%- if blocks.size > 1 or collection.items_count > 1 -%}
+    {{ "carousel.css" | asset_url | stylesheet_tag }}
+
+    {%- assign carousel = true -%}
+  {%- endif -%}
+
+  {% comment %} CSS variables start {% endcomment %}
+  {%- capture variables -%}
+    {%- if padding_top != blank -%}
+      --padding-top: {{ padding_top }}px;
+    {%- endif -%}
+    {%- if padding_bottom != blank -%}
+      --padding-bottom: {{ padding_bottom }}px;
+    {%- endif -%}
+    {%- if padding_top_mobile != blank -%}
+      --padding-top-mobile: {{ padding_top_mobile }}px;
+    {%- endif -%}
+    {%- if padding_bottom_mobile != blank -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- endif -%}
+  {%- endcapture -%}
+  {% comment %} CSS variables end {% endcomment %}
+
+  <div
+    class="products__wrapper{% if padding_top != blank or padding_top_mobile != blank %} products__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} products__wrapper--padding-bottom{%- endif -%}"
+    style="{{- variables | escape -}}"
+  >
+    <div class="products__container container">
+      <div class="products__top">
+        <div class="products__col">
+          {%- if tag != blank -%}
+            <span class="products__tag">{{- tag -}}</span>
+          {%- endif -%}
+
+          {%- if title != blank -%}
+            <h2 class="products__title">{{- title -}}</h2>
+          {%- endif -%}
+
+          {%- if description != blank -%}
+            <div class="products__description">{{- description -}}</div>
+          {%- endif -%}
+        </div>
+
+        <div class="products__col">
+          {%- if view_all != blank -%}
+            <a href="{{ routes.products_url }}" class="products__show button button--outlined button--large">
+              {{- view_all -}}
+            </a>
+          {%- endif -%}
+        </div>
       </div>
-      <div class="carousel__controls">
-        <div class="carousel__control prev">
-          <i class="fa-regular fa-arrow-left"></i>
+
+      <div class="products__list{% if carousel %} carousel{%- endif -%}">
+        <input class="carousel__timer" type="hidden" name="hidden" id="timer-{{- section.key -}}" value="{{- timer -}}">
+        <div class="carousel__wrapper">
+
+          {%- for item in items limit: limit -%}
+            {% case items_type %}
+              {% when "blocks" %}
+                {% assign product = item.settings.product %}
+              {% when "collection" %}
+                {% assign product = item %}
+            {% endcase %}
+
+            {%- if carousel -%}
+              <div class="carousel__item">
+                <div class="carousel__inner">
+            {%- endif -%}
+                  {%- include 'product-card' -%}
+            {%- if carousel -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
-        <div class="carousel__control next">
-          <i class="fa-regular fa-arrow-right"></i>
-        </div>
+
+        {%- if carousel -%}
+          {%- if show_navigation -%}
+            <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
+              <span class="carousel__button prev" title="Prev slide">
+                Previous slide
+                {%- include 'icon-arrow-right-full' -%}
+              </span>
+              <span class="carousel__button next" title="Next slide">
+                Next slide
+                {%- include 'icon-arrow-right-full' -%}
+              </span>
+            </div>
+          {%- endif -%}
+
+          {%- if show_pagination -%}
+            <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
+              {%- for item in items limit: limit -%}
+                {%- assign first = forloop.first -%}
+                {%- assign index = forloop.index -%}
+
+                <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+                  Go to slide {{ index -}}
+                </span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
       </div>
     </div>
-  {% else %}
-    {% if section.settings.use_pagination and data_type == "collection" %}
-      {% assign per_page = section.settings.paginate_per | times: 1 %}
-      {% assign key = section.key %}
-      {% paginate data by per_page page_param: key %}
-        <div class="products__inner">
-          {% include "products-inner" %}
-        </div>
-        {% if paginate.pages > 1 %}
-          {% include "pagination" %}
-        {% endif %}
-      {% endpaginate %}
-    {% else %}
-      <div class="products__inner">
-        {% include "products-inner" %}
-      </div>
-    {% endif %}
-  {% endif %}
-{% else %}
-  <div class="products__cleanstate">
-    {% for block in (1..3) %}
-      <div id="{{ section.blocks.first.id }}" class="product-cleanstate">
-        <div class="product-cleanstate__image skeleton"></div>
-        <div class="product-cleanstate__availability skeleton"></div>
-        <div class="product-cleanstate__name skeleton"></div>
-        <div class="product-cleanstate__price skeleton"></div>
-      </div>
-    {% endfor %}
   </div>
-{% endif %}
+{%- endif -%}
 
 {% schema %}
-{
-  "name": "Products",
-  "description": "Display products from a collection or individually in a list or carousel layout.",
-  "tag": "section",
-  "class": "products",
-  "settings": [
-    {
-      "type": "header",
-      "content": "General"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection",
-      "info": "Note: The collection takes precedence over \"Product\" blocks"
-    },
-    {
-      "type": "header",
-      "content": "Pagination"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_pagination",
-      "label": "Paginate products",
-      "info": "Note: Not applicable for \"Product\" blocks"
-    },
-    {
-      "type": "number",
-      "id": "paginate_per",
-      "label": "Products per page",
-      "default": 12
-    },
-    {
-      "type": "header",
-      "content": "Carousel"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_carousel",
-      "label": "Use carousel",
-      "info": "Note: Not applicable when pagination enabled"
-    },
-    {
-      "type": "checkbox",
-      "id": "infinite_scroll",
-      "label": "Infinite loop scrolling"
-    },
-    {
-      "type": "select",
-      "id": "snap",
-      "label": "Items alignment",
-      "options": [
-        {
-          "value": "start",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "end",
-          "label": "Right"
-        }
-      ],
-      "default": "center"
-    }
-  ],
-  "max_blocks": 16,
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "Products",
+    "description": "Display products from a collection or in a list of individual products. There is a carousel layout",
+    "tag": "section",
+    "class": "products",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "tag",
+        "label": "Tag",
+        "default": "Tagline"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Products"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "type": "text",
+        "id": "view_all",
+        "label": "Button label",
+        "default": "View all",
+        "info": "Note: This button redirects the user to the products page. If the label is empty - the button absent"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection",
+        "info": "Note: The collection takes precedence over 'Product' blocks"
+      },
+      {
+        "type": "header",
+        "content": "Carousel settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: The carousel appears automatically when there are more than 1 product in this section, and then below settings of the carousel is working"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_navigation",
+        "default": true,
+        "label": "Show navigation buttons"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "default": true,
+        "label": "Show pagination bullets"
+      },
+      {
+        "type": "number",
+        "id": "limit",
+        "label": "Maximum items",
+        "min": 0,
+        "max": 8,
+        "default": 6,
+        "info": "Note: Use positive numbers only. The maximum number of items to show is 8"
+      },
+      {
+        "type": "number",
+        "id": "timer",
+        "label": "Auto-rotate timer",
+        "min": 0,
+        "max": 100,
+        "default": 5,
+        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 40,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 40,
+        "info": "Note: Use positive numbers only"
+      }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
