@@ -6,14 +6,17 @@
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
 
+  --slide-width: 318px;
+  --slide-width-mobile: 314px;
+
   /* Colors */
   --color-primary-background-rgb: 255, 255, 255;
+  --color-primary-foreground-rgb: 11, 26, 38;
   --color-green: #8fcc40;
   --color-red: #f85454;
   --color-backdrop: #0c2747b3;
   --color-typo: #0c2747;
   --color-black: #0B1A26;
-  --color-black-rgb: 11, 26, 38;
   --color-white: #ffffff;
 
   /* Font weights */
@@ -63,7 +66,7 @@
 }
 
 * {
-  scrollbar-width: thin;
+  scrollbar-width: 0;
   scrollbar-color: var(--color-primary-foreground, #0B1A26) transparent;
 }
 
@@ -76,7 +79,6 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: transparent;
   background: var(--color-primary-foreground, #0B1A26);
 }
 

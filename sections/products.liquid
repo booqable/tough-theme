@@ -82,8 +82,10 @@
       </div>
 
       <div class="products__list{% if carousel %} carousel{%- endif -%}">
-        <input class="carousel__timer" type="hidden" name="hidden" id="timer-{{- section.key -}}" value="{{- timer -}}">
-        <div class="carousel__wrapper">
+        {%- if carousel -%}
+          <input class="carousel__timer" type="hidden" name="hidden" id="timer-{{- section.key -}}" value="{{- timer -}}">
+        {%- endif -%}
+        <div class="products__list-wrapper{% if carousel %} carousel__wrapper{%- endif -%}">
 
           {%- for item in items limit: limit -%}
             {% case items_type %}
