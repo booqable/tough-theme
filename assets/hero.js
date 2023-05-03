@@ -47,10 +47,10 @@ class Hero {
 
   events() {
     this.toRgb();
-    this.sliderInit();
-    this.eventRotate();
-    this.autoRotate();
-    this.videoInit();
+    // this.sliderInit();
+    // this.eventRotate();
+    // this.autoRotate();
+    // this.videoInit();
   }
 
   sliderInit() {

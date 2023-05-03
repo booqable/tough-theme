@@ -6,15 +6,16 @@ class Carousel {
       bullet: ".carousel__bullet",
       wrapper: ".carousel__wrapper",
       item: ".carousel__item",
-      timer: ".carousel__timer"
+      timer: ".carousel__timer",
+      count: ".carousel__count"
     }
 
     this.classes = {
-      carousel: "carousel",
       bullet: "carousel__bullet",
       button: "carousel__button",
       prev: "prev",
-      next: "next"
+      next: "next",
+      init: "initialized"
     }
 
     this.modifiers = {
@@ -22,6 +23,7 @@ class Carousel {
     }
 
     this.data = {
+      id: "id",
       index: "data-index"
     };
   }
@@ -38,16 +40,24 @@ class Carousel {
     this.item = this.block.querySelector(this.selector.item);
     this.items = [...this.block.querySelectorAll(this.selector.item)];
     this.bullets = [...this.block.querySelectorAll(this.selector.bullet)];
+    this.count = this.block.querySelector(this.selector.count);
     this.timer = this.block.querySelector(this.selector.timer).value * 1000;
     this.interval;
   }
 
   events(e) {
-    this.autoRotate(e, this.timer);
+    this.sliderInit();
+    // this.autoRotate(e, this.timer);
     this.pauseRotate();
 
     document.addEventListener("click", this.navigation.bind(this));
     document.addEventListener("click", this.pagination.bind(this));
+  }
+
+  sliderInit() {
+    if (this.items.length < 2) return false;
+
+    this.block.classList.add(this.classes.init);
   }
 
   // autorotate slides of carousel
@@ -68,8 +78,8 @@ class Carousel {
     if (!this.items.length) return false;
 
     const event = e => {
-      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval)
-      if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer)
+      // if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval)
+      // if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer)
     }
 
     this.block.addEventListener('mouseenter', event);
@@ -120,6 +130,8 @@ class Carousel {
 
         val = left === 0 ? scroll : left - width;
 
+        // this.counter(10)
+
         break;
       case list?.contains(this.classes.next):
         left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
@@ -146,6 +158,19 @@ class Carousel {
     this.scrollTo(val);
   }
 
+  // change index of counter of slides
+  counter(i) {
+    if (!this.count) return false;
+
+    if (i === 0 || typeof i === 'undefined') return false;
+
+    let num = "";
+
+    if (i < 10) num = 0
+
+    this.count.innerHTML = `${num}${i}`
+  }
+
   scrollTo(val) {
     this.wrap.scrollTo({
       left: val,
@@ -154,13 +179,15 @@ class Carousel {
   }
 }
 
-function initCarousel(selector = ".carousel") {
-  const sections = [...document.querySelectorAll(selector)];
+function initCarousel(el = ".carousel") {
+  const arr = [...document.querySelectorAll(el)];
 
-  if (!sections.length) return false;
+  if (!arr.length) return false;
 
-  sections.forEach(section => {
-    const carousel = new Carousel(section);
+  arr.forEach((val, i) => {
+    val.setAttribute('id', `carousel-${i}`);
+
+    const carousel = new Carousel(val);
     carousel.init();
   });
 };
