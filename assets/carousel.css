@@ -1,8 +1,3 @@
-:root {
-  --slide-width: 318px;
-  --slide-width-mobile: 314px;
-}
-
 .carousel {
   position: relative;
   scrollbar-width: none !important;
@@ -63,6 +58,7 @@
   bottom: 0;
   display: flex;
   margin: 0 -4px;
+  z-index: 1;
 }
 
 .carousel__bullet {
@@ -91,6 +87,7 @@
   bottom: 0;
   margin: 0 -8px;
   display: flex;
+  z-index: 1;
 }
 
 .carousel__button {
@@ -121,8 +118,9 @@
   transform: rotate(180deg);
 }
 
-.carousel__button.prev path {
+.carousel__button path {
   fill: var(--color-primary-foreground, #0B1A26);
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .carousel .product-card {

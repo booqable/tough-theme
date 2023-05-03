@@ -6,6 +6,9 @@
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
 
+  --slide-width: 318px;
+  --slide-width-mobile: 314px;
+
   /* Colors */
   --color-primary-background-rgb: 255, 255, 255;
   --color-primary-foreground-rgb: 11, 26, 38;
