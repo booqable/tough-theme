@@ -50,7 +50,7 @@
 
   <div class="hero__wrapper" style="{{- variables | escape -}}">
     {%- if carousel -%}
-      <div class="carousel carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
+      <div class="carousel carousel__fluid carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
         <div class="carousel__wrapper">
     {%- endif -%}
@@ -469,13 +469,10 @@
             "content": "Note: This feature works with Youtube and Vimeo videos only. URL must be copied from Youtube or Vimeo video page and pasted and created a new link in the field below. Preferable video's dimension 16:9. For better page performance the video mustn't be too heavy. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0 or https://vimeo.com/43652787"
           },
           {
-            "type": "url",
+            "type": "text",
             "id": "video_url",
-            "label": "URL to video"
-          },
-          {
-            "type": "paragraph",
-            "content": "Note: The video takes precedence over 'Image' and only this one will be displaying on both desktop and mobile"
+            "label": "URL to video",
+            "info": "Note: The video takes precedence over 'Image' and only this one will be displaying on both desktop and mobile"
           },
           {
             "type": "header",

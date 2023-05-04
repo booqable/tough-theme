@@ -1,111 +1,56 @@
 class Hero {
-  constructor(section) {
-    this.section = section;
+  constructor(block) {
+    this.block = block;
 
     this.selector = {
       vision: ".hero__vision",
       video: ".hero__video-id",
       player: ".hero__video",
-      button: ".carousel__trigger",
-      timer: ".carousel__timer"
-    }
-
-    this.classes = {
-      next: "next",
-      init: "initialized"
-    }
-
-    this.id = {
-      slide: "slide",
-      id: "id"
-    }
-
-    this.props = {
-      video: "video"
     }
 
     this.options = {
       hex: "--color-primary-foreground",
       rgb: "--color-primary-foreground-rgb"
     }
-
-    this.current = 1
   }
 
   init() {
-    if (!this.section) return false;
+    if (!this.block) return false;
 
     this.elements();
     this.events();
   }
 
   elements() {
-    this.visions = [...this.section.querySelectorAll(this.selector.vision)];
-    this.buttons = [...this.section.querySelectorAll(this.selector.button)];
-    this.timer = this.section.querySelector(this.selector.timer);
+    this.arr = [...this.block.querySelectorAll(this.selector.vision)];
   }
 
   events() {
     this.toRgb();
-    // this.sliderInit();
-    // this.eventRotate();
-    // this.autoRotate();
-    // this.videoInit();
-  }
-
-  sliderInit() {
-    if (!this.timer) return false;
-
-    this.timer.parentElement.classList.add(this.classes.init);
+    this.videoInit();
   }
 
   toRgb() {
-    if (!this.visions.length) return false;
+    if (!this.arr.length) return false;
 
-    this.visions.forEach(vision => {
-      const init = new window.ToRgb(vision, this.options);
+    this.arr.forEach(val => {
+      const init = new window.ToRgb(val, this.options);
       init.init();
     })
   }
 
-  autoRotate() {
-    const timer = this.timer.value * 1000;
-
-    if (timer === 0 ) return false;
-
-    const interval = setInterval(() => {
-      this.eventRotate()
-    }, timer)
-
-    return () => {
-      clearInterval(interval)
-    }
-  }
-
-  eventRotate() {
-    if (!this.buttons.length) return false;
-
-    const toggler = document.querySelector(`#${this.id.slide}-${this.current}`)
-
-    toggler.click();
-
-    this.current === this.buttons.length
-      ? this.current = 1
-      : this.current += 1
-  }
-
   videoInit() {
-    if (!this.visions.length) return false;
+    if (!this.arr.length) return false;
 
-    this.visions.forEach(item => {
-      const videoId = item.querySelector(this.selector.video).value;
+    this.arr.forEach(val => {
+      const el = val.querySelector(this.selector.video),
+            id = el?.value;
 
-      if (!videoId) return false;
+      if (!id || typeof id === 'undefined') return false;
 
-      const playerId = item.querySelector(this.selector.player).id;
+      const box = val.querySelector(this.selector.player).id;
 
-      this.video(videoId, playerId);
-
+      this.video(id, box);
     })
   }
 
@@ -148,13 +93,13 @@ class Hero {
   }
 }
 
-function initHero(selector = ".hero") {
-  const sections = [...document.querySelectorAll(selector)];
+function initHero(el = ".hero") {
+  const arr = [...document.querySelectorAll(el)];
 
-  if (!sections.length) return false;
+  if (!arr.length) return false;
 
-  sections.forEach(section => {
-    const hero = new Hero(section);
+  arr.forEach(val => {
+    const hero = new Hero(val);
     hero.init();
   });
 };
