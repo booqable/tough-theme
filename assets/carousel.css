@@ -1,4 +1,5 @@
 .carousel {
+  height: 100%;
   position: relative;
   scrollbar-width: none !important;
   scrollbar-color: transparent transparent !important;
@@ -6,6 +7,7 @@
 
 .carousel *::-webkit-scrollbar {
   width: 0 !important;
+  height: 0 !important;
 }
 
 .carousel *::-webkit-scrollbar-track {
@@ -37,6 +39,7 @@
 }
 
 .carousel__item {
+  position: relative;
   min-width: var(--slide-width-mobile);
   transition: all calc(var(--animation-duration, 200ms) + 200ms) var(--transition-function-ease);
   padding: 0;
