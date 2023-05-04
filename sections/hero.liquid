@@ -13,6 +13,8 @@
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign ui_color              = section.settings.ui_color -%}
   {%- assign timer                 = section.settings.timer -%}
+  {%- assign pause                 = section.settings.pause -%}
+  {%- assign effect                = section.settings.effect -%}
 
   {%- assign carousel = false -%}
 
@@ -47,13 +49,14 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div class="hero__wrapper" style="{{- variables | escape -}}">
-    <div class="hero__banner{% if carousel %} carousel{%- endif -%}" aria-label="Gallery">
-      {%- if carousel -%}
-        <input class="carousel__timer" type="hidden" name="hidden" id="timer-{{- section.key -}}" value="{{- timer -}}">
-      {%- endif -%}
-        <div class="hero__banner-wrapper{% if carousel %} carousel__wrapper{%- endif -%}">
+    {%- if carousel -%}
+      <div class="carousel carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
+        <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+        <div class="carousel__wrapper">
+    {%- endif -%}
 
           {%- for block in blocks limit: limit -%}
+            {%- assign first                = forloop.first -%}
             {%- assign title                = block.settings.title -%}
             {%- assign description          = block.settings.description -%}
             {%- assign button_1             = block.settings.button_1 -%}
@@ -86,73 +89,82 @@
                   --text-align-items: flex-start;
                   --text-align: left;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 0;
                   --margin-left: 0;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 37px;
                 {%- when 'top-center' -%}
                   --text-justify-content: center;
                   --text-align-items: flex-start;
                   --text-align: center;
                   --text-hero-width: none;
-                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 0;
                 {%- when 'top-right' -%}
                   --text-justify-content: flex-end;
                   --text-align-items: flex-start;
                   --text-align: right;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: 0;
+                  --padding-left: 37px;
+                  --padding-right: 0;
                 {%- when 'middle-left' -%}
                   --text-justify-content: flex-start;
                   --text-align-items: center;
                   --text-align: left;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 42px;
                   --margin-left: 0;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 37px;
                 {%- when 'center' -%}
                   --text-justify-content: center;
                   --text-align-items: center;
                   --text-align: center;
                   --text-hero-width: none;
-                  --text-padding-bottom: 42px;
                   --margin-left: auto;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 0;
                 {%- when 'middle-right' -%}
                   --text-justify-content: flex-end;
                   --text-align-items: center;
                   --text-align: right;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 42px;
                   --margin-left: auto;
                   --margin-right: 0;
+                  --padding-left: 37px;
+                  --padding-right: 0;
                 {%- when 'bottom-left' -%}
                   --text-justify-content: flex-start;
                   --text-align-items: flex-end;
                   --text-align: left;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 0;
                   --margin-left: 0;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 37px;
                 {%- when 'bottom-center' -%}
                   --text-justify-content: center;
                   --text-align-items: flex-end;
                   --text-align: center;
                   --text-hero-width: none;
-                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: auto;
+                  --padding-left: 0;
+                  --padding-right: 0;
                 {%- when 'bottom-right' -%}
                   --text-justify-content: flex-end;
                   --text-align-items: flex-end;
                   --text-align: right;
                   --text-hero-width: 400px;
-                  --text-padding-bottom: 0;
                   --margin-left: auto;
                   --margin-right: 0;
+                  --padding-left: 37px;
+                  --padding-right: 0;
               {%- endcase -%}
 
               {%- case text_position_mobile -%}
@@ -161,7 +173,6 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'top-center' -%}
@@ -169,7 +180,6 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'top-right' -%}
@@ -177,7 +187,6 @@
                   --text-align-items-mobile: flex-start;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
                 {%- when 'middle-left' -%}
@@ -185,7 +194,6 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 36px;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'center' -%}
@@ -193,7 +201,6 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
-                  --text-padding-bottom-mobile: 36px;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'middle-right' -%}
@@ -201,7 +208,6 @@
                   --text-align-items-mobile: center;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 36px;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
                 {%- when 'bottom-left' -%}
@@ -209,7 +215,6 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: left;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: 0;
                   --margin-right-mobile: auto;
                 {%- when 'bottom-center' -%}
@@ -217,7 +222,6 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: center;
                   --text-hero-width-mobile: none;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: auto;
                 {%- when 'bottom-right' -%}
@@ -225,7 +229,6 @@
                   --text-align-items-mobile: flex-end;
                   --text-align-mobile: right;
                   --text-hero-width-mobile: 400px;
-                  --text-padding-bottom-mobile: 0;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
               {%- endcase -%}
@@ -242,139 +245,138 @@
             {% comment %} CSS variables end {% endcomment %}
 
             {%- if carousel -%}
-              <div class="carousel__item">
+              <div class="carousel__item{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
                 <div class="carousel__inner">
             {%- endif -%}
-                  <div class="hero__inner">
-                    <div
-                      class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}"
-                      style="{{- text_variables | escape -}}"
-                    >
-                      <div class="hero__text-area">
-                        <div class="hero__content">
-                          {%- if title != blank -%}
-                            <h1 class="hero__title">{{- title -}}</h1>
-                          {%- endif -%}
+                  <div
+                    class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}"
+                    style="{{- text_variables | escape -}}"
+                  >
+                    <div class="hero__text-area">
+                      <div class="hero__content">
+                        {%- if title != blank -%}
+                          <h1 class="hero__title">{{- title -}}</h1>
+                        {%- endif -%}
 
-                          {%- if description != blank -%}
-                            <div class="hero__description text-medium">{{- description -}}</div>
-                          {%- endif -%}
+                        {%- if description != blank -%}
+                          <div class="hero__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
+                        {%- endif -%}
 
-                          {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
-                            <div class="hero__buttons">
-                              {%- if button_1 != blank and button_url_1 != blank -%}
-                                <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
-                              {%- endif -%}
+                        {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+                          <div class="hero__buttons">
+                            {%- if button_1 != blank and button_url_1 != blank -%}
+                              <a href="{{  button_url_1 }}" class="hero__button button button--primary button--large">{{- button_1 -}}</a>
+                            {%- endif -%}
 
-                              {%- if button_2 != blank and button_url_2 != blank -%}
-                                <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
-                              {%- endif -%}
-                            </div>
-                          {%- endif -%}
+                            {%- if button_2 != blank and button_url_2 != blank -%}
+                              <a href="{{  button_url_2 }}" class="hero__button button button--outlined button--large">{{- button_2 -}}</a>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
 
-                        </div>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="hero__vision" style="{{- image_variables | escape -}}">
-                      {%- if video_url contains "youtube.com" -%}
-                        {%- assign video_drop = video_url | split: "?v=" -%}
-                        {%- assign video_id   = video_drop | last | strip -%}
+                  <div class="hero__vision" style="{{- image_variables | escape -}}">
+                    {%- if video_url contains "youtube.com" -%}
+                      {%- assign video_drop = video_url | split: "?v=" -%}
+                      {%- assign video_id   = video_drop | last | strip -%}
 
-                        <div class="hero__vision-wrapper{%  if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
-                          <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="hero__video-id" type="hidden" name="hidden">
-                          <div id="player-{{- block.id -}}" class="hero__video"></div>
+                      <div class="hero__vision-wrapper{%  if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                        <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="hero__video-id" type="hidden" name="hidden">
+                        <div id="player-{{- block.id -}}" class="hero__video"></div>
+                      </div>
+
+                    {%- elsif video_url contains "vimeo.com" -%}
+                      {%- assign video_drop = video_url | split: "/" -%}
+                      {%- assign video_id   = video_drop | last | strip -%}
+
+                      <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                        <iframe
+                          class="hero__video"
+                          src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
+                          width="988"
+                          height="556"
+                          frameborder="0"
+                          allow="autoplay; fullscreen"
+                          allowfullscreen
+                          autoplay
+                          muted
+                          loop
+                        ></iframe>
+                      </div>
+
+                    {%- elsif image != blank or image_mobile != blank -%}
+                      {%- if image != blank -%}
+                        <div class="hero__vision-wrapper{% if image_mobile != blank %} hero__vision-wrapper--desktop{% endif %}{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                          {{ image.url | image_tag:
+                            loading: 'lazy',
+                            class: 'hero__image',
+                            widths: '990, 1400, 1900, 2500'
+                          }}
                         </div>
-
-                      {%- elsif video_url contains "vimeo.com" -%}
-                        {%- assign video_drop = video_url | split: "/" -%}
-                        {%- assign video_id   = video_drop | last | strip -%}
-
-                        <div class="hero__vision-wrapper{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
-                          <iframe
-                            class="hero__video"
-                            src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
-                            width="988"
-                            height="556"
-                            frameborder="0"
-                            allow="autoplay; fullscreen"
-                            allowfullscreen
-                            autoplay
-                            muted
-                            loop
-                          ></iframe>
-                        </div>
-
-                      {%- elsif image != blank or image_mobile != blank -%}
-                        {%- if image != blank -%}
-                          <div class="hero__vision-wrapper{% if image_mobile != blank %} hero__vision-wrapper--desktop{% endif %}{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
-                            {{ image.url | image_tag:
-                              loading: 'lazy',
-                              class: 'hero__image',
-                              widths: '990, 1400, 1900, 2500'
-                            }}
-                          </div>
-                        {%- endif -%}
-
-                        {%- if image_mobile != blank -%}
-                          <div class="hero__vision-wrapper hero__vision-wrapper--mobile{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
-                            {{ image_mobile.url | image_tag:
-                              loading: 'lazy',
-                              class: 'hero__image',
-                              widths: '320, 480, 567'
-                            }}
-                          </div>
-                        {%- endif -%}
                       {%- endif -%}
-                    </div>
+
+                      {%- if image_mobile != blank -%}
+                        <div class="hero__vision-wrapper hero__vision-wrapper--mobile{%if show_overlay %} hero__vision-wrapper--overlay{%- endif -%}">
+                          {{ image_mobile.url | image_tag:
+                            loading: 'lazy',
+                            class: 'hero__image',
+                            widths: '320, 480, 567'
+                          }}
+                        </div>
+                      {%- endif -%}
+                    {%- endif -%}
                   </div>
             {%- if carousel -%}
                 </div>
               </div>
             {%- endif -%}
           {%- endfor -%}
+
+    {%- if carousel -%}
         </div>
 
-        {%- if carousel -%}
-          {%- if show_navigation -%}
-            <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
-              <span class="carousel__button prev" title="Prev slide">
-                Previous slide
-                {%- include 'icon-arrow-right' -%}
-              </span>
-              <span class="carousel__button next" title="Next slide">
-                Next slide
-                {%- include 'icon-arrow-right' -%}
-              </span>
-            </div>
-          {%- endif -%}
-
-          {%- if show_pagination -%}
-            <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
-              {%- for block in blocks limit: limit -%}
-                {%- assign first = forloop.first -%}
-                {%- assign index = forloop.index -%}
-
-                <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
-                  Go to slide {{ index -}}
-                </span>
-              {%- endfor -%}
-            </div>
-          {%- endif -%}
-
-          {%- if show_counter -%}
-            <div class="carousel__counter">
-              {%- for block in blocks limit: limit) -%}
-                {%- assign length = forloop.length -%}
-              {%- endfor -%}
-
-              <span class="carousel__count">{%- if length < 10 -%}0{%- endif -%}1</span>
-              <span class="carousel__divider">|</span>
-              <span class="carousel__summary">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
-            </div>
-          {%- endif -%}
+        {%- if show_navigation -%}
+          <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
+            <span class="carousel__button prev" title="Prev slide">
+              Previous slide
+              {%- include 'icon-arrow-right' -%}
+            </span>
+            <span class="carousel__button next" title="Next slide">
+              Next slide
+              {%- include 'icon-arrow-right' -%}
+            </span>
+          </div>
         {%- endif -%}
-    </div>
+
+        {%- if show_pagination -%}
+          <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
+            {%- for block in blocks limit: limit -%}
+              {%- assign first = forloop.first -%}
+              {%- assign index = forloop.index -%}
+
+              <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+                Go to slide {{ index -}}
+              </span>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- if show_counter -%}
+          <div class="carousel__counter">
+            {%- for block in blocks limit: limit) -%}
+              {%- assign length = forloop.length -%}
+            {%- endfor -%}
+
+            <span class="carousel__count">{%- if length < 10 -%}0{%- endif -%}1</span>
+            <span class="carousel__divider">|</span>
+            <span class="carousel__summary">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
   </div>
 {%- endif -%}
 
@@ -652,6 +654,28 @@
         "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
       },
       {
+        "type": "checkbox",
+        "id": "pause",
+        "default": true,
+        "label": "Stop auto-rotate on hover"
+      },
+      {
+        "type": "select",
+        "id": "effect",
+        "label": "Effect changing of slides",
+        "options": [
+          {
+            "value": "fade",
+            "label": "Fade"
+          },
+          {
+            "value": "slide",
+            "label": "Slide"
+          }
+        ],
+        "default": "slide"
+      },
+      {
         "type": "color",
         "id": "ui_color",
         "label": "UI color",
@@ -689,7 +713,7 @@
         "label": "Padding top",
         "min": 0,
         "max": 100,
-        "default": 47,
+        "default": 41,
         "info": "Note: Use positive numbers only"
       },
       {

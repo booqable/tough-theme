@@ -7,14 +7,14 @@
         "slide": {
           "type": "slide",
           "settings": {
-            "title": "Rent heavy equipment",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
             "button_1": "Check out products",
             "button_2": "More info",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+            "overlay_opacity": 100,
+            "show_overlay": true,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "show_overlay": true,
-            "overlay_opacity": 100
+            "title": "Rent heavy equipment"
           },
           "disabled": null
         }
@@ -23,14 +23,17 @@
         "slide"
       ],
       "settings": {
-        "show_arrows": true,
-        "show_bullets": true,
-        "show_counter": true,
-        "timer": 5,
-        "padding_top": 35,
+        "effect": "slide",
+        "limit": 6,
         "padding_bottom": 36,
-        "padding_top_mobile": 47,
-        "padding_bottom_mobile": 23
+        "padding_bottom_mobile": 23,
+        "padding_top": 35,
+        "padding_top_mobile": 41,
+        "pause": true,
+        "show_counter": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
