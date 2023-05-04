@@ -81,33 +81,34 @@
         </div>
       </div>
 
-      <div class="products__list{% if carousel %} carousel{%- endif -%}">
+      <div class="products__list{% if carousel %} carousel carousel__pause{%- endif -%}">
         {%- if carousel -%}
-          <input class="carousel__timer" type="hidden" name="hidden" id="timer-{{- section.key -}}" value="{{- timer -}}">
+          <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+          <div class="carousel__wrapper">
         {%- endif -%}
-        <div class="products__list-wrapper{% if carousel %} carousel__wrapper{%- endif -%}">
 
-          {%- for item in items limit: limit -%}
-            {% case items_type %}
-              {% when "blocks" %}
-                {% assign product = item.settings.product %}
-              {% when "collection" %}
-                {% assign product = item %}
-            {% endcase %}
+            {%- for item in items limit: limit -%}
+              {% case items_type %}
+                {% when "blocks" %}
+                  {% assign product = item.settings.product %}
+                {% when "collection" %}
+                  {% assign product = item %}
+              {% endcase %}
 
-            {%- if carousel -%}
-              <div class="carousel__item">
-                <div class="carousel__inner">
-            {%- endif -%}
-                  {%- include 'product-card' -%}
-            {%- if carousel -%}
+              {%- if carousel -%}
+                <div class="carousel__item">
+                  <div class="carousel__inner">
+              {%- endif -%}
+                    {%- include 'product-card' -%}
+              {%- if carousel -%}
+                  </div>
                 </div>
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
+              {%- endif -%}
+            {%- endfor -%}
 
         {%- if carousel -%}
+          </div>
+
           {%- if show_navigation -%}
             <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
               <span class="carousel__button prev" title="Prev slide">
