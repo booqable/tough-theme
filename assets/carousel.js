@@ -154,13 +154,13 @@ class Carousel {
   }
 }
 
-function initCarousel(selector = ".carousel") {
-  const sections = [...document.querySelectorAll(selector)];
+function initCarousel(el = ".carousel") {
+  const arr = [...document.querySelectorAll(el)];
 
-  if (!sections.length) return false;
+  if (!arr.length) return false;
 
-  sections.forEach(section => {
-    const carousel = new Carousel(section);
+  arr.forEach(val => {
+    const carousel = new Carousel(val);
     carousel.init();
   });
 };
