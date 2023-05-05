@@ -128,8 +128,8 @@
                 {%- assign first = forloop.first -%}
                 {%- assign index = forloop.index -%}
 
-                <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
-                  Go to slide {{ index -}}
+                <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index }}">
+                  Go to slide {{ index }}
                 </span>
               {%- endfor -%}
             </div>
