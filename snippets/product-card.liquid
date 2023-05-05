@@ -1,0 +1,90 @@
+{% comment %}
+  product - {product object} *required
+
+  Usage:
+  {%- include 'product-card' -%}
+{% endcomment %}
+
+{%- assign image_placeholder 	= settings.image_placeholder -%}
+{%- assign is_focal           = settings.use_focal_images -%}
+
+{%- if product != blank -%}
+  {%- if product.images != blank -%}
+    {%- assign image = product.images.first -%}
+  {%- elsif image_placeholder.url != blank -%}
+    {%- assign image = image_placeholder -%}
+  {%- else -%}
+    {%- assign image = blank -%}
+  {%- endif -%}
+
+  {% if is_focal %}
+    {%- assign focal = image.coordinates -%}
+  {% endif %}
+
+  {%- assign id   = product.id -%}
+  {%- assign url  = product.url -%}
+  {%- assign name = product.name -%}
+  {%- assign spec = product.description -%}
+
+  <div class="product-card" id="{{- id -}}">
+    <div class="product-card__vision{% unless image != blank %} no-image{%- endunless -%}">
+      {%- if image.url != blank -%}
+        {{- image.url | image_tag:
+          loading: 'lazy',
+          class: 'product-card__image',
+          widths: '450, 550',
+          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px',
+          focal: focal,
+          alt: name
+        -}}
+      {%- endif -%}
+      <a class="product-card__link" href="{{ url }}"></a>
+    </div>
+
+    <div class="product-card__meta">
+      <h3 class="product-card__title">
+        <a class="product-card__link" href="{{ url }}">
+          {{- name -}}
+        </a>
+      </h3>
+
+      {{ product | product_availability }}
+
+      {%- if spec != blank -%}
+        <div class="product-card__description">{{- spec -}}</div>
+      {%- endif -%}
+
+      <div class="product-card__price-wrapper">
+        {{ product | product_price }}
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  {%- if image_placeholder.url != blank -%}
+    {%- assign image = image_placeholder -%}
+  {%- else -%}
+    {%- assign image = blank -%}
+  {%- endif -%}
+
+  <div class="product-card">
+    <div class="product-card__vision{% if image == blank %} no-image {% endif %}">
+      {%- if image.url != blank -%}
+        {{- image.url | image_tag:
+          loading: 'lazy',
+          class: 'product-card__image',
+          widths: '450, 550',
+          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px',
+          alt: "Image placeholder"
+        -}}
+      {%- endif -%}
+    </div>
+
+    <div class="product-card__meta">
+      <h3 class="product-card__title">Product name (example)</h3>
+      <div class="product-card__description">Product description (example)</div>
+      <div class="product-card__price-wrapper">
+        <span class="product-card__price">$50.00 </span>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
