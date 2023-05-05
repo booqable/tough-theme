@@ -19,7 +19,6 @@ class Carousel {
       pause: "carousel__pause",
       button: "carousel__button",
       bullet: "carousel__bullet",
-      button: "carousel__button",
       hidden: "hidden",
       prev: "prev",
       next: "next",
@@ -27,7 +26,9 @@ class Carousel {
     }
 
     this.modifiers = {
-      active: "active"
+      active: "active",
+      show: "show",
+      hide: "hide"
     }
 
     this.data = {
@@ -58,7 +59,7 @@ class Carousel {
   events(e) {
     this.carouselInit();
     this.autoRotate(e, this.timer);
-    this.pauseRotate();
+    this.pauseAutoRotate();
     this.controls();
 
     this.listener(this.bullets, 'click', this.pagination)
@@ -79,15 +80,16 @@ class Carousel {
     this.block.classList.add(this.classes.init);
   }
 
-  activeSlide(val) {
+  // change slides in Fade effect mode
+  fadeEffect(val) {
     const isEl = this.block.classList.contains(this.classes.fade);
 
     if (!isEl) return false;
     if (typeof val === 'undefined') return false;
 
     this.items.forEach((el, i) => {
-      el.classList.replace('show', 'hide');
-      if (i + 1 === val) el.classList.replace('hide', 'show');
+      el.classList.replace(this.modifiers.show, this.modifiers.hide);
+      if (i + 1 === val) el.classList.replace(this.modifiers.hide, this.modifiers.show);
     })
   }
 
@@ -105,7 +107,7 @@ class Carousel {
   }
 
   // pause autorotate slides on hover and touch devices
-  pauseRotate() {
+  pauseAutoRotate() {
     const isEl = this.block.classList.contains(this.classes.pause);
 
     if (!isEl) return false;
@@ -127,7 +129,7 @@ class Carousel {
     const target = e?.target,
           isEl = target?.classList.contains(this.classes.bullet);
 
-          if (!isEl && typeof i === 'undefined') return false;
+    if (!isEl && typeof i === 'undefined') return false;
 
     this.bullets.forEach(el => {
       const val = parseInt(el.getAttribute(this.data.index));
@@ -139,8 +141,8 @@ class Carousel {
       if (typeof i === 'undefined') i = parseInt(target.getAttribute(this.data.index));
     })
 
-    this.counter(e, i)
-    this.activeSlide(i)
+    this.counter(e, i);
+    this.fadeEffect(i);
   }
 
   // slide the carousel left/right and change the index of the active bullet of the pagination
@@ -163,69 +165,64 @@ class Carousel {
         i,
         left = this.wrap.scrollLeft;
 
-    switch (true) {
-      case list?.contains(this.classes.prev):
-        if (!isFade) {
-          left === 0
-            ? i = Math.ceil((scroll - client) / width +1)
-            : i = Math.ceil(left / width),
-          this.pagination(e, i),
-          val = left === 0 ? scroll : left - width
+    if (list?.contains(this.classes.prev)) {
+      if (!isFade) {
+        left === 0
+          ? i = Math.ceil((scroll - client) / width +1)
+          : i = Math.ceil(left / width),
+        this.pagination(e, i),
+        val = left === 0 ? scroll : left - width
 
-        } else {
-          children.forEach((el, ind) => {
-            if (el.classList.contains(this.classes.show)) {
-              ind === 0 ? i = this.items.length : i = ind;
-            }
-          })
+      } else {
+        children.forEach((el, ind) => {
+          if (el.classList.contains(this.classes.show)) {
+            ind === 0 ? i = this.items.length : i = ind;
+          }
+        })
 
-          this.pagination(e, i);
-          this.activeSlide(i)
-        }
+        this.pagination(e, i);
+        this.fadeEffect(i)
+      }
+    }
 
-        break;
-      case list?.contains(this.classes.next):
-        if (!isFade) {
-          left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
-          this.pagination(e, i)
+    if (list?.contains(this.classes.next)) {
+      if (!isFade) {
+        left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
+        this.pagination(e, i)
 
-          val = left >= scroll - client ? left = 0 : left + width;
-        } else {
-          children.forEach((el, ind) => {
-            if (el.classList.contains(this.classes.show)) {
-              ind + 1 === this.items.length ? i = 1 : i = ind + 2;
-            }
-          })
+        val = left >= scroll - client ? left = 0 : left + width;
+      } else {
+        children.forEach((el, ind) => {
+          if (el.classList.contains(this.classes.show)) {
+            ind + 1 === this.items.length ? i = 1 : i = ind + 2;
+          }
+        })
 
-          this.pagination(e, i);
-          this.activeSlide(i)
-        }
+        this.pagination(e, i);
+        this.fadeEffect(i)
+      }
+    }
 
-        break;
-      case list?.contains(this.classes.bullet):
-        if (!isFade) val = width * (index - 1);
+    if (list?.contains(this.classes.bullet)) !isFade ? val = width * (index - 1) : null;
 
     if (t !== 0 && typeof t !== 'undefined') {
       if (this.items.length < 2) return false;
 
-        if (!isFade) {
-          left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
-          this.pagination(e, i)
+      if (!isFade) {
+        left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
+        this.pagination(e, i)
 
-          val = left + client >= scroll ? left = 0 : left += width
-        } else {
+        val = left + client >= scroll ? left = 0 : left += width
+      } else {
+        children.forEach((el, ind) => {
+          if (el.classList.contains(this.classes.show)) {
+            ind + 1 === this.items.length ? i = 1 : i = ind + 2;
+          }
+        })
 
-          children.forEach((el, ind) => {
-            if (el.classList.contains(this.classes.show)) {
-              ind + 1 === this.items.length ? i = 1 : i = ind + 2;
-            }
-          })
-
-          this.pagination(e, i);
-          this.activeSlide(i)
-        }
-
-        break;
+        this.pagination(e, i);
+        this.fadeEffect(i)
+      }
     }
 
     if (!isFade) this.scrollTo(val);
@@ -255,7 +252,7 @@ class Carousel {
     const width = this.item.getBoundingClientRect().width,
           client = this.wrap.clientWidth;
 
-    width * this.items.length < client
+    width * this.items.length <= client
       ? (this.navi.classList.add(this.classes.hidden),
         this.pagi.classList.add(this.classes.hidden))
       : (this.navi.classList.remove(this.classes.hidden),
