@@ -3,6 +3,8 @@ class Carousel {
     this.block = block;
 
     this.selector = {
+      navi: ".carousel__navigation",
+      pagination: ".carousel__pagination",
       button: ".carousel__button",
       bullet: ".carousel__bullet",
       wrapper: ".carousel__wrapper",
@@ -17,6 +19,8 @@ class Carousel {
       pause: "carousel__pause",
       button: "carousel__button",
       bullet: "carousel__bullet",
+      button: "carousel__button",
+      hidden: "hidden",
       prev: "prev",
       next: "next",
       init: "initialized"
@@ -40,6 +44,8 @@ class Carousel {
 
   elements() {
     this.wrap = this.block.querySelector(this.selector.wrapper);
+    this.navi = this.block.querySelector(this.selector.navi);
+    this.pagi = this.block.querySelector(this.selector.pagination);
     this.item = this.block.querySelector(this.selector.item);
     this.items = [...this.block.querySelectorAll(this.selector.item)];
     this.buttons = [...this.block.querySelectorAll(this.selector.button)];
@@ -53,10 +59,12 @@ class Carousel {
     this.carouselInit();
     this.autoRotate(e, this.timer);
     this.pauseRotate();
+    this.controls();
 
     this.listener(this.bullets, 'click', this.pagination)
     this.listener(this.bullets, 'click', this.navigation)
     this.listener(this.buttons, 'click', this.navigation)
+    window.addEventListener("resize", this.controls.bind(this));
   }
 
   listener(arr, event, call) {
@@ -197,9 +205,8 @@ class Carousel {
       case list?.contains(this.classes.bullet):
         if (!isFade) val = width * (index - 1);
 
-        break;
-      case t !== 0 && typeof t !== 'undefined':
-        if (this.items.length < 2) return false;
+    if (t !== 0 && typeof t !== 'undefined') {
+      if (this.items.length < 2) return false;
 
         if (!isFade) {
           left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
@@ -242,6 +249,17 @@ class Carousel {
       left: val,
       behavior: "smooth",
     });
+  }
+
+  controls() {
+    const width = this.item.getBoundingClientRect().width,
+          client = this.wrap.clientWidth;
+
+    width * this.items.length < client
+      ? (this.navi.classList.add(this.classes.hidden),
+        this.pagi.classList.add(this.classes.hidden))
+      : (this.navi.classList.remove(this.classes.hidden),
+        this.pagi.classList.remove(this.classes.hidden))
   }
 }
 
