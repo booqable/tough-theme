@@ -110,7 +110,7 @@
           </div>
 
           {%- if show_navigation -%}
-            <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
+            <div class="carousel__navigation hidden" aria-label="Carousel navigation" aria-hidden="true">
               <span class="carousel__button prev" title="Prev slide">
                 Previous slide
                 {%- include 'icon-arrow-right-full' -%}
@@ -123,7 +123,7 @@
           {%- endif -%}
 
           {%- if show_pagination -%}
-            <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
+            <div class="carousel__pagination hidden" aria-label="Carousel pagination" aria-hidden="true">
               {%- for item in items limit: limit -%}
                 {%- assign first = forloop.first -%}
                 {%- assign index = forloop.index -%}

@@ -1,21 +1,19 @@
 .carousel {
   height: 100%;
   position: relative;
-  scrollbar-width: none !important;
-  scrollbar-color: transparent transparent !important;
 }
 
 .carousel *::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
+  width: 0;
+  height: 0;
 }
 
 .carousel *::-webkit-scrollbar-track {
-  background: transparent !important;
+  background: transparent;
 }
 
 .carousel *::-webkit-scrollbar-thumb {
-  background: transparent !important;
+  background: transparent;
 }
 
 .carousel__wrapper {
@@ -31,6 +29,8 @@
   -ms-overflow-style: none;
   display: flex;
   align-items: stretch;
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
 }
 
 .carousel__inner {
@@ -64,6 +64,10 @@
   z-index: 1;
 }
 
+.carousel__pagination.hidden {
+  display: none;
+}
+
 .carousel__bullet {
   cursor: pointer;
   display: inline-block;
@@ -91,6 +95,10 @@
   margin: 0 -8px;
   display: flex;
   z-index: 1;
+}
+
+.carousel__navigation.hidden {
+  display: none;
 }
 
 .carousel__button {
