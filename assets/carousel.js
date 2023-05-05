@@ -174,58 +174,36 @@ class Carousel {
         val = left === 0 ? scroll : left - width
 
       } else {
-        children.forEach((el, ind) => {
-          if (el.classList.contains(this.classes.show)) {
-            ind === 0 ? i = this.items.length : i = ind;
-          }
-        })
-
-        this.pagination(e, i);
-        this.fadeEffect(i)
+        this.fade(e, i, children, 0, 0, this.items.length, 0);
       }
     }
 
-    if (list?.contains(this.classes.next)) {
+    if (list?.contains(this.classes.next) || t !== 0 && typeof t !== 'undefined') {
       if (!isFade) {
-        left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
+        left >= scroll - client - 16 ? i = 1 : i = parseInt(left / width + 2)
         this.pagination(e, i)
 
-        val = left >= scroll - client ? left = 0 : left + width;
+        val = left >= scroll - client - 16 ? left = 0 : left + width;
       } else {
-        children.forEach((el, ind) => {
-          if (el.classList.contains(this.classes.show)) {
-            ind + 1 === this.items.length ? i = 1 : i = ind + 2;
-          }
-        })
-
-        this.pagination(e, i);
-        this.fadeEffect(i)
+        this.fade(e, i, children, 1, this.items.length, 1, 2);
       }
     }
 
     if (list?.contains(this.classes.bullet)) !isFade ? val = width * (index - 1) : null;
 
-    if (t !== 0 && typeof t !== 'undefined') {
-      if (this.items.length < 2) return false;
-
-      if (!isFade) {
-        left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
-        this.pagination(e, i)
-
-        val = left + client >= scroll ? left = 0 : left += width
-      } else {
-        children.forEach((el, ind) => {
-          if (el.classList.contains(this.classes.show)) {
-            ind + 1 === this.items.length ? i = 1 : i = ind + 2;
-          }
-        })
-
-        this.pagination(e, i);
-        this.fadeEffect(i)
-      }
-    }
-
     if (!isFade) this.scrollTo(val);
+  }
+
+  // search new index for active slide on Fade carousel mode
+  fade(e, i, arr, num, eq, num1, num2) {
+    arr.forEach((el, ind) => {
+      if (el.classList.contains(this.classes.show)) {
+        ind + num === eq ? i = num1 : i = ind + num2;
+      }
+    })
+
+    this.pagination(e, i);
+    this.fadeEffect(i)
   }
 
   // change index of counter of slides
