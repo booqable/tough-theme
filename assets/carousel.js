@@ -15,6 +15,7 @@ class Carousel {
 
     this.classes = {
       show: "show",
+      fluid: "carousel__fluid",
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
       button: "carousel__button",
@@ -34,6 +35,8 @@ class Carousel {
     this.data = {
       index: "data-index"
     };
+
+    this.query = 992;
   }
 
   init() {
@@ -62,9 +65,9 @@ class Carousel {
     this.pauseAutoRotate();
     this.controls();
 
-    this.listener(this.bullets, 'click', this.pagination)
-    this.listener(this.bullets, 'click', this.navigation)
-    this.listener(this.buttons, 'click', this.navigation)
+    this.listener(this.bullets, 'click', this.pagination);
+    this.listener(this.bullets, 'click', this.navigation);
+    this.listener(this.buttons, 'click', this.navigation);
     window.addEventListener("resize", this.controls.bind(this));
   }
 
@@ -98,11 +101,11 @@ class Carousel {
     if (time === 0 || typeof time === 'undefined') return false;
 
     this.interval = setInterval(() => {
-      this.navigation(e, time)
-    }, time)
+      this.navigation(e, time);
+    }, time);
 
     return () => {
-      clearInterval(this.interval)
+      clearInterval(this.interval);
     }
   }
 
@@ -114,8 +117,8 @@ class Carousel {
     if (!this.items.length) return false;
 
     const event = e => {
-      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval)
-      if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer)
+      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval);
+      if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer);
     }
 
     this.block.addEventListener('mouseenter', event);
@@ -150,7 +153,8 @@ class Carousel {
     const target = e?.target,
           isBullet = target?.classList.contains(this.classes.bullet),
           isNav = target?.classList.contains(this.classes.button),
-          isFade = this.block.classList.contains(this.classes.fade);
+          isFade = this.block.classList.contains(this.classes.fade),
+          isFluid = this.block.classList.contains(this.classes.fluid);
 
     if (!isNav && !isBullet && t === 0 && typeof t === 'undefined') return false;
 
@@ -167,11 +171,15 @@ class Carousel {
 
     if (list?.contains(this.classes.prev)) {
       if (!isFade) {
-        left === 0
-          ? i = Math.ceil((scroll - client) / width +1)
-          : i = Math.ceil(left / width),
-        this.pagination(e, i),
-        val = left === 0 ? scroll : left - width
+        if (left === 0) {
+          i = Math.ceil((scroll - client) / width + 1);
+          if (isFluid && client < this.query) i -= 1;
+          val = scroll;
+        } else {
+          i = Math.ceil(left / width);
+          val = left - width;
+        }
+        this.pagination(e, i);
 
       } else {
         this.fade(e, i, children, 0, 0, this.items.length, 0);
@@ -180,16 +188,21 @@ class Carousel {
 
     if (list?.contains(this.classes.next) || t !== 0 && typeof t !== 'undefined') {
       if (!isFade) {
-        left >= scroll - client - 16 ? i = 1 : i = parseInt(left / width + 2)
-        this.pagination(e, i)
+        if (left >= scroll - client - 16) {
+           i = 1;
+           val = 0;
+        } else {
+          i = parseInt(left / width + 2);
+          val = left + width;
+        }
+        this.pagination(e, i);
 
-        val = left >= scroll - client - 16 ? left = 0 : left + width;
       } else {
         this.fade(e, i, children, 1, this.items.length, 1, 2);
       }
     }
 
-    if (list?.contains(this.classes.bullet)) !isFade ? val = width * (index - 1) : null;
+    if (list?.contains(this.classes.bullet) && !isFade) val = width * (index - 1);
 
     if (!isFade) this.scrollTo(val);
   }
@@ -198,12 +211,16 @@ class Carousel {
   fade(e, i, arr, num, eq, num1, num2) {
     arr.forEach((el, ind) => {
       if (el.classList.contains(this.classes.show)) {
-        ind + num === eq ? i = num1 : i = ind + num2;
+        if (ind + num === eq) {
+          i = num1;
+        } else {
+          i = ind + num2;
+        }
       }
     })
 
     this.pagination(e, i);
-    this.fadeEffect(i)
+    this.fadeEffect(i);
   }
 
   // change index of counter of slides
@@ -214,9 +231,9 @@ class Carousel {
 
     let num = "";
 
-    if (i < 10) num = 0
+    if (i < 10) num = 0;
 
-    this.count.innerHTML = `${num}${i}`
+    this.count.innerHTML = `${num}${i}`;
   }
 
   scrollTo(val) {
@@ -250,5 +267,5 @@ function initCarousel(el = ".carousel") {
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initCarousel()
+  if (e.target.readyState === "complete") initCarousel();
 });
