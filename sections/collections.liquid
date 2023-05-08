@@ -63,7 +63,7 @@
         </div>
       </div>
 
-      <div class="collections__list">
+      <ul class="collections__list">
         {%- for block in section.blocks -%}
           {%- assign collection = block.settings.collection -%}
 
@@ -111,7 +111,7 @@
             </li>
           {%- endif -%}
         {%- endfor -%}
-      </div>
+      </ul>
     </div>
   </div>
 {%- endif -%}
