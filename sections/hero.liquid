@@ -340,11 +340,11 @@
 
         {%- if show_navigation -%}
           <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
-            <span class="carousel__button prev" title="Prev slide">
+            <span class="carousel__btn prev" title="Prev slide">
               Previous slide
               {%- include 'icon-arrow-right' -%}
             </span>
-            <span class="carousel__button next" title="Next slide">
+            <span class="carousel__btn next" title="Next slide">
               Next slide
               {%- include 'icon-arrow-right' -%}
             </span>
@@ -357,7 +357,7 @@
               {%- assign first = forloop.first -%}
               {%- assign index = forloop.index -%}
 
-              <span class="carousel__bullet{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+              <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
                 Go to slide {{ index -}}
               </span>
             {%- endfor -%}

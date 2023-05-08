@@ -68,7 +68,7 @@
   display: none;
 }
 
-.carousel__bullet {
+.carousel__dot {
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
@@ -84,7 +84,7 @@
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__bullet.active {
+.carousel__dot.active {
   background: var(--color-primary-foreground, #0B1A26);
 }
 
@@ -101,7 +101,7 @@
   display: none;
 }
 
-.carousel__button {
+.carousel__btn {
   margin: 0 8px;
   border-radius: 50%;
   width: 48px;
@@ -115,21 +115,21 @@
   transition: border var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__button:hover {
+.carousel__btn:hover {
   border-color: var(--color-primary-foreground, #0B1A26);
 }
 
-.carousel__button svg {
+.carousel__btn svg {
   width: 16px;
   height: 16px;
   pointer-events: none;
 }
 
-.carousel__button.prev svg {
+.carousel__btn.prev svg {
   transform: rotate(180deg);
 }
 
-.carousel__button path {
+.carousel__btn path {
   fill: var(--color-primary-foreground, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
@@ -183,7 +183,7 @@
   margin: 0;
 }
 
-.carousel__fluid .carousel__button {
+.carousel__fluid .carousel__btn {
   position: relative;
   background: rgba(255, 255, 255, 0.08);
   border-color: transparent;
@@ -199,19 +199,19 @@
   justify-content: center;
 }
 
-.carousel__fluid .carousel__button path {
+.carousel__fluid .carousel__btn path {
   fill: var(--ui-color, #FFFFFF);
 }
 
-.carousel__fluid .carousel__button.prev {
+.carousel__fluid .carousel__btn.prev {
   margin-right: 24px;
 }
 
-.carousel__fluid .carousel__button.prev svg {
+.carousel__fluid .carousel__btn.prev svg {
   transform: rotate(180deg);
 }
 
-.carousel__fluid .carousel__button:hover {
+.carousel__fluid .carousel__btn:hover {
   border-color: var(--ui-color, #FFFFFF);
 }
 
@@ -227,7 +227,7 @@
   align-items: center;
 }
 
-.carousel__fluid .carousel__bullet {
+.carousel__fluid .carousel__dot {
   cursor: pointer;
   display: inline-block;
   width: 8px;
@@ -239,8 +239,8 @@
   background: var(--ui-color, #FFFFFF);
 }
 
-.carousel__fluid .carousel__bullet:hover,
-.carousel__fluid .carousel__bullet.active {
+.carousel__fluid .carousel__dot:hover,
+.carousel__fluid .carousel__dot.active {
   opacity: 1;
   background: var(--ui-color, #FFFFFF);
 }
@@ -311,7 +311,7 @@
     bottom: 33px;
   }
 
-  .carousel__fluid .carousel__bullet {
+  .carousel__fluid .carousel__dot {
     width: 48px;
     height: 2px;
     border-radius: 0;
