@@ -140,6 +140,57 @@
       },
       "disabled": null
     },
+    "how-it-works": {
+      "type": "how-it-works",
+      "blocks": {
+        "block": {
+          "type": "block",
+          "settings": {
+            "heading": "Medium length section heading goes here",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "button_1": "Button",
+            "button_2": "Button"
+          },
+          "disabled": null
+        },
+        "block_242972": {
+          "type": "block",
+          "settings": {
+            "heading": "Medium length section heading goes here",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "button_1": "Button",
+            "button_2": "Button"
+          },
+          "disabled": null
+        },
+        "block_535502": {
+          "type": "block",
+          "settings": {
+            "heading": "Medium length section heading goes here",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "button_1": "Button",
+            "button_2": "Button"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "block",
+        "block_242972",
+        "block_535502"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "tag": "Our collections",
+        "title": "We can service you in each category",
+        "title_bg": "Category",
+        "padding_bottom": 96,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_top_mobile": 40
+      },
+      "disabled": null
+    },
     "image-banner_478138": {
       "type": "image-banner",
       "blocks": {
@@ -312,6 +363,7 @@
     "collections",
     "image-with-text",
     "products",
+    "how-it-works",
     "image-banner",
     "date-picker",
     "columns",
