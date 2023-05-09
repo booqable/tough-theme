@@ -46,7 +46,7 @@ class Hero {
       const el = val.querySelector(this.selector.video),
             id = el?.value;
 
-      if (!id || typeof id === 'undefined') return false;
+      if (!id) return false;
 
       const box = val.querySelector(this.selector.player).id;
 

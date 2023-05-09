@@ -185,13 +185,13 @@ class Carousel {
         this.pagination(e, i);
 
       } else {
-        const obj = {
+        const options = {
           arr: children,
           equal: 0,
           last: this.items.length
         }
 
-        this.fadeSlide(e, i, obj);
+        this.fadeSlide(e, i, options);
       }
     }
 
@@ -208,7 +208,7 @@ class Carousel {
         this.pagination(e, i);
 
       } else {
-        const obj = {
+        const options = {
           arr: children,
           equal: this.items.length,
           last: 1,
@@ -216,7 +216,7 @@ class Carousel {
           nextIndex: 2
         }
 
-        this.fadeSlide(e, i, obj);
+        this.fadeSlide(e, i, options);
       }
     }
 
@@ -226,8 +226,8 @@ class Carousel {
   }
 
   // search new index for active slide on Fade carousel mode
-  fadeSlide(e, i, obj) {
-    const {arr, equal, last, nextNumber, nextIndex} = obj;
+  fadeSlide(e, i, options) {
+    const {arr, equal, last, nextNumber, nextIndex} = options;
 
     arr.forEach((el, index) => {
       if (el.classList.contains(this.classes.show)) {
