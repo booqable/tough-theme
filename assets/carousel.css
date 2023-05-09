@@ -68,7 +68,7 @@
   display: none;
 }
 
-.carousel__bullet {
+.carousel__dot {
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
@@ -84,7 +84,7 @@
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__bullet.active {
+.carousel__dot.active {
   background: var(--color-primary-foreground, #0B1A26);
 }
 
@@ -101,7 +101,7 @@
   display: none;
 }
 
-.carousel__button {
+.carousel__btn {
   margin: 0 8px;
   border-radius: 50%;
   width: 48px;
@@ -115,27 +115,168 @@
   transition: border var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__button:hover {
+.carousel__btn:hover {
   border-color: var(--color-primary-foreground, #0B1A26);
 }
 
-.carousel__button svg {
+.carousel__btn svg {
   width: 16px;
   height: 16px;
   pointer-events: none;
 }
 
-.carousel__button.prev svg {
+.carousel__btn.prev svg {
   transform: rotate(180deg);
 }
 
-.carousel__button path {
+.carousel__btn path {
   fill: var(--color-primary-foreground, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .carousel .product-card {
   height: 100%;
+}
+
+.carousel__fluid .carousel__item,
+.carousel__fluid .carousel__item:last-child {
+  height: 100%;
+}
+
+.carousel__fluid .carousel__item:not(:first-child) {
+  display: none;
+}
+
+.carousel__fluid .carousel__inner,
+.carousel__fluid .carousel__item:last-child .carousel__inner {
+  padding: 0;
+}
+
+.carousel__fluid .carousel__item.show {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transition: visibility calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-out),
+        opacity calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-out);
+}
+
+.carousel__fluid .carousel__item.hide {
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-in),
+        opacity calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-in);
+}
+
+.carousel__fluid .carousel__navigation {
+  bottom: 18px;
+  right: auto;
+  left: 50%;
+  width: 100%;
+  max-width: var(--max-width);
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 var(--horizontal-padding);
+  margin: 0;
+}
+
+.carousel__fluid .carousel__btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: transparent;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  margin: 0;
+  z-index: 2;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__fluid .carousel__btn path {
+  fill: var(--ui-color, #FFFFFF);
+}
+
+.carousel__fluid .carousel__btn.prev {
+  margin-right: 24px;
+}
+
+.carousel__fluid .carousel__btn.prev svg {
+  transform: rotate(180deg);
+}
+
+.carousel__fluid .carousel__btn:hover {
+  border-color: var(--ui-color, #FFFFFF);
+}
+
+.carousel__fluid .carousel__pagination {
+  bottom: 31px;
+  left: 50%;
+  z-index: 2;
+  max-width: calc(var(--max-width) - var(--horizontal-padding) * 3 - 104px * 2);
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__fluid .carousel__dot {
+  cursor: pointer;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: currentColor;
+  position: relative;
+  opacity: 0.3;
+  margin-bottom: 3px;
+  background: var(--ui-color, #FFFFFF);
+}
+
+.carousel__fluid .carousel__dot:hover,
+.carousel__fluid .carousel__dot.active {
+  opacity: 1;
+  background: var(--ui-color, #FFFFFF);
+}
+
+.carousel__fluid .carousel__counter {
+  color: var(--ui-color, #FFFFFF);
+  position: absolute;
+  z-index: 0;
+  bottom: 28px;
+  right: 50%;
+  width: 100%;
+  max-width: var(--max-width);
+  transform: translate(50%, 0);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 var(--horizontal-padding);
+}
+
+.carousel__fluid .carousel__divider {
+  margin: 0 16px;
+}
+
+.carousel__fluid .carousel__divider,
+.carousel__fluid .carousel__divider + span {
+  opacity: 0.4;
+}
+
+.carousel__fluid.carousel.initialized .carousel__item,
+.carousel__fluid.carousel.initialized .carousel__item:not(:first-child) {
+  display: block;
+}
+
+.carousel.carousel__fluid.carousel__fade-effect .carousel__wrapper {
+  overflow: hidden;
 }
 
 @media (min-width: 992px) {
@@ -159,6 +300,25 @@
 
   .carousel__item:last-child .carousel__inner {
     padding-right: 32px;
+  }
+
+  .carousel__fluid .carousel__item,
+  .carousel__fluid .carousel__item:last-child {
+    min-width: var(--slide-width);
+  }
+
+  .carousel__fluid .carousel__navigation {
+    bottom: 33px;
+  }
+
+  .carousel__fluid .carousel__dot {
+    width: 48px;
+    height: 2px;
+    border-radius: 0;
+  }
+
+  .carousel__fluid .carousel__counter {
+    bottom: 33px;
   }
 }
 
