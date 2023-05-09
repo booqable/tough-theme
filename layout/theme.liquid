@@ -91,15 +91,6 @@
       <meta name="twitter:image:alt" content="{{ product.name }}">
     {% endif %}
   {% endif %}
-
-  <script>
-    // Loading the IFrame Player API code asynchronously.
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  </script>
 </head>
 <body>
 
@@ -117,7 +108,6 @@
   <script src="{{ "hex-to-rgb.js" | asset_url }}" defer></script>
   <script src="{{ "main.js" | asset_url }}" defer></script>
   <script src="{{ "header.js" | asset_url }}" defer></script>
-  <script src="{{ "hero.js" | asset_url }}" defer></script>
   <script src="{{ "image-with-text.js" | asset_url }}" defer></script>
   <script src="{{ "lazysizes.min.js" | asset_url }}" defer></script>
   <script src="{{ "focus-point.min.js" | asset_url }}" defer></script>

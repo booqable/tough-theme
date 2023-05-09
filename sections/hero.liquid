@@ -1,3 +1,12 @@
+<script>
+  // Loading the IFrame Player API code asynchronously.
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
+
 {%- assign blocks = section.blocks -%}
 
 {%- if blocks.size > 0 -%}
@@ -380,6 +389,8 @@
   </div>
 {%- endif -%}
 
+<script src="{{ "hero.js" | asset_url }}" defer></script>
+
 {% schema %}
   {
     "name": "Hero",
@@ -466,7 +477,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Note: This feature works with Youtube and Vimeo videos only. URL must be copied from Youtube or Vimeo video page and pasted and created a new link in the field below. Preferable video's dimension 16:9. For better page performance the video mustn't be too heavy. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0 or https://vimeo.com/43652787"
+            "content": "Note: This feature works with Youtube and Vimeo videos only. URL must be copied from Youtube or Vimeo video page and pasted in the field below. Preferable video's dimension 16:9. For better page performance the video mustn't be too heavy. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0 or https://vimeo.com/43652787"
           },
           {
             "type": "text",

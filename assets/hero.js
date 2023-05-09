@@ -33,8 +33,8 @@ class Hero {
   toRgb() {
     if (!this.arr.length) return false;
 
-    this.arr.forEach(val => {
-      const init = new window.ToRgb(val, this.options);
+    this.arr.forEach(item => {
+      const init = new window.ToRgb(item, this.options);
       init.init();
     })
   }
@@ -42,13 +42,13 @@ class Hero {
   videoInit() {
     if (!this.arr.length) return false;
 
-    this.arr.forEach(val => {
-      const el = val.querySelector(this.selector.video),
+    this.arr.forEach(item => {
+      const el = item.querySelector(this.selector.video),
             id = el?.value;
 
       if (!id) return false;
 
-      const box = val.querySelector(this.selector.player).id;
+      const box = item.querySelector(this.selector.player).id;
 
       this.video(id, box);
     })
@@ -98,8 +98,8 @@ function initHero(el = ".hero") {
 
   if (!arr.length) return false;
 
-  arr.forEach(val => {
-    const hero = new Hero(val);
+  arr.forEach(item => {
+    const hero = new Hero(item);
     hero.init();
   });
 };
