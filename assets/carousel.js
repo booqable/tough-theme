@@ -84,15 +84,15 @@ class Carousel {
   }
 
   // change slides in Fade effect mode
-  fadeClass(val) {
+  fadeClass(value) {
     const isEl = this.block.classList.contains(this.classes.fade);
 
     if (!isEl) return false;
-    if (typeof val === 'undefined') return false;
+    if (typeof value === 'undefined') return false;
 
     this.items.forEach((el, i) => {
       el.classList.replace(this.modifiers.show, this.modifiers.hide);
-      if (i + 1 === val) el.classList.replace(this.modifiers.hide, this.modifiers.show);
+      if (i + 1 === value) el.classList.replace(this.modifiers.hide, this.modifiers.show);
     })
   }
 
@@ -135,12 +135,12 @@ class Carousel {
     if (!isEl && typeof i === 'undefined') return false;
 
     this.dots.forEach(el => {
-      const val = parseInt(el.getAttribute(this.data.index));
+      const value = parseInt(el.getAttribute(this.data.index));
 
       el.classList.remove(this.modifiers.active);
 
       if (isEl) target.classList.add(this.modifiers.active);
-      if (val === i) el.classList.add(this.modifiers.active);
+      if (value === i) el.classList.add(this.modifiers.active);
       if (typeof i === 'undefined') i = parseInt(target.getAttribute(this.data.index));
     })
 
@@ -149,14 +149,14 @@ class Carousel {
   }
 
   // slide the carousel left/right and change the index of the active dot of the pagination
-  navigation(e, t) {
+  navigation(e, time) {
     const target = e?.target,
           isDot = target?.classList.contains(this.classes.dot),
           isNav = target?.classList.contains(this.classes.btn),
           isFade = this.block.classList.contains(this.classes.fade),
           isFluid = this.block.classList.contains(this.classes.fluid);
 
-    if (!isNav && !isDot && t === 0 && typeof t === 'undefined') return false;
+    if (!isNav && !isDot && time === 0 && typeof time === 'undefined') return false;
 
     const list = target?.classList,
           width = this.item.getBoundingClientRect().width,
@@ -165,7 +165,7 @@ class Carousel {
           index = parseInt(target?.getAttribute(this.data.index)),
           children = [...this.wrap.children];
 
-    let val,
+    let value,
         i,
         left = this.wrap.scrollLeft;
 
@@ -176,50 +176,65 @@ class Carousel {
 
           if (isFluid && client < this.query) i -= 1;
 
-          val = scroll;
+          value = scroll;
         } else {
           i = Math.ceil(left / width);
-          val = left - width;
+          value = left - width;
         }
 
         this.pagination(e, i);
 
       } else {
-        this.fadeSlide(e, i, children, 0, 0, this.items.length, 0);
+        const obj = {
+          arr: children,
+          equal: 0,
+          last: this.items.length
+        }
+
+        this.fadeSlide(e, i, obj);
       }
     }
 
-    if (list?.contains(this.classes.next) || t !== 0 && typeof t !== 'undefined') {
+    if (list?.contains(this.classes.next) || time !== 0 && typeof time !== 'undefined') {
       if (!isFade) {
         if (left >= scroll - client - 16) {
-           i = 1;
-           val = 0;
+          i = 1;
+          value = 0;
         } else {
           i = parseInt(left / width + 2);
-          val = left + width;
+          value = left + width;
         }
 
         this.pagination(e, i);
 
       } else {
-        this.fadeSlide(e, i, children, 1, this.items.length, 1, 2);
+        const obj = {
+          arr: children,
+          equal: this.items.length,
+          last: 1,
+          nextNumber: 1,
+          nextIndex: 2
+        }
+
+        this.fadeSlide(e, i, obj);
       }
     }
 
-    if (list?.contains(this.classes.dot) && !isFade) val = width * (index - 1);
+    if (list?.contains(this.classes.dot) && !isFade) value = width * (index - 1);
 
-    if (!isFade) this.scrollTo(val);
+    if (!isFade) this.scrollTo(value);
   }
 
   // search new index for active slide on Fade carousel mode
-  fadeSlide(e, i, arr, number, equal, last, next) {
+  fadeSlide(e, i, obj) {
+    const {arr, equal, last, nextNumber, nextIndex} = obj;
+
     arr.forEach((el, index) => {
       if (el.classList.contains(this.classes.show)) {
-        if (index + number === equal) {
-          i = last;
-        } else {
-          i = index + next;
-        }
+        const condition = index + (nextNumber ?? 0);
+        const next = index + (nextIndex ?? 0);
+
+        condition === equal ? i = last : i = next
       }
     })
 
@@ -240,9 +255,9 @@ class Carousel {
     this.count.innerHTML = `${num}${i}`;
   }
 
-  scrollTo(val) {
+  scrollTo(value) {
     this.wrap.scrollTo({
-      left: val,
+      left: value,
       behavior: "smooth",
     });
   }
