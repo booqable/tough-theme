@@ -195,7 +195,7 @@
   width: 100%;
   padding: 12px 43px 15px;
   font-size: 16px;
-  line-height: var( --line-height-sm, 1.2);
+  line-height: var(--line-height-sm, 1.2);
   color: var(--color-primary-background, #FFFFFF);
   background-color: var(--color-primary-foreground, #0E1B2A);
   border: 1px solid transparent;

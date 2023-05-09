@@ -5,28 +5,38 @@ class Carousel {
     this.selector = {
       navi: ".carousel__navigation",
       pagination: ".carousel__pagination",
-      bullet: ".carousel__bullet",
+      btn: ".carousel__btn",
+      dot: ".carousel__dot",
       wrapper: ".carousel__wrapper",
       item: ".carousel__item",
-      timer: ".carousel__timer"
+      timer: ".carousel__timer",
+      count: ".carousel__count"
     }
 
     this.classes = {
-      carousel: "carousel",
-      bullet: "carousel__bullet",
-      button: "carousel__button",
+      show: "show",
+      fluid: "carousel__fluid",
+      fade: "carousel__fade-effect",
+      pause: "carousel__pause",
+      btn: "carousel__btn",
+      dot: "carousel__dot",
       hidden: "hidden",
       prev: "prev",
-      next: "next"
+      next: "next",
+      init: "initialized"
     }
 
     this.modifiers = {
-      active: "active"
+      active: "active",
+      show: "show",
+      hide: "hide"
     }
 
     this.data = {
       index: "data-index"
     };
+
+    this.query = 992;
   }
 
   init() {
@@ -42,19 +52,48 @@ class Carousel {
     this.pagi = this.block.querySelector(this.selector.pagination);
     this.item = this.block.querySelector(this.selector.item);
     this.items = [...this.block.querySelectorAll(this.selector.item)];
-    this.bullets = [...this.block.querySelectorAll(this.selector.bullet)];
+    this.btns = [...this.block.querySelectorAll(this.selector.btn)];
+    this.dots = [...this.block.querySelectorAll(this.selector.dot)];
+    this.count = this.block.querySelector(this.selector.count);
     this.timer = this.block.querySelector(this.selector.timer).value * 1000;
     this.interval;
   }
 
   events(e) {
+    this.carouselInit();
     this.autoRotate(e, this.timer);
-    this.pauseRotate();
+    this.pauseAutoRotate();
     this.controls();
 
-    document.addEventListener("click", this.navigation.bind(this));
-    document.addEventListener("click", this.pagination.bind(this));
+    this.listener(this.dots, 'click', this.pagination);
+    this.listener(this.dots, 'click', this.navigation);
+    this.listener(this.btns, 'click', this.navigation);
     window.addEventListener("resize", this.controls.bind(this));
+  }
+
+  listener(arr, event, func) {
+    arr.forEach(el => {
+      el.addEventListener(`${event}`, func.bind(this));
+    })
+  }
+
+  carouselInit() {
+    if (this.items.length < 2) return false;
+
+    this.block.classList.add(this.classes.init);
+  }
+
+  // change slides in Fade effect mode
+  fadeClass(value) {
+    const isEl = this.block.classList.contains(this.classes.fade);
+
+    if (!isEl) return false;
+    if (typeof value === 'undefined') return false;
+
+    this.items.forEach((el, i) => {
+      el.classList.replace(this.modifiers.show, this.modifiers.hide);
+      if (i + 1 === value) el.classList.replace(this.modifiers.hide, this.modifiers.show);
+    })
   }
 
   // autorotate slides of carousel
@@ -62,95 +101,163 @@ class Carousel {
     if (time === 0 || typeof time === 'undefined') return false;
 
     this.interval = setInterval(() => {
-      this.navigation(e, time)
-    }, time)
+      this.navigation(e, time);
+    }, time);
 
     return () => {
-      clearInterval(this.interval)
+      clearInterval(this.interval);
     }
   }
 
   // pause autorotate slides on hover and touch devices
-  pauseRotate() {
+  pauseAutoRotate() {
+    const isEl = this.block.classList.contains(this.classes.pause);
+
+    if (!isEl) return false;
     if (!this.items.length) return false;
 
-    const event = e => {
-      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval)
-      if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer)
+    const func = e => {
+      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval);
+      if(e.type === "mouseleave" || e.type === "touchend") this.autoRotate(e, this.timer);
     }
 
-    this.block.addEventListener('mouseenter', event);
-    this.block.addEventListener('mouseleave', event);
-    this.block.addEventListener('touchstart', event);
-    this.block.addEventListener('touchend', event);
+    this.block.addEventListener('mouseenter', func);
+    this.block.addEventListener('mouseleave', func);
+    this.block.addEventListener('touchstart', func);
+    this.block.addEventListener('touchend', func);
   }
 
-  // change active bullet of the pagination
+  // change active dot of the pagination
   pagination(e, i) {
     const target = e?.target,
-          isEl = target?.classList.contains(this.classes.bullet);
+          isEl = target?.classList.contains(this.classes.dot);
 
     if (!isEl && typeof i === 'undefined') return false;
 
-    this.bullets.forEach(el => {
-      const val = parseInt(el.getAttribute(this.data.index));
+    this.dots.forEach(el => {
+      const value = parseInt(el.getAttribute(this.data.index));
 
       el.classList.remove(this.modifiers.active);
 
       if (isEl) target.classList.add(this.modifiers.active);
-      if (val === i) el.classList.add(this.modifiers.active);
+      if (value === i) el.classList.add(this.modifiers.active);
+      if (typeof i === 'undefined') i = parseInt(target.getAttribute(this.data.index));
     })
+
+    this.counter(e, i);
+    this.fadeClass(i);
   }
 
-  // slide the carousel left/right and change the index of the active bullet of the pagination
-  navigation(e, t) {
+  // slide the carousel left/right and change the index of the active dot of the pagination
+  navigation(e, time) {
     const target = e?.target,
-          isBullet = target?.classList.contains(this.classes.bullet),
-          isNav = target?.classList.contains(this.classes.button);
+          isDot = target?.classList.contains(this.classes.dot),
+          isNav = target?.classList.contains(this.classes.btn),
+          isFade = this.block.classList.contains(this.classes.fade),
+          isFluid = this.block.classList.contains(this.classes.fluid);
 
-    if (!isNav && !isBullet && t === 0 && typeof t === 'undefined') return false;
+    if (!isNav && !isDot && time === 0 && typeof time === 'undefined') return false;
 
     const list = target?.classList,
           width = this.item.getBoundingClientRect().width,
           scroll = this.wrap.scrollWidth,
           client = this.wrap.clientWidth,
-          index = parseInt(target?.getAttribute(this.data.index));
+          index = parseInt(target?.getAttribute(this.data.index)),
+          children = [...this.wrap.children];
 
-    let val,
+    let value,
         i,
         left = this.wrap.scrollLeft;
 
     if (list?.contains(this.classes.prev)) {
-      left === 0 ? i = Math.ceil((scroll - client) / width + 1) : i = Math.ceil(left / width)
-      this.pagination(e, i)
+      if (!isFade) {
+        if (left === 0) {
+          i = Math.ceil((scroll - client) / width + 1);
 
-      val = left === 0 ? scroll : left - width;
+          if (isFluid && client < this.query) i -= 1;
+
+          value = scroll;
+        } else {
+          i = Math.ceil(left / width);
+          value = left - width;
+        }
+
+        this.pagination(e, i);
+
+      } else {
+        const options = {
+          arr: children,
+          equal: 0,
+          last: this.items.length
+        }
+
+        this.fadeSlide(e, i, options);
+      }
     }
 
-    if (list?.contains(this.classes.next)) {
-      left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
-      this.pagination(e, i)
+    if (list?.contains(this.classes.next) || time !== 0 && typeof time !== 'undefined') {
+      if (!isFade) {
+        if (left >= scroll - client - 16) {
+          i = 1;
+          value = 0;
+        } else {
+          i = parseInt(left / width + 2);
+          value = left + width;
+        }
 
-      val = left >= scroll - client ? left = 0 : left + width;
+        this.pagination(e, i);
+
+      } else {
+        const options = {
+          arr: children,
+          equal: this.items.length,
+          last: 1,
+          nextNumber: 1,
+          nextIndex: 2
+        }
+
+        this.fadeSlide(e, i, options);
+      }
     }
 
-    if (list?.contains(this.classes.bullet)) val = width * (index - 1);
+    if (list?.contains(this.classes.dot) && !isFade) value = width * (index - 1);
 
-    if (t !== 0 && typeof t !== 'undefined') {
-      if (this.items.length < 2) return false;
-
-      left >= scroll - client ? i = 1 : i = parseInt(left / width + 2)
-      this.pagination(e, i)
-
-      val = left + client >= scroll ? left = 0 : left += width
-    }
-
-    this.scrollTo(val);
+    if (!isFade) this.scrollTo(value);
   }
 
-  scrollTo(val) {
+  // search new index for active slide on Fade carousel mode
+  fadeSlide(e, i, options) {
+    const {arr, equal, last, nextNumber, nextIndex} = options;
+
+    arr.forEach((el, index) => {
+      if (el.classList.contains(this.classes.show)) {
+        const condition = index + (nextNumber ?? 0);
+        const next = index + (nextIndex ?? 0);
+
+        condition === equal ? i = last : i = next
+      }
+    })
+
+    this.pagination(e, i);
+    this.fadeClass(i);
+  }
+
+  // change index of counter of slides
+  counter(e, i) {
+    if (!this.count) return false;
+
+    if (i === 0 || typeof i === 'undefined') return false;
+
+    let num = "";
+
+    if (i < 10) num = 0;
+
+    this.count.innerHTML = `${num}${i}`;
+  }
+
+  scrollTo(value) {
     this.wrap.scrollTo({
-      left: val,
+      left: value,
       behavior: "smooth",
     });
   }
@@ -159,7 +266,7 @@ class Carousel {
     const width = this.item.getBoundingClientRect().width,
           client = this.wrap.clientWidth;
 
-    width * this.items.length < client
+    width * this.items.length <= client
       ? (this.navi.classList.add(this.classes.hidden),
         this.pagi.classList.add(this.classes.hidden))
       : (this.navi.classList.remove(this.classes.hidden),
@@ -179,5 +286,5 @@ function initCarousel(el = ".carousel") {
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initCarousel()
+  if (e.target.readyState === "complete") initCarousel();
 });
