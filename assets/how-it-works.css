@@ -35,32 +35,85 @@
 }
 
 .algorithm__list {
-  list-style: none;
-  padding: 30px 0 0;
-  margin: 0;
+  padding: 40px 0 0;
+  position: relative;
+}
+
+.algorithm__list:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: clamp(180px, 7%, 230px);
+  bottom: clamp(200px, 7.6%, 250px);
+  z-index: -1;
+  background: var(--color-fourth-foreground, #E1E4E8);
 }
 
 .algorithm__item {
-  margin: 8px 0;
   position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: var(--color-primary-background, #FFFFFF);
+  color: var(--color-primary-foreground, #0B1A26);
+  border: 1px solid var(--color-fourth-foreground, #E1E4E8);
+  border-top: none;
   overflow: hidden;
 }
 
-.algorithm__item:last-child {
-  margin-bottom: 0;
+.algorithm__item:first-child {
+  border-top: 1px solid var(--color-fourth-foreground, #E1E4E8);
 }
 
-.algorithm__item .no-image:after {
+.algorithm__item-col:last-child:not(:only-child) {
+  aspect-ratio: 1/1.03;
+}
+
+.algorithm__item-col.no-image:after {
   content: "";
+  height: 100%;
   display: block;
-  padding-bottom: 69%;
+  background: var(--color-image-placeholder, #0B1A2633);
+}
+
+.algorithm__item-col:not(:only-child) .algorithm__text-area {
+  border-bottom: 1px solid var(--color-fourth-foreground, #E1E4E8);
+}
+
+.algorithm__text-area {
+  padding: 16px 16px 30px;
+}
+
+.algorithm__index {
+  font-size: 46px;
+  line-height: 1;
+  font-weight: var(--font-weight-medium, 500);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 0 0 9px;
+  min-height: 69px;
+  min-width: 69px;
+  background: var(--color-accent-background, #F4B841);
 }
 
 .algorithm__heading {
-  padding: 0 24px 0 0;
-  font-size: 24px;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.algorithm__buttons {
+  margin: 30px 0 0;
+}
+
+.algorithm .button {
+  color: currentColor;
+}
+
+.algorithm .button path {
+  fill: currentColor;
 }
 
 .algorithm__image {
@@ -89,29 +142,56 @@
     justify-content: flex-end;
   }
 
-  .algorithm__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .algorithm__text-area {
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .algorithm__list:after {
+    top: clamp(150px, 10.5%, 225px);
+    bottom: clamp(350px, 19.6%, 425px);;
+  }
+
+  .algorithm__item-col:not(:only-child) .algorithm__text-area {
+    border-bottom: none;
+    border-right: 1px solid var(--color-fourth-foreground, #E1E4E8);
+  }
+
+  .algorithm__item {
+    display: flex;
+    border: 1px solid var(--color-fourth-foreground, #E1E4E8);
+    margin: 0 0 40px;
+  }
+
+  .algorithm__item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .algorithm__item:nth-child(even) .algorithm__item-col:not(:only-child) .algorithm__text-area {
+    border-right: none;
+    border-left: 1px solid var(--color-fourth-foreground, #E1E4E8);
   }
 
   .algorithm__item:last-child {
-    margin-bottom: 8px;
+    margin: 0;
+  }
+
+  .algorithm__item-col:not(:only-child) {
+    width: 50%;
   }
 }
 
 @media (min-width: 1100px) {
-  .algorithm__list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-  }
-
   .algorithm__wrapper--padding-top {
-    padding-top: var(--padding-top, 16px);
+    padding-top: var(--padding-top, 80px);
   }
 
   .algorithm__wrapper--padding-bottom {
-    padding-bottom: var(--padding-bottom, 16px);
+    padding-bottom: var(--padding-bottom, 80px);
   }
 
   .algorithm__col {
@@ -126,16 +206,29 @@
     pointer-events: none;
     display: block;
     margin: 0;
-    padding: 0 0 0 43px;
+    padding: 0;
     font-size: 142px;
     line-height: .7;
     text-transform: uppercase;
     opacity: .5;
     color: var(--color-fourth-foreground, #E1E4E8);
-    transform: translate(0, -32px);
+    transform: translate(-90px, -2px);
+    white-space: nowrap;
   }
 
-  .algorithm__item .no-image:after {
-    padding-bottom: 148%;
+  .algorithm__text-area {
+    padding: 48px;
+  }
+
+  .algorithm__list {
+    padding: 80px 0 0;
+  }
+
+  .algorithm__item {
+    margin: 0 0 80px;
+  }
+
+  .algorithm__item:last-child {
+    margin: 0;
   }
 }

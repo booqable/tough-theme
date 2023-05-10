@@ -185,7 +185,8 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_2": "Button",
+            "show_image": true
           },
           "disabled": null
         },
@@ -195,7 +196,8 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_2": "Button",
+            "show_image": true
           },
           "disabled": null
         },
@@ -205,7 +207,8 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_2": "Button",
+            "show_image": true
           },
           "disabled": null
         }
@@ -217,13 +220,13 @@
       ],
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tag": "Our collections",
-        "title": "We can service you in each category",
-        "title_bg": "Category",
-        "padding_bottom": 96,
-        "padding_bottom_mobile": 40,
+        "tag": "Rent a product",
+        "title": "How does it work",
+        "title_bg": "How does it work",
+        "padding_bottom": 80,
+        "padding_bottom_mobile": 80,
         "padding_top": 80,
-        "padding_top_mobile": 40
+        "padding_top_mobile": 80
       },
       "disabled": null
     },

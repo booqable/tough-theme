@@ -55,8 +55,10 @@
           {%- endif -%}
         </div>
       </div>
+    </div>
 
-      <div class="algorithm__list">
+    <div class="algorithm__list">
+      <div class="algorithm__container container">
         {%- for block in section.blocks -%}
           {%- assign index        = forloop.index -%}
           {%- assign heading      = block.settings.heading -%}
@@ -65,10 +67,12 @@
           {%- assign button_2     = block.settings.button_2 -%}
           {%- assign button_url_1 = block.settings.button_url_1 -%}
           {%- assign button_url_2 = block.settings.button_url_2 -%}
+          {%- assign show_image   = block.settings.show_image -%}
+          {%- assign image        = block.settings.image -%}
 
           {%- if image != blank -%}
             {%- assign image = block.settings.image -%}
-          {%- elsif image_placeholder.url != blank -%}
+          {%- elsif image_placeholder != blank -%}
             {%- assign image = image_placeholder -%}
           {%- else -%}
               {%- assign image = blank -%}
@@ -76,42 +80,49 @@
 
           <div class="algorithm__item">
             <div class="algorithm__item-col">
-              <span class="algorithm__index">{{- index -}}</span>
+              <div class="algorithm__text-area">
+                <span class="algorithm__index">{{- index -}}</span>
 
-              {%- if heading != blank -%}
-                <h3 class="algorithm__heading">
-                    {{- heading -}}
-                </h3>
-              {%- endif -%}
+                {%- if heading != blank -%}
+                  <h3 class="algorithm__heading">
+                      {{- heading -}}
+                  </h3>
+                {%- endif -%}
 
-              {%- if text != blank -%}
-                <div class="algorithm__text">{{- text -}}</div>
-              {%- endif -%}
+                {%- if text != blank -%}
+                  <div class="algorithm__text">{{- text -}}</div>
+                {%- endif -%}
 
-              {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
-                <div class="algorithm__buttons">
-                  {%- if button_1 != blank and button_url_1 != blank -%}
-                    <a href="{{  button_url_1 }}" class="algorithm__button button button--outlined button--large">{{- button_1 -}}</a>
-                  {%- endif -%}
+                {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+                  <div class="algorithm__buttons">
+                    {%- if button_1 != blank and button_url_1 != blank -%}
+                      <a href="{{  button_url_1 }}" class="algorithm__button button button--outlined button--large">{{- button_1 -}}</a>
+                    {%- endif -%}
 
-                  {%- if button_2 != blank and button_url_2 != blank -%}
-                    <a href="{{  button_url_2 }}" class="algorithm__button button button--secondary button--large">{{- button_2 -}}</a>
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
+                    {%- if button_2 != blank and button_url_2 != blank -%}
+                      <a href="{{  button_url_2 }}" class="algorithm__button button button--secondary button--large">
+                        {{- button_2 -}}
+                        {%- include 'icon-arrow-right' -%}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
             </div>
 
-            <div class="algorithm__item-col{% if image == blank or image == nil %} no-image{%- endif -%}">
-              {%- if image != blank -%}
-                {{- image.url | image_tag:
-                  loading: 'lazy',
-                  class: 'algorithm__image',
-                  widths: '450, 550, 650',
-                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                  alt: image.name
-                -}}
-              {%- endif -%}
-            </div>
+            {%- if show_image -%}
+              <div class="algorithm__item-col{% if image == blank %} no-image{%- endif -%}">
+                {%- if image != blank -%}
+                  {{- image.url | image_tag:
+                    loading: 'lazy',
+                    class: 'algorithm__image',
+                    widths: '450, 550, 650',
+                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+                    alt: image.name
+                  -}}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
@@ -248,9 +259,16 @@
             "label": "Button #2 URL"
           },
           {
+            "type": "checkbox",
+            "id": "show_image",
+            "default": true,
+            "label": "Show image"
+          },
+          {
             "type": "image_picker",
             "id": "image",
-            "label": "Image"
+            "label": "Image",
+            "info": "Note: For better displaying, the picture should be square"
           }
         ]
       }
