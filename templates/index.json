@@ -40,24 +40,24 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "block": {
-          "type": "block",
+        "question": {
+          "type": "question",
           "settings": {
             "heading": "How do I rent a product from your shop?",
             "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           },
           "disabled": null
         },
-        "block_478139": {
-          "type": "block",
+        "question_478139": {
+          "type": "question",
           "settings": {
             "heading": "How do I rent a product from your shop?",
             "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           },
           "disabled": null
         },
-        "block_478145": {
-          "type": "block",
+        "question_478145": {
+          "type": "question",
           "settings": {
             "heading": "How do I rent a product from your shop?",
             "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
@@ -66,9 +66,9 @@
         }
       },
       "block_order": [
-        "block",
-        "block_478139",
-        "block_478145"
+        "question",
+        "question_478139",
+        "question_478145"
       ],
       "settings": {
         "behavior": "multiple",
