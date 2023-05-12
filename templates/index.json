@@ -230,6 +230,59 @@
       },
       "disabled": null
     },
+    "blog": {
+      "type": "blog",
+      "blocks": {
+        "article": {
+          "type": "article",
+          "settings": {
+            "size": "lg",
+            "article_tag": "Tagline",
+            "heading": "Our biggest project",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "button": "Read more"
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "size": "sm",
+            "heading": "January Update",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "button": "Read more"
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "size": "sm",
+            "heading": "January Update",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "button": "Read more"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "article",
+        "article_456231",
+        "article_456232"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_top": 112,
+        "padding_top_mobile": 48,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 48,
+        "tag": "Mosaic Content section",
+        "title": "News & articles",
+        "title_bg": "News & articles",
+        "view_all": "See all Articles"
+      },
+      "disabled": null
+    },
     "image-banner_478138": {
       "type": "image-banner",
       "blocks": {
@@ -404,6 +457,7 @@
     "image-with-text",
     "products",
     "how-it-works",
+    "blog",
     "image-banner",
     "date-picker",
     "columns",
