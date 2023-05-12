@@ -2,8 +2,7 @@ class ImageWithText {
   constructor(section) {
     this.section = section;
     this.options = {
-      hex: "--color-primary-foreground",
-      rgb: "--color-primary-foreground-rgb"
+      hex: "--color-primary-foreground"
     }
   }
 
