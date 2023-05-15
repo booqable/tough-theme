@@ -12,6 +12,10 @@
   padding-bottom: var(--padding-bottom-mobile, 48px);
 }
 
+.blog__top {
+  display: flex;
+}
+
 .blog__tag {
   display: inline-block;
   vertical-align: top;
@@ -49,9 +53,15 @@
   margin: 0 0 30px;
 }
 
-.blog__item-col.no-image{
-  aspect-ratio: 1 / 0.76;
+.blog__item-col {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.blog__item-col.no-image {
   background: var(--color-image-placeholder, #0B1A2633);
+  height: 100%;
 }
 
 .blog__text-area {
@@ -74,10 +84,17 @@
   fill: var(--color-primary-foreground, #0B1A26);
 }
 
+.blog__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+}
+
 .blog__icon {
   max-width: 41px;
   max-height: 41px;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 
 .blog__show-wrapper {
@@ -85,46 +102,54 @@
   text-align: center;
 }
 
+.blog__item-lg .blog__item-col:first-child {
+  aspect-ratio: 1 / 0.76;
+  height: 100%;
+}
+
 @media (min-width: 992px) {
   .blog__list {
-    padding-top: 80px;
+    padding-top: 62px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 32px;
+    grid-template-rows: repeat(var(--grid-row), minmax(0, 1fr));
+    grid-auto-flow: var(--grid-auto-flow);
+    margin: 0 -16px;
   }
 
   .blog__item {
-    margin: 0;
+    margin: 16px;
     padding: 22px;
+  }
+
+  .blog__text-area {
+    padding: 10px;
+  }
+
+  .blog__show-wrapper {
+    padding: 78px 0 0;
   }
 
   .blog__item-lg {
     grid-column: 1 / 3;
     grid-row: span 2 / span 2;
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px; */
     display: flex;
     align-items: center;
-
   }
 
   .blog__item-lg .blog__item-col {
     width: 47%;
+    display: flex;
+    align-items: center;
   }
 
   .blog__item-lg .blog__item-col:first-child{
+    aspect-ratio: 1 / 1.3;
     width: 53%;
   }
 
-  .blog__text-area {
+  .blog__item-lg .blog__text-area {
     padding: 4px 0 0px 33px;
-  }
-
-  .blog__item-col.no-image {
-    aspect-ratio: auto;
-    height: 100%;
   }
 }
 
@@ -155,7 +180,7 @@
     text-transform: uppercase;
     opacity: .5;
     color: var(--color-fourth-foreground, #E1E4E8);
-    transform: translate(-90px, -2px);
+    transform: translate(-0.3em, 0.25em);
     white-space: nowrap;
   }
 }

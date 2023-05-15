@@ -7,6 +7,7 @@
   {%- assign tag                   = section.settings.tag -%}
   {%- assign title                 = section.settings.title -%}
   {%- assign description           = section.settings.description -%}
+  {%- assign title_bg              = section.settings.title_bg -%}
   {%- assign view_all              = section.settings.view_all -%}
   {%- assign limit                 = section.settings.limit -%}
   {%- assign padding_top           = section.settings.padding_top -%}
@@ -75,7 +76,7 @@
           {%- elsif image_placeholder != blank -%}
             {%- assign image = image_placeholder -%}
           {%- else -%}
-              {%- assign image = blank -%}
+            {%- assign image = blank -%}
           {%- endif -%}
 
           <div class="blog__item blog__item-{{- size -}}">
@@ -116,7 +117,7 @@
                 {%- endif -%}
 
                 {%- if text != blank -%}
-                  <div class="blog__text">{{- text -}}</div>
+                  <div class="blog__text">{{- text | truncate: 200, " ..."  -}}</div>
                 {%- endif -%}
 
                 {%- if button != blank and button_url != blank -%}
@@ -133,7 +134,7 @@
 
       {%- if view_all != blank -%}
         <div class="blog__show-wrapper">
-          <a href="{{ routes.blog_url }}" class="blog__show button button--outlined button--large">
+          <a href="{{ routes.blog_page }}" class="blog__show button button--outlined button--large">
             {{- view_all -}}
           </a>
         </div>
@@ -141,6 +142,8 @@
     </div>
   </div>
 {%- endif -%}
+
+<script src="{{ "blog.js" | asset_url }}" defer></script>
 
 {% schema %}
   {
@@ -229,7 +232,7 @@
         "info": "Note: Use positive numbers only"
       }
     ],
-    "max_blocks": 9,
+    "max_blocks": 6,
     "blocks": [
       {
         "type": "article",
