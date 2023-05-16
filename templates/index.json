@@ -37,71 +37,6 @@
       },
       "disabled": null
     },
-    "image-banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "text": "Hire from us",
-            "size": "lg"
-          },
-          "disabled": null
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Tell something about your company, describe what you do and what makes you unique.",
-            "size": "md"
-          },
-          "disabled": null
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "text": "View all products",
-            "use_solid_button": true,
-            "size": "md",
-            "url": "booqable://collections/all"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "fluid_width": true,
-        "overlay_enabled": true,
-        "overlay_color": "#D9E3F0",
-        "vertical_spacing": "lg",
-        "overlay_opacity": "40",
-        "content_align": "center",
-        "background_image": "booqable://assets/image-background-abstract.jpeg"
-      },
-      "disabled": false
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Button",
-        "button_2": "Button",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
-        "hide_image": false,
-        "image_position": "right",
-        "padding_top": 98,
-        "padding_top_mobile": 56,
-        "padding_bottom": 98,
-        "padding_bottom_mobile": 56,
-        "tag": "Tagline",
-        "title": "Medium length section heading goes here"
-      },
-      "disabled": null
-    },
     "date-picker": {
       "type": "date-picker",
       "blocks": {},
@@ -155,6 +90,67 @@
         "padding_bottom_mobile": 29
       },
       "disabled": false
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_535502": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542",
+        "collection_535502"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "tag": "Our collections",
+        "title": "We can service you in each category",
+        "title_bg": "Category",
+        "padding_bottom": 96,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_top_mobile": 40
+      },
+      "disabled": null
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
+        "hide_image": false,
+        "image_position": "right",
+        "padding_top": 98,
+        "padding_top_mobile": 56,
+        "padding_bottom": 98,
+        "padding_bottom_mobile": 56,
+        "tag": "Tagline",
+        "title": "Medium length section heading goes here"
+      },
+      "disabled": null
     },
     "products": {
       "type": "products",
@@ -283,187 +279,78 @@
       },
       "disabled": null
     },
-    "image-banner_478138": {
-      "type": "image-banner",
+    "faq": {
+      "type": "faq",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "question": {
+          "type": "question",
           "settings": {
-            "text": "Image with text",
-            "size": "md"
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           },
           "disabled": null
         },
-        "text": {
-          "type": "text",
+        "question_478139": {
+          "type": "question",
           "settings": {
-            "text": "Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.",
-            "size": "sm"
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           },
           "disabled": null
         },
-        "button": {
-          "type": "button",
+        "question_478145": {
+          "type": "question",
           "settings": {
-            "text": "Button label",
-            "use_solid_button": true,
-            "size": "md"
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           },
           "disabled": null
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "question",
+        "question_478139",
+        "question_478145"
       ],
       "settings": {
-        "background_image": "booqable://assets/image-background-abstract-alt.jpeg",
-        "fluid_width": false,
-        "overlay_enabled": true,
-        "overlay_color": "#D9E3F0",
-        "vertical_spacing": "sm",
-        "overlay_opacity": "40",
-        "content_align": "left"
-      },
-      "disabled": null
-    },
-    "spacer": {
-      "type": "spacer",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "use_hr": true,
-        "size": "md"
-      },
-      "disabled": null
-    },
-    "spacer_988332": {
-      "type": "spacer",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "use_hr": true,
-        "size": "lg"
-      },
-      "disabled": null
-    },
-    "spacer_868256": {
-      "type": "spacer",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "size": "md"
-      },
-      "disabled": null
-    },
-    "columns": {
-      "type": "columns",
-      "blocks": {
-        "column": {
-          "type": "column",
-          "settings": {
-            "image_border_radius": true,
-            "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
-            "button_size": "md",
-            "title": "Column 1",
-            "image": "booqable://assets/image-background-mountains.jpeg",
-            "use_solid_button": false
-          },
-          "disabled": null
-        },
-        "column_242972": {
-          "type": "column",
-          "settings": {
-            "image_border_radius": true,
-            "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
-            "button_size": "md",
-            "title": "Column 2",
-            "image": "booqable://assets/image-background-mountains.jpeg",
-            "use_solid_button": true
-          },
-          "disabled": null
-        },
-        "column_535502": {
-          "type": "column",
-          "settings": {
-            "image_border_radius": true,
-            "text": "<p>Add some text to tell a story, explain how renting with your company works, or to let your potential customers know about the value you offer. Use this space however you like and fill it with whatever you want.</p>",
-            "button_size": "md",
-            "title": "Column 3",
-            "image": "booqable://assets/image-background-mountains.jpeg",
-            "use_solid_button": true
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "column",
-        "column_242972",
-        "column_535502"
-      ],
-      "settings": {
-        "columns_count": 3
-      },
-      "disabled": null
-    },
-    "collections": {
-      "type": "collections",
-      "blocks": {
-        "collection": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_242972": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_242542": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_535502": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "collection",
-        "collection_242972",
-        "collection_242542",
-        "collection_535502"
-      ],
-      "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tag": "Our collections",
-        "title": "We can service you in each category",
-        "title_bg": "Category",
-        "padding_bottom": 96,
+        "behavior": "multiple",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "title": "Frequently asked questions",
+        "title_bg": "FAQ",
+        "padding_bottom": 112,
         "padding_bottom_mobile": 40,
-        "padding_top": 80,
+        "padding_top": 112,
         "padding_top_mobile": 40
+      },
+      "disabled": null
+    },
+    "cta": {
+      "type": "cta",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "padding_top": 112,
+        "padding_top_mobile": 56,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 56,
+        "title": "Medium length heading goes here"
       },
       "disabled": null
     }
   },
   "order": [
     "hero",
+    "date-picker",
     "partners",
     "collections",
     "image-with-text",
     "products",
     "how-it-works",
     "blog",
-    "image-banner",
-    "date-picker",
-    "columns",
-    "spacer",
-    "spacer_988332",
-    "image-banner_478138",
-    "spacer_868256"
+    "faq",
+    "cta"
   ]
 }

@@ -9,8 +9,7 @@ class Hero {
     }
 
     this.options = {
-      hex: "--color-primary-foreground",
-      rgb: "--color-primary-foreground-rgb"
+      hex: "--color-primary-foreground"
     }
   }
 

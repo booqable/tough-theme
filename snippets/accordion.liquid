@@ -1,0 +1,39 @@
+{% comment %}
+  blocks *required
+
+  Usage:
+  {%- include 'accordion' -%}
+{% endcomment %}
+
+{%- if blocks.size > 0 -%}
+  <ul class="accordion">
+    {%- for block in blocks -%}
+      {%- assign heading = block.settings.heading -%}
+      {%- assign content = block.settings.content -%}
+
+      <li class="accordion__item">
+        {%- if heading != blank -%}
+          <input
+            {% if behavior == "single" %}type="radio"{% else %}type="checkbox"{% endif %}
+            class="accordion__trigger"
+            id="accordion-{{- block.id -}}"
+            name="accordion-trigger"
+          />
+
+          <h3 class="accordion__heading">
+            <label class="accordion__label" for="accordion-{{- block.id -}}">
+              {{- heading -}}
+              {%- render 'icon-arrow-right' -%}
+            </label>
+          </h3>
+        {%- endif -%}
+
+        {%- if content != blank -%}
+          <div class="accordion__content">
+            <p>{{- content -}}</p>
+          </div>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
