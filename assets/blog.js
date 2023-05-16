@@ -18,6 +18,7 @@ class Blog {
 
     this.value = {
       rowSm: 1,
+      rowMd: 2,
       rowLg: 3,
       flow: 'column dense'
     };
@@ -46,13 +47,7 @@ class Blog {
   setStyles() {
     if (!this.items.length) return false;
 
-    let filtered = [];
-
-    this.items.forEach(item => {
-      const isEl = item.classList.contains(this.classes.large);
-
-      isEl ? filtered.push(item) : false
-    })
+    const filtered = this.items.filter((item) => item.classList.contains(this.classes.large))
 
     if (this.items.length <= 3) {
       if (!filtered.length) this.cssVar(this.key.row, this.value.rowSm);
@@ -62,6 +57,9 @@ class Blog {
       } else {
         this.cssVar(this.key.row, this.value.rowLg);
         this.cssVar(this.key.flow, this.value.flow);
+        if (filtered.length > 2) {
+          this.cssVar(this.key.row, this.value.rowMd);
+        }
       }
     }
   }
