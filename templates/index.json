@@ -37,6 +37,51 @@
       },
       "disabled": null
     },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "question": {
+          "type": "question",
+          "settings": {
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+          },
+          "disabled": null
+        },
+        "question_478139": {
+          "type": "question",
+          "settings": {
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+          },
+          "disabled": null
+        },
+        "question_478145": {
+          "type": "question",
+          "settings": {
+            "heading": "How do I rent a product from your shop?",
+            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "question",
+        "question_478139",
+        "question_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "title": "Frequently asked questions",
+        "title_bg": "FAQ",
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 40,
+        "padding_top": 112,
+        "padding_top_mobile": 40
+      },
+      "disabled": null
+    },
     "image-banner": {
       "type": "image-banner",
       "blocks": {
@@ -420,6 +465,7 @@
     "image-with-text",
     "products",
     "how-it-works",
+    "faq",
     "cta",
     "image-banner",
     "date-picker",
