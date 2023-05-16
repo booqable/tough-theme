@@ -101,5 +101,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initFocalImages();
 });
 
-window.addEventListener("scroll", handleScroll);
+// window.addEventListener("scroll", handleScroll);
 window.addEventListener("message", handleMessages);

@@ -267,10 +267,10 @@ class Carousel {
           client = this.wrap.clientWidth;
 
     width * this.items.length <= client
-      ? (this.navi.classList.add(this.classes.hidden),
-        this.pagi.classList.add(this.classes.hidden))
-      : (this.navi.classList.remove(this.classes.hidden),
-        this.pagi.classList.remove(this.classes.hidden))
+      ? (this.navi?.classList.add(this.classes.hidden),
+        this.pagi?.classList.add(this.classes.hidden))
+      : (this.navi?.classList.remove(this.classes.hidden),
+        this.pagi?.classList.remove(this.classes.hidden))
   }
 }
 
