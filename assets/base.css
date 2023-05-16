@@ -6,8 +6,13 @@
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
 
+  /* Carousel */
   --slide-width: 318px;
   --slide-width-mobile: 314px;
+
+  /* Blog section grid */
+  --grid-row: 2;
+  --grid-auto-flow: dense;
 
   /* Colors */
   --color-primary-background-rgb: 255, 255, 255;
