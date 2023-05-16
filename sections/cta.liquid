@@ -1,0 +1,216 @@
+{{ "cta.css" | asset_url | stylesheet_tag }}
+
+{%- assign title                 = section.settings.title -%}
+{%- assign description           = section.settings.description -%}
+{%- assign button_1              = section.settings.button_1 -%}
+{%- assign button_url_1          = section.settings.button_url_1 -%}
+{%- assign button_2              = section.settings.button_2 -%}
+{%- assign button_url_2          = section.settings.button_url_2 -%}
+{%- assign image                 = section.settings.image -%}
+{%- assign background            = section.settings.background -%}
+{%- assign color                 = section.settings.color -%}
+{%- assign ui_color              = section.settings.ui_color -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+
+{% comment %} CSS variables start {% endcomment %}
+{%- capture variables -%}
+  {%- if background != blank -%}
+    --color-accent-background: {{ background }};
+  {%- endif -%}
+  {%- if color != blank -%}
+    --color-primary-background: {{ color }};
+  {%- endif -%}
+  {%- if ui_color != blank -%}
+    --color-primary-foreground: {{ ui_color }};
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+{%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
+<div
+  class="cta__wrapper{% if padding_top != blank or padding_top_mobile != blank %} cta__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} cta__wrapper--padding-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  <div class="cta__container container">
+    <div class="cta__content">
+      {%- if title != blank -%}
+        <h2 class="cta__title">{{- title -}}</h2>
+      {%- endif -%}
+
+      {%- if description != blank -%}
+        <div class="cta__description">{{- description -}}</div>
+      {%- endif -%}
+
+      {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+        <div class="cta__buttons">
+          {%- if button_1 != blank and button_url_1 != blank -%}
+            <a href="{{  button_url_1 }}" class="cta__button button button--primary button--large">{{- button_1 -}}</a>
+          {%- endif -%}
+
+          {%- if button_2 != blank and button_url_2 != blank -%}
+            <a href="{{  button_url_2 }}" class="cta__button button button--outlined button--large">{{- button_2 -}}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if image != blank -%}
+    <div class="cta__image-wrapper">
+      {{- image.url | image_tag:
+        loading: 'lazy',
+        class: 'cta__image',
+        widths: '450, 550, 650',
+        sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+        alt: image.name
+      -}}
+    </div>
+  {%- else -%}
+    <div class="cta__image-wrapper">
+      {%- render 'image-background-web' -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "CTA",
+    "description": "Display Call to action section.",
+    "tag": "section",
+    "class": "cta",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Medium length heading goes here"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      },
+      {
+        "type": "paragraph",
+        "content": "Button #1 settings"
+      },
+      {
+        "type": "text",
+        "id": "button_1",
+        "label": "Label",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_1",
+        "label": "Button #1 URL"
+      },
+      {
+        "type": "paragraph",
+        "content": "Button #2 settings"
+      },
+      {
+        "type": "text",
+        "id": "button_2",
+        "label": "Label",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_2",
+        "label": "Button #2 URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "info": "Note: The image has the lowest priority",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Colors settings"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "ui_color",
+        "label": "UI color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 56,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 56,
+        "info": "Note: Use positive numbers only"
+      }
+    ]
+  }
+{% endschema %}

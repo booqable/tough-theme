@@ -275,6 +275,22 @@
       },
       "disabled": null
     },
+    "cta": {
+      "type": "cta",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "padding_top": 112,
+        "padding_top_mobile": 56,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 56,
+        "title": "Medium length heading goes here"
+      },
+      "disabled": null
+    },
     "image-banner_478138": {
       "type": "image-banner",
       "blocks": {
@@ -450,6 +466,7 @@
     "products",
     "how-it-works",
     "faq",
+    "cta",
     "image-banner",
     "date-picker",
     "columns",
