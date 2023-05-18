@@ -18,8 +18,8 @@ class Carousel {
       fluid: "carousel__fluid",
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
-      btn: "carousel__btn",
       dot: "carousel__dot",
+      thumb: "carousel__thumb",
       hidden: "hidden",
       prev: "prev",
       next: "next",
@@ -83,6 +83,17 @@ class Carousel {
     this.block.classList.add(this.classes.init);
   }
 
+  getPrevSibling(element, selector) {
+    if (element) {
+      let sibling = element.previousElementSibling;
+
+      while (sibling) {
+        if (sibling.matches(selector)) return sibling;
+        sibling = sibling.previousElementSibling;
+      }
+    }
+  };
+
   // change slides in Fade effect mode
   fadeClass(value) {
     const isEl = this.block.classList.contains(this.classes.fade);
@@ -98,7 +109,7 @@ class Carousel {
 
   // autorotate slides of carousel
   autoRotate(e, time) {
-    if (time === 0 || typeof time === 'undefined') return false;
+    if (!time || time === 0) return false;
 
     this.interval = setInterval(() => {
       this.navigation(e, time);
@@ -151,25 +162,36 @@ class Carousel {
   // slide the carousel left/right and change the index of the active dot of the pagination
   navigation(e, time) {
     const target = e?.target,
+          isPrev = target?.classList.contains(this.classes.prev),
+          isNext = target?.classList.contains(this.classes.next),
           isDot = target?.classList.contains(this.classes.dot),
-          isNav = target?.classList.contains(this.classes.btn),
-          isFade = this.block.classList.contains(this.classes.fade),
-          isFluid = this.block.classList.contains(this.classes.fluid);
+          isThumb = target?.classList.contains(this.classes.thumb);
 
-    if (!isNav && !isDot && time === 0 && typeof time === 'undefined') return false;
+    if (!isPrev && !isNext && !isDot && !time  && time === 0) return false;
 
-    const list = target?.classList,
+    const isFade = this.block.classList.contains(this.classes.fade),
+          isFluid = this.block.classList.contains(this.classes.fluid),
           width = this.item.getBoundingClientRect().width,
-          scroll = this.wrap.scrollWidth,
-          client = this.wrap.clientWidth,
-          index = parseInt(target?.getAttribute(this.data.index)),
-          children = [...this.wrap.children];
+          index = parseInt(target?.getAttribute(this.data.index));
 
-    let value,
-        i,
-        left = this.wrap.scrollLeft;
+    let parent, element, left, scroll, client, children, i, value;
 
-    if (list?.contains(this.classes.prev)) {
+    if (isDot || isPrev || isNext) {
+      isThumb
+        ? parent = target?.closest(this.selector.pagination)
+        : parent = target?.parentElement
+
+      element = this.getPrevSibling(parent, this.selector.wrapper);
+    } else {
+      element = this.wrap;
+    }
+
+    left = element.scrollLeft;
+    scroll = element.scrollWidth;
+    client = element.clientWidth;
+    children = [...element.children];
+
+    if (isPrev) {
       if (!isFade) {
         if (left === 0) {
           i = Math.ceil((scroll - client) / width + 1);
@@ -195,7 +217,7 @@ class Carousel {
       }
     }
 
-    if (list?.contains(this.classes.next) || time !== 0 && typeof time !== 'undefined') {
+    if (isNext || time && time !== 0) {
       if (!isFade) {
         if (left >= scroll - client - 16) {
           i = 1;
@@ -220,9 +242,9 @@ class Carousel {
       }
     }
 
-    if (list?.contains(this.classes.dot) && !isFade) value = width * (index - 1);
+    if (isDot && !isFade) value = width * (index - 1);
 
-    if (!isFade) this.scrollTo(value);
+    if (!isFade) this.scrollTo(element, value);
   }
 
   // search new index for active slide on Fade carousel mode
@@ -255,8 +277,8 @@ class Carousel {
     this.count.innerHTML = `${num}${i}`;
   }
 
-  scrollTo(value) {
-    this.wrap.scrollTo({
+  scrollTo(element, value) {
+    element.scrollTo({
       left: value,
       behavior: "smooth",
     });
@@ -274,7 +296,7 @@ class Carousel {
   }
 }
 
-function initCarousel(el = ".carousel") {
+const initCarousel = (el = ".carousel") => {
   const arr = [...document.querySelectorAll(el)];
 
   if (!arr.length) return false;

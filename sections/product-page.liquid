@@ -1,10 +1,17 @@
 <link rel="preload" href="{{ 'product-page.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ 'accordion.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+{%- assign title                 = product.name -%}
+{%- assign description           = product.description -%}
+{%- assign variation_label       = section.settings.variation_label -%}
+{%- assign shipping_label        = section.settings.shipping_label -%}
+{%- assign shipping_value        = section.settings.shipping_value -%}
 {%- assign timer                 = section.settings.timer -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign blocks                = section.blocks -%}
 {%- assign carousel              = false -%}
 
 {%- if product.images.size > 1 -%}
@@ -44,21 +51,39 @@
   <div class="product-main__wrapper">
     <div class="product-main__gallery">
       {%- if carousel -%}
-        <div class="carousel carousel__fluid carousel__slide-effect carousel__pause" aria-label="Gallery">
+        <div class="carousel carousel__slide-effect carousel__pause" aria-label="Gallery">
           <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
           <div class="carousel__wrapper">
       {%- endif -%}
             {%- for image in product.images -%}
+              {%- assign index = forloop.index -%}
 
               {%- if carousel -%}
                 <div class="carousel__item">
                   <div class="carousel__inner">
               {%- endif -%}
-                    {{ image.url | image_tag:
-                      class: 'product-main__gallery-image lazyload',
-                      widths: '600, 700, 800',
-                      sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px',
-                    }}
+                    <a class="product-main__modal-opener" href="#popup-{{- index -}}">
+                      {{ image.url | image_tag:
+                        class: 'product-main__gallery-image lazyload',
+                        widths: '600, 700, 800',
+                        sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px',
+                      }}
+                      <span class="product-main__zoom-in" style="display: none;">
+                        {%- render 'icon-zoom-in' -%}
+                      </span>
+                    </a>
+
+                    <div id="popup-{{- index -}}" class="product-main__modal" style="display: none;">
+                      <a class="product-main__modal-close" href="#!"></a>
+                      <div class="product-main__popup">
+                        <a class="product-main__modal-close" href="#!">&times;</a>
+                        {{ image.url | image_tag:
+                          class: 'product-main__popup-image lazyload',
+                          widths: '600, 700, 800, 1000',
+                          sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px, 1000px',
+                        }}
+                      </div>
+                    </div>
               {%- if carousel -%}
                   </div>
                 </div>
@@ -68,23 +93,56 @@
       {%- if carousel -%}
           </div>
 
-          <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
-            {%- for image in product.images -%}
-              {%- assign first = forloop.first -%}
-              {%- assign index = forloop.index -%}
-              {%- assign focal = image.coordinates -%}
+          <div class="carousel__pagination{% if product.images.size <= 3 %} carousel__pagination--centered{% else %} carousel carousel__thumbs{%- endif -%}" aria-label="Thumbs carousel" aria-hidden="true">
+            {%- assign carousel_thumbs = false -%}
 
-              <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
-                <span class="carousel__dot-wrapper">
-                  {{ image.url | image_tag:
-                    class: 'carousel__dot-image',
-                    loading: 'lazy',
-                    focal: focal,
-                    widths: '150'
-                  }}
+            {%- if product.images.size > 3 -%}
+              {%- assign carousel_thumbs = true -%}
+            {%- endif -%}
+
+            {%- if carousel_thumbs -%}
+              <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+              <div class="carousel__wrapper">
+            {%- endif -%}
+
+                {%- for image in product.images -%}
+                  {%- assign first = forloop.first -%}
+                  {%- assign index = forloop.index -%}
+                  {%- assign focal = image.coordinates -%}
+
+                  {%- if carousel_thumbs -%}
+                    <div class="carousel__item">
+                      <div class="carousel__inner">
+
+                        <span class="carousel__dot carousel__thumb{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+                          <span class="carousel__dot-wrapper">
+                            {{ image.url | image_tag:
+                              class: 'carousel__dot-image',
+                              loading: 'lazy',
+                              focal: focal,
+                              widths: '150'
+                            }}
+                          </span>
+                        </span>
+
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- if carousel_thumbs -%}
+              </div>
+
+              <div class="carousel__navigation" aria-label="Thumbs carousel navigation" aria-hidden="true">
+                <span class="carousel__btn prev" title="Prev slide">
+                  Previous slide
+                  {%- include 'icon-arrow-right' -%}
                 </span>
-              </span>
-            {%- endfor -%}
+                <span class="carousel__btn next" title="Next slide">
+                  Next slide
+                  {%- include 'icon-arrow-right' -%}
+                </span>
+              </div>
+            {%- endif -%}
           </div>
         </div>
       {%- endif -%}
@@ -92,21 +150,31 @@
     </div>
 
     <div class="product-main__info">
-      <div class="product-info">
-        <h1 class="product-info__title">{{ product.name }}</h1>
-        {% if product.variants.size > 1 %}
-          <p class="product-info__label">{{ section.settings.variation_label }}</p>
-        {% endif %}
-        {{ product_button }}
-      </div>
-      {% if product.description != blank %}
-        <div class="product-description">
-          <p class="product-description__label">{{ section.settings.description_label }}</p>
-          <div class="product-description__content-container bq-content rx-content">
-            {{ product.description }}
+        <h1 class="product-main__title">{{- title -}}</h1>
+
+        {%- if description != blank -%}
+          <div class="product-main__description">
+            {{- description -}}
           </div>
-        </div>
-      {% endif %}
+        {%- endif -%}
+
+        {%- if product.variants.size > 1 -%}
+          <div class="product-main__variation-label">{{- variation_label -}}</div>
+        {%- endif -%}
+
+        {{- product_button -}}
+
+        {%- if shipping_label != blank and shipping_value != blank -%}
+          <div class="product-main__shipping-info">
+            <span class="product-main__shipping-label">{{- shipping_label -}}</span>
+            &nbsp;
+            <span class="product-main__shipping-value">{{- shipping_value -}}</span>
+          </div>
+        {%- endif -%}
+
+        {%- if blocks.size > 0 -%}
+          {%- render 'accordion', blocks: blocks, behavior: behavior -%}
+        {%- endif -%}
     </div>
   </div>
 </div>
@@ -130,9 +198,19 @@
       },
       {
         "type": "text",
-        "id": "description_label",
-        "label": "Description label",
-        "default": "Description"
+        "id": "shipping_label",
+        "label": "Free shipping label",
+        "default": "Free shipping over"
+      },
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "shipping_value",
+        "label": "Free shipping value",
+        "default": "$50"
       },
       {
         "type": "header",
@@ -146,6 +224,26 @@
         "max": 100,
         "default": 5,
         "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+      },
+      {
+        "type": "header",
+        "content": "Accordion settings"
+      },
+      {
+        "type": "select",
+        "id": "behavior",
+        "label": "Mode",
+        "options": [
+          {
+            "value": "single",
+            "label": "Single"
+          },
+          {
+            "value": "multiple",
+            "label": "Multiple"
+          }
+        ],
+        "default": "multiple"
       },
       {
         "type": "header",
@@ -190,6 +288,60 @@
         "max": 100,
         "default": 24,
         "info": "Note: Use positive numbers only"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks":[
+      {
+        "type": "details",
+        "name": "Details",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Details settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "details",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
+      },
+      {
+        "type": "shipping",
+        "name": "Shipping",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Shipping settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "shipping",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
+      },
+      {
+        "type": "returns",
+        "name": "Returns",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Returns settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "returns",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
       }
     ],
     "important": true,

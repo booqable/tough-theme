@@ -3,11 +3,37 @@
   "sections": {
     "product-page": {
       "type": "product-page",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "details": {
+          "type": "details",
+          "settings": {
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        },
+        "shipping": {
+          "type": "shipping",
+          "settings": {
+            "shipping": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        },
+        "returns": {
+          "type": "returns",
+          "settings": {
+            "returns": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "details",
+        "shipping",
+        "returns"
+      ],
       "settings": {
-        "variation_label": "Variation",
-        "description_label": "Description"
+        "variation_label": "Variant",
+        "shipping_label": "Free shipping over"
       },
       "disabled": null
     },
