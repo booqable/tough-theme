@@ -98,11 +98,19 @@
 
             {%- if product.images.size > 3 -%}
               {%- assign carousel_thumbs = true -%}
+
+              {% comment %} CSS variables start {% endcomment %}
+              {%- capture thumbs_variables -%}
+                  --slide-width-thumb: 96px;
+                  --slide-width-mobile-thumb: 96px;
+              {%- endcapture -%}
+              {% comment %} CSS variables end {% endcomment %}
+
             {%- endif -%}
 
             {%- if carousel_thumbs -%}
-              <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
-              <div class="carousel__wrapper">
+              <input class="carousel__timer" type="hidden" name="hidden" value="0">
+              <div class="carousel__wrapper" style="{{- thumbs_variables | escape -}}">
             {%- endif -%}
 
                 {%- for image in product.images -%}
@@ -133,13 +141,13 @@
               </div>
 
               <div class="carousel__navigation" aria-label="Thumbs carousel navigation" aria-hidden="true">
-                <span class="carousel__btn prev" title="Prev slide">
-                  Previous slide
-                  {%- include 'icon-arrow-right' -%}
+                <span class="carousel__btn prev" title="Prev thumb">
+                  Previous thumb
+                  {%- render 'icon-arrow-right' -%}
                 </span>
-                <span class="carousel__btn next" title="Next slide">
-                  Next slide
-                  {%- include 'icon-arrow-right' -%}
+                <span class="carousel__btn next" title="Next thumb">
+                  Next thumb
+                  {%- render 'icon-arrow-right' -%}
                 </span>
               </div>
             {%- endif -%}
