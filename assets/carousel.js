@@ -15,12 +15,12 @@ class Carousel {
 
     this.classes = {
       show: "show",
-      fluid: "carousel__fluid",
+      full: "carousel__fluid",
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
       dot: "carousel__dot",
       thumb: "carousel__thumb",
-      hidden: "hidden",
+      thumbNav: "carousel__navigation-thumbs",
       prev: "prev",
       next: "next",
       init: "initialized"
@@ -28,12 +28,16 @@ class Carousel {
 
     this.modifiers = {
       active: "active",
+      indent: "indent",
+      hidden: "hidden",
       show: "show",
       hide: "hide"
     }
 
     this.data = {
-      index: "data-index"
+      index: "data-index",
+      prev: "prev",
+      next: "next"
     };
 
     this.tablet = 992;
@@ -177,11 +181,14 @@ class Carousel {
     if (!isPrev && !isNext && !isDot && !time  && time === 0) return false;
 
     const isFade = this.block.classList.contains(this.classes.fade),
-          isFluid = this.block.classList.contains(this.classes.fluid),
+          fullWidth = this.block.classList.contains(this.classes.full),
           isThumb = target?.classList.contains(this.classes.thumb),
-          index = parseInt(target?.getAttribute(this.data.index));
+          isThumbs = target?.parentElement.classList.contains(this.classes.thumbNav),
+          index = parseInt(target?.getAttribute(this.data.index)),
+          prev = this.data.prev,
+          next = this.data.next;
 
-    let parent, element, left, top, scrollX, scrollY, clientX, clientY, children, i;
+    let parent, element, left, top, scrollX, scrollY, clientX, clientY, children;
 
     let width = this.item.getBoundingClientRect().width,
         height = this.item.getBoundingClientRect().height,
@@ -191,6 +198,7 @@ class Carousel {
     if (isDot || isPrev || isNext) {
       if (isThumb) {
         parent = target?.closest(this.selector.pagination);
+
         const item = this.getPrevSibling(parent, this.selector.wrapper).querySelector(this.selector.item);
         width = item.getBoundingClientRect().width;
 
@@ -213,52 +221,34 @@ class Carousel {
 
     if (isPrev) {
       if (!isFade) {
-
-        if (scrollX === clientX) {
+        if (scrollY > scrollX) {
           const options = {
             unit: top,
             clientVal: clientY,
             scrollVal: scrollY,
             scrollToVal: valueTop,
-            size: height
+            size: height,
+            button: prev,
+            thumbsNav: isThumbs
           }
 
-          valueTop = this.scroll(options).scrollTo;
-          i = this.scroll(options).index;
-          // if (top === 0) {
-          //   i = Math.ceil((scrollY - clientY) / height + 1);
+          valueTop = this.slideEfect(e, options);
 
-          //   valueTop = scrollY;
-          // } else {
-          //   i = Math.ceil(top / height);
-          //   valueTop = top - height;
-          // }
         } else {
           const options = {
             unit: left,
             clientVal: clientX,
             scrollVal: scrollX,
             scrollToVal: valueLeft,
-            size: height,
-            fullWidth: isFluid
+            size: width,
+            button: prev,
+            thumbsNav: isThumbs,
+            fullWidth: fullWidth
           }
 
-          valueLeft = this.scroll(options).scrollTo;
-          i = this.scroll(options).index;
+          valueLeft = this.slideEfect(e, options);
 
-          // if (left === 0) {
-          //   i = Math.ceil((scrollX - clientX) / width + 1);
-
-          //   if (isFluid && clientX < this.tablet) i -= 1;
-
-          //   valueLeft = scrollX;
-          // } else {
-          //   i = Math.ceil(left / width);
-          //   valueLeft = left - width;
-          // }
         }
-
-        this.pagination(e, i);
 
       } else {
         const options = {
@@ -267,21 +257,39 @@ class Carousel {
           last: this.items.length
         }
 
-        this.fadeEffect(e, i, options);
+        this.fadeEffect(e, options);
       }
     }
 
     if (isNext || time && time !== 0) {
       if (!isFade) {
-        if (left >= scrollX - clientX - 16) {
-          i = 1;
-          valueLeft = 0;
-        } else {
-          i = parseInt(left / width + 2);
-          valueLeft = left + width;
-        }
+        if (scrollY > scrollX) {
+          const options = {
+            unit: top,
+            clientVal: clientY,
+            scrollVal: scrollY,
+            scrollToVal: valueTop,
+            size: height,
+            button: next,
+            thumbsNav: isThumbs
+          }
 
-        this.pagination(e, i);
+          valueTop = this.slideEfect(e, options);
+
+        } else {
+          const options = {
+            unit: left,
+            clientVal: clientX,
+            scrollVal: scrollX,
+            scrollToVal: valueLeft,
+            size: width,
+            button: next,
+            thumbsNav: isThumbs
+          }
+
+          valueLeft = this.slideEfect(e, options);
+
+        }
 
       } else {
         const options = {
@@ -292,7 +300,7 @@ class Carousel {
           nextIndex: 2
         }
 
-        this.fadeEffect(e, i, options);
+        this.fadeEffect(e, options);
       }
     }
 
@@ -300,7 +308,7 @@ class Carousel {
 
     if (!isFade) {
       const options = {
-        element: element,
+        el: element,
         left: valueLeft,
         top: valueTop
       }
@@ -309,33 +317,51 @@ class Carousel {
     }
   }
 
-  scroll(options) {
-    let {unit, scrollVal, clientVal, size, fullWidth} = options;
-    let i, object, scrollToVal;
+  // logic of Carousel's Prev and Next buttons (including vertical carousel)
+  slideEfect(e, options) {
+    const {unit, scrollVal, clientVal, size, button, thumbsNav, fullWidth} = options;
+    let i, condition, lastIndex, nextIndex, scrollToLast, scrollToNext, scrollToVal;
 
-    if (unit === 0) {
-      i = Math.ceil((scrollVal - clientVal) / size);
+    switch (button) {
+      case this.data.prev:
+        condition = unit === 0;
+        lastIndex = Math.ceil((scrollVal - clientVal) / size + 1);
+        nextIndex = Math.ceil(unit / size);
+        scrollToLast = scrollVal;
+        scrollToNext = unit - size;
 
-      // if (fullWidth && clientVal < this.tablet) i -= 1;
+        break;
+
+      case this.data.next:
+        condition = unit >= scrollVal - clientVal - 16;
+        lastIndex = 1;
+        nextIndex = parseInt(unit / size + 2);
+        scrollToLast = 0;
+        scrollToNext = unit + size;
+
+        break;
+    }
+
+    if (condition) {
+      i = lastIndex;
       if (fullWidth && clientVal < this.tablet) i -= 1;
-
-      scrollToVal = scrollVal;
+      scrollToVal = scrollToLast;
     } else {
-      i = Math.ceil(unit / size - 1);
-      scrollToVal = unit - size;
+      i = nextIndex;
+      scrollToVal = scrollToNext;
     }
 
-    console.log(i);
-
-    return object = {
-      scrollTo: scrollToVal,
-      index: i
+    if (!thumbsNav) {
+      this.pagination(e, i);
     }
+
+    return scrollToVal
   }
 
   // search new index for active slide on Fade carousel mode
-  fadeEffect(e, i, options) {
+  fadeEffect(e, options) {
     const {arr, equal, last, nextNumber, nextIndex} = options;
+    let i;
 
     arr.forEach((el, index) => {
       if (el.classList.contains(this.classes.show)) {
@@ -364,24 +390,53 @@ class Carousel {
   }
 
   scrollTo(options) {
-    const {element, left, top} = options;
+    const {el, left, top} = options;
 
-    element.scrollTo({
+    el.scrollTo({
       left: left,
       top: top,
       behavior: "smooth",
     });
   }
 
-  controls() {
-    const width = this.item.getBoundingClientRect().width,
-          client = this.wrap.clientWidth;
+  controls(e) {
+    if (!this.navi && !this.pagi) return false;
 
-    width * this.items.length <= client
-      ? (this.navi?.classList.add(this.classes.hidden),
-        this.pagi?.classList.add(this.classes.hidden))
-      : (this.navi?.classList.remove(this.classes.hidden),
-        this.pagi?.classList.remove(this.classes.hidden))
+    const target = e?.target;
+          // isThumbs = target?.parentElement.classList.contains(this.classes.thumbNav);
+
+          console.log(target);
+          console.log(this.pagi);
+          console.log(this.navi);
+
+    const client = this.wrap.clientWidth,
+          initial = 0;
+
+    let array = [];
+
+    this.items.forEach(item => {
+      const width = item.getBoundingClientRect().width;
+      array.push(width);
+    })
+
+    const sum = array.reduce(
+      (accumulator, current) => accumulator + current,
+      initial
+    );
+
+    if (sum <= client) {
+      this.navi?.classList.add(this.modifiers.hidden);
+      this.pagi?.classList.add(this.modifiers.hidden);
+      if (this.navi?.classList.contains(this.classes.thumbNav)) {
+        this.navi?.parentElement.classList.remove(this.modifiers.indent);
+      }
+    } else {
+      this.navi?.classList.remove(this.modifiers.hidden);
+      this.pagi?.classList.remove(this.modifiers.hidden);
+      if (this.navi?.classList.contains(this.classes.thumbNav)) {
+        this.navi?.parentElement.classList.add(this.modifiers.indent);
+      }
+    }
   }
 }
 

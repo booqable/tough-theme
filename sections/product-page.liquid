@@ -93,7 +93,7 @@
       {%- if carousel -%}
           </div>
 
-          <div class="carousel__pagination{% if product.images.size <= 3 %} carousel__pagination--centered{% else %} carousel carousel__thumbs{%- endif -%}" aria-label="Thumbs carousel" aria-hidden="true">
+          <div class="carousel__pagination{% if product.images.size <= 3 %} carousel__pagination--centered{% else %} carousel carousel__thumbs{%- endif -%}" aria-label="Carousel thumbs" aria-hidden="true">
             {%- assign carousel_thumbs = false -%}
 
             {%- if product.images.size > 3 -%}
@@ -140,7 +140,7 @@
             {%- if carousel_thumbs -%}
               </div>
 
-              <div class="carousel__navigation" aria-label="Thumbs carousel navigation" aria-hidden="true">
+              <div class="carousel__navigation carousel__navigation-thumbs" aria-label="Carousel navigation thumbs" aria-hidden="true">
                 <span class="carousel__btn prev" title="Prev thumb">
                   Previous thumb
                   {%- render 'icon-arrow-right' -%}
