@@ -15,6 +15,7 @@
 .product-main__gallery {
   position: relative;
   padding: 0 0 50px;
+  text-align: center;
 }
 
 .product-main__gallery-image {
@@ -48,11 +49,16 @@
 
 .product-main__gallery .carousel__item:last-child {
   min-width: var(--slide-width-mobile);
+  max-width: var(--slide-width-mobile);
 }
 
 .product-main__gallery .carousel__inner {
   padding: 0 var(--horizontal-padding);
   text-align: center;
+}
+
+.product-main__gallery .carousel__item:last-child .carousel__inner {
+  padding-right: var(--horizontal-padding);
 }
 
 .product-main__gallery .carousel__pagination,
@@ -67,21 +73,18 @@
   padding: 0;
 }
 
-.product-main__gallery .carousel__pagination.carousel__pagination--centered,
-.product-main__gallery .carousel__fluid .carousel__pagination.carousel__pagination--centered {
-  justify-content: center;
-}
-
 .product-main__gallery .carousel__pagination .carousel__item {
   min-width: var(--slide-width-mobile-thumb);
+  max-width: var(--slide-width-mobile-thumb);
 }
 
 .product-main__gallery .carousel__pagination .carousel__item:last-child {
   min-width: calc(var(--slide-width-mobile-thumb) - var(--horizontal-padding));
+  max-width: calc(var(--slide-width-mobile-thumb) - var(--horizontal-padding));
 }
 
 .product-main__gallery .carousel__pagination .carousel__inner {
-  padding: 0 var(--horizontal-padding) 0 0;
+  padding: 0 16px 0 0;
   text-align: left;
 }
 
@@ -117,6 +120,17 @@
 .product-main__gallery .carousel__pagination.carousel__thumbs.indent,
 .product-main__gallery .carousel__fluid .carousel__pagination.carousel__thumbs.indent {
   padding: 0 30px;
+}
+
+.product-main__gallery .carousel__pagination.carousel__pagination--centered,
+.product-main__gallery .carousel__fluid .carousel__pagination.carousel__pagination--centered {
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.product-main__gallery .carousel__pagination.carousel__pagination--centered .carousel__dot,
+.product-main__gallery .carousel__fluid .carousel__pagination.carousel__pagination--centered .carousel__dot {
+  margin: 0 8px;
 }
 
 .product-main__gallery .carousel__navigation,
@@ -420,6 +434,23 @@
 }
 
 @media (min-width: 768px) {
+  .product-main__gallery {
+    padding: 0 40px 50px 0;
+  }
+
+  .product-main__wrapper-with-carousel .product-main__gallery {
+    padding-right: 0;
+  }
+
+  .product-main__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-main__wrapper.product-main__wrapper-with-carousel {
+    display: block;
+  }
+
   .product-main__gallery-image {
     max-height: 640px;
   }
@@ -438,10 +469,15 @@
 
   .product-main__gallery .carousel__item:last-child {
     min-width: var(--slide-width);
+    max-width: var(--slide-width);
   }
 
   .product-main__gallery .carousel__inner {
     padding: 0;
+  }
+
+  .product-main__gallery .carousel__item:last-child .carousel__inner {
+    padding-right: 0;
   }
 
   .product-main__gallery .carousel__pagination,
@@ -472,6 +508,7 @@
   .product-main__gallery .carousel__pagination .carousel__item,
   .product-main__gallery .carousel__pagination .carousel__item:last-child {
     min-width: var(--slide-width-thumb);
+    max-width: var(--slide-width-thumb);
   }
 
   .product-main__gallery .carousel__pagination .carousel__item:last-child .carousel__inner,
@@ -486,6 +523,16 @@
 
   .product-main__gallery .carousel__pagination .carousel__item:last-child .carousel__dot {
     margin: 0;
+  }
+
+  .product-main__gallery .carousel__pagination.carousel__pagination--centered,
+  .product-main__gallery .carousel__fluid .carousel__pagination.carousel__pagination--centered {
+    margin: 0;
+  }
+
+  .product-main__gallery .carousel__pagination.carousel__pagination--centered .carousel__dot,
+  .product-main__gallery .carousel__fluid .carousel__pagination.carousel__pagination--centered .carousel__dot {
+    margin: 0 16px 16px 0;
   }
 
   .product-main__gallery .carousel__navigation,
@@ -519,9 +566,8 @@
     padding-bottom: var(--padding-bottom, 24px);
   }
 
-  .product-main__wrapper {
+  .product-main__wrapper.product-main__wrapper-with-carousel {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .product-main__gallery .carousel__wrapper {

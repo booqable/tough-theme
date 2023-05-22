@@ -48,7 +48,7 @@
   class="product-main__container container {% if padding_top != blank or padding_top_mobile != blank %} product-main__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} product-main__container--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
 >
-  <div class="product-main__wrapper">
+  <div class="product-main__wrapper{% if carousel %} product-main__wrapper-with-carousel{%- endif -%}">
     <div class="product-main__gallery">
       {%- if carousel -%}
         <div class="carousel carousel__slide-effect carousel__pause" aria-label="Gallery">
@@ -121,6 +121,7 @@
                   {%- if carousel_thumbs -%}
                     <div class="carousel__item">
                       <div class="carousel__inner">
+                  {%- endif -%}
 
                         <span class="carousel__dot carousel__thumb{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
                           <span class="carousel__dot-wrapper">
@@ -133,6 +134,7 @@
                           </span>
                         </span>
 
+                  {%- if carousel_thumbs -%}
                       </div>
                     </div>
                   {%- endif -%}
@@ -189,7 +191,7 @@
 
 {% schema %}
   {
-    "name": "Details",
+    "name": "Product",
     "tag": "section",
     "class": "product-main",
     "templates": ["product"],

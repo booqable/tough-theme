@@ -399,32 +399,15 @@ class Carousel {
     });
   }
 
-  controls(e) {
+  controls() {
     if (!this.navi && !this.pagi) return false;
 
-    const target = e?.target;
-          // isThumbs = target?.parentElement.classList.contains(this.classes.thumbNav);
+    const clientX = this.wrap.clientWidth,
+          scrollX = this.wrap.scrollWidth,
+          clientY = this.wrap.clientHeight,
+          scrollY = this.wrap.scrollHeight;
 
-          console.log(target);
-          console.log(this.pagi);
-          console.log(this.navi);
-
-    const client = this.wrap.clientWidth,
-          initial = 0;
-
-    let array = [];
-
-    this.items.forEach(item => {
-      const width = item.getBoundingClientRect().width;
-      array.push(width);
-    })
-
-    const sum = array.reduce(
-      (accumulator, current) => accumulator + current,
-      initial
-    );
-
-    if (sum <= client) {
+    if (clientX === scrollX && clientY === scrollY) {
       this.navi?.classList.add(this.modifiers.hidden);
       this.pagi?.classList.add(this.modifiers.hidden);
       if (this.navi?.classList.contains(this.classes.thumbNav)) {
