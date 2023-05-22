@@ -11,6 +11,8 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign show_breadcrumbs      = section.settings.show_breadcrumbs -%}
+{%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
 {%- assign blocks                = section.blocks -%}
 {%- assign carousel              = false -%}
 
@@ -48,6 +50,12 @@
   class="product-main__container container {% if padding_top != blank or padding_top_mobile != blank %} product-main__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} product-main__container--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
 >
+  {%- render 'breadcrumbs',
+    product: product,
+    show: show_breadcrumbs,
+    label: breadcrumbs_label
+  -%}
+
   <div class="product-main__wrapper{% if carousel %} product-main__wrapper-with-carousel{%- endif -%}">
     <div class="product-main__gallery">
       {%- if carousel -%}
@@ -202,6 +210,12 @@
       },
       {
         "type": "text",
+        "id": "breadcrumbs_label",
+        "label": "Breadcrumbs root link label",
+        "default": "Shop all"
+      },
+      {
+        "type": "text",
         "id": "variation_label",
         "label": "Variations label",
         "default": "Variation"
@@ -215,6 +229,12 @@
       {
         "type": "header",
         "content": "General settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show breadcrumbs"
       },
       {
         "type": "text",

@@ -32,8 +32,17 @@
         "returns"
       ],
       "settings": {
-        "variation_label": "Variant",
-        "shipping_label": "Free shipping over"
+        "behavior": "multiple",
+        "breadcrumbs_label": "Shop all",
+        "padding_top": 24,
+        "padding_top_mobile": 24,
+        "padding_bottom": 24,
+        "padding_bottom_mobile": 24,
+        "shipping_label": "Free shipping over",
+        "shipping_value": "$50",
+        "show_breadcrumbs": true,
+        "timer": 5,
+        "variation_label": "Variant"
       },
       "disabled": null
     },
