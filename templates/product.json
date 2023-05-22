@@ -17,10 +17,51 @@
       "block_order": [],
       "settings": {},
       "disabled": null
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123455": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123455",
+        "product_123452"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "limit": 6,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom": 80,
+        "padding_bottom_mobile": 40,
+        "tag": "Recommed products",
+        "title": "Rented together with",
+        "timer": 5,
+        "view_all": "View all"
+      },
+      "disabled": null
     }
   },
   "order": [
     "date-picker",
-    "product-page"
+    "product-page",
+    "products"
   ]
 }

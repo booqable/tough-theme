@@ -27,7 +27,6 @@
   font-weight: var(--font-weight-bold, 700);
   color: var(--color-primary-foreground, #0B1A26);
   margin-bottom: 16px;
-  max-width: 450px;
 }
 
 .products__show {
