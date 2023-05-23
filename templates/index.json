@@ -1,8 +1,8 @@
 {
   "name": "Home",
   "sections": {
-    "hero": {
-      "type": "hero",
+    "image-banner": {
+      "type": "image-banner",
       "blocks": {
         "slide": {
           "type": "slide",
@@ -342,7 +342,7 @@
     }
   },
   "order": [
-    "hero",
+    "image-banner",
     "date-picker",
     "partners",
     "collections",
