@@ -4,8 +4,8 @@
 {%- assign title                 = product.name -%}
 {%- assign description           = product.description -%}
 {%- assign variation_label       = section.settings.variation_label -%}
-{%- assign shipping_label        = section.settings.shipping_label -%}
-{%- assign shipping_value        = section.settings.shipping_value -%}
+{%- assign message_label         = section.settings.message_label -%}
+{%- assign message_value         = section.settings.message_value -%}
 {%- assign timer                 = section.settings.timer -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -182,11 +182,11 @@
 
         {{- product_button -}}
 
-        {%- if shipping_label != blank and shipping_value != blank -%}
+        {%- if message_label != blank and message_value != blank -%}
           <div class="product-main__shipping-info">
-            <span class="product-main__shipping-label">{{- shipping_label -}}</span>
+            <span class="product-main__shipping-label">{{- message_label -}}</span>
             &nbsp;
-            <span class="product-main__shipping-value">{{- shipping_value -}}</span>
+            <span class="product-main__shipping-value">{{- message_value -}}</span>
           </div>
         {%- endif -%}
 
@@ -222,8 +222,8 @@
       },
       {
         "type": "text",
-        "id": "shipping_label",
-        "label": "Free shipping label",
+        "id": "message_label",
+        "label": "Message label",
         "default": "Free shipping over"
       },
       {
@@ -238,8 +238,8 @@
       },
       {
         "type": "text",
-        "id": "shipping_value",
-        "label": "Free shipping value",
+        "id": "message_value",
+        "label": "Message value",
         "default": "$50"
       },
       {

@@ -121,7 +121,7 @@ class Carousel {
 
   // autorotate slides of carousel
   autoRotate(e, time) {
-    if (!time || time === 0) return false;
+    if (!time) return false;
 
     this.interval = setInterval(() => {
       this.navigation(e, time);
