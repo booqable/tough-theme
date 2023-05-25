@@ -1,85 +1,49 @@
 .collection-page {
-  max-width: calc(var(--max-width) + var(--horizontal-padding) * 2 + 10px);
   width: 100%;
-
-  margin: 16px auto;
-  padding: 0 var(--horizontal-padding);
 }
 
-.collection-page__wrapper--with-sidebar {
+.collection-page__wrapper--padding-top {
+  padding-top: var(--padding-top-mobile, 24px);
+}
+
+.collection-page__wrapper--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 24px);
+}
+
+.collection-page__products {
   display: grid;
-  grid-template-columns: 1fr;
-}
-
-.collection-page__sidebar-navigation {
-  display: none;
-}
-
-.collection-page__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 24px;
-}
-
-.collection-page__title {
-  font-size: 36px;
-  line-height: 44px;
-
-  font-weight: var(--font-weight-semibold);
-
-  color: var(--color-primary-foreground);
-}
-
-.collection-page__title .skeleton {
-  width: 175px;
-
-  padding: 16px 0;
-}
-
-.collection-page__items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
   gap: 18px;
   justify-content: center;
+  padding: 0 0 44px;
 }
 
-.collection-page__items .product {
-  max-width: none;
+.collection-page .product-card {
+  min-width: auto;
 }
 
-@media (min-width: 576px) {
-  .collection-page__sidebar-navigation {
-    display: block;
-  }
-
-  .collection-page__items .product {
-    max-width: 320px;
-  }
-
-  .collection-page__sidebar-navigation--mobile {
-    display: none;
-  }
-
-  .collection-page__items {
+@media (min-width: 768px) {
+  .collection-page__products {
     justify-content: start;
-
     gap: 24px;
   }
+}
 
-  .collection-page__wrapper--with-sidebar {
-    grid-template-columns: 220px 1fr;
-    gap: 20px;
+@media (min-width: 992px) {
+  .collection-page__wrapper--padding-top {
+    padding-top: var(--padding-top, 24px);
+  }
+
+  .collection-page__wrapper--padding-bottom {
+    padding-bottom: var(--padding-bottom, 24px);
   }
 }
 
-@media (min-width: 810px) {
-  .collection-page__items {
-    gap: 32px;
-  }
-
-  .collection-page__wrapper--with-sidebar {
-    grid-template-columns: 280px 1fr;
+@media (min-width: 1080px) {
+  .collection-page__products {
+    gap: 20px 32px;
+    grid-template-columns: repeat(var(--grid-element, 3), minmax(210px, 1fr));
   }
 }
+
+

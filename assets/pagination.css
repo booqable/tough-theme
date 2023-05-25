@@ -1,83 +1,78 @@
 .pagination {
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: stretch;
   margin: 20px auto;
-}
-
-.pagination i {
-  font-size: 14px;
 }
 
 .pagination span {
   text-align: center;
-
-  border: 1px solid var(--color-border);
-
+  border: 1px solid var(--color-border-secondary, #E1E4E8);
   cursor: pointer;
+  min-width: 40px;
 }
 
 .pagination span:not(:first-child) {
   margin-left: -1px;
 }
 
+.pagination .deco,
+.pagination .current,
 .pagination span a {
-  display: inline-block;
-
-  color: var(--color-primary-foreground);
-
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary-foreground, #4E5D78);
   padding: 10px 15px;
-
-  font-weight: var(--font-weight-semibold);
-
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold, 600);
   text-decoration: none;
+  height: 100%;
+}
+
+.pagination .deco,
+.pagination .current {
+  position: relative;
+  background-color: var(--color-accent-background, #F4B841);
+  color: var(--color-accent-foreground, #0B1A26);
+  z-index: 1;
+}
+
+.pagination .page:not(.current),
+.pagination .prev:not([data-enabled="false"]),
+.pagination .next:not([data-enabled="false"]) {
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease);
 }
 
 .pagination .page:not(.current):hover,
 .pagination .prev:not([data-enabled="false"]):hover,
 .pagination .next:not([data-enabled="false"]):hover {
-  box-shadow: inset 0px 0px 400px 110px rgba(0, 0, 0, 0.12);
+  background-color: var(--color-accent-background-hover, #E5AD3D);
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
-.pagination .current {
-  position: relative;
-
-  background-color: var(--color-accent-background);
-  border-color: var(--color-accent-background);
-
-  color: var(--color-accent-foreground);
-
-  z-index: 1;
-}
-
-.pagination .prev {
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
-
-.pagination .next {
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+.pagination .page:not(.current):active,
+.pagination .prev:not([data-enabled="false"]):active,
+.pagination .next:not([data-enabled="false"]):active {
+  background-color: var(--color-accent-background-active, #D6A239);
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
 .pagination span[data-enabled="false"],
 .pagination .deco,
 .pagination .current {
   cursor: initial;
-
   pointer-events: none;
 }
 
-.pagination .deco,
-.pagination .current {
-  padding: 10px 15px;
+.pagination path {
+  fill: var(--color-secondary-foreground, #4E5D78);
 }
 
-.pagination .deco {
-  color: var(--color-primary-foreground)
+.pagination .prev[data-enabled="true"] a:hover path,
+.pagination .next[data-enabled="true"] a:hover path {
+  fill: var(--color-accent-foreground, #0B1A26);
 }
 
-.pagination span[data-enabled="false"] a {
-  color: var(--color-placeholder);
+.pagination .prev svg {
+  transform: rotate(180deg);
 }

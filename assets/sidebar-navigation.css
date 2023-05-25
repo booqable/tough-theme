@@ -183,7 +183,7 @@
   padding-left: 12px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   #sidebar-toggle:checked ~ .sidebar-navigation {
     visibility: visible;
     pointer-events: all;

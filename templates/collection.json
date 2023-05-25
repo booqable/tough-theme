@@ -24,11 +24,15 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "show_collection_name": true,
-        "heading": "No products",
-        "text": "Unfortunately, we couldn’t find any products in this collection.",
-        "button_label": "Browse all products",
-        "sidebar_toggle": "Menu"
+        "limit": 6,
+        "grid": "three",
+        "sticky_sidebar": true,
+        "padding_top": 24,
+        "padding_top_mobile": 24,
+        "padding_bottom": 24,
+        "padding_bottom_mobile": 24,
+        "message": "Sorry, there are no products in this collection yet",
+        "sidebar_toggle": "Filters"
       },
       "disabled": null
     }

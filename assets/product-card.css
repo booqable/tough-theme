@@ -83,6 +83,37 @@ bq-product-price {
   font-weight: var(--font-weight-semibold, 600);
 }
 
+.product-card__price-separator {
+  padding: 0 3px;
+}
+
+bq-product-availability {
+  color: var(--color-white, #FFFFFF);
+  font-size: 14px;
+  line-height: var(--line-height-xs, 1);
+  font-weight: var(--font-weight-medium, 500);
+}
+
+bq-product-availability::part(available) {
+  padding: 5px 13px;
+  margin: 0 0 6px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: var(--color-green, #8fcc40);
+  display: inline-block;
+  vertical-align: top;
+}
+
+bq-product-availability::part(available) {
+  padding: 5px 13px;
+  margin: 0 0 6px;
+  border-radius: 50px;
+  overflow: hidden;
+  background: var(--color-green, #8fcc40);
+  display: inline-block;
+  vertical-align: top;
+}
+
 @media (min-width: 992px) {
   .product-card {
     min-width: 285px;
