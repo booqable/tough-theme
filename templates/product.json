@@ -1,26 +1,114 @@
 {
   "name": "Product",
   "sections": {
-    "product-page": {
-      "type": "product-page",
+    "hero": {
+      "type": "hero",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "variation_label": "Variation",
-        "description_label": "Description"
+        "margin_top": -20,
+        "margin_top_mobile": -20,
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
+        "padding_top": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom": 0,
+        "padding_bottom_mobile": 0,
+        "show_datepicker": true,
+        "show_text": false,
+        "show_bg": false
       },
       "disabled": null
     },
-    "date-picker": {
-      "type": "date-picker",
-      "blocks": {},
-      "block_order": [],
-      "settings": {},
+    "product-page": {
+      "type": "product-page",
+      "blocks": {
+        "details": {
+          "type": "details",
+          "settings": {
+            "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        },
+        "shipping": {
+          "type": "shipping",
+          "settings": {
+            "shipping": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        },
+        "returns": {
+          "type": "returns",
+          "settings": {
+            "returns": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "details",
+        "shipping",
+        "returns"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "breadcrumbs_label": "Shop all",
+        "padding_top": 24,
+        "padding_top_mobile": 24,
+        "padding_bottom": 24,
+        "padding_bottom_mobile": 24,
+        "message_label": "Free shipping over",
+        "message_value": "$50",
+        "show_breadcrumbs": true,
+        "timer": 5,
+        "variation_label": "Variant"
+      },
+      "disabled": null
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123455": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123455",
+        "product_123452"
+      ],
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "limit": 6,
+        "show_navigation": true,
+        "show_pagination": true,
+        "padding_top": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom": 80,
+        "padding_bottom_mobile": 40,
+        "tag": "Recommended products",
+        "title": "Rented together with",
+        "timer": 5,
+        "view_all": "View all"
+      },
       "disabled": null
     }
   },
   "order": [
-    "date-picker",
-    "product-page"
+    "hero",
+    "product-page",
+    "products"
   ]
 }

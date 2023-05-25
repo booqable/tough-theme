@@ -23,7 +23,9 @@
   --color-backdrop: #0c2747b3;
   --color-typo: #0c2747;
   --color-black: #0B1A26;
+  --color-gray: #868686;
   --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
 
   /* Font weights */
   --font-weight-light: 300;

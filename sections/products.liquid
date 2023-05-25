@@ -99,7 +99,7 @@
                 <div class="carousel__item">
                   <div class="carousel__inner">
               {%- endif -%}
-                    {%- include 'product-card' -%}
+                    {%- render 'product-card', product: product -%}
               {%- if carousel -%}
                   </div>
                 </div>
@@ -113,11 +113,11 @@
             <div class="carousel__navigation hidden" aria-label="Carousel navigation" aria-hidden="true">
               <span class="carousel__btn prev" title="Prev slide">
                 Previous slide
-                {%- include 'icon-arrow-right-full' -%}
+                {%- render 'icon-arrow-right-full' -%}
               </span>
               <span class="carousel__btn next" title="Next slide">
                 Next slide
-                {%- include 'icon-arrow-right-full' -%}
+                {%- render 'icon-arrow-right-full' -%}
               </span>
             </div>
           {%- endif -%}

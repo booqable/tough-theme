@@ -1,108 +1,111 @@
 .date-location {
-  max-width: calc(var(--max-width) + var(--horizontal-padding) * 2);
   width: 100%;
-
-  margin: 0 auto;
-  padding: 16px var(--horizontal-padding);
+  background: var(--color-primary-foreground, #0B1A26);
 }
 
+.date-location__container--margin-top {
+  margin-top: var(--margin-top-mobile, 0);
+}
+
+.date-location__container--margin-bottom {
+  margin-bottom: var(--margin-bottom-mobile, 0);
+}
+
+.date-location__container--padding-top {
+  padding-top: var(--padding-top-mobile, 16px);
+}
+
+.date-location__container--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 16px);
+}
+
+.hero bq-date-picker::part(cleanstate),
 .date-location bq-date-picker::part(cleanstate) {
   display: flex;
   align-items: center;
-
   text-align: left;
-
-  padding: 12px 24px;
-
-  border-radius: var(--border-radius-sm);
-
+  padding: 11px 22px;
   cursor: pointer;
-
   min-height: 56px;
 }
 
+.hero bq-date-picker::part(calendar-icon),
 .date-location bq-date-picker::part(calendar-icon) {
   max-width: 24px;
   max-height: 24px;
-
   width: 100%;
-
-  margin-right: 16px;
-
-  color: var(--color-accent-foreground);
+  margin-right: 14px;
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
+.hero bq-date-picker::part(chevron-icon),
 .date-location bq-date-picker::part(chevron-icon) {
   max-height: 24px;
   max-width: 12px;
-
   width: 100%;
-
-  color: var(--color-accent-foreground);
+  margin-right: 9px;
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
+.hero bq-date-picker::part(cleanstate-labels),
 .date-location bq-date-picker::part(cleanstate-labels) {
   width: 100%;
-
   margin-right: 16px;
 }
 
+.hero bq-date-picker::part(cleanstate-title),
 .date-location bq-date-picker::part(cleanstate-title) {
   font-size: 18px;
-  line-height: 28px;
-
+  line-height: 1.2;
   margin: 0;
-
-  font-weight: var(--font-weight-semibold);
-
-  color: var(--color-accent-foreground);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
+.hero bq-date-picker::part(cleanstate-description),
 .date-location bq-date-picker::part(cleanstate-description) {
   font-size: 16px;
-  line-height: 24px;
-
+  line-height: 1.5;
   margin: 0;
-
-  color: var(--color-accent-foreground);
+  color: var(--color-accent-foreground, #0B1A26);
 }
 
+.hero bq-date-picker::part(wrapper),
 .date-location bq-date-picker::part(wrapper) {
   display: grid;
   align-items: center;
-
   grid-template-columns: repeat(2, 1fr);
-
-  background-color: var(--color-white);
-
+  background-color: var(--color-accent-foreground, #0B1A26);
+  border: 1px solid var(--color-accent-background, #F4B841);
   padding: 8px 0;
-
-  box-shadow: 0 1px 2px rgba(33, 59, 71, 0.12),
-      0 4px 12px rgba(33, 59, 71, 0.12);
-
-  border-radius: var(--border-radius-sm);
 }
 
+.hero bq-date-picker::part(section),
 .date-location bq-date-picker::part(section) {
   cursor: pointer;
-
   padding: 0 12px;
 }
 
+.hero bq-date-picker::part(from-section),
+.hero bq-date-picker::part(pickup-section),
 .date-location bq-date-picker::part(from-section),
 .date-location bq-date-picker::part(pickup-section) {
-  border-right: 1px solid #DDE1E3;
+  border-right: 1px solid rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
 }
 
+.hero bq-date-picker::part(from-section),
+.hero bq-date-picker::part(pickup-section),
+.hero bq-date-picker::part(till-section),
+.hero bq-date-picker::part(return-section),
 .date-location bq-date-picker::part(from-section),
 .date-location bq-date-picker::part(pickup-section),
 .date-location bq-date-picker::part(till-section),
 .date-location bq-date-picker::part(return-section) {
   text-align: left;
-
   padding: 0 12px;
 }
 
+.hero bq-date-picker::part(pickup-section),
 .date-location bq-date-picker::part(pickup-section) {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -110,6 +113,7 @@
   grid-row-end: 3;
 }
 
+.hero bq-date-picker::part(return-section),
 .date-location bq-date-picker::part(return-section) {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -117,66 +121,70 @@
   grid-row-end: 3;
 }
 
+.hero bq-date-picker::part(from-label),
+.hero bq-date-picker::part(till-label),
+.hero bq-date-picker::part(pickup-label),
+.hero bq-date-picker::part(return-label),
 .date-location bq-date-picker::part(from-label),
 .date-location bq-date-picker::part(till-label),
 .date-location bq-date-picker::part(pickup-label),
 .date-location bq-date-picker::part(return-label) {
   font-size: 16px;
   line-height: 24px;
-
-  font-weight: var(--font-weight-semibold);
-
-  color: var(--color-typo);
-
+  color: rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
+  font-weight: var(--font-weight-regular, 400);
   margin: 0;
 }
 
+.hero bq-date-picker::part(from-value),
+.hero bq-date-picker::part(till-value),
+.hero bq-date-picker::part(pickup-value),
+.hero bq-date-picker::part(return-value),
 .date-location bq-date-picker::part(from-value),
 .date-location bq-date-picker::part(till-value),
 .date-location bq-date-picker::part(pickup-value),
 .date-location bq-date-picker::part(return-value) {
   font-size: 16px;
   line-height: 24px;
-
-  font-weight: var(--font-weight-regular);
-
-  color: var(--color-typo);
-
+  color: var(--color-primary-background, #FFFFFF);
+  font-weight: var(--font-weight-semibold, 600);
   margin: 0;
 }
 
-.date-location bq-date-picker::part(from-value),
-.date-location bq-date-picker::part(till-value) {
-  font-weight: var(--font-weight-semibold);
-}
-
+.hero bq-date-picker::part(from-value--empty),
+.hero bq-date-picker::part(till-value--empty),
+.hero bq-date-picker::part(pickup-value--empty),
+.hero bq-date-picker::part(return-value--empty),
 .date-location bq-date-picker::part(from-value--empty),
 .date-location bq-date-picker::part(till-value--empty),
 .date-location bq-date-picker::part(pickup-value--empty),
 .date-location bq-date-picker::part(return-value--empty) {
   font-size: 16px;
   line-height: 24px;
-
-  font-weight: var(--font-weight-regular);
-
-  color: var(--color-placeholder);
-
+  font-weight: var(--font-weight-regular, 400);
+  color: rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
   margin: 0;
 }
 
 @media (min-width: 820px) {
+  .hero bq-date-picker::part(wrapper),
   .date-location bq-date-picker::part(wrapper) {
-    padding: 16px;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    background-color: var(--color-white);
+    padding: 16px 0;
   }
 
+  .hero bq-date-picker::part(section),
+  .date-location bq-date-picker::part(section) {
+    display: flex;
+    align-items: center;
+    padding: 9px 24px;
+  }
+
+  .hero bq-date-picker::part(has-locations),
   .date-location bq-date-picker::part(has-locations) {
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .hero bq-date-picker::part(pickup-section),
   .date-location bq-date-picker::part(pickup-section) {
     grid-column-start: initial;
     grid-column-end: initial;
@@ -184,6 +192,7 @@
     grid-row-end: initial;
   }
 
+  .hero bq-date-picker::part(return-section),
   .date-location bq-date-picker::part(return-section) {
     grid-column-start: initial;
     grid-column-end: initial;
@@ -191,25 +200,37 @@
     grid-row-end: initial;
   }
 
-  .date-location bq-date-picker::part(has-locations)::part(till-section) {
-    border-right: 1px solid #DDE1E3;
-  }
-
+  .hero bq-date-picker::part(from-label),
+  .hero bq-date-picker::part(till-label),
+  .hero bq-date-picker::part(pickup-label),
+  .hero bq-date-picker::part(return-label),
   .date-location bq-date-picker::part(from-label),
   .date-location bq-date-picker::part(till-label),
   .date-location bq-date-picker::part(pickup-label),
   .date-location bq-date-picker::part(return-label) {
-    display: block;
+    margin-right: 16px;
   }
 
-  .date-location bq-date-picker::part(from-value),
-  .date-location bq-date-picker::part(till-value),
-  .date-location bq-date-picker::part(pickup-value),
-  .date-location bq-date-picker::part(return-value) {
-    font-weight: var(--font-weight-regular);
+  .hero bq-date-picker::part(till-section),
+  .date-location bq-date-picker::part(till-section) {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 992px) {
+  .date-location__container--margin-top {
+    margin-top: var(--margin-top, 0);
   }
 
-  .date-location bq-date-picker::part(section) {
-    padding: 0 24px;
+  .date-location__container--margin-bottom {
+    margin-bottom: var(--margin-bottom, 0);
+  }
+
+  .date-location__container--padding-top {
+    padding-top: var(--padding-top, 16px);
+  }
+
+  .date-location__container--padding-bottom {
+    padding-bottom: var(--padding-bottom, 16px);
   }
 }
