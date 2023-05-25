@@ -1,0 +1,66 @@
+{%- if show -%}
+  {% style %}
+    .breadcrumbs {
+      padding: 0 0 26px;
+      font-size: 14px;
+      line-height: var(--line-height-xs, 1);
+      color: var(--color-third-foreground, #B4B6B8);
+    }
+
+    .breadcrumbs path {
+      fill: var(--color-primary-foreground, #0B1A26);
+    }
+
+    .breadcrumbs__separator {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 12px;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--color-primary-foreground, #0B1A26);
+    }
+
+    .breadcrumbs__name {
+      color: var(--color-accent-background, #F4B841);
+      font-weight: var(--font-weight-semibold, 600);
+      display: inline-block;
+      vertical-align: top;
+    }
+  {% endstyle %}
+
+  {%- assign collections = product.collections -%}
+  {%- assign first = collections | first -%}
+
+  {%- capture separator --%}
+    <span class="breadcrumbs__separator" aria-hidden="true">
+      {%- render 'icon-arrow-right' -%}
+    </span>
+  {%- endcapture --%}
+
+  <nav
+    class="breadcrumbs"
+    role="navigation"
+    aria-label="breadcrumbs">
+    <div class="breadcrumbs__container">
+      <a href="{{ routes.all_products_collection_url }}" class="breadcrumbs__link" title="{{- label -}}">
+        {{- label -}}
+      </a>
+
+      {%- if first.url -%}
+        {{- separator -}}
+
+        <a href="{{ first.url }}" class="breadcrumbs__link" title="{{- first.name -}}">
+          {{- first.name -}}
+        </a>
+      {%- endif -%}
+
+      {{- separator -}}
+
+      <span class="breadcrumbs__name" title="{{- product.name -}}">
+        {{- product.name -}}
+      </span>
+    </div>
+  </nav>
+{%- endif -%}
+

@@ -78,6 +78,6 @@
 }
 
 .accordion__trigger:checked ~ .accordion__content {
-  transition: max-height 1s var(--transition-function-ease);
+  transition: max-height 1s var(--transition-function-ease-in-out);
   max-height: 1000px;
 }
