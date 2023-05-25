@@ -52,35 +52,13 @@
     {%- endif -%}
 
     <div class="collection-page__inner">
-      <div class="collection-page__header">
-        <div class="collection-page__sorting sorting">
-          <input type="checkbox" id="sorting-opener" style="display: none;">
-          <label for="sorting-opener" class="sorting__opener">
-            {%- if sorting_label != blank -%}
-              {{- sorting_label -}}
-            {%- else -%}
-              Sort by
-            {%- endif -%}
-
-            {%- include 'icon-arrow-right' -%}
-          </label>
-
-          <ul class="sorting__options-list" style="display: none;">
-            <li class="sorting__options-item">
-              <span class="sorting__option forward">A - Z</span>
-            </li>
-            <li class="sorting__options-item">
-              <span class="sorting__option backward">Z - A</span>
-            </li>
-          </ul>
-        </div>
-
-        {%- if blocks.size > 0 -%}
+      {%- if blocks.size > 0 -%}
+        <div class="collection-page__header">
           <div class="collection-page__sidebar-navigation--mobile">
             {%- render "sidebar-navigation", menus: blocks, sticky: sticky_sidebar, mode: "mobile", toggle: sidebar_toggle -%}
           </div>
-        {%- endif -%}
-      </div>
+        </div>
+      {%- endif -%}
 
       {% if collection.products_count > 0 %}
         {% assign products = collection.products %}
@@ -148,7 +126,7 @@
         "type": "text",
         "id": "message",
         "label": "Message for empty collection",
-        "default": "Sorry, there are not products in this collection yet",
+        "default": "Sorry, there are no products in this collection yet",
         "info": "Note: This message appears when the collection exist, but doesn't have any products"
       },
       {
