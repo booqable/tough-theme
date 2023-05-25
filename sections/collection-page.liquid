@@ -1,23 +1,13 @@
 <link rel="preload" href="{{ 'collection-page.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 {{ "product-card.css" | asset_url | stylesheet_tag }}
 
-{% if preview %}
-  {% assign current_url = request_fullpath | strip %}
-{% else %}
-  {% assign current_url = request_path | strip %}
-{% endif %}
-
 {%- assign grid                  = section.settings.grid -%}
-{%- assign sticky_sidebar        = section.settings.sticky_sidebar -%}
-{%- assign sidebar_toggle        = section.settings.sidebar_toggle -%}
-{%- assign sorting_label         = section.settings.sorting_label -%}
 {%- assign message               = section.settings.message -%}
 {%- assign limit                 = section.settings.limit -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign blocks                = section.blocks -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -44,47 +34,29 @@
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="collection-page__wrapper{% if padding_top != blank or padding_top_mobile != blank %} collection-page__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} collection-page__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
-  <div class="collection-page__container container{% if blocks.size > 0 %} collection-page__container--with-sidebar{%- endif -%}">
-    {%- if blocks.size > 0 -%}
-      <div class="collection-page__sidebar-navigation">
-        {% render "sidebar-navigation", menus: blocks, sticky: sticky_sidebar, mode: "desktop", current_url: current_url %}
-      </div>
-    {%- endif -%}
+  <div class="collection-page__container container">
+    {% if collection.products_count > 0 %}
+      {% assign products = collection.products %}
 
-    <div class="collection-page__inner">
-      {%- if blocks.size > 0 -%}
-        <div class="collection-page__header">
-          <div class="collection-page__sidebar-navigation--mobile">
-            {%- render "sidebar-navigation", menus: blocks, sticky: sticky_sidebar, mode: "mobile", toggle: sidebar_toggle -%}
-          </div>
+      {% paginate products by limit %}
+        <div class="collection-page__products">
+          {% for product in products %}
+            {%- render 'product-card', product: product -%}
+          {% endfor %}
         </div>
-      {%- endif -%}
 
-      {% if collection.products_count > 0 %}
-        {% assign products = collection.products %}
-
-        {% paginate products by limit %}
-          <div class="collection-page__products">
-            {% for product in products %}
-              {%- render 'product-card', product: product -%}
-            {% endfor %}
+        {% if paginate.pages > 1 %}
+          <div class="collection-page__pagination">
+            {%- include "pagination" -%}
           </div>
+        {% endif %}
+      {% endpaginate %}
 
-          {% if paginate.pages > 1 %}
-            <div class="collection-page__pagination">
-              {%- include "pagination" -%}
-            </div>
-          {% endif %}
-        {% endpaginate %}
-
-      {% else %}
-        <p>{{- message -}}</p>
-      {% endif %}
-    </div>
+    {% else %}
+      <p>{{- message -}}</p>
+    {% endif %}
   </div>
 </div>
-
-<script src="{{ "products-sorting.js" | asset_url }}" defer></script>
 
 {% schema %}
   {
@@ -93,22 +65,6 @@
     "class": "collection-page",
     "templates": ["collection"],
     "settings": [
-      {
-        "type": "header",
-        "content": "Translations"
-      },
-      {
-        "type": "text",
-        "id": "sidebar_toggle",
-        "label": "Toggle opener label",
-        "default": "Filters"
-      },
-      {
-        "type": "text",
-        "id": "sorting_label",
-        "label": "Sorting label",
-        "default": "Sort by"
-      },
       {
         "type": "header",
         "content": "General settings"
@@ -128,16 +84,6 @@
         "label": "Message for empty collection",
         "default": "Sorry, there are no products in this collection yet",
         "info": "Note: This message appears when the collection exist, but doesn't have any products"
-      },
-      {
-        "type": "header",
-        "content": "Sidebar"
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_sidebar",
-        "default": true,
-        "label": "Sticky sidebar while scrolling page"
       },
       {
         "type": "header",
@@ -200,25 +146,6 @@
         "info": "Note: Use positive numbers only"
       }
     ],
-    "blocks": [
-      {
-        "type": "sidebar-menu",
-        "name": "Menu",
-        "settings": [
-          {
-            "id": "title",
-            "label": "Title",
-            "type": "text"
-          },
-          {
-            "id": "menu",
-            "label": "Menu",
-            "type": "menu"
-          }
-        ]
-      }
-    ],
-    "max_blocks": 10,
     "important": true,
     "unique": true
   }
