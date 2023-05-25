@@ -1,92 +1,380 @@
-{{ "product-page.css" | asset_url | stylesheet_tag }}
-{{ "carousels.css" | asset_url | stylesheet_tag }}
+<link rel="preload" href="{{ 'product-page.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ 'accordion.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-{% if canonical_url contains "/1?" or canonical_url contains "/1#" %}
-  {% include "product-page-preview" %}
-{% else %}
-  <div class="product-gallery">
-    <div class="product-gallery__preview carousel carousel--snap-center">
-      <div class="product-gallery__preview-inner carousel__inner infinite-scroll">
-        {% for image in product.images %}
-          <div class="product-gallery__preview-item carousel__item">
-            {{ image.url | image_tag:
-              class: 'lazyload',
-              widths: '600, 700, 800',
-              sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px',
-            }}
+{%- assign title                 = product.name -%}
+{%- assign description           = product.description -%}
+{%- assign variation_label       = section.settings.variation_label -%}
+{%- assign message_label         = section.settings.message_label -%}
+{%- assign message_value         = section.settings.message_value -%}
+{%- assign timer                 = section.settings.timer -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign show_breadcrumbs      = section.settings.show_breadcrumbs -%}
+{%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
+{%- assign blocks                = section.blocks -%}
+{%- assign carousel              = false -%}
+
+{%- if product.images.size > 1 -%}
+  <link rel="preload" href="{{ 'carousel.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  {%- assign carousel = true -%}
+{%- endif -%}
+
+{% comment %} CSS variables start {% endcomment %}
+{%- capture variables -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+  {%- if ui_color != blank -%}
+    --ui-color: {{ ui_color }};
+  {%- endif -%}
+  {%- if carousel -%}
+    --slide-width: 100%;
+    --slide-width-mobile: 100%;
+  {%- endif -%}
+{%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
+<div
+  class="product-main__container container {% if padding_top != blank or padding_top_mobile != blank %} product-main__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} product-main__container--padding-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  {%- render 'breadcrumbs',
+    product: product,
+    show: show_breadcrumbs,
+    label: breadcrumbs_label
+  -%}
+
+  <div class="product-main__wrapper{% if carousel %} product-main__wrapper-with-carousel{%- endif -%}">
+    <div class="product-main__gallery">
+      {%- if carousel -%}
+        <div class="carousel carousel__slide-effect carousel__pause" aria-label="Gallery">
+          <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+          <div class="carousel__wrapper">
+      {%- endif -%}
+            {%- for image in product.images -%}
+              {%- assign index = forloop.index -%}
+
+              {%- if carousel -%}
+                <div class="carousel__item">
+                  <div class="carousel__inner">
+              {%- endif -%}
+                    <a class="product-main__modal-opener" href="#popup-{{- index -}}">
+                      {{ image.url | image_tag:
+                        class: 'product-main__gallery-image lazyload',
+                        widths: '600, 700, 800',
+                        sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px',
+                      }}
+                      <span class="product-main__zoom-in" style="display: none;">
+                        {%- render 'icon-zoom-in' -%}
+                      </span>
+                    </a>
+
+                    <div id="popup-{{- index -}}" class="product-main__modal" style="display: none;">
+                      <a class="product-main__modal-close" href="#!"></a>
+                      <div class="product-main__popup">
+                        <a class="product-main__modal-close" href="#!">&times;</a>
+                        {{ image.url | image_tag:
+                          class: 'product-main__popup-image lazyload',
+                          widths: '600, 700, 800, 1000',
+                          sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px, 1000px',
+                        }}
+                      </div>
+                    </div>
+              {%- if carousel -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+
+      {%- if carousel -%}
           </div>
-        {% endfor %}
-      </div>
-      {% if product.images.size > 1 %}
-        <div class="carousel__controls">
-          <div class="carousel__control prev">
-            <i class="fa-light fa-arrow-left"></i>
-          </div>
-          <div class="carousel__control next">
-            <i class="fa-light fa-arrow-right"></i>
+
+          <div class="carousel__pagination{% if product.images.size <= 3 %} carousel__pagination--centered{% else %} carousel carousel__thumbs{%- endif -%}" aria-label="Carousel thumbs" aria-hidden="true">
+            {%- assign carousel_thumbs = false -%}
+
+            {%- if product.images.size > 3 -%}
+              {%- assign carousel_thumbs = true -%}
+
+              {% comment %} CSS variables start {% endcomment %}
+              {%- capture thumbs_variables -%}
+                  --slide-width-thumb: 96px;
+                  --slide-width-mobile-thumb: 96px;
+              {%- endcapture -%}
+              {% comment %} CSS variables end {% endcomment %}
+
+            {%- endif -%}
+
+            {%- if carousel_thumbs -%}
+              <input class="carousel__timer" type="hidden" name="hidden" value="0">
+              <div class="carousel__wrapper" style="{{- thumbs_variables | escape -}}">
+            {%- endif -%}
+
+                {%- for image in product.images -%}
+                  {%- assign first = forloop.first -%}
+                  {%- assign index = forloop.index -%}
+                  {%- assign focal = image.coordinates -%}
+
+                  {%- if carousel_thumbs -%}
+                    <div class="carousel__item">
+                      <div class="carousel__inner">
+                  {%- endif -%}
+
+                        <span class="carousel__dot carousel__thumb{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+                          <span class="carousel__dot-wrapper">
+                            {{ image.url | image_tag:
+                              class: 'carousel__dot-image',
+                              loading: 'lazy',
+                              focal: focal,
+                              widths: '150'
+                            }}
+                          </span>
+                        </span>
+
+                  {%- if carousel_thumbs -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- if carousel_thumbs -%}
+              </div>
+
+              <div class="carousel__navigation carousel__navigation-thumbs" aria-label="Carousel navigation thumbs" aria-hidden="true">
+                <span class="carousel__btn prev" title="Prev thumb">
+                  Previous thumb
+                  {%- render 'icon-arrow-right' -%}
+                </span>
+                <span class="carousel__btn next" title="Next thumb">
+                  Next thumb
+                  {%- render 'icon-arrow-right' -%}
+                </span>
+              </div>
+            {%- endif -%}
           </div>
         </div>
-      {% endif %}
+      {%- endif -%}
+
     </div>
-    {% if product.images.size > 1 %}
-    <div class="product-gallery__items carousel carousel--snap-center">
-      <div class="carousel__inner">
-        {% for image in product.images %}
-          {% assign focal = image.coordinates %}
-          <div class="product-gallery__item-container carousel__item" data-index="{{ forloop.index0 }}">
-            {{ image.url | image_tag:
-              loading: 'lazy',
-              focal: focal,
-              widths: '150'
-            }}
+
+    <div class="product-main__info">
+        <h1 class="product-main__title">{{- title -}}</h1>
+
+        {%- if description != blank -%}
+          <div class="product-main__description">
+            {{- description -}}
           </div>
-        {% endfor %}
-      </div>
+        {%- endif -%}
+
+        {%- if product.variants.size > 1 -%}
+          <div class="product-main__variation-label">{{- variation_label -}}</div>
+        {%- endif -%}
+
+        {{- product_button -}}
+
+        {%- if message_label != blank and message_value != blank -%}
+          <div class="product-main__shipping-info">
+            <span class="product-main__shipping-label">{{- message_label -}}</span>
+            &nbsp;
+            <span class="product-main__shipping-value">{{- message_value -}}</span>
+          </div>
+        {%- endif -%}
+
+        {%- if blocks.size > 0 -%}
+          {%- render 'accordion', blocks: blocks, behavior: behavior -%}
+        {%- endif -%}
     </div>
-    {% endif %}
   </div>
-  <div class="product-info">
-    <h1 class="product-info__title">{{ product.name }}</h1>
-    {% if product.variants.size > 1 %}
-      <p class="product-info__label">{{ section.settings.variation_label }}</p>
-    {% endif %}
-    {{ product_button }}
-  </div>
-  {% if product.description != blank %}
-    <div class="product-description">
-      <p class="product-description__label">{{ section.settings.description_label }}</p>
-      <div class="product-description__content-container bq-content rx-content">
-        {{ product.description }}
-      </div>
-    </div>
-  {% endif %}
-{% endif %}
+</div>
 
 {% schema %}
-{
-  "name": "Details",
-  "tag": "section",
-  "class": "product-page",
-  "templates": ["product"],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Translations"
-    },
-    {
-      "type": "text",
-      "id": "variation_label",
-      "label": "Variations label",
-      "default": "Variation"
-    },
-    {
-      "type": "text",
-      "id": "description_label",
-      "label": "Description label",
-      "default": "Description"
-    }
-  ],
-  "important": true,
-  "unique": true
-}
+  {
+    "name": "Product",
+    "tag": "section",
+    "class": "product-main",
+    "templates": ["product"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Translations"
+      },
+      {
+        "type": "text",
+        "id": "breadcrumbs_label",
+        "label": "Breadcrumbs root link label",
+        "default": "Shop all"
+      },
+      {
+        "type": "text",
+        "id": "variation_label",
+        "label": "Variations label",
+        "default": "Variation"
+      },
+      {
+        "type": "text",
+        "id": "message_label",
+        "label": "Message label",
+        "default": "Free shipping over"
+      },
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show breadcrumbs"
+      },
+      {
+        "type": "text",
+        "id": "message_value",
+        "label": "Message value",
+        "default": "$50"
+      },
+      {
+        "type": "header",
+        "content": "Carousel settings"
+      },
+      {
+        "type": "number",
+        "id": "timer",
+        "label": "Auto-rotate timer",
+        "min": 0,
+        "max": 100,
+        "default": 5,
+        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+      },
+      {
+        "type": "header",
+        "content": "Accordion settings"
+      },
+      {
+        "type": "select",
+        "id": "behavior",
+        "label": "Mode",
+        "options": [
+          {
+            "value": "single",
+            "label": "Single"
+          },
+          {
+            "value": "multiple",
+            "label": "Multiple"
+          }
+        ],
+        "default": "multiple"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 24,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 36,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 24,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 24,
+        "info": "Note: Use positive numbers only"
+      }
+    ],
+    "max_blocks": 3,
+    "blocks":[
+      {
+        "type": "details",
+        "name": "Details",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Details settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "details",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
+      },
+      {
+        "type": "shipping",
+        "name": "Shipping",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Shipping settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "shipping",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
+      },
+      {
+        "type": "returns",
+        "name": "Returns",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Returns settings"
+          },
+          {
+            "type": "contentEditor",
+            "id": "returns",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
+          }
+        ]
+      }
+    ],
+    "important": true,
+    "unique": true
+  }
 {% endschema %}
