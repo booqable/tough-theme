@@ -11,6 +11,20 @@
       {%- assign heading = block.settings.heading -%}
       {%- assign content = block.settings.content -%}
 
+      {% case block.type %}
+        {% when "details" %}
+          {%- assign heading = "Details" -%}
+          {%- assign content = block.settings.details -%}
+
+        {% when "shipping" %}
+          {%- assign heading = "Shipping" -%}
+          {%- assign content = block.settings.shipping -%}
+
+        {% when "returns" %}
+          {%- assign heading = "Returns" -%}
+          {%- assign content = block.settings.returns -%}
+      {% endcase %}
+
       <li class="accordion__item">
         {%- if heading != blank -%}
           <input
