@@ -1,8 +1,22 @@
 .date-location {
-  max-width: calc(var(--max-width) + var(--horizontal-padding) * 2);
   width: 100%;
-  margin: 0 auto;
-  padding: 16px var(--horizontal-padding);
+  background: var(--color-primary-foreground, #0B1A26);
+}
+
+.date-location__container--margin-top {
+  margin-top: var(--margin-top-mobile, 0);
+}
+
+.date-location__container--margin-bottom {
+  margin-bottom: var(--margin-bottom-mobile, 0);
+}
+
+.date-location__container--padding-top {
+  padding-top: var(--padding-top-mobile, 16px);
+}
+
+.date-location__container--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 16px);
 }
 
 .hero bq-date-picker::part(cleanstate),
@@ -76,7 +90,7 @@
 .hero bq-date-picker::part(pickup-section),
 .date-location bq-date-picker::part(from-section),
 .date-location bq-date-picker::part(pickup-section) {
-  border-right: 1px solid rgba(var(--color-primary-background-rgb, #FFFFFF), 0.6);
+  border-right: 1px solid rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
 }
 
 .hero bq-date-picker::part(from-section),
@@ -117,7 +131,7 @@
 .date-location bq-date-picker::part(return-label) {
   font-size: 16px;
   line-height: 24px;
-  color: rgba(var(--color-white, #FFFFFF), 0.6);
+  color: rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
   font-weight: var(--font-weight-regular, 400);
   margin: 0;
 }
@@ -132,7 +146,7 @@
 .date-location bq-date-picker::part(return-value) {
   font-size: 16px;
   line-height: 24px;
-  color: var(--color-white, #FFFFFF);
+  color: var(--color-primary-background, #FFFFFF);
   font-weight: var(--font-weight-semibold, 600);
   margin: 0;
 }
@@ -147,8 +161,8 @@
 .date-location bq-date-picker::part(return-value--empty) {
   font-size: 16px;
   line-height: 24px;
-  font-weight: var(--font-weight-regular);
-  color: rgba(var(--color-white, #FFFFFF), 0.6);
+  font-weight: var(--font-weight-regular, 400);
+  color: rgba(var(--color-primary-background-rgb, 255, 255, 255), 0.6);
   margin: 0;
 }
 
@@ -200,5 +214,23 @@
   .hero bq-date-picker::part(till-section),
   .date-location bq-date-picker::part(till-section) {
     justify-content: flex-end;
+  }
+}
+
+@media (min-width: 992px) {
+  .date-location__container--margin-top {
+    margin-top: var(--margin-top, 0);
+  }
+
+  .date-location__container--margin-bottom {
+    margin-bottom: var(--margin-bottom, 0);
+  }
+
+  .date-location__container--padding-top {
+    padding-top: var(--padding-top, 16px);
+  }
+
+  .date-location__container--padding-bottom {
+    padding-bottom: var(--padding-bottom, 16px);
   }
 }

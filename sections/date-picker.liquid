@@ -1,13 +1,134 @@
 {{ "date-picker.css" | asset_url | stylesheet_tag }}
 
-<bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+{%- assign margin_top            = section.settings.margin_top -%}
+{%- assign margin_bottom         = section.settings.margin_bottom -%}
+{%- assign margin_top_mobile     = section.settings.margin_top_mobile -%}
+{%- assign margin_bottom_mobile  = section.settings.margin_bottom_mobile -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+
+{% comment %} CSS variables start {% endcomment %}
+{%- capture variables -%}
+  {%- if margin_top != blank -%}
+    --margin-top: {{ margin_top }}px;
+  {%- endif -%}
+  {%- if margin_top_mobile != blank -%}
+    --margin-top-mobile: {{ margin_top_mobile }}px;
+  {%- endif -%}
+  {%- if margin_bottom != blank -%}
+    --margin-bottom: {{ margin_bottom }}px;
+  {%- endif -%}
+  {%- if margin_bottom_mobile != blank -%}
+    --margin-bottom-mobile: {{ margin_bottom_mobile }}px;
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+{%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
+<div class="date-location__container container{% if margin_top != blank or margin_top_mobile != blank %} date-location__container--margin-top{% endif %}{% if margin_bottom != blank or margin_bottom_mobile != blank %} date-location__container--margin-bottom{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} date-location__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} date-location__container--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+  <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+</div>
 
 {% schema %}
-{
-  "name": "Date Picker",
-  "description": "Allow your visitors to select a rental period.",
-  "tag": "section",
-  "class": "date-location",
-  "settings": []
-}
+  {
+    "name": "Date Picker",
+    "description": "Allow your visitors to select a rental period.",
+    "tag": "section",
+    "class": "date-location",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "margin_top",
+        "label": "Margin top",
+        "min": -150,
+        "max": 150,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom",
+        "label": "Margin bottom",
+        "min": -150,
+        "max": 150,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 16,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 16,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "margin_top_mobile",
+        "label": "Margin top",
+        "min": -100,
+        "max": 100,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "Margin bottom",
+        "min": -100,
+        "max": 100,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 16,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 16,
+        "info": "Note: Use positive numbers only"
+      }
+    ]
+  }
 {% endschema %}
