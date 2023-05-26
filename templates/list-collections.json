@@ -1,27 +1,44 @@
 {
   "name": "Collections",
   "sections": {
-    "list-collections": {
-      "type": "list-collections",
+    "hero": {
+      "type": "hero",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "heading": "No collections",
-        "text": "Unfortunately, we couldn’t find any collections.",
-        "button_label": "Browse all products"
+        "custom_title": "Collections",
+        "custom_description": "Lorem ipsum dolor sit amet.",
+        "margin_top": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom": 40,
+        "margin_bottom_mobile": 40,
+        "padding_top": 115,
+        "padding_top_mobile": 80,
+        "padding_bottom": 115,
+        "padding_bottom_mobile": 80,
+        "show_datepicker": true,
+        "show_text": true,
+        "show_bg": true
       },
       "disabled": null
     },
-    "date-picker": {
-      "type": "date-picker",
-      "blocks": {},
-      "block_order": [],
-      "settings": {},
+    "list-collections": {
+      "type": "list-collections",
+      "settings": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "tag": "Our collections",
+        "title": "We can service you in each category",
+        "title_bg": "Category",
+        "padding_bottom": 80,
+        "padding_bottom_mobile": 40,
+        "padding_top": 80,
+        "padding_top_mobile": 40
+      },
       "disabled": null
     }
   },
   "order": [
-    "date-picker",
+    "hero",
     "list-collections"
   ]
 }

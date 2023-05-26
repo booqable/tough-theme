@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  margin: 20px auto;
+  margin: 64px auto 20px;
 }
 
 .pagination span {

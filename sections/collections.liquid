@@ -35,83 +35,18 @@
     style="{{- variables | escape -}}"
   >
     <div class="collections__container container">
-      <div class="collections__top">
-        <div class="collections__col">
-          {%- if tag != blank -%}
-            <span class="collections__tag">{{- tag -}}</span>
-          {%- endif -%}
+      {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
+        {%- render 'collections-header',
+            tag: tag,
+            title: title,
+            description: description,
+            background: title_bg,
+            button: view_all
+        -%}
+      {%- endif -%}
 
-          {%- if title != blank -%}
-            <h2 class="collections__title">{{- title -}}</h2>
-          {%- endif -%}
+      {%- render 'collections', items: section.blocks, items_type: "blocks" -%}
 
-          {%- if description != blank -%}
-            <div class="collections__description">{{- description -}}</div>
-          {%- endif -%}
-        </div>
-
-        <div class="collections__col">
-          {%- if title_bg != blank -%}
-            <h2 class="collections__title_bg">{{- title_bg -}}</h2>
-          {%- endif -%}
-
-          {%- if view_all != blank -%}
-            <a href="{{ routes.collections_url }}" class="collections__show button button--outlined button--large">
-              {{- view_all -}}
-            </a>
-          {%- endif -%}
-        </div>
-      </div>
-
-      <ul class="collections__list">
-        {%- for block in section.blocks -%}
-          {%- assign collection = block.settings.collection -%}
-
-          {%- if collection != blank -%}
-            {%- assign first_product = collection.products | first -%}
-
-            {%- if collection.image -%}
-              {%- assign image = collection.image -%}
-            {%- elsif first_product and first_product.images.first != empty -%}
-              {%- assign image = first_product.images.first -%}
-            {%- endif -%}
-
-            <li class="collections__item">
-              <a class="collections__link" href="{{ collection.url }}">
-                <span class="collections__image-item">
-                  {{- image.url | image_tag:
-                    loading: 'lazy',
-                    class: 'collections__image',
-                    widths: '450, 550, 650',
-                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                    alt: collection.name
-                  -}}
-                </span>
-              </a>
-
-              <h3 class="collections__heading">
-                <a href="{{ collection.url }}">
-                  {{- collection.name -}}
-                </a>
-              </h3>
-            </li>
-          {%- else -%}
-            {%- assign image = image_placeholder -%}
-
-            <li class="collections__item">
-              <span class="collections__image-item">
-                {{- image.url | image_tag:
-                  loading: 'lazy',
-                  class: 'collections__image',
-                  widths: '450, 550, 650',
-                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                  alt: 'Placeholder image'
-                -}}
-              </span>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
     </div>
   </div>
 {%- endif -%}
