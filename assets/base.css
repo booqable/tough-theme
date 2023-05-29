@@ -117,6 +117,14 @@ body #main {
   flex: 1 1 auto;
 }
 
+body .growth {
+  display: flex;
+}
+
+body .growth > * {
+  width: 100%;
+}
+
 .header--sticky ~ #main {
   padding-top: calc(var(--header-height) - 1px);
 }
