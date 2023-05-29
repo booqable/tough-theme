@@ -45,7 +45,10 @@
         -%}
       {%- endif -%}
 
-      {%- render 'collections', items: section.blocks, items_type: "blocks" -%}
+      {%- render 'collections-grid',
+          items: section.blocks,
+          items_type: "blocks"
+      -%}
 
     </div>
   </div>
@@ -150,6 +153,7 @@
           }
         ]
       }
-    ]
+    ],
+    "templates": ["index", "product", "collection", "page"]
   }
 {% endschema %}

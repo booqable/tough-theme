@@ -47,7 +47,7 @@
     {%- paginate collections by limit -%}
       {%- if collections.size > 0 -%}
 
-        {%- render 'collections',
+        {%- render 'collections-grid',
             items: collections,
             items_type: "collections"
         -%}
@@ -63,7 +63,7 @@
 
 {% schema %}
   {
-    "name": "List",
+    "name": "Collections",
     "tag": "section",
     "class": "collections",
     "settings": [

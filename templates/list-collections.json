@@ -34,6 +34,8 @@
         "padding_top": 80,
         "padding_top_mobile": 40
       },
+      "blocks": {},
+      "block_order": [],
       "disabled": null
     }
   },
