@@ -1,5 +1,7 @@
 <link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
+{%- assign custom_title          = section.settings.custom_title -%}
+{%- assign custom_description    = section.settings.custom_description -%}
 {%- assign show_text             = section.settings.show_text -%}
 {%- assign show_bg               = section.settings.show_bg -%}
 {%- assign show_datepicker       = section.settings.show_datepicker -%}
@@ -50,10 +52,18 @@
   {%- if show_text -%}
     <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
       <div class="hero__content">
-        <h1 class="hero__title">{{- page_title -}}</h1>
+        {%- if custom_title != blank -%}
+          <h1 class="hero__title">{{- custom_title -}}</h1>
+        {%- else -%}
+          <h1 class="hero__title">{{- page_title -}}</h1>
+        {%- endif -%}
 
-        {%- if page_description != blank -%}
-          <div class="hero__description text-medium">{{- page_description -}}</div>
+        {%- if custom_description != blank -%}
+          <div class="hero__description text-medium">{{- custom_description -}}</div>
+        {%- else -%}
+          {%- if page_description != blank -%}
+            <div class="hero__description text-medium">{{- page_description -}}</div>
+          {%- endif -%}
         {%- endif -%}
       </div>
     </div>
@@ -94,6 +104,16 @@
       {
         "type": "header",
         "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "custom_title",
+        "label": "Custom title"
+      },
+      {
+        "type": "contentEditor",
+        "id": "custom_description",
+        "label": "Custom description"
       },
       {
         "type": "checkbox",
