@@ -1,0 +1,70 @@
+{% comment %}
+
+  This snippet is using for rendering the list of collections;
+
+  items - [array] *required
+  items_type - [array] *required
+
+  Usage:
+
+  {%- render 'collections',
+      items: collections,
+      items_type: "collections"
+  -%}
+
+{% endcomment %}
+
+<ul class="collections__list">
+  {%- for item in items -%}
+    {% case items_type %}
+      {% when "blocks" %}
+        {%- assign collection = item.settings.collection -%}
+      {% when "collections" %}
+        {%- assign collection = item -%}
+    {% endcase %}
+
+    {%- if collection != blank -%}
+      {%- assign first_product = collection.products | first -%}
+
+      {%- if collection.image -%}
+        {%- assign image = collection.image -%}
+      {%- elsif first_product and first_product.images.first != empty -%}
+        {%- assign image = first_product.images.first -%}
+      {%- endif -%}
+
+      <li class="collections__item">
+        <a class="collections__link" href="{{ collection.url }}">
+          <span class="collections__image-item">
+            {{- image.url | image_tag:
+              loading: 'lazy',
+              class: 'collections__image',
+              widths: '450, 550, 650',
+              sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+              alt: collection.name
+            -}}
+          </span>
+        </a>
+
+        <h3 class="collections__heading">
+          <a href="{{ collection.url }}">
+            {{- collection.name -}}
+          </a>
+        </h3>
+      </li>
+    {%- else -%}
+      {%- assign image = image_placeholder -%}
+
+      <li class="collections__item">
+        <span class="collections__image-item">
+          {{- image.url | image_tag:
+            loading: 'lazy',
+            class: 'collections__image',
+            widths: '450, 550, 650',
+            sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+            alt: 'Placeholder image'
+          -}}
+        </span>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>
