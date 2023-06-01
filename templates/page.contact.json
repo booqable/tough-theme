@@ -1,0 +1,127 @@
+{
+  "name": "Contact",
+  "sections": {
+    "contacts": {
+      "type": "contacts",
+      "blocks": {
+        "email": {
+          "type": "email",
+          "settings": {
+            "email": "hello@info.com",
+            "email_title": "Email",
+            "email_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "phone": {
+          "type": "phone",
+          "settings": {
+            "phone": "+1 (555) 000-0000",
+            "phone_title": "Phone",
+            "phone_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "address": {
+          "type": "address",
+          "settings": {
+            "address": "123 Sample St, London Eng 2000 UK",
+            "address_title": "Office",
+            "address_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "email",
+        "phone",
+        "address"
+      ],
+      "settings": {
+        "padding_top": 112,
+        "padding_top_mobile": 70,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 70
+      },
+      "disabled": false
+    },
+    "text_222909": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "text": "<h2>Question 1?</h2>",
+        "align": "left"
+      },
+      "disabled": null
+    },
+    "spacer_868256": {
+      "type": "spacer",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "size": "md",
+        "use_hr": true
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, nulla ut gravida imperdiet, urna mi maximus quam, id auctor felis est in massa. Nulla vel tellus ac mauris interdum porttitor non nec leo. Fusce at lacus at risus placerat gravida at nec massa. Sed dapibus bibendum ante ac tincidunt. Nullam vel risus tortor. Duis dictum dapibus dui, sit amet accumsan metus venenatis in. Vestibulum vel lorem ac nisl condimentum mattis ac dapibus ligula. Cras mattis, lectus id condimentum sagittis, est tortor posuere sem, et posuere magna sapien in est. Duis tristique accumsan nulla, scelerisque dignissim leo facilisis eget. Aliquam urna eros, venenatis sed tincidunt ac, pulvinar nec leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris suscipit imperdiet lacus, eu lacinia purus fringilla et. Suspendisse potenti. Fusce urna lorem, tincidunt ut elementum vel, molestie ultrices justo.</p>",
+        "align": "left"
+      },
+      "disabled": null
+    },
+    "text_672542": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "text": "<h2>Question 2?</h2>",
+        "align": "left"
+      },
+      "disabled": null
+    },
+    "text_343146": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet, nulla ut gravida imperdiet, urna mi maximus quam, id auctor felis est in massa. Nulla vel tellus ac mauris interdum porttitor non nec leo. Fusce at lacus at risus placerat gravida at nec massa. Sed dapibus bibendum ante ac tincidunt. Nullam vel risus tortor. Duis dictum dapibus dui, sit amet accumsan metus venenatis in. Vestibulum vel lorem ac nisl condimentum mattis ac dapibus ligula. Cras mattis, lectus id condimentum sagittis, est tortor posuere sem, et posuere magna sapien in est. Duis tristique accumsan nulla, scelerisque dignissim leo facilisis eget. Aliquam urna eros, venenatis sed tincidunt ac, pulvinar nec leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris suscipit imperdiet lacus, eu lacinia purus fringilla et. Suspendisse potenti. Fusce urna lorem, tincidunt ut elementum vel, molestie ultrices justo.</p>",
+        "align": "left"
+      },
+      "disabled": null
+    },
+    "spacer": {
+      "type": "spacer",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "size": "md"
+      },
+      "disabled": null
+    },
+    "spacer_701140": {
+      "type": "spacer",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "size": "sm"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "contacts",
+    "spacer",
+    "text_222909",
+    "text",
+    "spacer_868256",
+    "text_672542",
+    "text_343146",
+    "spacer_701140"
+  ]
+}
