@@ -3,12 +3,14 @@ class Tabs {
     this.block = block;
 
     this.selector = {
-      opener: ".tabs__trigger",
-      content: ".tabs__content"
+      tab: ".tabs__trigger",
+      content: ".tabs__content",
+      select: ".tabs__select",
+      opener: "#tabs-select-opener"
     }
 
     this.classes = {
-      opener: "tabs__trigger"
+      tab: "tabs__trigger"
     }
 
     this.modifiers = {
@@ -16,8 +18,8 @@ class Tabs {
     };
 
     this.data = {
-      id: "id",
-      href: "href"
+      content: "data-content",
+      trigger: "data-trigger"
     };
   }
 
@@ -29,44 +31,74 @@ class Tabs {
   }
 
   elements() {
-    this.tabs = [...this.block.querySelectorAll(this.selector.opener)];
+    this.tabs = [...this.block.querySelectorAll(this.selector.tab)];
     this.content = [...this.block.querySelectorAll(this.selector.content)];
+    this.opener = this.block.querySelector(this.selector.opener);
   }
 
   events() {
+    document.addEventListener("click", this.closeModals.bind(this));
     document.addEventListener("click", this.tabsTrigger.bind(this));
   }
 
   tabsTrigger(e) {
-    e.preventDefault();
+    let target = e.target,
+        isEl = target.classList.contains(this.classes.tab),
+        isParent = target.parentElement.classList.contains(this.classes.tab);
 
-    const target = e.target,
-          isEl = target.classList.contains(this.classes.opener);
+    if (!isEl && !isParent) return false;
 
-		if (!isEl) return null;
+    if (isParent) target = target.parentElement;
 
-    this.tabs.forEach(el => {
-      el.classList.remove(this.modifiers.active)
-    })
+    const attr = target.getAttribute(this.data.trigger);
 
-    const attr = target.getAttribute(this.data.href).substring(1);
-    target.classList.add(this.modifiers.active);
+    let options = {
+      arr: this.tabs,
+      attr: this.data.trigger,
+      val: attr,
+      mod: this.modifiers.active
+    }
 
-    this.tabsContent(attr);
-  }
+    this.tabsClass(options);
 
-  tabsContent(attr) {
     if (!this.content.length) return false;
 
-    this.content.forEach(el => {
-      const id = el.getAttribute(this.data.id);
+    options = {
+      arr: this.content,
+      attr: this.data.content,
+      val: attr,
+      mod: this.modifiers.active
+    }
 
-      el.classList.remove(this.modifiers.active);
+    this.tabsClass(options);
+  }
 
-      if (attr === id) {
-        el.classList.add(this.modifiers.active);
-      }
+  tabsClass(options) {
+    const {arr, attr, val, mod} = options;
+
+    arr?.forEach(el => {
+      const id = el?.getAttribute(attr);
+
+      el?.classList.remove(mod);
+
+      if (val === id) el?.classList.add(mod);
     })
+  }
+
+  closeModals(e) {
+    this.killModal(e, this.opener, this.selector.select);
+  }
+
+  // closing modal window on click outside it
+  killModal(e, elem, parent) {
+    if (!elem) return false;
+
+    let target = e.target,
+        parentElem = target.closest(parent);
+
+    if (parentElem !== null) return false;
+
+    elem.checked = false;
   }
 }
 
