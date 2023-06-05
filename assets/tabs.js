@@ -102,17 +102,17 @@ class Tabs {
   }
 }
 
-const initHero = (el = ".tabs") => {
-  const arr = [...document.querySelectorAll(el)];
+const initTabs = (el = ".tabs") => {
+  const nodes = [...document.querySelectorAll(el)];
 
-  if (!arr.length) return false;
+  if (!nodes.length) return false;
 
-  arr.forEach(item => {
+  nodes.forEach(item => {
     const tabs = new Tabs(item);
     tabs.init();
   });
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initHero()
+  if (e.target.readyState === "complete") initTabs()
 });
