@@ -246,6 +246,8 @@
             {%- capture image_variables -%}
               {%- if background != blank -%}
                 --color-primary-foreground: {{ background }};
+                --color-primary-foreground-rgb: {{ background }}00;
+                --color-primary-foreground-rgb-half: {{ background }}73;
               {%- endif -%}
               {%- if overlay_opacity != blank -%}
                 --opacity-overlay: {{ overlay_opacity }}%;

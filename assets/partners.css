@@ -52,7 +52,7 @@
 
 .partners__image-wrapper.no-image:after {
   content: "";
-  background: rgba(var(--color-primary-background-rgb), 0.2);
+  background: var(--color-primary-background-rgb-bi, #FFFFFF33);
   display: block;
   height: 64px;
 }

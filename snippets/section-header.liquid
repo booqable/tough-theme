@@ -1,0 +1,48 @@
+{% comment %}
+
+This snippet is using for rendering the header of section;
+
+Usage:
+
+{%- render 'section-header',
+    tag: your_id,
+    title: your_id,
+    description: your_id,
+    background: your_id,
+    button: your_id,
+    url: your_url
+-%}
+
+{% endcomment %}
+
+{{ "section-header.css" | asset_url | stylesheet_tag }}
+
+{%- if tag != blank or title != blank or description != blank or background != blank or button != blank -%}
+  <div class="section__top">
+    <div class="section__col">
+      {%- if tag != blank -%}
+        <span class="section__tag">{{- tag -}}</span>
+      {%- endif -%}
+
+      {%- if title != blank -%}
+        <h2 class="section__title">{{- title -}}</h2>
+      {%- endif -%}
+
+      {%- if description != blank -%}
+        <div class="section__description">{{- description -}}</div>
+      {%- endif -%}
+    </div>
+
+    <div class="section__col">
+      {%- if background != blank -%}
+        <h2 class="section__title_bg">{{- background -}}</h2>
+      {%- endif -%}
+
+      {%- if button != blank -%}
+        <a href="{{ url }}" class="section__show button button--outlined button--large">
+          {{- button -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

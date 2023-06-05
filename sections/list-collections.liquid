@@ -4,7 +4,6 @@
 {%- assign title                 = section.settings.title -%}
 {%- assign title_bg              = section.settings.title_bg -%}
 {%- assign description           = section.settings.description -%}
-{%- assign view_all              = section.settings.view_all -%}
 {%- assign limit                 = section.settings.limit -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -35,12 +34,11 @@
 >
   <div class="collections__container container">
     {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
-      {%- render 'collections-header',
+      {%- render 'section-header',
           tag: tag,
           title: title,
           description: description,
-          background: title_bg,
-          button: view_all
+          background: title_bg
       -%}
     {%- endif -%}
 
@@ -94,12 +92,6 @@
         "id": "description",
         "label": "Description",
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "type": "text",
-        "id": "view_all",
-        "label": "Label of button",
-        "info": "Note: This button redirects the user to the collections page. If the label is empty - the button absent"
       },
       {
         "type": "number",

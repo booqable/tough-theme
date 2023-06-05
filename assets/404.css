@@ -67,7 +67,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(173.19deg, var(--color-primary-foreground, #0B1A26) 33.02%, rgba(var(--color-primary-foreground-rgb, #0B1A26), 0) 93.23%);
+  background: linear-gradient(173.19deg, var(--color-primary-foreground, #0B1A26) 33.02%, var(--color-primary-foreground-rgb, #0B1A2600) 93.23%);
 }
 
 .error-404__background svg {
