@@ -198,12 +198,12 @@
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper span.bq-status.bq-available {
-  background-color: var(--color-green) !important;
+  background-color: var(--color-green, #51C234) !important;
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper span.bq-status.bq-unavailable {
-  background-color: var(--color-red) !important;
+  background-color: var(--color-red, #C23434) !important;
 }
 
 .product-main__info .booqable-component
@@ -320,7 +320,7 @@
 .product-main__info .accordion__item:after {
   opacity: 1;
   border: none;
-  border-bottom: 1px solid var(--color-border-secondary);
+  border-bottom: 1px solid var(--color-border-secondary, #E1E4E8);
 }
 
 .product-main__info .accordion__heading svg {
@@ -346,7 +346,7 @@
   right: 0;
   bottom: 0;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  background: rgba(var(--color-primary-foreground-rgb), 0.5);
+  background: var(--color-primary-foreground-rgb-half, #0B1A2680);
   visibility: hidden;
   opacity: 0;
 }
@@ -383,7 +383,7 @@
 	bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(var(--color-primary-foreground-rgb), 0.8);
+  background: var(--color-primary-foreground-rgb-octa, #0B1A26CC);
   visibility: hidden;
 	opacity: 0;
   pointer-events: none;

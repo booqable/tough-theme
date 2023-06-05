@@ -1,6 +1,6 @@
 .hero {
   color: var(--color-third-foreground, #B2B4B8);
-  border-bottom: 1px solid rgba(var(--color-primary-background-rgb), 0.2);
+  border-bottom: 1px solid var(--color-primary-background-rgb-bi, #FFFFFF33);
 }
 
 .hero__wrapper {
@@ -68,7 +68,7 @@
   bottom: 0;
   width: 5000px;
   right: 50%;
-  background: linear-gradient(to right, rgba(var(--color-primary-foreground-rgb), 1) 0%, rgba(var(--color-primary-foreground-rgb), 1) 90%, rgba(var(--color-primary-foreground-rgb), 0) 100%);
+  background: linear-gradient(to right, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground, #0B1A26) 90%, var(--color-primary-foreground-rgb, #0B1A2600) 100%);
 }
 
 .hero__vision-wrapper-overlay:before {
@@ -78,7 +78,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--color-primary-foreground, #0B1A26) 0%, rgba(var(--color-primary-foreground-rgb), 0) 100%);
+  background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb, #0B1A2600) 100%);
 }
 
 .hero__image {

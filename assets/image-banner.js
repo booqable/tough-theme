@@ -1,15 +1,11 @@
-class Hero {
+class Media {
   constructor(block) {
     this.block = block;
 
     this.selector = {
-      vision: ".hero__vision",
-      video: ".hero__video-id",
-      player: ".hero__video",
-    }
-
-    this.options = {
-      hex: "--color-primary-foreground"
+      vision: ".image-banner__vision",
+      video: ".image-banner__video-id",
+      player: ".image-banner__video",
     }
   }
 
@@ -21,39 +17,43 @@ class Hero {
   }
 
   elements() {
-    this.arr = [...this.block.querySelectorAll(this.selector.vision)];
+    this.nodes = [...this.block.querySelectorAll(this.selector.vision)];
   }
 
   events() {
-    this.toRgb();
     this.videoInit();
   }
 
-  toRgb() {
-    if (!this.arr.length) return false;
-
-    this.arr.forEach(item => {
-      const init = new window.ToRgb(item, this.options);
-      init.init();
-    })
-  }
-
   videoInit() {
-    if (!this.arr.length) return false;
+    if (!this.nodes.length) return false;
 
-    this.arr.forEach(item => {
+    this.nodes.forEach(item => {
       const el = item.querySelector(this.selector.video),
             id = el?.value;
 
       if (!id) return false;
 
-      const box = item.querySelector(this.selector.player).id;
+      const frame = item.querySelector(this.selector.player).id;
 
-      this.video(id, box);
+      this.video(id, frame);
     })
   }
 
   video(video, player) {
+    // API call this function when the video player is ready.
+    const onPlayerReady = (e) => {
+      e.target.playVideo();
+    }
+
+    // API call this function when the video player is changing state.
+    // It helps resolve an issue of embeddable youtube video into the site
+    // when it's not autoplayable after screen locked and unlocked
+    const onPlayerStateChange = (e) => {
+      if (e.target.getPlayerState() !== 3) {
+        e.target.playVideo();
+      }
+    }
+
     // Create an <iframe> (and YouTube player) after the API code downloads.
     const instance = new YT.Player(player, {
       width: '988',
@@ -75,34 +75,20 @@ class Hero {
         'onStateChange': onPlayerStateChange
       }
     });
-
-    // API call this function when the video player is ready.
-    function onPlayerReady(e) {
-      e.target.playVideo();
-    }
-
-    // API call this function when the video player is changing state.
-    // It helps resolve an issue of embeddable youtube video into the site
-    // when it's not autoplayable after screen locked and unlocked
-    function onPlayerStateChange(e) {
-      if (e.target.getPlayerState() !== 3) {
-        e.target.playVideo();
-      }
-    }
   }
 }
 
-function initHero(el = ".hero") {
-  const arr = [...document.querySelectorAll(el)];
+const initBanner = (el = ".image-banner") => {
+  const nodes = [...document.querySelectorAll(el)];
 
-  if (!arr.length) return false;
+  if (!nodes.length) return false;
 
-  arr.forEach(item => {
-    const hero = new Hero(item);
-    hero.init();
+  nodes.forEach(item => {
+    const init = new Media(item);
+    init.init();
   });
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initHero()
+  if (e.target.readyState === "complete") initBanner()
 });

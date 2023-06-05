@@ -85,7 +85,7 @@
 }
 
 .tabs__image-wrapper.no-image {
-  background: var(--color-image-placeholder);
+  background: var(--color-image-placeholder, #0B1A2633);
 }
 
 .tabs__image {
