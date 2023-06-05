@@ -2,7 +2,7 @@
   color: var(--color-third-foreground, #B2B4B8);
   background: var(--color-primary-foreground, #0B1A26);
   font-size: 18px;
-  line-height: 1.5;
+  line-height: var(--line-height-lg, 1.5);
   position: relative;
 }
 
@@ -58,8 +58,13 @@
   margin: var(--margin-top) 0 var(--margin-bottom);
 }
 
+.image-text__holder.no-image {
+  aspect-ratio: 16 / 9;
+}
+
 .image-text__holder.no-image .image-text__image-wrapper {
   background: var(--color-image-placeholder-lt, #FFFFFF0F);
+  height: 100%;
 }
 
 .image-text__image {
@@ -151,10 +156,6 @@
     left: var(--left-image);
     bottom: 30px;
     min-width: calc(100% + 22px);
-  }
-
-  .image-text__holder.no-image .image-text__image-wrapper {
-    padding-bottom: 56.25%;
   }
 
   .image-text__bg-overlay::before {
