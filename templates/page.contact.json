@@ -1,6 +1,50 @@
 {
   "name": "Contact",
   "sections": {
+    "contacts": {
+      "type": "contacts",
+      "blocks": {
+        "email": {
+          "type": "email",
+          "settings": {
+            "email": "hello@info.com",
+            "email_title": "Email",
+            "email_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "phone": {
+          "type": "phone",
+          "settings": {
+            "phone": "+1 (555) 000-0000",
+            "phone_title": "Phone",
+            "phone_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "address": {
+          "type": "address",
+          "settings": {
+            "address": "123 Sample St, London Eng 2000 UK",
+            "address_title": "Office",
+            "address_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "email",
+        "phone",
+        "address"
+      ],
+      "settings": {
+        "padding_top": 112,
+        "padding_top_mobile": 70,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 70
+      },
+      "disabled": false
+    },
     "offices": {
       "type": "offices",
       "blocks": {
@@ -52,6 +96,7 @@
     }
   },
   "order": [
+    "contacts",
     "offices"
   ]
 }

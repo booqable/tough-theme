@@ -1,0 +1,431 @@
+{%- assign blocks = section.blocks -%}
+
+{%- if blocks.size > 0 -%}
+  {{ "contacts.css" | asset_url | stylesheet_tag }}
+
+  {%- assign background            = section.settings.background -%}
+  {%- assign padding_top           = section.settings.padding_top -%}
+  {%- assign padding_bottom        = section.settings.padding_bottom -%}
+  {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+  {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+
+  {% comment %} CSS variables start {% endcomment %}
+  {%- capture variables -%}
+    {%- if padding_top != blank -%}
+      --padding-top: {{ padding_top }}px;
+    {%- endif -%}
+    {%- if padding_bottom != blank -%}
+      --padding-bottom: {{ padding_bottom }}px;
+    {%- endif -%}
+    {%- if padding_top_mobile != blank -%}
+      --padding-top-mobile: {{ padding_top_mobile }}px;
+    {%- endif -%}
+    {%- if padding_bottom_mobile != blank -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- endif -%}
+    {%- if background != blank -%}
+      --color-fourth-foreground: {{ background }};
+    {%- endif -%}
+  {%- endcapture -%}
+  {% comment %} CSS variables end {% endcomment %}
+
+  <div class="contacts__wrapper{% if padding_top != blank or padding_top_mobile != blank %} contacts__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} contacts__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+    <div class="contacts__container container">
+      <div class="contacts__columns">
+        {%- for block in blocks -%}
+          {%- assign email_title          = block.settings.email_title -%}
+          {%- assign email_text           = block.settings.email_text -%}
+          {%- assign email                = block.settings.email -%}
+          {%- assign email_image          = block.settings.email_image -%}
+          {%- assign email_bg             = block.settings.email_bg -%}
+          {%- assign email_color          = block.settings.email_color -%}
+          {%- assign email_color_second   = block.settings.email_color_second -%}
+          {%- assign phone_title          = block.settings.phone_title -%}
+          {%- assign phone_text           = block.settings.phone_text -%}
+          {%- assign phone                = block.settings.phone -%}
+          {%- assign phone_image          = block.settings.phone_image -%}
+          {%- assign phone_bg             = block.settings.phone_bg -%}
+          {%- assign phone_color          = block.settings.phone_color -%}
+          {%- assign phone_color_second   = block.settings.phone_color_second -%}
+          {%- assign address_title        = block.settings.address_title -%}
+          {%- assign address_text         = block.settings.address_text -%}
+          {%- assign address              = block.settings.address -%}
+          {%- assign address_image        = block.settings.address_image -%}
+          {%- assign address_bg           = block.settings.address_bg -%}
+          {%- assign address_color        = block.settings.address_color -%}
+          {%- assign address_color_second = block.settings.address_color_second -%}
+
+          {% comment %} CSS variables start {% endcomment %}
+          {%- capture email_variables -%}
+            {%- if email_bg != blank -%}
+              --color-primary-background: {{ email_bg }};
+            {%- endif -%}
+            {%- if email_color != blank -%}
+              --color-primary-foreground: {{ email_color }};
+            {%- endif -%}
+            {%- if email_color_second != blank -%}
+              --color-secondary-foreground: {{ email_color_second }};
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- capture phone_variables -%}
+            {%- if phone_bg != blank -%}
+              --color-primary-background: {{ phone_bg }};
+            {%- endif -%}
+            {%- if phone_color != blank -%}
+              --color-primary-foreground: {{ phone_color }};
+            {%- endif -%}
+            {%- if phone_color_second != blank -%}
+              --color-secondary-foreground: {{ phone_color_second }};
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- capture address_variables -%}
+            {%- if address_bg != blank -%}
+              --color-primary-background: {{ address_bg }};
+            {%- endif -%}
+            {%- if address_color != blank -%}
+              --color-primary-foreground: {{ address_color }};
+            {%- endif -%}
+            {%- if address_color_second != blank -%}
+              --color-secondary-foreground: {{ address_color_second }};
+            {%- endif -%}
+          {%- endcapture -%}
+          {% comment %} CSS variables end {% endcomment %}
+
+          {%- case block.type -%}
+            {%- when 'email' -%}
+              <div class="contacts__col" style="{{- email_variables | escape -}}">
+                {%- if email_image.url != blank -%}
+                  <div class="contacts__image-wrapper">
+                    {{- email_image.url | image_tag:
+                      loading: 'lazy',
+                      class: 'contacts__image',
+                      widths: '100'
+                    -}}
+                  </div>
+                {%- else -%}
+                  <div class="contacts__image-wrapper">
+                    {%- render 'icon-mail' -%}
+                  </div>
+                {%- endif -%}
+
+                {%- if email_title != blank or email_text != blank or email != blank -%}
+                  <div class="contacts__text">
+                    {%- if email_title != blank -%}
+                      <h4 class="contacts__title">{{- email_title -}}</h4>
+                    {%- endif -%}
+
+                    {%- if email_text != blank -%}
+                      <div class="contacts__description">{{- email_text -}}</div>
+                    {%- endif -%}
+
+                    {%- if email != blank -%}
+                      <div class="contacts__email">
+                        <a href="mailto:{{- email | strip -}}" class="contacts__email-link">{{- email -}}</a>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+
+            {%- when 'phone' -%}
+              <div class="contacts__col" style="{{- phone_variables | escape -}}">
+                {%- if phone_image.url != blank -%}
+                  <div class="contacts__image-wrapper">
+                    {{- phone_image.url | image_tag:
+                      loading: 'lazy',
+                      class: 'contacts__image',
+                      widths: '100'
+                    -}}
+                  </div>
+                {%- else -%}
+                  <div class="contacts__image-wrapper">
+                    {%- render 'icon-phone-big' -%}
+                  </div>
+                {%- endif -%}
+
+                {%- if phone_title != blank or phone_text != blank or phone != blank -%}
+                  <div class="contacts__text">
+                    {%- if phone_title != blank -%}
+                      <h4 class="contacts__title">{{- phone_title -}}</h4>
+                    {%- endif -%}
+
+                    {%- if phone_text != blank -%}
+                      <div class="contacts__description">{{- phone_text -}}</div>
+                    {%- endif -%}
+
+                    {%- if phone != blank -%}
+                      <div class="contacts__phone">
+                        <a href="tel:{{- phone | strip -}}" class="contacts__phone-link">{{- phone -}}</a>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+
+              {%- when 'address' -%}
+                <div class="contacts__col" style="{{- address_variables | escape -}}">
+                  {%- if address_image.url != blank -%}
+                    <div class="contacts__image-wrapper">
+                      {{- address_image.url | image_tag:
+                        loading: 'lazy',
+                        class: 'contacts__image',
+                        widths: '100'
+                      -}}
+                    </div>
+                  {%- else -%}
+                    <div class="contacts__image-wrapper">
+                      {%- render 'icon-pin' -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if address_title != blank or address_text != blank or address != blank -%}
+                    <div class="contacts__text">
+                      {%- if address_title != blank -%}
+                        <h4 class="contacts__title">{{- address_title -}}</h4>
+                      {%- endif -%}
+
+                      {%- if address_text != blank -%}
+                        <div class="contacts__description">{{- address_text -}}</div>
+                      {%- endif -%}
+
+                      {%- if address != blank -%}
+                        <div class="contacts__address">
+                          <address>{{- address -}}</address>
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Contacts",
+    "tag": "section",
+    "class": "contacts",
+    "description": "Display a section of contacts",
+    "blocks":[
+      {
+        "type": "email",
+        "name": "Email",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Email settings"
+          },
+          {
+            "type": "text",
+            "id": "email_title",
+            "label": "Title",
+            "default": "Email"
+          },
+          {
+            "type": "contentEditor",
+            "id": "email_text",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          {
+            "type": "text",
+            "id": "email",
+            "label": "Email",
+            "default": "hello@info.com"
+          },
+          {
+            "type": "image_picker",
+            "id": "email_image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "email_bg",
+            "label": "Background color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "email_color",
+            "label": "Foreground color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "email_color_second",
+            "label": "Foreground secondary color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          }
+        ]
+      },
+      {
+        "type": "phone",
+        "name": "Phone",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Phone settings"
+          },
+          {
+            "type": "text",
+            "id": "phone_title",
+            "label": "Title",
+            "default": "Phone"
+          },
+          {
+            "type": "contentEditor",
+            "id": "phone_text",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          {
+            "type": "text",
+            "id": "phone",
+            "label": "Phone",
+            "default": "+1 (555) 000-0000"
+          },
+          {
+            "type": "image_picker",
+            "id": "phone_image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "phone_bg",
+            "label": "Background color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "phone_color",
+            "label": "Foreground color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "phone_color_second",
+            "label": "Foreground secondary color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          }
+        ]
+      },
+      {
+        "type": "address",
+        "name": "Address",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Address settings"
+          },
+          {
+            "type": "text",
+            "id": "address_title",
+            "label": "Title",
+            "default": "Office"
+          },
+          {
+            "type": "contentEditor",
+            "id": "address_text",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Address",
+            "default": "123 Sample St, London Eng 2000 UK"
+          },
+          {
+            "type": "image_picker",
+            "id": "address_image",
+            "label": "Image"
+          },
+          {
+            "type": "color",
+            "id": "address_bg",
+            "label": "Background color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "address_color",
+            "label": "Foreground color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          },
+          {
+            "type": "color",
+            "id": "address_color_second",
+            "label": "Foreground secondary color",
+            "info": "Note: This color always overrides the default color, and is applied to this section only"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 112,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 70,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 70,
+        "info": "Note: Use positive numbers only"
+      }
+    ]
+  }
+{% endschema %}
+
