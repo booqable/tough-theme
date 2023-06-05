@@ -1,7 +1,7 @@
 .products {
   color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
-  line-height: 1.5;
+  line-height: var(--line-height-lg, 1.5);
 }
 
 .products__wrapper--padding-top {

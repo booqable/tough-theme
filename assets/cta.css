@@ -8,7 +8,7 @@
   color: var(--color-primary-background, #FFFFFF);
   text-align: center;
   font-size: 18px;
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-lg, 1.5);
 }
 
 .cta__wrapper--padding-top {
