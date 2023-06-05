@@ -35,6 +35,7 @@
 {%- capture variables -%}
   {%- if background != blank -%}
     --color-primary-foreground: {{ background }};
+    --color-primary-foreground-rgb: {{ background }}00;
   {%- endif -%}
   {%- if foreground != blank -%}
     --color-primary-background: {{ foreground }};
@@ -231,8 +232,6 @@
     {%- endif -%}
   </div>
 </div>
-
-<script src="{{ "contact-form.js" | asset_url }}" defer></script>
 
 {% schema %}
   {

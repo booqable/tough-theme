@@ -101,7 +101,7 @@
   right: 0;
   bottom: 0;
   transform: var(--overlay-direction, 0);
-  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, rgba(var(--color-primary-foreground-rgb), 0) 100%);
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb) 100%);
 }
 
 .contact-form__background-image-wrapper img {
