@@ -1,0 +1,287 @@
+<link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+{%- assign title                 = section.settings.title -%}
+{%- assign message               = section.settings.message -%}
+{%- assign results_label         = section.settings.results_label -%}
+{%- assign button_label          = section.settings.button_label -%}
+{%- assign button_background     = section.settings.button_background -%}
+{%- assign button_color          = section.settings.button_color -%}
+{%- assign show_bg               = section.settings.show_bg -%}
+{%- assign image                 = section.settings.image -%}
+{%- assign margin_top            = section.settings.margin_top -%}
+{%- assign margin_bottom         = section.settings.margin_bottom -%}
+{%- assign margin_top_mobile     = section.settings.margin_top_mobile -%}
+{%- assign margin_bottom_mobile  = section.settings.margin_bottom_mobile -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+
+{%- if results_count > 0 -%}
+  <link rel="preload" href="{{ 'date-picker.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{%- endif -%}
+
+{% comment %} CSS variables start {% endcomment %}
+{%- capture variables -%}
+  {%- if margin_top != blank -%}
+    --margin-top: {{ margin_top }}px;
+  {%- endif -%}
+  {%- if margin_top_mobile != blank -%}
+    --margin-top-mobile: {{ margin_top_mobile }}px;
+  {%- endif -%}
+  {%- if margin_bottom != blank -%}
+    --margin-bottom: {{ margin_bottom }}px;
+  {%- endif -%}
+  {%- if margin_bottom_mobile != blank -%}
+    --margin-bottom-mobile: {{ margin_bottom_mobile }}px;
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    {%- if results_count > 0  -%}
+      --padding-bottom: {{ padding_bottom }}px;
+    {%- else -%}
+      --padding-bottom: {{ padding_bottom | times: 2 }}px;
+    {%- endif -%}
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    {%- if results_count > 0  -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+    {%- else -%}
+      --padding-bottom-mobile: {{ padding_bottom_mobile | times: 2 }}px;
+    {%- endif -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture button_variables -%}
+  {%- if button_background != blank -%}
+    --color-accent-background: {{ button_background }};
+    --color-accent-background-hover: {{ button_background }}E6;
+    --color-accent-background-active: {{ button_background }}E6;
+  {%- endif -%}
+  {%- if button_color != blank -%}
+    --color-accent-foreground: {{ button_color }};
+  {%- endif -%}
+{%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
+<div
+  class="hero__wrapper{% if margin_top != blank and results_count > 0 or margin_top_mobile != blank and results_count > 0 %} hero__wrapper--margin-top{% endif %}{% if margin_bottom != blank and results_count > 0 or margin_bottom_mobile != blank and results_count > 0 %} hero__wrapper--margin-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
+    <div class="hero__content" style="{{- button_variables | escape -}}"">
+      {%- if title != blank -%}
+        <h1 class="hero__title">{{ title }}: “{{- query -}}”</h1>
+      {%- else -%}
+        <h1 class="hero__title">{{ page_title }}: “{{- query -}}”</h1>
+      {%- endif -%}
+
+      {%- if results_count == 0 -%}
+        {%- if message != blank -%}
+          <div class="hero__message">{{- message -}}</div>
+        {%- endif -%}
+
+        {%- if button_label != blank -%}
+          <a class="hero__button button button--primary button--large" href="{{ routes.all_products_collection_url }}">{{- button_label -}}</a>
+        {%- endif -%}
+      {%- else -%}
+        <div class="hero__message">
+          {{ results_count }} {{ results_label }}
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+
+  {%- if results_count > 0 -%}
+    <div class="hero__container hero__container--bottom container">
+      <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+    </div>
+  {%- endif -%}
+
+  <div class="hero__vision">
+    {%- if show_bg -%}
+      <div class="hero__vision-wrapper">
+        {%- if image != blank -%}
+          {{ image.url | image_tag:
+            loading: 'lazy',
+            class: 'hero__image',
+            widths: '990, 1400, 1900, 2500'
+          }}
+        {%- else -%}
+          {%- render 'image-background-web' -%}
+        {%- endif -%}
+          <div class="hero__vision-wrapper-overlay container"></div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if results_count == 0 -%}
+  <script>
+    const parent = document.querySelector('#main');
+    const sections = [...parent.children];
+
+    if (sections.length <= 1) parent.classList.add('growth');
+  </script>
+{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Hero",
+    "tag": "section",
+    "class": "hero",
+    "description": "Display a section with a search query and the number of results found",
+    "templates": ["search"],
+    "settings": [
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Search results title",
+        "default": "Search results for"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: The settings below are applicable when search results have at least 1 product"
+      },
+      {
+        "type": "text",
+        "id": "results_label",
+        "label": "Results label",
+        "default": "results"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: The settings below are applicable when search results are empty"
+      },
+      {
+        "type": "contentEditor",
+        "id": "message",
+        "label": "Message",
+        "default": "No results found"
+      },
+
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "color",
+        "id": "button_background",
+        "label": "Button background color",
+        "placeholder": "Default"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button label color",
+        "placeholder": "Default"
+      },
+      {
+        "type": "header",
+        "content": "Background settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_bg",
+        "default": true,
+        "label": "Show background image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "number",
+        "id": "margin_top",
+        "label": "Margin top",
+        "min": -150,
+        "max": 150,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom",
+        "label": "Margin bottom",
+        "min": -150,
+        "max": 150,
+        "default": 40,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 150,
+        "default": 115,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 150,
+        "default": 115,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "margin_top_mobile",
+        "label": "Margin top",
+        "min": -100,
+        "max": 100,
+        "default": 0,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "margin_bottom_mobile",
+        "label": "Margin bottom",
+        "min": -100,
+        "max": 100,
+        "default": 40,
+        "info": "Note: You can use both, negative and positive numbers"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 80,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 80,
+        "info": "Note: Use positive numbers only"
+      }
+    ]
+  }
+{% endschema %}

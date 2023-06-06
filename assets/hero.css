@@ -6,6 +6,7 @@
 .hero__wrapper {
   height: 100%;
   position: relative;
+  flex-grow: 1;
 }
 
 .hero__wrapper--margin-top {
@@ -35,6 +36,10 @@
 
 .hero__title:only-child {
   margin: 0;
+}
+
+.hero__button {
+  margin: 20px 0 0;
 }
 
 .hero__vision {
@@ -91,6 +96,7 @@
 
 .hero__vision-wrapper svg {
   opacity: 0.1;
+  min-height: 100%;
 }
 
 @media (min-width: 992px) {
