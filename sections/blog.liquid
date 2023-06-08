@@ -79,7 +79,7 @@
             {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="blog__item blog__item-{{- size -}}">
+          <div class="blog__item blog__item-{{- size -}}" id="{{- block.id -}}">
             {%- if size == "lg" -%}
               <div class="blog__item-col{% if image == blank %} no-image{%- endif -%}">
                 {%- if image != blank -%}

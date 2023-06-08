@@ -48,7 +48,7 @@
       {%- assign label   = block.settings.label -%}
       {%- assign url     = block.settings.url -%}
 
-      <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}">
+      <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}" id="{{- block.id -}}">
         {%- if heading != blank -%}
           <span class="tabs__heading">{{- heading -}}</span>
         {%- endif -%}

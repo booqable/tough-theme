@@ -75,10 +75,10 @@
           {%- elsif image_placeholder != blank -%}
             {%- assign image = image_placeholder -%}
           {%- else -%}
-              {%- assign image = blank -%}
+            {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="algorithm__item">
+          <div class="algorithm__item" id="{{- block.id -}}">
             <div class="algorithm__item-col">
               <div class="algorithm__text-area">
                 <span class="algorithm__index">{{- index -}}</span>

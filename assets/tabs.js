@@ -107,8 +107,8 @@ const initTabs = (el = ".tabs") => {
 
   if (!nodes.length) return false;
 
-  nodes.forEach(item => {
-    const tabs = new Tabs(item);
+  nodes.forEach(node => {
+    const tabs = new Tabs(node);
     tabs.init();
   });
 };

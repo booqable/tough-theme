@@ -1,15 +1,15 @@
 {% comment %}
 
-  This snippet is using for rendering the list of collections;
+  This snippet is used for rendering the list of collections
 
-  items - [array] *required
-  items_type - [array] *required
+  items - { object } *required
+  items_type - "string" *required
 
   Usage:
 
-  {%- render 'collections',
-      items: collections,
-      items_type: "collections"
+  {%- render 'collections-grid',
+      items: your_id,
+      items_type: "your_string"
   -%}
 
 {% endcomment %}
@@ -32,7 +32,7 @@
         {%- assign image = first_product.images.first -%}
       {%- endif -%}
 
-      <li class="collections__item">
+      <li class="collections__item" id="{{- item.id -}}">
         <a class="collections__link" href="{{ collection.url }}">
           <span class="collections__image-item">
             {{- image.url | image_tag:
@@ -55,7 +55,7 @@
       {%- assign image = image_placeholder -%}
 
       <li class="collections__item">
-        <span class="collections__image-item">
+        <span class="collections__image-item" id="{{- item.id -}}">
           {{- image.url | image_tag:
             loading: 'lazy',
             class: 'collections__image',

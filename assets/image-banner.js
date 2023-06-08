@@ -83,8 +83,8 @@ const initBanner = (el = ".image-banner") => {
 
   if (!nodes.length) return false;
 
-  nodes.forEach(item => {
-    const init = new Media(item);
+  nodes.forEach(node => {
+    const init = new Media(node);
     init.init();
   });
 };

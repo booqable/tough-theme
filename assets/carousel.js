@@ -424,12 +424,12 @@ class Carousel {
 }
 
 const initCarousel = (el = ".carousel") => {
-  const arr = [...document.querySelectorAll(el)];
+  const nodes = [...document.querySelectorAll(el)];
 
-  if (!arr.length) return false;
+  if (!nodes.length) return false;
 
-  arr.forEach(val => {
-    const carousel = new Carousel(val);
+  nodes.forEach(node => {
+    const carousel = new Carousel(node);
     carousel.init();
   });
 };

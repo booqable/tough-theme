@@ -111,7 +111,7 @@
       {% case block.type %}
         {% when "menu" %}
           {%- if menu != blank -%}
-            <div class="footer__menu-wrapper" style="{{- menu_variables | escape -}}">
+            <div class="footer__menu-wrapper" id="{{- block.id -}}" style="{{- menu_variables | escape -}}">
               <strong class="footer__menu-heading">
                 {{- heading -}}
               </strong>
@@ -186,14 +186,13 @@
       {% comment %} CSS variables end {% endcomment %}
 
       {%- case block.type -%}
-
         {%- when "socials" -%}
-          <div class="footer__social" style="{{- social_variables | escape -}}">
+          <div class="footer__social" id="{{- block.id -}}" style="{{- social_variables | escape -}}">
             {%- include "socials" -%}
           </div>
 
         {%- when "payment-methods" -%}
-          <div class="footer__payments payments" style="{{- payment_variables | escape -}}">
+          <div class="footer__payments payments" id="{{- block.id -}}" style="{{- payment_variables | escape -}}">
             {%- include "payments" -%}
           </div>
       {%- endcase -%}
@@ -245,7 +244,6 @@
           {%- endunless -%}
         </div>
       {%- endunless -%}
-
 
       {{- footer_icons -}}
 

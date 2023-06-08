@@ -1,8 +1,17 @@
 {% comment %}
-  blocks *required
+
+  This snippet is used for rendering the accordion
+
+  blocks - { object } *required,
+  behavior - "string" *required
 
   Usage:
-  {%- include 'accordion' -%}
+
+  {%- render 'accordion',
+      blocks: blocks,
+      behavior: your_id
+  -%}
+
 {% endcomment %}
 
 {%- if blocks.size > 0 -%}
@@ -25,7 +34,7 @@
           {%- assign content = block.settings.returns -%}
       {% endcase %}
 
-      <li class="accordion__item">
+      <li class="accordion__item" id="{{- block.id -}}">
         {%- if heading != blank -%}
           <input
             {% if behavior == "single" %}type="radio"{% else %}type="checkbox"{% endif %}

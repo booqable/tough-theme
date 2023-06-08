@@ -64,13 +64,4 @@
     color: var(--color-fourth-foreground, #E1E4E8);
     transform: translate(-50%, -0.55em);
   }
-
-  .accordion__label {
-    padding-top: 19px;
-    padding-bottom: 17px;
-  }
-
-  .accordion__item {
-    margin: 0px 0 14px;
-  }
 }

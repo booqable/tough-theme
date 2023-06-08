@@ -1,3 +1,21 @@
+{% comment %}
+
+  This snippet is used for rendering the breadcrumbs links
+
+  product - { product } *required,
+  show - boolean *required,
+  label - "string" *required
+
+  Usage:
+
+  {%- render 'breadcrumbs',
+    product: your_id,
+    show: your_id,
+    label: your_id
+  -%}
+
+{% endcomment %}
+
 {%- if show -%}
   {% style %}
     .breadcrumbs {
