@@ -98,11 +98,12 @@
               <div class="contacts__col" id="{{- block.id -}}" style="{{- email_variables | escape -}}">
                 {%- if email_image.url != blank -%}
                   <div class="contacts__image-wrapper">
-                    {{- email_image.url | image_tag:
+                    {%- render 'image',
+                      image: email_image,
                       loading: 'lazy',
                       class: 'contacts__image',
-                      widths: '100'
-                    -}}
+                      size: 'xs'
+                    -%}
                   </div>
                 {%- else -%}
                   <div class="contacts__image-wrapper">
@@ -133,11 +134,12 @@
               <div class="contacts__col" id="{{- block.id -}}" style="{{- phone_variables | escape -}}">
                 {%- if phone_image.url != blank -%}
                   <div class="contacts__image-wrapper">
-                    {{- phone_image.url | image_tag:
+                    {%- render 'image',
+                      image: phone_image,
                       loading: 'lazy',
                       class: 'contacts__image',
-                      widths: '100'
-                    -}}
+                      size: 'xs'
+                    -%}
                   </div>
                 {%- else -%}
                   <div class="contacts__image-wrapper">
@@ -168,11 +170,12 @@
               <div class="contacts__col" id="{{- block.id -}}" style="{{- address_variables | escape -}}">
                 {%- if address_image.url != blank -%}
                   <div class="contacts__image-wrapper">
-                    {{- address_image.url | image_tag:
+                    {%- render 'image',
+                      image: address_image,
                       loading: 'lazy',
                       class: 'contacts__image',
-                      widths: '100'
-                    -}}
+                      size: 'xs'
+                    -%}
                   </div>
                 {%- else -%}
                   <div class="contacts__image-wrapper">

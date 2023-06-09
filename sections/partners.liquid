@@ -75,23 +75,22 @@
             {%- for block in section.blocks -%}
               {%- assign image = block.settings.image -%}
 
-              <div class="partners__image-wrapper{% if image_placeholder == blank and image == blank %} no-image{% endif %}" id="{{- block.id -}}">
+              {%- if image != blank -%}
+                {%- assign image = image -%}
+              {%- elsif image_placeholder != blank -%}
+                {%- assign image = image_placeholder -%}
+              {%- else -%}
+                {%- assign image = blank -%}
+              {%- endif -%}
+
+              <div class="partners__image-wrapper{% if image == blank %} no-image{% endif %}" id="{{- block.id -}}">
                 {%- if image.url != blank -%}
-                  {{- image.url | image_tag:
+                  {%- render 'image',
+                    image: image,
                     loading: 'lazy',
                     class: 'partners__image',
-                    widths: '160',
-                    sizes: '160px',
-                    alt: image.alt
-                  -}}
-                {%- elsif image_placeholder != blank -%}
-                  {{- image_placeholder.url | image_tag:
-                    loading: 'lazy',
-                    class: 'partners__image',
-                    widths: '160',
-                    sizes: '160px',
-                    alt: image_placeholder.alt
-                  -}}
+                    size: 's'
+                  -%}
                 {%- endif -%}
               </div>
             {%- endfor -%}

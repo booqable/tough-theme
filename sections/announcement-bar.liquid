@@ -45,14 +45,14 @@
     <div class="announcement-bar__container container">
       <div class="announcement-bar__info">
         {%- if bar_image.url != blank -%}
-          <img
-            src="{{ bar_image | image_url }}"
-            alt="{{- bar_image.alt -}}"
-            class="announcement-bar__icon"
-          >
+          {%- render 'image',
+              image: bar_image,
+              class: 'announcement-bar__icon',
+              size: 'xs'
+          -%}
         {%- else -%}
           <i class="announcement-bar__icon">
-            {%- include 'icon-phone' -%}
+            {%- render 'icon-phone' -%}
           </i>
         {%- endif -%}
 

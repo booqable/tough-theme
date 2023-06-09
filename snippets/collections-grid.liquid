@@ -3,13 +3,15 @@
   This snippet is used for rendering the list of collections
 
   items - { object } *required
-  items_type - "string" *required
+  items_type - "string" *required,
+  placeholder - image NOT required
 
   Usage:
 
   {%- render 'collections-grid',
       items: your_id,
-      items_type: "your_string"
+      items_type: "your_string",
+      placeholder: your_id
   -%}
 
 {% endcomment %}
@@ -23,7 +25,14 @@
         {%- assign collection = item -%}
     {% endcase %}
 
+    {%- assign id = item.id -%}
+    {%- assign url = "" -%}
+    {%- assign name = "" -%}
+    {%- assign image = "" -%}
+
     {%- if collection != blank -%}
+      {%- assign url = collection.url -%}
+      {%- assign name = collection.name -%}
       {%- assign first_product = collection.products | first -%}
 
       {%- if collection.image -%}
@@ -31,40 +40,31 @@
       {%- elsif first_product and first_product.images.first != empty -%}
         {%- assign image = first_product.images.first -%}
       {%- endif -%}
+    {%- else -%}
+      {%- assign image = placeholder -%}
+    {%- endif -%}
 
-      <li class="collections__item" id="{{- item.id -}}">
-        <a class="collections__link" href="{{ collection.url }}">
+    <li class="collections__item" id="{{- id -}}">
+      {%- if collection != blank -%}
+        <a class="collections__link" href="{{ url }}">
+      {%- endif -%}
           <span class="collections__image-item">
-            {{- image.url | image_tag:
+            {%- render 'image',
+              image: image,
               loading: 'lazy',
               class: 'collections__image',
-              widths: '450, 550, 650',
-              sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-              alt: collection.name
-            -}}
+              size: 'm'
+            -%}
           </span>
+      {%- if collection != blank -%}
         </a>
 
         <h3 class="collections__heading">
-          <a href="{{ collection.url }}">
-            {{- collection.name -}}
+          <a href="{{ url }}">
+            {{- name -}}
           </a>
         </h3>
-      </li>
-    {%- else -%}
-      {%- assign image = image_placeholder -%}
-
-      <li class="collections__item">
-        <span class="collections__image-item" id="{{- item.id -}}">
-          {{- image.url | image_tag:
-            loading: 'lazy',
-            class: 'collections__image',
-            widths: '450, 550, 650',
-            sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-            alt: 'Placeholder image'
-          -}}
-        </span>
-      </li>
-    {%- endif -%}
+      {%- endif -%}
+    </li>
   {%- endfor -%}
 </ul>

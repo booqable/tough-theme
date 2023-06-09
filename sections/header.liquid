@@ -6,6 +6,7 @@
 {%- assign signup_placeholder    = section.settings.signup_placeholder -%}
 {%- assign menu_back_placeholder = section.settings.menu_back_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
+{%- assign logo_vector           = section.settings.logo_vector -%}
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
 {%- assign menu                  = section.settings.menu -%}
@@ -86,41 +87,27 @@
 {% comment %} Logo component {% endcomment %}
 {%- capture header_logo -%}
   {%- if logo.url != blank -%}
-    <div class="header__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="header__logo">
-        <img
-          src="{{ logo | image_url: 'master' }}"
-          alt="{{ shop.name }}"
-          class="header__logo-image"
-        >
-      </a>
-    </div>
+    {%- render 'image',
+        image: logo,
+        class: 'header__logo-image',
+        custom_width: '170',
+        custom_size: '170px',
+        custom_alt: shop.name
+    -%}
   {%- elsif custom_title != blank -%}
-    <div class="header__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="header__logo">
-        <h2 class="header__logo-text">
-          {{- custom_title -}}
-        </h2>
-      </a>
-    </div>
+    <h2 class="header__logo-text">
+      {{- custom_title -}}
+    </h2>
   {%- elsif shop.logo_url != blank -%}
-    <div class="header__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="header__logo">
-        <img
-          src="{{ shop.logo_url }}"
-          alt="{{ shop.name }}"
-          class="header__logo-image"
-        >
-      </a>
-    </div>
+    <img
+      src="{{ shop.logo_url }}"
+      alt="{{ shop.name }}"
+      class="header__logo-image"
+    >
   {%- else -%}
-    <div class="header__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="header__logo">
-        <h2 class="header__logo-text">
-          {{- shop.name -}}
-        </h2>
-      </a>
-    </div>
+    <h2 class="header__logo-text">
+      {{- shop.name -}}
+    </h2>
   {%- endif -%}
 {%- endcapture -%}
 
@@ -129,7 +116,7 @@
   <div class="header__login">
     <div class="header__login-item">
       <a href="" class="header__login-button">
-        {%- include 'icon-user' -%}
+        {%- render 'icon-user' -%}
         {{- login_placeholder -}}
       </a>
     </div>
@@ -232,7 +219,7 @@
                     <input type="checkbox" id="dropdown-menu-trigger-{{- link_index -}}" style="display: none;">
                     <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
                       <i class="menu__item-icon">
-                        {%- include 'icon-arrow-down' -%}
+                        {%- render 'icon-arrow-down' -%}
                       </i>
                     </label>
                   {%- endif -%}
@@ -248,7 +235,7 @@
                         {%- unless menu_position_mobile == "top" -%}
                           <label for="dropdown-menu-trigger-{{- link_index -}}" class="menu__dropdown-opener">
                             <i class="menu__item-icon">
-                              {%- include 'icon-arrow-down' -%}
+                              {%- render 'icon-arrow-down' -%}
                             </i>
                             {{- menu_back_placeholder -}}
                           </label>
@@ -275,32 +262,25 @@
 
                                         <div class="menu__promo">
                                           <div class="menu__promo-wrapper">
+                                            {%- assign id = "" -%}
+                                            {%- assign url = "" -%}
+                                            {%- assign name = "" -%}
+
                                             {%- if promo_product != blank -%}
+                                              {%- assign id = promo_product.id -%}
+                                              {%- assign url = promo_product.url -%}
+                                              {%- assign name = promo_product.name -%}
+
                                               {%- if promo_product.images.first != blank -%}
                                                 {%- assign promo_image = promo_product.images.first -%}
                                               {%- else -%}
                                                 {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
-                                              <div id="{{ promo_product.id }}" class="menu__promo-product">
-                                                <a href="{{ promo_product.url }}" class="menu__promo-image-link">
-                                                  {%- if promo_image != blank -%}
-                                                    {{- promo_image.url | image_tag:
-                                                      loading: 'lazy',
-                                                      class: 'menu__promo-image',
-                                                      widths: '320',
-                                                      sizes: '320px',
-                                                      alt: promo_product.name
-                                                    -}}
-                                                  {%- endif -%}
-                                                  <span class="menu__promo-product-title">
-                                                    <span class="menu__promo-product-name">
-                                                      {{- promo_product.name -}}
-                                                    </span>
-                                                  </span>
-                                                </a>
-                                              </div>
                                             {%- elsif promo_collection != blank -%}
+                                              {%- assign id = promo_collection.id -%}
+                                              {%- assign url = promo_collection.url -%}
+                                              {%- assign name = promo_collection.name -%}
                                               {%- assign first_product = promo_collection.products | first -%}
 
                                               {%- if promo_collection.image -%}
@@ -311,40 +291,40 @@
                                                 {%- assign promo_image = image_placeholder -%}
                                               {%- endif -%}
 
-                                              <div class="menu__promo-collection">
-                                                  <a href="{{ promo_collection.url }}" class="menu__promo-image-link">
-                                                    {%- if promo_image != blank -%}
-                                                      {{- promo_image.url | image_tag:
-                                                        loading: 'lazy',
-                                                        class: 'menu__promo-image',
-                                                        widths: '320',
-                                                        sizes: '320px',
-                                                        alt: promo_collection.name
-                                                      -}}
-                                                    {%- endif -%}
-                                                    <span class="menu__promo-collection-title">
-                                                      <span class="menu__promo-collection-name">
-                                                        {{- promo_collection.name -}}
+                                            {%- elsif promo_image.url != blank -%}
+                                              {%- assign promo_image = promo_image -%}
+
+                                            {%- elsif image_placeholder.url != blank -%}
+                                              {%- assign promo_image = image_placeholder -%}
+                                            {%- endif -%}
+
+                                            {%- if url != blank -%}
+                                              <div
+                                                class="menu__promo-product"
+                                                {% if id != blank %}id="{{- id -}}"{%- endif -%}
+                                              >
+                                                <a href="{{ url }}" class="menu__promo-image-link">
+                                            {%- endif -%}
+
+                                                  {%- if promo_image != blank -%}
+                                                    {%- render 'image',
+                                                      image: promo_image,
+                                                      loading: 'lazy',
+                                                      class: 'menu__promo-image',
+                                                      size: 's'
+                                                    -%}
+                                                  {%- endif -%}
+
+                                                  {%- if name != blank -%}
+                                                    <span class="menu__promo-title">
+                                                      <span class="menu__promo-name">
+                                                        {{- name -}}
                                                       </span>
                                                     </span>
-                                                  </a>
+                                                  {%- endif -%}
+                                            {%- if url != blank -%}
+                                                </a>
                                               </div>
-                                            {%- elsif promo_image.url != blank -%}
-                                              {{- promo_image.url | image_tag:
-                                                loading: 'lazy',
-                                                class: 'menu__promo-image',
-                                                widths: '320',
-                                                sizes: '320px',
-                                                alt: 'Promotion image'
-                                              -}}
-                                            {%- elsif image_placeholder.url != blank -%}
-                                              {{- image_placeholder.url | image_tag:
-                                                loading: 'lazy',
-                                                class: 'menu__promo-image',
-                                                widths: '320',
-                                                sizes: '320px',
-                                                alt: 'Placeholder image'
-                                              -}}
                                             {%- endif -%}
                                           </div>
                                         </div>
@@ -357,7 +337,7 @@
                                   <input type="checkbox" id="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" style="display: none;">
                                   <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
                                     <i class="menu__item-icon">
-                                      {%- include 'icon-arrow-down' -%}
+                                      {%- render 'icon-arrow-down' -%}
                                     </i>
                                   </label>
                                 {%- endif -%}
@@ -373,7 +353,7 @@
                                       {%- unless menu_position_mobile == "top" -%}
                                         <label for="dropdown-childmenu-trigger-{{- link_index -}}-{{- childlink_index -}}" class="menu__dropdown-opener">
                                           <i class="menu__item-icon">
-                                            {%- include 'icon-arrow-down' -%}
+                                            {%- render 'icon-arrow-down' -%}
                                           </i>
                                           {{- menu_back_placeholder -}}
                                         </label>
@@ -421,14 +401,14 @@
   <div class="header__search">
     <input type="checkbox" id="search-opener" style="display: none">
     <label for="search-opener" class="header__search-opener">
-      {%- include 'icon-search' -%}
+      {%- render 'icon-search' -%}
     </label>
 
     <div class="header__search-wrapper" style="display: none">
       <form id="search" action="{{ routes.search_url }}" role="search">
         <div class="header__search-input-wrapper">
           <i class="header__search-icon">
-            {%- include 'icon-search' -%}
+            {%- render 'icon-search' -%}
           </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
@@ -443,7 +423,7 @@
   <div class="header__account">
     <input type="checkbox" id="account-opener" style="display: none">
     <label for="account-opener" class="header__account-opener">
-      {%- include 'icon-user' -%}
+      {%- render 'icon-user' -%}
     </label>
 
     <div class="header__account-drop-wrapper">
@@ -481,8 +461,11 @@
   <div class="header__content{% if padding_top != blank or padding_top_mobile != blank %} header__content--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
       <div class="header__content-inner{% if menu != blank %} header__mobile-menu-opener-{{- menu_opener_mobile -}}{%- endif -%}">
-
-        {{- header_logo -}}
+        <div class="header__logo-wrapper">
+          <a href="{{ routes.root_url }}" class="header__logo">
+            {{- header_logo -}}
+          </a>
+        </div>
 
         {{- header_menu -}}
 
@@ -698,7 +681,7 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "description": "Note: Header logo always overrides this title"
+        "info": "Note: Header logo always overrides this title"
       },
       {
         "type": "color",

@@ -38,27 +38,14 @@
     style="{{- variables | escape -}}"
   >
     <div class="blog__container container">
-      <div class="blog__top">
-        <div class="blog__col">
-          {%- if tag != blank -%}
-            <span class="blog__tag">{{- tag -}}</span>
-          {%- endif -%}
-
-          {%- if title != blank -%}
-            <h2 class="blog__title">{{- title -}}</h2>
-          {%- endif -%}
-
-          {%- if description != blank -%}
-            <div class="blog__description">{{- description -}}</div>
-          {%- endif -%}
-        </div>
-
-        <div class="blog__col">
-          {%- if title_bg != blank -%}
-            <h2 class="blog__title_bg">{{- title_bg -}}</h2>
-          {%- endif -%}
-        </div>
-      </div>
+      {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
+        {%- render 'section-header',
+            tag: tag,
+            title: title,
+            description: description,
+            background: title_bg
+        -%}
+      {%- endif -%}
 
       <div class="blog__list">
         {%- for block in section.blocks -%}
@@ -72,7 +59,7 @@
           {%- assign icon         = block.settings.icon -%}
 
           {%- if image != blank -%}
-            {%- assign image = block.settings.image -%}
+            {%- assign image = image -%}
           {%- elsif image_placeholder != blank -%}
             {%- assign image = image_placeholder -%}
           {%- else -%}
@@ -83,13 +70,12 @@
             {%- if size == "lg" -%}
               <div class="blog__item-col{% if image == blank %} no-image{%- endif -%}">
                 {%- if image != blank -%}
-                  {{- image.url | image_tag:
+                  {%- render 'image',
+                    image: image,
                     loading: 'lazy',
                     class: 'blog__image',
-                    widths: '450, 550, 650',
-                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                    alt: image.name
-                  -}}
+                    size: 'm'
+                  -%}
                 {%- endif -%}
               </div>
             {%- endif -%}
@@ -101,13 +87,12 @@
                 {%- endif -%}
 
                 {%- if icon != blank and size == "sm" -%}
-                  {{- icon.url | image_tag:
+                  {%- render 'image',
+                    image: icon,
                     loading: 'lazy',
                     class: 'blog__icon',
-                    widths: '450, 550, 650',
-                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                    alt: icon.name
-                  -}}
+                    size: 'xs'
+                  -%}
                 {%- endif -%}
 
                 {%- if heading != blank -%}
@@ -123,7 +108,7 @@
                 {%- if button != blank and button_url != blank -%}
                   <a href="{{  button_url }}" class="blog__button button button--secondary">
                     {{- button -}}
-                    {%- include 'icon-arrow-right' -%}
+                    {%- render 'icon-arrow-right' -%}
                   </a>
                 {%- endif -%}
               </div>

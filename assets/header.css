@@ -62,6 +62,7 @@
   font-weight: var(--font-weight-semibold, 600);
   margin: 0;
   color: currentColor;
+  word-break: break-word;
 }
 
 .header__logo-image {

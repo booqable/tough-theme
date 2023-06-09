@@ -53,22 +53,18 @@
     style="{{- variables | escape -}}"
   >
     <div class="faq__container container">
-      <div class="faq__top">
-        {%- if title != blank -%}
-          <h2 class="faq__title">{{- title -}}</h2>
-        {%- endif -%}
+      {%- if title != blank or description != blank or title_bg != blank -%}
+        {%- render 'section-header-narrow',
+            title: title,
+            text: description,
+            background: title_bg
+        -%}
+      {%- endif -%}
 
-        {%- if description != blank -%}
-          <div class="faq__description">{{- description -}}</div>
-        {%- endif -%}
-
-        {%- if title_bg != blank -%}
-          <h2 class="faq__title_bg">{{- title_bg -}}</h2>
-        {%- endif -%}
-      </div>
-
-      {%- render 'accordion', blocks: blocks, behavior: behavior -%}
-
+      {%- render 'accordion',
+          blocks: blocks,
+          behavior: behavior
+      -%}
     </div>
   </div>
 {%- endif -%}

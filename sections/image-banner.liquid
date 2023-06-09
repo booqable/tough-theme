@@ -321,21 +321,23 @@
                     {%- elsif image != blank or image_mobile != blank -%}
                       {%- if image != blank -%}
                         <div class="image-banner__vision-wrapper{% if image_mobile != blank %} image-banner__vision-wrapper--desktop{% endif %}{%if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
-                          {{ image.url | image_tag:
+                          {%- render 'image',
+                            image: image,
                             loading: 'lazy',
                             class: 'image-banner__image',
-                            widths: '990, 1400, 1900, 2500'
-                          }}
+                            size: 'xxl'
+                          -%}
                         </div>
                       {%- endif -%}
 
                       {%- if image_mobile != blank -%}
                         <div class="image-banner__vision-wrapper image-banner__vision-wrapper--mobile{%if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
-                          {{ image_mobile.url | image_tag:
+                          {%- render 'image',
+                            image: image,
                             loading: 'lazy',
                             class: 'image-banner__image',
-                            widths: '320, 480, 567'
-                          }}
+                            size: 'm'
+                          -%}
                         </div>
                       {%- endif -%}
                     {%- endif -%}
@@ -353,11 +355,11 @@
           <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
             <span class="carousel__btn prev" title="Prev slide">
               Previous slide
-              {%- include 'icon-arrow-right' -%}
+              {%- render 'icon-arrow-right' -%}
             </span>
             <span class="carousel__btn next" title="Next slide">
               Next slide
-              {%- include 'icon-arrow-right' -%}
+              {%- render 'icon-arrow-right' -%}
             </span>
           </div>
         {%- endif -%}

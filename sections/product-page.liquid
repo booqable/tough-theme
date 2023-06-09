@@ -16,6 +16,7 @@
 {%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
 {%- assign blocks                = section.blocks -%}
 {%- assign carousel              = false -%}
+{%- assign is_focal              = settings.use_focal_images -%}
 
 {%- if product.images.size > 1 -%}
   <link rel="preload" href="{{ 'carousel.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -72,11 +73,12 @@
                   <div class="carousel__inner">
               {%- endif -%}
                     <a class="product-main__modal-opener" href="#popup-{{- index -}}">
-                      {{ image.url | image_tag:
-                        class: 'product-main__gallery-image lazyload',
-                        widths: '600, 700, 800',
-                        sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px',
-                      }}
+                      {%- render 'image',
+                        image: image,
+                        loading: 'lazy',
+                        class: 'product-main__gallery-image',
+                        size: 'l'
+                      -%}
                       <span class="product-main__zoom-in" style="display: none;">
                         {%- render 'icon-zoom-in' -%}
                       </span>
@@ -86,11 +88,12 @@
                       <a class="product-main__modal-close" href="#!"></a>
                       <div class="product-main__popup">
                         <a class="product-main__modal-close" href="#!">&times;</a>
-                        {{ image.url | image_tag:
-                          class: 'product-main__popup-image lazyload',
-                          widths: '600, 700, 800, 1000',
-                          sizes: '(max-width: 576px) 600px, (max-width: 876px) 700px, 800px, 1000px',
-                        }}
+                        {%- render 'image',
+                          image: image,
+                          loading: 'lazy',
+                          class: 'product-main__popup-image',
+                          size: 'l'
+                        -%}
                       </div>
                     </div>
               {%- if carousel -%}
@@ -125,7 +128,10 @@
                 {%- for image in product.images -%}
                   {%- assign first = forloop.first -%}
                   {%- assign index = forloop.index -%}
-                  {%- assign focal = image.coordinates -%}
+
+                  {%- if is_focal != blank -%}
+                    {%- assign focal = image.coordinates -%}
+                  {%- endif -%}
 
                   {%- if carousel_thumbs -%}
                     <div class="carousel__item">
@@ -134,12 +140,13 @@
 
                         <span class="carousel__dot carousel__thumb{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
                           <span class="carousel__dot-wrapper">
-                            {{ image.url | image_tag:
-                              class: 'carousel__dot-image',
+                            {%- render 'image',
+                              image: image,
                               loading: 'lazy',
+                              class: 'carousel__dot-image',
                               focal: focal,
-                              widths: '150'
-                            }}
+                              size: 's'
+                            -%}
                           </span>
                         </span>
 

@@ -22,6 +22,14 @@
 {%- assign image_bg              = section.settings.image_bg -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
+{%- if image != blank -%}
+  {%- assign image = image -%}
+{%- elsif image_placeholder != blank -%}
+  {%- assign image = image_placeholder -%}
+{%- else -%}
+  {%- assign image = blank -%}
+{%- endif -%}
+
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if color != blank -%}
@@ -134,7 +142,7 @@
           {%- if button_2 != blank and button_url_2 != blank -%}
             <a href="{{ button_url_2 }}" class="image-text__button button button--secondary">
               {{- button_2 -}}
-              {%- include 'icon-arrow-right' -%}
+              {%- render 'icon-arrow-right' -%}
             </a>
           {%- endif -%}
         </div>
@@ -142,24 +150,15 @@
 
       {%- unless hide_image -%}
         <div class="image-text__col">
-          <div class="image-text__holder{% if image_placeholder == blank and image == blank %} no-image{% endif %}">
+          <div class="image-text__holder{% if image == blank %} no-image{% endif %}">
             <div class="image-text__image-wrapper">
               {%- if image.url != blank -%}
-                {{- image.url | image_tag:
+                {%- render 'image',
+                  image: image,
                   loading: 'lazy',
                   class: 'image-text__image',
-                  widths: '450, 550, 700',
-                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 700px',
-                  alt: image.alt
-                -}}
-              {%- elsif image_placeholder != blank -%}
-                {{- image_placeholder.url | image_tag:
-                  loading: 'lazy',
-                  class: 'image-text__image',
-                  widths: '450, 550, 700',
-                  sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 700px',
-                  alt: image_placeholder.alt
-                -}}
+                  size: 'm'
+                -%}
               {%- endif -%}
             </div>
           </div>
@@ -169,18 +168,17 @@
   </div>
   {%- if image_bg.url != blank -%}
     <div class="image-text__bg-image-wrapper">
-      {{- image_bg.url | image_tag:
+      {%- render 'image',
+        image: image_bg,
         loading: 'lazy',
         class: 'image-text__bg-image',
-        widths: '450, 550, 650',
-        sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-        alt: image_bg.alt
-      -}}
+        size: 'xl'
+      -%}
       <div class="image-text__bg-overlay container"></div>
     </div>
   {%- else -%}
     <div class="image-text__bg-image-wrapper">
-      {%- include 'image-background-web' -%}
+      {%- render 'image-background-web' -%}
       <div class="image-text__bg-overlay container"></div>
     </div>
   {%- endif -%}

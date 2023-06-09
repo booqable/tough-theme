@@ -1,6 +1,7 @@
 :root {
   /* Sizes */
   --max-width: 1272px;
+  --max-width-narrow: 770px;
   --horizontal-padding: 16px;
 
   /* Carousel */

@@ -71,5 +71,6 @@
     opacity: .5;
     color: var(--color-fourth-foreground, #E1E4E8);
     transform: translate(0, -32px);
+    white-space: nowrap;
   }
 }

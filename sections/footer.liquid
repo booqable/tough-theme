@@ -50,41 +50,27 @@
 {% comment %} Logo component {% endcomment %}
 {%- capture footer_logo -%}
   {%- if logo.url != blank -%}
-    <div class="footer__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="footer__logo">
-        <img
-          src="{{ logo | image_url: 'master' }}"
-          alt="{{ shop.name }}"
-          class="footer__logo-image"
-        >
-      </a>
-    </div>
+    {%- render 'image',
+        image: logo,
+        class: 'footer__logo-image',
+        custom_width: '170',
+        custom_size: '170px',
+        custom_alt: shop.name
+    -%}
   {%- elsif custom_title != blank -%}
-    <div class="footer__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="footer__logo">
-        <h2 class="footer__logo-text">
-          {{- custom_title -}}
-        </h2>
-      </a>
-    </div>
+    <h2 class="footer__logo-text">
+      {{- custom_title -}}
+    </h2>
   {%- elsif shop.logo_url != blank -%}
-    <div class="footer__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="footer__logo">
-        <img
-          src="{{ shop.logo_url }}"
-          alt="{{ shop.name }}"
-          class="footer__logo-image"
-        >
-      </a>
-    </div>
+    <img
+      src="{{ shop.logo_url }}"
+      alt="{{ shop.name }}"
+      class="footer__logo-image"
+    >
   {%- else -%}
-    <div class="footer__logo-wrapper">
-      <a href="{{ routes.root_url }}" class="footer__logo">
-        <h2 class="footer__logo-text">
-          {{- shop.name -}}
-        </h2>
-      </a>
-    </div>
+    <h2 class="footer__logo-text">
+      {{- shop.name -}}
+    </h2>
   {%- endif -%}
 {%- endcapture -%}
 
@@ -225,8 +211,11 @@
 >
   <div class="footer__container container">
     <div class="footer__top{% if footer_logo != blank %} footer__top--with-logo{%- endif -%}">
-
-      {{- footer_logo -}}
+      <div class="footer__logo-wrapper">
+        <a href="{{ routes.root_url }}" class="footer__logo">
+          {{- footer_logo -}}
+        </a>
+      </div>
 
       {{- footer_menu -}}
 
