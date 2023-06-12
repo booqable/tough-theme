@@ -19,9 +19,12 @@
 {%- capture variables -%}
   {%- if background != blank -%}
     --color-accent-background: {{ background }};
+    --color-accent-background-rgb: {{ background }}00;
   {%- endif -%}
   {%- if color != blank -%}
     --color-primary-background: {{ color }};
+    --color-primary-background-hover: {{ color }}52;
+    --color-primary-background-active: {{ color }}8F;
   {%- endif -%}
   {%- if ui_color != blank -%}
     --color-primary-foreground: {{ ui_color }};

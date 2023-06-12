@@ -12,9 +12,16 @@
   --grid-auto-flow: dense;
 
   /* Colors */
+  --color-primary-foreground-rgb: #0B1A2600; /* alpha: 0 */
+  --color-primary-foreground-rgb-dec: #0B1A261A; /* alpha: 0.1 */
+  --color-primary-foreground-rgb-half: #0B1A2673; /* alpha: 0.45 */
+  --color-primary-foreground-rgb-octa: #0B1A26CC; /* alpha: 0.8 */
   --color-primary-background-rgb: 255, 255, 255;
-  --color-primary-foreground-rgb: 11, 26, 38;
-  --color-accent-background-rgb: 244, 184, 65;
+  --color-primary-background-rgb-bi: #FFFFFF33; /* alpha: 0.2 */
+  --color-primary-background-rgb-hexa: #FFFFFF99; /* alpha: 0.6 */
+  --color-primary-background-hover: #FFFFFF52; /* alpha: 0.32 */
+  --color-primary-background-active: #FFFFFF8F; /* alpha: 0.56 */
+  --color-accent-background-rgb: #F4B84100; /* alpha: 0 */
   --color-green: #51C234;
   --color-red: #C23434;
   --color-black: #0B1A26;

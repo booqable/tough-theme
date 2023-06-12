@@ -2,7 +2,7 @@
   color: var(--color-third-foreground, #B2B4B8);
   background: var(--color-primary-foreground, #0B1A26);
   font-size: 18px;
-  line-height: 1.5;
+  line-height: var(--line-height-lg, 1.5);
   position: relative;
 }
 
@@ -58,8 +58,13 @@
   margin: var(--margin-top) 0 var(--margin-bottom);
 }
 
+.image-text__holder.no-image {
+  aspect-ratio: 16 / 9;
+}
+
 .image-text__holder.no-image .image-text__image-wrapper {
   background: var(--color-image-placeholder-lt, #FFFFFF0F);
+  height: 100%;
 }
 
 .image-text__image {
@@ -106,7 +111,7 @@
   width: 1597px;
   height: 837px;
   z-index: 1;
-  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground) 0%, rgba(var(--color-primary-foreground-rgb), 0) 100%);
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb, #0B1A2600) 100%);
   transform: var(--transform-overlay);
 }
 
@@ -153,15 +158,11 @@
     min-width: calc(100% + 22px);
   }
 
-  .image-text__holder.no-image .image-text__image-wrapper {
-    padding-bottom: 56.25%;
-  }
-
   .image-text__bg-overlay::before {
     right: var(--right-bg);
     left: var(--left-bg);
     transform: translate(0, 0);
-    background: radial-gradient(63.68% 231.83% at var(--rotate-bg), var(--color-primary-foreground) 0%, rgba(var(--color-primary-foreground-rgb), 0) 100%);
+    background: radial-gradient(63.68% 231.83% at var(--rotate-bg), var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb, #0B1A2600) 100%);
   }
 
   .image-text__bg-overlay::after {
@@ -172,7 +173,7 @@
     width: 9999px;
     left: var(--left-overlay);
     right: var(--right-overlay);
-    background: linear-gradient(to var(--direction-overlay), rgba(var(--color-primary-foreground-rgb), 0) 0%, rgba(var(--color-primary-foreground-rgb), 0.1) 20%, rgba(var(--color-primary-foreground-rgb), 0.5) 40%, var(--color-primary-foreground) 100%);
+    background: linear-gradient(to var(--direction-overlay), var(--color-primary-foreground-rgb, #0B1A2600) 0%, var(--color-primary-foreground-rgb-dec, #0B1A261A) 20%, var(--color-primary-foreground-rgb-half, #0B1A2673) 40%, var(--color-primary-foreground, #0B1A26) 100%);
   }
 }
 

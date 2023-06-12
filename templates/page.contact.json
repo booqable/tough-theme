@@ -55,9 +55,104 @@
         "padding_bottom_mobile": 40
       },
       "disabled": null
+    },
+    "contacts": {
+      "type": "contacts",
+      "blocks": {
+        "email": {
+          "type": "email",
+          "settings": {
+            "email": "hello@info.com",
+            "email_title": "Email",
+            "email_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "phone": {
+          "type": "phone",
+          "settings": {
+            "phone": "+1 (555) 000-0000",
+            "phone_title": "Phone",
+            "phone_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        },
+        "address": {
+          "type": "address",
+          "settings": {
+            "address": "123 Sample St, London Eng 2000 UK",
+            "address_title": "Office",
+            "address_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "email",
+        "phone",
+        "address"
+      ],
+      "settings": {
+        "padding_top": 112,
+        "padding_top_mobile": 70,
+        "padding_bottom": 112,
+        "padding_bottom_mobile": 70
+      },
+      "disabled": false
+    },
+    "offices": {
+      "type": "offices",
+      "blocks": {
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "heading": "Sydney",
+            "label": "View Map",
+            "address": "123 Sample St, Sydney NSW 2000 AU"
+          },
+          "disabled": null
+        },
+        "tab_257387": {
+          "type": "tab",
+          "settings": {
+            "heading": "New York",
+            "label": "View Map",
+            "address": "123 Sample St, New York NY 10000 USA"
+          },
+          "disabled": null
+        },
+        "tab_257388": {
+          "type": "tab",
+          "settings": {
+            "heading": "London",
+            "label": "View Map",
+            "address": "123 Sample St, London 2000 , United Kingdom"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "tab",
+        "tab_257387",
+        "tab_257388"
+      ],
+      "settings": {
+        "opener": "Open to a view list of offices",
+        "tag": "Our offices",
+        "title": "Visit our stores",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "placement": "right",
+        "padding_top": 112,
+        "padding_top_bottom": 70,
+        "padding_bottom": 112,
+        "padding_bottom_bottom": 70
+      },
+      "disabled": false
     }
   },
   "order": [
-    "form"
+    "form",
+    "contacts",
+    "offices"
   ]
 }

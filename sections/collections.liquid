@@ -12,6 +12,7 @@
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign image_placeholder     = settings.image_placeholder -%}
+  {%- assign url                   = routes.collections_url -%}
 
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
@@ -36,12 +37,13 @@
   >
     <div class="collections__container container">
       {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
-        {%- render 'collections-header',
+        {%- render 'section-header',
             tag: tag,
             title: title,
             description: description,
             background: title_bg,
-            button: view_all
+            button: view_all,
+            url: url
         -%}
       {%- endif -%}
 

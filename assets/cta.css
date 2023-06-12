@@ -8,7 +8,7 @@
   color: var(--color-primary-background, #FFFFFF);
   text-align: center;
   font-size: 18px;
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-lg, 1.5);
 }
 
 .cta__wrapper--padding-top {
@@ -66,11 +66,11 @@
 }
 
 .cta__button.button--outlined:hover {
-  background: rgba(var(--color-primary-background-rgb), 0.32);
+  background: var(--color-primary-background-hover, #FFFFFF52);
 }
 
 .cta__button.button--outlined:active {
-  background: rgba(var(--color-primary-background-rgb), 0.56);
+  background: var(--color-primary-background-active, #FFFFFF8F);
 }
 
 .cta__image-wrapper {
@@ -105,7 +105,7 @@
   top: 0;
   bottom: -120px;
   right: 0;
-  background: linear-gradient(180.44deg, var(--color-accent-background, #F4B841) 51.3%, rgba(var(--color-accent-background-rgb), 0) 81.06%);
+  background: linear-gradient(180.44deg, var(--color-accent-background, #F4B841) 51.3%, var(--color-accent-background-rgb) 81.06%);
 }
 
 @media (min-width: 992px) {

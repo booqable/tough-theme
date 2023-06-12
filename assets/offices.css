@@ -1,0 +1,17 @@
+.offices__wrapper--padding-top {
+  padding-top: var(--padding-top-mobile, 70px);
+}
+
+.offices__wrapper--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 70px);
+}
+
+@media (min-width: 992px) {
+  .offices__wrapper--padding-top {
+    padding-top: var(--padding-top, 112px);
+  }
+
+  .offices__wrapper--padding-bottom {
+    padding-bottom: var(--padding-bottom, 112px);
+  }
+}
