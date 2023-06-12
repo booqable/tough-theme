@@ -1,13 +1,13 @@
 {{ "contact-form.css" | asset_url | stylesheet_tag }}
 
-{%- assign name_label            = section.settings.name_label -%}
-{%- assign name_placeholder      = section.settings.name_placeholder -%}
-{%- assign email_label           = section.settings.email_label -%}
-{%- assign email_placeholder     = section.settings.email_placeholder -%}
-{%- assign message_label         = section.settings.message_label -%}
-{%- assign message_placeholder   = section.settings.message_placeholder -%}
+{%- assign name                  = section.settings.name -%}
+{%- assign name_holder           = section.settings.name_holder -%}
+{%- assign email                 = section.settings.email -%}
+{%- assign email_holder          = section.settings.email_holder -%}
+{%- assign message               = section.settings.message -%}
+{%- assign message_holder        = section.settings.message_holder -%}
 {%- assign checkbox_label        = section.settings.checkbox_label -%}
-{%- assign checkbox_label_link   = section.settings.checkbox_label_link -%}
+{%- assign checkbox_link         = section.settings.checkbox_link -%}
 {%- assign checkbox_url          = section.settings.checkbox_url -%}
 {%- assign button_label          = section.settings.button_label -%}
 {%- assign success_message       = section.settings.success_message -%}
@@ -29,6 +29,7 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign id                    = section.key -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -61,15 +62,21 @@
 
   {%- case placement -%}
     {%- when 'left' -%}
-      --direction: ltr;
+      --order: 1;
       --overlay-direction: rotate(0deg);
       --left: 48px;
       --right: auto;
+      --left-overlay: auto;
+      --right-overlay: calc(100% - 100px);
+      --direction-overlay: right;
     {%- when 'right' -%}
-      --direction: rtl;
+      --order: -1;
       --overlay-direction: rotate(180deg);
       --left: auto;
       --right: 48px;
+      --left-overlay: calc(100% - 100px);
+      --right-overlay: auto;
+      --direction-overlay: left;
   {%- endcase -%}
 {%- endcapture -%}
 
@@ -148,7 +155,11 @@
       {% case block.type %}
         {% when "image" %}
           {%- if content_type == "image" -%}
-            <div class="contact-form__holder{% if image == blank %} no-image{% endif %}" style="{{- image_variables | escape -}}">
+            <div
+              class="contact-form__holder{% if image == blank %} no-image{% endif %}"
+              style="{{- image_variables | escape -}}"
+              id="{{- block.id -}}"
+            >
               {%- if image.url != blank -%}
                 <div class="contact-form__image-wrapper">
                   {{- image.url | image_tag:
@@ -166,7 +177,11 @@
         {% when "text" %}
           {%- if content_type == "text" -%}
             {%- if heading != blank or text != blank or label != blank and url != blank -%}
-              <div class="contact-form__content" style="{{- text_variables | escape -}}">
+              <div
+                class="contact-form__content"
+                style="{{- text_variables | escape -}}"
+                id="{{- block.id -}}"
+              >
                 {%- if heading != blank -%}
                   <h2 class="contact-form__heading contact-form__heading--{{- heading_size -}}">{{- heading -}}</h2>
                 {%- endif -%}
@@ -190,26 +205,7 @@
   <div class="contact-form__container container">
     <div class="contact-form__inner{% if section.blocks.size > 0 %} contact-form__inner--grid{%- endif -%}">
       <div class="contact-form__form">
-        {%- render "form",
-            id: section.key,
-            title: title,
-            title_size: title_size,
-            text: description,
-            text_size: description_size,
-            name: name_label,
-            name_holder: name_placeholder,
-            email: email_label,
-            email_holder: email_placeholder,
-            message: message_label,
-            message_holder: message_placeholder,
-            success: success_message,
-            error: error_message,
-            checkbox_label: checkbox_label,
-            checkbox_link: checkbox_label_link,
-            checkbox_url: checkbox_url,
-            button: button_label,
-            variables: button_variables
-        -%}
+        {%- include "form" -%}
       </div>
       {%- if section.blocks.size > 0 -%}
         {{- children -}}
@@ -235,7 +231,7 @@
 
 {% schema %}
   {
-    "name": "Contact form",
+    "name": "Form",
     "description": "Display a contact form on your website.",
     "tag": "section",
     "class": "contact-form",
@@ -246,37 +242,37 @@
       },
       {
         "type": "text",
-        "id": "name_label",
+        "id": "name",
         "label": "Name label",
         "default": "Name"
       },
       {
         "type": "text",
-        "id": "name_placeholder",
+        "id": "name_holder",
         "label": "Name placeholder",
         "default": "Your name"
       },
       {
         "type": "text",
-        "id": "email_label",
+        "id": "email",
         "label": "Email label",
         "default": "Email"
       },
       {
         "type": "text",
-        "id": "email_placeholder",
+        "id": "email_holder",
         "label": "Email placeholder",
         "default": "Your email"
       },
       {
         "type": "text",
-        "id": "message_label",
+        "id": "message",
         "label": "Message label",
         "default": "Message"
       },
       {
         "type": "text",
-        "id": "message_placeholder",
+        "id": "message_holder",
         "label": "Message placeholder",
         "default": "Type your message..."
       },
@@ -288,8 +284,8 @@
       },
       {
         "type": "text",
-        "id": "checkbox_label_link",
-        "label": "Checkbox link name",
+        "id": "checkbox_link",
+        "label": "Checkbox link",
         "default": "Terms"
       },
       {

@@ -15,7 +15,7 @@
 
 .contact-form__container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .contact-form__inner--grid {
@@ -28,11 +28,6 @@
   display: flex;
   flex-direction: column;
   align-items: var(--justify-content, left);
-  direction: ltr;
-}
-
-.contact-form__form {
-  direction: ltr;
 }
 
 .contact-form__heading {
@@ -104,6 +99,18 @@
   background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb) 100%);
 }
 
+.contact-form__background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9999px;
+  left: var(--left-overlay);
+  right: var(--right-overlay);
+  background: linear-gradient(to var(--direction-overlay), var(--color-primary-foreground-rgb, #0B1A2600) 0%, var(--color-primary-foreground-rgb-dec, #0B1A261A) 20%, var(--color-primary-foreground-rgb-half, #0B1A2673) 40%, var(--color-primary-foreground, #0B1A26) 100%);
+  z-index: 1;
+}
+
 .contact-form__background-image-wrapper img {
   object-fit: cover;
   width: 100%;
@@ -124,7 +131,6 @@
   .contact-form__inner--grid {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24px;
-    direction : var(--direction, ltr);
   }
 
   .contact-form__content {
@@ -136,6 +142,7 @@
     display: flex;
     flex-direction: column;
     justify-content: var(--image-align, flex-start);
+    order : var(--order, 1);
   }
 
   .contact-form__image-wrapper {

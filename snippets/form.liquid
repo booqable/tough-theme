@@ -1,24 +1,25 @@
 {% comment %}
 
-  This snippet is using for rendering the contact form;
+  This snippet is using for rendering the contact form
 
-  title - string
-  title_size - string
-  text - string
-  text_size - string
-  name - string
-  name_holder - string
-  email - string
-  email_holder - string
-  message - string
-  message_holder - string
-  success - string
-  error - string
-  checkbox_label - string
-  checkbox_link - string
-  checkbox_url - url
-  button - string
-  variables - string
+  id - id
+  title - "string" *required,
+  title_size - "string" optional,
+  description - "string" *required,
+  description_size - "string" optional,
+  name - "string" *required,
+  name_holder - "string" optional,
+  email - "string" *required,
+  email_holder - "string" optional,
+  message - "string" *required,
+  message_holder - "string" optional,
+  success_message - "string" *required,
+  error_message - "string" *required,
+  checkbox_label - "string" *required,
+  checkbox_link - "string" optional,
+  checkbox_url - url *required only if checkbox_link is exist, else - optional
+  button_label - "string" *required,
+  button_variables - "string" optional
 
   Usage:
 
@@ -26,35 +27,35 @@
       id: your_id,
       title: your_id,
       title_size: your_id,
-      text: your_id,
-      text_size: your_id,
+      description: your_id,
+      description_size: your_id,
       name: your_id,
       name_holder: your_id,
       email: your_id,
       email_holder: your_id,
       message: your_id,
       message_holder: your_id,
-      success: your_id,
-      error: your_id,
+      success_message: your_id,
+      error_message: your_id,
       checkbox_label: your_id,
       checkbox_link: your_id,
       checkbox_url: your_id,
-      button: your_id,
-      variables: your_id
+      button_label: your_id,
+      button_variables
   -%}
 
 {% endcomment %}
 
 {{ "form.css" | asset_url | stylesheet_tag }}
 
-<div id="{{- id -}}" class="form__inner" style="{{- variables | escape -}}">
+<div id="{{- id -}}" class="form__inner" style="{{- button_variables | escape -}}">
   {%- if title != blank -%}
     <h2 class="form__title form__title--{{- title_size -}}">{{- title -}}</h2>
   {%- endif -%}
 
-  {%- if text != blank -%}
-    <div class="form__text{% if text_size == "lg" %} text-large{% endif %}{% if text_size == "md" %} text-medium{%- endif -%}">
-      {{- text -}}
+  {%- if description != blank -%}
+    <div class="form__text{% if description_size == "lg" %} text-large{% endif %}{% if description_size == "md" %} text-medium{%- endif -%}">
+      {{- description -}}
     </div>
   {%- endif -%}
 
@@ -95,7 +96,6 @@
         id="email"
         class="form__field{% if form.errors.email %} error{%- endif -%}"
         name="form[email]"
-        pattern="^[a-zA-Z0-9!#$%&'*+\.\/=?^_`{|}~-]+@[\w-]+\.+[\w-]{2,16}$"
         title="(e.g. mail@domain.com)"
         placeholder="{{- email_holder -}}"
         {%- if form.errors != blank -%}
@@ -140,7 +140,11 @@
         >
 
         <label class="form__label" for="checkbox">
-          {{- checkbox_label -}}&nbsp;<a href="{{  checkbox_url }}">{{- checkbox_link -}}</a>
+          {{- checkbox_label -}}
+          &nbsp;
+          {%- if checkbox_link != blank and checkbox_url != blank -%}
+            <a href="{{  checkbox_url }}">{{- checkbox_link -}}</a>
+          {%- endif -%}
         </label>
       </div>
     {%- endif -%}
@@ -148,20 +152,20 @@
     <div class="form__info">
       {%- if form.posted_successfully -%}
         <p class="success">
-          <i class="fa-solid fa-circle-check"></i> {{- success -}}
+          <i class="fa-solid fa-circle-check"></i> {{- success_message -}}
         </p>
       {%- endif -%}
 
       {%- if form.errors != blank -%}
         <p class="error">
-          <i class="fa-solid fa-circle-exclamation"></i> {{- error -}}
+          <i class="fa-solid fa-circle-exclamation"></i> {{- error_message -}}
         </p>
       {%- endif -%}
     </div>
 
     <div class="form__submit">
       <button class="button button--large button--primary">
-        {{- button -}}
+        {{- button_label -}}
       </button>
     </div>
   {%- endform -%}
