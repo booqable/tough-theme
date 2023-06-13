@@ -1,8 +1,16 @@
 {% comment %}
-  blocks *required
+  This snippet is used for rendering the accordion
+
+  blocks - { object } *required,
+  behavior - "string" *required
 
   Usage:
-  {%- include 'accordion' -%}
+
+  {%- render 'accordion',
+      blocks: blocks,
+      behavior: your_id
+  -%}
+
 {% endcomment %}
 
 {%- if blocks.size > 0 -%}

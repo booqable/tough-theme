@@ -1,0 +1,671 @@
+{{ "contact-form.css" | asset_url | stylesheet_tag }}
+
+{%- assign name                  = section.settings.name -%}
+{%- assign name_holder           = section.settings.name_holder -%}
+{%- assign email                 = section.settings.email -%}
+{%- assign email_holder          = section.settings.email_holder -%}
+{%- assign message               = section.settings.message -%}
+{%- assign message_holder        = section.settings.message_holder -%}
+{%- assign checkbox_label        = section.settings.checkbox_label -%}
+{%- assign checkbox_link         = section.settings.checkbox_link -%}
+{%- assign checkbox_url          = section.settings.checkbox_url -%}
+{%- assign button_label          = section.settings.button_label -%}
+{%- assign success_message       = section.settings.success_message -%}
+{%- assign error_message         = section.settings.error_message -%}
+{%- assign content_type          = section.settings.content_type -%}
+{%- assign background            = section.settings.background -%}
+{%- assign foreground            = section.settings.foreground -%}
+{%- assign foreground_second     = section.settings.foreground_second -%}
+{%- assign foreground_third      = section.settings.foreground_third -%}
+{%- assign bg_image              = section.settings.bg_image -%}
+{%- assign title                 = section.settings.title -%}
+{%- assign title_size            = section.settings.title_size -%}
+{%- assign description           = section.settings.description -%}
+{%- assign description_size      = section.settings.description_size -%}
+{%- assign placement             = section.settings.placement -%}
+{%- assign button_color          = section.settings.button_color -%}
+{%- assign button_label_color    = section.settings.button_label_color -%}
+{%- assign padding_top           = section.settings.padding_top -%}
+{%- assign padding_bottom        = section.settings.padding_bottom -%}
+{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign id                    = section.key -%}
+{%- assign image_placeholder     = settings.image_placeholder -%}
+
+{% comment %} CSS variables start {% endcomment %}
+{%- capture variables -%}
+  {%- if background != blank -%}
+    --color-primary-foreground: {{ background }};
+    --color-primary-foreground-rgb: {{ background }}00;
+  {%- endif -%}
+  {%- if foreground != blank -%}
+    --color-primary-background: {{ foreground }};
+  {%- endif -%}
+  {%- if foreground_second != blank -%}
+    --color-gray: {{ foreground_second }};
+  {%- endif -%}
+  {%- if foreground_third != blank -%}
+    --color-third-foreground: {{ foreground_third }};
+  {%- endif -%}
+  {%- if padding_top != blank -%}
+    --padding-top: {{ padding_top }}px;
+  {%- endif -%}
+  {%- if padding_bottom != blank -%}
+    --padding-bottom: {{ padding_bottom }}px;
+  {%- endif -%}
+  {%- if padding_top_mobile != blank -%}
+    --padding-top-mobile: {{ padding_top_mobile }}px;
+  {%- endif -%}
+  {%- if padding_bottom_mobile != blank -%}
+    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- endif -%}
+
+  {%- case placement -%}
+    {%- when 'left' -%}
+      --order: 1;
+      --overlay-direction: rotate(0deg);
+      --left: 48px;
+      --right: auto;
+      --left-overlay: auto;
+      --right-overlay: calc(100% - 100px);
+      --direction-overlay: right;
+    {%- when 'right' -%}
+      --order: -1;
+      --overlay-direction: rotate(180deg);
+      --left: auto;
+      --right: 48px;
+      --left-overlay: calc(100% - 100px);
+      --right-overlay: auto;
+      --direction-overlay: left;
+  {%- endcase -%}
+{%- endcapture -%}
+
+{%- capture button_variables -%}
+  {%- if button_color != blank -%}
+    --color-accent-background: {{ button_color }};
+  {%- endif -%}
+  {%- if button_label_color != blank -%}
+    --color-accent-foreground: {{ button_label_color }};
+  {%- endif -%}
+{%- endcapture -%}
+{% comment %} CSS variables end {% endcomment %}
+
+{% if section.blocks.size > 0 %}
+  {% capture children %}
+    {% for block in section.blocks %}
+      {%- assign image           = block.settings.image -%}
+      {%- assign image_align     = block.settings.image_align -%}
+      {%- assign heading         = block.settings.heading -%}
+      {%- assign heading_size    = block.settings.heading_size -%}
+      {%- assign text            = block.settings.text -%}
+      {%- assign text_size       = block.settings.text_size -%}
+      {%- assign label           = block.settings.label -%}
+      {%- assign url             = block.settings.url -%}
+      {%- assign button_style    = block.settings.button_style -%}
+      {%- assign content_justify = block.settings.content_justify -%}
+      {%- assign content_align   = block.settings.content_align -%}
+
+      {%- if image != blank -%}
+        {%- assign image = block.settings.image -%}
+      {%- elsif image_placeholder != blank -%}
+        {%- assign image = image_placeholder -%}
+      {%- else -%}
+          {%- assign image = blank -%}
+      {%- endif -%}
+
+      {% comment %} CSS variables start {% endcomment %}
+      {%- capture text_variables -%}
+        {%- case content_justify -%}
+          {%- when 'left' -%}
+            --justify-content: flex-start;
+            --text-align: left;
+          {%- when 'center' -%}
+            --justify-content: center;
+            --text-align: center;
+          {%- when 'right' -%}
+            --justify-content: flex-end;
+            --text-align: right;
+        {%- endcase -%}
+
+        {%- case content_align -%}
+          {%- when 'top' -%}
+            --align-items: flex-start;
+            --padding-bottom: 0;
+          {%- when 'middle' -%}
+            --align-items: center;
+            --padding-bottom: 30px;
+          {%- when 'bottom' -%}
+            --align-items: flex-end;
+            --padding-bottom: 0;
+        {%- endcase -%}
+      {%- endcapture -%}
+
+      {%- capture image_variables -%}
+        {%- case image_align -%}
+          {%- when 'top' -%}
+            --image-align: flex-start;
+          {%- when 'middle' -%}
+            --image-align: center;
+          {%- when 'bottom' -%}
+            --image-align: flex-end;
+        {%- endcase -%}
+      {%- endcapture -%}
+      {% comment %} CSS variables end {% endcomment %}
+
+      {% case block.type %}
+        {% when "image" %}
+          {%- if content_type == "image" -%}
+            <div
+              class="contact-form__holder{% if image == blank %} no-image{% endif %}"
+              style="{{- image_variables | escape -}}"
+              id="{{- block.id -}}"
+            >
+              {%- if image.url != blank -%}
+                <div class="contact-form__image-wrapper">
+                  {{- image.url | image_tag:
+                    loading: 'lazy',
+                    class: 'contact-form__image',
+                    widths: '450, 550, 650',
+                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
+                    alt: image.alt
+                  -}}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+        {% when "text" %}
+          {%- if content_type == "text" -%}
+            {%- if heading != blank or text != blank or label != blank and url != blank -%}
+              <div
+                class="contact-form__content"
+                style="{{- text_variables | escape -}}"
+                id="{{- block.id -}}"
+              >
+                {%- if heading != blank -%}
+                  <h2 class="contact-form__heading contact-form__heading--{{- heading_size -}}">{{- heading -}}</h2>
+                {%- endif -%}
+
+                {%- if text != blank -%}
+                  <div class="contact-form__text{% if text_size == "lg" %} text-large{% endif %}{% if text_size == "md" %} text-medium{%- endif -%}">{{- text -}}</div>
+                {%- endif -%}
+
+                {%- if label != blank and url != blank -%}
+                  <a href="{{ url }}" class="contact-form__button button button--{{ button_style }} button--large">{{- label -}}</a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+      {% endcase %}
+    {% endfor %}
+  {% endcapture %}
+{%- endif -%}
+
+<div class="contact-form__wrapper form-{{- section.key -}}{% if padding_top != blank or padding_top_mobile != blank %} contact-form__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} contact-form__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+  <div class="contact-form__container container">
+    <div class="contact-form__inner{% if section.blocks.size > 0 %} contact-form__inner--grid{%- endif -%}">
+      <div class="contact-form__form">
+        {%- include "form" -%}
+      </div>
+      {%- if section.blocks.size > 0 -%}
+        {{- children -}}
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="contact-form__background">
+    {%- if bg_image.url != blank -%}
+      <div class="contact-form__background-image-wrapper">
+        {{- bg_image.url | image_tag:
+          loading: 'lazy',
+          class: 'contact-form__background-image',
+          widths: '450, 550, 650, 900',
+          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px, 900',
+          alt: bg_image.alt
+        -}}
+      </div>
+    {%- else -%}
+      {%- render 'image-background-web' -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Form",
+    "description": "Display a contact form on your website.",
+    "tag": "section",
+    "class": "contact-form",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Translations"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Name label",
+        "default": "Name"
+      },
+      {
+        "type": "text",
+        "id": "name_holder",
+        "label": "Name placeholder",
+        "default": "Your name"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Email label",
+        "default": "Email"
+      },
+      {
+        "type": "text",
+        "id": "email_holder",
+        "label": "Email placeholder",
+        "default": "Your email"
+      },
+      {
+        "type": "text",
+        "id": "message",
+        "label": "Message label",
+        "default": "Message"
+      },
+      {
+        "type": "text",
+        "id": "message_holder",
+        "label": "Message placeholder",
+        "default": "Type your message..."
+      },
+      {
+        "type": "text",
+        "id": "checkbox_label",
+        "label": "Checkbox label",
+        "default": "I accept the"
+      },
+      {
+        "type": "text",
+        "id": "checkbox_link",
+        "label": "Checkbox link",
+        "default": "Terms"
+      },
+      {
+        "type": "url",
+        "id": "checkbox_url",
+        "label": "Checkbox link url"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Submit"
+      },
+      {
+        "type": "text",
+        "id": "success_message",
+        "label": "Success message",
+        "default": "Thanks for your message! We'll get back to you shortly."
+      },
+      {
+        "type": "text",
+        "id": "error_message",
+        "label": "Error message",
+        "default": "Oops, something went wrong. Please fix the errors and try again."
+      },
+      {
+        "type": "header",
+        "content": "General settings"
+      },
+      {
+        "type": "select",
+        "id": "content_type",
+        "label": "Content type",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          },
+          {
+            "value": "text",
+            "label": "Text"
+          }
+        ],
+        "default": "image"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "foreground",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "foreground_second",
+        "label": "Foreground second color",
+        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
+      },
+      {
+        "type": "color",
+        "id": "foreground_third",
+        "label": "Foreground third color",
+        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+      },
+      {
+        "type": "header",
+        "content": "Form settings"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Contact us"
+      },
+      {
+        "type": "select",
+        "id": "title_size",
+        "label": "Title size",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Middle"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "md"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Tell something about your company, describe what you do and what makes you unique."
+      },
+      {
+        "type": "select",
+        "id": "description_size",
+        "label": "Description text size",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Middle"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "lg"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "button_label_color",
+        "label": "Button label color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "header",
+        "content": "Desktop settings"
+      },
+      {
+        "type": "select",
+        "id": "placement",
+        "label": "Form placement",
+        "content": "Note: Applicable only when at least 1 block is visible",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "number",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 70,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 70,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "header",
+        "content": "Mobile settings"
+      },
+      {
+        "type": "number",
+        "id": "padding_top_mobile",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "default": 40,
+        "info": "Note: Use positive numbers only"
+      },
+      {
+        "type": "number",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "default": 40,
+        "info": "Note: Use positive numbers only"
+      }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Image settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Note: Applicable only when the content type is 'Image' in general settings of section"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "image_align",
+            "label": "Vertical alignment",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "middle",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default": "top"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "header",
+            "content": "Text settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Note: Applicable only when the content type is 'Text' in general settings of section"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Hire from us",
+            "label": "Heading"
+          },
+          {
+            "type": "select",
+            "id": "heading_size",
+            "label": "Heading size",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Middle"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "lg"
+          },
+          {
+            "type": "contentEditor",
+            "id": "text",
+            "default": "Tell something about your company, describe what you do and what makes you unique.",
+            "label": "Text"
+          },
+          {
+            "type": "select",
+            "id": "text_size",
+            "label": "Text size",
+            "options": [
+              {
+                "value": "sm",
+                "label": "Small"
+              },
+              {
+                "value": "md",
+                "label": "Middle"
+              },
+              {
+                "value": "lg",
+                "label": "Large"
+              }
+            ],
+            "default": "md"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "default": "Shop collection",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Link"
+          },
+          {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "primary",
+                "label": "Filled"
+              },
+              {
+                "value": "outlined",
+                "label": "Outlined"
+              }
+            ],
+            "default": "primary"
+          },
+          {
+            "type": "select",
+            "id": "content_justify",
+            "label": "Horizontal alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left"
+          },
+          {
+            "type": "select",
+            "id": "content_align",
+            "label": "Vertical alignment",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "middle",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default": "top"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
