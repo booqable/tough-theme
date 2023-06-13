@@ -20,7 +20,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 38px;
+  height: calc(50% - 8px);
   background: var(--color-primary-background, #FFFFFF);
 }
 
