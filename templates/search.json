@@ -1,8 +1,8 @@
 {
   "name": "Search",
   "sections": {
-    "search-header": {
-      "type": "search-header",
+    "hero-search": {
+      "type": "hero-search",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -34,7 +34,7 @@
     }
   },
   "order": [
-    "search-header",
+    "hero-search",
     "search"
   ]
 }
