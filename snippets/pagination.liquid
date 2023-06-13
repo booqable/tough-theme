@@ -1,3 +1,13 @@
+{% comment %}
+
+  This snippet is used for rendering the pagination buttons
+
+  Usage:
+
+  {%- include 'pagination' -%}
+
+{% endcomment %}
+
 {{ "pagination.css" | asset_url | stylesheet_tag }}
 
 {%- assign parts  = paginate.parts -%}

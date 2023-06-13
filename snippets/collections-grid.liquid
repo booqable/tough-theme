@@ -1,15 +1,15 @@
 {% comment %}
 
-  This snippet is using for rendering the list of collections;
+  This snippet is used for rendering the list of collections
 
-  items - [array] *required
-  items_type - [array] *required
+  items - { object } *required
+  items_type - "string" *required
 
   Usage:
 
-  {%- render 'collections',
-      items: collections,
-      items_type: "collections"
+  {%- render 'collections-grid',
+      items: your_id,
+      items_type: "your_string"
   -%}
 
 {% endcomment %}
