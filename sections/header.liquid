@@ -1,5 +1,5 @@
-<link rel="preload" href="{{ 'header.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="{{ 'mega-menu.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ "header.css" | asset_url | stylesheet_tag }}
+{{ "mega-menu.css" | asset_url | stylesheet_tag }}
 
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
 {%- assign login_placeholder     = section.settings.login_placeholder -%}

@@ -1,4 +1,4 @@
-<link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ "hero.css" | asset_url | stylesheet_tag }}
 
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign custom_description    = section.settings.custom_description -%}
@@ -12,7 +12,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 
 {%- if show_datepicker -%}
-  <link rel="preload" href="{{ 'date-picker.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  {{ "date-picker.css" | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}

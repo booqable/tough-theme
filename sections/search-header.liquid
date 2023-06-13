@@ -1,4 +1,4 @@
-<link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ "hero.css" | asset_url | stylesheet_tag }}
 
 {%- assign title                 = section.settings.title -%}
 {%- assign message               = section.settings.message -%}
@@ -14,7 +14,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 
 {%- if results_count > 0 -%}
-  <link rel="preload" href="{{ 'date-picker.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  {{ "date-picker.css" | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}

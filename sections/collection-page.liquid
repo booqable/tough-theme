@@ -1,4 +1,4 @@
-<link rel="preload" href="{{ 'collection-page.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ "collection-page.css" | asset_url | stylesheet_tag }}
 {{ "product-card.css" | asset_url | stylesheet_tag }}
 
 {%- assign grid                  = section.settings.grid -%}
