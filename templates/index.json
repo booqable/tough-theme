@@ -163,8 +163,40 @@
     },
     "products": {
       "type": "products",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123449": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450",
+        "product_123449"
+      ],
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "limit": 6,

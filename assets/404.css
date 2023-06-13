@@ -4,6 +4,7 @@
 }
 
 .error-404__content {
+  flex-grow: 1;
   height: 100%;
   color: var(--color-primary-background, #FFFFFF);
   background: var(--color-primary-foreground, #0B1A26);
