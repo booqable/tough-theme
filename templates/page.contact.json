@@ -1,6 +1,61 @@
 {
   "name": "Contact",
   "sections": {
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "image": "booqable://assets/image-building.jpg",
+            "image_align": "top"
+          },
+          "disabled": null
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "heading": "Hire from us",
+            "heading_size": "lg",
+            "text": "Tell something about your company, describe what you do and what makes you unique.",
+            "text_size": "md",
+            "label": "Shop collection",
+            "button_style": "primary",
+            "content_justify": "left",
+            "content_align": "top"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "image",
+        "text"
+      ],
+      "settings": {
+        "name": "Name",
+        "name_holder": "Your name",
+        "email": "Email",
+        "email_holder": "Your email",
+        "message": "Message",
+        "message_holder": "Type your message...",
+        "checkbox_label": "I accept the",
+        "checkbox_link": "Terms",
+        "button_label": "Submit",
+        "success_message": "Thanks for your message! We'll get back to you shortly.",
+        "error_message": "Oops, something went wrong. Please fix the errors and try again.",
+        "content_type": "image",
+        "title": "Contact us",
+        "title_size": "md",
+        "description": "Tell something about your company, describe what you do and what makes you unique.",
+        "description_size": "lg",
+        "placement": "left",
+        "padding_top": 70,
+        "padding_top_mobile": 40,
+        "padding_bottom": 70,
+        "padding_bottom_mobile": 40
+      },
+      "disabled": null
+    },
     "contacts": {
       "type": "contacts",
       "blocks": {
@@ -96,6 +151,7 @@
     }
   },
   "order": [
+    "contact-form",
     "contacts",
     "offices"
   ]
