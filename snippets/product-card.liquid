@@ -1,8 +1,13 @@
 {% comment %}
-  product - {product object} *required
+
+  This snippet is used for rendering the product
+
+  product - { product } *required
 
   Usage:
-  {%- include 'product-card' -%}
+
+  {%- render 'product-card', product: your_id -%}
+
 {% endcomment %}
 
 {%- assign image_placeholder 	= settings.image_placeholder -%}

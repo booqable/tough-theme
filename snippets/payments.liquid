@@ -1,3 +1,13 @@
+{% comment %}
+
+  This snippet is used for rendering the payments icons
+
+  Usage:
+
+  {%- include 'payments' -%}
+
+{% endcomment %}
+
 {%- if payment_methods.size > 0 -%}
   <div class="payment">
     {%- for provider in payment_methods -%}
