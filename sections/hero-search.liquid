@@ -91,11 +91,12 @@
     {%- if show_bg -%}
       <div class="hero__vision-wrapper">
         {%- if image != blank -%}
-          {{ image.url | image_tag:
+          {%- render 'image',
+            image: image,
             loading: 'lazy',
             class: 'hero__image',
-            widths: '990, 1400, 1900, 2500'
-          }}
+            size: 'xxl'
+          -%}
         {%- else -%}
           {%- render 'image-background-web' -%}
         {%- endif -%}

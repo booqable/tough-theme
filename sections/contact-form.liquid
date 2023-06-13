@@ -162,13 +162,12 @@
             >
               {%- if image.url != blank -%}
                 <div class="contact-form__image-wrapper">
-                  {{- image.url | image_tag:
+                  {%- render 'image',
+                    image: image,
                     loading: 'lazy',
                     class: 'contact-form__image',
-                    widths: '450, 550, 650',
-                    sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-                    alt: image.alt
-                  -}}
+                    size: 'm'
+                  -%}
                 </div>
               {%- endif -%}
             </div>
@@ -215,13 +214,12 @@
   <div class="contact-form__background">
     {%- if bg_image.url != blank -%}
       <div class="contact-form__background-image-wrapper">
-        {{- bg_image.url | image_tag:
+        {%- render 'image',
+          image: bg_image,
           loading: 'lazy',
           class: 'contact-form__background-image',
-          widths: '450, 550, 650, 900',
-          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px, 900',
-          alt: bg_image.alt
-        -}}
+          size: 'm'
+        -%}
       </div>
     {%- else -%}
       {%- render 'image-background-web' -%}
