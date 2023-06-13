@@ -1,4 +1,4 @@
-<link rel="preload" href="{{ 'collection-page.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{{ "collection-page.css" | asset_url | stylesheet_tag }}
 {{ "product-card.css" | asset_url | stylesheet_tag }}
 
 {%- assign grid                  = section.settings.grid -%}
@@ -78,10 +78,10 @@
         "type": "number",
         "id": "limit",
         "label": "Product limit for pagination",
-        "min": 2,
-        "max": 18,
+        "min": 6,
+        "max": 24,
         "default": 6,
-        "info": "Note: Use positive numbers only. Min number is 2, max number is 18"
+        "info": "Note: Use positive numbers only. Min number is 6, max number is 24"
       },
       {
         "type": "text",

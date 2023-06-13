@@ -10,7 +10,7 @@
 {%- assign blocks = section.blocks -%}
 
 {%- if blocks.size > 0 -%}
-  <link rel="preload" href="{{ 'image-banner.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  {{ "image-banner.css" | asset_url | stylesheet_tag }}
 
   {%- assign limit                 = section.settings.limit -%}
   {%- assign show_navigation       = section.settings.show_navigation -%}
@@ -28,7 +28,7 @@
   {%- assign carousel = false -%}
 
   {%- if blocks.size > 1 -%}
-    <link rel="preload" href="{{ 'carousel.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    {{ "carousel.css" | asset_url | stylesheet_tag }}
 
     {%- assign carousel = true -%}
   {%- endif -%}

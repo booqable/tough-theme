@@ -122,10 +122,17 @@ body #main {
 
 body .growth {
   display: flex;
+  flex-direction: column;
 }
 
 body .growth > * {
   width: 100%;
+}
+
+body .growth > section:first-child{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .header--sticky ~ #main {

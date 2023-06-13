@@ -1,7 +1,7 @@
 {%- assign hide_bar = section.settings.hide_bar -%}
 
 {%- if hide_bar != true -%}
-  <link rel="preload" href="{{ 'announcement-bar.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  {{ "announcement-bar.css" | asset_url | stylesheet_tag }}
 
   {%- assign bar_image             = section.settings.bar_image -%}
   {%- assign bar_text              = section.settings.bar_text -%}

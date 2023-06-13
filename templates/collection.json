@@ -6,16 +6,13 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "margin_top": 0,
-        "margin_top_mobile": 0,
-        "margin_bottom": 40,
-        "margin_bottom_mobile": 40,
-        "padding_top": 115,
-        "padding_top_mobile": 80,
-        "padding_bottom": 115,
-        "padding_bottom_mobile": 80,
+        "padding_top": 85,
+        "padding_top_mobile": 85,
+        "padding_bottom": 57,
+        "padding_bottom_mobile": 57,
         "show_datepicker": true,
-        "show_text": true
+        "show_text": true,
+        "show_bg": true
       },
       "disabled": null
     },
