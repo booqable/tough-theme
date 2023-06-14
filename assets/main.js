@@ -10,10 +10,6 @@ class Main {
       focus: "[data-focus]"
     };
 
-    this.id = {
-      search: "search"
-    };
-
     this.modifier = {
       loaded: "loaded",
       resize: "resize-active"
@@ -35,7 +31,6 @@ class Main {
     };
 
     this.data = {
-      action: "action",
       focalX: "data-focal-x",
       focalY: "data-focal-y",
       focus: "data-focus"
@@ -68,7 +63,6 @@ class Main {
     this.focalImages();
     this.searchInputAutoFill();
 
-    document.addEventListener("submit", this.searchAutoFill.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("message", this.messagesListener.bind(this));
   }
@@ -108,21 +102,6 @@ class Main {
     if (this.url.searchParams.get(this.params.q))
       this.input.value = this.url.searchParams.get(this.params.q);
   }
-
-  searchAutoFill(e) {
-    const target = e.target;
-
-    // if (target.id !== this.id.search) return false;
-
-    // const value = this.input.value,
-    //       route = target.getAttribute(this.data.action);
-
-    // this.url.href = this.url.origin + route;
-    // this.url.searchParams.set(this.params.q, value);
-
-
-    // window.location.href = this.url.href;
-  };
 
   // scroll page to the focused element on the sidebar in the theme editor
   scrollToFocus(target) {
