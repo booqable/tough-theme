@@ -17,7 +17,7 @@ class Media {
   }
 
   elements() {
-    this.nodes = [...this.block.querySelectorAll(this.selector.vision)];
+    this.nodes = this.block.querySelectorAll(this.selector.vision);
   }
 
   events() {
@@ -79,7 +79,7 @@ class Media {
 }
 
 const initBanner = (el = ".image-banner") => {
-  const nodes = [...document.querySelectorAll(el)];
+  const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
 

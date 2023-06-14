@@ -66,7 +66,7 @@ class Blog {
 }
 
 const initBlog = (el = ".blog") => {
-  const nodes = [...document.querySelectorAll(el)];
+  const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
 
