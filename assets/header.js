@@ -60,11 +60,11 @@ class Header {
     this.menu = this.section.querySelector(this.selector.menu);
     this.bottom = this.section.querySelector(this.selector.menuBottom);
     this.item = this.section.querySelector(this.selector.menuItem);
-    this.items = [...this.section.querySelectorAll(this.selector.menuDrop)];
+    this.items = this.section.querySelectorAll(this.selector.menuDrop);
     this.menuOpener = this.section.querySelector(this.selector.menuOpener);
     this.searchOpener = this.section.querySelector(this.selector.searchOpener);
     this.accountOpener = this.section.querySelector(this.selector.accountOpener);
-    this.dropOpeners = [...this.menu.querySelectorAll(this.selector.checkbox)];
+    this.dropOpeners = this.menu.querySelectorAll(this.selector.checkbox);
     this.sticky = this.section.classList.contains(this.classes.sticky);
     this.notSticky = this.section.classList.contains(this.classes.notSticky);
     this.last = 0;
