@@ -32,7 +32,7 @@
 .product-card__vision:after {
   content: "";
   display: block;
-  padding-bottom: 97%;
+  aspect-ratio: 1 / 0.97;
 }
 
 .product-card__image {
@@ -120,6 +120,6 @@ bq-product-availability::part(available) {
   }
 
   .product-card__vision:after {
-    padding-bottom: 102%;
+    aspect-ratio: 1 / 1.02;
   }
 }

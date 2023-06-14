@@ -32,7 +32,7 @@
         {%- assign image = first_product.images.first -%}
       {%- endif -%}
 
-      <li class="collections__item">
+      <li class="collections__item" id="{{- item.id -}}">
         <a class="collections__link" href="{{ collection.url }}">
           <span class="collections__image-item">
             {{- image.url | image_tag:
@@ -55,7 +55,7 @@
       {%- assign image = image_placeholder -%}
 
       <li class="collections__item">
-        <span class="collections__image-item">
+        <span class="collections__image-item" id="{{- item.id -}}">
           {{- image.url | image_tag:
             loading: 'lazy',
             class: 'collections__image',

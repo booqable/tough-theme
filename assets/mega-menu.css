@@ -949,7 +949,7 @@
   .menu-wide .menu__promo:after {
     content: "";
     display: block;
-    padding-bottom: 56.25%;
+    aspect-ratio: 16 / 9;
   }
 
   .menu-wide .menu__dropdown-collection-product,

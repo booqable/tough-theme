@@ -75,7 +75,7 @@
             {%- for block in section.blocks -%}
               {%- assign image = block.settings.image -%}
 
-              <div class="partners__image-wrapper{% if image_placeholder == blank and image == blank %} no-image{% endif %}">
+              <div class="partners__image-wrapper{% if image_placeholder == blank and image == blank %} no-image{% endif %}" id="{{- block.id -}}">
                 {%- if image.url != blank -%}
                   {{- image.url | image_tag:
                     loading: 'lazy',

@@ -1,4 +1,5 @@
 {% comment %}
+
   This snippet is used for rendering the accordion
 
   blocks - { object } *required,
@@ -33,7 +34,7 @@
           {%- assign content = block.settings.returns -%}
       {% endcase %}
 
-      <li class="accordion__item">
+      <li class="accordion__item" id="{{- block.id -}}">
         {%- if heading != blank -%}
           <input
             {% if behavior == "single" %}type="radio"{% else %}type="checkbox"{% endif %}

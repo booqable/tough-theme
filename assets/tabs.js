@@ -31,8 +31,8 @@ class Tabs {
   }
 
   elements() {
-    this.tabs = [...this.block.querySelectorAll(this.selector.tab)];
-    this.content = [...this.block.querySelectorAll(this.selector.content)];
+    this.tabs = this.block.querySelectorAll(this.selector.tab);
+    this.content = this.block.querySelectorAll(this.selector.content);
     this.opener = this.block.querySelector(this.selector.opener);
   }
 
@@ -103,12 +103,12 @@ class Tabs {
 }
 
 const initTabs = (el = ".tabs") => {
-  const nodes = [...document.querySelectorAll(el)];
+  const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
 
-  nodes.forEach(item => {
-    const tabs = new Tabs(item);
+  nodes.forEach(node => {
+    const tabs = new Tabs(node);
     tabs.init();
   });
 };

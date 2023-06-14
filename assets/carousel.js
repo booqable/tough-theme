@@ -55,11 +55,11 @@ class Carousel {
     this.navi = this.block.querySelector(this.selector.navi);
     this.pagi = this.block.querySelector(this.selector.pagination);
     this.item = this.block.querySelector(this.selector.item);
-    this.items = [...this.block.querySelectorAll(this.selector.item)];
-    this.btns = [...this.block.querySelectorAll(this.selector.btn)];
-    this.dots = [...this.block.querySelectorAll(this.selector.dot)];
+    this.items = this.block.querySelectorAll(this.selector.item);
+    this.btns = this.block.querySelectorAll(this.selector.btn);
+    this.dots = this.block.querySelectorAll(this.selector.dot);
     this.count = this.block.querySelector(this.selector.count);
-    this.timers = [...this.block.querySelectorAll(this.selector.timer)];
+    this.timers = this.block.querySelectorAll(this.selector.timer);
     this.interval;
   }
 
@@ -424,12 +424,12 @@ class Carousel {
 }
 
 const initCarousel = (el = ".carousel") => {
-  const arr = [...document.querySelectorAll(el)];
+  const nodes = document.querySelectorAll(el);
 
-  if (!arr.length) return false;
+  if (!nodes.length) return false;
 
-  arr.forEach(val => {
-    const carousel = new Carousel(val);
+  nodes.forEach(node => {
+    const carousel = new Carousel(node);
     carousel.init();
   });
 };

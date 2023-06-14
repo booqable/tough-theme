@@ -389,13 +389,6 @@ img {
   overflow: hidden;
 }
 
-.bq-sidebar-head *,
-.bq-branded.bq-title,
-.bq-poweredby-container .button-group *,
-.bq-selected-dates .bq-branded {
-  color: var(--color-accent-foreground, #0B1A26) !important;
-}
-
-.bq-button.error {
-  background-color: var(--color-red, #C23434);
+[data-focus="true"] {
+  box-shadow: 0 0 0 3px #395db899;
 }

@@ -65,13 +65,13 @@ class Blog {
   }
 }
 
-function initBlog(el = ".blog") {
-  const arr = [...document.querySelectorAll(el)];
+const initBlog = (el = ".blog") => {
+  const nodes = document.querySelectorAll(el);
 
-  if (!arr.length) return false;
+  if (!nodes.length) return false;
 
-  arr.forEach(item => {
-    const blog = new Blog(item);
+  nodes.forEach(node => {
+    const blog = new Blog(node);
     blog.init();
   });
 };

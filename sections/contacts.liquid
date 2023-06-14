@@ -95,7 +95,7 @@
 
           {%- case block.type -%}
             {%- when 'email' -%}
-              <div class="contacts__col" style="{{- email_variables | escape -}}">
+              <div class="contacts__col" id="{{- block.id -}}" style="{{- email_variables | escape -}}">
                 {%- if email_image.url != blank -%}
                   <div class="contacts__image-wrapper">
                     {{- email_image.url | image_tag:
@@ -130,7 +130,7 @@
               </div>
 
             {%- when 'phone' -%}
-              <div class="contacts__col" style="{{- phone_variables | escape -}}">
+              <div class="contacts__col" id="{{- block.id -}}" style="{{- phone_variables | escape -}}">
                 {%- if phone_image.url != blank -%}
                   <div class="contacts__image-wrapper">
                     {{- phone_image.url | image_tag:
@@ -164,40 +164,40 @@
                 {%- endif -%}
               </div>
 
-              {%- when 'address' -%}
-                <div class="contacts__col" style="{{- address_variables | escape -}}">
-                  {%- if address_image.url != blank -%}
-                    <div class="contacts__image-wrapper">
-                      {{- address_image.url | image_tag:
-                        loading: 'lazy',
-                        class: 'contacts__image',
-                        widths: '100'
-                      -}}
-                    </div>
-                  {%- else -%}
-                    <div class="contacts__image-wrapper">
-                      {%- render 'icon-pin' -%}
-                    </div>
-                  {%- endif -%}
+            {%- when 'address' -%}
+              <div class="contacts__col" id="{{- block.id -}}" style="{{- address_variables | escape -}}">
+                {%- if address_image.url != blank -%}
+                  <div class="contacts__image-wrapper">
+                    {{- address_image.url | image_tag:
+                      loading: 'lazy',
+                      class: 'contacts__image',
+                      widths: '100'
+                    -}}
+                  </div>
+                {%- else -%}
+                  <div class="contacts__image-wrapper">
+                    {%- render 'icon-pin' -%}
+                  </div>
+                {%- endif -%}
 
-                  {%- if address_title != blank or address_text != blank or address != blank -%}
-                    <div class="contacts__text">
-                      {%- if address_title != blank -%}
-                        <h4 class="contacts__title">{{- address_title -}}</h4>
-                      {%- endif -%}
+                {%- if address_title != blank or address_text != blank or address != blank -%}
+                  <div class="contacts__text">
+                    {%- if address_title != blank -%}
+                      <h4 class="contacts__title">{{- address_title -}}</h4>
+                    {%- endif -%}
 
-                      {%- if address_text != blank -%}
-                        <div class="contacts__description">{{- address_text -}}</div>
-                      {%- endif -%}
+                    {%- if address_text != blank -%}
+                      <div class="contacts__description">{{- address_text -}}</div>
+                    {%- endif -%}
 
-                      {%- if address != blank -%}
-                        <div class="contacts__address">
-                          <address>{{- address -}}</address>
-                        </div>
-                      {%- endif -%}
-                    </div>
-                  {%- endif -%}
-                </div>
+                    {%- if address != blank -%}
+                      <div class="contacts__address">
+                        <address>{{- address -}}</address>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
