@@ -56,7 +56,7 @@ class Main {
 
   elements() {
     this.timer = undefined;
-    this.images = [...document.querySelectorAll(this.selector.image)];
+    this.images = document.querySelectorAll(this.selector.image);
     this.footer = document.querySelector(this.selector.footer);
     this.search = document.querySelector(this.selector.search);
     this.input = this.search.querySelector(this.selector.input);
@@ -66,7 +66,7 @@ class Main {
   events() {
     this.setLoadedClass();
     this.focalImages();
-    this.getSearchName();
+    this.searchInputAutoFill();
 
     document.addEventListener("submit", this.searchAutoFill.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
@@ -103,24 +103,25 @@ class Main {
     });
   };
 
-  getSearchName() {
-    if (!!this.url.searchParams.get(this.params.q))
+  // autofill search input field
+  searchInputAutoFill() {
+    if (this.url.searchParams.get(this.params.q))
       this.input.value = this.url.searchParams.get(this.params.q);
   }
 
-  // autofill search input field
   searchAutoFill(e) {
     const target = e.target;
 
-    if (target.id !== this.id.search) return false;
+    // if (target.id !== this.id.search) return false;
 
-    const value = this.input.value,
-          route = target.getAttribute(this.data.action);
+    // const value = this.input.value,
+    //       route = target.getAttribute(this.data.action);
 
-    this.url.href = this.url.origin + route;
-    this.url.searchParams.set(this.params.q, value);
+    // this.url.href = this.url.origin + route;
+    // this.url.searchParams.set(this.params.q, value);
 
-    window.location.href = this.url.href;
+
+    // window.location.href = this.url.href;
   };
 
   // scroll page to the focused element on the sidebar in the theme editor
@@ -134,9 +135,9 @@ class Main {
 
   // remove focus from element in the theme editor
   removeFocus() {
-    this.focuses = [...document.querySelectorAll(this.selector.focus)];
+    const focuses = [...document.querySelectorAll(this.selector.focus)];
 
-    this.focuses?.forEach((node) => node.removeAttribute(this.data.focus));
+    focuses?.forEach((node) => node.removeAttribute(this.data.focus));
   };
 
   messagesListener({ type, data, isTrusted }) {
