@@ -99,8 +99,11 @@ class Main {
 
   // autofill search input field
   searchInputAutoFill() {
-    if (this.url.searchParams.get(this.params.q))
-      this.input.value = this.url.searchParams.get(this.params.q);
+    const query = this.url.searchParams.get(this.params.q);
+
+    if (!query) return false;
+
+    this.input.value = query;
   }
 
   // scroll page to the focused element on the sidebar in the theme editor
