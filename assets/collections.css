@@ -34,7 +34,7 @@
 .collections__item:after {
   content: "";
   display: block;
-  padding-bottom: 69%;
+  aspect-ratio: 1 / 0.69;
 }
 
 .collections__heading {
@@ -112,6 +112,6 @@
   }
 
   .collections__item:after {
-    padding-bottom: 148%;
+    aspect-ratio: 1 / 1.48;
   }
 }
