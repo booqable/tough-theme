@@ -117,7 +117,7 @@ class Main {
 
   // remove focus from element in the theme editor
   removeFocus() {
-    const focuses = [...document.querySelectorAll(this.selector.focus)];
+    const focuses = document.querySelectorAll(this.selector.focus);
 
     focuses?.forEach((node) => node.removeAttribute(this.data.focus));
   };
