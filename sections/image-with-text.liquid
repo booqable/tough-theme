@@ -16,7 +16,6 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign hide_image            = section.settings.hide_image -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign image_position        = section.settings.image_position -%}
 {%- assign image_bg              = section.settings.image_bg -%}
@@ -129,25 +128,27 @@
           <div class="image-text__description">{{- description -}}</div>
         {%- endif -%}
 
-        <div class="image-text__buttons">
-          {%- if button_1 != blank and button_url_1 != blank -%}
-            <a href="{{ button_url_1 }}" class="image-text__button button button--primary button--large">
-              {{- button_1 -}}
-            </a>
-          {%- endif -%}
+        {%- if button_1 != blank and button_url_1 != blank or if button_2 != blank and button_url_2 != blank -%}
+          <div class="image-text__buttons">
+            {%- if button_1 != blank and button_url_1 != blank -%}
+              <a href="{{ button_url_1 }}" class="image-text__button button button--primary button--large">
+                {{- button_1 -}}
+              </a>
+            {%- endif -%}
 
-          {%- if button_2 != blank and button_url_2 != blank -%}
-            <a href="{{ button_url_2 }}" class="image-text__button button button--secondary">
-              {{- button_2 -}}
-              {%- render 'icon-arrow-right' -%}
-            </a>
-          {%- endif -%}
-        </div>
+            {%- if button_2 != blank and button_url_2 != blank -%}
+              <a href="{{ button_url_2 }}" class="image-text__button button button--secondary">
+                {{- button_2 -}}
+                {%- render 'icon-arrow-right' -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       </div>
 
-      {%- unless hide_image -%}
+      {%- if image != blank -%}
         <div class="image-text__col">
-          <div class="image-text__holder{% if image == blank %} no-image{% endif %}">
+          <div class="image-text__holder">
             <div class="image-text__image-wrapper">
               {%- if image.url != blank -%}
                 {%- render 'image',
@@ -160,7 +161,7 @@
             </div>
           </div>
         </div>
-      {%- endunless -%}
+      {%- endif -%}
     </div>
   </div>
   {%- if image_bg.url != blank -%}
@@ -251,12 +252,6 @@
         "id": "color_heading",
         "label": "Title color",
         "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "checkbox",
-        "id": "hide_image",
-        "default": false,
-        "label": "Hide image"
       },
       {
         "type": "select",
