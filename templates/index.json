@@ -262,8 +262,8 @@
       },
       "disabled": null
     },
-    "blog": {
-      "type": "blog",
+    "mosaic": {
+      "type": "mosaic",
       "blocks": {
         "article": {
           "type": "article",
@@ -385,7 +385,7 @@
     "image-with-text",
     "products",
     "how-it-works",
-    "blog",
+    "mosaic",
     "faq",
     "cta"
   ]
