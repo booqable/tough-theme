@@ -76,14 +76,6 @@
   opacity: 0.1;
 }
 
-.image-text__bg-image {
-  object-fit: cover;
-  max-width: none;
-  height: 100%;
-  width: 100%;
-  opacity: 0.1;
-}
-
 .image-text__bg-overlay {
   position: absolute;
   height: 100%;

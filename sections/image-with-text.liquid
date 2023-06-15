@@ -18,7 +18,6 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign image_position        = section.settings.image_position -%}
-{%- assign image_bg              = section.settings.image_bg -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
 {%- if image != blank -%}
@@ -164,22 +163,11 @@
       {%- endif -%}
     </div>
   </div>
-  {%- if image_bg.url != blank -%}
-    <div class="image-text__bg-image-wrapper">
-      {%- render 'image',
-        image: image_bg,
-        loading: 'lazy',
-        class: 'image-text__bg-image',
-        size: 'xl'
-      -%}
-      <div class="image-text__bg-overlay container"></div>
-    </div>
-  {%- else -%}
-    <div class="image-text__bg-image-wrapper">
-      {%- render 'image-background-web' -%}
-      <div class="image-text__bg-overlay container"></div>
-    </div>
-  {%- endif -%}
+
+  <div class="image-text__bg-image-wrapper">
+    {%- render 'image-background-web' -%}
+    <div class="image-text__bg-overlay container"></div>
+  </div>
 </div>
 
 {% schema %}
@@ -273,12 +261,6 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_bg",
-        "label": "Image background",
-        "info": "Note: This image displays behind of content, and is applied to this section only"
       },
       {
         "type": "header",
