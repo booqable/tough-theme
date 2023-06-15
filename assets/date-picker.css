@@ -3,14 +3,6 @@
   background: var(--color-primary-foreground, #0B1A26);
 }
 
-.date-location__container--margin-top {
-  margin-top: var(--margin-top-mobile, 0);
-}
-
-.date-location__container--margin-bottom {
-  margin-bottom: var(--margin-bottom-mobile, 0);
-}
-
 .date-location__container--padding-top {
   padding-top: var(--padding-top-mobile, 16px);
 }
@@ -218,14 +210,6 @@
 }
 
 @media (min-width: 992px) {
-  .date-location__container--margin-top {
-    margin-top: var(--margin-top, 0);
-  }
-
-  .date-location__container--margin-bottom {
-    margin-bottom: var(--margin-bottom, 0);
-  }
-
   .date-location__container--padding-top {
     padding-top: var(--padding-top, 16px);
   }
