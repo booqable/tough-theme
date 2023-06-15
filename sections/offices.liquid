@@ -75,7 +75,7 @@
       {%- assign image = block.settings.image -%}
 
       {%- if image != blank -%}
-        {%- assign image = block.settings.image -%}
+        {%- assign image = image -%}
       {%- elsif image_placeholder != blank -%}
         {%- assign image = image_placeholder -%}
       {%- else -%}
@@ -85,13 +85,12 @@
       <div data-content="tab-{{- index -}}" class="tabs__content{% if first %} active{%- endif -%}">
         <div class="tabs__image-wrapper{% if image == blank %} no-image{%- endif -%}">
           {%- if image != blank -%}
-            {{- image.url | image_tag:
+            {%- render 'image',
+              image: image,
               loading: 'lazy',
               class: 'tabs__image',
-              widths: '450, 550, 650',
-              sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px, 650px',
-              alt: image.name
-            -}}
+              size: 'm'
+            -%}
           {%- endif -%}
         </div>
       </div>

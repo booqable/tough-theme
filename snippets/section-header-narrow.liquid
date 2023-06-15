@@ -1,0 +1,55 @@
+{% comment %}
+
+  This snippet is used for rendering the header of section
+
+  title - "string" NOT required,
+  text - "string" NOT required,
+  background - "string" NOT required,
+  btn_primary - "string" NOT required,
+  btn_outline - "string" NOT required,
+  btn_primary_url - url NOT required, if label is empty
+  btn_outline_url - url NOT required, if label is empty
+
+  Usage:
+
+  {%- render 'section-header-narrow',
+      title: your_id,
+      text: your_id,
+      background: your_id,
+      btn_primary: your_id,
+      btn_primary_url: your_id,
+      btn_outline: your_id,
+      btn_outline_url: your_id
+  -%}
+
+{% endcomment %}
+
+{%- if text != blank or title != blank or background != blank or btn_primary != blank and btn_primary_url != blank or btn_outline != blank and btn_outline_url != blank -%}
+  {{ "section-header-narrow.css" | asset_url | stylesheet_tag }}
+
+  <div class="section-header-narrow">
+    {%- if title != blank -%}
+      <h2 class="section-header-narrow__title">{{- title -}}</h2>
+    {%- endif -%}
+
+    {%- if background != blank -%}
+      <h2 class="section-header-narrow__background">{{- background -}}</h2>
+    {%- endif -%}
+
+    {%- if text != blank -%}
+      <div class="section-header-narrow__text">{{- text -}}</div>
+    {%- endif -%}
+
+    {%- if btn_primary != blank and btn_primary_url != blank or btn_outline != blank and btn_outline_url != blank -%}
+      <div class="section-header-narrow__buttons">
+        {%- if btn_primary != blank and btn_primary_url != blank -%}
+          <a href="{{  btn_primary_url }}" class="section-header-narrow__button button button--primary button--large">{{- btn_primary -}}</a>
+        {%- endif -%}
+
+        {%- if btn_outline != blank and btn_outline_url != blank -%}
+          <a href="{{  btn_outline_url }}" class="section-header-narrow__button button button--outlined button--large">{{- btn_outline -}}</a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

@@ -8,6 +8,7 @@
 
   {%- assign tag                   = section.settings.tag -%}
   {%- assign title                 = section.settings.title -%}
+  {%- assign title_bg              = section.settings.title_bg -%}
   {%- assign description           = section.settings.description -%}
   {%- assign view_all              = section.settings.view_all -%}
   {%- assign limit                 = section.settings.limit -%}
@@ -18,6 +19,9 @@
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign timer                 = section.settings.timer -%}
+  {%- assign url                   = routes.products_url -%}
+  {%- assign image_placeholder     = settings.image_placeholder -%}
+  {%- assign is_focal              = settings.use_focal_images -%}
 
   {%- if collection != blank -%}
     {%- assign items = collection.items -%}
@@ -57,29 +61,16 @@
     style="{{- variables | escape -}}"
   >
     <div class="products__container container">
-      <div class="products__top">
-        <div class="products__col">
-          {%- if tag != blank -%}
-            <span class="products__tag">{{- tag -}}</span>
-          {%- endif -%}
-
-          {%- if title != blank -%}
-            <h2 class="products__title">{{- title -}}</h2>
-          {%- endif -%}
-
-          {%- if description != blank -%}
-            <div class="products__description">{{- description -}}</div>
-          {%- endif -%}
-        </div>
-
-        <div class="products__col">
-          {%- if view_all != blank -%}
-            <a href="{{ routes.products_url }}" class="products__show button button--outlined button--large">
-              {{- view_all -}}
-            </a>
-          {%- endif -%}
-        </div>
-      </div>
+      {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
+        {%- render 'section-header',
+            tag: tag,
+            title: title,
+            description: description,
+            background: title_bg,
+            button: view_all,
+            url: url
+        -%}
+      {%- endif -%}
 
       <div class="products__list{% if carousel %} carousel carousel__pause{%- endif -%}">
         {%- if carousel -%}
@@ -99,7 +90,11 @@
                 <div class="carousel__item">
                   <div class="carousel__inner">
               {%- endif -%}
-                    {%- render 'product-card', product: product -%}
+                    {%- render 'product-card',
+                        product: product,
+                        placeholder: image_placeholder,
+                        focal: is_focal
+                    -%}
               {%- if carousel -%}
                   </div>
                 </div>
@@ -142,7 +137,7 @@
 
 {% schema %}
   {
-    "name": "Products",
+    "name": "Products carousel",
     "description": "Display products from a collection or in a list of individual products. There is a carousel layout",
     "tag": "section",
     "class": "products",
@@ -162,6 +157,11 @@
         "id": "title",
         "label": "Title",
         "default": "Products"
+      },
+      {
+        "type": "text",
+        "id": "title_bg",
+        "label": "Title on the background"
       },
       {
         "type": "contentEditor",

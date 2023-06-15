@@ -9,6 +9,8 @@
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+  {%- assign image_placeholder 	   = settings.image_placeholder -%}
+  {%- assign is_focal              = settings.use_focal_images -%}
 
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
@@ -38,7 +40,11 @@
     {%- paginate results by limit -%}
       <div class="search-results">
         {%- for result in results -%}
-          {%- render 'product-card', product: result -%}
+          {%- render 'product-card',
+              product: result,
+              placeholder: image_placeholder,
+              focal: is_focal
+           -%}
         {%- endfor -%}
       </div>
 

@@ -27,7 +27,8 @@
 }
 
 .announcement-bar__icon {
-  margin: 0 13px 0 6px
+  margin: 0 13px 0 6px;
+  max-width: 25px;
 }
 
 .announcement-bar__icon path {

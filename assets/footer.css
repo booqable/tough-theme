@@ -31,6 +31,7 @@
 
 .footer__logo-text {
   color: var(--color-primary-foreground, #0B1A26);
+  word-break: break-word;
 }
 
 .footer__menu-heading {

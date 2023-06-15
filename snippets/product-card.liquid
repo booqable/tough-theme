@@ -2,98 +2,102 @@
 
   This snippet is used for rendering the product
 
-  product - { product } *required
+  product - { product } *required,
+  placeholder - image *optional,
+  focal - boolean *optional
 
   Usage:
 
-  {%- render 'product-card', product: your_id -%}
+  {%- render 'product-card',
+      product: your_id,
+      placeholder: your_id,
+      focal: your_id
+  -%}
 
 {% endcomment %}
 
-{%- assign image_placeholder 	= settings.image_placeholder -%}
-{%- assign is_focal           = settings.use_focal_images -%}
+{%- assign id = "" -%}
+{%- assign url = "" -%}
+{%- assign image = "" -%}
+{%- assign name = "" -%}
+{%- assign spec = "" -%}
+{%- assign points = "" -%}
+{%- assign price = "" -%}
+{%- assign period = "" -%}
 
 {%- if product != blank -%}
   {%- if product.images != blank -%}
     {%- assign image = product.images.first -%}
-  {%- elsif image_placeholder.url != blank -%}
-    {%- assign image = image_placeholder -%}
+  {%- elsif placeholder != blank -%}
+    {%- assign image = placeholder -%}
   {%- else -%}
     {%- assign image = blank -%}
   {%- endif -%}
 
-  {% if is_focal %}
-    {%- assign focal = image.coordinates -%}
+  {% if focal %}
+    {%- assign points = image.coordinates -%}
   {% endif %}
 
-  {%- assign id   = product.id -%}
-  {%- assign url  = product.url -%}
-  {%- assign name = product.name -%}
-  {%- assign spec = product.description | truncate: 125, " ..." -%}
+  {%- assign id     = product.id -%}
+  {%- assign url    = product.url -%}
+  {%- assign name   = product.name -%}
+  {%- assign spec   = product.description | truncate: 125, " ..." -%}
+  {%- assign price  = product | product_price -%}
+  {%- assign period = product | product_price_label -%}
 
-  <div class="product-card" id="{{- id -}}">
-    <div class="product-card__vision{% unless image != blank %} no-image{%- endunless -%}">
-      {%- if image.url != blank -%}
-        {{- image.url | image_tag:
-          loading: 'lazy',
-          class: 'product-card__image',
-          widths: '450, 550',
-          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px',
-          focal: focal,
-          alt: name
-        -}}
-      {%- endif -%}
-      <a class="product-card__link" href="{{ url }}"></a>
-    </div>
-
-    <div class="product-card__meta">
-      {{ product | product_availability }}
-
-      <h3 class="product-card__title">
-        <a class="product-card__link" href="{{ url }}">
-          {{- name -}}
-        </a>
-      </h3>
-
-      {%- if spec != blank -%}
-        <div class="product-card__description">{{- spec -}}</div>
-      {%- endif -%}
-
-      <div class="product-card__price-wrapper">
-        {{ product | product_price }}
-        <span class="product-card__price-separator">/</span>
-        {{ product | product_price_label }}
-      </div>
-    </div>
-  </div>
 {%- else -%}
-  {%- if image_placeholder.url != blank -%}
-    {%- assign image = image_placeholder -%}
+  {%- if placeholder != blank -%}
+    {%- assign image = placeholder -%}
   {%- else -%}
     {%- assign image = blank -%}
   {%- endif -%}
 
-  <div class="product-card">
-    <div class="product-card__vision{% if image == blank %} no-image {% endif %}">
-      {%- if image.url != blank -%}
-        {{- image.url | image_tag:
-          loading: 'lazy',
-          class: 'product-card__image',
-          widths: '450, 550',
-          sizes: '(max-width: 576px) 450px, (max-width: 768px) 550px',
-          alt: "Image placeholder"
-        -}}
-      {%- endif -%}
-    </div>
+  {%- assign name   = "Product name (example)" -%}
+  {%- assign spec   = "Product description (example)" -%}
+  {%- assign price  = "$50.00" -%}
+  {%- assign period = "1 day (example)" -%}
+{%- endif -%}
 
-    <div class="product-card__meta">
-      <h3 class="product-card__title">Product name (example)</h3>
-      <div class="product-card__description">Product description (example)</div>
-      <div class="product-card__price-wrapper">
-        <span class="product-card__price">$50.00 </span>
-        <span class="product-card__price-separator">/</span>
-        <span class="product-card__period">1 day (example)</span>
-      </div>
+<div class="product-card" {% if id != blank %}id="{{- id -}}"{%- endif -%}>
+  <div class="product-card__vision{% unless image != blank %} no-image{%- endunless -%}">
+    {%- if image.url != blank -%}
+      {%- render 'image',
+        image: image,
+        loading: 'lazy',
+        class: 'product-card__image',
+        focal: points,
+        size: 'm'
+      -%}
+    {%- endif -%}
+
+    {%- if product != blank -%}
+      <a class="product-card__link" href="{{ url }}"></a>
+    {%- endif -%}
+  </div>
+
+  <div class="product-card__meta">
+    {%- if product != blank -%}
+      {{ product | product_availability }}
+    {%- endif -%}
+
+    <h3 class="product-card__title">
+      {%- if product != blank -%}
+        <a class="product-card__link" href="{{ url }}">
+      {%- endif -%}
+        {{- name -}}
+      {%- if product != blank -%}
+        </a>
+      {%- endif -%}
+    </h3>
+
+    {%- if spec != blank -%}
+      <div class="product-card__description">{{- spec -}}</div>
+    {%- endif -%}
+
+    <div class="product-card__price-wrapper">
+      <span class="product-card__price">{{- price -}}</span>
+      <span class="product-card__price-separator">/</span>
+      <span class="product-card__period">{{- period -}}</span>
     </div>
   </div>
-{%- endif -%}
+</div>
