@@ -58,15 +58,6 @@
   margin: var(--margin-top) 0 var(--margin-bottom);
 }
 
-.image-text__holder.no-image {
-  aspect-ratio: 16 / 9;
-}
-
-.image-text__holder.no-image .image-text__image-wrapper {
-  background: var(--color-image-placeholder-lt, #FFFFFF0F);
-  height: 100%;
-}
-
 .image-text__image {
   width: 100%;
 }
