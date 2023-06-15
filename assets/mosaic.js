@@ -1,14 +1,14 @@
-class Blog {
+class Mosaic {
   constructor(block) {
     this.block = block;
 
     this.selector = {
-      item: ".blog__item",
-      list: ".blog__list"
+      item: ".mosaic__item",
+      list: ".mosaic__list"
     };
 
     this.classes = {
-      large: "blog__item-lg"
+      large: "mosaic__item-lg"
     };
 
     this.key = {
@@ -65,17 +65,17 @@ class Blog {
   }
 }
 
-const initBlog = (el = ".blog") => {
+const initMosaic = (el = ".mosaic") => {
   const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
 
   nodes.forEach(node => {
-    const blog = new Blog(node);
-    blog.init();
+    const mosaic = new Mosaic(node);
+    mosaic.init();
   });
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initBlog()
+  if (e.target.readyState === "complete") initMosaic()
 });

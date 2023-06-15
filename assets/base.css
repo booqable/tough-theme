@@ -8,18 +8,18 @@
   --slide-width: 318px;
   --slide-width-mobile: 314px;
 
-  /* Blog section grid */
+  /* Mosaic section grid */
   --grid-row: 2;
   --grid-auto-flow: dense;
 
   /* Colors */
   --color-primary-foreground-rgb: #0B1A2600; /* alpha: 0 */
-  --color-primary-foreground-rgb-dec: #0B1A261A; /* alpha: 0.1 */
-  --color-primary-foreground-rgb-half: #0B1A2673; /* alpha: 0.45 */
-  --color-primary-foreground-rgb-octa: #0B1A26CC; /* alpha: 0.8 */
+  --color-primary-foreground-rgb-10: #0B1A261A; /* alpha: 0.1 */
+  --color-primary-foreground-rgb-45: #0B1A2673; /* alpha: 0.45 */
+  --color-primary-foreground-rgb-80: #0B1A26CC; /* alpha: 0.8 */
   --color-primary-background-rgb: 255, 255, 255;
-  --color-primary-background-rgb-bi: #FFFFFF33; /* alpha: 0.2 */
-  --color-primary-background-rgb-hexa: #FFFFFF99; /* alpha: 0.6 */
+  --color-primary-background-rgb-20: #FFFFFF33; /* alpha: 0.2 */
+  --color-primary-background-rgb-60: #FFFFFF99; /* alpha: 0.6 */
   --color-primary-background-hover: #FFFFFF52; /* alpha: 0.32 */
   --color-primary-background-active: #FFFFFF8F; /* alpha: 0.56 */
   --color-accent-background-rgb: #F4B84100; /* alpha: 0 */
