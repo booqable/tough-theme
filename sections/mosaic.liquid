@@ -2,7 +2,7 @@
 
 {%- if blocks.size > 0 -%}
 
-  {{ "blog.css" | asset_url | stylesheet_tag }}
+  {{ "mosaic.css" | asset_url | stylesheet_tag }}
 
   {%- assign tag                   = section.settings.tag -%}
   {%- assign title                 = section.settings.title -%}
@@ -34,10 +34,10 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div
-    class="blog__wrapper{% if padding_top != blank or padding_top_mobile != blank %} blog__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} blog__wrapper--padding-bottom{%- endif -%}"
+    class="mosaic__wrapper{% if padding_top != blank or padding_top_mobile != blank %} mosaic__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} mosaic__wrapper--padding-bottom{%- endif -%}"
     style="{{- variables | escape -}}"
   >
-    <div class="blog__container container">
+    <div class="mosaic__container container">
       {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
         {%- render 'section-header',
             tag: tag,
@@ -47,7 +47,7 @@
         -%}
       {%- endif -%}
 
-      <div class="blog__list">
+      <div class="mosaic__list">
         {%- for block in section.blocks -%}
           {%- assign size         = block.settings.size -%}
           {%- assign article_tag  = block.settings.article_tag -%}
@@ -66,47 +66,47 @@
             {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="blog__item blog__item-{{- size -}}" id="{{- block.id -}}">
+          <div class="mosaic__item mosaic__item-{{- size -}}" id="{{- block.id -}}">
             {%- if size == "lg" -%}
-              <div class="blog__item-col{% if image == blank %} no-image{%- endif -%}">
+              <div class="mosaic__item-col{% if image == blank %} no-image{%- endif -%}">
                 {%- if image != blank -%}
                   {%- render 'image',
                     image: image,
                     loading: 'lazy',
-                    class: 'blog__image',
+                    class: 'mosaic__image',
                     size: 'm'
                   -%}
                 {%- endif -%}
               </div>
             {%- endif -%}
 
-            <div class="blog__item-col">
-              <div class="blog__text-area">
+            <div class="mosaic__item-col">
+              <div class="mosaic__text-area">
                 {%- if article_tag != blank and size == "lg" -%}
-                  <span class="blog__tag">{{- article_tag -}}</span>
+                  <span class="mosaic__tag">{{- article_tag -}}</span>
                 {%- endif -%}
 
                 {%- if icon != blank and size == "sm" -%}
                   {%- render 'image',
                     image: icon,
                     loading: 'lazy',
-                    class: 'blog__icon',
+                    class: 'mosaic__icon',
                     size: 'xs'
                   -%}
                 {%- endif -%}
 
                 {%- if heading != blank -%}
-                  <h4 class="blog__heading">
+                  <h4 class="mosaic__heading">
                     {{- heading -}}
                   </h4>
                 {%- endif -%}
 
                 {%- if text != blank -%}
-                  <div class="blog__text">{{- text | truncate: 200, " ..."  -}}</div>
+                  <div class="mosaic__text">{{- text | truncate: 200, " ..."  -}}</div>
                 {%- endif -%}
 
                 {%- if button != blank and button_url != blank -%}
-                  <a href="{{  button_url }}" class="blog__button button button--secondary">
+                  <a href="{{  button_url }}" class="mosaic__button button button--secondary">
                     {{- button -}}
                     {%- render 'icon-arrow-right' -%}
                   </a>
@@ -118,8 +118,8 @@
       </div>
 
       {%- if view_all != blank -%}
-        <div class="blog__show-wrapper">
-          <a href="{{ routes.blog_page }}" class="blog__show button button--outlined button--large">
+        <div class="mosaic__show-wrapper">
+          <a href="{{ routes.blog_page }}" class="mosaic__show button button--outlined button--large">
             {{- view_all -}}
           </a>
         </div>
@@ -128,14 +128,14 @@
   </div>
 {%- endif -%}
 
-<script src="{{ "blog.js" | asset_url }}" defer></script>
+<script src="{{ "mosaic.js" | asset_url }}" defer></script>
 
 {% schema %}
   {
-    "name": "Blog",
+    "name": "Mosaic",
     "description": "Display a list of individual articles and news.",
     "tag": "section",
-    "class": "blog",
+    "class": "mosaic",
     "settings": [
       {
         "type": "header",
