@@ -1,6 +1,6 @@
 .hero {
   color: var(--color-third-foreground, #B2B4B8);
-  border-bottom: 1px solid var(--color-primary-background-rgb-bi, #FFFFFF33);
+  border-bottom: 1px solid var(--color-primary-background-rgb-20, #FFFFFF33);
 }
 
 .hero__wrapper {
