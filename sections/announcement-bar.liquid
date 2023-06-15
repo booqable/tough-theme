@@ -3,7 +3,7 @@
 {%- if hide_bar != true -%}
   {{ "announcement-bar.css" | asset_url | stylesheet_tag }}
 
-  {%- assign bar_image             = section.settings.bar_image -%}
+  {%- assign icon                  = section.settings.icon -%}
   {%- assign bar_text              = section.settings.bar_text -%}
   {%- assign bar_phone             = section.settings.bar_phone -%}
   {%- assign bar_message           = section.settings.bar_message -%}
@@ -44,17 +44,7 @@
   >
     <div class="announcement-bar__container container">
       <div class="announcement-bar__info">
-        {%- if bar_image.url != blank -%}
-          {%- render 'image',
-              image: bar_image,
-              class: 'announcement-bar__icon',
-              size: 'xs'
-          -%}
-        {%- else -%}
-          <i class="announcement-bar__icon">
-            {%- render 'icon-phone' -%}
-          </i>
-        {%- endif -%}
+        {%- render 'icon', icon: icon -%}
 
         {%- if bar_text != blank -%}
           <span class="announcement-bar__text">
@@ -114,9 +104,32 @@
         "label": "Hide bar"
       },
       {
-        "type": "image_picker",
-        "id": "bar_image",
-        "label": "Image"
+        "type": "select",
+        "id": "icon",
+        "label": "Icon",
+        "options": [
+          {
+            "value": "empty",
+            "label": "No icon"
+          },
+          {
+            "value": "phone",
+            "label": "Phone"
+          },
+          {
+            "value": "phone-square",
+            "label": "Phone square"
+          },
+          {
+            "value": "mobile",
+            "label": "Mobile"
+          },
+          {
+            "value": "volume-control-phone",
+            "label": "Volume control phone"
+          }
+        ],
+        "default": "phone"
       },
       {
         "type": "text",
