@@ -6,10 +6,10 @@
         "blocks": {},
         "block_order": [],
         "settings": {
-          "hide_bar": false,
           "bar_message": "Free shipping from €50",
-          "bar_phone": "+1 755 302 8549",
-          "bar_text": "Call Us 24/7",
+          "bar_text": "Call Us 24/7 +1 755 302 8549",
+          "hide_bar": false,
+          "icon": "phone",
           "padding_top": "9",
           "padding_top_mobile": "9",
           "padding_bottom": "9",

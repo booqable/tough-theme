@@ -5,7 +5,6 @@
 
   {%- assign icon                  = section.settings.icon -%}
   {%- assign bar_text              = section.settings.bar_text -%}
-  {%- assign bar_phone             = section.settings.bar_phone -%}
   {%- assign bar_message           = section.settings.bar_message -%}
   {%- assign bar_menu              = section.settings.bar_menu -%}
   {%- assign bar_background        = section.settings.bar_background -%}
@@ -47,16 +46,8 @@
         {%- render 'icon', icon: icon -%}
 
         {%- if bar_text != blank -%}
-          <span class="announcement-bar__text">
+          <span class="announcement-bar__text announcement-bar__message">
             {{- bar_text -}}
-          </span>
-        {%- endif -%}
-
-        {%- if bar_phone != blank -%}
-          <span class="announcement-bar__phone">
-            <a href="tel:{{ bar_phone | remove: '+' | remove: ' ' }}" class="announcement-bar__phone-link" style="font-size: 14px">
-              {{- bar_phone -}}
-            </a>
           </span>
         {%- endif -%}
       </div>
@@ -135,14 +126,8 @@
         "type": "text",
         "id": "bar_text",
         "label": "Text",
-        "default": "Call Us 24/7"
-      },
-      {
-        "type": "text",
-        "id": "bar_phone",
-        "label": "Phone number",
-        "default": "+1 755 302 8549",
-        "info": "Note: This field accepts only numbers, sign '+' and spaces"
+        "default": "Call Us 24/7 +1 755 302 8549",
+        "info": "Note: This field accepts phone numbers. They accept sign '+', round brackets, dashes and spaces. For example, +1 (123) 456-7890"
       },
       {
         "type": "contentEditor",
