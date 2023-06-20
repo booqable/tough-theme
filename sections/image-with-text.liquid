@@ -42,34 +42,63 @@
     --color-primary-foreground-rgb-10: {{ background }}1A;
     --color-primary-foreground-rgb-45: {{ background }}80;
   {%- endif -%}
-  {%- if margin_top != blank -%}
-    --margin-top: {{ margin_top }}px;
-  {%- endif -%}
-  {%- if margin_bottom != blank -%}
-    --margin-bottom: {{ margin_bottom }}px;
-  {%- endif -%}
-  {%- if padding_top != blank -%}
-    --padding-top: {{ padding_top }}px;
-  {%- endif -%}
-  {%- if padding_bottom != blank -%}
-    --padding-bottom: {{ padding_bottom }}px;
-  {%- endif -%}
-  {%- if padding_top_mobile != blank -%}
-    --padding-top-mobile: {{ padding_top_mobile }}px;
-  {%- endif -%}
-  {%- if padding_bottom_mobile != blank -%}
-    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-  {%- endif -%}
+
+  {%- case margin_top -%}
+    {%- when 'none' -%}
+      --margin-top: 0;
+    {%- when 'small' -%}
+      --margin-top: 80px;
+    {%- when 'medium' -%}
+      --margin-top: 130px;
+    {%- when 'large' -%}
+      --margin-top: 180px;
+  {%- endcase -%}
+
+  {%- case padding_top -%}
+    {%- when 'small' -%}
+      --padding-top: 50px;
+    {%- when 'medium' -%}
+      --padding-top: 75px;
+    {%- when 'large' -%}
+      --padding-top: 98px;
+  {%- endcase -%}
+
+  {%- case padding_bottom -%}
+    {%- when 'small' -%}
+      --padding-bottom: 50px;
+    {%- when 'medium' -%}
+      --padding-bottom: 75px;
+    {%- when 'large' -%}
+      --padding-bottom: 98px;
+  {%- endcase -%}
+
+  {%- case padding_top_mobile -%}
+    {%- when 'small' -%}
+      --padding-top-mobile: 40px;
+    {%- when 'medium' -%}
+      --padding-top-mobile: 56px;
+    {%- when 'large' -%}
+      --padding-top-mobile: 70px;
+  {%- endcase -%}
+
+  {%- case padding_bottom_mobile -%}
+    {%- when 'small' -%}
+      --padding-bottom-mobile: 40px;
+    {%- when 'medium' -%}
+      --padding-bottom-mobile: 56px;
+    {%- when 'large' -%}
+      --padding-bottom-mobile: 70px;
+  {%- endcase -%}
 
   {%- case image_position -%}
     {%- when 'left' -%}
       --flex-direction-mobile: column-reverse;
       --flex-direction: row-reverse;
       --justify-content: flex-end;
-      --margin-right: auto;
-      --margin-left: 0;
-      --margin-top: 0;
-      --margin-bottom: 50px;
+      --text-margin-right: auto;
+      --text-margin-left: 0;
+      --text-margin-top: 0;
+      --text-margin-bottom: 50px;
       --left: -35px;
       --right: auto;
       --left-image: 55px;
@@ -87,10 +116,10 @@
       --flex-direction-mobile: column;
       --flex-direction: row;
       --justify-content: flex-start;
-      --margin-right: 0;
-      --margin-left: auto;
-      --margin-top: 50px;
-      --margin-bottom: 0;
+      --text-margin-right: 0;
+      --text-margin-left: auto;
+      --text-margin-top: 50px;
+      --text-margin-bottom: 0;
       --left: auto;
       --right: -35px;
       --left-image: auto;
@@ -109,7 +138,7 @@
 {% comment %} CSS variables end {% endcomment %}
 
 <div
-  class="image-text__wrapper{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if margin_bottom != blank %} image-text__wrapper--margin-bottom{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
+  class="image-text__wrapper{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
 >
   <div class="image-text__container container">
@@ -267,60 +296,113 @@
         "content": "Desktop settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "margin_top",
         "label": "Margin top",
-        "min": 0,
-        "max": 150,
-        "info": "Note: You can use both negative and positive numbers"
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "none",
+        "info": "Note: You can use this indentation if the image is too height and overlaped the context of section above"
       },
       {
-        "type": "number",
-        "id": "margin_bottom",
-        "label": "Margin bottom",
-        "min": 0,
-        "max": 150,
-        "info": "Note: You can use both negative and positive numbers"
-      },
-      {
-        "type": "number",
+        "type": "select",
         "id": "padding_top",
         "label": "Padding top",
-        "min": 0,
-        "max": 150,
-        "default": 98,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 150,
-        "default": 98,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
       },
       {
         "type": "header",
         "content": "Mobile settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 56,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 56,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       }
     ]
   }

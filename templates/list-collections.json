@@ -8,10 +8,10 @@
       "settings": {
         "custom_title": "Collections",
         "custom_description": "Lorem ipsum dolor sit amet.",
-        "padding_top": 85,
-        "padding_top_mobile": 85,
-        "padding_bottom": 57,
-        "padding_bottom_mobile": 57,
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
         "show_datepicker": true,
         "show_text": true,
         "show_bg": true
@@ -25,10 +25,10 @@
         "tag": "Our collections",
         "title": "We can service you in each category",
         "title_bg": "Category",
-        "padding_bottom": 80,
-        "padding_bottom_mobile": 40,
-        "padding_top": 80,
-        "padding_top_mobile": 40
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium"
       },
       "blocks": {},
       "block_order": [],
