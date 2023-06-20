@@ -1,6 +1,6 @@
 {%- if section.blocks.size > 0 -%}
 
-  {{ "how-it-works.css" | asset_url | stylesheet_tag }}
+  {{ "numbered-blocks.css" | asset_url | stylesheet_tag }}
 
   {%- assign tag                   = section.settings.tag -%}
   {%- assign title                 = section.settings.title -%}
@@ -53,10 +53,10 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div
-    class="algorithm__wrapper{% if padding_top != blank or padding_top_mobile != blank %} algorithm__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} algorithm__wrapper--padding-bottom{%- endif -%}"
+    class="numbered-blocks__wrapper{% if padding_top != blank or padding_top_mobile != blank %} numbered-blocks__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} numbered-blocks__wrapper--padding-bottom{%- endif -%}"
     style="{{- variables | escape -}}"
   >
-    <div class="algorithm__container container">
+    <div class="numbered-blocks__container container">
       {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
         {%- render 'section-header',
             tag: tag,
@@ -67,8 +67,8 @@
       {%- endif -%}
     </div>
 
-    <div class="algorithm__list">
-      <div class="algorithm__container container">
+    <div class="numbered-blocks__list">
+      <div class="numbered-blocks__container container">
         {%- for block in section.blocks -%}
           {%- assign index        = forloop.index -%}
           {%- assign heading      = block.settings.heading -%}
@@ -77,7 +77,6 @@
           {%- assign button_2     = block.settings.button_2 -%}
           {%- assign button_url_1 = block.settings.button_url_1 -%}
           {%- assign button_url_2 = block.settings.button_url_2 -%}
-          {%- assign show_image   = block.settings.show_image -%}
           {%- assign image        = block.settings.image -%}
 
           {%- if image != blank -%}
@@ -88,29 +87,29 @@
             {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="algorithm__item" id="{{- block.id -}}">
-            <div class="algorithm__item-col">
-              <div class="algorithm__text-area">
-                <span class="algorithm__index">{{- index -}}</span>
+          <div class="numbered-blocks__item" id="{{- block.id -}}">
+            <div class="numbered-blocks__item-col">
+              <div class="numbered-blocks__text-area">
+                <span class="numbered-blocks__index">{{- index -}}</span>
 
                 {%- if heading != blank -%}
-                  <h3 class="algorithm__heading">
+                  <h3 class="numbered-blocks__heading">
                       {{- heading -}}
                   </h3>
                 {%- endif -%}
 
                 {%- if text != blank -%}
-                  <div class="algorithm__text">{{- text -}}</div>
+                  <div class="numbered-blocks__text">{{- text -}}</div>
                 {%- endif -%}
 
                 {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
-                  <div class="algorithm__buttons">
+                  <div class="numbered-blocks__buttons">
                     {%- if button_1 != blank and button_url_1 != blank -%}
-                      <a href="{{  button_url_1 }}" class="algorithm__button button button--outlined button--large">{{- button_1 -}}</a>
+                      <a href="{{  button_url_1 }}" class="numbered-blocks__button button button--outlined button--large">{{- button_1 -}}</a>
                     {%- endif -%}
 
                     {%- if button_2 != blank and button_url_2 != blank -%}
-                      <a href="{{  button_url_2 }}" class="algorithm__button button button--secondary button--large">
+                      <a href="{{  button_url_2 }}" class="numbered-blocks__button button button--secondary button--large">
                         {{- button_2 -}}
                         {%- render 'icon-arrow-right' -%}
                       </a>
@@ -120,16 +119,14 @@
               </div>
             </div>
 
-            {%- if show_image -%}
-              <div class="algorithm__item-col{% if image == blank %} no-image{%- endif -%}">
-                {%- if image != blank -%}
-                  {%- render 'image',
-                    image: image,
-                    loading: 'lazy',
-                    class: 'algorithm__image',
-                    size: 'm'
-                  -%}
-                {%- endif -%}
+            {%- if image != blank -%}
+              <div class="numbered-blocks__item-col">
+                {%- render 'image',
+                  image: image,
+                  loading: 'lazy',
+                  class: 'numbered-blocks__image',
+                  size: 'm'
+                -%}
               </div>
             {%- endif -%}
           </div>
@@ -141,10 +138,10 @@
 
 {% schema %}
   {
-    "name": "How it works",
-    "description": "Display a section of system algorithms (step instructions).",
+    "name": "Numbered blocks",
+    "description": "Display a section of numbered blocks.",
     "tag": "section",
-    "class": "algorithm",
+    "class": "numbered-blocks",
     "settings": [
       {
         "type": "header",
@@ -267,7 +264,7 @@
     "blocks": [
       {
         "type": "block",
-        "name": "Step",
+        "name": "Block",
         "settings": [
           {
             "type": "text",
@@ -310,12 +307,6 @@
             "type": "url",
             "id": "button_url_2",
             "label": "Button #2 URL"
-          },
-          {
-            "type": "checkbox",
-            "id": "show_image",
-            "default": true,
-            "label": "Show image"
           },
           {
             "type": "image_picker",
