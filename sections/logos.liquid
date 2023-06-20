@@ -1,6 +1,6 @@
 {%- unless section.blocks.size == 0 -%}
 
-  {{ "partners.css" | asset_url | stylesheet_tag }}
+  {{ "logos.css" | asset_url | stylesheet_tag }}
 
   {%- assign title                 = section.settings.title -%}
   {%- assign text_position         = section.settings.text_position -%}
@@ -98,19 +98,19 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div
-    class="partners__wrapper{% if padding_top != blank or padding_top_mobile != blank %} partners__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} partners__wrapper--padding-bottom{%- endif -%}"
+    class="logos__wrapper{% if padding_top != blank or padding_top_mobile != blank %} logos__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} logos__wrapper--padding-bottom{%- endif -%}"
     style="{{- variables | escape -}}"
   >
-    <div class="partners__container container">
-      <div class="partners__columns">
+    <div class="logos__container container">
+      <div class="logos__columns">
         {%- if title != blank -%}
-          <div class="partners__col">
-            <h2 class="partners__title h5">{{- title -}}</h2>
+          <div class="logos__col">
+            <h2 class="logos__title h5">{{- title -}}</h2>
           </div>
         {%- endif -%}
 
         {%- if section.blocks.size >= 1 -%}
-          <div class="partners__col partners__logos">
+          <div class="logos__col logos__logos">
             {%- for block in section.blocks -%}
               {%- assign image = block.settings.image -%}
 
@@ -122,12 +122,12 @@
                 {%- assign image = blank -%}
               {%- endif -%}
 
-              <div class="partners__image-wrapper{% if image == blank %} no-image{% endif %}" id="{{- block.id -}}">
+              <div class="logos__image-wrapper{% if image == blank %} no-image{% endif %}" id="{{- block.id -}}">
                 {%- if image.url != blank -%}
                   {%- render 'image',
                     image: image,
                     loading: 'lazy',
-                    class: 'partners__image',
+                    class: 'logos__image',
                     size: 's'
                   -%}
                 {%- endif -%}
@@ -143,14 +143,14 @@
 
 {% schema %}
   {
-    "name": "Partners",
-    "description": "Display section with partners logos",
+    "name": "Logos",
+    "description": "Display section with logos",
     "tag": "section",
-    "class": "partners",
+    "class": "logos",
     "settings": [
       {
         "type": "paragraph",
-        "content": "Note: This section is visible only when there is at least 1 block (partner's logo)"
+        "content": "Note: This section is visible only when there is at least 1 block (logo)"
       },
       {
         "type": "header",
@@ -305,13 +305,13 @@
     ],
     "blocks": [
       {
-        "type": "partner",
-        "name": "Partner",
+        "type": "logo",
+        "name": "Logo",
         "settings":[
           {
             "type": "image_picker",
             "id": "image",
-            "label": "Partner's logo"
+            "label": "Logo"
           }
         ]
       }
