@@ -6,10 +6,10 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": 85,
-        "padding_top_mobile": 50,
-        "padding_bottom": 43,
-        "padding_bottom_mobile": 30,
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
         "button_label": "Browse products",
         "message": "No results found",
         "results_label": "results",
@@ -25,10 +25,10 @@
       "settings": {
         "limit": 6,
         "grid": "three",
-        "padding_top": 24,
-        "padding_top_mobile": 24,
-        "padding_bottom": 24,
-        "padding_bottom_mobile": 24
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small"
       },
       "disabled": null
     }

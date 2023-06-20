@@ -10,10 +10,10 @@
           "bar_message": "Free shipping from €50",
           "bar_phone": "+1 755 302 8549",
           "bar_text": "Call Us 24/7",
-          "padding_top": "9",
-          "padding_top_mobile": "9",
-          "padding_bottom": "9",
-          "padding_bottom_mobile": "9"
+          "padding_top": "medium",
+          "padding_top_mobile": "medium",
+          "padding_bottom": "medium",
+          "padding_bottom_mobile": "medium"
         }
       },
       "header": {
@@ -52,10 +52,10 @@
           "menu_dropdown_style": "full",
           "menu_position": "left-center",
           "menu_position_mobile": "top",
-          "padding_top": "16",
-          "padding_top_mobile": "16",
-          "padding_bottom": "12",
-          "padding_bottom_mobile": "16",
+          "padding_top": "medium",
+          "padding_top_mobile": "medium",
+          "padding_bottom": "small",
+          "padding_bottom_mobile": "medium",
           "search_placeholder": "Search",
           "signup_placeholder": "Create account",
           "sticky_header": true
@@ -137,10 +137,10 @@
         "settings": {
           "bottom_menu": "bottom-menu",
           "hide_copy": false,
-          "padding_bottom": "80",
-          "padding_bottom_mobile": "24",
-          "padding_top": "80",
-          "padding_top_mobile": "24"
+          "padding_bottom": "medium",
+          "padding_bottom_mobile": "small",
+          "padding_top": "medium",
+          "padding_top_mobile": "small"
         },
         "disabled": null
       }

@@ -8,10 +8,10 @@
       "settings": {
         "description": "Sorry, there's <b>nothing here</b>",
         "button_label": "Go Home",
-        "padding_top": 50,
-        "padding_top_mobile": 40,
-        "padding_bottom": 90,
-        "padding_bottom_mobile": 60
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium"
       },
       "disabled": null
     }

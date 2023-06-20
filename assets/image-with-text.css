@@ -55,7 +55,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin: var(--margin-top) 0 var(--margin-bottom);
+  margin: var(--text-margin-top) 0 var(--text-margin-bottom);
 }
 
 .image-text__image {
@@ -103,10 +103,6 @@
     margin-top: var(--margin-top, 0);
   }
 
-  .image-text__wrapper--margin-bottom {
-    margin-bottom: var(--margin-bottom, 0);
-  }
-
   .image-text__columns {
     justify-content: space-between;
     flex-direction: var(--flex-direction, row);
@@ -126,7 +122,7 @@
     right: var(--right);
     left: var(--left);
     width: calc(100% - 43px);
-    margin: 0 var(--margin-right) 0 var(--margin-left);
+    margin: 0 var(--text-margin-right) 0 var(--text-margin-left);
     border: 2px solid var(--color-accent-background, #F4B841);
     max-height: 570px;
     height: auto;
