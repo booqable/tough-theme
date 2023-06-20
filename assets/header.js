@@ -274,26 +274,26 @@ class Header {
     let time = "24/7 ",
         html = this.text.innerHTML;
 
-    const reg = /(?:[-+() ]*\d){10,13}/gm;
+    const phoneRegex = /(?:[-+() ]*\d){10,13}/gm;
 
     if (html.includes(time)) html = html.replaceAll(`${time}`, '');
 
-    const arr = html.match(reg);
+    const phoneNumbers = html.match(phoneRegex);
 
-    if (!arr.length) return false;
+    if (!phoneNumbers.length) return false;
 
-    arr.forEach(item => {
-      item = item.trim();
+    phoneNumbers.forEach(phoneNumber => {
+      phoneNumber = phoneNumber.trim();
 
-      const href = item.replaceAll(/[\()\-\s]/g, "");
+      const href = phoneNumber.replaceAll(/[\()\-\s]/g, "");
 
-      const newHtml = this.text.innerHTML.replace(item,
+      const newHtml = this.text.innerHTML.replace(phoneNumber,
         `<span class="${this.classes.phone}">
            <a class="${this.classes.link}"
               href="tel:${href}"
               style="${this.props.fontSize}: 14px"
            >
-             ${item}
+             ${phoneNumber}
            </a>
          </span>
         `);
