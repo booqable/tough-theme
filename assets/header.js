@@ -8,6 +8,7 @@ class Header {
     this.selector = {
       body: "body",
       bar: ".announcement-bar",
+      text: ".announcement-bar__message",
       view: ".preview-bar__container",
       header: ".header",
       headerNav: ".header__nav-wrapper",
@@ -25,10 +26,12 @@ class Header {
 
     this.classes = {
       sticky: "header--sticky",
-      notSticky: "header--not-sticky"
+      notSticky: "header--not-sticky",
+      phone: "announcement-bar__phone",
+      link: "announcement-bar__phone-link"
     };
 
-    this.modificator = {
+    this.modifier = {
       scroll: "scrolled-down",
       overflow: "overflow-hidden",
       active: "active"
@@ -39,7 +42,8 @@ class Header {
       barHeight: '--announcement-height',
       viewHeight: '--preview-height',
       linkHeight: '--menu-position',
-      transform: '--header-transform'
+      transform: '--header-transform',
+      fontSize: 'font-size'
     };
   }
 
@@ -57,6 +61,7 @@ class Header {
     this.body = document.querySelector(this.selector.body);
     this.view = document.querySelector(this.selector.view);
     this.bar = this.section.querySelector(this.selector.bar);
+    this.text = this.section.querySelector(this.selector.text);
     this.menu = this.section.querySelector(this.selector.menu);
     this.bottom = this.section.querySelector(this.selector.menuBottom);
     this.item = this.section.querySelector(this.selector.menuItem);
@@ -75,6 +80,7 @@ class Header {
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
+    this.clickablePhone();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
@@ -123,23 +129,23 @@ class Header {
   scrollProps() {
     if (!this.bar) return false;
 
-    let isScroll = this.body.classList.contains(this.modificator.scroll),
+    let isScroll = this.body.classList.contains(this.modifier.scroll),
         current = window.scrollY,
         height = this.bar.getBoundingClientRect().height;
 
     if (current <= this.minHeight) {
-      this.body.classList.remove(this.modificator.scroll);
+      this.body.classList.remove(this.modifier.scroll);
       this.cssVar(this.props.transform, 0);
 
       return;
     }
 
     if (current > this.last && !isScroll) { // down
-      this.body.classList.add(this.modificator.scroll);
+      this.body.classList.add(this.modifier.scroll);
       this.cssVar(this.props.transform, -height);
 
     } else if (current < this.last - 10 && isScroll) { // up
-      this.body.classList.remove(this.modificator.scroll);
+      this.body.classList.remove(this.modifier.scroll);
       this.cssVar(this.props.transform, 0)
     }
 
@@ -224,13 +230,13 @@ class Header {
       switch (type) {
         case "mouseenter":
           this.closeModals(e);
-          target.classList.add(this.modificator.active);
+          target.classList.add(this.modifier.active);
 
           break;
 
         case "mouseleave":
           setTimeout(() => {
-            target.classList.remove(this.modificator.active);
+            target.classList.remove(this.modifier.active);
           }, time);
 
           break;
@@ -244,7 +250,7 @@ class Header {
   }
 
   addOverflow() {
-    this.doc.classList.add(this.modificator.overflow);
+    this.doc.classList.add(this.modifier.overflow);
 
     if (!this.notSticky) return false;
 
@@ -260,6 +266,40 @@ class Header {
     this.section.classList.remove(this.classes.sticky);
     window.scrollTo(0, 0);
     this.section.removeAttribute('style');
+  }
+
+  clickablePhone() {
+    if (!this.text) return false;
+
+    let time = "24/7 ",
+        html = this.text.innerHTML;
+
+    const phoneRegex = /(?:[-+() ]*\d){10,13}/gm;
+
+    if (html.includes(time)) html = html.replaceAll(`${time}`, '');
+
+    const phoneNumbers = html.match(phoneRegex);
+
+    if (!phoneNumbers.length) return false;
+
+    phoneNumbers.forEach(phoneNumber => {
+      phoneNumber = phoneNumber.trim();
+
+      const href = phoneNumber.replaceAll(/[\()\-\s]/g, "");
+
+      const newHtml = this.text.innerHTML.replace(phoneNumber,
+        `<span class="${this.classes.phone}">
+           <a class="${this.classes.link}"
+              href="tel:${href}"
+              style="${this.props.fontSize}: 14px"
+           >
+             ${phoneNumber}
+           </a>
+         </span>
+        `);
+
+      this.text.innerHTML = newHtml;
+    })
   }
 }
 
