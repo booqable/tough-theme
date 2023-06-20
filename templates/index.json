@@ -209,8 +209,8 @@
       },
       "disabled": null
     },
-    "how-it-works": {
-      "type": "how-it-works",
+    "numbered-blocks": {
+      "type": "numbered-blocks",
       "blocks": {
         "block": {
           "type": "block",
@@ -385,7 +385,7 @@
     "collections",
     "image-with-text",
     "products",
-    "how-it-works",
+    "numbered-blocks",
     "mosaic",
     "faq",
     "cta"

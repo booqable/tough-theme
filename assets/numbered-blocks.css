@@ -1,23 +1,23 @@
-.algorithm {
+.numbered-blocks {
   color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
 
-.algorithm__wrapper--padding-top {
+.numbered-blocks__wrapper--padding-top {
   padding-top: var(--padding-top-mobile, 80px);
 }
 
-.algorithm__wrapper--padding-bottom {
+.numbered-blocks__wrapper--padding-bottom {
   padding-bottom: var(--padding-bottom-mobile, 80px);
 }
 
-.algorithm__list {
+.numbered-blocks__list {
   padding: 40px 0 0;
   position: relative;
 }
 
-.algorithm__list:after {
+.numbered-blocks__list:after {
   content: "";
   position: absolute;
   left: 0;
@@ -28,7 +28,7 @@
   background: var(--color-fourth-foreground, #E1E4E8);
 }
 
-.algorithm__item {
+.numbered-blocks__item {
   position: relative;
   margin: 0;
   padding: 0;
@@ -40,30 +40,30 @@
   overflow: hidden;
 }
 
-.algorithm__item:first-child {
+.numbered-blocks__item:first-child {
   border-top: 1px solid var(--color-fourth-foreground, #E1E4E8);
 }
 
-.algorithm__item-col:last-child:not(:only-child) {
+.numbered-blocks__item-col:last-child:not(:only-child) {
   aspect-ratio: 1/1.03;
 }
 
-.algorithm__item-col.no-image:after {
+.numbered-blocks__item-col.no-image:after {
   content: "";
   height: 100%;
   display: block;
   background: var(--color-image-placeholder, #0B1A2633);
 }
 
-.algorithm__item-col:not(:only-child) .algorithm__text-area {
+.numbered-blocks__item-col:not(:only-child) .numbered-blocks__text-area {
   border-bottom: 1px solid var(--color-fourth-foreground, #E1E4E8);
 }
 
-.algorithm__text-area {
+.numbered-blocks__text-area {
   padding: 16px 16px 30px;
 }
 
-.algorithm__index {
+.numbered-blocks__index {
   font-size: 46px;
   line-height: var(--line-height-xs, 1);
   font-weight: var(--font-weight-medium, 500);
@@ -77,24 +77,24 @@
   background: var(--color-accent-background, #F4B841);
 }
 
-.algorithm__heading {
+.numbered-blocks__heading {
   font-size: 40px;
   line-height: var(--line-height-sm, 1.2);
 }
 
-.algorithm__buttons {
+.numbered-blocks__buttons {
   margin: 30px 0 0;
 }
 
-.algorithm .button {
+.numbered-blocks .button {
   color: currentColor;
 }
 
-.algorithm .button path {
+.numbered-blocks .button path {
   fill: currentColor;
 }
 
-.algorithm__image {
+.numbered-blocks__image {
   display: block;
   max-width: none;
   width: 100%;
@@ -103,7 +103,7 @@
 }
 
 @media (min-width: 768px) {
-  .algorithm__text-area {
+  .numbered-blocks__text-area {
     height: 100%;
     padding: 30px;
     display: flex;
@@ -112,62 +112,62 @@
     align-items: flex-start;
   }
 
-  .algorithm__list:after {
+  .numbered-blocks__list:after {
     top: clamp(150px, 10.5%, 225px);
     bottom: clamp(350px, 19.6%, 425px);;
   }
 
-  .algorithm__item-col:not(:only-child) .algorithm__text-area {
+  .numbered-blocks__item-col:not(:only-child) .numbered-blocks__text-area {
     border-bottom: none;
     border-right: 1px solid var(--color-fourth-foreground, #E1E4E8);
   }
 
-  .algorithm__item {
+  .numbered-blocks__item {
     display: flex;
     border: 1px solid var(--color-fourth-foreground, #E1E4E8);
     margin: 0 0 40px;
   }
 
-  .algorithm__item:nth-child(even) {
+  .numbered-blocks__item:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  .algorithm__item:nth-child(even) .algorithm__item-col:not(:only-child) .algorithm__text-area {
+  .numbered-blocks__item:nth-child(even) .numbered-blocks__item-col:not(:only-child) .numbered-blocks__text-area {
     border-right: none;
     border-left: 1px solid var(--color-fourth-foreground, #E1E4E8);
   }
 
-  .algorithm__item:last-child {
+  .numbered-blocks__item:last-child {
     margin: 0;
   }
 
-  .algorithm__item-col:not(:only-child) {
+  .numbered-blocks__item-col:not(:only-child) {
     width: 50%;
   }
 }
 
 @media (min-width: 1100px) {
-  .algorithm__wrapper--padding-top {
+  .numbered-blocks__wrapper--padding-top {
     padding-top: var(--padding-top, 80px);
   }
 
-  .algorithm__wrapper--padding-bottom {
+  .numbered-blocks__wrapper--padding-bottom {
     padding-bottom: var(--padding-bottom, 80px);
   }
 
-  .algorithm__text-area {
+  .numbered-blocks__text-area {
     padding: 48px;
   }
 
-  .algorithm__list {
+  .numbered-blocks__list {
     padding: 80px 0 0;
   }
 
-  .algorithm__item {
+  .numbered-blocks__item {
     margin: 0 0 80px;
   }
 
-  .algorithm__item:last-child {
+  .numbered-blocks__item:last-child {
     margin: 0;
   }
 }
