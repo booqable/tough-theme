@@ -49,41 +49,41 @@
       },
       "disabled": null
     },
-    "partners": {
-      "type": "partners",
+    "logos": {
+      "type": "logos",
       "blocks": {
-        "partner": {
-          "type": "partner",
+        "logo": {
+          "type": "logo",
           "settings": {},
           "disabled": null
         },
-        "partner_478138": {
-          "type": "partner",
+        "logo_478138": {
+          "type": "logo",
           "settings": {},
           "disabled": null
         },
-        "partner_478148": {
-          "type": "partner",
+        "logo_478148": {
+          "type": "logo",
           "settings": {},
           "disabled": null
         },
-        "partner_478178": {
-          "type": "partner",
+        "logo_478178": {
+          "type": "logo",
           "settings": {},
           "disabled": null
         },
-        "partner_478118": {
-          "type": "partner",
+        "logo_478118": {
+          "type": "logo",
           "settings": {},
           "disabled": null
         }
       },
       "block_order": [
-        "partner",
-        "partner_478138",
-        "partner_478148",
-        "partner_478178",
-        "partner_478118"
+        "logo",
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_478118"
       ],
       "settings": {
         "title": "Used by the world's most average companies",
@@ -381,7 +381,7 @@
   "order": [
     "image-banner",
     "date-picker",
-    "partners",
+    "logos",
     "collections",
     "image-with-text",
     "products",
