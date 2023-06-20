@@ -1034,7 +1034,8 @@
   .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
   .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
   .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
-    max-height: 1000px;
+    max-height: calc(100vh - var(--header-height, 65px));
+    overflow: auto;
   }
 
   .header--sticky .header-menu-bottom .menu-wide {
@@ -1065,6 +1066,13 @@
 
   .preview-bar__container ~ .header .menu {
     height: 100%;
+  }
+
+  .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item.active > .menu__dropdown,
+  .scrolled-down .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
+  .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
+  .scrolled-down .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
+    max-height: calc(100vh - var(--header-height, 65px) + var(--announcement-height, 0));
   }
 
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,

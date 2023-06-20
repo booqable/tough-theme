@@ -17,17 +17,79 @@
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  {%- if padding_top != blank -%}
-    --padding-top: {{ padding_top }}px;
-  {%- endif -%}
-  {%- if padding_bottom != blank -%}
-    --padding-bottom: {{ padding_bottom }}px;
-  {%- endif -%}
-  {%- if padding_top_mobile != blank -%}
-    --padding-top-mobile: {{ padding_top_mobile }}px;
-  {%- endif -%}
-  {%- if padding_bottom_mobile != blank -%}
-    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
+  {%- if template == "product" -%}
+    {%- case padding_top -%}
+      {%- when 'small' -%}
+        --padding-top: 0;
+      {%- when 'medium' -%}
+        --padding-top: 40px;
+      {%- when 'large' -%}
+        --padding-top: 85px;
+    {%- endcase -%}
+
+    {%- case padding_bottom -%}
+      {%- when 'small' -%}
+        --padding-bottom: 0;
+      {%- when 'medium' -%}
+        --padding-bottom: 40px;
+      {%- when 'large' -%}
+        --padding-bottom: 85px;
+    {%- endcase -%}
+
+    {%- case padding_top_mobile -%}
+      {%- when 'small' -%}
+        --padding-top-mobile: 0;
+      {%- when 'medium' -%}
+        --padding-top-mobile: 24px;
+      {%- when 'large' -%}
+        --padding-top-mobile: 50px;
+    {%- endcase -%}
+
+    {%- case padding_bottom_mobile -%}
+      {%- when 'small' -%}
+        --padding-bottom-mobile: 0;
+      {%- when 'medium' -%}
+        --padding-bottom-mobile: 24px;
+      {%- when 'large' -%}
+        --padding-bottom-mobile: 50px;
+    {%- endcase -%}
+
+  {%- else -%}
+    {%- case padding_top -%}
+      {%- when 'small' -%}
+        --padding-top: 50px;
+      {%- when 'medium' -%}
+        --padding-top: 85px;
+      {%- when 'large' -%}
+        --padding-top: 112px;
+    {%- endcase -%}
+
+    {%- case padding_bottom -%}
+      {%- when 'small' -%}
+        --padding-bottom: 50px;
+      {%- when 'medium' -%}
+        --padding-bottom: 85px;
+      {%- when 'large' -%}
+        --padding-bottom: 112px;
+    {%- endcase -%}
+
+    {%- case padding_top_mobile -%}
+      {%- when 'small' -%}
+        --padding-top-mobile: 40px;
+      {%- when 'medium' -%}
+        --padding-top-mobile: 57px;
+      {%- when 'large' -%}
+        --padding-top-mobile: 75px;
+    {%- endcase -%}
+
+    {%- case padding_bottom_mobile -%}
+      {%- when 'small' -%}
+        --padding-bottom-mobile: 40px;
+      {%- when 'medium' -%}
+        --padding-bottom-mobile: 57px;
+      {%- when 'large' -%}
+        --padding-bottom-mobile: 75px;
+    {%- endcase -%}
   {%- endif -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
@@ -130,44 +192,88 @@
         "content": "Desktop settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top",
         "label": "Padding top",
-        "min": 0,
-        "max": 150,
-        "default": 115,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 150,
-        "default": 115,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
         "type": "header",
         "content": "Mobile settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 80,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 80,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       }
     ]
   }

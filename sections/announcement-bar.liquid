@@ -23,18 +23,42 @@
     {%- if bar_foreground != blank -%}
       --color-accent-foreground: {{ bar_foreground }};
     {%- endif -%}
-    {%- if padding_top != blank -%}
-      --padding-top: {{ padding_top }}px;
-    {%- endif -%}
-    {%- if padding_bottom != blank -%}
-      --padding-bottom: {{ padding_bottom }}px;
-    {%- endif -%}
-    {%- if padding_top_mobile != blank -%}
-      --padding-top-mobile: {{ padding_top_mobile }}px;
-    {%- endif -%}
-    {%- if padding_bottom_mobile != blank -%}
-      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-    {%- endif -%}
+
+    {%- case padding_top -%}
+      {%- when 'small' -%}
+        --padding-top: 4px;
+      {%- when 'medium' -%}
+        --padding-top: 9px;
+      {%- when 'large' -%}
+        --padding-top: 12px;
+    {%- endcase -%}
+
+    {%- case padding_bottom -%}
+      {%- when 'small' -%}
+        --padding-bottom: 4px;
+      {%- when 'medium' -%}
+        --padding-bottom: 9px;
+      {%- when 'large' -%}
+        --padding-bottom: 12px;
+    {%- endcase -%}
+
+    {%- case padding_top_mobile -%}
+      {%- when 'small' -%}
+        --padding-top-mobile: 4px;
+      {%- when 'medium' -%}
+        --padding-top-mobile: 9px;
+      {%- when 'large' -%}
+        --padding-top-mobile: 12px;
+    {%- endcase -%}
+
+    {%- case padding_bottom_mobile -%}
+      {%- when 'small' -%}
+        --padding-bottom-mobile: 4px;
+      {%- when 'medium' -%}
+        --padding-bottom-mobile: 9px;
+      {%- when 'large' -%}
+        --padding-bottom-mobile: 12px;
+    {%- endcase -%}
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
 
@@ -173,44 +197,88 @@
         "content": "Desktop settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 4,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 4,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
         "type": "header",
         "content": "Mobile settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 8,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 8,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       }
     ]
   }

@@ -22,18 +22,42 @@
       --color-primary-foreground: {{ background }};
       --color-primary-background-rgb-20: {{ background }}33;
     {%- endif -%}
-    {%- if padding_top != blank -%}
-      --padding-top: {{ padding_top }}px;
-    {%- endif -%}
-    {%- if padding_bottom != blank -%}
-      --padding-bottom: {{ padding_bottom }}px;
-    {%- endif -%}
-    {%- if padding_top_mobile != blank -%}
-      --padding-top-mobile: {{ padding_top_mobile }}px;
-    {%- endif -%}
-    {%- if padding_bottom_mobile != blank -%}
-      --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-    {%- endif -%}
+
+    {%- case padding_top -%}
+      {%- when 'small' -%}
+        --padding-top: 60px;
+      {%- when 'medium' -%}
+        --padding-top: 84px;
+      {%- when 'large' -%}
+        --padding-top: 96px;
+    {%- endcase -%}
+
+    {%- case padding_bottom -%}
+      {%- when 'small' -%}
+        --padding-bottom: 60px;
+      {%- when 'medium' -%}
+        --padding-bottom: 84px;
+      {%- when 'large' -%}
+        --padding-bottom: 96px;
+    {%- endcase -%}
+
+    {%- case padding_top_mobile -%}
+      {%- when 'small' -%}
+        --padding-top-mobile: 29px;
+      {%- when 'medium' -%}
+        --padding-top-mobile: 45px;
+      {%- when 'large' -%}
+        --padding-top-mobile: 60px;
+    {%- endcase -%}
+
+    {%- case padding_bottom_mobile -%}
+      {%- when 'small' -%}
+        --padding-bottom-mobile: 29px;
+      {%- when 'medium' -%}
+        --padding-bottom-mobile: 45px;
+      {%- when 'large' -%}
+        --padding-bottom-mobile: 60px;
+    {%- endcase -%}
 
     {%- case text_position -%}
       {%- when 'left' -%}
@@ -160,22 +184,44 @@
         "default": "left"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top",
         "label": "Padding top",
-        "min": 0,
-        "max": 150,
-        "default": 96,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 150,
-        "default": 84,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
         "type": "header",
@@ -202,22 +248,44 @@
         "default": "center"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 60,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "large"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 29,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "small"
       }
     ],
     "blocks": [

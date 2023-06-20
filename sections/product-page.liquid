@@ -26,18 +26,6 @@
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  {%- if padding_top != blank -%}
-    --padding-top: {{ padding_top }}px;
-  {%- endif -%}
-  {%- if padding_bottom != blank -%}
-    --padding-bottom: {{ padding_bottom }}px;
-  {%- endif -%}
-  {%- if padding_top_mobile != blank -%}
-    --padding-top-mobile: {{ padding_top_mobile }}px;
-  {%- endif -%}
-  {%- if padding_bottom_mobile != blank -%}
-    --padding-bottom-mobile: {{ padding_bottom_mobile }}px;
-  {%- endif -%}
   {%- if ui_color != blank -%}
     --ui-color: {{ ui_color }};
   {%- endif -%}
@@ -45,6 +33,42 @@
     --slide-width: 100%;
     --slide-width-mobile: 100%;
   {%- endif -%}
+
+  {%- case padding_top -%}
+    {%- when 'small' -%}
+      --padding-top: 24px;
+    {%- when 'medium' -%}
+      --padding-top: 36px;
+    {%- when 'large' -%}
+      --padding-top: 48px;
+  {%- endcase -%}
+
+  {%- case padding_bottom -%}
+    {%- when 'small' -%}
+      --padding-bottom: 24px;
+    {%- when 'medium' -%}
+      --padding-bottom: 36px;
+    {%- when 'large' -%}
+      --padding-bottom: 48px;
+  {%- endcase -%}
+
+  {%- case padding_top_mobile -%}
+    {%- when 'small' -%}
+      --padding-top-mobile: 24px;
+    {%- when 'medium' -%}
+      --padding-top-mobile: 36px;
+    {%- when 'large' -%}
+      --padding-top-mobile: 48px;
+  {%- endcase -%}
+
+  {%- case padding_bottom_mobile -%}
+    {%- when 'small' -%}
+      --padding-bottom-mobile: 24px;
+    {%- when 'medium' -%}
+      --padding-bottom-mobile: 36px;
+    {%- when 'large' -%}
+      --padding-bottom-mobile: 48px;
+  {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
@@ -288,44 +312,88 @@
         "content": "Desktop settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 24,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 36,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
         "type": "header",
         "content": "Mobile settings"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_top_mobile",
         "label": "Padding top",
-        "min": 0,
-        "max": 100,
-        "default": 24,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       },
       {
-        "type": "number",
+        "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
-        "min": 0,
-        "max": 100,
-        "default": 24,
-        "info": "Note: Use positive numbers only"
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "medium",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "medium"
       }
     ],
     "max_blocks": 3,
