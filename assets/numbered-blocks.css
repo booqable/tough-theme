@@ -48,13 +48,6 @@
   aspect-ratio: 1/1.03;
 }
 
-.numbered-blocks__item-col.no-image:after {
-  content: "";
-  height: 100%;
-  display: block;
-  background: var(--color-image-placeholder, #0B1A2633);
-}
-
 .numbered-blocks__item-col:not(:only-child) .numbered-blocks__text-area {
   border-bottom: 1px solid var(--color-fourth-foreground, #E1E4E8);
 }

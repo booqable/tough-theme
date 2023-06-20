@@ -77,7 +77,6 @@
           {%- assign button_2     = block.settings.button_2 -%}
           {%- assign button_url_1 = block.settings.button_url_1 -%}
           {%- assign button_url_2 = block.settings.button_url_2 -%}
-          {%- assign show_image   = block.settings.show_image -%}
           {%- assign image        = block.settings.image -%}
 
           {%- if image != blank -%}
@@ -120,16 +119,14 @@
               </div>
             </div>
 
-            {%- if show_image -%}
-              <div class="numbered-blocks__item-col{% if image == blank %} no-image{%- endif -%}">
-                {%- if image != blank -%}
-                  {%- render 'image',
-                    image: image,
-                    loading: 'lazy',
-                    class: 'numbered-blocks__image',
-                    size: 'm'
-                  -%}
-                {%- endif -%}
+            {%- if image != blank -%}
+              <div class="numbered-blocks__item-col">
+                {%- render 'image',
+                  image: image,
+                  loading: 'lazy',
+                  class: 'numbered-blocks__image',
+                  size: 'm'
+                -%}
               </div>
             {%- endif -%}
           </div>
@@ -310,12 +307,6 @@
             "type": "url",
             "id": "button_url_2",
             "label": "Button #2 URL"
-          },
-          {
-            "type": "checkbox",
-            "id": "show_image",
-            "default": true,
-            "label": "Show image"
           },
           {
             "type": "image_picker",
