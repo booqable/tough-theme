@@ -61,11 +61,26 @@
 
     {%- case text_position -%}
       {%- when 'left' -%}
+        --flex-direction: row;
+        --justify-content: flex-start;
+        --align-items: flex-start;
+        --padding: 0 0 0 36px;
         --text-align: left;
+        --text-max-width: 280px;
       {%- when 'center' -%}
+        --flex-direction: column;
+        --justify-content: center;
+        --align-items: center;
+        --padding: 36px 0 0;
         --text-align: center;
+        --text-max-width: none;
       {%- when 'right' -%}
+        --flex-direction: row-reverse;
+        --justify-content: flex-start;
+        --align-items: flex-start;
+        --padding: 0 36px 0 0;
         --text-align: right;
+        --text-max-width: 280px;
     {%- endcase -%}
 
     {%- case text_position_mobile -%}

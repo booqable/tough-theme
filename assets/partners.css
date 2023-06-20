@@ -67,11 +67,12 @@
   }
 
   .partners__columns {
-    flex-direction: row;
+    flex-direction: var(--flex-direction, row);
+    align-items: var(--align-items, flex-start);
   }
 
   .partners__col:not(.partners__logos) {
-    max-width: 280px;
+    max-width: var(--text-max-width, 280px);
     width: auto;
   }
 
@@ -80,8 +81,8 @@
   }
 
   .partners__col + .partners__logos {
-    justify-content: flex-start;
-    padding-left: 36px;
+    justify-content: var(--justify-content, flex-start);
+    padding: var(--padding, 0);
   }
 
   .partners__title {
