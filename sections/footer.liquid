@@ -104,7 +104,6 @@
       {%- assign heading      = block.settings.heading -%}
       {%- assign menu         = block.settings.menu -%}
       {%- assign menu_align   = block.settings.menu_align -%}
-      {%- assign links_color  = block.settings.links_color -%}
 
       {%- capture menu_variables -%}
         {%- case menu_align -%}
@@ -129,7 +128,7 @@
                 {%- for link in menu.items -%}
                   {%- if link != blank -%}
                     <li class="footer__menu-item">
-                      <a href="{{ link.url }}" class="footer__menu-link{% if links_color %} footer__menu-link--accent{%- endif -%}">
+                      <a href="{{ link.url }}" class="footer__menu-link">
                         {{- link.title -}}
                       </a>
                     </li>
@@ -437,12 +436,6 @@
             "id": "menu",
             "label": "Menu",
             "info": "Note: Submenu isn't supported"
-          },
-          {
-            "type": "checkbox",
-            "id": "links_color",
-            "default": false,
-            "label": "Use accent color for links"
           },
           {
             "type": "header",

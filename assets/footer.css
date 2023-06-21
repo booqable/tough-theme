@@ -62,18 +62,6 @@
   color: var(--color-accent-background-active, #D6A239);
 }
 
-.footer__menu-link--accent {
-  color: var(--color-accent-background, #F4B841);
-}
-
-.footer__menu-link--accent:hover {
-  color: var(--color-accent-background-hover, #E5AD3D);
-}
-
-.footer__menu-link--accent:active {
-  color: var(--color-accent-background-active, #D6A239);
-}
-
 .footer__bottom {
   border-top: 1px solid var(--color-border-secondary, #E1E4E8);
   display: flex;
