@@ -136,7 +136,7 @@
         ],
         "settings": {
           "bottom_menu": "bottom-menu",
-          "hide_copy": false,
+          "bottom_text": "2023 Booqable. All right reserved.",
           "padding_bottom": "medium",
           "padding_bottom_mobile": "small",
           "padding_top": "medium",

@@ -2,13 +2,13 @@
 
 {%- assign logo	                       = section.settings.logo -%}
 {%- assign custom_title	               = section.settings.custom_title -%}
+{%- assign bottom_text                 = section.settings.bottom_text -%}
 {%- assign bottom_menu                 = section.settings.bottom_menu -%}
 {%- assign footer_background           = section.settings.footer_background -%}
 {%- assign footer_foreground           = section.settings.footer_foreground -%}
 {%- assign footer_foreground_secondary = section.settings.footer_foreground_secondary -%}
 {%- assign footer_foreground_third     = section.settings.footer_foreground_third -%}
 {%- assign footer_border               = section.settings.footer_border -%}
-{%- assign hide_copy                   = section.settings.hide_copy -%}
 {%- assign padding_top                 = section.settings.padding_top -%}
 {%- assign padding_bottom              = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile          = section.settings.padding_top_mobile -%}
@@ -244,12 +244,12 @@
 
     </div>
 
-    <div class="footer__bottom{% if hide_copy and footer_bottom_menu == blank %} footer__bottom--copyright-hidden{%- endif -%}">
-      {%- unless hide_copy and footer_bottom_menu == blank -%}
+    <div class="footer__bottom{% if bottom_text == blank and footer_bottom_menu == blank %} footer__bottom--copyright-hidden{%- endif -%}">
+      {%- unless bottom_text == blank and footer_bottom_menu == blank -%}
         <div class="footer__copy">
-          {%- unless hide_copy -%}
-            <p>{{ "now" | date: "%Y" }} Booqable. All right reserved.</p>
-          {%- endunless -%}
+          {%- if bottom_text != blank -%}
+            <p>{{- bottom_text -}}</p>
+          {%- endif -%}
 
           {%- if footer_bottom_menu != blank -%}
             {{- footer_bottom_menu -}}
@@ -286,6 +286,12 @@
         "description": "Note: Footer logo always overrides this title"
       },
       {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Bottom text",
+        "default": "2023 Booqable. All right reserved."
+      },
+      {
         "type": "menu",
         "id": "bottom_menu",
         "label": "Bottom menu",
@@ -320,12 +326,6 @@
         "id": "footer_border",
         "label": "Border color",
         "info": "Note: This color always overrides the default color, and is applied to this section only."
-      },
-      {
-        "type": "checkbox",
-        "id": "hide_copy",
-        "default": false,
-        "label": "Hide copyright"
       },
       {
         "type": "header",
