@@ -11,6 +11,46 @@
   padding-bottom: var(--padding-bottom-mobile, 16px);
 }
 
+@keyframes move {
+  0% {
+    transform: translateY(15%) rotate(90deg);
+  }
+
+  33% {
+    transform: translateY(75%) rotate(90deg);
+  }
+
+  66% {
+    transform: translateY(-20%) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(15%) rotate(90deg);
+  }
+}
+
+.date-location__icon {
+  margin: 0 8px 0 0;
+}
+
+.date-location__icon svg {
+  transform: translateY(15%) rotate(90deg);
+  animation: 1.5s infinite alternate move;
+  width: 16px;
+  height: 17px;
+}
+
+.date-location__icon path {
+  fill: var(--color-primary-background, #FFFFFF);
+}
+
+.date-location__title {
+  display: flex;
+  font-size: 18px;
+  font-weight: var(--font-weight-regular, 400);
+  color: var(--color-primary-background, #FFFFFF);
+}
+
 .hero bq-date-picker::part(cleanstate),
 .date-location bq-date-picker::part(cleanstate) {
   display: flex;
