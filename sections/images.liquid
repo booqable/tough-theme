@@ -294,7 +294,7 @@
                           <div class="images__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
                         {%- endif -%}
 
-                        {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+                        {%- if button_1 != blank or button_2 != blank -%}
                           <div class="images__buttons">
                             {%- if button_1 != blank and button_url_1 != blank -%}
                               <a href="{{  button_url_1 }}" class="images__button button button--primary button--large">{{- button_1 -}}</a>
@@ -439,14 +439,11 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
           },
           {
-            "type": "paragraph",
-            "content": "Button #1 settings"
-          },
-          {
             "type": "text",
             "id": "button_1",
-            "label": "Label",
-            "default": "Check out products"
+            "label": "Button #1 label",
+            "default": "Check out products",
+            "info": "Note: Leave label blank to disable the button"
           },
           {
             "type": "url",
@@ -454,14 +451,11 @@
             "label": "Button #1 URL"
           },
           {
-            "type": "paragraph",
-            "content": "Button #2 settings"
-          },
-          {
             "type": "text",
             "id": "button_2",
-            "label": "Label",
-            "default": "More info"
+            "label": "Button #2 label",
+            "default": "More info",
+            "info": "Note: Leave label blank to disable the button"
           },
           {
             "type": "url",
