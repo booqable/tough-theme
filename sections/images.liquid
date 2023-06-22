@@ -13,9 +13,6 @@
   {{ "images.css" | asset_url | stylesheet_tag }}
 
   {%- assign limit                 = section.settings.limit -%}
-  {%- assign show_navigation       = section.settings.show_navigation -%}
-  {%- assign show_pagination       = section.settings.show_pagination -%}
-  {%- assign show_counter          = section.settings.show_counter -%}
   {%- assign padding_top           = section.settings.padding_top -%}
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
@@ -375,43 +372,37 @@
     {%- if carousel -%}
         </div>
 
-        {%- if show_navigation -%}
-          <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
-            <span class="carousel__btn prev" title="Prev slide">
-              Previous slide
-              {%- render 'icon-arrow-right' -%}
+        <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
+          <span class="carousel__btn prev" title="Prev slide">
+            Previous slide
+            {%- render 'icon-arrow-right' -%}
+          </span>
+          <span class="carousel__btn next" title="Next slide">
+            Next slide
+            {%- render 'icon-arrow-right' -%}
+          </span>
+        </div>
+
+        <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
+          {%- for block in blocks limit: limit -%}
+            {%- assign first = forloop.first -%}
+            {%- assign index = forloop.index -%}
+
+            <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+              Go to slide {{ index -}}
             </span>
-            <span class="carousel__btn next" title="Next slide">
-              Next slide
-              {%- render 'icon-arrow-right' -%}
-            </span>
-          </div>
-        {%- endif -%}
+          {%- endfor -%}
+        </div>
 
-        {%- if show_pagination -%}
-          <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
-            {%- for block in blocks limit: limit -%}
-              {%- assign first = forloop.first -%}
-              {%- assign index = forloop.index -%}
+        <div class="carousel__counter">
+          {%- for block in blocks limit: limit) -%}
+            {%- assign length = forloop.length -%}
+          {%- endfor -%}
 
-              <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
-                Go to slide {{ index -}}
-              </span>
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
-
-        {%- if show_counter -%}
-          <div class="carousel__counter">
-            {%- for block in blocks limit: limit) -%}
-              {%- assign length = forloop.length -%}
-            {%- endfor -%}
-
-            <span class="carousel__count">{%- if length < 10 -%}0{%- endif -%}1</span>
-            <span class="carousel__divider">|</span>
-            <span class="carousel__summary">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
-          </div>
-        {%- endif -%}
+          <span class="carousel__count">{%- if length < 10 -%}0{%- endif -%}1</span>
+          <span class="carousel__divider">|</span>
+          <span class="carousel__summary">{%- if length < 10 -%}0{%- endif -%}{{- length -}}</span>
+        </div>
       </div>
     {%- endif -%}
   </div>
@@ -499,20 +490,7 @@
             "label": "Title color",
             "info": "Note: This color always overrides the default color, and is applied to this section only"
           },
-          {
-            "type": "header",
-            "content": "Video settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Note: This feature works with Youtube and Vimeo videos only. URL must be copied from Youtube or Vimeo video page and pasted in the field below. Preferable video's dimension 16:9. For better page performance the video mustn't be too heavy. For example: https://www.youtube.com/watch?v=QAUzWtLMnU0 or https://vimeo.com/43652787"
-          },
-          {
-            "type": "text",
-            "id": "video_url",
-            "label": "URL to video",
-            "info": "Note: The video takes precedence over 'Image' and only this one will be displaying on both desktop and mobile"
-          },
+
           {
             "type": "header",
             "content": "Overlay settings"
@@ -639,6 +617,16 @@
             "id": "image_mobile",
             "info": "Note: The image has the lowest priority",
             "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Video settings"
+          },
+          {
+            "type": "text",
+            "id": "video_url",
+            "label": "Youtube / Vimeo URL",
+            "info": "Note: The video takes precedence over 'Image' and only this one will be displaying on both desktop and mobile."
           }
         ]
       }
@@ -651,25 +639,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Note: The carousel appears automatically when there are more than 1 block (slide) in this section, and then below settings of the carousel is working"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_navigation",
-        "default": true,
-        "label": "Show navigation buttons"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_pagination",
-        "default": true,
-        "label": "Show pagination bullets"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_counter",
-        "default": true,
-        "label": "Show counter of slides"
+        "content": "Note: The carousel appears automatically when there are more than 1 block (slide) in this section, and then below settings of the carousel are working"
       },
       {
         "type": "number",
