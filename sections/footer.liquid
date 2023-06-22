@@ -248,8 +248,6 @@
         <div class="footer__copy">
           {%- if bottom_text != blank -%}
             <p>
-              {{ "now" | date: "%Y" }}
-              {{ shop.name }}.
               {{ bottom_text }}
             </p>
           {%- endif -%}
@@ -292,7 +290,8 @@
         "type": "text",
         "id": "bottom_text",
         "label": "Bottom text",
-        "default": "2023 Booqable. All right reserved."
+        "default": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
+        "info": "Note: This template keeps the year auto-updated and returns the name of your company. You can replace it with any text"
       },
       {
         "type": "menu",

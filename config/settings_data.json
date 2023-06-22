@@ -136,7 +136,7 @@
         ],
         "settings": {
           "bottom_menu": "bottom-menu",
-          "bottom_text": "All right reserved.",
+          "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
           "padding_bottom": "medium",
           "padding_bottom_mobile": "small",
           "padding_top": "medium",
