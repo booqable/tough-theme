@@ -247,7 +247,11 @@
       {%- unless bottom_text == blank and footer_bottom_menu == blank -%}
         <div class="footer__copy">
           {%- if bottom_text != blank -%}
-            <p>{{- bottom_text -}}</p>
+            <p>
+              {{ "now" | date: "%Y" }}
+              {{ shop.name }}.
+              {{ bottom_text }}
+            </p>
           {%- endif -%}
 
           {%- if footer_bottom_menu != blank -%}
