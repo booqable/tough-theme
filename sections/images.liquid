@@ -10,7 +10,7 @@
 {%- assign blocks = section.blocks -%}
 
 {%- if blocks.size > 0 -%}
-  {{ "image-banner.css" | asset_url | stylesheet_tag }}
+  {{ "images.css" | asset_url | stylesheet_tag }}
 
   {%- assign limit                 = section.settings.limit -%}
   {%- assign show_navigation       = section.settings.show_navigation -%}
@@ -81,7 +81,7 @@
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
 
-  <div class="image-banner__wrapper" style="{{- variables | escape -}}">
+  <div class="images__wrapper" style="{{- variables | escape -}}">
     {%- if carousel -%}
       <div class="carousel carousel__fluid carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
@@ -284,27 +284,27 @@
                 <div class="carousel__inner">
             {%- endif -%}
                   <div
-                    class="image-banner__container container{% if padding_top != blank or padding_top_mobile != blank %} image-banner__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-banner__container--padding-bottom{%- endif -%}"
+                    class="images__container container{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%- endif -%}"
                     style="{{- text_variables | escape -}}"
                   >
-                    <div class="image-banner__text-area">
-                      <div class="image-banner__content">
+                    <div class="images__text-area">
+                      <div class="images__content">
                         {%- if title != blank -%}
-                          <h1 class="image-banner__title">{{- title -}}</h1>
+                          <h1 class="images__title">{{- title -}}</h1>
                         {%- endif -%}
 
                         {%- if description != blank -%}
-                          <div class="image-banner__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
+                          <div class="images__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
                         {%- endif -%}
 
                         {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
-                          <div class="image-banner__buttons">
+                          <div class="images__buttons">
                             {%- if button_1 != blank and button_url_1 != blank -%}
-                              <a href="{{  button_url_1 }}" class="image-banner__button button button--primary button--large">{{- button_1 -}}</a>
+                              <a href="{{  button_url_1 }}" class="images__button button button--primary button--large">{{- button_1 -}}</a>
                             {%- endif -%}
 
                             {%- if button_2 != blank and button_url_2 != blank -%}
-                              <a href="{{  button_url_2 }}" class="image-banner__button button button--outlined button--large">{{- button_2 -}}</a>
+                              <a href="{{  button_url_2 }}" class="images__button button button--outlined button--large">{{- button_2 -}}</a>
                             {%- endif -%}
                           </div>
                         {%- endif -%}
@@ -313,23 +313,23 @@
                     </div>
                   </div>
 
-                  <div class="image-banner__vision" style="{{- image_variables | escape -}}">
+                  <div class="images__vision" style="{{- image_variables | escape -}}">
                     {%- if video_url contains "youtube.com" -%}
                       {%- assign video_drop = video_url | split: "?v=" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="image-banner__vision-wrapper{%  if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
-                        <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="image-banner__video-id" type="hidden" name="hidden">
-                        <div id="player-{{- block.id -}}" class="image-banner__video"></div>
+                      <div class="images__vision-wrapper{%  if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                        <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
+                        <div id="player-{{- block.id -}}" class="images__video"></div>
                       </div>
 
                     {%- elsif video_url contains "vimeo.com" -%}
                       {%- assign video_drop = video_url | split: "/" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="image-banner__vision-wrapper{%if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
+                      <div class="images__vision-wrapper{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                         <iframe
-                          class="image-banner__video"
+                          class="images__video"
                           src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
                           width="988"
                           height="556"
@@ -344,22 +344,22 @@
 
                     {%- elsif image != blank or image_mobile != blank -%}
                       {%- if image != blank -%}
-                        <div class="image-banner__vision-wrapper{% if image_mobile != blank %} image-banner__vision-wrapper--desktop{% endif %}{%if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
+                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
-                            class: 'image-banner__image',
+                            class: 'images__image',
                             size: 'xxl'
                           -%}
                         </div>
                       {%- endif -%}
 
                       {%- if image_mobile != blank -%}
-                        <div class="image-banner__vision-wrapper image-banner__vision-wrapper--mobile{%if show_overlay %} image-banner__vision-wrapper--overlay{%- endif -%}">
+                        <div class="images__vision-wrapper images__vision-wrapper--mobile{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
-                            class: 'image-banner__image',
+                            class: 'images__image',
                             size: 'm'
                           -%}
                         </div>
@@ -417,13 +417,13 @@
   </div>
 {%- endif -%}
 
-<script src="{{ "image-banner.js" | asset_url }}" defer></script>
+<script src="{{ "images.js" | asset_url }}" defer></script>
 
 {% schema %}
   {
-    "name": "Image banner",
+    "name": "Images",
     "tag": "section",
-    "class": "image-banner",
+    "class": "images",
     "description": "Display a carousel with content and background image or video",
     "templates": ["index"],
     "blocks":[

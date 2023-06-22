@@ -1,8 +1,8 @@
 {
   "name": "Home",
   "sections": {
-    "image-banner": {
-      "type": "image-banner",
+    "images": {
+      "type": "images",
       "blocks": {
         "slide": {
           "type": "slide",
@@ -380,7 +380,7 @@
     }
   },
   "order": [
-    "image-banner",
+    "images",
     "date-picker",
     "logos",
     "collections",
