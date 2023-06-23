@@ -117,7 +117,7 @@
 
 @media (min-width: 992px) {
   .images {
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
     height: auto;
   }
 
@@ -127,6 +127,10 @@
 
   .images__container--padding-bottom {
     padding-bottom: var(--padding-bottom, 80px);
+  }
+
+  .images__wrapper {
+    height: var(--height, auto);
   }
 
   .images__vision-wrapper {
