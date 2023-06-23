@@ -9,12 +9,11 @@
           "settings": {
             "button_1": "Check out products",
             "button_2": "More info",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-            "overlay_opacity": 100,
-            "show_overlay": true,
+            "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
+            "overlay_opacity": 80,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "title": "Rent heavy equipment"
+            "title": "Rent heavy <br> equipment"
           },
           "disabled": null
         }
@@ -24,6 +23,7 @@
       ],
       "settings": {
         "effect": "slide",
+        "height": "large",
         "limit": 6,
         "padding_bottom": "medium",
         "padding_bottom_mobile": "small",

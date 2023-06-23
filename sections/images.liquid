@@ -111,7 +111,6 @@
             {%- assign background           = block.settings.background -%}
             {%- assign color                = block.settings.color -%}
             {%- assign title_color          = block.settings.title_color -%}
-            {%- assign show_overlay         = block.settings.show_overlay -%}
             {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
 
             {% comment %} CSS variables start {% endcomment %}
@@ -307,7 +306,7 @@
                       {%- assign video_drop = video_url | split: "?v=" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="images__vision-wrapper{%  if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
                         <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
                         <div id="player-{{- block.id -}}" class="images__video"></div>
                       </div>
@@ -316,7 +315,7 @@
                       {%- assign video_drop = video_url | split: "/" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="images__vision-wrapper{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
                         <iframe
                           class="images__video"
                           src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
@@ -333,7 +332,7 @@
 
                     {%- elsif image != blank or image_mobile != blank -%}
                       {%- if image != blank -%}
-                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %} images__vision-wrapper--overlay">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
@@ -344,7 +343,7 @@
                       {%- endif -%}
 
                       {%- if image_mobile != blank -%}
-                        <div class="images__vision-wrapper images__vision-wrapper--mobile{%if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                        <div class="images__vision-wrapper images__vision-wrapper--mobile images__vision-wrapper--overlay">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
@@ -433,26 +432,26 @@
           {
             "type": "text",
             "id": "button_1",
-            "label": "Button #1 label",
+            "label": "Button 1 label",
             "default": "Check out products",
             "info": "Note: Leave label blank to disable the button"
           },
           {
             "type": "url",
             "id": "button_url_1",
-            "label": "Button #1 URL"
+            "label": "Button 1 URL"
           },
           {
             "type": "text",
             "id": "button_2",
-            "label": "Button #2 label",
+            "label": "Button 2 label",
             "default": "More info",
             "info": "Note: Leave label blank to disable the button"
           },
           {
             "type": "url",
             "id": "button_url_2",
-            "label": "Button #2 URL"
+            "label": "Button 2 URL"
           },
           {
             "type": "header",
@@ -482,19 +481,13 @@
             "content": "Overlay settings"
           },
           {
-            "type": "checkbox",
-            "id": "show_overlay",
-            "default": true,
-            "label": "Show overlay"
-          },
-          {
             "type": "number",
             "id": "overlay_opacity",
             "label": "Overlay opacity",
             "min": 0,
             "max": 100,
-            "default": 100,
-            "info": "Note: Use positive numbers only"
+            "default": 80,
+            "info": "Note: Use positive numbers only. Leave blank or set to 0 to disable the overlay"
           },
           {
             "type": "header",
