@@ -3,9 +3,9 @@ class Media {
     this.block = block;
 
     this.selector = {
-      vision: ".image-banner__vision",
-      video: ".image-banner__video-id",
-      player: ".image-banner__video",
+      vision: ".images__vision",
+      video: ".images__video-id",
+      player: ".images__video",
     }
   }
 
@@ -78,7 +78,7 @@ class Media {
   }
 }
 
-const initBanner = (el = ".image-banner") => {
+const initBanner = (el = ".images") => {
   const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
