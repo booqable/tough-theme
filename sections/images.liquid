@@ -31,6 +31,19 @@
     {%- assign carousel = true -%}
   {%- endif -%}
 
+  {%- assign video_array          = "" -%}
+
+  {%- for block in blocks -%}
+    {%- assign full_width         = block.settings.full_width -%}
+    {%- assign video_url          = block.settings.video_url | strip -%}
+    {%- assign video              = false -%}
+
+    {%- if video_url != blank and full_width -%}
+      {%- assign video            = true -%}
+      {%- assign video_array      = video_array | append: video -%}
+    {%- endif -%}
+  {%- endfor -%}
+
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if ui_color != blank -%}
@@ -105,7 +118,6 @@
             {%- assign button_url_2         = block.settings.button_url_2 -%}
             {%- assign text_position        = block.settings.text_position -%}
             {%- assign text_position_mobile = block.settings.text_position_mobile -%}
-            {%- assign full_width           = block.settings.full_width -%}
             {%- assign video_url            = block.settings.video_url | strip -%}
             {%- assign image                = block.settings.image -%}
             {%- assign image_mobile         = block.settings.image_mobile -%}
@@ -269,10 +281,10 @@
             {% comment %} CSS variables end {% endcomment %}
 
             {%- if carousel -%}
-              <div class="carousel__item{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
+              <div class="carousel__item{% if video_array.size > 0 %} images__video-wrapper{% endif %}{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
                 <div class="carousel__inner">
             {%- endif -%}
-                  {%- if video_url != blank and full_width -%}
+                  {%- if video and carousel == false -%}
                     <div class="images__video-wrapper">
                   {%- endif -%}
                     <div
@@ -358,7 +370,7 @@
                         {%- endif -%}
                       {%- endif -%}
                     </div>
-                  {%- if video_url != blank and full_width -%}
+                  {%- if video and carousel == false -%}
                     </div>
                   {%- endif -%}
 
