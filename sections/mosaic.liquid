@@ -9,6 +9,8 @@
   {%- assign description           = section.settings.description -%}
   {%- assign title_bg              = section.settings.title_bg -%}
   {%- assign view_all              = section.settings.view_all -%}
+  {%- assign view_url              = section.settings.view_url -%}
+  {%- assign size                  = section.settings.size -%}
   {%- assign limit                 = section.settings.limit -%}
   {%- assign padding_top           = section.settings.padding_top -%}
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -70,16 +72,14 @@
         -%}
       {%- endif -%}
 
-      <div class="mosaic__list">
-        {%- for block in section.blocks -%}
-          {%- assign size         = block.settings.size -%}
+      <div class="mosaic__list mosaic__list-{{ size }}{% if blocks.size > 3 %} mosaic__list-two-rows{%- endif -%}">
+        {%- for block in blocks -%}
           {%- assign article_tag  = block.settings.article_tag -%}
           {%- assign heading      = block.settings.heading -%}
           {%- assign text         = block.settings.text -%}
           {%- assign button       = block.settings.button -%}
           {%- assign button_url   = block.settings.button_url -%}
           {%- assign image        = block.settings.image -%}
-          {%- assign icon         = block.settings.icon -%}
 
           {%- if image != blank -%}
             {%- assign image = image -%}
@@ -89,33 +89,22 @@
             {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="mosaic__item mosaic__item-{{- size -}}" id="{{- block.id -}}">
-            {%- if size == "lg" -%}
-              <div class="mosaic__item-col{% if image == blank %} no-image{%- endif -%}">
-                {%- if image != blank -%}
-                  {%- render 'image',
-                    image: image,
-                    loading: 'lazy',
-                    class: 'mosaic__image',
-                    size: 'm'
-                  -%}
-                {%- endif -%}
-              </div>
-            {%- endif -%}
+          <div class="mosaic__item" id="{{- block.id -}}">
+            <div class="mosaic__item-col{% if image == blank %} no-image{% else %} mosaic__item-col--image{%- endif -%}">
+              {%- if image != blank -%}
+                {%- render 'image',
+                  image: image,
+                  loading: 'lazy',
+                  class: 'mosaic__image',
+                  size: 'm'
+                -%}
+              {%- endif -%}
+            </div>
 
             <div class="mosaic__item-col">
               <div class="mosaic__text-area">
-                {%- if article_tag != blank and size == "lg" -%}
+                {%- if article_tag != blank -%}
                   <span class="mosaic__tag">{{- article_tag -}}</span>
-                {%- endif -%}
-
-                {%- if icon != blank and size == "sm" -%}
-                  {%- render 'image',
-                    image: icon,
-                    loading: 'lazy',
-                    class: 'mosaic__icon',
-                    size: 'xs'
-                  -%}
                 {%- endif -%}
 
                 {%- if heading != blank -%}
@@ -140,9 +129,9 @@
         {%- endfor -%}
       </div>
 
-      {%- if view_all != blank -%}
+      {%- if view_all != blank and view_url != blank -%}
         <div class="mosaic__show-wrapper">
-          <a href="{{ routes.blog_page }}" class="mosaic__show button button--outlined button--large">
+          <a href="{{ view_url }}" class="mosaic__show button button--outlined button--large">
             {{- view_all -}}
           </a>
         </div>
@@ -150,8 +139,6 @@
     </div>
   </div>
 {%- endif -%}
-
-<script src="{{ "mosaic.js" | asset_url }}" defer></script>
 
 {% schema %}
   {
@@ -193,11 +180,36 @@
         "id": "view_all",
         "label": "Button label",
         "default": "See all Articles",
-        "info": "Note: This button redirects the user to the blog page. Leave label blank to disable the button"
+        "info": "Note: Leave label blank to disable the button"
+      },
+      {
+        "type": "url",
+        "id": "view_url",
+        "label": "Button URL"
       },
       {
         "type": "header",
         "content": "Desktop settings"
+      },
+      {
+        "type": "select",
+        "id": "size",
+        "label": "Article size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "left",
+            "label": "Large left, small right"
+          },
+          {
+            "value": "right",
+            "label": "Large right, small left"
+          }
+        ],
+        "default": "left"
       },
       {
         "type": "select",
@@ -291,38 +303,14 @@
         "name": "Article",
         "settings": [
           {
-            "type": "select",
-            "id": "size",
-            "label": "Size",
-            "options": [
-              {
-                "value": "sm",
-                "label": "Small"
-              },
-              {
-                "value": "lg",
-                "label": "Large"
-              }
-            ],
-            "default": "sm"
-          },
-          {
             "type": "image_picker",
             "id": "image",
-            "label": "Image",
-            "info": "Note: This image is displayed when the size sets to 'Large'"
-          },
-          {
-            "type": "image_picker",
-            "id": "icon",
-            "label": "Icon",
-            "info": "Note: This icon is displayed when the size sets to 'Small'"
+            "label": "Image"
           },
           {
             "type": "text",
             "id": "article_tag",
             "label": "Tag",
-            "info": "Note: This tag is displayed when the size sets to 'Large'",
             "default": "Tagline"
           },
           {

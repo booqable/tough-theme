@@ -270,7 +270,6 @@
         "article": {
           "type": "article",
           "settings": {
-            "size": "lg",
             "article_tag": "Tagline",
             "heading": "Our biggest project",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -281,7 +280,6 @@
         "article_456231": {
           "type": "article",
           "settings": {
-            "size": "sm",
             "heading": "January Update",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "button": "Read more"
@@ -291,7 +289,6 @@
         "article_456232": {
           "type": "article",
           "settings": {
-            "size": "sm",
             "heading": "December Update",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "button": "Read more"
@@ -310,6 +307,7 @@
         "padding_top_mobile": "medium",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
+        "size": "left",
         "tag": "Mosaic Content section",
         "title": "News & articles",
         "title_bg": "News & articles",
