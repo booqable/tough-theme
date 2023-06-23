@@ -156,7 +156,7 @@
           <div class="image-text__description">{{- description -}}</div>
         {%- endif -%}
 
-        {%- if button_1 != blank and button_url_1 != blank or if button_2 != blank and button_url_2 != blank -%}
+        {%- if button_1 != blank or button_2 != blank -%}
           <div class="image-text__buttons">
             {%- if button_1 != blank and button_url_1 != blank -%}
               <a href="{{ button_url_1 }}" class="image-text__button button button--primary button--large">
@@ -231,26 +231,26 @@
       {
         "type": "text",
         "id": "button_1",
-        "label": "Label of button 1",
-        "info": "Note: If the label and URL are empty - the button absent",
+        "label": "Button 1 label",
+        "info": "Note: Leave label blank to disable the button",
         "default": "Button"
       },
       {
         "type": "url",
         "id": "button_url_1",
-        "label": "URL of button 1"
+        "label": "Button 1 URL"
       },
       {
         "type": "text",
         "id": "button_2",
-        "label": "Label of button 2",
-        "info": "Note: If the label and URL are empty - the button absent",
+        "label": "Button 2 label",
+        "info": "Note: Leave label blank to disable the button",
         "default": "Button"
       },
       {
         "type": "url",
         "id": "button_url_2",
-        "label": "URL of button 2"
+        "label": "Button 2 URL"
       },
       {
         "type": "color",

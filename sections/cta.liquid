@@ -73,7 +73,7 @@
   style="{{- variables | escape -}}"
 >
   <div class="cta__container container">
-    {%- if title != blank or description != blank or button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+    {%- if title != blank or description != blank or button_1 != blank or button_2 != blank -%}
       {%- render 'section-header-narrow',
         title: title,
         text: description,
@@ -125,34 +125,28 @@
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       {
-        "type": "paragraph",
-        "content": "Button #1 settings"
-      },
-      {
         "type": "text",
         "id": "button_1",
-        "label": "Label",
+        "label": "Button 1 label",
+        "info": "Note: Leave label blank to disable the button",
         "default": "Button"
       },
       {
         "type": "url",
         "id": "button_url_1",
-        "label": "Button #1 URL"
-      },
-      {
-        "type": "paragraph",
-        "content": "Button #2 settings"
+        "label": "Button 1 URL"
       },
       {
         "type": "text",
         "id": "button_2",
-        "label": "Label",
+        "label": "Button 2 label",
+        "info": "Note: Leave label blank to disable the button",
         "default": "Button"
       },
       {
         "type": "url",
         "id": "button_url_2",
-        "label": "Button #2 URL"
+        "label": "Button 2 URL"
       },
       {
         "type": "image_picker",

@@ -102,7 +102,7 @@
                   <div class="numbered-blocks__text">{{- text -}}</div>
                 {%- endif -%}
 
-                {%- if button_1 != blank and button_url_1 != blank or button_2 != blank and button_url_2 != blank -%}
+                {%- if button_1 != blank or button_2 != blank -%}
                   <div class="numbered-blocks__buttons">
                     {%- if button_1 != blank and button_url_1 != blank -%}
                       <a href="{{  button_url_1 }}" class="numbered-blocks__button button button--outlined button--large">{{- button_1 -}}</a>
@@ -279,34 +279,28 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
           },
           {
-            "type": "paragraph",
-            "content": "Button #1 settings"
-          },
-          {
             "type": "text",
             "id": "button_1",
-            "label": "Label",
+            "label": "Button 1 label",
+            "info": "Note: Leave label blank to disable the button",
             "default": "Button"
           },
           {
             "type": "url",
             "id": "button_url_1",
-            "label": "Button #1 URL"
-          },
-          {
-            "type": "paragraph",
-            "content": "Button #2 settings"
+            "label": "Button 1 URL"
           },
           {
             "type": "text",
             "id": "button_2",
-            "label": "Label",
+            "label": "Button 2 label",
+            "info": "Note: Leave label blank to disable the button",
             "default": "Button"
           },
           {
             "type": "url",
             "id": "button_url_2",
-            "label": "Button #2 URL"
+            "label": "Button 2 URL"
           },
           {
             "type": "image_picker",
