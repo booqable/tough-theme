@@ -105,6 +105,7 @@
             {%- assign button_url_2         = block.settings.button_url_2 -%}
             {%- assign text_position        = block.settings.text_position -%}
             {%- assign text_position_mobile = block.settings.text_position_mobile -%}
+            {%- assign full_width           = block.settings.full_width -%}
             {%- assign video_url            = block.settings.video_url | strip -%}
             {%- assign image                = block.settings.image -%}
             {%- assign image_mobile         = block.settings.image_mobile -%}
@@ -271,89 +272,96 @@
               <div class="carousel__item{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
                 <div class="carousel__inner">
             {%- endif -%}
-                  <div
-                    class="images__container container{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%- endif -%}"
-                    style="{{- text_variables | escape -}}"
-                  >
-                    <div class="images__text-area">
-                      <div class="images__content">
-                        {%- if title != blank -%}
-                          <h1 class="images__title">{{- title -}}</h1>
-                        {%- endif -%}
+                  {%- if video_url != blank and full_width -%}
+                    <div class="images__video-wrapper">
+                  {%- endif -%}
+                    <div
+                      class="images__container container{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%  endif %}"
+                      style="{{- text_variables | escape -}}"
+                    >
+                      <div class="images__text-area">
+                        <div class="images__content">
+                          {%- if title != blank -%}
+                            <h1 class="images__title">{{- title -}}</h1>
+                          {%- endif -%}
 
-                        {%- if description != blank -%}
-                          <div class="images__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
-                        {%- endif -%}
+                          {%- if description != blank -%}
+                            <div class="images__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
+                          {%- endif -%}
 
-                        {%- if button_1 != blank or button_2 != blank -%}
-                          <div class="images__buttons">
-                            {%- if button_1 != blank and button_url_1 != blank -%}
-                              <a href="{{  button_url_1 }}" class="images__button button button--primary button--large">{{- button_1 -}}</a>
-                            {%- endif -%}
+                          {%- if button_1 != blank or button_2 != blank -%}
+                            <div class="images__buttons">
+                              {%- if button_1 != blank and button_url_1 != blank -%}
+                                <a href="{{  button_url_1 }}" class="images__button button button--primary button--large">{{- button_1 -}}</a>
+                              {%- endif -%}
 
-                            {%- if button_2 != blank and button_url_2 != blank -%}
-                              <a href="{{  button_url_2 }}" class="images__button button button--outlined button--large">{{- button_2 -}}</a>
-                            {%- endif -%}
+                              {%- if button_2 != blank and button_url_2 != blank -%}
+                                <a href="{{  button_url_2 }}" class="images__button button button--outlined button--large">{{- button_2 -}}</a>
+                              {%- endif -%}
+                            </div>
+                          {%- endif -%}
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="images__vision" style="{{- image_variables | escape -}}">
+                      {%- if video_url contains "youtube.com" -%}
+                        {%- assign video_drop = video_url | split: "?v=" -%}
+                        {%- assign video_id   = video_drop | last | strip -%}
+
+                        <div class="images__vision-wrapper images__vision-wrapper--overlay">
+                          <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
+                          <div id="player-{{- block.id -}}" class="images__video"></div>
+                        </div>
+
+                      {%- elsif video_url contains "vimeo.com" -%}
+                        {%- assign video_drop = video_url | split: "/" -%}
+                        {%- assign video_id   = video_drop | last | strip -%}
+
+                        <div class="images__vision-wrapper images__vision-wrapper--overlay">
+                          <iframe
+                            class="images__video"
+                            src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
+                            width="988"
+                            height="556"
+                            frameborder="0"
+                            allow="autoplay; fullscreen"
+                            allowfullscreen
+                            autoplay
+                            muted
+                            loop
+                          ></iframe>
+                        </div>
+
+                      {%- elsif image != blank or image_mobile != blank -%}
+                        {%- if image != blank -%}
+                          <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %} images__vision-wrapper--overlay">
+                            {%- render 'image',
+                              image: image,
+                              loading: 'lazy',
+                              class: 'images__image',
+                              size: 'xxl'
+                            -%}
                           </div>
                         {%- endif -%}
 
-                      </div>
+                        {%- if image_mobile != blank -%}
+                          <div class="images__vision-wrapper images__vision-wrapper--mobile images__vision-wrapper--overlay">
+                            {%- render 'image',
+                              image: image,
+                              loading: 'lazy',
+                              class: 'images__image',
+                              size: 'm'
+                            -%}
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
                     </div>
-                  </div>
+                  {%- if video_url != blank and full_width -%}
+                    </div>
+                  {%- endif -%}
 
-                  <div class="images__vision" style="{{- image_variables | escape -}}">
-                    {%- if video_url contains "youtube.com" -%}
-                      {%- assign video_drop = video_url | split: "?v=" -%}
-                      {%- assign video_id   = video_drop | last | strip -%}
-
-                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
-                        <input id="video-{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
-                        <div id="player-{{- block.id -}}" class="images__video"></div>
-                      </div>
-
-                    {%- elsif video_url contains "vimeo.com" -%}
-                      {%- assign video_drop = video_url | split: "/" -%}
-                      {%- assign video_id   = video_drop | last | strip -%}
-
-                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
-                        <iframe
-                          class="images__video"
-                          src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
-                          width="988"
-                          height="556"
-                          frameborder="0"
-                          allow="autoplay; fullscreen"
-                          allowfullscreen
-                          autoplay
-                          muted
-                          loop
-                        ></iframe>
-                      </div>
-
-                    {%- elsif image != blank or image_mobile != blank -%}
-                      {%- if image != blank -%}
-                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %} images__vision-wrapper--overlay">
-                          {%- render 'image',
-                            image: image,
-                            loading: 'lazy',
-                            class: 'images__image',
-                            size: 'xxl'
-                          -%}
-                        </div>
-                      {%- endif -%}
-
-                      {%- if image_mobile != blank -%}
-                        <div class="images__vision-wrapper images__vision-wrapper--mobile images__vision-wrapper--overlay">
-                          {%- render 'image',
-                            image: image,
-                            loading: 'lazy',
-                            class: 'images__image',
-                            size: 'm'
-                          -%}
-                        </div>
-                      {%- endif -%}
-                    {%- endif -%}
-                  </div>
             {%- if carousel -%}
                 </div>
               </div>
@@ -600,6 +608,13 @@
           {
             "type": "header",
             "content": "Video settings"
+          },
+          {
+            "type": "checkbox",
+            "id": "full_width",
+            "default": true,
+            "label": "Width from adge to adge",
+            "info": "Note: It prevents black stripes on the sides of a video, but increases the height as well. It might look not well on big screens"
           },
           {
             "type": "text",
