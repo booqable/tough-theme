@@ -19,6 +19,7 @@
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign timer                 = section.settings.timer -%}
+  {%- assign show_excerpt          = section.settings.show_excerpt -%}
   {%- assign url                   = routes.products_url -%}
   {%- assign image_placeholder     = settings.image_placeholder -%}
   {%- assign is_focal              = settings.use_focal_images -%}
@@ -116,7 +117,8 @@
                     {%- render 'product-card',
                         product: product,
                         placeholder: image_placeholder,
-                        focal: is_focal
+                        focal: is_focal,
+                        show_excerpt: show_excerpt
                     -%}
               {%- if carousel -%}
                   </div>
@@ -191,6 +193,12 @@
         "id": "description",
         "label": "Description",
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_excerpt",
+        "default": true,
+        "label": "Show description of product"
       },
       {
         "type": "text",

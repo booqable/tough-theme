@@ -28,7 +28,8 @@
         "padding_top": "small",
         "padding_top_mobile": "small",
         "padding_bottom": "small",
-        "padding_bottom_mobile": "small"
+        "padding_bottom_mobile": "small",
+        "show_excerpt": true
       },
       "disabled": null
     }

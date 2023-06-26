@@ -29,6 +29,7 @@
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "message": "Sorry, there are no products in this collection yet",
+        "show_excerpt": true,
         "sidebar_toggle": "Filters"
       },
       "disabled": null

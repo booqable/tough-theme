@@ -197,6 +197,7 @@
       "settings": {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "limit": 6,
+        "show_excerpt": true,
         "show_navigation": true,
         "show_pagination": true,
         "padding_top": "large",

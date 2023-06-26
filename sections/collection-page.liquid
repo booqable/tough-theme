@@ -3,6 +3,7 @@
 
 {%- assign grid                  = section.settings.grid -%}
 {%- assign message               = section.settings.message -%}
+{%- assign show_excerpt          = section.settings.show_excerpt -%}
 {%- assign limit                 = section.settings.limit -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -69,7 +70,8 @@
             {%- render 'product-card',
                 product: product,
                 placeholder: image_placeholder,
-                focal: is_focal
+                focal: is_focal,
+                show_excerpt: show_excerpt
             -%}
           {% endfor %}
         </div>
@@ -106,6 +108,12 @@
         "max": 24,
         "default": 6,
         "info": "Note: Use positive numbers only. Min number is 6, max number is 24"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_excerpt",
+        "default": true,
+        "label": "Show description of product"
       },
       {
         "type": "text",

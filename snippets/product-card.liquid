@@ -4,26 +4,28 @@
 
   product - { product } *required,
   placeholder - image *optional,
-  focal - boolean *optional
+  focal - boolean *optional,
+  show_excerpt - boolean *optional
 
   Usage:
 
   {%- render 'product-card',
       product: your_id,
       placeholder: your_id,
-      focal: your_id
+      focal: your_id,
+      show_excerpt: true
   -%}
 
 {% endcomment %}
 
-{%- assign id = "" -%}
-{%- assign url = "" -%}
-{%- assign image = "" -%}
-{%- assign name = "" -%}
-{%- assign spec = "" -%}
-{%- assign points = "" -%}
-{%- assign price = "" -%}
-{%- assign period = "" -%}
+{%- assign id      = "" -%}
+{%- assign url     = "" -%}
+{%- assign image   = "" -%}
+{%- assign name    = "" -%}
+{%- assign excerpt = "" -%}
+{%- assign points  = "" -%}
+{%- assign price   = "" -%}
+{%- assign period  = "" -%}
 
 {%- if product != blank -%}
   {%- if product.images != blank -%}
@@ -38,12 +40,12 @@
     {%- assign points = image.coordinates -%}
   {% endif %}
 
-  {%- assign id     = product.id -%}
-  {%- assign url    = product.url -%}
-  {%- assign name   = product.name -%}
-  {%- assign spec   = product.description | truncate: 125, " ..." -%}
-  {%- assign price  = product | product_price -%}
-  {%- assign period = product | product_price_label -%}
+  {%- assign id      = product.id -%}
+  {%- assign url     = product.url -%}
+  {%- assign name    = product.name -%}
+  {%- assign excerpt = product.description | truncate: 125, " ..." -%}
+  {%- assign price   = product | product_price -%}
+  {%- assign period  = product | product_price_label -%}
 
 {%- else -%}
   {%- if placeholder != blank -%}
@@ -52,10 +54,10 @@
     {%- assign image = blank -%}
   {%- endif -%}
 
-  {%- assign name   = "Product name (example)" -%}
-  {%- assign spec   = "Product description (example)" -%}
-  {%- assign price  = "$50.00" -%}
-  {%- assign period = "1 day (example)" -%}
+  {%- assign name    = "Product name (example)" -%}
+  {%- assign excerpt = "Product description (example)" -%}
+  {%- assign price   = "$50.00" -%}
+  {%- assign period  = "1 day (example)" -%}
 {%- endif -%}
 
 <div class="product-card" {% if id != blank %}id="{{- id -}}"{%- endif -%}>
@@ -84,14 +86,14 @@
       {%- if product != blank -%}
         <a class="product-card__link" href="{{ url }}">
       {%- endif -%}
-        {{- name -}}
+          {{- name -}}
       {%- if product != blank -%}
         </a>
       {%- endif -%}
     </h3>
 
-    {%- if spec != blank -%}
-      <div class="product-card__description">{{- spec -}}</div>
+    {%- if excerpt != blank and show_excerpt -%}
+      <div class="product-card__description">{{- excerpt -}}</div>
     {%- endif -%}
 
     <div class="product-card__price-wrapper">
