@@ -90,6 +90,10 @@
   background: var(--color-primary-foreground, #0B1A26);
 }
 
+.carousel__dot.hidden {
+  display: none;
+}
+
 .carousel__navigation {
   position: absolute;
   right: 0;

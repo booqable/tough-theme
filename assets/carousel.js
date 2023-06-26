@@ -68,11 +68,13 @@ class Carousel {
     this.startTimer(e);
     this.pauseAutoRotate();
     this.controls();
+    this.hidePaginationDots();
 
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
-    window.addEventListener("resize", this.controls.bind(this));
+    window.addEventListener('resize', this.hidePaginationDots.bind(this));
+    window.addEventListener('resize', this.controls.bind(this));
   }
 
   listener(arr, event, func) {
@@ -148,6 +150,27 @@ class Carousel {
     this.block.addEventListener('mouseleave', func);
     this.block.addEventListener('touchstart', func);
     this.block.addEventListener('touchend', func);
+  }
+
+  // hide not used dots of the pagination
+  hidePaginationDots() {
+    if (!this.dots) return false;
+
+    const client = this.wrap.clientWidth,
+          scroll = this.wrap.scrollWidth,
+          width = this.item.getBoundingClientRect().width;
+
+    if (scroll - client > 0) {
+      const numberDots = Math.ceil((scroll - client) / width);
+
+      this.dots.forEach(dot => {
+        dot.classList.add(this.modifiers.hidden);
+
+        const index = parseInt(dot.getAttribute(this.data.index));
+
+        if (index <= numberDots + 1) dot.classList.remove(this.modifiers.hidden);
+      })
+    }
   }
 
   // change active dot of the pagination
