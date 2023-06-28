@@ -20,7 +20,7 @@
     {%- endif -%}
     {%- if background != blank -%}
       --color-primary-foreground: {{ background }};
-      --color-primary-background-rgb-20: {{ background }}33;
+      --color-primary-background-rgb-20: {{ background | append: "33" }};
     {%- endif -%}
 
     {%- case padding_top -%}

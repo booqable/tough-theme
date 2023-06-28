@@ -36,7 +36,7 @@
 {%- capture variables -%}
   {%- if background != blank -%}
     --color-primary-foreground: {{ background }};
-    --color-primary-foreground-rgb: {{ background }}00;
+    --color-primary-foreground-rgb: {{ background | append: "00" }};
   {%- endif -%}
   {%- if foreground != blank -%}
     --color-primary-background: {{ foreground }};

@@ -4,14 +4,16 @@
 
   product - { product } *required,
   show - boolean *required,
-  label - "string" *required
+  label - "string" *required,
+  url - url *required
 
   Usage:
 
   {%- render 'breadcrumbs',
     product: your_id,
     show: your_id,
-    label: your_id
+    label: your_id,
+    url: your_id
   -%}
 
 {% endcomment %}
@@ -61,19 +63,21 @@
     role="navigation"
     aria-label="breadcrumbs">
     <div class="breadcrumbs__container">
-      <a href="{{ routes.all_products_collection_url }}" class="breadcrumbs__link" title="{{- label -}}">
-        {{- label -}}
-      </a>
+      {%- if label != blank and url != blank-%}
+        <a href="{{ url }}" class="breadcrumbs__link" title="{{- label -}}">
+          {{- label -}}
+        </a>
+
+        {{- separator -}}
+      {%- endif -%}
 
       {%- if first.url -%}
-        {{- separator -}}
-
         <a href="{{ first.url }}" class="breadcrumbs__link" title="{{- first.name -}}">
           {{- first.name -}}
         </a>
-      {%- endif -%}
 
-      {{- separator -}}
+        {{- separator -}}
+      {%- endif -%}
 
       <span class="breadcrumbs__name" title="{{- product.name -}}">
         {{- product.name -}}

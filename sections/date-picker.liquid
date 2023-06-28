@@ -5,9 +5,19 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign primary_background    = section.settings.primary_background -%}
+{%- assign primary_foreground    = section.settings.primary_foreground -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
+  {%- if primary_background != blank -%}
+    --color-primary-foreground: {{ primary_background }};
+    --color-primary-background-rgb-60: {{ primary_foreground | append: "99" }};
+  {%- endif -%}
+  {%- if primary_foreground != blank -%}
+    --color-primary-background: {{ primary_foreground }};
+  {%- endif -%}
+
   {%- case padding_top -%}
     {%- when 'small' -%}
       --padding-top: 8px;
@@ -46,17 +56,19 @@
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-<div class="date-location__container container{% if padding_top != blank or padding_top_mobile != blank %} date-location__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} date-location__container--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
-  {%- if title != blank -%}
-    <h2 class="date-location__title">
-      <span class="date-location__icon">
-        {%- render 'icon-arrow-right-full' -%}
-      </span>
-      {{- title -}}
-    </h2>
-  {%- endif -%}
+<div class="date-location__wrapper" style="{{- variables | escape -}}">
+  <div class="date-location__container container{% if padding_top != blank or padding_top_mobile != blank %} date-location__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} date-location__container--padding-bottom{%- endif -%}">
+    {%- if title != blank -%}
+      <h2 class="date-location__title">
+        <span class="date-location__icon">
+          {%- render 'icon-arrow-right-full' -%}
+        </span>
+        {{- title -}}
+      </h2>
+    {%- endif -%}
 
-  <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+    <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+  </div>
 </div>
 
 {% schema %}
@@ -66,6 +78,10 @@
     "tag": "section",
     "class": "date-location",
     "settings": [
+      {
+        "type": "header",
+        "content": "Basic settings"
+      },
       {
         "type": "text",
         "id": "title",
@@ -159,6 +175,22 @@
           }
         ],
         "default": "medium"
+        },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "color",
+        "id": "primary_background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "primary_foreground",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       }
     ]
   }

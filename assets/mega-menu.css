@@ -576,7 +576,7 @@
   }
 
   .menu__item > .menu__dropdown > .menu__dropdown-wrapper {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--color-primary-background-rgb-20, #FFFFFF33);
   }
 
   .menu__item > .menu__link:after {
@@ -825,7 +825,7 @@
   }
 
   .menu-wide .menu__item > .menu__dropdown > .menu__dropdown-wrapper {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--color-primary-background-rgb-20, #FFFFFF33);
   }
 
   .menu-wide.mobile-menu-top .menu__item .menu__dropdown,
@@ -936,7 +936,7 @@
     top: 0;
     bottom: 0;
     overflow: hidden;
-    background: rgba(var(--color-primary-background-rgb), .3);
+    background: var(--color-primary-background-rgb-30, #FFFFFF4D);
   }
 
   .menu-wide .menu__promo img {

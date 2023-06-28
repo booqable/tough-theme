@@ -136,7 +136,7 @@
 }
 
 .carousel__btn path {
-  fill: var(--color-primary-foreground, #0B1A26);
+  fill: var(--color-accent-foreground, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
@@ -191,7 +191,7 @@
 
 .carousel__fluid .carousel__btn {
   position: relative;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-primary-background-rgb-08, #FFFFFF14);
   border-color: transparent;
   cursor: pointer;
   width: 40px;
@@ -206,7 +206,7 @@
 }
 
 .carousel__fluid .carousel__btn path {
-  fill: var(--ui-color, #FFFFFF);
+  fill: var(--color-primary-background, #FFFFFF);
 }
 
 .carousel__fluid .carousel__btn.prev {
@@ -218,7 +218,7 @@
 }
 
 .carousel__fluid .carousel__btn:hover {
-  border-color: var(--ui-color, #FFFFFF);
+  border-color: var(--color-primary-background, #FFFFFF);
 }
 
 .carousel__fluid .carousel__pagination {
@@ -242,17 +242,17 @@
   position: relative;
   opacity: 0.3;
   margin-bottom: 3px;
-  background: var(--ui-color, #FFFFFF);
+  background: var(--color-primary-background, #FFFFFF);
 }
 
 .carousel__fluid .carousel__dot:hover,
 .carousel__fluid .carousel__dot.active {
   opacity: 1;
-  background: var(--ui-color, #FFFFFF);
+  background: var(--color-primary-background, #FFFFFF);
 }
 
 .carousel__fluid .carousel__counter {
-  color: var(--ui-color, #FFFFFF);
+  color: var(--color-primary-background, #FFFFFF);
   position: absolute;
   z-index: 0;
   bottom: 28px;

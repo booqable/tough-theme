@@ -37,7 +37,7 @@
 }
 
 .images__title {
-  color: var(--title-color, #FFFFFF);
+  color: var(--color-primary-background, #FFFFFF);
   font-size: var(--font-size-h2);
 }
 
@@ -55,7 +55,7 @@
 }
 
 .images__buttons .button--outlined {
-  color: var(--title-color, #FFFFFF);
+  color: var(--color-primary-background, #FFFFFF);
 }
 
 .images__vision {

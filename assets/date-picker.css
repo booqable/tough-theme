@@ -1,5 +1,6 @@
-.date-location {
+.date-location__wrapper {
   width: 100%;
+  color: var(--color-primary-background, #FFFFFF);
   background: var(--color-primary-foreground, #0B1A26);
 }
 

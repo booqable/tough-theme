@@ -5,7 +5,6 @@
 {%- assign description           = product.description -%}
 {%- assign variation_label       = section.settings.variation_label -%}
 {%- assign message_label         = section.settings.message_label -%}
-{%- assign message_value         = section.settings.message_value -%}
 {%- assign timer                 = section.settings.timer -%}
 {%- assign behavior              = section.settings.behavior -%}
 {%- assign padding_top           = section.settings.padding_top -%}
@@ -15,8 +14,9 @@
 {%- assign show_breadcrumbs      = section.settings.show_breadcrumbs -%}
 {%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
 {%- assign blocks                = section.blocks -%}
-{%- assign carousel              = false -%}
 {%- assign is_focal              = settings.use_focal_images -%}
+
+{%- assign carousel   = false -%}
 
 {%- if product.images.size > 1 -%}
   {{ "carousel.css" | asset_url | stylesheet_tag }}
@@ -24,11 +24,20 @@
   {%- assign carousel = true -%}
 {%- endif -%}
 
+{%- case breadcrumbs_label -%}
+  {%- when 'home' -%}
+    {%- assign label = "Home" -%}
+    {%- assign url   = routes.root_url -%}
+  {%- when 'collections' -%}
+    {%- assign label = "Collections" -%}
+    {%- assign url   = routes.collections_url -%}
+  {%- when 'products' -%}
+    {%- assign label = "Shop all" -%}
+    {%- assign url   = routes.all_products_collection_url -%}
+{%- endcase -%}
+
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
-  {%- if ui_color != blank -%}
-    --ui-color: {{ ui_color }};
-  {%- endif -%}
   {%- if carousel -%}
     --slide-width: 100%;
     --slide-width-mobile: 100%;
@@ -79,7 +88,8 @@
   {%- render 'breadcrumbs',
     product: product,
     show: show_breadcrumbs,
-    label: breadcrumbs_label
+    label: label,
+    url: url
   -%}
 
   <div class="product-main__wrapper{% if carousel %} product-main__wrapper-with-carousel{%- endif -%}">
@@ -96,7 +106,8 @@
                 <div class="carousel__item">
                   <div class="carousel__inner">
               {%- endif -%}
-                    <a class="product-main__modal-opener" href="#popup-{{- index -}}">
+                    <input type="checkbox" name="popup" id="popup-{{- index -}}" style="display: none;" />
+                    <label class="product-main__modal-opener" for="popup-{{- index -}}">
                       {%- render 'image',
                         image: image,
                         loading: 'lazy',
@@ -106,12 +117,12 @@
                       <span class="product-main__zoom-in" style="display: none;">
                         {%- render 'icon-zoom-in' -%}
                       </span>
-                    </a>
+                    </label>
 
                     <div id="popup-{{- index -}}" class="product-main__modal" style="display: none;">
-                      <a class="product-main__modal-close" href="#!"></a>
+                      <label class="product-main__modal-close" for="popup-{{- index -}}"></label>
                       <div class="product-main__popup">
-                        <a class="product-main__modal-close" href="#!">&times;</a>
+                        <label class="product-main__modal-close" for="popup-{{- index -}}">&times;</label>
                         {%- render 'image',
                           image: image,
                           loading: 'lazy',
@@ -214,11 +225,9 @@
 
         {{- product_button -}}
 
-        {%- if message_label != blank and message_value != blank -%}
+        {%- if message_label != blank -%}
           <div class="product-main__shipping-info">
             <span class="product-main__shipping-label">{{- message_label -}}</span>
-            &nbsp;
-            <span class="product-main__shipping-value">{{- message_value -}}</span>
           </div>
         {%- endif -%}
 
@@ -238,13 +247,33 @@
     "settings": [
       {
         "type": "header",
-        "content": "Translations"
+        "content": "General settings"
       },
       {
-        "type": "text",
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show breadcrumbs"
+      },
+      {
+        "type": "select",
         "id": "breadcrumbs_label",
-        "label": "Breadcrumbs root link label",
-        "default": "Shop all"
+        "label": "Breadcrumbs root link",
+        "options": [
+          {
+            "value": "home",
+            "label": "Home"
+          },
+          {
+            "value": "collections",
+            "label": "Collections"
+          },
+          {
+            "value": "products",
+            "label": "All products"
+          }
+        ],
+        "default": "products"
       },
       {
         "type": "text",
@@ -256,23 +285,7 @@
         "type": "text",
         "id": "message_label",
         "label": "Message label",
-        "default": "Free shipping over"
-      },
-      {
-        "type": "header",
-        "content": "General settings"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_breadcrumbs",
-        "default": true,
-        "label": "Show breadcrumbs"
-      },
-      {
-        "type": "text",
-        "id": "message_value",
-        "label": "Message value",
-        "default": "$50"
+        "default": "Free shipping over $50"
       },
       {
         "type": "header",
