@@ -67,11 +67,16 @@
   flex-grow: 0;
 }
 
-.product-card__price-wrapper {
+.product-card__price-info {
   color: var(--color-primary-foreground, #0B1A26);
   font-size: 16px;
   font-weight: var(--font-weight-regular, 400);
   flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.product-card__price-wrapper {
   display: flex;
   align-items: baseline;
 }
@@ -88,7 +93,7 @@ bq-product-price {
 }
 
 bq-product-availability {
-  color: var(--color-white, #FFFFFF);
+  color: var(--color-primary-background, #FFFFFF);
   font-size: 14px;
   line-height: var(--line-height-xs, 1);
   font-weight: var(--font-weight-medium, 500);

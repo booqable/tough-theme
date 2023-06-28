@@ -48,13 +48,12 @@
       ],
       "settings": {
         "behavior": "multiple",
-        "breadcrumbs_label": "Shop all",
+        "breadcrumbs_label": "products",
         "padding_top": "small",
         "padding_top_mobile": "small",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "message_label": "Free shipping over",
-        "message_value": "$50",
+        "message_label": "Free shipping over $50",
         "show_breadcrumbs": true,
         "timer": 5,
         "variation_label": "Variant"

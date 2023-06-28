@@ -27,7 +27,7 @@
 {%- capture variables -%}
   {%- if header_background != blank -%}
     --color-primary-foreground: {{ header_background }};
-    --color-primary-foreground-rgb-45: {{ header_background }}73;
+    --color-primary-foreground-rgb-45: {{ header_background | append: "73" }};
   {%- endif -%}
   {%- if header_foreground != blank -%}
     --color-primary-background: {{ header_foreground }};

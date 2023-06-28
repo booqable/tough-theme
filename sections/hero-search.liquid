@@ -83,8 +83,8 @@
 {%- capture button_variables -%}
   {%- if button_background != blank -%}
     --color-accent-background: {{ button_background }};
-    --color-accent-background-hover: {{ button_background }}E6;
-    --color-accent-background-active: {{ button_background }}E6;
+    --color-accent-background-hover: {{ button_background | append: "E6" }};
+    --color-accent-background-active: {{ button_background | append: "E6" }};
   {%- endif -%}
   {%- if button_color != blank -%}
     --color-accent-foreground: {{ button_color }};

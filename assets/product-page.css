@@ -256,11 +256,13 @@
 .product-main__info .booqable-component
   .booqable-product-button-wrapper input.bq-quantity {
   color: var(--color-primary-foreground, #0B1A26) !important;
+  background: var(--color-primary-background, #FFFFFF) !important;
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper select.bq-variation {
-  color: var(--color-gray, #868686);
+  color: var(--color-primary-foreground, #0B1A26) !important;
+  background: var(--color-primary-background, #FFFFFF) !important;
 }
 
 .product-main__info .booqable-component
@@ -342,6 +344,7 @@
 
 .product-main__modal-opener {
   position: relative;
+  display: block;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
@@ -399,7 +402,8 @@
 	transition: opacity var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.product-main__modal:target {
+[id^="popup-"]:checked ~ .product-main__modal,
+[id*="popup-"]:checked ~ .product-main__modal {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
@@ -411,7 +415,7 @@
   left: 50%;
   width: 100%;
   max-height: 100%;
-  padding: 0 var(--horizontal-padding);
+  padding: var(--horizontal-padding);
   transform: translate(-50%, -50%);
   z-index: 3;
 }
@@ -547,14 +551,14 @@
     left: 0;
     right: auto;
     width: 0;
-    height: 100%;
+    height: calc(100% - 1px);
     flex-direction: column;
   }
 
   .product-main__gallery .carousel__navigation .carousel__btn,
   .product-main__gallery .carousel__fluid .carousel__navigation .carousel__btn {
     transform: translate(28px, -27px) rotate(90deg);
-    width: 25px;
+    width: 24px;
     height: 80px;
   }
 

@@ -47,7 +47,7 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if ui_color != blank -%}
-      --ui-color: {{ ui_color }};
+      --color-primary-background: {{ ui_color }};
     {%- endif -%}
     {%- if carousel -%}
       --slide-width: 100%;
@@ -132,7 +132,7 @@
                 --color-third-foreground: {{ color }};
               {%- endif -%}
               {%- if title_color != blank -%}
-                --title-color: {{ title_color }};
+                --color-primary-background: {{ title_color }};
               {%- endif -%}
 
               {%- case text_position -%}
@@ -271,11 +271,11 @@
             {%- capture image_variables -%}
               {%- if background != blank -%}
                 --color-primary-foreground: {{ background }};
-                --color-primary-foreground-rgb: {{ background }}00;
-                --color-primary-foreground-rgb-45: {{ background }}73;
+                --color-primary-foreground-rgb: {{ background | append: "00" }};
+                --color-primary-foreground-rgb-45: {{ background | append: "73" }};
               {%- endif -%}
               {%- if overlay_opacity != blank -%}
-                --opacity-overlay: {{ overlay_opacity }}%;
+                --opacity-overlay: {{ overlay_opacity | append: "%"}};
               {%- endif -%}
             {%- endcapture -%}
             {% comment %} CSS variables end {% endcomment %}
