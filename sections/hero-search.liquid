@@ -114,7 +114,6 @@
           {{ results_count }} {{ results_label }}
         </div>
       {%- endif -%}
-
     </div>
   </div>
 
@@ -164,13 +163,22 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
         "id": "title",
         "label": "Search results title",
         "default": "Search results for"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
       },
       {
         "type": "paragraph",
@@ -192,11 +200,24 @@
         "label": "Message",
         "default": "No results found"
       },
-
       {
         "type": "text",
         "id": "button_label",
         "label": "Button label"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_bg",
+        "default": true,
+        "label": "Show background image"
       },
       {
         "type": "color",
@@ -209,21 +230,6 @@
         "id": "button_color",
         "label": "Button label color",
         "placeholder": "Default"
-      },
-      {
-        "type": "header",
-        "content": "Background settings"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_bg",
-        "default": true,
-        "label": "Show background image"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Background image"
       },
       {
         "type": "header",

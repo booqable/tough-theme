@@ -1,10 +1,6 @@
 {{ "offices.css" | asset_url | stylesheet_tag }}
 {{ "tabs.css" | asset_url | stylesheet_tag }}
 
-{%- assign tag                   = section.settings.tag -%}
-{%- assign title                 = section.settings.title -%}
-{%- assign title_bg              = section.settings.title_bg -%}
-{%- assign description           = section.settings.description -%}
 {%- assign opener                = section.settings.opener -%}
 {%- assign placement             = section.settings.placement -%}
 {%- assign padding_top           = section.settings.padding_top -%}
@@ -18,6 +14,8 @@
   --max-width: 1344px;
 
   {%- case padding_top -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top: 50px;
     {%- when 'medium' -%}
@@ -27,6 +25,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom -%}
+    {%- when 'none' -%}
+      --padding-bottom: 0;
     {%- when 'small' -%}
       --padding-bottom: 50px;
     {%- when 'medium' -%}
@@ -36,6 +36,8 @@
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
+    {%- when 'none' -%}
+      --padding-top-mobile: 0;
     {%- when 'small' -%}
       --padding-top-mobile: 24px;
     {%- when 'medium' -%}
@@ -45,6 +47,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
+    {%- when 'none' -%}
+      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
       --padding-bottom-mobile: 24px;
     {%- when 'medium' -%}
@@ -127,15 +131,6 @@
   style="{{- variables | escape -}}"
 >
   <div class="offices__container container">
-    {%- if tag != blank or title != blank or description != blank or title_bg != blank -%}
-      {%- render 'section-header',
-          tag: tag,
-          title: title,
-          description: description,
-          background: title_bg
-      -%}
-    {%- endif -%}
-
     <div class="offices__tabs tabs">
       <div class="tabs--mobile">
         <div class="tabs__select">
@@ -176,7 +171,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Tab settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "text",
@@ -213,7 +212,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "Translations"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
@@ -223,30 +226,11 @@
       },
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Advanced settings"
       },
       {
-        "type": "text",
-        "id": "tag",
-        "label": "Tag",
-        "default": "Our offices"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Visit our stores"
-      },
-      {
-        "type": "text",
-        "id": "title_bg",
-        "label": "Title on the background"
-      },
-      {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "header",
@@ -274,6 +258,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -293,6 +281,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -318,6 +310,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -337,6 +333,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"

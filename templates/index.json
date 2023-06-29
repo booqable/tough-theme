@@ -10,6 +10,7 @@
             "button_1": "Check out products",
             "button_2": "More info",
             "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
+            "full_width": true,
             "overlay_opacity": 80,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
@@ -30,9 +31,6 @@
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "pause": true,
-        "show_counter": true,
-        "show_navigation": true,
-        "show_pagination": true,
         "timer": 5
       },
       "disabled": null
@@ -43,10 +41,10 @@
       "block_order": [],
       "settings": {
         "title": "Check availability:",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium"
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium"
       },
       "disabled": null
     },
@@ -90,12 +88,30 @@
         "title": "Used by the world's most average companies",
         "text_position": "left",
         "text_position_mobile": "center",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "small"
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
       },
       "disabled": false
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "Category",
+        "button_label": "",
+        "button_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Our collections",
+        "title": "We can service you in each category"
+      },
+      "disabled": null
     },
     "collections": {
       "type": "collections",
@@ -128,14 +144,10 @@
         "collection_535502"
       ],
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tag": "Our collections",
-        "title": "We can service you in each category",
-        "title_bg": "Category",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium"
+        "padding_top": "none",
+        "padding_top_mobile": "none"
       },
       "disabled": null
     },
@@ -149,12 +161,29 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
         "image_position": "right",
         "margin_top": "none",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
         "tag": "Tagline",
         "title": "Medium length section heading goes here"
+      },
+      "disabled": null
+    },
+    "text_987654": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_label": "View all",
+        "button_url": "/collections/all",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Tagline",
+        "title": "Products"
       },
       "disabled": null
     },
@@ -195,19 +224,33 @@
         "product_123449"
       ],
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "limit": 6,
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "none",
         "show_excerpt": true,
         "show_navigation": true,
         "show_pagination": true,
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "tag": "Tagline",
-        "title": "Products",
-        "timer": 5,
-        "view_all": "View all"
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text_987655": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "How does it work",
+        "button_label": "",
+        "button_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "tag": "Rent a product",
+        "title": "How does it work"
       },
       "disabled": null
     },
@@ -220,8 +263,7 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button",
-            "show_image": true
+            "button_2": "Button"
           },
           "disabled": null
         },
@@ -231,8 +273,7 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button",
-            "show_image": true
+            "button_2": "Button"
           },
           "disabled": null
         },
@@ -242,8 +283,7 @@
             "heading": "Medium length section heading goes here",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button",
-            "show_image": true
+            "button_2": "Button"
           },
           "disabled": null
         }
@@ -254,14 +294,28 @@
         "block_535502"
       ],
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tag": "Rent a product",
-        "title": "How does it work",
-        "title_bg": "How does it work",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large"
+        "padding_top": "none",
+        "padding_top_mobile": "none"
+      },
+      "disabled": null
+    },
+    "text_987656": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "News & articles",
+        "button_label": "",
+        "button_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Mosaic content section",
+        "title": "News & articles"
       },
       "disabled": null
     },
@@ -271,28 +325,30 @@
         "article": {
           "type": "article",
           "settings": {
+            "article_btn": "Read more",
             "article_tag": "Tagline",
             "heading": "Our biggest project",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "button": "Read more"
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
         },
         "article_456231": {
           "type": "article",
           "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Tagline",
             "heading": "January Update",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "button": "Read more"
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
         },
         "article_456232": {
           "type": "article",
           "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Tagline",
             "heading": "December Update",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            "button": "Read more"
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
         }
@@ -303,16 +359,12 @@
         "article_456232"
       ],
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
+        "button_label": "See all Articles",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
-        "size": "left",
-        "tag": "Mosaic Content section",
-        "title": "News & articles",
-        "title_bg": "News & articles",
-        "view_all": "See all Articles"
+        "padding_top": "none",
+        "padding_top_mobile": "none",
+        "size": "left"
       },
       "disabled": null
     },
@@ -351,13 +403,13 @@
       ],
       "settings": {
         "behavior": "multiple",
+        "bg_text": "FAQ",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "title": "Frequently asked questions",
-        "title_bg": "FAQ",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "large",
-        "padding_top_mobile": "medium"
+        "padding_top_mobile": "medium",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
@@ -369,10 +421,10 @@
         "button_1": "Button",
         "button_2": "Button",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
         "title": "Medium length heading goes here"
       },
       "disabled": null
@@ -382,10 +434,14 @@
     "images",
     "date-picker",
     "logos",
+    "text",
     "collections",
     "image-with-text",
+    "text_987654",
     "products",
+    "text_987655",
     "numbered-blocks",
+    "text_987656",
     "mosaic",
     "faq",
     "cta"

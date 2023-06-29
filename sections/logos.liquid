@@ -24,6 +24,8 @@
     {%- endif -%}
 
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 60px;
       {%- when 'medium' -%}
@@ -33,6 +35,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 60px;
       {%- when 'medium' -%}
@@ -42,6 +46,8 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 29px;
       {%- when 'medium' -%}
@@ -51,6 +57,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 29px;
       {%- when 'medium' -%}
@@ -149,18 +157,26 @@
     "class": "logos",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Note: This section is visible only when there is at least 1 block (logo)"
+        "type": "header",
+        "content": "Basic settings"
       },
       {
-        "type": "header",
-        "content": "General settings"
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
         "id": "title",
         "label": "Title",
         "default": "Used by the world's most average companies"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "color",
@@ -204,6 +220,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -223,6 +243,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -268,6 +292,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -287,6 +315,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -308,6 +340,14 @@
         "type": "logo",
         "name": "Logo",
         "settings":[
+          {
+            "type": "header",
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
+          },
           {
             "type": "image_picker",
             "id": "image",

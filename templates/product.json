@@ -1,17 +1,16 @@
 {
   "name": "Product",
   "sections": {
-    "hero": {
-      "type": "hero",
+    "hero-product": {
+      "type": "hero-product",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "small",
-        "padding_top_mobile": "small",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
         "show_datepicker": true,
-        "show_text": false,
         "show_bg": false
       },
       "disabled": null
@@ -49,14 +48,31 @@
       "settings": {
         "behavior": "multiple",
         "breadcrumbs_label": "products",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
+        "message_label": "Free shipping over $50",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "message_label": "Free shipping over $50",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
         "show_breadcrumbs": true,
         "timer": 5,
         "variation_label": "Variant"
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_label": "View all",
+        "button_url": "/collections/all",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Recommended products",
+        "title": "Rented together with"
       },
       "disabled": null
     },
@@ -85,25 +101,23 @@
         "product_123452"
       ],
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "limit": 6,
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "none",
+        "show_excerpt": true,
         "show_navigation": true,
         "show_pagination": true,
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "tag": "Recommended products",
-        "title": "Rented together with",
-        "timer": 5,
-        "view_all": "View all"
+        "timer": 5
       },
       "disabled": null
     }
   },
   "order": [
-    "hero",
+    "hero-product",
     "product-page",
+    "text",
     "products"
   ]
 }

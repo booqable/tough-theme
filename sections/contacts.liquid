@@ -16,6 +16,8 @@
     {%- endif -%}
 
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 50px;
       {%- when 'medium' -%}
@@ -25,6 +27,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 50px;
       {%- when 'medium' -%}
@@ -34,6 +38,8 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 24px;
       {%- when 'medium' -%}
@@ -43,6 +49,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
@@ -246,7 +254,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Email settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "text",
@@ -270,6 +282,14 @@
             "type": "image_picker",
             "id": "email_image",
             "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance of the block"
           },
           {
             "type": "color",
@@ -298,7 +318,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Phone settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "text",
@@ -322,6 +346,14 @@
             "type": "image_picker",
             "id": "phone_image",
             "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance of the block"
           },
           {
             "type": "color",
@@ -350,7 +382,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Address settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "text",
@@ -374,6 +410,14 @@
             "type": "image_picker",
             "id": "address_image",
             "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance of the block"
           },
           {
             "type": "color",
@@ -400,7 +444,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance of the section"
       },
       {
         "type": "color",
@@ -417,6 +465,10 @@
         "id": "padding_top",
         "label": "Padding top",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -437,6 +489,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -462,6 +518,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -481,6 +541,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"

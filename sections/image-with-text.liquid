@@ -11,7 +11,6 @@
 {%- assign color_heading         = section.settings.color_heading -%}
 {%- assign background            = section.settings.background -%}
 {%- assign margin_top            = section.settings.margin_top -%}
-{%- assign margin_bottom         = section.settings.margin_bottom -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
@@ -55,6 +54,8 @@
   {%- endcase -%}
 
   {%- case padding_top -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top: 50px;
     {%- when 'medium' -%}
@@ -64,6 +65,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-bottom: 50px;
     {%- when 'medium' -%}
@@ -73,6 +76,8 @@
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top-mobile: 40px;
     {%- when 'medium' -%}
@@ -82,6 +87,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-bottom-mobile: 40px;
     {%- when 'medium' -%}
@@ -208,7 +215,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
@@ -253,22 +264,17 @@
         "label": "Button 2 URL"
       },
       {
-        "type": "color",
-        "id": "background",
-        "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
       },
       {
-        "type": "color",
-        "id": "color",
-        "label": "Foreground color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
+        "type": "header",
+        "content": "Advanced settings"
       },
       {
-        "type": "color",
-        "id": "color_heading",
-        "label": "Title color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
+        "type": "paragraph",
+        "content": "Below you can change the appearance of the section"
       },
       {
         "type": "select",
@@ -287,9 +293,22 @@
         "default": "right"
       },
       {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "color_heading",
+        "label": "Title color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "header",
@@ -326,6 +345,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -345,6 +368,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -370,6 +397,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -389,6 +420,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"

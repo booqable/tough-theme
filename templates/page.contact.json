@@ -11,48 +11,32 @@
             "image_align": "top"
           },
           "disabled": null
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "heading": "Hire from us",
-            "heading_size": "lg",
-            "text": "Tell something about your company, describe what you do and what makes you unique.",
-            "text_size": "md",
-            "label": "Shop collection",
-            "button_style": "primary",
-            "content_justify": "left",
-            "content_align": "top"
-          },
-          "disabled": null
         }
       },
       "block_order": [
-        "image",
-        "text"
+        "image"
       ],
       "settings": {
-        "name": "Name",
-        "name_holder": "Your name",
-        "email": "Email",
-        "email_holder": "Your email",
-        "message": "Message",
-        "message_holder": "Type your message...",
-        "checkbox_label": "I accept the",
-        "checkbox_link": "Terms",
+        "agreement_label": "I accept the",
+        "agreement_link": "Terms",
         "button_label": "Submit",
-        "success_message": "Thanks for your message! We'll get back to you shortly.",
-        "error_message": "Oops, something went wrong. Please fix the errors and try again.",
-        "content_type": "image",
-        "title": "Contact us",
-        "title_size": "md",
         "description": "Tell something about your company, describe what you do and what makes you unique.",
         "description_size": "lg",
-        "placement": "left",
+        "email": "Email",
+        "email_holder": "Your email",
+        "error_message": "Oops, something went wrong. Please fix the errors and try again.",
+        "message": "Message",
+        "message_holder": "Type your message...",
+        "name": "Name",
+        "name_holder": "Your name",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium"
+        "placement": "left",
+        "success_message": "Thanks for your message! We'll get back to you shortly.",
+        "title": "Contact us",
+        "title_size": "md"
       },
       "disabled": null
     },
@@ -93,12 +77,30 @@
         "address"
       ],
       "settings": {
-        "padding_top": "large",
-        "padding_top_mobile": "large",
         "padding_bottom": "large",
-        "padding_bottom_mobile": "large"
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
       },
       "disabled": false
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "tag": "Our offices",
+        "title": "Visit our stores"
+      },
+      "disabled": null
     },
     "offices": {
       "type": "offices",
@@ -106,27 +108,27 @@
         "tab": {
           "type": "tab",
           "settings": {
+            "address": "123 Sample St, Sydney NSW 2000 AU",
             "heading": "Sydney",
-            "label": "View Map",
-            "address": "123 Sample St, Sydney NSW 2000 AU"
+            "label": "View Map"
           },
           "disabled": null
         },
         "tab_257387": {
           "type": "tab",
           "settings": {
+            "address": "123 Sample St, New York NY 10000 USA",
             "heading": "New York",
-            "label": "View Map",
-            "address": "123 Sample St, New York NY 10000 USA"
+            "label": "View Map"
           },
           "disabled": null
         },
         "tab_257388": {
           "type": "tab",
           "settings": {
+            "address": "123 Sample St, London 2000 , United Kingdom",
             "heading": "London",
-            "label": "View Map",
-            "address": "123 Sample St, London 2000 , United Kingdom"
+            "label": "View Map"
           },
           "disabled": null
         }
@@ -138,14 +140,11 @@
       ],
       "settings": {
         "opener": "Open to view the list of offices",
-        "tag": "Our offices",
-        "title": "Visit our stores",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "placement": "right",
-        "padding_top": "large",
-        "padding_top_bottom": "large",
         "padding_bottom": "large",
-        "padding_bottom_bottom": "large"
+        "padding_bottom_mobile": "large",
+        "padding_top": "none",
+        "padding_top_mobile": "none"
       },
       "disabled": false
     }
@@ -153,6 +152,7 @@
   "order": [
     "contact-form",
     "contacts",
+    "text",
     "offices"
   ]
 }

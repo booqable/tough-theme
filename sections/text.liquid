@@ -1,16 +1,15 @@
-{{ "collection-page.css" | asset_url | stylesheet_tag }}
-{{ "product-card.css" | asset_url | stylesheet_tag }}
+{{ "text.css" | asset_url | stylesheet_tag }}
 
-{%- assign grid                  = section.settings.grid -%}
-{%- assign message               = section.settings.message -%}
-{%- assign show_excerpt          = section.settings.show_excerpt -%}
-{%- assign limit                 = section.settings.limit -%}
+{%- assign tag                   = section.settings.tag -%}
+{%- assign title                 = section.settings.title -%}
+{%- assign description           = section.settings.description -%}
+{%- assign button_label          = section.settings.button_label -%}
+{%- assign button_url            = section.settings.button_url -%}
+{%- assign bg_text               = section.settings.bg_text -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign image_placeholder 	   = settings.image_placeholder -%}
-{%- assign is_focal              = settings.use_focal_images -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -18,22 +17,22 @@
     {%- when 'none' -%}
       --padding-top: 0;
     {%- when 'small' -%}
-      --padding-top: 24px;
-    {%- when 'medium' -%}
       --padding-top: 50px;
+    {%- when 'medium' -%}
+      --padding-top: 80px;
     {%- when 'large' -%}
-      --padding-top: 90px;
+      --padding-top: 112px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
     {%- when 'none' -%}
       --padding-bottom: 0;
     {%- when 'small' -%}
-      --padding-bottom: 24px;
-    {%- when 'medium' -%}
       --padding-bottom: 50px;
+    {%- when 'medium' -%}
+      --padding-bottom: 80px;
     {%- when 'large' -%}
-      --padding-bottom: 90px;
+      --padding-bottom: 112px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
@@ -42,9 +41,9 @@
     {%- when 'small' -%}
       --padding-top-mobile: 24px;
     {%- when 'medium' -%}
-      --padding-top-mobile: 50px;
+      --padding-top-mobile: 40px;
     {%- when 'large' -%}
-      --padding-top-mobile: 90px;
+      --padding-top-mobile: 60px;
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
@@ -53,56 +52,56 @@
     {%- when 'small' -%}
       --padding-bottom-mobile: 24px;
     {%- when 'medium' -%}
-      --padding-bottom-mobile: 50px;
+      --padding-bottom-mobile: 40px;
     {%- when 'large' -%}
-      --padding-bottom-mobile: 90px;
-  {%- endcase -%}
-
-  {%- case grid -%}
-    {%- when 'two' -%}
-      --grid-element: 2;
-    {%- when 'three' -%}
-      --grid-element: 3;
+      --padding-bottom-mobile: 60px;
   {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-<div class="collection-page__wrapper{% if padding_top != blank or padding_top_mobile != blank %} collection-page__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} collection-page__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
-  <div class="collection-page__container container">
-    {% if collection.products_count > 0 %}
-      {% assign products = collection.products %}
+<div
+  class="text__wrapper{% if padding_top != blank or padding_top_mobile != blank %} text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} text__wrapper--padding-bottom{%- endif -%}"
+  style="{{- variables | escape -}}"
+>
+  <div class="text__container container">
+    {%- if tag != blank or title != blank or description != blank or bg_text != blank or button_label != blank -%}
+      <div class="text__top">
+        <div class="text__col">
+          {%- if tag != blank -%}
+            <span class="text__tag">{{- tag -}}</span>
+          {%- endif -%}
 
-      {% paginate products by limit %}
-        <div class="collection-page__products">
-          {% for product in products %}
-            {%- render 'product-card',
-                product: product,
-                placeholder: image_placeholder,
-                focal: is_focal,
-                show_excerpt: show_excerpt
-            -%}
-          {% endfor %}
+          {%- if title != blank -%}
+            <h2 class="text__title">{{- title -}}</h2>
+          {%- endif -%}
+
+          {%- if description != blank -%}
+            <div class="text__description">{{- description -}}</div>
+          {%- endif -%}
         </div>
 
-        {% if paginate.pages > 1 %}
-          <div class="collection-page__pagination">
-            {%- include "pagination" -%}
-          </div>
-        {% endif %}
-      {% endpaginate %}
+        <div class="text__col">
+          {%- if bg_text != blank -%}
+            <h2 class="text__bg-text">{{- bg_text -}}</h2>
+          {%- endif -%}
 
-    {% else %}
-      <p>{{- message -}}</p>
-    {% endif %}
+          {%- if button_label != blank and button_url != blank -%}
+            <a href="{{ button_url }}" class="text__button-show button button--outlined button--large">
+              {{- button_label -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Product list",
+    "name": "Text",
+    "description": "Display the section with title and description",
     "tag": "section",
-    "class": "collection-page",
-    "templates": ["collection"],
+    "class": "text",
     "settings": [
       {
         "type": "header",
@@ -114,10 +113,37 @@
       },
       {
         "type": "text",
-        "id": "message",
-        "label": "Message",
-        "default": "Sorry, there are no products in this collection yet",
-        "info": "Note: This message appears when the collection exist, but doesn't have any products"
+        "id": "tag",
+        "label": "Tag",
+        "default": "Tagline"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Products"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "type": "text",
+        "id": "bg_text",
+        "label": "Background text"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "info": "Note: Leave label blank to disable the button"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button url"
       },
       {
         "type": "header",
@@ -125,42 +151,11 @@
       },
       {
         "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
-      },
-      {
-        "type": "number",
-        "id": "limit",
-        "label": "Product limit for pagination",
-        "min": 6,
-        "max": 24,
-        "default": 6,
-        "info": "Note: Use positive numbers only. Min number is 6, max number is 24"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_excerpt",
-        "default": true,
-        "label": "Show excerpt of product"
+        "content": "Below you can change the appearance of the section"
       },
       {
         "type": "header",
         "content": "Desktop settings"
-      },
-      {
-        "type": "select",
-        "id": "grid",
-        "label": "Grid",
-        "options": [
-          {
-            "value": "two",
-            "label": "2 products"
-          },
-          {
-            "value": "three",
-            "label": "3 products"
-          }
-        ],
-        "default": "three"
       },
       {
         "type": "select",
@@ -184,7 +179,7 @@
             "label": "Large"
           }
         ],
-        "default": "small"
+        "default": "large"
       },
       {
         "type": "select",
@@ -208,7 +203,7 @@
             "label": "Large"
           }
         ],
-        "default": "small"
+        "default": "none"
       },
       {
         "type": "header",
@@ -236,7 +231,7 @@
             "label": "Large"
           }
         ],
-        "default": "small"
+        "default": "medium"
       },
       {
         "type": "select",
@@ -260,10 +255,8 @@
             "label": "Large"
           }
         ],
-        "default": "small"
+        "default": "none"
       }
-    ],
-    "important": true,
-    "unique": true
+    ]
   }
 {% endschema %}

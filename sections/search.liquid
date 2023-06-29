@@ -16,39 +16,47 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
-        --padding-top: 4px;
+        --padding-top: 24px;
       {%- when 'medium' -%}
-        --padding-top: 9px;
+        --padding-top: 50px;
       {%- when 'large' -%}
-        --padding-top: 12px;
+        --padding-top: 90px;
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
-        --padding-bottom: 4px;
+        --padding-bottom: 24px;
       {%- when 'medium' -%}
-        --padding-bottom: 9px;
+        --padding-bottom: 50px;
       {%- when 'large' -%}
-        --padding-bottom: 12px;
+        --padding-bottom: 90px;
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
-        --padding-top-mobile: 4px;
+        --padding-top-mobile: 24px;
       {%- when 'medium' -%}
-        --padding-top-mobile: 9px;
+        --padding-top-mobile: 50px;
       {%- when 'large' -%}
-        --padding-top-mobile: 12px;
+        --padding-top-mobile: 90px;
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
-        --padding-bottom-mobile: 4px;
+        --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
-        --padding-bottom-mobile: 9px;
+        --padding-bottom-mobile: 50px;
       {%- when 'large' -%}
-        --padding-bottom-mobile: 12px;
+        --padding-bottom-mobile: 90px;
     {%- endcase -%}
 
     {%- case grid -%}
@@ -91,7 +99,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "number",
@@ -106,7 +118,7 @@
         "type": "checkbox",
         "id": "show_excerpt",
         "default": true,
-        "label": "Show description of product"
+        "label": "Show excerpt of product"
       },
       {
         "type": "header",
@@ -134,6 +146,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -153,6 +169,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -178,6 +198,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -197,6 +221,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"

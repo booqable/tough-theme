@@ -1,90 +1,103 @@
-{{ "date-picker.css" | asset_url | stylesheet_tag }}
+{{ "hero.css" | asset_url | stylesheet_tag }}
 
-{%- assign title                 = section.settings.title -%}
+{%- assign show_bg               = section.settings.show_bg -%}
+{%- assign show_datepicker       = section.settings.show_datepicker -%}
+{%- assign image                 = section.settings.image -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign primary_background    = section.settings.primary_background -%}
 {%- assign primary_foreground    = section.settings.primary_foreground -%}
+{%- assign secondary_foreground  = section.settings.secondary_foreground -%}
+
+{%- if show_datepicker -%}
+  {{ "date-picker.css" | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if primary_background != blank -%}
     --color-primary-foreground: {{ primary_background }};
-    --color-primary-background-rgb-60: {{ primary_foreground | append: "99" }};
+    --color-primary-foreground-rgb: {{ primary_background | append: "00" }};
   {%- endif -%}
-  {%- if primary_foreground != blank -%}
-    --color-primary-background: {{ primary_foreground }};
+  {%- if secondary_foreground != blank -%}
+    --color-third-foreground: {{ secondary_foreground }};
   {%- endif -%}
 
   {%- case padding_top -%}
-    {%- when 'none' -%}
-      --padding-top: 0;
     {%- when 'small' -%}
-      --padding-top: 8px;
-    {%- when 'medium' -%}
       --padding-top: 16px;
-    {%- when 'large' -%}
+    {%- when 'medium' -%}
       --padding-top: 24px;
+    {%- when 'large' -%}
+      --padding-top: 48px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
-    {%- when 'none' -%}
-      --padding-bottom: 0;
     {%- when 'small' -%}
-      --padding-bottom: 8px;
-    {%- when 'medium' -%}
       --padding-bottom: 16px;
-    {%- when 'large' -%}
+    {%- when 'medium' -%}
       --padding-bottom: 24px;
+    {%- when 'large' -%}
+      --padding-bottom: 48px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
-    {%- when 'none' -%}
-      --padding-top-mobile: 0;
     {%- when 'small' -%}
-      --padding-top-mobile: 8px;
-    {%- when 'medium' -%}
       --padding-top-mobile: 16px;
-    {%- when 'large' -%}
+    {%- when 'medium' -%}
       --padding-top-mobile: 24px;
+    {%- when 'large' -%}
+      --padding-top-mobile: 48px;
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
-    {%- when 'none' -%}
-      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
-      --padding-bottom-mobile: 8px;
-    {%- when 'medium' -%}
       --padding-bottom-mobile: 16px;
-    {%- when 'large' -%}
+    {%- when 'medium' -%}
       --padding-bottom-mobile: 24px;
+    {%- when 'large' -%}
+      --padding-bottom-mobile: 48px;
   {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-<div class="date-location__wrapper" style="{{- variables | escape -}}">
-  <div class="date-location__container container{% if padding_top != blank or padding_top_mobile != blank %} date-location__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} date-location__container--padding-bottom{%- endif -%}">
-    {%- if title != blank -%}
-      <h2 class="date-location__title">
-        <span class="date-location__icon">
-          {%- render 'icon-arrow-right-full' -%}
-        </span>
-        {{- title -}}
-      </h2>
-    {%- endif -%}
+<div class="hero__wrapper" style="{{- variables | escape -}}">
+  {%- if show_datepicker -%}
+    <div class="hero__container hero__container--bottom{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
+      <div class="hero__container container">
+        <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+      </div>
+    </div>
+  {%- endif -%}
 
-    <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+  <div class="hero__vision">
+    {%- if show_bg -%}
+      <div class="hero__vision-wrapper">
+        {%- if image != blank -%}
+          {%- render 'image',
+            image: image,
+            loading: 'lazy',
+            class: 'hero__image',
+            size: 'xxl'
+          -%}
+        {%- else -%}
+          {%- render 'image-background-web' -%}
+        {%- endif -%}
+          <div class="hero__vision-wrapper-overlay container"></div>
+      </div>
+    {%- endif -%}
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Date Picker",
-    "description": "Allow your visitors to select a rental period.",
+    "name": "Hero",
     "tag": "section",
-    "class": "date-location",
+    "class": "hero",
+    "description": "Display a section with Name and Description of page",
+    "templates": ["product"],
     "settings": [
       {
         "type": "header",
@@ -95,10 +108,9 @@
         "content": "Below you can change the content of section"
       },
       {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Check availability:"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
       },
       {
         "type": "header",
@@ -106,7 +118,19 @@
       },
       {
         "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "content": "Below you can change the appearance and the components' functionality of the section"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_datepicker",
+        "default": true,
+        "label": "Show datepicker"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_bg",
+        "default": true,
+        "label": "Show background image"
       },
       {
         "type": "color",
@@ -116,8 +140,8 @@
       },
       {
         "type": "color",
-        "id": "primary_foreground",
-        "label": "Foreground color",
+        "id": "secondary_foreground",
+        "label": "Foreground secondary color",
         "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
@@ -129,10 +153,6 @@
         "id": "padding_top",
         "label": "Padding top",
         "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
           {
             "value": "small",
             "label": "Small"
@@ -153,10 +173,6 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
           {
             "value": "small",
             "label": "Small"
@@ -182,10 +198,6 @@
         "label": "Padding top",
         "options": [
           {
-            "value": "none",
-            "label": "None"
-          },
-          {
             "value": "small",
             "label": "Small"
           },
@@ -205,10 +217,6 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
-          {
-            "value": "none",
-            "label": "None"
-          },
           {
             "value": "small",
             "label": "Small"

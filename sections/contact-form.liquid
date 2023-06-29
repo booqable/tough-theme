@@ -6,13 +6,12 @@
 {%- assign email_holder          = section.settings.email_holder -%}
 {%- assign message               = section.settings.message -%}
 {%- assign message_holder        = section.settings.message_holder -%}
-{%- assign checkbox_label        = section.settings.checkbox_label -%}
-{%- assign checkbox_link         = section.settings.checkbox_link -%}
-{%- assign checkbox_url          = section.settings.checkbox_url -%}
+{%- assign agreement_label       = section.settings.agreement_label -%}
+{%- assign agreement_link        = section.settings.agreement_link -%}
+{%- assign agreement_url         = section.settings.agreement_url -%}
 {%- assign button_label          = section.settings.button_label -%}
 {%- assign success_message       = section.settings.success_message -%}
 {%- assign error_message         = section.settings.error_message -%}
-{%- assign content_type          = section.settings.content_type -%}
 {%- assign background            = section.settings.background -%}
 {%- assign foreground            = section.settings.foreground -%}
 {%- assign foreground_second     = section.settings.foreground_second -%}
@@ -49,6 +48,8 @@
   {%- endif -%}
 
   {%- case padding_top -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top: 50px;
     {%- when 'medium' -%}
@@ -58,6 +59,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom -%}
+    {%- when 'none' -%}
+      --padding-bottom: 0;
     {%- when 'small' -%}
       --padding-bottom: 50px;
     {%- when 'medium' -%}
@@ -67,6 +70,8 @@
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
+    {%- when 'none' -%}
+      --padding-top-mobile: 0;
     {%- when 'small' -%}
       --padding-top-mobile: 24px;
     {%- when 'medium' -%}
@@ -76,6 +81,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
+    {%- when 'none' -%}
+      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
       --padding-bottom-mobile: 24px;
     {%- when 'medium' -%}
@@ -178,46 +185,42 @@
 
       {% case block.type %}
         {% when "image" %}
-          {%- if content_type == "image" -%}
-            <div
-              class="contact-form__holder{% if image == blank %} no-image{% endif %}"
-              style="{{- image_variables | escape -}}"
-              id="{{- block.id -}}"
-            >
-              {%- if image.url != blank -%}
-                <div class="contact-form__image-wrapper">
-                  {%- render 'image',
-                    image: image,
-                    loading: 'lazy',
-                    class: 'contact-form__image',
-                    size: 'm'
-                  -%}
-                </div>
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-
-        {% when "text" %}
-          {%- if content_type == "text" -%}
-            {%- if heading != blank or text != blank or label != blank and url != blank -%}
-              <div
-                class="contact-form__content"
-                style="{{- text_variables | escape -}}"
-                id="{{- block.id -}}"
-              >
-                {%- if heading != blank -%}
-                  <h2 class="contact-form__heading contact-form__heading--{{- heading_size -}}">{{- heading -}}</h2>
-                {%- endif -%}
-
-                {%- if text != blank -%}
-                  <div class="contact-form__text{% if text_size == "lg" %} text-large{% endif %}{% if text_size == "md" %} text-medium{%- endif -%}">{{- text -}}</div>
-                {%- endif -%}
-
-                {%- if label != blank and url != blank -%}
-                  <a href="{{ url }}" class="contact-form__button button button--{{ button_style }} button--large">{{- label -}}</a>
-                {%- endif -%}
+          <div
+            class="contact-form__holder{% if image == blank %} no-image{% endif %}"
+            style="{{- image_variables | escape -}}"
+            id="{{- block.id -}}"
+          >
+            {%- if image.url != blank -%}
+              <div class="contact-form__image-wrapper">
+                {%- render 'image',
+                  image: image,
+                  loading: 'lazy',
+                  class: 'contact-form__image',
+                  size: 'm'
+                -%}
               </div>
             {%- endif -%}
+          </div>
+
+        {% when "text" %}
+          {%- if heading != blank or text != blank or label != blank and url != blank -%}
+            <div
+              class="contact-form__content"
+              style="{{- text_variables | escape -}}"
+              id="{{- block.id -}}"
+            >
+              {%- if heading != blank -%}
+                <h2 class="contact-form__heading contact-form__heading--{{- heading_size -}}">{{- heading -}}</h2>
+              {%- endif -%}
+
+              {%- if text != blank -%}
+                <div class="contact-form__text{% if text_size == "lg" %} text-large{% endif %}{% if text_size == "md" %} text-medium{%- endif -%}">{{- text -}}</div>
+              {%- endif -%}
+
+              {%- if label != blank and url != blank -%}
+                <a href="{{ url }}" class="contact-form__button button button--{{ button_style }} button--large">{{- label -}}</a>
+              {%- endif -%}
+            </div>
           {%- endif -%}
       {% endcase %}
     {% endfor %}
@@ -260,7 +263,23 @@
     "settings": [
       {
         "type": "header",
-        "content": "Translations"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Contact us"
+      },
+      {
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Tell something about your company, describe what you do and what makes you unique."
       },
       {
         "type": "text",
@@ -300,20 +319,20 @@
       },
       {
         "type": "text",
-        "id": "checkbox_label",
-        "label": "Checkbox label",
+        "id": "agreement_label",
+        "label": "Agreement",
         "default": "I accept the"
       },
       {
         "type": "text",
-        "id": "checkbox_link",
-        "label": "Checkbox link",
+        "id": "agreement_link",
+        "label": "Agreement link",
         "default": "Terms"
       },
       {
         "type": "url",
-        "id": "checkbox_url",
-        "label": "Checkbox link url"
+        "id": "agreement_url",
+        "label": "Agreement link url"
       },
       {
         "type": "text",
@@ -334,63 +353,17 @@
         "default": "Oops, something went wrong. Please fix the errors and try again."
       },
       {
-        "type": "header",
-        "content": "General settings"
-      },
-      {
-        "type": "select",
-        "id": "content_type",
-        "label": "Content type",
-        "options": [
-          {
-            "value": "image",
-            "label": "Image"
-          },
-          {
-            "value": "text",
-            "label": "Text"
-          }
-        ],
-        "default": "image"
-      },
-      {
-        "type": "color",
-        "id": "background",
-        "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "foreground",
-        "label": "Foreground color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "foreground_second",
-        "label": "Foreground second color",
-        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
-      },
-      {
-        "type": "color",
-        "id": "foreground_third",
-        "label": "Foreground third color",
-        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
-      },
-      {
         "type": "image_picker",
         "id": "bg_image",
         "label": "Background image"
       },
       {
         "type": "header",
-        "content": "Form settings"
+        "content": "Advanced settings"
       },
       {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Contact us"
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "select",
@@ -413,15 +386,9 @@
         "default": "md"
       },
       {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Tell something about your company, describe what you do and what makes you unique."
-      },
-      {
         "type": "select",
         "id": "description_size",
-        "label": "Description text size",
+        "label": "Description size",
         "options": [
           {
             "value": "sm",
@@ -437,6 +404,30 @@
           }
         ],
         "default": "lg"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "foreground",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "foreground_second",
+        "label": "Foreground secondary color",
+        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
+      },
+      {
+        "type": "color",
+        "id": "foreground_third",
+        "label": "Foreground third color",
+        "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
       },
       {
         "type": "color",
@@ -458,7 +449,7 @@
         "type": "select",
         "id": "placement",
         "label": "Form placement",
-        "content": "Note: Applicable only when at least 1 block is visible",
+        "info": "Note: Applicable only when at least 1 block is visible",
         "options": [
           {
             "value": "left",
@@ -476,6 +467,10 @@
         "id": "padding_top",
         "label": "Padding top",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -496,6 +491,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -521,6 +520,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -541,6 +544,10 @@
         "label": "Padding bottom",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -556,7 +563,7 @@
         "default": "medium"
       }
     ],
-    "max_blocks": 2,
+    "max_blocks": 1,
     "blocks": [
       {
         "type": "image",
@@ -565,16 +572,24 @@
         "settings": [
           {
             "type": "header",
-            "content": "Image settings"
+            "content": "Basic settings"
           },
           {
             "type": "paragraph",
-            "content": "Note: Applicable only when the content type is 'Image' in general settings of section"
+            "content": "Below you can change the content of block"
           },
           {
             "type": "image_picker",
             "id": "image",
             "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance and the components' functionality of the block"
           },
           {
             "type": "select",
@@ -605,17 +620,43 @@
         "settings": [
           {
             "type": "header",
-            "content": "Text settings"
+            "content": "Basic settings"
           },
           {
             "type": "paragraph",
-            "content": "Note: Applicable only when the content type is 'Text' in general settings of section"
+            "content": "Below you can change the content of block"
           },
           {
             "type": "text",
             "id": "heading",
             "default": "Hire from us",
             "label": "Heading"
+          },
+          {
+            "type": "contentEditor",
+            "id": "text",
+            "default": "Tell something about your company, describe what you do and what makes you unique.",
+            "label": "Text"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "default": "Shop collection",
+            "info": "Note: Leave label blank to disable the button",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Button url"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance and the components' functionality of the block"
           },
           {
             "type": "select",
@@ -638,12 +679,6 @@
             "default": "lg"
           },
           {
-            "type": "contentEditor",
-            "id": "text",
-            "default": "Tell something about your company, describe what you do and what makes you unique.",
-            "label": "Text"
-          },
-          {
             "type": "select",
             "id": "text_size",
             "label": "Text size",
@@ -662,18 +697,6 @@
               }
             ],
             "default": "md"
-          },
-          {
-            "type": "text",
-            "id": "label",
-            "default": "Shop collection",
-            "info": "Note: Leave label blank to disable the button",
-            "label": "Button label"
-          },
-          {
-            "type": "url",
-            "id": "url",
-            "label": "Button url"
           },
           {
             "type": "select",

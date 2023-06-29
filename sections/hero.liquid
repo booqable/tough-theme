@@ -2,7 +2,6 @@
 
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign custom_description    = section.settings.custom_description -%}
-{%- assign show_text             = section.settings.show_text -%}
 {%- assign show_bg               = section.settings.show_bg -%}
 {%- assign show_datepicker       = section.settings.show_datepicker -%}
 {%- assign image                 = section.settings.image -%}
@@ -34,103 +33,62 @@
     --color-third-foreground: {{ secondary_foreground }};
   {%- endif -%}
 
-  {%- if template == "product" -%}
-    {%- case padding_top -%}
-      {%- when 'small' -%}
-        --padding-top: 0;
-      {%- when 'medium' -%}
-        --padding-top: 40px;
-      {%- when 'large' -%}
-        --padding-top: 85px;
-    {%- endcase -%}
+  {%- case padding_top -%}
+    {%- when 'small' -%}
+      --padding-top: 50px;
+    {%- when 'medium' -%}
+      --padding-top: 85px;
+    {%- when 'large' -%}
+      --padding-top: 112px;
+  {%- endcase -%}
 
-    {%- case padding_bottom -%}
-      {%- when 'small' -%}
-        --padding-bottom: 0;
-      {%- when 'medium' -%}
-        --padding-bottom: 40px;
-      {%- when 'large' -%}
-        --padding-bottom: 85px;
-    {%- endcase -%}
+  {%- case padding_bottom -%}
+    {%- when 'small' -%}
+      --padding-bottom: 50px;
+    {%- when 'medium' -%}
+      --padding-bottom: 85px;
+    {%- when 'large' -%}
+      --padding-bottom: 112px;
+  {%- endcase -%}
 
-    {%- case padding_top_mobile -%}
-      {%- when 'small' -%}
-        --padding-top-mobile: 0;
-      {%- when 'medium' -%}
-        --padding-top-mobile: 24px;
-      {%- when 'large' -%}
-        --padding-top-mobile: 50px;
-    {%- endcase -%}
+  {%- case padding_top_mobile -%}
+    {%- when 'small' -%}
+      --padding-top-mobile: 40px;
+    {%- when 'medium' -%}
+      --padding-top-mobile: 57px;
+    {%- when 'large' -%}
+      --padding-top-mobile: 75px;
+  {%- endcase -%}
 
-    {%- case padding_bottom_mobile -%}
-      {%- when 'small' -%}
-        --padding-bottom-mobile: 0;
-      {%- when 'medium' -%}
-        --padding-bottom-mobile: 24px;
-      {%- when 'large' -%}
-        --padding-bottom-mobile: 50px;
-    {%- endcase -%}
-
-  {%- else -%}
-    {%- case padding_top -%}
-      {%- when 'small' -%}
-        --padding-top: 50px;
-      {%- when 'medium' -%}
-        --padding-top: 85px;
-      {%- when 'large' -%}
-        --padding-top: 112px;
-    {%- endcase -%}
-
-    {%- case padding_bottom -%}
-      {%- when 'small' -%}
-        --padding-bottom: 50px;
-      {%- when 'medium' -%}
-        --padding-bottom: 85px;
-      {%- when 'large' -%}
-        --padding-bottom: 112px;
-    {%- endcase -%}
-
-    {%- case padding_top_mobile -%}
-      {%- when 'small' -%}
-        --padding-top-mobile: 40px;
-      {%- when 'medium' -%}
-        --padding-top-mobile: 57px;
-      {%- when 'large' -%}
-        --padding-top-mobile: 75px;
-    {%- endcase -%}
-
-    {%- case padding_bottom_mobile -%}
-      {%- when 'small' -%}
-        --padding-bottom-mobile: 40px;
-      {%- when 'medium' -%}
-        --padding-bottom-mobile: 57px;
-      {%- when 'large' -%}
-        --padding-bottom-mobile: 75px;
-    {%- endcase -%}
-  {%- endif -%}
+  {%- case padding_bottom_mobile -%}
+    {%- when 'small' -%}
+      --padding-bottom-mobile: 40px;
+    {%- when 'medium' -%}
+      --padding-bottom-mobile: 57px;
+    {%- when 'large' -%}
+      --padding-bottom-mobile: 75px;
+  {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="hero__wrapper" style="{{- variables | escape -}}">
-  {%- if show_text -%}
-    <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
-      <div class="hero__content" style="{{- text_variables | escape -}}">
-        {%- if custom_title != blank -%}
-          <h1 class="hero__title">{{- custom_title -}}</h1>
-        {%- else -%}
-          <h1 class="hero__title">{{- page_title -}}</h1>
-        {%- endif -%}
+  <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
+    <div class="hero__content" style="{{- text_variables | escape -}}">
+      {%- if custom_title != blank -%}
+        <h1 class="hero__title">{{- custom_title -}}</h1>
+      {%- else -%}
+        <h1 class="hero__title">{{- page_title -}}</h1>
+      {%- endif -%}
 
-        {%- if custom_description != blank -%}
-          <div class="hero__description text-medium">{{- custom_description -}}</div>
-        {%- else -%}
-          {%- if page_description != blank -%}
-            <div class="hero__description text-medium">{{- page_description -}}</div>
-          {%- endif -%}
+      {%- if custom_description != blank -%}
+        <div class="hero__description text-medium">{{- custom_description -}}</div>
+      {%- else -%}
+        {%- if page_description != blank -%}
+          <div class="hero__description text-medium">{{- page_description -}}</div>
         {%- endif -%}
-      </div>
+      {%- endif -%}
     </div>
-  {%- endif -%}
+  </div>
 
   {%- if show_datepicker -%}
     <div class="hero__container hero__container--bottom">
@@ -165,11 +123,15 @@
     "tag": "section",
     "class": "hero",
     "description": "Display a section with Name and Description of page",
-    "templates": ["collection", "list-collections", "page", "product"],
+    "templates": ["collection", "list-collections", "page"],
     "settings": [
       {
         "type": "header",
         "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
@@ -182,10 +144,17 @@
         "label": "Custom description"
       },
       {
-        "type": "checkbox",
-        "id": "show_text",
-        "default": true,
-        "label": "Show text"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "checkbox",
@@ -200,9 +169,22 @@
         "label": "Show background image"
       },
       {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Background image"
+        "type": "color",
+        "id": "primary_background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "primary_foreground",
+        "label": "Foreground primary color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "secondary_foreground",
+        "label": "Foreground secondary color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "header",
@@ -291,28 +273,6 @@
           }
         ],
         "default": "medium"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "color",
-        "id": "primary_background",
-        "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "primary_foreground",
-        "label": "Foreground primary color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "secondary_foreground",
-        "label": "Foreground secondary color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
       }
     ]
   }
