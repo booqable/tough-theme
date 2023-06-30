@@ -29,7 +29,7 @@
     {%- assign label = "Home" -%}
     {%- assign url   = routes.root_url -%}
   {%- when 'collections' -%}
-    {%- assign label = "Collections" -%}
+    {%- assign label = "Categories" -%}
     {%- assign url   = routes.collections_url -%}
   {%- when 'products' -%}
     {%- assign label = "Shop all" -%}
@@ -44,6 +44,8 @@
   {%- endif -%}
 
   {%- case padding_top -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top: 24px;
     {%- when 'medium' -%}
@@ -53,6 +55,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom -%}
+    {%- when 'none' -%}
+      --padding-bottom: 0;
     {%- when 'small' -%}
       --padding-bottom: 24px;
     {%- when 'medium' -%}
@@ -62,6 +66,8 @@
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
+    {%- when 'none' -%}
+      --padding-top-mobile: 0;
     {%- when 'small' -%}
       --padding-top-mobile: 24px;
     {%- when 'medium' -%}
@@ -71,6 +77,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
+    {%- when 'none' -%}
+      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
       --padding-bottom-mobile: 24px;
     {%- when 'medium' -%}
@@ -247,13 +255,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Basic settings"
       },
       {
-        "type": "checkbox",
-        "id": "show_breadcrumbs",
-        "default": true,
-        "label": "Show breadcrumbs"
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "select",
@@ -266,7 +272,7 @@
           },
           {
             "value": "collections",
-            "label": "Collections"
+            "label": "Categories"
           },
           {
             "value": "products",
@@ -286,6 +292,20 @@
         "id": "message_label",
         "label": "Message label",
         "default": "Free shipping over $50"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show breadcrumbs"
       },
       {
         "type": "header",
@@ -330,6 +350,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -349,6 +373,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -374,6 +402,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -393,6 +425,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -418,7 +454,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Details settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "contentEditor",
@@ -435,7 +475,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Shipping settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "contentEditor",
@@ -452,7 +496,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Returns settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "contentEditor",

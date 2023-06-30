@@ -64,6 +64,8 @@
     {%- endcase -%}
 
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 20px;
       {%- when 'medium' -%}
@@ -73,6 +75,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 20px;
       {%- when 'medium' -%}
@@ -82,6 +86,8 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 24px;
       {%- when 'medium' -%}
@@ -91,6 +97,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
@@ -271,8 +279,8 @@
             {%- capture image_variables -%}
               {%- if background != blank -%}
                 --color-primary-foreground: {{ background }};
-                --color-primary-foreground-rgb: {{ background | append: "00" }};
-                --color-primary-foreground-rgb-45: {{ background | append: "73" }};
+                --color-primary-foreground-00: {{ background | append: "00" }};
+                --color-primary-foreground-45: {{ background | append: "73" }};
               {%- endif -%}
               {%- if overlay_opacity != blank -%}
                 --opacity-overlay: {{ overlay_opacity | append: "%"}};
@@ -435,7 +443,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Text settings"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
           },
           {
             "type": "contentEditor",
@@ -474,8 +486,22 @@
             "label": "Button 2 URL"
           },
           {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image mobile"
+          },
+          {
             "type": "header",
-            "content": "Colors settings"
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance and the components' functionality of the block"
           },
           {
             "type": "color",
@@ -494,11 +520,6 @@
             "id": "title_color",
             "label": "Title color",
             "info": "Note: This color always overrides the default color, and is applied to this section only"
-          },
-
-          {
-            "type": "header",
-            "content": "Overlay settings"
           },
           {
             "type": "number",
@@ -558,12 +579,6 @@
             "default": "middle-left"
           },
           {
-            "type": "image_picker",
-            "id": "image",
-            "info": "Note: The image has the lowest priority",
-            "label": "Image"
-          },
-          {
             "type": "header",
             "content": "Mobile settings"
           },
@@ -612,12 +627,6 @@
             "default": "top-left"
           },
           {
-            "type": "image_picker",
-            "id": "image_mobile",
-            "info": "Note: The image has the lowest priority",
-            "label": "Image"
-          },
-          {
             "type": "header",
             "content": "Video settings"
           },
@@ -641,7 +650,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "Carousel settings"
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "paragraph",
@@ -650,11 +663,11 @@
       {
         "type": "number",
         "id": "limit",
-        "label": "Maximum items",
+        "label": "Maximum slides to show",
         "min": 0,
         "max": 8,
         "default": 6,
-        "info": "Note: Use positive numbers only. The maximum number of items to show is 8"
+        "info": "Note: Use positive numbers only. The maximum number of slides to show is 8"
       },
       {
         "type": "number",
@@ -669,12 +682,12 @@
         "type": "checkbox",
         "id": "pause",
         "default": true,
-        "label": "Stop auto-rotate on hover"
+        "label": "Pause auto-rotate on hover"
       },
       {
         "type": "select",
         "id": "effect",
-        "label": "Effect changing of slides",
+        "label": "Slides changing effect",
         "options": [
           {
             "value": "fade",
@@ -723,6 +736,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -742,6 +759,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -767,6 +788,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -786,6 +811,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"

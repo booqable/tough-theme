@@ -6,8 +6,8 @@
   {{ "accordion.css" | asset_url | stylesheet_tag }}
 
   {%- assign title                 = section.settings.title -%}
-  {%- assign title_bg              = section.settings.title_bg -%}
   {%- assign description           = section.settings.description -%}
+  {%- assign bg_text               = section.settings.bg_text -%}
   {%- assign behavior              = section.settings.behavior -%}
   {%- assign background            = section.settings.background -%}
   {%- assign color                 = section.settings.color -%}
@@ -35,6 +35,8 @@
     {%- endif -%}
 
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 50px;
       {%- when 'medium' -%}
@@ -44,6 +46,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 50px;
       {%- when 'medium' -%}
@@ -53,6 +57,8 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 24px;
       {%- when 'medium' -%}
@@ -62,6 +68,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
@@ -77,11 +85,11 @@
     style="{{- variables | escape -}}"
   >
     <div class="faq__container container">
-      {%- if title != blank or description != blank or title_bg != blank -%}
-        {%- render 'section-header-narrow',
+      {%- if title != blank or description != blank or bg_text != blank -%}
+        {%- render 'section-header',
             title: title,
             text: description,
-            background: title_bg
+            background: bg_text
         -%}
       {%- endif -%}
 
@@ -102,7 +110,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "text",
@@ -111,16 +123,24 @@
         "default": "Frequently asked questions"
       },
       {
-        "type": "text",
-        "id": "title_bg",
-        "label": "Title on the background",
-        "default": "FAQ"
-      },
-      {
         "type": "contentEditor",
         "id": "description",
         "label": "Description",
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+      },
+      {
+        "type": "text",
+        "id": "bg_text",
+        "label": "Background text",
+        "default": "FAQ"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "select",
@@ -172,6 +192,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -191,6 +215,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -216,6 +244,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -235,6 +267,10 @@
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -256,6 +292,14 @@
         "type": "question",
         "name": "Question",
         "settings": [
+          {
+            "type": "header",
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
+          },
           {
             "type": "text",
             "id": "heading",

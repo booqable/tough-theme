@@ -6,29 +6,43 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "custom_title": "Collections",
         "custom_description": "Lorem ipsum dolor sit amet.",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
+        "custom_title": "Collections",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
-        "show_datepicker": true,
-        "show_text": true,
-        "show_bg": true
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_bg": true,
+        "show_datepicker": true
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "Category",
+        "button_label": "",
+        "button_url": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Our collections",
+        "title": "We can service you in each category"
       },
       "disabled": null
     },
     "list-collections": {
       "type": "list-collections",
       "settings": {
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "tag": "Our collections",
-        "title": "We can service you in each category",
-        "title_bg": "Category",
+        "limit": 8,
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium"
+        "padding_top": "none",
+        "padding_top_mobile": "none"
       },
       "blocks": {},
       "block_order": [],
@@ -37,6 +51,7 @@
   },
   "order": [
     "hero",
+    "text",
     "list-collections"
   ]
 }

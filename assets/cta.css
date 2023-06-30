@@ -56,7 +56,7 @@
   top: 0;
   bottom: -120px;
   right: 0;
-  background: linear-gradient(180.44deg, var(--color-accent-background, #F4B841) 51.3%, var(--color-accent-background-rgb) 81.06%);
+  background: linear-gradient(180.44deg, var(--color-accent-background, #F4B841) 51.3%, var(--color-accent-background-00) 81.06%);
 }
 
 @media (min-width: 992px) {

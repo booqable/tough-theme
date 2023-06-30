@@ -6,12 +6,11 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
         "show_datepicker": true,
-        "show_text": true,
         "show_bg": true
       },
       "disabled": null

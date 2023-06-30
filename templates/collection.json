@@ -6,13 +6,12 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
-        "show_datepicker": true,
-        "show_text": true,
-        "show_bg": true
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_bg": true,
+        "show_datepicker": true
       },
       "disabled": null
     },
@@ -21,16 +20,14 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "limit": 6,
         "grid": "three",
-        "sticky_sidebar": true,
-        "padding_top": "small",
-        "padding_top_mobile": "small",
+        "limit": 6,
+        "message": "Sorry, there are no products in this collection yet",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "message": "Sorry, there are no products in this collection yet",
-        "show_excerpt": true,
-        "sidebar_toggle": "Filters"
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_excerpt": true
       },
       "disabled": null
     }

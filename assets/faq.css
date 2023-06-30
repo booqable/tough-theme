@@ -17,7 +17,7 @@
   max-width: calc(var(--max-width-narrow) + var(--horizontal-padding, 16px) * 2);
 }
 
-.faq .section-header-narrow__text {
+.faq .section-header__text {
   padding: 0 0 65px;
 }
 

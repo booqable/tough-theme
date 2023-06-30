@@ -6,11 +6,6 @@
   {{ "products.css" | asset_url | stylesheet_tag }}
   {{ "product-card.css" | asset_url | stylesheet_tag }}
 
-  {%- assign tag                   = section.settings.tag -%}
-  {%- assign title                 = section.settings.title -%}
-  {%- assign title_bg              = section.settings.title_bg -%}
-  {%- assign description           = section.settings.description -%}
-  {%- assign view_all              = section.settings.view_all -%}
   {%- assign limit                 = section.settings.limit -%}
   {%- assign show_navigation       = section.settings.show_navigation -%}
   {%- assign show_pagination       = section.settings.show_pagination -%}
@@ -20,7 +15,6 @@
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
   {%- assign timer                 = section.settings.timer -%}
   {%- assign show_excerpt          = section.settings.show_excerpt -%}
-  {%- assign url                   = routes.products_url -%}
   {%- assign image_placeholder     = settings.image_placeholder -%}
   {%- assign is_focal              = settings.use_focal_images -%}
 
@@ -43,6 +37,8 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 50px;
       {%- when 'medium' -%}
@@ -52,6 +48,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
+      {%- when 'none' -%}
+        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 50px;
       {%- when 'medium' -%}
@@ -61,6 +59,8 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 24px;
       {%- when 'medium' -%}
@@ -70,6 +70,8 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
+      {%- when 'none' -%}
+        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
@@ -85,17 +87,6 @@
     style="{{- variables | escape -}}"
   >
     <div class="products__container container">
-      {%- if tag != blank or title != blank or description != blank or title_bg != blank or view_all != blank -%}
-        {%- render 'section-header',
-            tag: tag,
-            title: title,
-            description: description,
-            background: title_bg,
-            button: view_all,
-            url: url
-        -%}
-      {%- endif -%}
-
       <div class="products__list{% if carousel %} carousel carousel__pause{%- endif -%}">
         {%- if carousel -%}
           <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
@@ -169,43 +160,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "General settings"
+        "content": "Basic settings"
       },
       {
-        "type": "text",
-        "id": "tag",
-        "label": "Tag",
-        "default": "Tagline"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Products"
-      },
-      {
-        "type": "text",
-        "id": "title_bg",
-        "label": "Title on the background"
-      },
-      {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "type": "checkbox",
-        "id": "show_excerpt",
-        "default": true,
-        "label": "Show description of product"
-      },
-      {
-        "type": "text",
-        "id": "view_all",
-        "label": "Button label",
-        "default": "View all",
-        "info": "Note: This button redirects the user to the products page. Leave label blank to disable the button"
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
       },
       {
         "type": "collection",
@@ -215,32 +174,30 @@
       },
       {
         "type": "header",
-        "content": "Carousel settings"
+        "content": "Advanced settings"
       },
       {
         "type": "paragraph",
-        "content": "Note: The carousel appears automatically when there are more than 1 product in this section, and then below settings of the carousel is working"
+        "content": "Below you can change the appearance and the components' functionality of the section"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: The carousel appears automatically when there are more than 1 product in this section and then below settings of the carousel are working"
       },
       {
         "type": "checkbox",
-        "id": "show_navigation",
+        "id": "show_excerpt",
         "default": true,
-        "label": "Show navigation buttons"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_pagination",
-        "default": true,
-        "label": "Show pagination bullets"
+        "label": "Show excerpt of product"
       },
       {
         "type": "number",
         "id": "limit",
-        "label": "Maximum items",
+        "label": "Maximum products to show",
         "min": 0,
         "max": 8,
         "default": 6,
-        "info": "Note: Use positive numbers only. The maximum number of items to show is 8"
+        "info": "Note: Use positive numbers only. The maximum number of products to show is 8"
       },
       {
         "type": "number",
@@ -252,6 +209,18 @@
         "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
       },
       {
+        "type": "checkbox",
+        "id": "show_navigation",
+        "default": true,
+        "label": "Show navigation buttons"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "default": true,
+        "label": "Show pagination dots"
+      },
+      {
         "type": "header",
         "content": "Desktop settings"
       },
@@ -260,6 +229,10 @@
         "id": "padding_top",
         "label": "Padding top",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -273,13 +246,17 @@
             "label": "Large"
           }
         ],
-        "default": "large"
+        "default": "none"
       },
       {
         "type": "select",
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -305,6 +282,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -317,13 +298,17 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "none"
       },
       {
         "type": "select",
         "id": "padding_bottom_mobile",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -346,6 +331,14 @@
         "type": "product",
         "name": "Product",
         "settings": [
+          {
+            "type": "header",
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of block"
+          },
           {
             "type": "product",
             "id": "product",

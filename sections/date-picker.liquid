@@ -12,13 +12,15 @@
 {%- capture variables -%}
   {%- if primary_background != blank -%}
     --color-primary-foreground: {{ primary_background }};
-    --color-primary-background-rgb-60: {{ primary_foreground | append: "99" }};
+    --color-primary-background-60: {{ primary_foreground | append: "99" }};
   {%- endif -%}
   {%- if primary_foreground != blank -%}
     --color-primary-background: {{ primary_foreground }};
   {%- endif -%}
 
   {%- case padding_top -%}
+    {%- when 'none' -%}
+      --padding-top: 0;
     {%- when 'small' -%}
       --padding-top: 8px;
     {%- when 'medium' -%}
@@ -28,6 +30,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom -%}
+    {%- when 'none' -%}
+      --padding-bottom: 0;
     {%- when 'small' -%}
       --padding-bottom: 8px;
     {%- when 'medium' -%}
@@ -37,6 +41,8 @@
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
+    {%- when 'none' -%}
+      --padding-top-mobile: 0;
     {%- when 'small' -%}
       --padding-top-mobile: 8px;
     {%- when 'medium' -%}
@@ -46,6 +52,8 @@
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
+    {%- when 'none' -%}
+      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
       --padding-bottom-mobile: 8px;
     {%- when 'medium' -%}
@@ -83,10 +91,34 @@
         "content": "Basic settings"
       },
       {
+        "type": "paragraph",
+        "content": "Below you can change the content of section"
+      },
+      {
         "type": "text",
         "id": "title",
         "label": "Title",
         "default": "Check availability:"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance of the section"
+      },
+      {
+        "type": "color",
+        "id": "primary_background",
+        "label": "Background color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
+      },
+      {
+        "type": "color",
+        "id": "primary_foreground",
+        "label": "Foreground color",
+        "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {
         "type": "header",
@@ -97,6 +129,10 @@
         "id": "padding_top",
         "label": "Padding top",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -117,6 +153,10 @@
         "id": "padding_bottom",
         "label": "Padding bottom",
         "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
           {
             "value": "small",
             "label": "Small"
@@ -142,6 +182,10 @@
         "label": "Padding top",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -162,6 +206,10 @@
         "label": "Padding bottom",
         "options": [
           {
+            "value": "none",
+            "label": "None"
+          },
+          {
             "value": "small",
             "label": "Small"
           },
@@ -175,22 +223,6 @@
           }
         ],
         "default": "medium"
-        },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "color",
-        "id": "primary_background",
-        "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "primary_foreground",
-        "label": "Foreground color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
       }
     ]
   }

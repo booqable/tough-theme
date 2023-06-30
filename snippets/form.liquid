@@ -15,9 +15,9 @@
   message_holder - "string" optional,
   success_message - "string" *required,
   error_message - "string" *required,
-  checkbox_label - "string" *required,
-  checkbox_link - "string" optional,
-  checkbox_url - url *required only if checkbox_link is exist, else - optional
+  agreement_label - "string" *required,
+  agreement_link - "string" optional,
+  agreement_url - url *required only if agreement_link is exist, else - optional
   button_label - "string" *required,
   button_variables - "string" optional
 
@@ -37,9 +37,9 @@
       message_holder: your_id,
       success_message: your_id,
       error_message: your_id,
-      checkbox_label: your_id,
-      checkbox_link: your_id,
-      checkbox_url: your_id,
+      agreement_label: your_id,
+      agreement_link: your_id,
+      agreement_url: your_id,
       button_label: your_id,
       button_variables
   -%}
@@ -125,14 +125,14 @@
       </textarea>
     </div>
 
-    {%- if checkbox_label != blank -%}
+    {%- if agreement_label != blank -%}
       <div class="form__approval">
         <input
           type="checkbox"
           id="checkbox"
           class="form__checkbox{% if form.errors.checkbox %} error{%- endif -%}"
           name="form[checkbox]"
-          title="{{- checkbox_label -}}"
+          title="{{- agreement_label -}}"
           {%- if form.errors != blank -%}
             value="{{ form.checkbox }}"
           {%- endif -%}
@@ -140,10 +140,10 @@
         >
 
         <label class="form__label" for="checkbox">
-          {{- checkbox_label -}}
+          {{- agreement_label -}}
           &nbsp;
-          {%- if checkbox_link != blank and checkbox_url != blank -%}
-            <a href="{{  checkbox_url }}">{{- checkbox_link -}}</a>
+          {%- if agreement_link != blank and agreement_url != blank -%}
+            <a href="{{  agreement_url }}">{{- agreement_link -}}</a>
           {%- endif -%}
         </label>
       </div>

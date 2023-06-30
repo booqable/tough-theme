@@ -1,7 +1,5 @@
 {{ "hero.css" | asset_url | stylesheet_tag }}
 
-{%- assign custom_title          = section.settings.custom_title -%}
-{%- assign custom_description    = section.settings.custom_description -%}
 {%- assign show_bg               = section.settings.show_bg -%}
 {%- assign show_datepicker       = section.settings.show_datepicker -%}
 {%- assign image                 = section.settings.image -%}
@@ -18,12 +16,6 @@
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
-{%- capture text_variables -%}
-  {%- if primary_foreground != blank -%}
-    --color-primary-background: {{ primary_foreground }};
-  {%- endif -%}
-{%- endcapture -%}
-
 {%- capture variables -%}
   {%- if primary_background != blank -%}
     --color-primary-foreground: {{ primary_background }};
@@ -35,63 +27,45 @@
 
   {%- case padding_top -%}
     {%- when 'small' -%}
-      --padding-top: 50px;
+      --padding-top: 16px;
     {%- when 'medium' -%}
-      --padding-top: 85px;
+      --padding-top: 24px;
     {%- when 'large' -%}
-      --padding-top: 112px;
+      --padding-top: 48px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
     {%- when 'small' -%}
-      --padding-bottom: 50px;
+      --padding-bottom: 16px;
     {%- when 'medium' -%}
-      --padding-bottom: 85px;
+      --padding-bottom: 24px;
     {%- when 'large' -%}
-      --padding-bottom: 112px;
+      --padding-bottom: 48px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
     {%- when 'small' -%}
-      --padding-top-mobile: 40px;
+      --padding-top-mobile: 16px;
     {%- when 'medium' -%}
-      --padding-top-mobile: 57px;
+      --padding-top-mobile: 24px;
     {%- when 'large' -%}
-      --padding-top-mobile: 75px;
+      --padding-top-mobile: 48px;
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
     {%- when 'small' -%}
-      --padding-bottom-mobile: 40px;
+      --padding-bottom-mobile: 16px;
     {%- when 'medium' -%}
-      --padding-bottom-mobile: 57px;
+      --padding-bottom-mobile: 24px;
     {%- when 'large' -%}
-      --padding-bottom-mobile: 75px;
+      --padding-bottom-mobile: 48px;
   {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="hero__wrapper" style="{{- variables | escape -}}">
-  <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
-    <div class="hero__content" style="{{- text_variables | escape -}}">
-      {%- if custom_title != blank -%}
-        <h1 class="hero__title">{{- custom_title -}}</h1>
-      {%- else -%}
-        <h1 class="hero__title">{{- page_title -}}</h1>
-      {%- endif -%}
-
-      {%- if custom_description != blank -%}
-        <div class="hero__description text-medium">{{- custom_description -}}</div>
-      {%- else -%}
-        {%- if page_description != blank -%}
-          <div class="hero__description text-medium">{{- page_description -}}</div>
-        {%- endif -%}
-      {%- endif -%}
-    </div>
-  </div>
-
   {%- if show_datepicker -%}
-    <div class="hero__container hero__container--bottom">
+    <div class="hero__container hero__container--bottom{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
       <div class="hero__container container">
         <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
       </div>
@@ -123,7 +97,7 @@
     "tag": "section",
     "class": "hero",
     "description": "Display a section with Name and Description of page",
-    "templates": ["collection", "list-collections", "page"],
+    "templates": ["product"],
     "settings": [
       {
         "type": "header",
@@ -132,16 +106,6 @@
       {
         "type": "paragraph",
         "content": "Below you can change the content of section"
-      },
-      {
-        "type": "text",
-        "id": "custom_title",
-        "label": "Custom title"
-      },
-      {
-        "type": "contentEditor",
-        "id": "custom_description",
-        "label": "Custom description"
       },
       {
         "type": "image_picker",
@@ -172,12 +136,6 @@
         "type": "color",
         "id": "primary_background",
         "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "primary_foreground",
-        "label": "Foreground primary color",
         "info": "Note: This color always overrides the default color, and is applied to this section only"
       },
       {

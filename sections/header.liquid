@@ -27,7 +27,7 @@
 {%- capture variables -%}
   {%- if header_background != blank -%}
     --color-primary-foreground: {{ header_background }};
-    --color-primary-foreground-rgb-45: {{ header_background | append: "73" }};
+    --color-primary-foreground-45: {{ header_background | append: "73" }};
   {%- endif -%}
   {%- if header_foreground != blank -%}
     --color-primary-background: {{ header_foreground }};
@@ -525,7 +525,11 @@
         "settings":[
           {
             "type": "header",
-            "content": "Promo content"
+            "content": "Basic settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the content of the promo block"
           },
           {
             "type": "text",
@@ -561,7 +565,11 @@
         "settings":[
           {
             "type": "header",
-            "content": "Icon settings"
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance and the components' functionality of the socials"
           },
           {
             "type": "select",
@@ -612,7 +620,11 @@
         "settings": [
           {
             "type": "header",
-            "content": "Icon settings"
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance and the components' functionality of the payments"
           },
           {
             "type": "select",
@@ -660,7 +672,11 @@
     "settings": [
       {
         "type": "header",
-        "content": "Translations"
+        "content": "Basic settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the content of header"
       },
       {
         "type": "text",
@@ -671,31 +687,21 @@
       {
         "type": "text",
         "id": "login_placeholder",
-        "label": "Login button label",
+        "label": "'Login button' label",
         "default": "Log in"
       },
       {
         "type": "text",
         "id": "signup_placeholder",
-        "label": "Create account button label",
+        "label": "'Create account' button label",
         "default": "Create account"
       },
       {
         "type": "text",
         "id": "menu_back_placeholder",
         "label": "Button 'Back' label",
-        "info": "Note: This button is in the mobile dropdown menu in 'From left' or 'From right' menu appearance mode",
+        "info": "Note: This button is in the mobile dropdown menu in 'From left' or 'From right' mode of the Menu appearance settings",
         "default": "Back"
-      },
-      {
-        "type": "header",
-        "content": "General settings"
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_header",
-        "default": true,
-        "label": "Sticky header"
       },
       {
         "type": "image_picker",
@@ -707,6 +713,25 @@
         "id": "custom_title",
         "label": "Custom title",
         "info": "Note: Header logo always overrides this title"
+      },
+      {
+        "type": "menu",
+        "id": "menu",
+        "label": "Mega menu"
+      },
+      {
+        "type": "header",
+        "content": "Advanced settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Below you can change the appearance and the components' functionality of the header"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_header",
+        "default": true,
+        "label": "Sticky header"
       },
       {
         "type": "color",
@@ -725,11 +750,6 @@
         "id": "header_border",
         "label": "Border color",
         "info": "Note: This color always overrides the default color, and only is applied to borders in mobile burger menu and in 'Menu below' mode on desktop"
-      },
-      {
-        "type": "menu",
-        "id": "menu",
-        "label": "Mega menu"
       },
       {
         "type": "header",
