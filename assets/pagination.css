@@ -7,7 +7,7 @@
 
 .pagination span {
   text-align: center;
-  border: 1px solid var(--color-border-secondary, #E1E4E8);
+  border: 1px solid var(--color-border, #E1E4E8);
   cursor: pointer;
   min-width: 40px;
 }

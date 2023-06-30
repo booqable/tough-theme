@@ -62,7 +62,7 @@
 .contact-form__holder.no-image {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: var(--color-image-placeholder-lt, #FFFFFF0F);
+  background: var(--color-image-placeholder, #E1E4E8);
 }
 
 .contact-form__image {
@@ -88,6 +88,10 @@
   opacity: 0.1;
 }
 
+.contact-form__background path {
+  fill: var(--color-primary-background, #FFFFFF);
+}
+
 .contact-form__background:after {
   content: "";
   position: absolute;
@@ -96,7 +100,7 @@
   right: 0;
   bottom: 0;
   transform: var(--overlay-direction, 0);
-  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-00) 100%);
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-00, #0B1A2600) 100%);
 }
 
 .contact-form__background:before {
@@ -160,10 +164,6 @@
     height: 100%;
     border: 2px solid var(--color-accent-background, #F4B841);
     z-index: -1;
-  }
-
-  .contact-form__holder.no-image {
-    aspect-ratio: auto;
   }
 }
 

@@ -76,6 +76,10 @@
   opacity: 0.1;
 }
 
+.image-text__bg-image-wrapper path {
+  fill: var(--color-primary-background, #FFFFFF);
+}
+
 .image-text__bg-overlay {
   position: absolute;
   height: 100%;

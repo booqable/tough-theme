@@ -104,7 +104,7 @@
   width: 80px;
   flex: 0 0 80px;
   border-radius: 0;
-  border: 1px solid var(--color-border-secondary, #E1E4E8);
+  border: 1px solid var(--color-border, #E1E4E8);
   margin: 0;
   opacity: 1;
   background: none;
@@ -159,6 +159,7 @@
   height: 100px;
   border-radius: 0;
   margin: 0;
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .product-main__gallery .carousel__navigation .carousel__btn:hover,
@@ -201,6 +202,7 @@
   font-size: 14px;
   line-height: inherit;
   color: var(--color-white, #FFFFFF) !important;
+  text-transform: capitalize;
 }
 
 .product-main__info .booqable-component
@@ -255,14 +257,20 @@
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper input.bq-quantity {
-  color: var(--color-primary-foreground, #0B1A26) !important;
-  background: var(--color-primary-background, #FFFFFF) !important;
+  color: var(--color-placeholder, #4E5D78) !important;
+  background: var(--color-white, #FFFFFF) !important;
+}
+
+.product-main__info .booqable-component
+  .booqable-product-button-wrapper .bq-variation-wrapper > i {
+  color: var(--color-placeholder, #4E5D78) !important;
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper select.bq-variation {
-  color: var(--color-primary-foreground, #0B1A26) !important;
-  background: var(--color-primary-background, #FFFFFF) !important;
+  color: var(--color-placeholder, #4E5D78) !important;
+  background: var(--color-white, #FFFFFF) !important;
+  outline: none;
 }
 
 .product-main__info .booqable-component
@@ -313,7 +321,7 @@
 }
 
 .product-main__info .accordion {
-  border-top: 1px solid var(--color-border-secondary, #E1E4E8);
+  border-top: 1px solid var(--color-border, #E1E4E8);
   font-size: inherit;
 }
 
@@ -329,7 +337,7 @@
 .product-main__info .accordion__item:after {
   opacity: 1;
   border: none;
-  border-bottom: 1px solid var(--color-border-secondary, #E1E4E8);
+  border-bottom: 1px solid var(--color-border, #E1E4E8);
 }
 
 .product-main__info .accordion__heading svg {
@@ -436,6 +444,7 @@
   height: 40px;
   font-size: 40px;
   line-height: .8;
+  background: var(--color-primary-background-20, #0B1A2633);
   color: var(--color-primary-foreground, #0B1A26);
   cursor: pointer;
 }

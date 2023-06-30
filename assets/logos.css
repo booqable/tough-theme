@@ -52,7 +52,7 @@
 
 .logos__image-wrapper.no-image:after {
   content: "";
-  background: var(--color-primary-background-20, #FFFFFF33);
+  background: var(--color-image-placeholder, #E1E4E8);
   display: block;
   height: 64px;
 }

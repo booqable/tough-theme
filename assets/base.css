@@ -13,6 +13,7 @@
   --grid-auto-flow: dense;
 
   /* Colors */
+  --color-black: #0B1A26;
   --color-green: #51C234;
   --color-red: #C23434;
   --color-white: #ffffff;
@@ -65,7 +66,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-foreground, #0B1A26) transparent;
+  scrollbar-color: transparent transparent;
 }
 
 *::-webkit-scrollbar {
@@ -139,7 +140,7 @@ h6,
 .h5,
 .h6 {
   font-family: var(--font-heading) !important;
-  color: var(--color-primary-foreground);
+  color: var(--color-primary-foreground, #0B1A26);
   margin-bottom: 1.5625rem;;
 }
 
