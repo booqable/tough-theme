@@ -191,7 +191,7 @@
 
 .carousel__fluid .carousel__btn {
   position: relative;
-  background: var(--color-primary-background-rgb-08, #FFFFFF14);
+  background: var(--color-primary-background-08, #FFFFFF14);
   border-color: transparent;
   cursor: pointer;
   width: 40px;

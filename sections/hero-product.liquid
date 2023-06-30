@@ -19,7 +19,7 @@
 {%- capture variables -%}
   {%- if primary_background != blank -%}
     --color-primary-foreground: {{ primary_background }};
-    --color-primary-foreground-rgb: {{ primary_background | append: "00" }};
+    --color-primary-foreground-00: {{ primary_background | append: "00" }};
   {%- endif -%}
   {%- if secondary_foreground != blank -%}
     --color-third-foreground: {{ secondary_foreground }};

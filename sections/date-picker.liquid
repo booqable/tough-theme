@@ -12,7 +12,7 @@
 {%- capture variables -%}
   {%- if primary_background != blank -%}
     --color-primary-foreground: {{ primary_background }};
-    --color-primary-background-rgb-60: {{ primary_foreground | append: "99" }};
+    --color-primary-background-60: {{ primary_foreground | append: "99" }};
   {%- endif -%}
   {%- if primary_foreground != blank -%}
     --color-primary-background: {{ primary_foreground }};

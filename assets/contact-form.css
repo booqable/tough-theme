@@ -96,7 +96,7 @@
   right: 0;
   bottom: 0;
   transform: var(--overlay-direction, 0);
-  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-rgb) 100%);
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-00) 100%);
 }
 
 .contact-form__background:before {
@@ -107,7 +107,7 @@
   width: 9999px;
   left: var(--left-overlay);
   right: var(--right-overlay);
-  background: linear-gradient(to var(--direction-overlay), var(--color-primary-foreground-rgb, #0B1A2600) 0%, var(--color-primary-foreground-rgb-10, #0B1A261A) 20%, var(--color-primary-foreground-rgb-45, #0B1A2673) 40%, var(--color-primary-foreground, #0B1A26) 100%);
+  background: linear-gradient(to var(--direction-overlay), var(--color-primary-foreground-00, #0B1A2600) 0%, var(--color-primary-foreground-10, #0B1A261A) 20%, var(--color-primary-foreground-45, #0B1A2673) 40%, var(--color-primary-foreground, #0B1A26) 100%);
   z-index: 1;
 }
 

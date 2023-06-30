@@ -37,9 +37,9 @@
   {%- endif -%}
   {%- if background != blank -%}
     --color-primary-foreground: {{ background }};
-    --color-primary-foreground-rgb: {{ background | append: "00" }};
-    --color-primary-foreground-rgb-10: {{ background | append: "1A" }};
-    --color-primary-foreground-rgb-45: {{ background | append: "80" }};
+    --color-primary-foreground-00: {{ background | append: "00" }};
+    --color-primary-foreground-10: {{ background | append: "1A" }};
+    --color-primary-foreground-45: {{ background | append: "80" }};
   {%- endif -%}
 
   {%- case margin_top -%}

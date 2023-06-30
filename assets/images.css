@@ -88,9 +88,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(357.73deg, var(--color-primary-foreground, #0B1A26) 3.03%, var(--color-primary-foreground-rgb, #0B1A2600) 31.83%),
-   linear-gradient(180deg, var(--color-primary-foreground, #0B1A26) 6.67%, var(--color-primary-foreground-rgb, #0B1A2600) 105.81%),
-   linear-gradient(0deg, var(--color-primary-foreground-rgb-45, #0B1A2673), var(--color-primary-foreground-rgb-45, #0B1A2673));
+  background: linear-gradient(357.73deg, var(--color-primary-foreground, #0B1A26) 3.03%, var(--color-primary-foreground-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--color-primary-foreground, #0B1A26) 6.67%, var(--color-primary-foreground-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--color-primary-foreground-45, #0B1A2673), var(--color-primary-foreground-45, #0B1A2673));
   opacity: var(--opacity-overlay, 100%);
 }
 

@@ -19,7 +19,7 @@
 {%- capture variables -%}
   {%- if background != blank -%}
     --color-accent-background: {{ background }};
-    --color-accent-background-rgb: {{ background | append: "00" }};
+    --color-accent-background-00: {{ background | append: "00" }};
   {%- endif -%}
   {%- if color != blank -%}
     --color-primary-background: {{ color }};

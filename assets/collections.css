@@ -66,7 +66,7 @@
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: linear-gradient(0.13deg, var(--color-primary-foreground, #0B1A26) 8.87%, var(--color-primary-foreground-rgb, #0B1A2600) 95.37%);
+  background: linear-gradient(0.13deg, var(--color-primary-foreground, #0B1A26) 8.87%, var(--color-primary-foreground-00, #0B1A2600) 95.37%);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
