@@ -79,7 +79,7 @@
 }
 
 .menu__wrapper {
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary-foreground, #0B1A26);
   overflow: hidden;
   position: absolute;
   width: 100vw;
@@ -176,7 +176,7 @@
   width: 100vw;
   height: 100%;
   padding: 25px 0 100px;
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary-foreground, #0B1A26);
   overflow: hidden;
   transform: translate(100%, 0);
   transition: transform var(--animation-duration, 200ms) var(--transition-function-ease-out);

@@ -207,12 +207,12 @@
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper span.bq-status.bq-available {
-  background-color: var(--color-green, #51C234) !important;
+  background: var(--color-green, #51C234) !important;
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper span.bq-status.bq-unavailable {
-  background-color: var(--color-red, #C23434) !important;
+  background: var(--color-red, #C23434) !important;
 }
 
 .product-main__info .booqable-component

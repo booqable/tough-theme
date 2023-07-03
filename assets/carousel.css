@@ -238,7 +238,7 @@
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: currentColor;
+  background: currentColor;
   position: relative;
   opacity: 0.3;
   margin-bottom: 3px;

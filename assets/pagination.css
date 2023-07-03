@@ -32,7 +32,7 @@
 .pagination .deco,
 .pagination .current {
   position: relative;
-  background-color: var(--color-accent-background, #F4B841);
+  background: var(--color-accent-background, #F4B841);
   color: var(--color-accent-foreground, #0B1A26);
   z-index: 1;
 }
@@ -46,14 +46,14 @@
 .pagination .page:not(.current):hover,
 .pagination .prev:not([data-enabled="false"]):hover,
 .pagination .next:not([data-enabled="false"]):hover {
-  background-color: var(--color-accent-background-hover, #E5AD3D);
+  background: var(--color-accent-background-hover, #E5AD3D);
   color: var(--color-accent-foreground, #0B1A26);
 }
 
 .pagination .page:not(.current):active,
 .pagination .prev:not([data-enabled="false"]):active,
 .pagination .next:not([data-enabled="false"]):active {
-  background-color: var(--color-accent-background-active, #D6A239);
+  background: var(--color-accent-background-active, #D6A239);
   color: var(--color-accent-foreground, #0B1A26);
 }
 

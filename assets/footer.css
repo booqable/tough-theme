@@ -4,7 +4,7 @@
 
 .footer__wrapper {
   color: var(--color-primary-foreground, #0B1A26);
-  background-color: var(--color-primary-background, #FFFFFF);
+  background: var(--color-primary-background, #FFFFFF);
   border-top: 1px solid var(--color-border, #E1E4E8);
 }
 

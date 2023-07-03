@@ -108,7 +108,7 @@
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary-foreground, #0B1A26);
   border: 1px solid var(--color-accent-background, #F4B841);
   padding: 8px 0;
 }

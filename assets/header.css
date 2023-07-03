@@ -13,7 +13,7 @@
 }
 
 .header__content {
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary-foreground, #0B1A26);
   color: var(--color-primary-background, #FFFFFF);
 }
 
@@ -198,7 +198,7 @@
   font-size: 16px;
   line-height: var(--line-height-sm, 1.2);
   color: var(--color-primary-background, #FFFFFF);
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary-foreground, #0B1A26);
   border: 1px solid transparent;
   border-bottom-color: var(--color-accent-background, #F4B841);
   border-radius: 0;
