@@ -76,6 +76,9 @@
   opacity: 0.1;
 }
 
+.error-404__background path {
+  fill: var(--color-primary-background, #FFFFFF);
+}
 
 @media (min-width: 992px) {
   .error-404__content--padding-top {

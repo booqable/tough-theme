@@ -29,7 +29,7 @@
     --color-third-foreground: {{ footer_foreground_third }};
   {%- endif -%}
   {%- if footer_border != blank -%}
-    --color-border-secondary: {{ footer_border }};
+    --color-border: {{ footer_border }};
   {%- endif -%}
 
   {%- case padding_top -%}
@@ -310,36 +310,6 @@
       {
         "type": "paragraph",
         "content": "Below you can change the appearance of the footer"
-      },
-      {
-        "type": "color",
-        "id": "footer_background",
-        "label": "Background color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "footer_foreground",
-        "label": "Foreground primary color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "footer_foreground_secondary",
-        "label": "Foreground secondary color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only"
-      },
-      {
-        "type": "color",
-        "id": "footer_foreground_third",
-        "label": "Foreground third color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only. Used for bottom text of footer."
-      },
-      {
-        "type": "color",
-        "id": "footer_border",
-        "label": "Border color",
-        "info": "Note: This color always overrides the default color, and is applied to this section only."
       },
       {
         "type": "header",

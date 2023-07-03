@@ -36,6 +36,10 @@
   max-width: 100%;
 }
 
+.contacts__image-wrapper path {
+  fill: var(--color-accent-background, #F4B841);
+}
+
 .contacts__text {
   flex: 1 0 auto;
 }

@@ -89,20 +89,14 @@
       {
         "type": "color",
         "id": "placeholder_color",
-        "label": "Placeholder color",
+        "label": "Placeholders color",
         "info": "For placeholders of input fields",
         "default": "#4E5D78"
       },
       {
         "type": "color",
-        "id": "border_color_primary",
-        "label": "Primary border color",
-        "default": "#4E5D78"
-      },
-      {
-        "type": "color",
-        "id": "border_color_secondary",
-        "label": "Secondary border color",
+        "id": "border_color",
+        "label": "Borders color",
         "default": "#E1E4E8"
       }
     ]

@@ -59,7 +59,7 @@
 }
 
 .images__vision {
-  background-color: var(--color-primary-foreground, #0E1B2A);
+  background: var(--color-primary-foreground, #0B1A26);
   position: absolute;
   top: 0;
   left: 0;

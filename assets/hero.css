@@ -48,7 +48,7 @@
 }
 
 .hero__vision {
-  background-color: var(--color-primary-foreground, #0E1B2A);
+  background: var(--color-primary-foreground, #0B1A26);
   position: absolute;
   top: 0;
   left: 0;
@@ -102,6 +102,10 @@
 .hero__vision-wrapper svg {
   opacity: 0.1;
   min-height: 100%;
+}
+
+.hero__vision-wrapper path {
+  fill: var(--color-primary-background, #FFFFFF);
 }
 
 @media (min-width: 992px) {

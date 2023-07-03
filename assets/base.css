@@ -13,6 +13,7 @@
   --grid-auto-flow: dense;
 
   /* Colors */
+  --color-black: #0B1A26;
   --color-green: #51C234;
   --color-red: #C23434;
   --color-white: #ffffff;
@@ -65,7 +66,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-foreground, #0B1A26) transparent;
+  scrollbar-color: transparent transparent;
 }
 
 *::-webkit-scrollbar {
@@ -86,7 +87,7 @@ html {
 }
 
 body {
-  background-color: var(--color-primary-background, #FFFFFF);
+  background: var(--color-primary-background, #FFFFFF);
   color: var(--color-primary-foreground, #0B1A26);
   display: flex;
   flex-direction: column;
@@ -139,7 +140,7 @@ h6,
 .h5,
 .h6 {
   font-family: var(--font-heading) !important;
-  color: var(--color-primary-foreground);
+  color: var(--color-primary-foreground, #0B1A26);
   margin-bottom: 1.5625rem;;
 }
 
@@ -285,17 +286,17 @@ img {
 
 .button.button--primary {
   color: var(--color-accent-foreground, #0B1A26);
-  background-color: var(--color-accent-background, #F4B841);
+  background: var(--color-accent-background, #F4B841);
   border-color: var(--color-accent-background, #F4B841);
 }
 
 .button.button--primary:hover {
-  background-color: var(--color-accent-background-hover, #E6AD3D);
+  background: var(--color-accent-background-hover, #E6AD3D);
   border-color: var(--color-accent-background-hover, #E6AD3D);
 }
 
 .button.button--primary:active {
-  background-color: var(--color-accent-background-active, #D6A239);
+  background: var(--color-accent-background-active, #D6A239);
   border-color: var(--color-accent-background-active, #D6A239);
 }
 
