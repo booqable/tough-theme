@@ -61,6 +61,11 @@ class Carousel {
     this.count = this.block.querySelector(this.selector.count);
     this.timers = this.block.querySelectorAll(this.selector.timer);
     this.interval;
+    this.index;
+    this.start = 0;
+    this.end = 0;
+    this.touchstart = 0;
+    this.touchend = 0;
   }
 
   events(e) {
@@ -73,6 +78,9 @@ class Carousel {
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
+    document.addEventListener('wheel', this.touchpadScroll.bind(this));
+    document.addEventListener('touchstart', this.touchEvent.bind(this));
+    document.addEventListener('touchend', this.touchEvent.bind(this));
     window.addEventListener('resize', this.hidePaginationDots.bind(this));
     window.addEventListener('resize', this.controls.bind(this));
   }
@@ -81,6 +89,16 @@ class Carousel {
     arr.forEach(el => {
       el.addEventListener(`${event}`, func.bind(this));
     })
+  }
+
+  debounce(callback, time = 500) {
+    let timer = null;
+
+    return (...args) => {
+      window.clearTimeout(timer);
+
+      timer = window.setTimeout(() => callback.apply(null, args), time);
+    };
   }
 
   startTimer(e) {
@@ -201,7 +219,7 @@ class Carousel {
           isNext = target?.classList.contains(this.classes.next),
           isDot = target?.classList.contains(this.classes.dot);
 
-    if (!isPrev && !isNext && !isDot && !time  && time === 0) return false;
+    if (!isPrev && !isNext && !isDot && !time && time === 0) return false;
 
     const isFade = this.block.classList.contains(this.classes.fade),
           fullWidth = this.block.classList.contains(this.classes.full),
@@ -333,7 +351,8 @@ class Carousel {
       const options = {
         el: element,
         left: valueLeft,
-        top: valueTop
+        top: valueTop,
+        behavior: "smooth"
       }
 
       this.scrollTo(options);
@@ -413,12 +432,12 @@ class Carousel {
   }
 
   scrollTo(options) {
-    const {el, left, top} = options;
+    const {el, left, top, behavior} = options;
 
     el.scrollTo({
       left: left,
       top: top,
-      behavior: "smooth",
+      behavior: behavior,
     });
   }
 
@@ -443,6 +462,258 @@ class Carousel {
         this.navi?.parentElement.classList.add(this.modifiers.indent);
       }
     }
+  }
+
+  touchEvent(e) {
+    const target = e?.target.closest(this.selector.wrapper);
+
+    if (!target) return false;
+
+    const width = this.item.getBoundingClientRect().width,
+          left = this.wrap.scrollLeft,
+          client = this.wrap.clientWidth,
+          isFade = this.block.classList.contains(this.classes.fade),
+          fullWidth = this.block.classList.contains(this.classes.full);
+
+
+
+    switch (e.type) {
+      case "touchstart":
+        this.touchstart = e.changedTouches[0].screenX;
+        this.start = left
+
+        break;
+
+      case "touchend":
+        this.touchend = e.changedTouches[0].screenX;
+        this.end = left
+
+        this.handleGesture();
+        break;
+    }
+
+    // let startX, startY, x;
+
+    // switch (e.type) {
+    //   case "touchstart":
+    //     (() => {
+    //       return startX = e?.changedTouches[0].screenX;
+    //     })()
+    //     console.log(startX);
+
+    //     break;
+
+    //   case "touchend":
+    //     const diffX = e?.changedTouches[0].screenX - startX;
+
+    //     // Ignore small movements.
+    //     // if (absDiff < 30) {
+    //     //   return;
+    //     // }
+    //     console.log(startX);
+
+    //     // if (ratioX > ratioY) {
+
+    //     // } else {
+    //     //   if (diffY >= 0) {
+    //     //     console.log('down swipe');
+    //     //   } else {
+    //     //     console.log('up swipe');
+    //     //   }
+    //     // }
+    //     break;
+
+    // }
+
+    // if (diffX >= 0) {
+    //   console.log('right swipe');
+    // } else {
+    //   console.log('left swipe');
+    // }
+
+
+
+
+    // let start, end, , x
+
+    // switch (e.type) {
+    //   case "touchstart":
+    //     start = e?.changedTouches[0].screenX;
+    //     break;
+
+    //   case "touchend":
+    //     end = e?.changedTouches[0].screenX;
+    //     break;
+
+    // }
+
+    // if (start) {
+
+    //   console.log(start);
+    // }
+
+    // if (end) {
+    //   console.log(end);
+    // }
+
+    // if (start > end) {
+    //   x = "left"
+    //   console.log(start);
+    //   console.log(end);
+    // } else {
+    //   x = "right"
+    // }
+
+
+    // return x;
+  }
+
+  handleGesture() {
+    let index = this.getCurrentDot().index,
+        dots = this.getCurrentDot().dots,
+        left = this.wrap.scrollLeft,
+        width = this.item.getBoundingClientRect().width,
+        leftMove = this.touchend < this.touchstart,
+        rightMove = this.touchend > this.touchstart,
+        tap = this.touchend === this.touchstart,
+        leftIndex = this.end - this.start > 0,
+        rightIndex = this.start - this.end > 0;
+
+    if (leftMove && leftIndex) {
+      // index === dots.length ? index = dots.length : index = index + 1
+      // console.log(this.end - this.start);
+      // console.log(this.touchend);
+      this.index = Math.ceil(left / width) + 1;
+      console.log('Swiped left');
+      const options = {
+        el: this.wrap,
+        left: this.end,
+        behavior: "instant"
+      }
+
+      this.scrollTo(options);
+    }
+
+    if (rightMove && rightIndex) {
+      // index === 1 ? index = 1 : index = index - 1
+
+      this.index = Math.ceil(left / width);
+
+      // console.log(this.start - this.end);
+      // console.log(this.touchstart);
+      // console.log(this.touchend);
+      console.log('Swiped right');
+      const options = {
+        el: this.wrap,
+        left: this.start,
+        behavior: "instant"
+      }
+
+      this.scrollTo(options);
+    }
+
+    if (tap) {
+       console.log('Tap');
+    }
+
+    this.pagination(undefined, this.index);
+  }
+
+  touchpadScroll(e) {
+    const target = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots;
+
+    let index = this.getCurrentDot().index;
+
+    if (!dots.length && !target && !index) return false;
+
+    // if (e.type == "wheel") {
+    //   console.log("wheel");
+    // } else {
+    //   if (e.type == "touchstart" || e.type == "touchend") {
+
+    //     console.log(e.changedTouches[0].screenX);
+    //   }
+    // }
+
+
+    // console.log(e.target);
+
+    // const processChanges = this.debounce(() => {
+      const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
+      //       currentIndex = this.getCurrentDot().index;
+
+      if (delta < 0) {
+        console.log("left");
+      } else if (delta > 0) {
+        console.log("right");
+      }
+
+      const width = this.item.getBoundingClientRect().width,
+            left = this.wrap.scrollLeft,
+            client = this.wrap.clientWidth,
+            isFade = this.block.classList.contains(this.classes.fade),
+            fullWidth = this.block.classList.contains(this.classes.full);
+
+      // let index;
+
+      if (!isFade) {
+        index = Math.ceil(left / width) + 1;
+
+        // if (fullWidth && client < this.tablet) {
+          // if (index !== 1) index -= 1;
+        // }
+      } else {
+
+      }
+
+      // if (reminder == 0) {
+      //   console.log("0");
+      // } else {
+      //   console.log(reminder);
+      //   console.log(width)
+      //   console.log(left)
+      //   console.log(Math.ceil(index))
+      // }
+
+      // if (delta === 1) {
+      //   // Scrolled right
+      //   currentIndex >= this.getCurrentDot().dots.length
+      //     ? nextIndex = currentIndex
+      //     : nextIndex = currentIndex + 1
+
+      //   // nextIndex = currentIndex + 1
+      // } else if (delta === -1) {
+      //   // Scrolled left
+      //   console.log(delta);
+
+      //   currentIndex <= 1
+      //   ? nextIndex = currentIndex
+      //   : nextIndex = currentIndex - 1
+      // }
+
+      // this.pagination(undefined, index);
+
+    // });
+    // processChanges();
+
+  }
+
+  // get the current active dot index
+  getCurrentDot() {
+    let index = 1,
+        dots = [...this.dots];
+
+    dots = dots.filter(dot => {
+      return !dot.classList.contains(this.modifiers.hidden);
+    })
+
+    dots.forEach(dot => {
+      if (dot.classList.contains(this.modifiers.active))
+        index = parseInt(dot.getAttribute(this.data.index));
+    })
+
+    return {index, dots};
   }
 }
 

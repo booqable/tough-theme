@@ -149,6 +149,11 @@
   height: 100%;
 }
 
+.carousel__fluid .carousel__item:last-child {
+  min-width: var(--slide-width-mobile);
+  max-width: var(--slide-width-mobile);
+}
+
 .carousel__fluid .carousel__item:not(:first-child) {
   display: none;
 }
