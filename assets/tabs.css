@@ -6,7 +6,7 @@
   display: grid;
   gap: 30px;
   padding: 50px 0 0;
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
 }
 
 .tabs__tab {
@@ -31,7 +31,7 @@
   top: 10%;
   bottom: 10%;
   width: 1px;
-  background: var(--color-accent-background, #F4B841);
+  background: var(--background-accent, #F4B841);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--animation-duration, 200ms) var(--transition-function-ease-out);

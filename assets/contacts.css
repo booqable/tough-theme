@@ -1,5 +1,5 @@
 .contacts__wrapper {
-  background: var(--color-fourth-foreground, #E1E4E8);
+  background: var(--color-fourth, #E1E4E8);
   line-height: var(--line-height-lg, 1.5);
 }
 
@@ -19,8 +19,8 @@
 .contacts__col {
   width: 100%;
   padding: 24px;
-  color: var(--color-primary-foreground, #0B1A26);
-  background: var(--color-primary-background, #FFFFFF);
+  color: var(--color-primary, #0B1A26);
+  background: var(--background-primary, #FFFFFF);
   display: flex;
   flex-direction: column;
 }
@@ -37,7 +37,7 @@
 }
 
 .contacts__image-wrapper path {
-  fill: var(--color-accent-background, #F4B841);
+  fill: var(--background-accent, #F4B841);
 }
 
 .contacts__text {
@@ -54,7 +54,7 @@
 }
 
 .contacts__description {
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
   padding: 0 0 25px;
 }
 

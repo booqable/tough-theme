@@ -1,7 +1,7 @@
 .header {
   position: relative;
   z-index: 1000;
-  border-bottom: 1px solid var(--color-primary-background-20, #FFFFFF33);
+  border-bottom: 1px solid var(--background-primary-20, #FFFFFF33);
   margin-bottom: -1px;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .header__content {
-  background: var(--color-primary-foreground, #0B1A26);
-  color: var(--color-primary-background, #FFFFFF);
+  background: var(--color-primary, #0B1A26);
+  color: var(--background-primary, #FFFFFF);
 }
 
 .header__content--padding-top {
@@ -107,15 +107,15 @@
 
 .header__search-opener g {
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  stroke: var(--color-primary-background, #FFFFFF);
+  stroke: var(--background-primary, #FFFFFF);
 }
 
 .header__search-opener:hover g {
-  stroke: var(--color-accent-background-hover, #E5AD3D);
+  stroke: var(--background-accent-hover, #E5AD3D);
 }
 
 .header__search-opener:active g {
-  stroke: var(--color-accent-background-active, #D6A239);
+  stroke: var(--background-accent-active, #D6A239);
 }
 
 .header__search-wrapper {
@@ -160,7 +160,7 @@
   height: 2px;
   width: 18px;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--color-primary-background, #FFFFFF);
+  background: var(--background-primary, #FFFFFF);
   transition: background var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
@@ -170,12 +170,12 @@
 
 .header__search-wrapper .header__search-opener:hover:after,
 .header__search-wrapper .header__search-opener:hover:before {
-  background: var(--color-accent-background-hover, #E5AD3D);
+  background: var(--background-accent-hover, #E5AD3D);
 }
 
 .header__search-wrapper .header__search-opener:active:after,
 .header__search-wrapper .header__search-opener:active:before {
-  background: var(--color-accent-background-active, #D6A239);
+  background: var(--background-accent-active, #D6A239);
 }
 
 .header__search-input-wrapper {
@@ -197,20 +197,20 @@
   padding: 12px 43px 15px;
   font-size: 16px;
   line-height: var(--line-height-sm, 1.2);
-  color: var(--color-primary-background, #FFFFFF);
-  background: var(--color-primary-foreground, #0B1A26);
+  color: var(--background-primary, #FFFFFF);
+  background: var(--color-primary, #0B1A26);
   border: 1px solid transparent;
-  border-bottom-color: var(--color-accent-background, #F4B841);
+  border-bottom-color: var(--background-accent, #F4B841);
   border-radius: 0;
 }
 
 .header__search-input:focus {
   outline: none;
-  border-color: var(--color-accent-background, #F4B841);
+  border-color: var(--background-accent, #F4B841);
 }
 
 .header__search-input::placeholder {
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
 }
 
 .header__search-input::-webkit-search-cancel-button {
@@ -219,7 +219,7 @@
   width: 12px;
   margin-left: 10px;
   border-radius: 50%;
-  background-color: var(--color-primary-foreground, #0B1A26);
+  background-color: var(--color-primary, #0B1A26);
   background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
     no-repeat 50% 50%;
   background-size: contain;
@@ -239,7 +239,7 @@
 
 .header__search-input:-webkit-autofill,
 .header__search-input:autofill {
-  box-shadow: inset 0 0 0 150px var(--color-primary-foreground, #0B1A26) !important;
+  box-shadow: inset 0 0 0 150px var(--color-primary, #0B1A26) !important;
 }
 
 .header__search-icon {
@@ -249,7 +249,7 @@
 }
 
 .header__search-icon g {
-  stroke: var(--color-primary-background, #FFFFFF);
+  stroke: var(--background-primary, #FFFFFF);
 }
 
 .header__search #search-opener:checked ~ .header__search-wrapper {
@@ -259,7 +259,7 @@
 }
 
 .header__search #search-opener:checked ~ .header__search-opener g {
-  stroke: var(--color-accent-background, #F4B841);
+  stroke: var(--background-accent, #F4B841);
 }
 
 .header__account {
@@ -280,15 +280,15 @@
 
 .header__account-opener g {
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  stroke: var(--color-primary-background, #FFFFFF);
+  stroke: var(--background-primary, #FFFFFF);
 }
 
 .header__account-opener:hover g {
-  stroke: var(--color-accent-background-hover, #E5AD3D);
+  stroke: var(--background-accent-hover, #E5AD3D);
 }
 
 .header__account-opener:active g {
-  stroke: var(--color-accent-background-active, #D6A239);
+  stroke: var(--background-accent-active, #D6A239);
 }
 
 .header__account-drop-wrapper {
@@ -310,8 +310,8 @@
 	padding: 16px;
   width: 100%;
   height: 100%;
-  background: var(--color-primary-foreground, #0B1A26);
-  border-bottom: 1px solid var(--color-accent-background, #F4B841);
+  background: var(--color-primary, #0B1A26);
+  border-bottom: 1px solid var(--background-accent, #F4B841);
   display: flex;
   flex-direction: column;
 }
@@ -325,15 +325,15 @@
 }
 
 #account-opener:checked ~ .header__account-opener g {
-  stroke: var(--color-accent-background, #F4B841);
+  stroke: var(--background-accent, #F4B841);
 }
 
 #account-opener:checked ~ .header__account-opener:hover g {
-  stroke: var(--color-accent-background-hover, #E5AD3D);
+  stroke: var(--background-accent-hover, #E5AD3D);
 }
 
 #account-opener:checked ~ .header__account-opener:active g {
-  stroke: var(--color-accent-background-active, #D6A239);
+  stroke: var(--background-accent-active, #D6A239);
 }
 
 #account-opener:checked ~ .header__account-drop-wrapper {
@@ -359,34 +359,34 @@
 
 .header__login-button {
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
 }
 
-.header__login-button.text-accent {
-  color: var(--color-accent-background, #F4B841);
+.header__login-button--accent {
+  color: var(--background-accent, #F4B841);
 }
 
 .header__login-button:hover,
-.header__login-button.text-accent:hover {
-  color: var(--color-accent-background-hover, #E5AD3D);
+.header__login-button--accent:hover {
+  color: var(--background-accent-hover, #E5AD3D);
 }
 
 .header__login-button:active,
-.header__login-button.text-accent:active {
-  color: var(--color-accent-background-active, #D6A239);
+.header__login-button--accent:active {
+  color: var(--background-accent-active, #D6A239);
 }
 
 .header__login-button g {
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  stroke: var(--color-primary-background, #FFFFFF);
+  stroke: var(--background-primary, #FFFFFF);
 }
 
 .header__login-button:hover g {
-  stroke: var(--color-accent-background-hover, #E5AD3D);
+  stroke: var(--background-accent-hover, #E5AD3D);
 }
 
 .header__login-button:active g {
-  stroke: var(--color-accent-background-active, #D6A239);
+  stroke: var(--background-accent-active, #D6A239);
 }
 
 .header__cart {
@@ -397,7 +397,7 @@
 }
 
 .bq-cart-button__line-count {
-  color: var(--color-accent-background, #F4B841) !important;
+  color: var(--background-accent, #F4B841) !important;
 }
 
 .header__cart .booqable-cart-button:not(:empty) + i {
@@ -405,18 +405,18 @@
 }
 
 .header__cart .bq-icon-cart::before {
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .bq-cart-button:hover .bq-icon-cart::before {
   opacity: 1;
-  color: var(--color-accent-background-hover, #E5AD3D);
+  color: var(--background-accent-hover, #E5AD3D);
 }
 
 .bq-cart-button:active .bq-icon-cart::before {
   opacity: 1;
-  color: var(--color-accent-background-active, #D6A239);
+  color: var(--background-accent-active, #D6A239);
 }
 
 .bq-cart {
@@ -539,11 +539,11 @@
 
   .header-menu-bottom .header__search-input {
     padding-right: 12px;
-    border-color: var(--color-primary-background, #FFFFFF);
+    border-color: var(--background-primary, #FFFFFF);
   }
 
   .header-menu-bottom .header__search-input:focus {
-    border-color: var(--color-accent-background, #F4B841);
+    border-color: var(--background-accent, #F4B841);
   }
 
   .header-menu-bottom .header__logo-wrapper {
@@ -569,7 +569,7 @@
     top: 100%;
     z-index: 1;
     transform: translate(-50%, 0);
-    background: var(--color-primary-background-20, #FFFFFF33);
+    background: var(--background-primary-20, #FFFFFF33);
   }
 }
 

@@ -1,5 +1,5 @@
 .mosaic {
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
@@ -20,7 +20,7 @@
 .mosaic__item {
   font-size: 16px;
   padding: 15px;
-  background: var(--color-primary-background, #FFFFFF);
+  background: var(--background-primary, #FFFFFF);
   border: 1px solid var(--color-border, #E1E4E8);
   overflow: hidden;
   margin: 0 0 30px;
@@ -52,7 +52,7 @@
 .mosaic__tag {
   display: inline-block;
   vertical-align: top;
-  color: var(--color-accent-background, #F4B841);
+  color: var(--background-accent, #F4B841);
   text-transform: uppercase;
   font-weight: var(--font-weight-semibold, 600);
   font-size: 14px;
@@ -62,7 +62,7 @@
 
 .mosaic__heading {
   font-weight: var(--font-weight-bold, 700);
-  color: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-primary, #0B1A26);
   margin-bottom: 16px;
   max-width: 450px;
 }
@@ -72,11 +72,11 @@
 }
 
 .mosaic__button.button {
-  color: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-primary, #0B1A26);
 }
 
 .mosaic__button.button path {
-  fill: var(--color-primary-foreground, #0B1A26);
+  fill: var(--color-primary, #0B1A26);
 }
 
 .mosaic__image {

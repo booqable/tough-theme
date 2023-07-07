@@ -30,16 +30,16 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if color != blank -%}
-    --color-third-foreground: {{ color }};
+    --color-third: {{ color }};
   {%- endif -%}
   {%- if color_heading != blank -%}
-    --color-primary-background: {{ color_heading }};
+    --background-primary: {{ color_heading }};
   {%- endif -%}
   {%- if background != blank -%}
-    --color-primary-foreground: {{ background }};
-    --color-primary-foreground-00: {{ background | append: "00" }};
-    --color-primary-foreground-10: {{ background | append: "1A" }};
-    --color-primary-foreground-45: {{ background | append: "80" }};
+    --color-primary: {{ background }};
+    --color-primary-00: {{ background | append: "00" }};
+    --color-primary-10: {{ background | append: "1A" }};
+    --color-primary-45: {{ background | append: "80" }};
   {%- endif -%}
 
   {%- case margin_top -%}

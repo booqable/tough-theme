@@ -1,8 +1,8 @@
 .contact-form__wrapper {
   position: relative;
   line-height: var(--line-height-lg, 1.5);
-  color: var(--color-third-foreground, #B2B4B8);
-  background: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-third, #B2B4B8);
+  background: var(--color-primary, #0B1A26);
 }
 
 .contact-form__wrapper--padding-top {
@@ -34,7 +34,7 @@
   font-size: 48px;
   font-weight: var(--font-weight-bold, 700);
   line-height: var(--line-height-sm, 1.2);
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   margin-bottom: 22px;
   text-align: var(--text-align, left);
 }
@@ -70,7 +70,7 @@
 }
 
 .contact-form__button.button--outlined {
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
 }
 
 .contact-form__background,
@@ -89,7 +89,7 @@
 }
 
 .contact-form__background path {
-  fill: var(--color-primary-background, #FFFFFF);
+  fill: var(--background-primary, #FFFFFF);
 }
 
 .contact-form__background:after {
@@ -100,7 +100,7 @@
   right: 0;
   bottom: 0;
   transform: var(--overlay-direction, 0);
-  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-00, #0B1A2600) 100%);
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--color-primary, #0B1A26) 0%, var(--color-primary-00, #0B1A2600) 100%);
 }
 
 .contact-form__background:before {
@@ -111,7 +111,7 @@
   width: 9999px;
   left: var(--left-overlay);
   right: var(--right-overlay);
-  background: linear-gradient(to var(--direction-overlay), var(--color-primary-foreground-00, #0B1A2600) 0%, var(--color-primary-foreground-10, #0B1A261A) 20%, var(--color-primary-foreground-45, #0B1A2673) 40%, var(--color-primary-foreground, #0B1A26) 100%);
+  background: linear-gradient(to var(--direction-overlay), var(--color-primary-00, #0B1A2600) 0%, var(--color-primary-10, #0B1A261A) 20%, var(--color-primary-45, #0B1A2673) 40%, var(--color-primary, #0B1A26) 100%);
   z-index: 1;
 }
 
@@ -162,7 +162,7 @@
     right: var(--right, 0);
     width: 100%;
     height: 100%;
-    border: 2px solid var(--color-accent-background, #F4B841);
+    border: 2px solid var(--background-accent, #F4B841);
     z-index: -1;
   }
 }

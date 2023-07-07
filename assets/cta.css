@@ -4,8 +4,8 @@
 }
 
 .cta__wrapper {
-  background: var(--color-accent-background, #F4B841);
-  color: var(--color-primary-background, #FFFFFF);
+  background: var(--background-accent, #F4B841);
+  color: var(--background-primary, #FFFFFF);
   text-align: center;
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
@@ -50,7 +50,7 @@
 }
 
 .cta__image-wrapper path {
-  fill: var(--color-primary-background, #FFFFFF);
+  fill: var(--background-primary, #FFFFFF);
 }
 
 .cta__image-wrapper:after {
@@ -60,7 +60,7 @@
   top: 0;
   bottom: -120px;
   right: 0;
-  background: linear-gradient(180.44deg, var(--color-accent-background, #F4B841) 51.3%, var(--color-accent-background-00, #F4B84100) 81.06%);
+  background: linear-gradient(180.44deg, var(--background-accent, #F4B841) 51.3%, var(--background-accent-00, #F4B84100) 81.06%);
 }
 
 @media (min-width: 992px) {

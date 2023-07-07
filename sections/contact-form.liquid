@@ -34,17 +34,17 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if background != blank -%}
-    --color-primary-foreground: {{ background }};
-    --color-primary-foreground-00: {{ background | append: "00" }};
+    --color-primary: {{ background }};
+    --color-primary-00: {{ background | append: "00" }};
   {%- endif -%}
   {%- if foreground != blank -%}
-    --color-primary-background: {{ foreground }};
+    --background-primary: {{ foreground }};
   {%- endif -%}
   {%- if foreground_second != blank -%}
     --color-gray: {{ foreground_second }};
   {%- endif -%}
   {%- if foreground_third != blank -%}
-    --color-third-foreground: {{ foreground_third }};
+    --color-third: {{ foreground_third }};
   {%- endif -%}
 
   {%- case padding_top -%}
@@ -113,10 +113,10 @@
 
 {%- capture button_variables -%}
   {%- if button_color != blank -%}
-    --color-accent-background: {{ button_color }};
+    --background-accent: {{ button_color }};
   {%- endif -%}
   {%- if button_label_color != blank -%}
-    --color-accent-foreground: {{ button_label_color }};
+    --color-accent: {{ button_label_color }};
   {%- endif -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}

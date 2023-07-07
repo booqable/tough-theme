@@ -1,5 +1,5 @@
 .collections {
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
@@ -46,7 +46,7 @@
   font-size: 24px;
   line-height: 1.4;
   margin: 0;
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   z-index: 1;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-primary-foreground, #0B1A26) 8.87%, var(--color-primary-foreground-00, #0B1A2600) 95.37%);
+  background: linear-gradient(0.13deg, var(--color-primary, #0B1A26) 8.87%, var(--color-primary-00, #0B1A2600) 95.37%);
 }
 
 .collections__link .collections__image-item:after {
@@ -89,7 +89,7 @@
   left: 0;
   right: 0;
   height: 50px;
-  background: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 

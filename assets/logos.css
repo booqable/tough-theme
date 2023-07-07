@@ -1,5 +1,5 @@
 .logos__wrapper {
-  background: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary, #0B1A26);
 }
 
 .logos__wrapper--padding-top {
@@ -26,7 +26,7 @@
   width: 100%;
   padding: 0 var(--padding-x, 16px);
   margin-bottom: 32px;
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
   font-weight: var(--font-weight-regular, 400);
   text-align: var(--text-align-mobile, center);
 }

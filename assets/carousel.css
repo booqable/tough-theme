@@ -82,12 +82,12 @@
   margin: 0 4px 20px;
   width: 8px;
   height: 8px;
-  background: var(--color-primary-foreground-30, #0B1A264D);
+  background: var(--color-primary-30, #0B1A264D);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .carousel__dot.active {
-  background: var(--color-primary-foreground, #0B1A26);
+  background: var(--color-primary, #0B1A26);
 }
 
 .carousel__dot.hidden {
@@ -122,7 +122,7 @@
 }
 
 .carousel__btn:hover {
-  border-color: var(--color-primary-foreground, #0B1A26);
+  border-color: var(--color-primary, #0B1A26);
 }
 
 .carousel__btn svg {
@@ -136,7 +136,7 @@
 }
 
 .carousel__btn path {
-  fill: var(--color-primary-foreground, #0B1A26);
+  fill: var(--color-primary, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
@@ -191,7 +191,7 @@
 
 .carousel__fluid .carousel__btn {
   position: relative;
-  background: var(--color-primary-background-08, #FFFFFF14);
+  background: var(--background-primary-08, #FFFFFF14);
   border-color: transparent;
   cursor: pointer;
   width: 40px;
@@ -206,7 +206,7 @@
 }
 
 .carousel__fluid .carousel__btn path {
-  fill: var(--color-primary-background, #FFFFFF);
+  fill: var(--background-primary, #FFFFFF);
 }
 
 .carousel__fluid .carousel__btn.prev {
@@ -218,7 +218,7 @@
 }
 
 .carousel__fluid .carousel__btn:hover {
-  border-color: var(--color-primary-background, #FFFFFF);
+  border-color: var(--background-primary, #FFFFFF);
 }
 
 .carousel__fluid .carousel__pagination {
@@ -242,17 +242,17 @@
   position: relative;
   opacity: 0.3;
   margin-bottom: 3px;
-  background: var(--color-primary-background, #FFFFFF);
+  background: var(--background-primary, #FFFFFF);
 }
 
 .carousel__fluid .carousel__dot:hover,
 .carousel__fluid .carousel__dot.active {
   opacity: 1;
-  background: var(--color-primary-background, #FFFFFF);
+  background: var(--background-primary, #FFFFFF);
 }
 
 .carousel__fluid .carousel__counter {
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   position: absolute;
   z-index: 0;
   bottom: 28px;

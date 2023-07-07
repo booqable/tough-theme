@@ -12,7 +12,7 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if background != blank -%}
-      --color-fourth-foreground: {{ background }};
+      --color-fourth: {{ background }};
     {%- endif -%}
 
     {%- case padding_top -%}
@@ -90,37 +90,37 @@
           {% comment %} CSS variables start {% endcomment %}
           {%- capture email_variables -%}
             {%- if email_bg != blank -%}
-              --color-primary-background: {{ email_bg }};
+              --background-primary: {{ email_bg }};
             {%- endif -%}
             {%- if email_color != blank -%}
-              --color-primary-foreground: {{ email_color }};
+              --color-primary: {{ email_color }};
             {%- endif -%}
             {%- if email_color_second != blank -%}
-              --color-secondary-foreground: {{ email_color_second }};
+              --color-secondary: {{ email_color_second }};
             {%- endif -%}
           {%- endcapture -%}
 
           {%- capture phone_variables -%}
             {%- if phone_bg != blank -%}
-              --color-primary-background: {{ phone_bg }};
+              --background-primary: {{ phone_bg }};
             {%- endif -%}
             {%- if phone_color != blank -%}
-              --color-primary-foreground: {{ phone_color }};
+              --color-primary: {{ phone_color }};
             {%- endif -%}
             {%- if phone_color_second != blank -%}
-              --color-secondary-foreground: {{ phone_color_second }};
+              --color-secondary: {{ phone_color_second }};
             {%- endif -%}
           {%- endcapture -%}
 
           {%- capture address_variables -%}
             {%- if address_bg != blank -%}
-              --color-primary-background: {{ address_bg }};
+              --background-primary: {{ address_bg }};
             {%- endif -%}
             {%- if address_color != blank -%}
-              --color-primary-foreground: {{ address_color }};
+              --color-primary: {{ address_color }};
             {%- endif -%}
             {%- if address_color_second != blank -%}
-              --color-secondary-foreground: {{ address_color_second }};
+              --color-secondary: {{ address_color_second }};
             {%- endif -%}
           {%- endcapture -%}
           {% comment %} CSS variables end {% endcomment %}

@@ -21,16 +21,16 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if background != blank -%}
-      --color-primary-foreground: {{ background }};
+      --color-primary: {{ background }};
     {%- endif -%}
     {%- if color != blank -%}
-      --color-third-foreground: {{ color }};
+      --color-third: {{ color }};
     {%- endif -%}
     {%- if title_color != blank -%}
-      --color-primary-background: {{ title_color }};
+      --background-primary: {{ title_color }};
     {%- endif -%}
     {%- if border_color != blank -%}
-      --color-fourth-foreground: {{ border_color }};
+      --color-fourth: {{ border_color }};
       --color-border: {{ border_color }};
     {%- endif -%}
 

@@ -26,11 +26,11 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if header_background != blank -%}
-    --color-primary-foreground: {{ header_background }};
-    --color-primary-foreground-45: {{ header_background | append: "73" }};
+    --color-primary: {{ header_background }};
+    --color-primary-45: {{ header_background | append: "73" }};
   {%- endif -%}
   {%- if header_foreground != blank -%}
-    --color-primary-background: {{ header_foreground }};
+    --background-primary: {{ header_foreground }};
   {%- endif -%}
   {%- if header_border != blank -%}
     --color-border: {{ header_border }};
@@ -145,7 +145,7 @@
       </a>
     </div>
     <div class="header__login-item">
-      <a href="" class="header__login-button text-accent">{{- signup_placeholder -}}</a>
+      <a href="" class="header__login-button header__login-button--accent">{{- signup_placeholder -}}</a>
     </div>
   </div>
 {%- endcapture -%}

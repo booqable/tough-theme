@@ -47,7 +47,7 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if ui_color != blank -%}
-      --color-primary-background: {{ ui_color }};
+      --background-primary: {{ ui_color }};
     {%- endif -%}
     {%- if carousel -%}
       --slide-width: 100%;
@@ -137,10 +137,10 @@
             {% comment %} CSS variables start {% endcomment %}
             {%- capture text_variables -%}
               {%- if color != blank -%}
-                --color-third-foreground: {{ color }};
+                --color-third: {{ color }};
               {%- endif -%}
               {%- if title_color != blank -%}
-                --color-primary-background: {{ title_color }};
+                --background-primary: {{ title_color }};
               {%- endif -%}
 
               {%- case text_position -%}
@@ -278,9 +278,9 @@
 
             {%- capture image_variables -%}
               {%- if background != blank -%}
-                --color-primary-foreground: {{ background }};
-                --color-primary-foreground-00: {{ background | append: "00" }};
-                --color-primary-foreground-45: {{ background | append: "73" }};
+                --color-primary: {{ background }};
+                --color-primary-00: {{ background | append: "00" }};
+                --color-primary-45: {{ background | append: "73" }};
               {%- endif -%}
               {%- if overlay_opacity != blank -%}
                 --opacity-overlay: {{ overlay_opacity | append: "%"}};

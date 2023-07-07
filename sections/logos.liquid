@@ -16,11 +16,11 @@
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if color != blank -%}
-      --color-secondary-foreground: {{ color }};
+      --color-secondary: {{ color }};
     {%- endif -%}
     {%- if background != blank -%}
-      --color-primary-foreground: {{ background }};
-      --color-primary-background-20: {{ background | append: "33" }};
+      --color-primary: {{ background }};
+      --background-primary-20: {{ background | append: "33" }};
     {%- endif -%}
 
     {%- case padding_top -%}

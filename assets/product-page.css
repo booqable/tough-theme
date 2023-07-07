@@ -9,7 +9,7 @@
 .product-main__wrapper {
   font-size: 16px;
   line-height: var(--line-height-lg, 1.5);
-  color: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-primary, #0B1A26);
 }
 
 .product-main__gallery {
@@ -153,8 +153,8 @@
 
 .product-main__gallery .carousel__navigation .carousel__btn,
 .product-main__gallery .carousel__fluid .carousel__navigation .carousel__btn {
-  background: var(--color-accent-background, #F4B841);
-  border-color: var(--color-accent-background, #F4B841);
+  background: var(--background-accent, #F4B841);
+  border-color: var(--background-accent, #F4B841);
   width: 30px;
   height: 100px;
   border-radius: 0;
@@ -164,14 +164,14 @@
 
 .product-main__gallery .carousel__navigation .carousel__btn:hover,
 .product-main__gallery .carousel__fluid .carousel__navigation .carousel__btn:hover {
-  background: var(--color-accent-background-hover, #E5AD3D);
-  border-color: var(--color-accent-background-hover, #E5AD3D);
+  background: var(--background-accent-hover, #E5AD3D);
+  border-color: var(--background-accent-hover, #E5AD3D);
 }
 
 .product-main__gallery .carousel__navigation .carousel__btn:active,
 .product-main__gallery .carousel__fluid .carousel__navigation .carousel__btn:active {
-  background: var(--color-accent-background-active, #D6A239);
-  border-color: var(--color-accent-background-active, #D6A239);
+  background: var(--background-accent-active, #D6A239);
+  border-color: var(--background-accent-active, #D6A239);
 }
 
 .product-main__title {
@@ -224,14 +224,14 @@
   .booqable-product-button-wrapper .bq-price-details span.bq-price {
   font-size: 24px;
   line-height: 1.4;
-  color: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-primary, #0B1A26);
   font-weight: var(--font-weight-semibold, 600);
   font-family: var(--font-body);
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper [class*="AvailabilityLink"] {
-  color: var(--color-primary-foreground, #0B1A26);
+  color: var(--color-primary, #0B1A26);
   font-family: var(--font-body);
   font-size: 14px !important;
   height: auto;
@@ -250,7 +250,7 @@
   height: 50px !important;
   border-radius: 0 !important;
   font-size: 16px !important;
-  border-color: var(--color-third-foreground, #B2B4B8) !important;
+  border-color: var(--color-border, #B2B4B8) !important;
   font-family: var(--font-body);
   line-height: var(--line-height-lg, 1.5);
 }
@@ -290,19 +290,19 @@
   border-radius: 0;
   margin-top: 30px;
   text-transform: capitalize;
-  background: var(--color-accent-background, #F4B841);
-  color: var(--color-accent-foreground, #0B1A26);
+  background: var(--background-accent, #F4B841);
+  color: var(--color-accent, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper .bq-button:hover {
-  background: var(--color-accent-background-hover, #E5AD3D);
+  background: var(--background-accent-hover, #E5AD3D);
 }
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper .bq-button:active {
-  background: var(--color-accent-background-active, #D6A239);
+  background: var(--background-accent-active, #D6A239);
 }
 
 .product-main__info .booqable-component
@@ -316,7 +316,7 @@
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
   padding: 23px 0 32px;
 }
 
@@ -347,7 +347,7 @@
 
 .product-main__info .accordion__content {
   padding: 0;
-  color: var(--color-secondary-foreground, #4E5D78);
+  color: var(--color-secondary, #4E5D78);
 }
 
 .product-main__modal-opener {
@@ -364,7 +364,7 @@
   right: 0;
   bottom: 0;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-  background: var(--color-primary-foreground-45, #0B1A2680);
+  background: var(--color-primary-45, #0B1A2680);
   visibility: hidden;
   opacity: 0;
 }
@@ -385,7 +385,7 @@
 }
 
 .product-main__zoom-in path {
-  fill: var(--color-primary-background, #FFFFFF);
+  fill: var(--background-primary, #FFFFFF);
 }
 
 .product-main__modal-opener:hover:after,
@@ -401,7 +401,7 @@
 	bottom: 0;
   left: 0;
   right: 0;
-  background: var(--color-primary-foreground-80, #0B1A26CC);
+  background: var(--color-primary-80, #0B1A26CC);
   visibility: hidden;
 	opacity: 0;
   pointer-events: none;
@@ -444,8 +444,8 @@
   height: 40px;
   font-size: 40px;
   line-height: .8;
-  background: var(--color-primary-background-20, #0B1A2633);
-  color: var(--color-primary-foreground, #0B1A26);
+  background: var(--background-primary-20, #0B1A2633);
+  color: var(--color-primary, #0B1A26);
   cursor: pointer;
 }
 

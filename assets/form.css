@@ -11,7 +11,7 @@
   font-size: 48px;
   font-weight: var(--font-weight-bold, 700);
   line-height: var(--line-height-sm, 1.2);
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   margin-bottom: 22px;
 }
 
@@ -30,7 +30,7 @@
 .form__label {
   display: inline-block;
   vertical-align: top;
-  color: var(--color-primary-background, #FFFFFF);
+  color: var(--background-primary, #FFFFFF);
   margin-bottom: 9px;
 }
 
@@ -42,7 +42,7 @@
   padding: 14px 12px;
   font-size: inherit;
   background: var(--color-white, #FFFFFF);
-  border: 1px solid var(--color-third-foreground, #B2B4B8);
+  border: 1px solid var(--color-border, #B2B4B8);
   margin-bottom: 22px;
 }
 
@@ -62,7 +62,7 @@
 .form__textarea:focus,
 .form__textarea:focus-visible {
   outline: none;
-  border-color: var(--color-accent-background, #F4B841);
+  border-color: var(--background-accent, #F4B841);
 }
 
 .form__field.error,
@@ -103,7 +103,7 @@
 .form__approval .form__label:before {
   content:'';
   appearance: none;
-  border: 1px solid var(--color-third-foreground, #B2B4B8);
+  border: 1px solid var(--color-border, #B2B4B8);
   background: var(--color-white, #FFFFFF);
   padding: 9px;
   display: inline-block;
@@ -121,14 +121,14 @@
   left: 7px;
   width: 6px;
   height: 12px;
-  border: solid var(--color-accent-foreground, #0B1A26);
+  border: solid var(--color-accent, #0B1A26);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
 .form__approval .form__checkbox:checked ~ .form__label:before {
-  border-color: var(--color-accent-background, #F4B841);
-  background: var(--color-accent-background, #F4B841);
+  border-color: var(--background-accent, #F4B841);
+  background: var(--background-accent, #F4B841);
 }
 
 .form__info {
@@ -147,7 +147,7 @@
 }
 
 .form__info .success i {
-  color: var(--color-accent-background, #F4B841);
+  color: var(--background-accent, #F4B841);
 }
 
 .form__info .error {

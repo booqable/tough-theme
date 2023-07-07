@@ -18,16 +18,16 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if background != blank -%}
-    --color-accent-background: {{ background }};
-    --color-accent-background-00: {{ background | append: "00" }};
+    --background-accent: {{ background }};
+    --background-accent-00: {{ background | append: "00" }};
   {%- endif -%}
   {%- if color != blank -%}
-    --color-primary-background: {{ color }};
-    --color-primary-background-hover: {{ color | append: "52" }};
-    --color-primary-background-active: {{ color | append: "8F" }};
+    --background-primary: {{ color }};
+    --background-primary-hover: {{ color | append: "52" }};
+    --background-primary-active: {{ color | append: "8F" }};
   {%- endif -%}
   {%- if ui_color != blank -%}
-    --color-primary-foreground: {{ ui_color }};
+    --color-primary: {{ ui_color }};
   {%- endif -%}
 
   {%- case padding_top -%}

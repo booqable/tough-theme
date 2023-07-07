@@ -17,16 +17,16 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if footer_background != blank -%}
-    --color-primary-background: {{ footer_background }};
+    --background-primary: {{ footer_background }};
   {%- endif -%}
   {%- if footer_foreground != blank -%}
-    --color-primary-foreground: {{ footer_foreground }};
+    --color-primary: {{ footer_foreground }};
   {%- endif -%}
   {%- if footer_foreground_secondary != blank -%}
-    --color-secondary-foreground: {{ footer_foreground_secondary }};
+    --color-secondary: {{ footer_foreground_secondary }};
   {%- endif -%}
   {%- if footer_foreground_third != blank -%}
-    --color-third-foreground: {{ footer_foreground_third }};
+    --color-third: {{ footer_foreground_third }};
   {%- endif -%}
   {%- if footer_border != blank -%}
     --color-border: {{ footer_border }};

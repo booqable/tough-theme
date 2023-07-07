@@ -11,11 +11,11 @@
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- if primary_background != blank -%}
-    --color-primary-foreground: {{ primary_background }};
-    --color-primary-background-60: {{ primary_foreground | append: "99" }};
+    --color-primary: {{ primary_background }};
+    --background-primary-60: {{ primary_foreground | append: "99" }};
   {%- endif -%}
   {%- if primary_foreground != blank -%}
-    --color-primary-background: {{ primary_foreground }};
+    --background-primary: {{ primary_foreground }};
   {%- endif -%}
 
   {%- case padding_top -%}
@@ -75,7 +75,7 @@
       </h2>
     {%- endif -%}
 
-    <bq-date-picker data-primary-color="{{ settings.primary_color }}"></bq-date-picker>
+    <bq-date-picker data-primary-color="{{ settings.accent_background }}"></bq-date-picker>
   </div>
 </div>
 
