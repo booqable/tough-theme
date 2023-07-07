@@ -56,6 +56,7 @@ class Main {
     this.search = document.querySelector(this.selector.search);
     this.input = this.search.querySelector(this.selector.input);
     this.url = new URL(window.location.href);
+    this.focalImageTimeout;
   }
 
   events() {
@@ -84,16 +85,30 @@ class Main {
 
   // change focus positioning of image
   focalImages() {
+    if (!window.imageFocus) {
+      if (this.focalImageTimeout) clearTimeout(this.focalImageTimeout);
+
+      this.focalImageTimeout = setTimeout(() => {
+        initFocalImages();
+      }, 10);
+
+      return;
+    }
+
+    clearTimeout(this.focalImageTimeout);
+
     this.images.forEach(image => {
       const x = image.getAttribute(this.data.focalX),
             y = image.getAttribute(this.data.focalY);
 
-      new window.imageFocus.FocusedImage(image, {
+      new window.imageFocus(image, {
         focus: {
           x: parseFloat(x) || 0,
           y: parseFloat(y) || 0,
         },
       });
+
+      image.style.opacity = 1;
     });
   };
 

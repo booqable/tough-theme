@@ -41,6 +41,7 @@ class Carousel {
     };
 
     this.tablet = 992;
+    this.timer = 500;
   }
 
   init() {
@@ -66,39 +67,31 @@ class Carousel {
     this.end = 0;
     this.touchstart = 0;
     this.touchend = 0;
+    this.scrollTimer = null;
+    this.scrollArr = [];
   }
 
   events(e) {
     this.carouselInit();
     this.startTimer(e);
     this.pauseAutoRotate();
-    this.controls();
+    this.hideControls();
     this.hidePaginationDots();
 
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
-    document.addEventListener('wheel', this.touchpadScroll.bind(this));
-    document.addEventListener('touchstart', this.touchEvent.bind(this));
-    document.addEventListener('touchend', this.touchEvent.bind(this));
+    document.addEventListener('wheel', this.touchpadSwipePoints.bind(this));
+    document.addEventListener('touchstart', this.screenSwipePoints.bind(this));
+    document.addEventListener('touchend', this.screenSwipePoints.bind(this));
     window.addEventListener('resize', this.hidePaginationDots.bind(this));
-    window.addEventListener('resize', this.controls.bind(this));
+    window.addEventListener('resize', this.hideControls.bind(this));
   }
 
   listener(arr, event, func) {
     arr.forEach(el => {
       el.addEventListener(`${event}`, func.bind(this));
     })
-  }
-
-  debounce(callback, time = 500) {
-    let timer = null;
-
-    return (...args) => {
-      window.clearTimeout(timer);
-
-      timer = window.setTimeout(() => callback.apply(null, args), time);
-    };
   }
 
   startTimer(e) {
@@ -173,6 +166,8 @@ class Carousel {
   // hide not used dots of the pagination
   hidePaginationDots() {
     if (!this.dots) return false;
+
+    if (this.dots[0].classList.contains(this.classes.thumb)) return false;
 
     const client = this.wrap.clientWidth,
           scroll = this.wrap.scrollWidth,
@@ -351,8 +346,7 @@ class Carousel {
       const options = {
         el: element,
         left: valueLeft,
-        top: valueTop,
-        behavior: "smooth"
+        top: valueTop
       }
 
       this.scrollTo(options);
@@ -432,16 +426,16 @@ class Carousel {
   }
 
   scrollTo(options) {
-    const {el, left, top, behavior} = options;
+    const {el, left, top} = options;
 
     el.scrollTo({
       left: left,
       top: top,
-      behavior: behavior,
+      behavior: "smooth",
     });
   }
 
-  controls() {
+  hideControls() {
     if (!this.navi && !this.pagi) return false;
 
     const clientX = this.wrap.clientWidth,
@@ -464,242 +458,150 @@ class Carousel {
     }
   }
 
-  touchEvent(e) {
-    const target = e?.target.closest(this.selector.wrapper);
+  // touchpoints detection on touch screens
+  screenSwipePoints(e) {
+    const target = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots,
+          left = this.wrap.scrollLeft;
 
-    if (!target) return false;
+    if (!dots.length && !target) return false;
 
-    const width = this.item.getBoundingClientRect().width,
-          left = this.wrap.scrollLeft,
-          client = this.wrap.clientWidth,
-          isFade = this.block.classList.contains(this.classes.fade),
-          fullWidth = this.block.classList.contains(this.classes.full);
-
-
-
-    switch (e.type) {
-      case "touchstart":
-        this.touchstart = e.changedTouches[0].screenX;
-        this.start = left
-
-        break;
-
-      case "touchend":
-        this.touchend = e.changedTouches[0].screenX;
-        this.end = left
-
-        this.handleGesture();
-        break;
+    if (e.type === "touchstart") {
+      this.touchstart = e.changedTouches[0].screenX;
+      this.start = left
     }
 
-    // let startX, startY, x;
+    if (e.type === "touchend") {
+      this.touchend = e.changedTouches[0].screenX;
+        setTimeout(() => {
+          this.end = left
 
-    // switch (e.type) {
-    //   case "touchstart":
-    //     (() => {
-    //       return startX = e?.changedTouches[0].screenX;
-    //     })()
-    //     console.log(startX);
-
-    //     break;
-
-    //   case "touchend":
-    //     const diffX = e?.changedTouches[0].screenX - startX;
-
-    //     // Ignore small movements.
-    //     // if (absDiff < 30) {
-    //     //   return;
-    //     // }
-    //     console.log(startX);
-
-    //     // if (ratioX > ratioY) {
-
-    //     // } else {
-    //     //   if (diffY >= 0) {
-    //     //     console.log('down swipe');
-    //     //   } else {
-    //     //     console.log('up swipe');
-    //     //   }
-    //     // }
-    //     break;
-
-    // }
-
-    // if (diffX >= 0) {
-    //   console.log('right swipe');
-    // } else {
-    //   console.log('left swipe');
-    // }
-
-
-
-
-    // let start, end, , x
-
-    // switch (e.type) {
-    //   case "touchstart":
-    //     start = e?.changedTouches[0].screenX;
-    //     break;
-
-    //   case "touchend":
-    //     end = e?.changedTouches[0].screenX;
-    //     break;
-
-    // }
-
-    // if (start) {
-
-    //   console.log(start);
-    // }
-
-    // if (end) {
-    //   console.log(end);
-    // }
-
-    // if (start > end) {
-    //   x = "left"
-    //   console.log(start);
-    //   console.log(end);
-    // } else {
-    //   x = "right"
-    // }
-
-
-    // return x;
+          this.paginationIndex(undefined);
+        }, this.timer);
+    }
   }
 
-  handleGesture() {
-    let index = this.getCurrentDot().index,
-        dots = this.getCurrentDot().dots,
-        left = this.wrap.scrollLeft,
-        width = this.item.getBoundingClientRect().width,
-        leftMove = this.touchend < this.touchstart,
-        rightMove = this.touchend > this.touchstart,
-        tap = this.touchend === this.touchstart,
-        leftIndex = this.end - this.start > 0,
-        rightIndex = this.start - this.end > 0;
+  // touchpad touchpoints detection
+  touchpadSwipePoints(e) {
+    const target = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots,
+          index = this.getCurrentDot().index,
+          left = this.wrap.scrollLeft,
+          isFade = this.block.classList.contains(this.classes.fade),
+          isFull = target?.parentElement.classList.contains(this.classes.full);
 
-    if (leftMove && leftIndex) {
-      // index === dots.length ? index = dots.length : index = index + 1
-      // console.log(this.end - this.start);
-      // console.log(this.touchend);
-      this.index = Math.ceil(left / width) + 1;
-      console.log('Swiped left');
-      const options = {
-        el: this.wrap,
-        left: this.end,
-        behavior: "instant"
+    if (!dots.length && !target && !index) return false;
+
+    let direction;
+
+    const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
+
+    if (delta === -1) {
+      if (!isFade) {
+        this.scrollArr.push(left)
+      } else {
+        if (isFull) {
+          this.scrollArr.push(delta)
+          direction = "left"
+        }
       }
-
-      this.scrollTo(options);
+    } else if (delta === 1) {
+      if (!isFade) {
+        this.scrollArr.push(left)
+      } else {
+        if (isFull) {
+          this.scrollArr.push(delta)
+          direction = "right"
+        }
+      }
     }
 
-    if (rightMove && rightIndex) {
-      // index === 1 ? index = 1 : index = index - 1
+    const points = () => {
+      const first = this.scrollArr[0];
+      const last = this.scrollArr.pop();
+      let value;
 
-      this.index = Math.ceil(left / width);
+      if (!isFade && first > last || !isFade && first < last) {
+        this.touchstart = last;
+        this.touchend = first;
+        this.start = last;
+        this.end = first;
 
-      // console.log(this.start - this.end);
-      // console.log(this.touchstart);
-      // console.log(this.touchend);
-      console.log('Swiped right');
-      const options = {
-        el: this.wrap,
-        left: this.start,
-        behavior: "instant"
+        value = undefined;
       }
 
-      this.scrollTo(options);
+      if (isFade && first === -1 || isFade && first === 1) {
+        value = direction
+      }
+
+      this.paginationIndex(value);
     }
 
-    if (tap) {
-       console.log('Tap');
+    window.clearTimeout(this.scrollTimer);
+
+    this.scrollTimer = setTimeout(() => {
+      points();
+
+      this.scrollArr = [];
+    }, 50);
+  }
+
+  // next dot index calculation for touchpad and touchscreens scrolling
+  paginationIndex(val) {
+    const left = this.wrap.scrollLeft,
+          width = this.item.getBoundingClientRect().width,
+          index = this.getCurrentDot().index,
+          dots = this.getCurrentDot().dots,
+          thumb = dots[0].classList.contains(this.classes.thumb),
+          size = dots.length,
+          isFade = this.block.classList.contains(this.classes.fade),
+          newIndex = Math.ceil(left / width),
+          leftIndex = this.end - this.start > 20,
+          rightIndex = this.start - this.end > 20;
+
+    let leftMove, rightMove;
+
+    if (val === "right") {
+      leftMove = true
+    } else if (val === "left") {
+      rightMove = true
+    } else {
+      leftMove = this.touchstart > this.touchend;
+      rightMove = this.touchstart < this.touchend;
+    }
+
+    switch (true) {
+      case leftMove:
+        if (!isFade && leftIndex) {
+          this.index = newIndex + 1;
+
+          if (thumb) this.index -= 1
+        } else {
+          index >= size ? this.index = index : this.index = index + 1
+        }
+
+        break;
+
+      case rightMove:
+        if (!isFade && rightIndex) {
+          if (left < width) {
+            this.index = 1
+          } else {
+            this.index = newIndex
+
+            if (thumb) this.index += 1
+          }
+        } else {
+          index <= 1 ? this.index = index : this.index = index - 1
+        }
+
+        break;
     }
 
     this.pagination(undefined, this.index);
   }
 
-  touchpadScroll(e) {
-    const target = e?.target.closest(this.selector.wrapper),
-          dots = this.getCurrentDot().dots;
-
-    let index = this.getCurrentDot().index;
-
-    if (!dots.length && !target && !index) return false;
-
-    // if (e.type == "wheel") {
-    //   console.log("wheel");
-    // } else {
-    //   if (e.type == "touchstart" || e.type == "touchend") {
-
-    //     console.log(e.changedTouches[0].screenX);
-    //   }
-    // }
-
-
-    // console.log(e.target);
-
-    // const processChanges = this.debounce(() => {
-      const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
-      //       currentIndex = this.getCurrentDot().index;
-
-      if (delta < 0) {
-        console.log("left");
-      } else if (delta > 0) {
-        console.log("right");
-      }
-
-      const width = this.item.getBoundingClientRect().width,
-            left = this.wrap.scrollLeft,
-            client = this.wrap.clientWidth,
-            isFade = this.block.classList.contains(this.classes.fade),
-            fullWidth = this.block.classList.contains(this.classes.full);
-
-      // let index;
-
-      if (!isFade) {
-        index = Math.ceil(left / width) + 1;
-
-        // if (fullWidth && client < this.tablet) {
-          // if (index !== 1) index -= 1;
-        // }
-      } else {
-
-      }
-
-      // if (reminder == 0) {
-      //   console.log("0");
-      // } else {
-      //   console.log(reminder);
-      //   console.log(width)
-      //   console.log(left)
-      //   console.log(Math.ceil(index))
-      // }
-
-      // if (delta === 1) {
-      //   // Scrolled right
-      //   currentIndex >= this.getCurrentDot().dots.length
-      //     ? nextIndex = currentIndex
-      //     : nextIndex = currentIndex + 1
-
-      //   // nextIndex = currentIndex + 1
-      // } else if (delta === -1) {
-      //   // Scrolled left
-      //   console.log(delta);
-
-      //   currentIndex <= 1
-      //   ? nextIndex = currentIndex
-      //   : nextIndex = currentIndex - 1
-      // }
-
-      // this.pagination(undefined, index);
-
-    // });
-    // processChanges();
-
-  }
-
-  // get the current active dot index
+  // get the active dot index
   getCurrentDot() {
     let index = 1,
         dots = [...this.dots];
