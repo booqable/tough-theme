@@ -1,5 +1,4 @@
 .contacts__wrapper {
-  background: var(--color-fourth, #E1E4E8);
   line-height: var(--line-height-lg, 1.5);
 }
 
@@ -19,10 +18,9 @@
 .contacts__col {
   width: 100%;
   padding: 24px;
-  color: var(--color-primary, #0B1A26);
-  background: var(--background-primary, #FFFFFF);
   display: flex;
   flex-direction: column;
+  border: 1px solid transparent;
 }
 
 .contacts__image-wrapper {
@@ -34,10 +32,6 @@
 .contacts__image-wrapper img {
   max-height: 100%;
   max-width: 100%;
-}
-
-.contacts__image-wrapper path {
-  fill: var(--background-accent, #F4B841);
 }
 
 .contacts__text {
@@ -54,7 +48,6 @@
 }
 
 .contacts__description {
-  color: var(--color-secondary, #4E5D78);
   padding: 0 0 25px;
 }
 
@@ -72,6 +65,42 @@
 .contacts__email:hover,
 .contacts__phone:hover {
   opacity: 0.7;
+}
+
+.palette-one.contacts__wrapper {
+  background: var(--color-fourth, #0B1A2626);
+}
+
+.palette-one .contacts__col {
+  color: var(--color-primary, #0B1A26);
+  background: var(--background-primary, #FFFFFF);
+  border-color: var(--color-fourth, #0B1A2626);
+}
+
+.palette-one .contacts__image-wrapper path {
+  fill: var(--background-accent, #F4B841);
+}
+
+.palette-one .contacts__description {
+  color: var(--color-secondary, #4E5D78);
+}
+
+.palette-two.contacts__wrapper {
+  background: var(--background-primary-2-60, #0B1A2699);
+}
+
+.palette-two .contacts__col {
+  color: var(--color-primary-2, #FFFFFF);
+  background: var(--background-primary-2, #0B1A26);
+  border-color: var(--color-fourth-2, #FFFFFF47);
+}
+
+.palette-two .contacts__image-wrapper path {
+  fill: var(--background-accent-2, #F4B841);
+}
+
+.palette-two .contacts__description {
+  color: var(--color-secondary-2, #4E5D78);
 }
 
 @media (min-width: 992px) {

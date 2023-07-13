@@ -1,6 +1,4 @@
 .faq__wrapper {
-  background: var(--color-primary, #0B1A26);
-  color: var(--color-third, #B2B4B8);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
@@ -21,11 +19,24 @@
   padding: 0 0 65px;
 }
 
-.faq .accordion__heading {
-  color: var(--background-primary, #FFFFFF);
+.faq .palette-one .accordion__heading {
+  color: var(--color-primary, #0B1A26);
+}
+.faq .palette-two .accordion__heading {
+  color: var(--color-primary-2, #FFFFFF);
 }
 
-@media (min-width: 1100px) {
+.palette-one.faq__wrapper {
+  background: var(--background-primary, #FFFFFF);
+  color: var(--color-third, #0B1A2659);
+}
+
+.palette-two.faq__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+  color: var(--color-third-2, #FFFFFF59);
+}
+
+@media (min-width: 992px) {
   .faq__wrapper--padding-top {
     padding-top: var(--padding-top, 40px);
   }

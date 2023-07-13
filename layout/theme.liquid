@@ -25,24 +25,22 @@
       {%- if settings.background != blank -%}
         --background-primary: {{- settings.background -}};
         --background-primary-00: {{- settings.background | append: "00" -}};
-        --background-primary-08: {{- settings.background | append: "14" -}};
-        --background-primary-20: {{- settings.background | append: "33" -}};
+        --background-primary-10: {{- settings.background | append: "1A" -}};
+        --background-primary-45: {{- settings.background | append: "73" -}};
         --background-primary-60: {{- settings.background | append: "99" -}};
-        --background-primary-hover: {{- settings.background | append: "52" -}};
-        --background-primary-active: {{- settings.background | append: "8F" -}};
       {%- endif -%}
 
       {%- if settings.primary_color != blank -%}
         --color-primary: {{- settings.primary_color -}};
-        --color-primary-00: {{- settings.primary_color | append: "00" -}};
-        --color-primary-10: {{- settings.primary_color | append: "1A" -}};
         --color-primary-30: {{- settings.primary_color | append: "4D" -}};
         --color-primary-45: {{- settings.primary_color | append: "73" -}};
         --color-primary-80: {{- settings.primary_color | append: "CC" -}};
+        --color-primary-hover: {{- settings.primary_color | append: "52" -}};
+        --color-primary-active: {{- settings.primary_color | append: "8F" -}};
         --color-third: {{- settings.primary_color | append: "59"-}};
         --color-fourth: {{- settings.primary_color | append: "26" -}};
         --color-image-placeholder: {{- settings.primary_color | append: "26" -}};
-        --color-placeholder: {{- settings.pimary_color | append: "BF"  -}};
+        --color-placeholder: {{- settings.primary_color | append: "59"  -}};
         --color-border: {{- settings.primary_color | append: "26" -}};
       {%- endif -%}
 
@@ -74,32 +72,34 @@
 
       {%- if settings.accent_outline != blank -%}
         --color-outline: {{- settings.accent_outline -}};
+        --color-outline-hover: {{- settings.accent_outline | append: "CC" -}};
+        --color-outline-active: {{- settings.accent_outline | append: "BA" -}};
       {%- else -%}
         --color-outline: {{- branding_color -}};
+        --color-outline-hover: {{- branding_color | append: "CC" -}};
+        --color-outline-active: {{- branding_color | append: "BA" -}};
       {%- endif -%}
 
       {%- if settings.background_2 != blank -%}
         --background-primary-2: {{- settings.background_2 -}};
         --background-primary-2-00: {{- settings.background_2 | append: "00" -}};
-        --background-primary-2-08: {{- settings.background_2 | append: "14" -}};
-        --background-primary-2-20: {{- settings.background_2 | append: "33" -}};
+        --background-primary-2-10: {{- settings.background_2 | append: "1A" -}};
+        --background-primary-2-45: {{- settings.background_2 | append: "73" -}};
         --background-primary-2-60: {{- settings.background_2 | append: "99" -}};
-        --background-primary-2-hover: {{- settings.background_2 | append: "52" -}};
-        --background-primary-2-active: {{- settings.background_2 | append: "8F" -}};
       {%- endif -%}
 
       {%- if settings.primary_color_2 != blank -%}
         --color-primary-2: {{- settings.primary_color_2 -}};
-        --color-primary-2-00: {{- settings.primary_color_2 | append: "00" -}};
-        --color-primary-2-10: {{- settings.primary_color_2 | append: "1A" -}};
         --color-primary-2-30: {{- settings.primary_color_2 | append: "4D" -}};
         --color-primary-2-45: {{- settings.primary_color_2 | append: "73" -}};
         --color-primary-2-80: {{- settings.primary_color_2 | append: "CC" -}};
+        --color-primary-2-hover: {{- settings.primary_color_2 | append: "52" -}};
+        --color-primary-2-active: {{- settings.primary_color_2 | append: "8F" -}};
         --color-third-2: {{- settings.primary_color_2 | append: "59"-}};
-        --color-fourth-2: {{- settings.primary_color_2 | append: "26" -}};
-        --color-image-placeholder-2: {{- settings.primary_color_2 | append: "26" -}};
-        --color-placeholder-2: {{- settings.pimary_color_2 | append: "BF"  -}};
-        --color-border-2: {{- settings.primary_color_2 | append: "26" -}};
+        --color-fourth-2: {{- settings.primary_color_2 | append: "47" -}};
+        --color-image-placeholder-2: {{- settings.primary_color_2 | append: "47" -}};
+        --color-placeholder-2: {{- settings.primary_color_2 | append: "59"  -}};
+        --color-border-2: {{- settings.primary_color_2 | append: "47" -}};
       {%- endif -%}
 
       {%- if settings.secondary_color_2 != blank -%}
@@ -130,8 +130,12 @@
 
       {%- if settings.accent_outline_2 != blank -%}
         --color-outline-2: {{- settings.accent_outline_2 -}};
+        --color-outline-2-hover: {{- settings.accent_outline_2 | append: "CC" -}};
+        --color-outline-2-active: {{- settings.accent_outline_2 | append: "BA" -}};
       {%- else -%}
         --color-outline-2: {{- branding_color -}};
+        --color-outline-2-hover: {{- branding_color | append: "CC" -}};
+        --color-outline-2-active: {{- branding_color | append: "BA" -}};
       {%- endif -%}
 
       {% if settings.heading_font != blank %}

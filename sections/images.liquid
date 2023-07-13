@@ -14,11 +14,11 @@
 
   {%- assign limit                 = section.settings.limit -%}
   {%- assign height                = section.settings.height -%}
+  {%- assign color_overlay         = section.settings.color_overlay -%}
   {%- assign padding_top           = section.settings.padding_top -%}
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
   {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
   {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-  {%- assign ui_color              = section.settings.ui_color -%}
   {%- assign timer                 = section.settings.timer -%}
   {%- assign pause                 = section.settings.pause -%}
   {%- assign effect                = section.settings.effect -%}
@@ -46,9 +46,6 @@
 
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
-    {%- if ui_color != blank -%}
-      --background-primary: {{ ui_color }};
-    {%- endif -%}
     {%- if carousel -%}
       --slide-width: 100%;
       --slide-width-mobile: 100%;
@@ -109,7 +106,7 @@
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
 
-  <div class="images__wrapper" style="{{- variables | escape -}}">
+  <div class="images__wrapper{% if color_overlay != blank %} overlay-{{ color_overlay }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
       <div class="carousel carousel__fluid carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
@@ -129,20 +126,10 @@
             {%- assign video_url            = block.settings.video_url | strip -%}
             {%- assign image                = block.settings.image -%}
             {%- assign image_mobile         = block.settings.image_mobile -%}
-            {%- assign background           = block.settings.background -%}
-            {%- assign color                = block.settings.color -%}
-            {%- assign title_color          = block.settings.title_color -%}
             {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
 
             {% comment %} CSS variables start {% endcomment %}
             {%- capture text_variables -%}
-              {%- if color != blank -%}
-                --color-third: {{ color }};
-              {%- endif -%}
-              {%- if title_color != blank -%}
-                --background-primary: {{ title_color }};
-              {%- endif -%}
-
               {%- case text_position -%}
                 {%- when 'top-left' -%}
                   --text-justify-content: flex-start;
@@ -277,11 +264,6 @@
             {%- endcapture -%}
 
             {%- capture image_variables -%}
-              {%- if background != blank -%}
-                --color-primary: {{ background }};
-                --color-primary-00: {{ background | append: "00" }};
-                --color-primary-45: {{ background | append: "73" }};
-              {%- endif -%}
               {%- if overlay_opacity != blank -%}
                 --opacity-overlay: {{ overlay_opacity | append: "%"}};
               {%- endif -%}
@@ -637,6 +619,22 @@
       {
         "type": "paragraph",
         "content": "Below you can change the appearance and the components' functionality of the section"
+      },
+      {
+        "type": "select",
+        "id": "color_overlay",
+        "label": "Overlay color",
+        "options": [
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "light",
+            "label": "Light"
+          }
+        ],
+        "default": "dark"
       },
       {
         "type": "paragraph",

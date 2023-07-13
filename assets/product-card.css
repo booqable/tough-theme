@@ -128,15 +128,15 @@ bq-product-availability::part(available) {
 .palette-two .product-card {
   color: var(--color-third-2, #FFFFFF59);
   background: var(--background-primary-2, #0B1A26);
-  border: 1px solid var(--color-border-2, #FFFFFF26);
+  border: 1px solid var(--color-border-2, #FFFFFF47);
 }
 
 .palette-two .product-card__vision {
-  border-bottom: 1px solid var(--color-border-2, #FFFFFF26);
+  border-bottom: 1px solid var(--color-border-2, #FFFFFF47);
 }
 
 .palette-two .product-card__vision.no-image {
-  background: var(--color-image-placeholder-2, #FFFFFF26);
+  background: var(--color-image-placeholder-2, #FFFFFF47);
 }
 
 .palette-two .product-card__price-info {

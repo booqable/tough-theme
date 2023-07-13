@@ -74,13 +74,13 @@
 }
 
 .palette-two.announcement-bar__wrapper {
-  color: var(--color-accent-2, #FFFFFF);
-  background: var(--background-accent-2, #4284F5);
+  color: var(--color-accent-2, #0B1A26);
+  background: var(--background-accent-2, #F4B841);
 }
 
 .palette-two.announcement-bar__wrapper .fa,
 .palette-two.announcement-bar__wrapper .far {
-  color: var(--color-accent-2, #FFFFFF);
+  color: var(--color-accent-2, #0B1A26);
 }
 
 @media (min-width: 667px) {

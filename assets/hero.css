@@ -123,7 +123,7 @@
 }
 
 .palette-one .hero__vision-wrapper path {
-  fill: var(--color-primary, #FFFFFF);
+  fill: var(--color-primary, #0B1A26);
 }
 
 .palette-two.hero__wrapper {
@@ -152,7 +152,7 @@
 }
 
 .palette-two .hero__vision-wrapper path {
-  fill: var(--color-primary-2, #0B1A26);
+  fill: var(--color-primary-2, #FFFFFF);
 }
 
 @media (min-width: 992px) {

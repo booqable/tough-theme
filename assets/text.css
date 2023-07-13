@@ -46,7 +46,7 @@
 }
 
 .palette-one .text__tag {
-  color: var(--background-accent, #F4B841);
+  color: var(--color-outline, #F4B841);
 }
 
 .palette-one .text__title {
@@ -63,7 +63,7 @@
 }
 
 .palette-two .text__tag {
-  color: var(--background-accent-2, #4284F5);
+  color: var(--color-outline-2, #F4B841);
 }
 
 .palette-two .text__title {
@@ -71,7 +71,7 @@
 }
 
 .palette-two .text__bg-text {
-  color: var(--color-fourth-2, #FFFFFF26);
+  color: var(--color-fourth-2, #FFFFFF47);
 }
 
 @media (min-width: 768px) {

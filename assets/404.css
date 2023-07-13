@@ -65,7 +65,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(173.19deg, var(--color-primary, #0B1A26) 33.02%, var(--color-primary-00, #0B1A2600) 93.23%);
 }
 
 .error-404__background svg {
@@ -96,7 +95,7 @@
 }
 
 .palette-two .error-404__description b {
-  color: var(--color-outline-2, #4284F5);
+  color: var(--color-outline-2, #F4B841);
 }
 
 .palette-two .error-404__background::after {
