@@ -6,6 +6,7 @@
       "blocks": {},
       "block_order": [],
       "settings": {
+        "color_palette": "two",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
         "padding_top": "small",
@@ -48,6 +49,8 @@
       "settings": {
         "behavior": "multiple",
         "breadcrumbs_label": "products",
+        "color_overlay": "dark",
+        "color_palette": "one",
         "message_label": "Free shipping over $50",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
@@ -66,6 +69,7 @@
       "settings": {
         "button_label": "View all",
         "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -101,6 +105,7 @@
         "product_123452"
       ],
       "settings": {
+        "color_palette": "one",
         "limit": 6,
         "padding_bottom": "small",
         "padding_bottom_mobile": "medium",

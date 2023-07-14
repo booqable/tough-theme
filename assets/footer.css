@@ -129,12 +129,12 @@
 
 .palette-one .footer__menu-link:hover,
 .palette-one .footer__social .social-networks__link:hover {
-  color: var(--background-accent-hover, #F4B841CC);
+  color: var(--color-outline-hover, #F4B841CC);
 }
 
 .palette-one .footer__menu-link:active,
 .palette-one .footer__social .social-networks__link:active {
-  color: var(--background-accent-active, #F4B841BA);
+  color: var(--color-outline-active, #F4B841BA);
 }
 
 .palette-one .footer__bottom {
@@ -163,12 +163,12 @@
 
 .palette-two .footer__menu-link:hover,
 .palette-two .footer__social .social-networks__link:hover {
-  color: var(--background-accent-2-hover, #F4B841CC);
+  color: var(--color-outline-2-hover, #F4B841CC);
 }
 
 .palette-two .footer__menu-link:active,
 .palette-two .footer__social .social-networks__link:active {
-  color: var(--background-accent-2-active, #F4B841BA);
+  color: var(--color-outline-2-active, #F4B841BA);
 }
 
 .palette-two .footer__bottom {

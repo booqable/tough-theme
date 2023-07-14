@@ -82,21 +82,21 @@
         "id": "accent_background_2",
         "label": "Accent background",
         "info": "Used as a background of solid buttons, date picker, etc.",
-        "default": "#4284F5"
+        "default": "#F4B841"
       },
       {
         "type": "color",
         "id": "accent_color_2",
         "label": "Accent text",
         "info": "Used for text on top of the accent background",
-        "default": "#FFFFFF"
+        "default": "#0B1A26"
       },
       {
         "type": "color",
         "id": "accent_outline_2",
         "label": "Accent outline",
         "info": "Also used for accent text without background",
-        "default": "#4284F5"
+        "default": "#F4B841"
       }
     ]
   },

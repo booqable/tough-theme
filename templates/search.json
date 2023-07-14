@@ -7,6 +7,7 @@
       "block_order": [],
       "settings": {
         "button_label": "Browse products",
+        "color_palette": "two",
         "message": "No results found",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
@@ -23,6 +24,7 @@
       "blocks": {},
       "block_order": [],
       "settings": {
+        "color_palette": "one",
         "limit": 6,
         "grid": "three",
         "padding_bottom": "small",

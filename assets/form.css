@@ -172,7 +172,7 @@
 }
 
 .palette-one .form__info .success i {
-  color: var(--background-accent, #F4B841);
+  color: var(--color-outline, #F4B841);
 }
 
 .palette-one .form__info .error,
@@ -218,7 +218,7 @@
 }
 
 .palette-two .form__info .success i {
-  color: var(--background-accent-2, #F4B841);
+  color: var(--color-outline-2, #F4B841);
 }
 
 .palette-two .form__info .error,

@@ -8,6 +8,7 @@
       "settings": {
         "custom_description": "Lorem ipsum dolor sit amet.",
         "custom_title": "Collections",
+        "color_palette": "two",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",
@@ -25,6 +26,7 @@
         "bg_text": "Category",
         "button_label": "",
         "button_url": "",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -39,6 +41,8 @@
       "type": "list-collections",
       "settings": {
         "limit": 8,
+        "color_overlay": "dark",
+        "color_palette": "one",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "none",

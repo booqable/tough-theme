@@ -9,13 +9,13 @@
   padding-top: 16px;
 }
 
-.hero__container--bottom::before {
-  content: "";
+.hero__overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: calc(50% - 8px);
+  z-index: -1;
 }
 
 .hero__container {
@@ -102,7 +102,7 @@
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one .hero__container--bottom::before {
+.palette-one.hero__overlay {
   background: var(--background-primary, #FFFFFF);
 }
 
@@ -131,7 +131,7 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two .hero__container--bottom::before {
+.palette-two.hero__overlay {
   background: var(--background-primary-2, #0B1A26);
 }
 

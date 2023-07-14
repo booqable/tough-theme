@@ -67,6 +67,7 @@
       <div class="hero__container container">
         <bq-date-picker data-primary-color="{{ settings.accent_background }}"></bq-date-picker>
       </div>
+      <div class="hero__overlay"></div>
     </div>
   {%- endif -%}
 
@@ -88,6 +89,28 @@
     {%- endif -%}
   </div>
 </div>
+
+<script>
+  const setColor = () => {
+    const section = document.querySelector('.hero').nextElementSibling;
+
+    if (!section) return false;
+
+    const target = document.querySelector('.hero__overlay'),
+          children = [...section.children];
+
+    children.forEach(child => {
+      if (child.classList.contains('palette-one')) {
+        target.classList.add('palette-one')
+      } else if (child.classList.contains('palette-two')) {
+        target.classList.add('palette-two')
+      }
+    })
+  }
+
+  setTimeout(setColor, 250);
+
+</script>
 
 {% schema %}
   {
@@ -143,7 +166,7 @@
       {
         "type": "checkbox",
         "id": "show_bg",
-        "default": true,
+        "default": false,
         "label": "Show background image"
       },
       {
