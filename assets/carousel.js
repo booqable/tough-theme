@@ -41,6 +41,7 @@ class Carousel {
     };
 
     this.tablet = 992;
+    this.timer = 500;
   }
 
   init() {
@@ -61,20 +62,30 @@ class Carousel {
     this.count = this.block.querySelector(this.selector.count);
     this.timers = this.block.querySelectorAll(this.selector.timer);
     this.interval;
+    this.index;
+    this.start = 0;
+    this.end = 0;
+    this.touchstart = 0;
+    this.touchend = 0;
+    this.scrollTimer = null;
+    this.scrollArr = [];
   }
 
   events(e) {
     this.carouselInit();
     this.startTimer(e);
     this.pauseAutoRotate();
-    this.controls();
+    this.hideControls();
     this.hidePaginationDots();
 
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
+    document.addEventListener('wheel', this.touchpadSwipePoints.bind(this));
+    document.addEventListener('touchstart', this.screenSwipePoints.bind(this));
+    document.addEventListener('touchend', this.screenSwipePoints.bind(this));
     window.addEventListener('resize', this.hidePaginationDots.bind(this));
-    window.addEventListener('resize', this.controls.bind(this));
+    window.addEventListener('resize', this.hideControls.bind(this));
   }
 
   listener(arr, event, func) {
@@ -156,6 +167,8 @@ class Carousel {
   hidePaginationDots() {
     if (!this.dots) return false;
 
+    if (this.dots[0].classList.contains(this.classes.thumb)) return false;
+
     const client = this.wrap.clientWidth,
           scroll = this.wrap.scrollWidth,
           width = this.item.getBoundingClientRect().width;
@@ -201,7 +214,7 @@ class Carousel {
           isNext = target?.classList.contains(this.classes.next),
           isDot = target?.classList.contains(this.classes.dot);
 
-    if (!isPrev && !isNext && !isDot && !time  && time === 0) return false;
+    if (!isPrev && !isNext && !isDot && !time && time === 0) return false;
 
     const isFade = this.block.classList.contains(this.classes.fade),
           fullWidth = this.block.classList.contains(this.classes.full),
@@ -422,7 +435,7 @@ class Carousel {
     });
   }
 
-  controls() {
+  hideControls() {
     if (!this.navi && !this.pagi) return false;
 
     const clientX = this.wrap.clientWidth,
@@ -443,6 +456,166 @@ class Carousel {
         this.navi?.parentElement.classList.add(this.modifiers.indent);
       }
     }
+  }
+
+  // touchpoints detection on touch screens
+  screenSwipePoints(e) {
+    const target = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots,
+          left = this.wrap.scrollLeft;
+
+    if (!dots.length && !target) return false;
+
+    if (e.type === "touchstart") {
+      this.touchstart = e.changedTouches[0].screenX;
+      this.start = left
+    }
+
+    if (e.type === "touchend") {
+      this.touchend = e.changedTouches[0].screenX;
+        setTimeout(() => {
+          this.end = left
+
+          this.paginationIndex(undefined);
+        }, this.timer);
+    }
+  }
+
+  // touchpad touchpoints detection
+  touchpadSwipePoints(e) {
+    const target = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots,
+          index = this.getCurrentDot().index,
+          left = this.wrap.scrollLeft,
+          isFade = this.block.classList.contains(this.classes.fade),
+          isFull = target?.parentElement.classList.contains(this.classes.full);
+
+    if (!dots.length && !target && !index) return false;
+
+    let direction;
+
+    const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
+
+    if (delta === -1) {
+      if (!isFade) {
+        this.scrollArr.push(left)
+      } else {
+        if (isFull) {
+          this.scrollArr.push(delta)
+          direction = "left"
+        }
+      }
+    } else if (delta === 1) {
+      if (!isFade) {
+        this.scrollArr.push(left)
+      } else {
+        if (isFull) {
+          this.scrollArr.push(delta)
+          direction = "right"
+        }
+      }
+    }
+
+    const points = () => {
+      const first = this.scrollArr[0];
+      const last = this.scrollArr.pop();
+      let value;
+
+      if (!isFade && first > last || !isFade && first < last) {
+        this.touchstart = last;
+        this.touchend = first;
+        this.start = last;
+        this.end = first;
+
+        value = undefined;
+      }
+
+      if (isFade && first === -1 || isFade && first === 1) {
+        value = direction
+      }
+
+      this.paginationIndex(value);
+    }
+
+    window.clearTimeout(this.scrollTimer);
+
+    this.scrollTimer = setTimeout(() => {
+      points();
+
+      this.scrollArr = [];
+    }, 50);
+  }
+
+  // next dot index calculation for touchpad and touchscreens scrolling
+  paginationIndex(val) {
+    const left = this.wrap.scrollLeft,
+          width = this.item.getBoundingClientRect().width,
+          index = this.getCurrentDot().index,
+          dots = this.getCurrentDot().dots,
+          thumb = dots[0].classList.contains(this.classes.thumb),
+          size = dots.length,
+          isFade = this.block.classList.contains(this.classes.fade),
+          newIndex = Math.ceil(left / width),
+          leftDiff = this.end - this.start,
+          rightDiff = this.start - this.end;
+
+    let leftMove, rightMove;
+
+    if (val === "right") {
+      leftMove = true
+    } else if (val === "left") {
+      rightMove = true
+    } else {
+      leftMove = this.touchstart > this.touchend;
+      rightMove = this.touchstart < this.touchend;
+    }
+
+    switch (true) {
+      case leftMove:
+        if (!isFade && leftDiff > 20) {
+          this.index = newIndex + 1;
+
+          if (thumb) this.index -= 1
+        } else {
+          this.index = index >= size ? index : index + 1
+        }
+
+        break;
+
+      case rightMove:
+        if (!isFade && rightDiff > 20) {
+          if (left < width) {
+            this.index = 1
+          } else {
+            this.index = newIndex
+
+            if (thumb) this.index += 1
+          }
+        } else {
+          this.index = index <= 1 ? index : index - 1
+        }
+
+        break;
+    }
+
+    this.pagination(undefined, this.index);
+  }
+
+  // get the active dot index
+  getCurrentDot() {
+    let index = 1,
+        dots = [...this.dots];
+
+    dots = dots.filter(dot => {
+      return !dot.classList.contains(this.modifiers.hidden);
+    })
+
+    dots.forEach(dot => {
+      if (dot.classList.contains(this.modifiers.active))
+        index = parseInt(dot.getAttribute(this.data.index));
+    })
+
+    return {index, dots};
   }
 }
 
