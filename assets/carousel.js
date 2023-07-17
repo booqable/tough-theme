@@ -556,8 +556,8 @@ class Carousel {
           size = dots.length,
           isFade = this.block.classList.contains(this.classes.fade),
           newIndex = Math.ceil(left / width),
-          leftRatio = this.end - this.start,
-          rightRatio = this.start - this.end;
+          leftDiff = this.end - this.start,
+          rightDiff = this.start - this.end;
 
     let leftMove, rightMove;
 
@@ -572,7 +572,7 @@ class Carousel {
 
     switch (true) {
       case leftMove:
-        if (!isFade && leftRatio > 20) {
+        if (!isFade && leftDiff > 20) {
           this.index = newIndex + 1;
 
           if (thumb) this.index -= 1
@@ -583,7 +583,7 @@ class Carousel {
         break;
 
       case rightMove:
-        if (!isFade && rightRatio > 20) {
+        if (!isFade && rightDiff > 20) {
           if (left < width) {
             this.index = 1
           } else {
