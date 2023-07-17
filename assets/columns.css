@@ -10,36 +10,53 @@
   padding-bottom: var(--padding-bottom-mobile, 70px);
 }
 
-.columns__columns {
+.columns__grid {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
 }
 
-.columns__col {
+.columns__item {
   width: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
   border: 1px solid transparent;
+  position: relative;
 }
 
 .columns__image-wrapper {
-  flex: 0 0 34px;
-  overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
-.columns__image-wrapper svg,
 .columns__image-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
+  max-width: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.columns__icon-wrapper {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+}
+
+.columns__icon-wrapper i {
+  font-size: 34px;
+  line-height: 1;
 }
 
 .columns__text {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 .columns__text:not(:first-child) {
   padding-top: 28px;
+}
+
+.columns__icon-wrapper + .columns__text:not(:first-child) {
+  padding-top: 56px;
 }
 
 .columns__title {
@@ -51,34 +68,28 @@
   padding: 0 0 25px;
 }
 
-.columns__email,
-.columns__phone,
-.columns__address address {
+.columns__label,
+.columns__button {
   font-size: 14px;
-  font-style: normal;
   font-weight: var(--font-weight-semibold, 600);
   letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
-.columns__email:hover,
-.columns__phone:hover {
-  opacity: 0.7;
+  line-height: var(--line-height-sm, 1.2);
 }
 
 .palette-one.columns__wrapper {
   background: var(--color-fourth, #0B1A2626);
 }
 
-.palette-one .columns__col {
+.palette-one .columns__item {
   color: var(--color-primary, #0B1A26);
   background: var(--background-primary, #FFFFFF);
   border-color: var(--color-fourth, #0B1A2626);
 }
 
-.palette-one .columns__image-wrapper path {
-  fill: var(--color-outline, #F4B841);
+.palette-one .columns__icon-wrapper i {
+  color: var(--color-outline, #F4B841);
 }
 
 .palette-one .columns__description {
@@ -89,14 +100,14 @@
   background: var(--background-primary-2-60, #0B1A2699);
 }
 
-.palette-two .columns__col {
+.palette-two .columns__item {
   color: var(--color-primary-2, #FFFFFF);
   background: var(--background-primary-2, #0B1A26);
   border-color: var(--color-fourth-2, #FFFFFF47);
 }
 
-.palette-two .columns__image-wrapper path {
-  fill: var(--color-outline-2, #F4B841);
+.palette-two .columns__icon-wrapper i {
+  color: var(--color-outline-2, #F4B841);
 }
 
 .palette-two .columns__description {
@@ -112,13 +123,13 @@
     padding-bottom: var(--padding-bottom, 112px);
   }
 
-  .columns__columns {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .columns__grid {
+    grid-template-columns: repeat(var(--grid-element, 3), minmax(280px, 1fr));
   }
 }
 
 @media (min-width: 1200px) {
-  .columns__columns {
+  .columns__grid {
     gap: 48px;
   }
 }
