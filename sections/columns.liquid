@@ -1,7 +1,7 @@
 {%- assign blocks = section.blocks -%}
 
 {%- if blocks.size > 0 -%}
-  {{ "contacts.css" | asset_url | stylesheet_tag }}
+  {{ "columns.css" | asset_url | stylesheet_tag }}
 
   {%- assign color_palette         = section.settings.color_palette -%}
   {%- assign padding_top           = section.settings.padding_top -%}
@@ -57,9 +57,9 @@
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
 
-  <div class="contacts__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} contacts__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} contacts__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
-    <div class="contacts__container container">
-      <div class="contacts__columns">
+  <div class="columns__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} columns__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} columns__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+    <div class="columns__container container">
+      <div class="columns__columns">
         {%- for block in blocks -%}
           {%- assign email_title          = block.settings.email_title -%}
           {%- assign email_text           = block.settings.email_text -%}
@@ -76,35 +76,35 @@
 
           {%- case block.type -%}
             {%- when 'email' -%}
-              <div class="contacts__col" id="{{- block.id -}}">
+              <div class="columns__col" id="{{- block.id -}}">
                 {%- if email_image.url != blank -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'image',
                       image: email_image,
                       loading: 'lazy',
-                      class: 'contacts__image',
+                      class: 'columns__image',
                       size: 'xs'
                     -%}
                   </div>
                 {%- else -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'icon-mail' -%}
                   </div>
                 {%- endif -%}
 
                 {%- if email_title != blank or email_text != blank or email != blank -%}
-                  <div class="contacts__text">
+                  <div class="columns__text">
                     {%- if email_title != blank -%}
-                      <h4 class="contacts__title">{{- email_title -}}</h4>
+                      <h4 class="columns__title">{{- email_title -}}</h4>
                     {%- endif -%}
 
                     {%- if email_text != blank -%}
-                      <div class="contacts__description">{{- email_text -}}</div>
+                      <div class="columns__description">{{- email_text -}}</div>
                     {%- endif -%}
 
                     {%- if email != blank -%}
-                      <div class="contacts__email">
-                        <a href="mailto:{{- email | strip -}}" class="contacts__email-link">{{- email -}}</a>
+                      <div class="columns__email">
+                        <a href="mailto:{{- email | strip -}}" class="columns__email-link">{{- email -}}</a>
                       </div>
                     {%- endif -%}
                   </div>
@@ -112,35 +112,35 @@
               </div>
 
             {%- when 'phone' -%}
-              <div class="contacts__col" id="{{- block.id -}}">
+              <div class="columns__col" id="{{- block.id -}}">
                 {%- if phone_image.url != blank -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'image',
                       image: phone_image,
                       loading: 'lazy',
-                      class: 'contacts__image',
+                      class: 'columns__image',
                       size: 'xs'
                     -%}
                   </div>
                 {%- else -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'icon-phone-big' -%}
                   </div>
                 {%- endif -%}
 
                 {%- if phone_title != blank or phone_text != blank or phone != blank -%}
-                  <div class="contacts__text">
+                  <div class="columns__text">
                     {%- if phone_title != blank -%}
-                      <h4 class="contacts__title">{{- phone_title -}}</h4>
+                      <h4 class="columns__title">{{- phone_title -}}</h4>
                     {%- endif -%}
 
                     {%- if phone_text != blank -%}
-                      <div class="contacts__description">{{- phone_text -}}</div>
+                      <div class="columns__description">{{- phone_text -}}</div>
                     {%- endif -%}
 
                     {%- if phone != blank -%}
-                      <div class="contacts__phone">
-                        <a href="tel:{{- phone | strip -}}" class="contacts__phone-link">{{- phone -}}</a>
+                      <div class="columns__phone">
+                        <a href="tel:{{- phone | strip -}}" class="columns__phone-link">{{- phone -}}</a>
                       </div>
                     {%- endif -%}
                   </div>
@@ -148,34 +148,34 @@
               </div>
 
             {%- when 'address' -%}
-              <div class="contacts__col" id="{{- block.id -}}">
+              <div class="columns__col" id="{{- block.id -}}">
                 {%- if address_image.url != blank -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'image',
                       image: address_image,
                       loading: 'lazy',
-                      class: 'contacts__image',
+                      class: 'columns__image',
                       size: 'xs'
                     -%}
                   </div>
                 {%- else -%}
-                  <div class="contacts__image-wrapper">
+                  <div class="columns__image-wrapper">
                     {%- render 'icon-pin' -%}
                   </div>
                 {%- endif -%}
 
                 {%- if address_title != blank or address_text != blank or address != blank -%}
-                  <div class="contacts__text">
+                  <div class="columns__text">
                     {%- if address_title != blank -%}
-                      <h4 class="contacts__title">{{- address_title -}}</h4>
+                      <h4 class="columns__title">{{- address_title -}}</h4>
                     {%- endif -%}
 
                     {%- if address_text != blank -%}
-                      <div class="contacts__description">{{- address_text -}}</div>
+                      <div class="columns__description">{{- address_text -}}</div>
                     {%- endif -%}
 
                     {%- if address != blank -%}
-                      <div class="contacts__address">
+                      <div class="columns__address">
                         <address>{{- address -}}</address>
                       </div>
                     {%- endif -%}
@@ -191,15 +191,14 @@
 
 {% schema %}
   {
-    "name": "Contacts",
+    "name": "Columns",
     "tag": "section",
-    "class": "contacts",
-    "description": "Display a section of contacts",
+    "class": "columns",
+    "description": "Display a section of columns",
     "blocks":[
       {
-        "type": "email",
-        "name": "Email",
-        "limit": 1,
+        "type": "icon",
+        "name": "Icon",
         "settings": [
           {
             "type": "header",
@@ -207,37 +206,99 @@
           },
           {
             "type": "paragraph",
-            "content": "Below you can change the content of block"
+            "content": "Below you can change the content of column"
+          },
+          {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+              {
+                "value": "empty",
+                "label": "No icon"
+              },
+              {
+                "value": "address",
+                "label": "Address"
+              },
+              {
+                "value": "envelope",
+                "label": "Envelope"
+              },
+              {
+                "value": "map_marker",
+                "label": "Map marker"
+              },
+              {
+                "value": "minus",
+                "label": "Minus"
+              },
+              {
+                "value": "phone",
+                "label": "Phone"
+              },
+              {
+                "value": "plus",
+                "label": "Plus"
+              },
+              {
+                "value": "tag",
+                "label": "Tag"
+              }
+            ],
+            "default": "phone"
           },
           {
             "type": "text",
-            "id": "email_title",
+            "id": "title",
             "label": "Title",
-            "default": "Email"
+            "default": "Title"
           },
           {
             "type": "contentEditor",
-            "id": "email_text",
+            "id": "text",
             "label": "Description",
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           {
             "type": "text",
-            "id": "email",
-            "label": "Email",
-            "default": "hello@info.com"
+            "id": "button_label",
+            "label": "Button abel"
           },
           {
-            "type": "image_picker",
-            "id": "email_image",
-            "label": "Image"
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
+          {
+            "type": "header",
+            "content": "Advanced settings"
+          },
+          {
+            "type": "paragraph",
+            "content": "Below you can change the appearance of column"
+          },
+          {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "button",
+                "label": "Button"
+              },
+              {
+                "value": "link",
+                "label": "Link"
+              }
+            ],
+            "default": "link"
           }
         ]
       },
       {
-        "type": "phone",
-        "name": "Phone",
-        "limit": 1,
+        "type": "image",
+        "name": "Image",
         "settings": [
           {
             "type": "header",
@@ -245,73 +306,63 @@
           },
           {
             "type": "paragraph",
-            "content": "Below you can change the content of block"
+            "content": "Below you can change the content of column"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
           },
           {
             "type": "text",
-            "id": "phone_title",
+            "id": "title",
             "label": "Title",
-            "default": "Phone"
+            "default": "Title"
           },
           {
             "type": "contentEditor",
-            "id": "phone_text",
+            "id": "text",
             "label": "Description",
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           {
             "type": "text",
-            "id": "phone",
-            "label": "Phone",
-            "default": "+1 (555) 000-0000"
+            "id": "button_label",
+            "label": "Button abel"
           },
           {
-            "type": "image_picker",
-            "id": "phone_image",
-            "label": "Image"
-          }
-        ]
-      },
-      {
-        "type": "address",
-        "name": "Address",
-        "limit": 1,
-        "settings": [
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          },
           {
             "type": "header",
-            "content": "Basic settings"
+            "content": "Advanced settings"
           },
           {
             "type": "paragraph",
-            "content": "Below you can change the content of block"
+            "content": "Below you can change the appearance of column"
           },
           {
-            "type": "text",
-            "id": "address_title",
-            "label": "Title",
-            "default": "Office"
-          },
-          {
-            "type": "contentEditor",
-            "id": "address_text",
-            "label": "Description",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
-          },
-          {
-            "type": "text",
-            "id": "address",
-            "label": "Address",
-            "default": "123 Sample St, London Eng 2000 UK"
-          },
-          {
-            "type": "image_picker",
-            "id": "address_image",
-            "label": "Image"
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "button",
+                "label": "Button"
+              },
+              {
+                "value": "link",
+                "label": "Link"
+              }
+            ],
+            "default": "link"
           }
         ]
       }
     ],
-    "max_blocks": 3,
+    "max_blocks": 9,
     "settings": [
       {
         "type": "header",
@@ -340,6 +391,22 @@
       {
         "type": "header",
         "content": "Desktop settings"
+      },
+      {
+        "type": "select",
+        "id": "grid",
+        "label": "Grid",
+        "options": [
+          {
+            "value": "two",
+            "label": "2 columns"
+          },
+          {
+            "value": "three",
+            "label": "3 columns"
+          }
+        ],
+        "default": "three"
       },
       {
         "type": "select",

@@ -41,8 +41,8 @@
       },
       "disabled": null
     },
-    "contacts": {
-      "type": "contacts",
+    "columns": {
+      "type": "columns",
       "blocks": {
         "email": {
           "type": "email",
@@ -155,7 +155,7 @@
   },
   "order": [
     "contact-form",
-    "contacts",
+    "columns",
     "text",
     "offices"
   ]

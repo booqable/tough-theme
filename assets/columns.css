@@ -1,21 +1,21 @@
-.contacts__wrapper {
+.columns__wrapper {
   line-height: var(--line-height-lg, 1.5);
 }
 
-.contacts__wrapper--padding-top {
+.columns__wrapper--padding-top {
   padding-top: var(--padding-top-mobile, 70px);
 }
 
-.contacts__wrapper--padding-bottom {
+.columns__wrapper--padding-bottom {
   padding-bottom: var(--padding-bottom-mobile, 70px);
 }
 
-.contacts__columns {
+.columns__columns {
   display: grid;
   gap: 16px;
 }
 
-.contacts__col {
+.columns__col {
   width: 100%;
   padding: 24px;
   display: flex;
@@ -23,37 +23,37 @@
   border: 1px solid transparent;
 }
 
-.contacts__image-wrapper {
+.columns__image-wrapper {
   flex: 0 0 34px;
   overflow: hidden;
 }
 
-.contacts__image-wrapper svg,
-.contacts__image-wrapper img {
+.columns__image-wrapper svg,
+.columns__image-wrapper img {
   max-height: 100%;
   max-width: 100%;
 }
 
-.contacts__text {
+.columns__text {
   flex: 1 0 auto;
 }
 
-.contacts__text:not(:first-child) {
+.columns__text:not(:first-child) {
   padding-top: 28px;
 }
 
-.contacts__title {
+.columns__title {
   color: inherit;
   margin-bottom: 15px;
 }
 
-.contacts__description {
+.columns__description {
   padding: 0 0 25px;
 }
 
-.contacts__email,
-.contacts__phone,
-.contacts__address address {
+.columns__email,
+.columns__phone,
+.columns__address address {
   font-size: 14px;
   font-style: normal;
   font-weight: var(--font-weight-semibold, 600);
@@ -62,63 +62,63 @@
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.contacts__email:hover,
-.contacts__phone:hover {
+.columns__email:hover,
+.columns__phone:hover {
   opacity: 0.7;
 }
 
-.palette-one.contacts__wrapper {
+.palette-one.columns__wrapper {
   background: var(--color-fourth, #0B1A2626);
 }
 
-.palette-one .contacts__col {
+.palette-one .columns__col {
   color: var(--color-primary, #0B1A26);
   background: var(--background-primary, #FFFFFF);
   border-color: var(--color-fourth, #0B1A2626);
 }
 
-.palette-one .contacts__image-wrapper path {
+.palette-one .columns__image-wrapper path {
   fill: var(--color-outline, #F4B841);
 }
 
-.palette-one .contacts__description {
+.palette-one .columns__description {
   color: var(--color-secondary, #4E5D78);
 }
 
-.palette-two.contacts__wrapper {
+.palette-two.columns__wrapper {
   background: var(--background-primary-2-60, #0B1A2699);
 }
 
-.palette-two .contacts__col {
+.palette-two .columns__col {
   color: var(--color-primary-2, #FFFFFF);
   background: var(--background-primary-2, #0B1A26);
   border-color: var(--color-fourth-2, #FFFFFF47);
 }
 
-.palette-two .contacts__image-wrapper path {
+.palette-two .columns__image-wrapper path {
   fill: var(--color-outline-2, #F4B841);
 }
 
-.palette-two .contacts__description {
+.palette-two .columns__description {
   color: var(--color-secondary-2, #4E5D78);
 }
 
 @media (min-width: 992px) {
-  .contacts__wrapper--padding-top {
+  .columns__wrapper--padding-top {
     padding-top: var(--padding-top, 112px);
   }
 
-  .contacts__wrapper--padding-bottom {
+  .columns__wrapper--padding-bottom {
     padding-bottom: var(--padding-bottom, 112px);
   }
 
-  .contacts__columns {
+  .columns__columns {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
 @media (min-width: 1200px) {
-  .contacts__columns {
+  .columns__columns {
     gap: 48px;
   }
 }
