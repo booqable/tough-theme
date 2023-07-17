@@ -23,6 +23,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
   scroll-padding: 0 16px 0 0;
   scroll-behavior: smooth !important;
   -ms-overflow-style: none;
@@ -144,6 +145,11 @@
 .carousel__fluid .carousel__item,
 .carousel__fluid .carousel__item:last-child {
   height: 100%;
+}
+
+.carousel__fluid .carousel__item:last-child {
+  min-width: var(--slide-width-mobile);
+  max-width: var(--slide-width-mobile);
 }
 
 .carousel__fluid .carousel__item:not(:first-child) {

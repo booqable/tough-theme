@@ -368,6 +368,7 @@
 }
 
 .product-main__modal .product-main__popup .product-main__modal-close {
+  top: var(--horizontal-padding, 16px);
   left: auto;
   right: var(--horizontal-padding);
   width: 40px;
@@ -772,6 +773,7 @@
   }
 
   .product-main__modal .product-main__popup .product-main__modal-close {
+    top: 0;
     right: 0;
   }
 
