@@ -22,77 +22,120 @@
   {% comment %} Color palette related styles {% endcomment %}
   <style>
     :root {
+      {%- if settings.background != blank -%}
+        --background-primary: {{- settings.background -}};
+        --background-primary-00: {{- settings.background | append: "00" -}};
+        --background-primary-10: {{- settings.background | append: "1A" -}};
+        --background-primary-45: {{- settings.background | append: "73" -}};
+        --background-primary-60: {{- settings.background | append: "99" -}};
+      {%- endif -%}
+
       {%- if settings.primary_color != blank -%}
-        --color-accent-background: {{- settings.primary_color -}};
-        --color-accent-background-00: {{- settings.primary_color | append: "00" -}};
-        --color-accent-secondary-background-hover: {{- settings.primary_color | append: "52" -}};
-        --color-accent-secondary-background-active: {{- settings.primary_color | append: "8F" -}};
+        --color-primary: {{- settings.primary_color -}};
+        --color-primary-30: {{- settings.primary_color | append: "4D" -}};
+        --color-primary-45: {{- settings.primary_color | append: "73" -}};
+        --color-primary-80: {{- settings.primary_color | append: "CC" -}};
+        --color-primary-hover: {{- settings.primary_color | append: "52" -}};
+        --color-primary-active: {{- settings.primary_color | append: "8F" -}};
+        --color-third: {{- settings.primary_color | append: "59"-}};
+        --color-fourth: {{- settings.primary_color | append: "26" -}};
+        --color-image-placeholder: {{- settings.primary_color | append: "26" -}};
+        --color-placeholder: {{- settings.primary_color | append: "59"  -}};
+        --color-border: {{- settings.primary_color | append: "26" -}};
+      {%- endif -%}
+
+      {%- if settings.secondary_color != blank -%}
+        --color-secondary: {{- settings.secondary_color -}};
+      {%- endif -%}
+
+      {%- if settings.accent_background != blank -%}
+        --background-accent: {{- settings.accent_background -}};
+        --background-accent-00: {{- settings.accent_background | append: "00" -}};
+        --background-accent-hover: {{- settings.accent_background | append: "CC" -}};
+        --background-accent-active: {{- settings.accent_background | append: "BA" -}};
+        --background-accent-secondary-hover: {{- settings.accent_background | append: "52" -}};
+        --background-accent-secondary-active: {{- settings.accent_background | append: "8F" -}};
       {%- else -%}
-        --color-accent-background: {{- branding_color -}};
-        --color-accent-background-00: {{- branding_color | append: "00" -}};
-        --color-accent-secondary-background-hover: {{- branding_color | append: "52" -}};
-        --color-accent-secondary-background-active: {{- branding_color | append: "8F" -}};
+        --background-accent: {{- branding_color -}};
+        --background-accent-00: {{- branding_color | append: "00" -}};
+        --background-accent-hover: {{- branding_color | append: "CC" -}};
+        --background-accent-active: {{- branding_color | append: "BA" -}};
+        --background-accent-secondary-hover: {{- branding_color | append: "52" -}};
+        --background-accent-secondary-active: {{- branding_color | append: "8F" -}};
       {%- endif -%}
 
-      {%- if settings.primary_color_hover != blank -%}
-        --color-accent-background-hover: {{- settings.primary_color_hover -}};
+      {%- if settings.accent_color != blank -%}
+        --color-accent: {{- settings.accent_color -}};
       {%- else -%}
-        --color-accent-background-hover: {{- branding_color | append: "CC" -}};
+        --color-accent: {%- if settings.primary_color != blank -%}{{- settings.primary_color -}}{%- endif -%};
       {%- endif -%}
 
-      {%- if settings.primary_color_active != blank -%}
-        --color-accent-background-active: {{- settings.primary_color_active -}};
+      {%- if settings.accent_outline != blank -%}
+        --color-outline: {{- settings.accent_outline -}};
+        --color-outline-hover: {{- settings.accent_outline | append: "CC" -}};
+        --color-outline-active: {{- settings.accent_outline | append: "BA" -}};
       {%- else -%}
-        --color-accent-background-active: {{- branding_color | append: "A6" -}};
+        --color-outline: {{- branding_color -}};
+        --color-outline-hover: {{- branding_color | append: "CC" -}};
+        --color-outline-active: {{- branding_color | append: "BA" -}};
       {%- endif -%}
 
-      {%- if settings.accent_foreground_color != blank -%}
-        --color-accent-foreground: {{- settings.accent_foreground_color -}};
+      {%- if settings.background_2 != blank -%}
+        --background-primary-2: {{- settings.background_2 -}};
+        --background-primary-2-00: {{- settings.background_2 | append: "00" -}};
+        --background-primary-2-10: {{- settings.background_2 | append: "1A" -}};
+        --background-primary-2-45: {{- settings.background_2 | append: "73" -}};
+        --background-primary-2-60: {{- settings.background_2 | append: "99" -}};
       {%- endif -%}
 
-      {%- if settings.primary_background_color != blank -%}
-        --color-primary-background: {{- settings.primary_background_color -}};
-        --color-primary-background-08: {{- settings.primary_background_color | append: "14" -}};
-        --color-primary-background-20: {{- settings.primary_background_color | append: "33" -}};
-        --color-primary-background-60: {{- settings.primary_background_color | append: "99" -}};
-        --color-primary-background-hover: {{- settings.primary_background_color | append: "52" -}};
-        --color-primary-background-active: {{- settings.primary_background_color | append: "8F" -}};
+      {%- if settings.primary_color_2 != blank -%}
+        --color-primary-2: {{- settings.primary_color_2 -}};
+        --color-primary-2-30: {{- settings.primary_color_2 | append: "4D" -}};
+        --color-primary-2-45: {{- settings.primary_color_2 | append: "73" -}};
+        --color-primary-2-80: {{- settings.primary_color_2 | append: "CC" -}};
+        --color-primary-2-hover: {{- settings.primary_color_2 | append: "52" -}};
+        --color-primary-2-active: {{- settings.primary_color_2 | append: "8F" -}};
+        --color-third-2: {{- settings.primary_color_2 | append: "59"-}};
+        --color-fourth-2: {{- settings.primary_color_2 | append: "47" -}};
+        --color-image-placeholder-2: {{- settings.primary_color_2 | append: "47" -}};
+        --color-placeholder-2: {{- settings.primary_color_2 | append: "59"  -}};
+        --color-border-2: {{- settings.primary_color_2 | append: "47" -}};
       {%- endif -%}
 
-      {%- if settings.primary_foreground_color != blank -%}
-        --color-primary-foreground: {{- settings.primary_foreground_color -}};
-        --color-primary-foreground-00: {{- settings.primary_foreground_color | append: "00" -}};
-        --color-primary-foreground-10: {{- settings.primary_foreground_color | append: "1A" -}};
-        --color-primary-foreground-30: {{- settings.primary_foreground_color | append: "4D" -}};
-        --color-primary-foreground-45: {{- settings.primary_foreground_color | append: "73" -}};
-        --color-primary-foreground-80: {{- settings.primary_foreground_color | append: "CC" -}};
+      {%- if settings.secondary_color_2 != blank -%}
+        --color-secondary-2: {{- settings.secondary_color_2 -}};
       {%- endif -%}
 
-      {%- if settings.secondary_foreground_color != blank -%}
-        --color-secondary-foreground: {{- settings.secondary_foreground_color -}};
-      {%- endif -%}
-
-      {%- if settings.third_foreground_color != blank -%}
-        --color-third-foreground: {{- settings.third_foreground_color -}};
-      {%- endif -%}
-
-      {%- if settings.fourth_foreground_color != blank -%}
-        --color-fourth-foreground: {{- settings.fourth_foreground_color -}};
-        --color-image-placeholder: {{- settings.fourth_foreground_color -}};
-      {%- endif -%}
-
-      {%- if settings.link_color != blank -%}
-        --color-link: {{- settings.link_color -}};
+      {%- if settings.accent_background_2 != blank -%}
+        --background-accent-2: {{- settings.accent_background_2 -}};
+        --background-accent-2-00: {{- settings.accent_background_2 | append: "00" -}};
+        --background-accent-2-hover: {{- settings.accent_background_2 | append: "CC" -}};
+        --background-accent-2-active: {{- settings.accent_background_2 | append: "BA" -}};
+        --background-accent-secondary-2-hover: {{- settings.accent_background_2 | append: "52" -}};
+        --background-accent-secondary-2-active: {{- settings.accent_background_2 | append: "8F" -}};
       {%- else -%}
-        --color-link: {{- branding_color -}};
+        --background-accent-2: {{- branding_color -}};
+        --background-accent-2-00: {{- branding_color | append: "00" -}};
+        --background-accent-2-hover: {{- branding_color | append: "CC" -}};
+        --background-accent-2-active: {{- branding_color | append: "BA" -}};
+        --background-accent-secondary-2-hover: {{- branding_color | append: "52" -}};
+        --background-accent-secondary-2-active: {{- branding_color | append: "8F" -}};
       {%- endif -%}
 
-      {%- if settings.placeholder_color != blank -%}
-        --color-placeholder: {{- settings.placeholder_color -}};
+      {%- if settings.accent_color_2 != blank -%}
+        --color-accent-2: {{- settings.accent_color_2 -}};
+      {%- else -%}
+        --color-accent-2: {%- if settings.primary_color_2 != blank -%}{{- settings.primary_color_2 -}}{%- endif -%};
       {%- endif -%}
 
-      {%- if settings.border_color != blank -%}
-        --color-border: {{- settings.border_color -}};
+      {%- if settings.accent_outline_2 != blank -%}
+        --color-outline-2: {{- settings.accent_outline_2 -}};
+        --color-outline-2-hover: {{- settings.accent_outline_2 | append: "CC" -}};
+        --color-outline-2-active: {{- settings.accent_outline_2 | append: "BA" -}};
+      {%- else -%}
+        --color-outline-2: {{- branding_color -}};
+        --color-outline-2-hover: {{- branding_color | append: "CC" -}};
+        --color-outline-2-active: {{- branding_color | append: "BA" -}};
       {%- endif -%}
 
       {% if settings.heading_font != blank %}

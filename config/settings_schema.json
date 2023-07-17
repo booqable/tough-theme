@@ -9,95 +9,94 @@
     "name": "Colors",
     "settings": [
       {
+        "type": "paragraph",
+        "content": "Note: If the accent colors are not set the company branding color will be applied instead"
+      },
+      {
         "type": "header",
-        "content": "Basic colors"
+        "content": "Color set 1"
       },
       {
         "type": "color",
-        "id": "primary_background_color",
-        "label": "Primary background color",
-        "info": "Primary background color for the store",
+        "id": "background",
+        "label": "Background",
         "default": "#FFFFFF"
       },
       {
         "type": "color",
-        "id": "primary_foreground_color",
-        "label": "Primary foreground color",
-        "info": "For text used over the primary background color",
+        "id": "primary_color",
+        "label": "Primary text",
         "default": "#0B1A26"
       },
       {
         "type": "color",
-        "id": "secondary_foreground_color",
-        "label": "Secondary foreground color",
-        "info": "To highlight individual elements of text. Used over the primary background color",
+        "id": "secondary_color",
+        "label": "Secondary text",
         "default": "#4E5D78"
       },
       {
         "type": "color",
-        "id": "third_foreground_color",
-        "label": "Third foreground color",
-        "info": "To highlight individual elements of text. Used over the primary background color",
-        "default": "#B2B4B8"
+        "id": "accent_background",
+        "label": "Accent background",
+        "info": "Used as a background of solid buttons, date picker, etc.",
+        "default": "#F4B841"
       },
       {
         "type": "color",
-        "id": "fourth_foreground_color",
-        "label": "Fourth foreground color",
-        "info": "To highlight individual elements of text that are in the background",
-        "default": "#E1E4E8"
+        "id": "accent_color",
+        "label": "Accent text",
+        "info": "Used for text on top of the accent background",
+        "default": "#0B1A26"
+      },
+      {
+        "type": "color",
+        "id": "accent_outline",
+        "label": "Accent outline",
+        "info": "Also used for accent text without background",
+        "default": "#F4B841"
       },
       {
         "type": "header",
-        "content": "UI elements colors"
+        "content": "Color set 2"
       },
       {
         "type": "color",
-        "id": "primary_color",
-        "label": "Accent background color",
-        "info": "Background for solid buttons, date picker, shopping cart, etc.\n\n Note: If the color is not set the company branding color will be applied.",
-        "default": "#F4B841"
-      },
-      {
-        "type": "color",
-        "id": "primary_color_hover",
-        "label": "Accent background color on hover state",
-        "info": "Background for solid buttons, date picker, shopping cart, etc. on hover.\n\n Note: If the color is not set the company branding color will be applied.",
-        "default": "#E5AD3D"
-      },
-      {
-        "type": "color",
-        "id": "primary_color_active",
-        "label": "Accent background color on active state",
-        "info": "Background for solid buttons, date picker, shopping cart, etc. on click.\n\n Note: If the color is not set the company branding color will be applied.",
-        "default": "#D6A239"
-      },
-      {
-        "type": "color",
-        "id": "accent_foreground_color",
-        "label": "Accent foreground color",
-        "info": "For text used over the accent background color",
+        "id": "background_2",
+        "label": "Background",
         "default": "#0B1A26"
       },
       {
         "type": "color",
-        "id": "link_color",
-        "label": "Links color",
-        "info": "For text links and non-solid buttons",
+        "id": "primary_color_2",
+        "label": "Primary text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color_2",
+        "label": "Secondary text",
+        "default": "#E1E4E8"
+      },
+      {
+        "type": "color",
+        "id": "accent_background_2",
+        "label": "Accent background",
+        "info": "Used as a background of solid buttons, date picker, etc.",
         "default": "#F4B841"
       },
       {
         "type": "color",
-        "id": "placeholder_color",
-        "label": "Placeholders color",
-        "info": "For placeholders of input fields",
-        "default": "#4E5D78"
+        "id": "accent_color_2",
+        "label": "Accent text",
+        "info": "Used for text on top of the accent background",
+        "default": "#0B1A26"
       },
       {
         "type": "color",
-        "id": "border_color",
-        "label": "Borders color",
-        "default": "#E1E4E8"
+        "id": "accent_outline_2",
+        "label": "Accent outline",
+        "info": "Also used for accent text without background",
+        "default": "#F4B841"
       }
     ]
   },

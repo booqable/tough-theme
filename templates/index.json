@@ -23,6 +23,7 @@
         "slide"
       ],
       "settings": {
+        "color_overlay": "dark",
         "effect": "slide",
         "height": "large",
         "limit": 6,
@@ -40,6 +41,7 @@
       "blocks": {},
       "block_order": [],
       "settings": {
+        "color_palette": "two",
         "title": "Check availability:",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
@@ -85,6 +87,7 @@
         "logo_478118"
       ],
       "settings": {
+        "color_palette": "two",
         "title": "Used by the world's most average companies",
         "text_position": "left",
         "text_position_mobile": "center",
@@ -103,6 +106,7 @@
         "bg_text": "Category",
         "button_label": "",
         "button_url": "",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -144,6 +148,8 @@
         "collection_535502"
       ],
       "settings": {
+        "color_overlay": "dark",
+        "color_palette": "one",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "none",
@@ -158,6 +164,7 @@
       "settings": {
         "button_1": "Button",
         "button_2": "Button",
+        "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
         "image_position": "right",
         "margin_top": "none",
@@ -177,6 +184,7 @@
       "settings": {
         "button_label": "View all",
         "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -225,6 +233,7 @@
       ],
       "settings": {
         "limit": 6,
+        "color_palette": "one",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "none",
@@ -244,6 +253,7 @@
         "bg_text": "How does it work",
         "button_label": "",
         "button_url": "",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -294,6 +304,7 @@
         "block_535502"
       ],
       "settings": {
+        "color_palette": "one",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
         "padding_top": "none",
@@ -309,6 +320,7 @@
         "bg_text": "News & articles",
         "button_label": "",
         "button_url": "",
+        "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "none",
         "padding_bottom_mobile": "none",
@@ -360,6 +372,7 @@
       ],
       "settings": {
         "button_label": "See all Articles",
+        "color_palette": "one",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "none",
@@ -404,6 +417,7 @@
       "settings": {
         "behavior": "multiple",
         "bg_text": "FAQ",
+        "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
@@ -420,6 +434,7 @@
       "settings": {
         "button_1": "Button",
         "button_2": "Button",
+        "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",

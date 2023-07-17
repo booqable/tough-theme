@@ -17,6 +17,14 @@
   min-width: auto;
 }
 
+.palette-one.search__wrapper {
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-two.search__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+}
+
 @media (min-width: 768px) {
   .search-results {
     justify-content: start;

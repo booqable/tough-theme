@@ -24,11 +24,6 @@
       padding: 30px 0 26px;
       font-size: 14px;
       line-height: var(--line-height-xs, 1);
-      color: var(--color-third-foreground, #B4B6B8);
-    }
-
-    .breadcrumbs path {
-      fill: var(--color-primary-foreground, #0B1A26);
     }
 
     .breadcrumbs__separator {
@@ -37,15 +32,42 @@
       margin: 0 12px;
     }
 
-    .breadcrumbs a:hover {
-      color: var(--color-primary-foreground, #0B1A26);
-    }
-
     .breadcrumbs__name {
-      color: var(--color-accent-background, #F4B841);
       font-weight: var(--font-weight-semibold, 600);
       display: inline-block;
       vertical-align: top;
+    }
+
+    .palette-one .breadcrumbs {
+      color: var(--color-third, #0B1A2659);
+    }
+
+    .palette-one .breadcrumbs path {
+      fill: var(--color-primary, #0B1A26);
+    }
+
+    .palette-one .breadcrumbs a:hover {
+      color: var(--color-primary, #0B1A26);
+    }
+
+    .palette-one .breadcrumbs__name {
+      color: var(--color-outline, #F4B841);
+    }
+
+    .palette-two .breadcrumbs {
+      color: var(--color-third-2, #FFFFFF59);
+    }
+
+    .palette-two .breadcrumbs path {
+      fill: var(--color-primary-2, #FFFFFF);
+    }
+
+    .palette-two .breadcrumbs a:hover {
+      color: var(--color-primary-2, #FFFFFF);
+    }
+
+    .palette-two .breadcrumbs__name {
+      color: var(--color-outline-2, #F4B841);
     }
   {% endstyle %}
 

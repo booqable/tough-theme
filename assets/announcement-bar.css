@@ -4,8 +4,6 @@
 }
 
 .announcement-bar__wrapper {
-  color: var(--color-accent-foreground, #0B1A26);
-  background: var(--color-accent-background, #F4B841);
   font-size: 14px;
   font-weight: var(--font-weight-medium, 500);
   line-height: var(--line-height-xs, 1);
@@ -63,7 +61,26 @@
 .announcement-bar .far {
   margin: 0 13px 0 0;
   max-width: 25px;
-  color: var(--color-accent-foreground, #0B1A26);
+}
+
+.palette-one.announcement-bar__wrapper {
+  color: var(--color-accent, #0B1A26);
+  background: var(--background-accent, #F4B841);
+}
+
+.palette-one.announcement-bar__wrapper .fa,
+.palette-one.announcement-bar__wrapper .far {
+  color: var(--color-accent, #0B1A26);
+}
+
+.palette-two.announcement-bar__wrapper {
+  color: var(--color-accent-2, #0B1A26);
+  background: var(--background-accent-2, #F4B841);
+}
+
+.palette-two.announcement-bar__wrapper .fa,
+.palette-two.announcement-bar__wrapper .far {
+  color: var(--color-accent-2, #0B1A26);
 }
 
 @media (min-width: 667px) {

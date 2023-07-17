@@ -1,7 +1,5 @@
 .hero__wrapper {
   height: 100%;
-  color: var(--color-third-foreground, #B2B4B8);
-  background: var(--color-primary-foreground, #0B1A26);
   position: relative;
   flex-grow: 1;
 }
@@ -11,14 +9,13 @@
   padding-top: 16px;
 }
 
-.hero__container--bottom::before {
-  content: "";
+.hero__overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: calc(50% - 8px);
-  background: var(--color-primary-background, #FFFFFF);
+  z-index: -1;
 }
 
 .hero__container {
@@ -35,7 +32,6 @@
 }
 
 .hero__title {
-  color: var(--color-primary-background, #FFFFFF);
   font-size: var(--font-size-h3);
 }
 
@@ -48,7 +44,6 @@
 }
 
 .hero__vision {
-  background: var(--color-primary-foreground, #0B1A26);
   position: absolute;
   top: 0;
   left: 0;
@@ -78,7 +73,6 @@
   bottom: 0;
   width: 5000px;
   right: 50%;
-  background: linear-gradient(to right, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground, #0B1A26) 90%, var(--color-primary-foreground-00, #0B1A2600) 100%);
 }
 
 .hero__vision-wrapper-overlay:before {
@@ -88,7 +82,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--color-primary-foreground, #0B1A26) 0%, var(--color-primary-foreground-00, #0B1A2600) 100%);
 }
 
 .hero__image {
@@ -104,8 +97,62 @@
   min-height: 100%;
 }
 
-.hero__vision-wrapper path {
-  fill: var(--color-primary-background, #FFFFFF);
+.palette-one.hero__wrapper {
+  color: var(--color-third, #0B1A2659);
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one.hero__overlay {
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .hero__title {
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .hero__vision {
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .hero__vision-wrapper-overlay:after {
+  background: linear-gradient(to right, var(--background-primary, #FFFFFF) 0%, var(--background-primary, #FFFFFF) 90%, var(--background-primary-00, #FFFFFF00) 100%);
+}
+
+.palette-one .hero__vision-wrapper-overlay:before {
+  background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--background-primary, #FFFFFF) 0%, var(--background-primary-00, #FFFFFF00) 100%);
+}
+
+.palette-one .hero__vision-wrapper path {
+  fill: var(--color-primary, #0B1A26);
+}
+
+.palette-two.hero__wrapper {
+  color: var(--color-third-2, #FFFFFF59);
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two.hero__overlay {
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .hero__title {
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .hero__vision {
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .hero__vision-wrapper-overlay:after {
+  background: linear-gradient(to right, var(--background-primary-2, #0B1A26) 0%, var(--background-primary-2, #0B1A26) 90%, var(--background-primary-2-00, #0B1A2600) 100%);
+}
+
+.palette-two .hero__vision-wrapper-overlay:before {
+  background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--background-primary-2, #0B1A26) 0%, var(--background-primary-2-00, #0B1A2600) 100%);
+}
+
+.palette-two .hero__vision-wrapper path {
+  fill: var(--color-primary-2, #FFFFFF);
 }
 
 @media (min-width: 992px) {

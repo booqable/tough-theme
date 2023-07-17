@@ -1,5 +1,4 @@
 .collections {
-  color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
@@ -46,7 +45,6 @@
   font-size: 24px;
   line-height: 1.4;
   margin: 0;
-  color: var(--color-primary-background, #FFFFFF);
   z-index: 1;
 }
 
@@ -74,12 +72,7 @@
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: var(--color-image-placeholder, #E1E4E8);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
-.collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-primary-foreground, #0B1A26) 8.87%, var(--color-primary-foreground-00, #0B1A2600) 95.37%);
 }
 
 .collections__link .collections__image-item:after {
@@ -89,7 +82,6 @@
   left: 0;
   right: 0;
   height: 50px;
-  background: var(--color-primary-foreground, #0B1A26);
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
@@ -99,6 +91,46 @@
 
 .collections__link:hover .collections__image-item:after {
   top: calc(100% - 40px);
+}
+
+.palette-one.collections__wrapper {
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .collections__image-item:before {
+  background: var(--color-image-placeholder, #0B1A2626);
+}
+
+.palette-two.collections__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .collections__image-item:before {
+  background: var(--color-image-placeholder-2, #FFFFFF47);
+}
+
+.overlay-dark .collections__heading {
+  color: var(--color-white, #FFFFFF);
+}
+
+.overlay-dark .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-black, #0B1A26) 8.87%, var(--color-black-00, #0B1A2600) 95.37%);
+}
+
+.overlay-dark .collections__link .collections__image-item:after {
+  background: var(--color-black, #0B1A26);
+}
+
+.overlay-light .collections__heading {
+  color: var(--color-black, #0B1A26);
+}
+
+.overlay-light .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-white, #FFFFFF) 8.87%, var(--color-white-00, #FFFFFF00) 95.37%);
+}
+
+.overlay-light .collections__link .collections__image-item:after {
+  background: var(--color-white, #FFFFFF);
 }
 
 @media (min-width: 1100px) {

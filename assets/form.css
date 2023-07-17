@@ -11,7 +11,6 @@
   font-size: 48px;
   font-weight: var(--font-weight-bold, 700);
   line-height: var(--line-height-sm, 1.2);
-  color: var(--color-primary-background, #FFFFFF);
   margin-bottom: 22px;
 }
 
@@ -30,7 +29,6 @@
 .form__label {
   display: inline-block;
   vertical-align: top;
-  color: var(--color-primary-background, #FFFFFF);
   margin-bottom: 9px;
 }
 
@@ -38,11 +36,9 @@
 .form__textarea {
   display: block;
   width: 100%;
-  color: var(--color-placeholder, #868686);
   padding: 14px 12px;
   font-size: inherit;
-  background: var(--color-white, #FFFFFF);
-  border: 1px solid var(--color-third-foreground, #B2B4B8);
+  border: 1px solid transparent;
   margin-bottom: 22px;
 }
 
@@ -52,17 +48,11 @@
   resize: none;
 }
 
-.form__field::placeholder,
-.form__textarea::placeholder {
-  color: var(--color-placeholder, #868686);
-}
-
 .form__field:focus,
 .form__field:focus-visible,
 .form__textarea:focus,
 .form__textarea:focus-visible {
   outline: none;
-  border-color: var(--color-accent-background, #F4B841);
 }
 
 .form__field.error,
@@ -103,8 +93,7 @@
 .form__approval .form__label:before {
   content:'';
   appearance: none;
-  border: 1px solid var(--color-third-foreground, #B2B4B8);
-  background: var(--color-white, #FFFFFF);
+  border: 1px solid transparent;
   padding: 9px;
   display: inline-block;
   position: relative;
@@ -121,14 +110,9 @@
   left: 7px;
   width: 6px;
   height: 12px;
-  border: solid var(--color-accent-foreground, #0B1A26);
+  border-style: solid;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-}
-
-.form__approval .form__checkbox:checked ~ .form__label:before {
-  border-color: var(--color-accent-background, #F4B841);
-  background: var(--color-accent-background, #F4B841);
 }
 
 .form__info {
@@ -146,16 +130,100 @@
   margin-right: 5px;
 }
 
-.form__info .success i {
-  color: var(--color-accent-background, #F4B841);
+.form__submit button {
+  width: 100%;
 }
 
-.form__info .error {
+.palette-one .form__label {
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .form__field,
+.palette-one .form__textarea {
+  color: var(--color-primary, #0B1A26);
+  background: var(--background-primary, #FFFFFF);
+  border-color: var(--color-border, #0B1A2626);
+}
+
+.palette-one .form__field::placeholder,
+.palette-one .form__textarea::placeholder {
+  color: var(--color-placeholder, #0B1A2659);
+}
+
+.palette-one .form__field:focus,
+.palette-one .form__field:focus-visible,
+.palette-one .form__textarea:focus,
+.palette-one .form__textarea:focus-visible {
+  border-color: var(--background-accent, #F4B841);
+}
+
+.palette-one .form__approval .form__label:before {
+  border-color: var(--color-border, #0B1A2626);
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .form__checkbox:checked ~ .form__label:after {
+  border-color: var(--color-accent, #0B1A26);
+}
+
+.palette-one .form__approval .form__checkbox:checked ~ .form__label:before {
+  border-color: var(--background-accent, #F4B841);
+  background: var(--background-accent, #F4B841);
+}
+
+.palette-one .form__info .success i {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-one .form__info .error,
+.palette-one .form__info .error i {
   color: var(--color-red, #C23434);
 }
 
-.form__submit button {
-  width: 100%;
+.palette-two .form__label {
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .form__field,
+.palette-two .form__textarea {
+  color: var(--color-primary-2, #FFFFFF);
+  background: var(--background-primary-2, #0B1A26);
+  border-color: var(--color-border-2, #FFFFFF47);
+}
+
+.palette-two .form__field::placeholder,
+.palette-two .form__textarea::placeholder {
+  color: var(--color-placeholder-2, #FFFFFF59);
+}
+
+.palette-two .form__field:focus,
+.palette-two .form__field:focus-visible,
+.palette-two .form__textarea:focus,
+.palette-two .form__textarea:focus-visible {
+  border-color: var(--background-accent-2, #F4B841);
+}
+
+.palette-two .form__approval .form__label:before {
+  border-color: var(--color-border-2, #FFFFFF47);
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .form__checkbox:checked ~ .form__label:after {
+  border-color: var(--color-accent-2, #0B1A26);
+}
+
+.palette-two .form__approval .form__checkbox:checked ~ .form__label:before {
+  border-color: var(--background-accent-2, #F4B841);
+  background: var(--background-accent-2, #F4B841);
+}
+
+.palette-two .form__info .success i {
+  color: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .form__info .error,
+.palette-two .form__info .error i {
+  color: var(--color-begonia, #FF6E6E);
 }
 
 @media (min-width: 992px) {

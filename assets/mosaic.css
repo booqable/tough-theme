@@ -1,5 +1,4 @@
 .mosaic {
-  color: var(--color-secondary-foreground, #4E5D78);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
 }
@@ -20,8 +19,7 @@
 .mosaic__item {
   font-size: 16px;
   padding: 15px;
-  background: var(--color-primary-background, #FFFFFF);
-  border: 1px solid var(--color-border, #E1E4E8);
+  border: 1px solid transparent;
   overflow: hidden;
   margin: 0 0 30px;
 }
@@ -33,7 +31,6 @@
 }
 
 .mosaic__item-col.no-image {
-  background: var(--color-image-placeholder, #E1E4E8);
   aspect-ratio: 1 / 0.76;
 }
 
@@ -52,7 +49,6 @@
 .mosaic__tag {
   display: inline-block;
   vertical-align: top;
-  color: var(--color-accent-background, #F4B841);
   text-transform: uppercase;
   font-weight: var(--font-weight-semibold, 600);
   font-size: 14px;
@@ -62,21 +58,12 @@
 
 .mosaic__heading {
   font-weight: var(--font-weight-bold, 700);
-  color: var(--color-primary-foreground, #0B1A26);
   margin-bottom: 16px;
   max-width: 450px;
 }
 
 .mosaic__button {
   margin: 34px 0 0;
-}
-
-.mosaic__button.button {
-  color: var(--color-primary-foreground, #0B1A26);
-}
-
-.mosaic__button.button path {
-  fill: var(--color-primary-foreground, #0B1A26);
 }
 
 .mosaic__image {
@@ -89,6 +76,65 @@
 .mosaic__show-wrapper {
   padding: 8px 0 0;
   text-align: center;
+}
+
+.palette-one.mosaic__wrapper {
+  color: var(--color-secondary, #4E5D78);
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .mosaic__item {
+  background: var(--background-primary, #FFFFFF);
+  border-color: var(--color-border, #0B1A2626);
+}
+
+.palette-one .mosaic__item-col.no-image {
+  background: var(--color-image-placeholder, #0B1A2626);
+}
+
+.palette-one .mosaic__tag {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-one .mosaic__heading,
+.palette-one .mosaic__button.button {
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .mosaic__button.button path {
+  fill: var(--color-primary, #0B1A26);
+}
+
+.palette-one .mosaic__button.button:hover,
+.palette-two .mosaic__button.button:hover {
+  text-shadow: 0.5px 0 currentColor;
+}
+
+.palette-two.mosaic__wrapper {
+  color: var(--color-secondary-2, #4E5D78);
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .mosaic__item {
+  background: var(--background-primary-2, #0B1A26);
+  border-color: var(--color-border-2, #FFFFFF47);
+}
+
+.palette-two .mosaic__item-col.no-image {
+  background: var(--color-image-placeholder-2, #FFFFFF47);
+}
+
+.palette-two .mosaic__tag {
+  color: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .mosaic__heading,
+.palette-two .mosaic__button.button {
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .mosaic__button.button path {
+  fill: var(--color-primary-2, #FFFFFF);
 }
 
 @media (min-width: 992px) {

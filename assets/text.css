@@ -9,7 +9,6 @@
 .text__tag {
   display: inline-block;
   vertical-align: top;
-  color: var(--color-accent-background, #F4B841);
   text-transform: uppercase;
   font-weight: var(--font-weight-semibold, 600);
   font-size: 14px;
@@ -19,18 +18,60 @@
 
 .text__title {
   font-weight: var(--font-weight-bold, 700);
-  color: var(--color-primary-foreground, #0B1A26);
   margin-bottom: 16px;
   max-width: 450px;
 }
 
 .text__bg-text {
   display: none;
+  pointer-events: none;
+  margin: 0;
+  padding: 0 0 0 43px;
+  font-size: 100px;
+  line-height: .7;
+  text-transform: uppercase;
+  opacity: .5;
+  transform: translate(0, -32px);
+  white-space: nowrap;
 }
 
 .text__button-show {
   margin: 30px 0 15px;
   width: 100%;
+}
+
+.palette-one.text__wrapper {
+  background: var(--background-primary, #FFFFFF);
+  color: var(--color-third, #0B1A2659);
+}
+
+.palette-one .text__tag {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-one .text__title {
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .text__bg-text {
+  color: var(--color-fourth, #0B1A2626);
+}
+
+.palette-two.text__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+  color: var(--color-third-2, #FFFFFF59);
+}
+
+.palette-two .text__tag {
+  color: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .text__title {
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .text__bg-text {
+  color: var(--color-fourth-2, #FFFFFF47);
 }
 
 @media (min-width: 768px) {
@@ -73,17 +114,7 @@
   }
 
   .text__bg-text {
-    pointer-events: none;
     display: block;
-    margin: 0;
-    padding: 0 0 0 43px;
-    font-size: 100px;
-    line-height: .7;
-    text-transform: uppercase;
-    opacity: .5;
-    color: var(--color-fourth-foreground, #E1E4E8);
-    transform: translate(0, -32px);
-    white-space: nowrap;
   }
 }
 

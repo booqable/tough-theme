@@ -37,12 +37,10 @@
 }
 
 .images__title {
-  color: var(--color-primary-background, #FFFFFF);
   font-size: var(--font-size-h2);
 }
 
 .images__description {
-  color: var(--color-third-foreground, #B2B4B8);
   padding: 0 0 38px;
 }
 
@@ -54,12 +52,7 @@
   margin-right: 15px;
 }
 
-.images__buttons .button--outlined {
-  color: var(--color-primary-background, #FFFFFF);
-}
-
 .images__vision {
-  background: var(--color-primary-foreground, #0B1A26);
   position: absolute;
   top: 0;
   left: 0;
@@ -88,9 +81,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(357.73deg, var(--color-primary-foreground, #0B1A26) 3.03%, var(--color-primary-foreground-00, #0B1A2600) 31.83%),
-   linear-gradient(180deg, var(--color-primary-foreground, #0B1A26) 6.67%, var(--color-primary-foreground-00, #0B1A2600) 105.81%),
-   linear-gradient(0deg, var(--color-primary-foreground-45, #0B1A2673), var(--color-primary-foreground-45, #0B1A2673));
   opacity: var(--opacity-overlay, 100%);
 }
 
@@ -111,6 +101,50 @@
   width: 100%;
   margin: 0;
   scroll-padding: 0;
+}
+
+.overlay-dark .images__title {
+  color: var(--color-white, #FFFFFF);
+}
+
+.overlay-dark .images__description {
+  color: var(--color-white-gray, #FFFFFF59);
+}
+
+.overlay-dark .images__buttons .button--outlined {
+  color: var(--color-white, #FFFFFF);
+}
+
+.overlay-dark .images__vision {
+  background: var(--color-black, #0B1A26);
+}
+
+.overlay-dark .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--color-black, #0B1A26) 3.03%, var(--color-black-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--color-black, #0B1A26) 6.67%, var(--color-black-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--color-black-45, #0B1A2673), var(--color-black-45, #0B1A2673));
+}
+
+.overlay-light .images__title {
+  color: var(--color-black, #0B1A26);
+}
+
+.overlay-light .images__description {
+  color: var(--color-dark-gray, #0B1A2659);
+}
+
+.overlay-light .images__buttons .button--outlined {
+  color: var(--color-black, #0B1A26);
+}
+
+.overlay-light .images__vision {
+  background: var(--color-white, #FFFFFF);
+}
+
+.overlay-light .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--color-white, #FFFFFF) 3.03%, var(--color-white-00, #FFFFFF00) 31.83%),
+   linear-gradient(180deg, var(--color-white, #FFFFFF) 6.67%, var(--color-white-00, #FFFFFF00) 105.81%),
+   linear-gradient(0deg, var(--color-white-45, #FFFFFF73), var(--color-white-45, #FFFFFF73));
 }
 
 @media (min-width: 428px) {

@@ -6,8 +6,6 @@
 .error-404__content {
   flex-grow: 1;
   height: 100%;
-  color: var(--color-primary-background, #FFFFFF);
-  background: var(--color-primary-foreground, #0B1A26);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +43,6 @@
 
 .error-404__description b {
   font-weight: inherit;
-  color: var(--color-accent-background, #F4B841);
 }
 
 .error-404__buttons {
@@ -68,7 +65,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(173.19deg, var(--color-primary-foreground, #0B1A26) 33.02%, var(--color-primary-foreground-00, #0B1A2600) 93.23%);
 }
 
 .error-404__background svg {
@@ -76,8 +72,38 @@
   opacity: 0.1;
 }
 
-.error-404__background path {
-  fill: var(--color-primary-background, #FFFFFF);
+.palette-one.error-404__content {
+  background: var(--background-primary, #FFFFFF);
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .error-404__description b {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-one .error-404__background::after {
+  background: linear-gradient(173.19deg, var(--background-primary, #FFFFFF) 33.02%, var(--background-primary-00, #FFFFFF00) 93.23%);
+}
+
+.palette-one .error-404__background path {
+  fill: var(--color-primary, #0B1A26);
+}
+
+.palette-two.error-404__content {
+  background: var(--background-primary-2, #0B1A26);
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .error-404__description b {
+  color: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .error-404__background::after {
+  background: linear-gradient(173.19deg, var(--background-primary-2, #0B1A26) 33.02%, var(--background-primary-2-00, #0B1A2600) 93.23%);
+}
+
+.palette-two .error-404__background path {
+  fill: var(--color-primary-2, #FFFFFF);
 }
 
 @media (min-width: 992px) {

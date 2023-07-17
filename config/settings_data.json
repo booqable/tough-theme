@@ -8,6 +8,7 @@
         "settings": {
           "bar_message": "Free shipping from €50",
           "bar_text": "Call Us 24/7 +1 755 302 8549",
+          "color_palette": "one",
           "hide_bar": false,
           "icon": "phone",
           "padding_top": "medium",
@@ -46,9 +47,12 @@
           "promo"
         ],
         "settings": {
+          "color_overlay": "dark",
+          "color_palette": "two",
           "login_placeholder": "Log in",
           "menu": "main-menu",
           "menu_back_placeholder": "Back",
+          "menu_opener_mobile": "left",
           "menu_dropdown_style": "full",
           "menu_position": "left-center",
           "menu_position_mobile": "top",
@@ -137,6 +141,7 @@
         "settings": {
           "bottom_menu": "bottom-menu",
           "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
+          "color_palette": "one",
           "padding_bottom": "medium",
           "padding_bottom_mobile": "small",
           "padding_top": "medium",

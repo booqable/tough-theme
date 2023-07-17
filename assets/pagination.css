@@ -7,7 +7,7 @@
 
 .pagination span {
   text-align: center;
-  border: 1px solid var(--color-border, #E1E4E8);
+  border: 1px solid transparent;
   cursor: pointer;
   min-width: 40px;
 }
@@ -21,7 +21,7 @@
 .pagination span a {
   display: flex;
   align-items: center;
-  color: var(--color-secondary-foreground, #4E5D78);
+  justify-content: center;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: var(--font-weight-semibold, 600);
@@ -32,8 +32,6 @@
 .pagination .deco,
 .pagination .current {
   position: relative;
-  background: var(--color-accent-background, #F4B841);
-  color: var(--color-accent-foreground, #0B1A26);
   z-index: 1;
 }
 
@@ -43,20 +41,6 @@
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease);
 }
 
-.pagination .page:not(.current):hover,
-.pagination .prev:not([data-enabled="false"]):hover,
-.pagination .next:not([data-enabled="false"]):hover {
-  background: var(--color-accent-background-hover, #E5AD3D);
-  color: var(--color-accent-foreground, #0B1A26);
-}
-
-.pagination .page:not(.current):active,
-.pagination .prev:not([data-enabled="false"]):active,
-.pagination .next:not([data-enabled="false"]):active {
-  background: var(--color-accent-background-active, #D6A239);
-  color: var(--color-accent-foreground, #0B1A26);
-}
-
 .pagination span[data-enabled="false"],
 .pagination .deco,
 .pagination .current {
@@ -64,15 +48,84 @@
   pointer-events: none;
 }
 
-.pagination path {
-  fill: var(--color-secondary-foreground, #4E5D78);
-}
-
-.pagination .prev[data-enabled="true"] a:hover path,
-.pagination .next[data-enabled="true"] a:hover path {
-  fill: var(--color-accent-foreground, #0B1A26);
-}
-
 .pagination .prev svg {
   transform: rotate(180deg);
+}
+
+.palette-one .pagination span {
+  border-color: var(--color-border, #0B1A2626);
+}
+
+.palette-one .pagination .deco,
+.palette-one .pagination .current,
+.palette-one .pagination span a {
+  color: var(--color-secondary, #4E5D78);
+}
+
+.palette-one .pagination .deco,
+.palette-one .pagination .current {
+  background: var(--background-accent, #F4B841);
+  color: var(--color-accent, #0B1A26);
+}
+
+.palette-one .pagination .page:not(.current):hover,
+.palette-one .pagination .prev:not([data-enabled="false"]):hover,
+.palette-one .pagination .next:not([data-enabled="false"]):hover {
+  background: var(--background-accent-hover, #F4B841CC);
+  color: var(--color-accent, #0B1A26);
+}
+
+.palette-one .pagination .page:not(.current):active,
+.palette-one .pagination .prev:not([data-enabled="false"]):active,
+.palette-one .pagination .next:not([data-enabled="false"]):active {
+  background: var(--background-accent-active, #F4B841BA);
+  color: var(--color-accent, #0B1A26);
+}
+
+.palette-one .pagination path {
+  fill: var(--color-secondary, #4E5D78);
+}
+
+.palette-one .pagination .prev[data-enabled="true"] a:hover path,
+.palette-one .pagination .next[data-enabled="true"] a:hover path {
+  fill: var(--color-accent, #0B1A26);
+}
+
+.palette-two .pagination span {
+  border-color: var(--color-border-2, #FFFFFF47);
+}
+
+.palette-two .pagination .deco,
+.palette-two .pagination .current,
+.palette-two .pagination span a {
+  color: var(--color-secondary-2, #4E5D78);
+}
+
+.palette-two .pagination .deco,
+.palette-two .pagination .current {
+  background: var(--background-accent-2, #F4B841);
+  color: var(--color-accent-2, #0B1A26);
+}
+
+.palette-two .pagination .page:not(.current):hover,
+.palette-two .pagination .prev:not([data-enabled="false"]):hover,
+.palette-two .pagination .next:not([data-enabled="false"]):hover {
+  background: var(--background-accent-2-hover, #F4B841CC);
+  color: var(--color-accent-2, #0B1A26);
+}
+
+.palette-two .pagination .page:not(.current):active,
+.palette-two .pagination .prev:not([data-enabled="false"]):active,
+.palette-two .pagination .next:not([data-enabled="false"]):active {
+  background: var(--background-accent-2-active, #F4B841BA);
+  color: var(--color-accent-2, #0B1A26);
+}
+
+.palette-two .pagination path {
+  fill: var(--color-secondary-2, #4E5D78);
+}
+
+.palette-two .pagination .prev[data-enabled="true"] a:hover path,
+.palette-two .pagination .next[data-enabled="true"] a:hover path {
+  fill: var(--color-accent-2, #0B1A26);
 }
