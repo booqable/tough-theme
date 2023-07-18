@@ -182,6 +182,24 @@
     ]
   },
   {
+    "name": "Images",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "use_focal_images",
+        "label": "Use focal images",
+        "default": true,
+        "info": "Display point focused images for products instead of full sized"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_placeholder",
+        "label": "Image placeholder",
+        "info": "This image displays on products and collections if they don't have any images"
+      }
+    ]
+  },
+  {
     "name": "Animation",
     "settings": [
       {
@@ -192,23 +210,6 @@
         "max": 10000,
         "default": 200,
         "info": "Important note: Time counts in milliseconds, 1 second equals 1000 milliseconds. If this field is empty, by default, all animations use a 200ms duration. This time is used for changing colors of UI elements, opening menu, modals, etc. You can use positive numbers between 0 and 10000 only"
-      }
-    ]
-  },
-  {
-    "name": "Images",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "use_focal_images",
-        "label": "Use focal images",
-        "info": "Display point focused images for products instead of full sized"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_placeholder",
-        "label": "Image placeholder",
-        "info": "This image displays on products and collections if they don't have any images"
       }
     ]
   },
