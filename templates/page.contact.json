@@ -41,41 +41,48 @@
       },
       "disabled": null
     },
-    "contacts": {
-      "type": "contacts",
+    "columns": {
+      "type": "columns",
       "blocks": {
-        "email": {
-          "type": "email",
+        "column": {
+          "type": "column",
           "settings": {
-            "email": "hello@info.com",
-            "email_title": "Email",
-            "email_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+            "button_label": "hello@info.com",
+            "button_style": "secondary",
+            "button_url": "{{ \"mailto:hello@info.com\" }}",
+            "icon": "envelope",
+            "title": "Email",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           "disabled": null
         },
-        "phone": {
-          "type": "phone",
+        "column_785236": {
+          "type": "column",
           "settings": {
-            "phone": "+1 (555) 000-0000",
-            "phone_title": "Phone",
-            "phone_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+            "button_label": "+1 (555) 000-0000",
+            "button_style": "secondary",
+            "button_url": "{{ \"tel:+1 (555) 000-0000\" }}",
+            "icon": "phone",
+            "title": "Phone",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           "disabled": null
         },
-        "address": {
-          "type": "address",
+        "column_789654": {
+          "type": "column",
           "settings": {
-            "address": "123 Sample St, London Eng 2000 UK",
-            "address_title": "Office",
-            "address_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+            "button_label": "123 Sample St, London Eng 2000 UK",
+            "icon": "map-marker",
+            "title": "Office",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           "disabled": null
         }
       },
       "block_order": [
-        "email",
-        "phone",
-        "address"
+        "column",
+        "column_785236",
+        "column_789654"
       ],
       "settings": {
         "color_palette": "one",
@@ -155,7 +162,7 @@
   },
   "order": [
     "contact-form",
-    "contacts",
+    "columns",
     "text",
     "offices"
   ]
