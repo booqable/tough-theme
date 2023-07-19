@@ -49,6 +49,7 @@
         "settings": {
           "color_overlay": "dark",
           "color_palette": "two",
+          "custom_title": "{{ shop.name }}",
           "login_placeholder": "Log in",
           "menu": "main-menu",
           "menu_back_placeholder": "Back",

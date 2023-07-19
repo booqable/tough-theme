@@ -20,6 +20,7 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign sticky_header         = section.settings.sticky_header -%}
+{%- assign hide_search           = section.settings.hide_search -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -123,26 +124,9 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% comment %} Login buttons component {% endcomment %}
-{%- capture header_login -%}
-  <div class="header__login">
-    <div class="header__login-item">
-      <a href="" class="header__login-button">
-        {%- render 'icon-user' -%}
-        {{- login_placeholder -}}
-      </a>
-    </div>
-    <div class="header__login-item">
-      <a href="" class="header__login-button header__login-button--accent">{{- signup_placeholder -}}</a>
-    </div>
-  </div>
-{%- endcapture -%}
-
 {% comment %} Mobile menu bottom component {% endcomment %}
 {%- capture menu_bottom -%}
   <div class="menu__bottom">
-    {{- header_login -}}
-
     <div class="menu__icons">
       {%- for block in section.blocks -%}
         {%- assign social_size      = block.settings.social_size -%}
@@ -430,33 +414,12 @@
   </div>
 {%- endcapture -%}
 
-{% comment %} Account component {% endcomment %}
-{%- capture header_account -%}
-  <div class="header__account">
-    <input type="checkbox" id="account-opener" style="display: none">
-    <label for="account-opener" class="header__account-opener">
-      {%- render 'icon-user' -%}
-    </label>
-
-    <div class="header__account-drop-wrapper">
-      <div class="header__account-drop">
-        <a href="" class="header__account-link">
-          {{- login_placeholder -}}
-        </a>
-        <a href="" class="header__account-link">
-          {{- signup_placeholder -}}
-        </a>
-      </div>
-    </div>
-  </div>
-{%- endcapture -%}
-
 {% comment %} Right side buttons component {% endcomment %}
 {%- capture header_links -%}
   <div class="header__links">
-    {{- header_search -}}
-
-    {{- header_account -}}
+    {% unless hide_search %}
+      {{- header_search -}}
+    {% endunless %}
 
     <div class="header__cart">
       {{- cart_button -}}
@@ -752,6 +715,12 @@
           }
         ],
         "default": "dark"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_search",
+        "default": false,
+        "label": "Hide search"
       },
       {
         "type": "header",

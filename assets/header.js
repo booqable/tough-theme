@@ -19,8 +19,6 @@ class Header {
       menuOpener: "#mobile-menu-opener",
       search: ".header__search",
       searchOpener: "#search-opener",
-      account: ".header__account",
-      accountOpener: "#account-opener",
       checkbox: "input[type=checkbox]"
     };
 
@@ -43,7 +41,13 @@ class Header {
       viewHeight: '--preview-height',
       linkHeight: '--menu-position',
       transform: '--header-transform',
-      fontSize: 'font-size'
+      fontSize: 'font-size',
+      fixed: 'fixed'
+    };
+
+    this.attr = {
+      class: "class",
+      style: "style"
     };
   }
 
@@ -68,7 +72,6 @@ class Header {
     this.items = this.section.querySelectorAll(this.selector.menuDrop);
     this.menuOpener = this.section.querySelector(this.selector.menuOpener);
     this.searchOpener = this.section.querySelector(this.selector.searchOpener);
-    this.accountOpener = this.section.querySelector(this.selector.accountOpener);
     this.dropOpeners = this.menu.querySelectorAll(this.selector.checkbox);
     this.sticky = this.section.classList.contains(this.classes.sticky);
     this.notSticky = this.section.classList.contains(this.classes.notSticky);
@@ -187,18 +190,16 @@ class Header {
     this.dropOpeners.forEach(opener => opener.checked = false)
   }
 
-  // closing modals of search and account, and mobile menu on click on header icons
+  // closing modals of search and mobile menu on click on header icons
   closeModals(e) {
     this.killModal(e, this.searchOpener, this.selector.search);
-    this.killModal(e, this.accountOpener, this.selector.account);
 
     let target = e.target,
-        accountOpener = this.accountOpener,
         searchOpener = this.searchOpener,
         checked = this.menuOpener.checked,
         block = this.selector.header;
 
-    if (target === accountOpener && checked || target === searchOpener && checked) {
+    if (target === searchOpener && checked) {
       block = this.selector.headerNav;
       this.closeMobileDrop();
       this.removeOverflow();
@@ -255,17 +256,17 @@ class Header {
     if (!this.notSticky) return false;
 
     this.section.classList.add(this.classes.sticky);
-    this.section.style.position = "fixed"
+    this.section.style.position = this.props.fixed;
   }
 
   removeOverflow() {
-    this.doc.removeAttribute('class');
+    this.doc.removeAttribute(this.attr.class);
 
     if (!this.notSticky) return false;
 
     this.section.classList.remove(this.classes.sticky);
     window.scrollTo(0, 0);
-    this.section.removeAttribute('style');
+    this.section.removeAttribute(this.attr.style);
   }
 
   clickablePhone() {
