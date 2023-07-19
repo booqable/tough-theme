@@ -96,7 +96,7 @@ class Header {
   headerFixed() {
     if (!this.sticky) return false;
 
-    this.section.style.position = "fixed"
+    this.section.style.position = this.props.fixed
   }
 
   cssVar(key, val) {

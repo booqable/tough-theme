@@ -22,6 +22,16 @@
 {%- assign sticky_header         = section.settings.sticky_header -%}
 {%- assign hide_search           = section.settings.hide_search -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
+{%- assign facebook              = settings.social_facebook_link -%}
+{%- assign instagram             = settings.social_instagram_link -%}
+{%- assign twitter               = settings.social_twitter_link -%}
+{%- assign linkedin              = settings.social_linkedin_link -%}
+{%- assign pinterest             = settings.social_pinterest_link -%}
+{%- assign tiktok                = settings.social_tiktok_link -%}
+{%- assign tumblr                = settings.social_tumblr_link -%}
+{%- assign snapchat              = settings.social_snapchat_link -%}
+{%- assign youtube               = settings.social_youtube_link -%}
+{%- assign vimeo                 = settings.social_vimeo_link -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -124,73 +134,17 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% comment %} Mobile menu bottom component {% endcomment %}
-{%- capture menu_bottom -%}
-  <div class="menu__bottom">
-    <div class="menu__icons">
-      {%- for block in section.blocks -%}
-        {%- assign social_size      = block.settings.social_size -%}
-        {%- assign social_spacing   = block.settings.social_spacing -%}
-        {%- assign payment_size     = block.settings.payment_size -%}
-        {%- assign payment_spacing  = block.settings.payment_spacing -%}
-
-        {% comment %} CSS variables start {% endcomment %}
-        {%- capture social_variables -%}
-          {%- case social_size -%}
-            {%- when 'sm' -%}
-              --header-social-size: 18px;
-            {%- when 'md' -%}
-              --header-social-size: 21px;
-            {%- when 'lg' -%}
-              --header-social-size: 24px;
-          {%- endcase -%}
-
-          {%- case social_spacing -%}
-            {%- when 'sm' -%}
-              --header-social-spacing: 5px;
-            {%- when 'md' -%}
-              --header-social-spacing: 7px;
-            {%- when 'lg' -%}
-              --header-social-spacing: 9px;
-          {%- endcase -%}
-        {%- endcapture -%}
-
-        {%- capture payment_variables -%}
-          {%- case payment_size -%}
-            {%- when 'sm' -%}
-              --header-payment-size: 30px;
-            {%- when 'md' -%}
-              --header-payment-size: 32px;
-            {%- when 'lg' -%}
-              --header-payment-size: 34px;
-          {%- endcase -%}
-
-          {%- case payment_spacing -%}
-            {%- when 'sm' -%}
-              --header-payment-spacing: 2px;
-            {%- when 'md' -%}
-              --header-payment-spacing: 3px;
-            {%- when 'lg' -%}
-              --header-payment-spacing: 4px;
-          {%- endcase -%}
-        {%- endcapture -%}
-        {% comment %} CSS variables end {% endcomment %}
-
-        {%- case block.type -%}
-
-          {%- when "socials" -%}
-            <div class="menu__social" style="{{- social_variables | escape -}}">
-              {%- include "socials" -%}
-            </div>
-
-          {%- when "payment-methods" -%}
-            <div class="menu__payments payments" style="{{- payment_variables | escape -}}">
-              {%- include "payments" -%}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
+{% comment %} Mobile menu social component {% endcomment %}
+{%- capture social_icons -%}
+  {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank -%}
+    <div class="menu__bottom">
+      <div class="menu__icons">
+        <div class="menu__social">
+          {%- include "socials" -%}
+        </div>
+      </div>
     </div>
-  </div>
+  {%- endif -%}
 {%- endcapture -%}
 
 {% comment %} Menu component {% endcomment %}
@@ -385,7 +339,7 @@
             {%- endfor -%}
           </ul>
 
-          {{- menu_bottom -}}
+          {{- social_icons -}}
         </div>
       </nav>
     {%- endif -%}
@@ -506,116 +460,6 @@
             "id": "promo_image",
             "label": "Image",
             "info": "Note: The image has the lowest priority"
-          }
-        ]
-      },
-      {
-        "type": "socials",
-        "name": "Socials",
-        "limit": 1,
-        "settings":[
-          {
-            "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance and the components' functionality of the socials"
-          },
-          {
-            "type": "select",
-            "id": "social_size",
-            "label": "Size",
-            "options": [
-              {
-                "value": "sm",
-                "label": "Small"
-              },
-              {
-                "value": "md",
-                "label": "Medium"
-              },
-              {
-                "value": "lg",
-                "label": "Large"
-              }
-            ],
-            "default": "md"
-          },
-          {
-            "type": "select",
-            "id": "social_spacing",
-            "label": "Spacing",
-            "options": [
-              {
-                "value": "sm",
-                "label": "Small"
-              },
-              {
-                "value": "md",
-                "label": "Medium"
-              },
-              {
-                "value": "lg",
-                "label": "Large"
-              }
-            ],
-            "default": "lg"
-          }
-        ]
-      },
-      {
-        "type": "payment-methods",
-        "name": "Payment methods",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance and the components' functionality of the payments"
-          },
-          {
-            "type": "select",
-            "id": "payment_size",
-            "label": "Size",
-            "options": [
-              {
-                "value": "sm",
-                "label": "Small"
-              },
-              {
-                "value": "md",
-                "label": "Medium"
-              },
-              {
-                "value": "lg",
-                "label": "Large"
-              }
-            ],
-            "default": "md"
-          },
-          {
-            "type": "select",
-            "id": "payment_spacing",
-            "label": "Spacing",
-            "options": [
-              {
-                "value": "sm",
-                "label": "Small"
-              },
-              {
-                "value": "md",
-                "label": "Medium"
-              },
-              {
-                "value": "lg",
-                "label": "Large"
-              }
-            ],
-            "default": "md"
           }
         ]
       }

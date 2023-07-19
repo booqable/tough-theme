@@ -8,6 +8,17 @@
 
 {% endcomment %}
 
+{% style %}
+  .social-networks {
+    display: flex;
+    margin: 0 calc(-1 * var(--social-spacing, 6px));
+  }
+
+  .social-networks__item {
+    margin: 0 var(--social-spacing, 6px);
+  }
+{% endstyle %}
+
 <ul class="social-networks">
   {% if settings.social_facebook_link != blank %}
     <li class="social-networks__item">

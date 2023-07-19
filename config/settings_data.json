@@ -25,25 +25,9 @@
             "settings": {
               "promo_title": "Catalog 1.4"
             }
-          },
-          "socials": {
-            "type": "socials",
-            "settings": {
-              "social_size": "md",
-              "social_spacing": "lg"
-            }
-          },
-          "payment-methods": {
-            "type": "payment-methods",
-            "settings": {
-              "payment_size": "md",
-              "payment_spacing": "md"
-            }
           }
         },
         "block_order": [
-          "socials",
-          "payment-methods",
           "promo"
         ],
         "settings": {
@@ -114,20 +98,6 @@
               "menu": "column-1",
               "menu_align": "left"
             }
-          },
-          "socials": {
-            "type": "socials",
-            "settings": {
-              "social_size": "md",
-              "social_spacing": "lg"
-            }
-          },
-          "payment-methods": {
-            "type": "payment-methods",
-            "settings": {
-              "payment_size": "md",
-              "payment_spacing": "md"
-            }
           }
         },
         "block_order": [
@@ -135,14 +105,13 @@
           "menu_789456",
           "menu_789457",
           "menu_789458",
-          "menu_789459",
-          "socials",
-          "payment-methods"
+          "menu_789459"
         ],
         "settings": {
           "bottom_menu": "bottom-menu",
           "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
           "color_palette": "one",
+          "custom_title": "{{ shop.name }}",
           "padding_bottom": "medium",
           "padding_bottom_mobile": "small",
           "padding_top": "medium",

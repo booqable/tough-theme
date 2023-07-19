@@ -235,29 +235,11 @@
 }
 
 .menu__social {
-  font-size: var(--header-social-size, 21px);
-}
-
-.menu__social .social-networks {
-  display: flex;
-  margin: 0 calc(-1 * var(--header-social-spacing, 6px));
-}
-
-.menu__social .social-networks__item {
-  margin: 0 var(--header-social-spacing, 6px);
+  font-size: var(--social-size, 21px);
 }
 
 .menu__payments {
-  font-size: var(--header-payment-size, 32px);
-}
-
-.menu__payments .payment {
-  padding: 0 16px 0 0;
-  margin: 0 calc(-1 * var(--header-payment-spacing, 6px));
-}
-
-.menu__payments i {
-  margin: 0 var(--header-payment-spacing, 6px);
+  font-size: calc(var(--social-size, 20px) + 10px)
 }
 
 #mobile-menu-opener:checked ~ .menu {

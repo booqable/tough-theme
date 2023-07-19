@@ -216,6 +216,58 @@
     "name": "Social media",
     "settings": [
       {
+        "type": "header",
+        "content": "Sizes"
+      },
+      {
+        "type": "select",
+        "id": "social_size",
+        "label": "Size",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Medium"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "md"
+      },
+      {
+        "type": "select",
+        "id": "social_spacing",
+        "label": "Spacing",
+        "options": [
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Medium"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          }
+        ],
+        "default": "md"
+      },
+      {
+        "type": "header",
+        "content": "Links"
+      },
+      {
+        "type": "paragraph",
+        "content": "Note: Leave the field blank if you don't want to use the social network"
+      },
+      {
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook",

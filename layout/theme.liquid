@@ -153,8 +153,26 @@
       --font-size-h6: {{- settings.h6_size | append: "px" -}};
 
       {%- if settings.animation_duration != blank -%}
-        --animation-duration: {{- settings.animation_duration | append: "ms"-}}
+        --animation-duration: {{- settings.animation_duration | append: "ms"-}};
       {%- endif -%}
+
+      {%- case settings.social_size -%}
+        {%- when 'sm' -%}
+          --social-size: 18px;
+        {%- when 'md' -%}
+          --social-size: 21px;
+        {%- when 'lg' -%}
+          --social-size: 24px;
+      {%- endcase -%}
+
+      {%- case settings.social_spacing -%}
+        {%- when 'sm' -%}
+          --social-spacing: 5px;
+        {%- when 'md' -%}
+          --social-spacing: 7px;
+        {%- when 'lg' -%}
+          --social-spacing: 9px;
+      {%- endcase -%}
     }
   </style>
 
