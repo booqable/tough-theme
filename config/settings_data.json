@@ -19,17 +19,8 @@
       },
       "header": {
         "type": "header",
-        "blocks": {
-          "promo": {
-            "type": "promo",
-            "settings": {
-              "promo_title": "Catalog 1.4"
-            }
-          }
-        },
-        "block_order": [
-          "promo"
-        ],
+        "blocks": {},
+        "block_order": [],
         "settings": {
           "color_overlay": "dark",
           "color_palette": "two",
