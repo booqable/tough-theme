@@ -15,9 +15,9 @@
     {%- when 'none' -%}
       --padding-top: 0;
     {%- when 'small' -%}
-      --padding-top: 50px;
+      --padding-top: 24px;
     {%- when 'medium' -%}
-      --padding-top: 80px;
+      --padding-top: 68px;
     {%- when 'large' -%}
       --padding-top: 112px;
   {%- endcase -%}
@@ -26,9 +26,9 @@
     {%- when 'none' -%}
       --padding-bottom: 0;
     {%- when 'small' -%}
-      --padding-bottom: 50px;
+      --padding-bottom: 24px;
     {%- when 'medium' -%}
-      --padding-bottom: 80px;
+      --padding-bottom: 68px;
     {%- when 'large' -%}
       --padding-bottom: 112px;
   {%- endcase -%}
@@ -37,7 +37,7 @@
     {%- when 'none' -%}
       --padding-top-mobile: 0;
     {%- when 'small' -%}
-      --padding-top-mobile: 24px;
+      --padding-top-mobile: 18px;
     {%- when 'medium' -%}
       --padding-top-mobile: 40px;
     {%- when 'large' -%}
@@ -48,7 +48,7 @@
     {%- when 'none' -%}
       --padding-bottom-mobile: 0;
     {%- when 'small' -%}
-      --padding-bottom-mobile: 24px;
+      --padding-bottom-mobile: 18px;
     {%- when 'medium' -%}
       --padding-bottom-mobile: 40px;
     {%- when 'large' -%}
@@ -161,7 +161,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "small"
       },
       {
         "type": "select",
@@ -185,7 +185,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "large"
       },
       {
         "type": "header",
@@ -213,7 +213,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "small"
       },
       {
         "type": "select",
@@ -237,7 +237,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "large"
       }
     ],
     "templates": ["list-collections"],

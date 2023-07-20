@@ -44,7 +44,7 @@
       {%- if results_count > 0  -%}
         --padding-bottom: 43px;
       {%- else -%}
-        --padding-bottom: 86px;
+        --padding-bottom: 85px;
       {%- endif -%}
   {%- endcase -%}
 
@@ -160,7 +160,7 @@
     })
   }
 
-  setTimeout(setColor, 250);
+  setTimeout(setColor, 350);
 
 </script>
 
@@ -210,6 +210,10 @@
         "id": "message",
         "label": "Message",
         "default": "No results found"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
       },
       {
         "type": "text",
@@ -268,7 +272,7 @@
             "label": "Large"
           }
         ],
-        "default": "large"
+        "default": "small"
       },
       {
         "type": "select",
@@ -288,7 +292,7 @@
             "label": "Large"
           }
         ],
-        "default": "large"
+        "default": "small"
       },
       {
         "type": "header",
@@ -312,7 +316,7 @@
             "label": "Large"
           }
         ],
-        "default": "large"
+        "default": "small"
       },
       {
         "type": "select",
@@ -332,7 +336,7 @@
             "label": "Large"
           }
         ],
-        "default": "large"
+        "default": "small"
       }
     ]
   }
