@@ -11,7 +11,6 @@
 }
 
 .products__list {
-  padding: 24px 0 0;
   display: flex;
 }
 
@@ -21,12 +20,6 @@
 
 .palette-two.products__wrapper {
   background: var(--background-primary-2, #0B1A26);
-}
-
-@media (min-width: 768px) {
-  .products__list {
-    padding: 37px 0 0;
-  }
 }
 
 @media (min-width: 1200px) {

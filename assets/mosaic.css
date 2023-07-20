@@ -12,7 +12,6 @@
 }
 
 .mosaic__list {
-  padding: 40px 0 0;
   position: relative;
 }
 
@@ -139,7 +138,6 @@
 
 @media (min-width: 992px) {
   .mosaic__list {
-    padding-top: 62px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-auto-flow: var(--grid-auto-flow);
