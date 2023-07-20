@@ -103,8 +103,8 @@
         "button_url": "",
         "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "none",
-        "padding_bottom_mobile": "none",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
         "padding_top": "large",
         "padding_top_mobile": "large",
         "tag": "Our offices",
@@ -154,8 +154,8 @@
         "placement": "right",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
-        "padding_top": "none",
-        "padding_top_mobile": "none"
+        "padding_top": "medium",
+        "padding_top_mobile": "medium"
       },
       "disabled": false
     }
