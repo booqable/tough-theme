@@ -8,6 +8,17 @@
 
 {% endcomment %}
 
+{% style %}
+  .payment {
+    padding: 0 16px 0 0;
+    margin: 0 calc(-1 * (var(--social-spacing, 6px) - 6px));
+  }
+
+  .payment i {
+    margin: 0 calc(var(--social-spacing, 6px) - 6px);
+  }
+{% endstyle %}
+
 {%- if payment_methods.size > 0 -%}
   <div class="payment">
     {%- for provider in payment_methods -%}

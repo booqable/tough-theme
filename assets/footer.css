@@ -62,29 +62,11 @@
 }
 
 .footer__social {
-  font-size: var(--footer-social-size, 21px);
-}
-
-.footer__social .social-networks {
-  display: flex;
-  margin: 0 calc(-1 * var(--footer-social-spacing, 6px));
-}
-
-.footer__social .social-networks__item {
-  margin: 0 var(--footer-social-spacing, 6px);
+  font-size: var(--social-size, 21px);
 }
 
 .footer__payments {
-  font-size: var(--footer-payment-size, 32px);
-}
-
-.footer__payments .payment {
-  margin: 0 calc(-1 * var(--footer-payment-spacing, 6px));
-  padding: 0 16px 0 0;
-}
-
-.footer__payments i {
-  margin: 0 var(--footer-payment-spacing, 6px);
+  font-size: calc(var(--social-size, 20px) + 10px);
 }
 
 .footer__bottom-menu-list {
