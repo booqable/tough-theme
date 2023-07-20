@@ -20,9 +20,9 @@
       {%- when 'none' -%}
         --padding-top: 0;
       {%- when 'small' -%}
-        --padding-top: 50px;
+        --padding-top: 24px;
       {%- when 'medium' -%}
-        --padding-top: 80px;
+        --padding-top: 68px;
       {%- when 'large' -%}
         --padding-top: 112px;
     {%- endcase -%}
@@ -31,9 +31,9 @@
       {%- when 'none' -%}
         --padding-bottom: 0;
       {%- when 'small' -%}
-        --padding-bottom: 50px;
+        --padding-bottom: 24px;
       {%- when 'medium' -%}
-        --padding-bottom: 80px;
+        --padding-bottom: 68px;
       {%- when 'large' -%}
         --padding-bottom: 112px;
     {%- endcase -%}
@@ -42,22 +42,22 @@
       {%- when 'none' -%}
         --padding-top-mobile: 0;
       {%- when 'small' -%}
-        --padding-top-mobile: 24px;
+        --padding-top-mobile: 18px;
       {%- when 'medium' -%}
-        --padding-top-mobile: 48px;
+        --padding-top-mobile: 40px;
       {%- when 'large' -%}
-        --padding-top-mobile: 70px;
+        --padding-top-mobile: 60px;
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
       {%- when 'none' -%}
         --padding-bottom-mobile: 0;
       {%- when 'small' -%}
-        --padding-bottom-mobile: 24px;
+        --padding-bottom-mobile: 18px;
       {%- when 'medium' -%}
-        --padding-bottom-mobile: 48px;
+        --padding-bottom-mobile: 40px;
       {%- when 'large' -%}
-        --padding-bottom-mobile: 70px;
+        --padding-bottom-mobile: 60px;
     {%- endcase -%}
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
@@ -151,6 +151,10 @@
         "content": "Below you can change the content of section"
       },
       {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
         "type": "text",
         "id": "button_label",
         "label": "Button label",
@@ -160,7 +164,7 @@
       {
         "type": "url",
         "id": "button_url",
-        "label": "Button URL"
+        "label": "Button link"
       },
       {
         "type": "header",
@@ -284,7 +288,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "small"
       },
       {
         "type": "select",
@@ -308,7 +312,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "small"
       }
     ],
     "max_blocks": 6,
@@ -333,7 +337,7 @@
           {
             "type": "text",
             "id": "article_tag",
-            "label": "Tag",
+            "label": "Tagline",
             "default": "Tagline"
           },
           {
@@ -349,6 +353,10 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           {
+            "type": "header",
+            "content": "Buttons"
+          },
+          {
             "type": "text",
             "id": "article_btn",
             "label": "Button label",
@@ -358,7 +366,7 @@
           {
             "type": "url",
             "id": "article_btn_url",
-            "label": "Button URL"
+            "label": "Button link"
           }
         ]
       }
