@@ -6,7 +6,6 @@
 {%- assign variation_label       = section.settings.variation_label -%}
 {%- assign message_label         = section.settings.message_label -%}
 {%- assign timer                 = section.settings.timer -%}
-{%- assign behavior              = section.settings.behavior -%}
 {%- assign color_palette         = section.settings.color_palette -%}
 {%- assign color_overlay         = section.settings.color_overlay -%}
 {%- assign padding_top           = section.settings.padding_top -%}
@@ -238,10 +237,6 @@
               <span class="product-main__shipping-label">{{- message_label -}}</span>
             </div>
           {%- endif -%}
-
-          {%- if blocks.size > 0 -%}
-            {%- render 'accordion', blocks: blocks, behavior: behavior -%}
-          {%- endif -%}
       </div>
     </div>
   </div>
@@ -355,26 +350,6 @@
       },
       {
         "type": "header",
-        "content": "Accordion settings"
-      },
-      {
-        "type": "select",
-        "id": "behavior",
-        "label": "Mode",
-        "options": [
-          {
-            "value": "single",
-            "label": "Single"
-          },
-          {
-            "value": "multiple",
-            "label": "Multiple"
-          }
-        ],
-        "default": "multiple"
-      },
-      {
-        "type": "header",
         "content": "Desktop settings"
       },
       {
@@ -476,72 +451,6 @@
           }
         ],
         "default": "medium"
-      }
-    ],
-    "max_blocks": 3,
-    "blocks":[
-      {
-        "type": "details",
-        "name": "Details",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
-            "type": "contentEditor",
-            "id": "details",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        ]
-      },
-      {
-        "type": "shipping",
-        "name": "Shipping",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
-            "type": "contentEditor",
-            "id": "shipping",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        ]
-      },
-      {
-        "type": "returns",
-        "name": "Returns",
-        "limit": 1,
-        "settings": [
-          {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
-            "type": "contentEditor",
-            "id": "returns",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."
-          }
-        ]
       }
     ],
     "important": true,
