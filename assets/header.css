@@ -219,83 +219,6 @@
   opacity: 1;
 }
 
-.header__account {
-  margin: 0 0 0 15px;
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.header__account-opener {
-  cursor: pointer;
-}
-
-.header__account-opener svg {
-  pointer-events: none;
-}
-
-.header__account-opener g {
-  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
-.header__account-drop-wrapper {
-	position: absolute;
-	top: 100%;
-	left: 50%;
-  min-width: 140px;
-  transform: translate(-63%, 0%);
-  visibility: hidden;
-	pointer-events: none;
-	opacity: 0;
-  z-index: 2;
-	transition: visibility var(--animation-duration, 200ms) var(--transition-function-ease-out),
-		opacity var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
-.header__account-drop {
-  margin: 0;
-	padding: 16px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.header__account-link:not(:last-child) {
-  margin: 0 0 13px;
-}
-
-.header__account-link:hover {
-  font-weight: var(--font-weight-semibold, 600);
-}
-
-#account-opener:checked ~ .header__account-drop-wrapper {
-  visibility: visible;
-  pointer-events: all;
-  opacity: 1;
-}
-
-.header__login {
-  padding: 24px 24px 18px;
-  font-size: 18px;
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.header__login-item:not(:last-child) {
-  padding: 0 0 21px;
-}
-
-.header__login-item svg {
-  margin: 0 5px -5px 0;
-}
-
-.header__login-button,
-.header__login-button g {
-  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
 .header__cart {
   margin: 0 0 0 15px;
   display: flex;
@@ -370,54 +293,31 @@
   box-shadow: inset 0 0 0 150px var(--background-primary, #FFFFFF) !important;
 }
 
-.palette-one .header__login-button g,
 .palette-one .header__search-icon g,
-.palette-one .header__account-opener g,
 .palette-one .header__search-opener g {
   stroke: var(--color-primary, #0B1A26);
 }
 
-.palette-one #account-opener:checked ~ .header__account-opener g,
 .palette-one .header__search #search-opener:checked ~ .header__search-opener g {
   stroke: var(--color-outline, #F4B841);
 }
 
-.palette-one .header__login-button:hover g,
-.palette-one .header__account-opener:hover g,
-.palette-one #account-opener:checked ~ .header__account-opener:hover g,
 .palette-one .header__search-opener:hover g {
   stroke: var(--color-outline-hover, #F4B841CC);
 }
 
-.palette-one .header__login-button:active g,
-.palette-one .header__account-opener:active g,
-.palette-one #account-opener:checked ~ .header__account-opener:active g,
 .palette-one .header__search-opener:active g {
   stroke: var(--color-outline-active, #F4B841BA);
 }
 
-.palette-one .header__account-drop {
-  background: var(--background-primary, #FFFFFF);
-  border-bottom: 1px solid var(--background-accent, #F4B841);
-}
-
-.palette-one .header__login-button,
 .palette-one .header__cart .bq-icon-cart::before {
   color: var(--color-primary, #0B1A26);
 }
 
-.palette-one .header__login-button--accent {
-  color: var(--color-outline, #F4B841);
-}
-
-.palette-one .header__login-button:hover,
-.palette-one .header__login-button--accent:hover,
 .palette-one .bq-cart-button:hover .bq-icon-cart::before {
   color: var(--color-outline-hover, #F4B841CC);
 }
 
-.palette-one .header__login-button:active,
-.palette-one .header__login-button--accent:active,
 .palette-one .bq-cart-button:active .bq-icon-cart::before {
   color: var(--color-outline-active, #F4B841BA);
 }
@@ -470,54 +370,31 @@
   box-shadow: inset 0 0 0 150px var(--background-primary-2, #0B1A26) !important;
 }
 
-.palette-two .header__login-button g,
 .palette-two .header__search-icon g,
-.palette-two .header__account-opener g,
 .palette-two .header__search-opener g {
   stroke: var(--color-primary-2, #FFFFFF);
 }
 
-.palette-two #account-opener:checked ~ .header__account-opener g,
 .palette-two .header__search #search-opener:checked ~ .header__search-opener g {
   stroke: var(--color-outline-2, #F4B841);
 }
 
-.palette-two .header__login-button:hover g,
-.palette-two .header__account-opener:hover g,
-.palette-two #account-opener:checked ~ .header__account-opener:hover g,
 .palette-two .header__search-opener:hover g {
   stroke: var(--color-outline-2-hover, #F4B841CC);
 }
 
-.palette-two .header__login-button:active g,
-.palette-two .header__account-opener:active g,
-.palette-two #account-opener:checked ~ .header__account-opener:active g,
 .palette-two .header__search-opener:active g {
   stroke: var(--color-outline-2-active, #F4B841BA);
 }
 
-.palette-two .header__account-drop {
-  background: var(--background-primary-2, #0B1A26);
-  border-bottom: 1px solid var(--background-accent-2, #F4B841);
-}
-
-.palette-two .header__login-button,
 .palette-two .header__cart .bq-icon-cart::before {
   color: var(--color-primary-2, #FFFFFF);
 }
 
-.palette-two .header__login-button--accent {
-  color: var(--color-outline-2, #F4B841);
-}
-
-.palette-two .header__login-button:hover,
-.palette-two .header__login-button--accent:hover,
 .palette-two .bq-cart-button:hover .bq-icon-cart::before {
   color: var(--color-outline-2-hover, #F4B841CC);
 }
 
-.palette-two .header__login-button:active,
-.palette-two .header__login-button--accent:active,
 .palette-two .bq-cart-button:active .bq-icon-cart::before {
   color: var(--color-outline-2-active, #F4B841BA);
 }
@@ -566,24 +443,8 @@
     margin: 0;
   }
 
-  .header__cart,
-  .header__account {
+  .header__cart {
     margin: 0 0 0 32px;
-  }
-
-  .header__login {
-    display: none;
-    text-align: left;
-    padding: 0;
-  }
-
-  .header__links .header__login {
-    display: flex;
-    align-items: center;
-  }
-
-  .header__account-drop-wrapper {
-    transform: translate(-50%, 0%);
   }
 
   .header__mobile-menu-opener-left,

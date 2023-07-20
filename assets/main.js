@@ -54,7 +54,7 @@ class Main {
     this.images = document.querySelectorAll(this.selector.image);
     this.footer = document.querySelector(this.selector.footer);
     this.search = document.querySelector(this.selector.search);
-    this.input = this.search.querySelector(this.selector.input);
+    if (this.search) this.input = this.search.querySelector(this.selector.input);
     this.url = new URL(window.location.href);
     this.focalImageTimeout;
   }
@@ -62,7 +62,7 @@ class Main {
   events() {
     this.setLoadedClass();
     this.focalImages();
-    this.searchInputAutoFill();
+    if (this.search) this.searchInputAutoFill();
 
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("message", this.messagesListener.bind(this));
