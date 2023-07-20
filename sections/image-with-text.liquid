@@ -31,55 +31,55 @@
     {%- when 'none' -%}
       --margin-top: 0;
     {%- when 'small' -%}
-      --margin-top: 80px;
+      --margin-top: 70px;
     {%- when 'medium' -%}
-      --margin-top: 130px;
+      --margin-top: 120px;
     {%- when 'large' -%}
-      --margin-top: 180px;
+      --margin-top: 170px;
   {%- endcase -%}
 
   {%- case padding_top -%}
     {%- when 'none' -%}
       --padding-top: 0;
     {%- when 'small' -%}
-      --padding-top: 50px;
+      --padding-top: 24px;
     {%- when 'medium' -%}
-      --padding-top: 75px;
+      --padding-top: 68px;
     {%- when 'large' -%}
-      --padding-top: 98px;
+      --padding-top: 112px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
     {%- when 'none' -%}
-      --padding-top: 0;
+      --padding-bottom: 0;
     {%- when 'small' -%}
-      --padding-bottom: 50px;
+      --padding-bottom: 24px;
     {%- when 'medium' -%}
-      --padding-bottom: 75px;
+      --padding-bottom: 68px;
     {%- when 'large' -%}
-      --padding-bottom: 98px;
+      --padding-bottom: 112px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
     {%- when 'none' -%}
-      --padding-top: 0;
+      --padding-top-mobile: 0;
     {%- when 'small' -%}
-      --padding-top-mobile: 40px;
+      --padding-top-mobile: 18px;
     {%- when 'medium' -%}
-      --padding-top-mobile: 56px;
+      --padding-top-mobile: 40px;
     {%- when 'large' -%}
-      --padding-top-mobile: 70px;
+      --padding-top-mobile: 60px;
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
     {%- when 'none' -%}
-      --padding-top: 0;
+      --padding-bottom-mobile: 0;
     {%- when 'small' -%}
-      --padding-bottom-mobile: 40px;
+      --padding-bottom-mobile: 18px;
     {%- when 'medium' -%}
-      --padding-bottom-mobile: 56px;
+      --padding-bottom-mobile: 40px;
     {%- when 'large' -%}
-      --padding-bottom-mobile: 70px;
+      --padding-bottom-mobile: 60px;
   {%- endcase -%}
 
   {%- case image_position -%}
@@ -207,9 +207,14 @@
         "content": "Below you can change the content of section"
       },
       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image (optional)"
+      },
+      {
         "type": "text",
         "id": "tag",
-        "label": "Tag",
+        "label": "Tagline",
         "default": "Tagline"
       },
       {
@@ -225,6 +230,10 @@
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
       },
       {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
         "type": "text",
         "id": "button_1",
         "label": "Button 1 label",
@@ -234,7 +243,7 @@
       {
         "type": "url",
         "id": "button_url_1",
-        "label": "Button 1 URL"
+        "label": "Button 1 link"
       },
       {
         "type": "text",
@@ -246,12 +255,7 @@
       {
         "type": "url",
         "id": "button_url_2",
-        "label": "Button 2 URL"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image"
+        "label": "Button 2 link"
       },
       {
         "type": "header",
@@ -396,7 +400,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "large"
       },
       {
         "type": "select",
@@ -420,7 +424,7 @@
             "label": "Large"
           }
         ],
-        "default": "medium"
+        "default": "large"
       }
     ]
   }

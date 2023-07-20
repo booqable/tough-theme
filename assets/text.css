@@ -19,7 +19,7 @@
 .text__title {
   font-weight: var(--font-weight-bold, 700);
   margin-bottom: 16px;
-  max-width: 450px;
+  max-width: 460px;
 }
 
 .text__bg-text {

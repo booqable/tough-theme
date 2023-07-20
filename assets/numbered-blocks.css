@@ -17,7 +17,6 @@
 }
 
 .numbered-blocks__list {
-  padding: 40px 0 0;
   position: relative;
 }
 
@@ -227,10 +226,6 @@
 
   .numbered-blocks__text-area {
     padding: 48px;
-  }
-
-  .numbered-blocks__list {
-    padding: 80px 0 0;
   }
 
   .numbered-blocks__item {

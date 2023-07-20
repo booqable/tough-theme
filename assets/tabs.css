@@ -5,7 +5,6 @@
 .tabs {
   display: grid;
   gap: 30px;
-  padding: 50px 0 0;
 }
 
 .tabs__tab {
@@ -221,7 +220,6 @@
 
 @media (min-width: 992px) {
   .tabs {
-    padding: 83px 0 0;
     gap: 30px;
   }
 

@@ -32,22 +32,22 @@
     {%- when 'none' -%}
       --padding-top: 0;
     {%- when 'small' -%}
-      --padding-top: 50px;
+      --padding-top: 24px;
     {%- when 'medium' -%}
-      --padding-top: 70px;
+      --padding-top: 68px;
     {%- when 'large' -%}
-      --padding-top: 100px;
+      --padding-top: 112px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
     {%- when 'none' -%}
       --padding-bottom: 0;
     {%- when 'small' -%}
-      --padding-bottom: 50px;
+      --padding-bottom: 24px;
     {%- when 'medium' -%}
-      --padding-bottom: 70px;
+      --padding-bottom: 68px;
     {%- when 'large' -%}
-      --padding-bottom: 100px;
+      --padding-bottom: 112px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
@@ -228,7 +228,7 @@
 
 {% schema %}
   {
-    "name": "Form",
+    "name": "Contact form",
     "description": "Display a contact form on your website.",
     "tag": "section",
     "class": "contact-form",
@@ -308,12 +308,6 @@
       },
       {
         "type": "text",
-        "id": "button_label",
-        "label": "Button label",
-        "default": "Submit"
-      },
-      {
-        "type": "text",
         "id": "success_message",
         "label": "Success message",
         "default": "Thanks for your message! We'll get back to you shortly."
@@ -323,6 +317,16 @@
         "id": "error_message",
         "label": "Error message",
         "default": "Oops, something went wrong. Please fix the errors and try again."
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Submit"
       },
       {
         "type": "image_picker",
@@ -591,6 +595,10 @@
             "label": "Text"
           },
           {
+            "type": "header",
+            "content": "Buttons"
+          },
+          {
             "type": "text",
             "id": "label",
             "default": "Shop collection",
@@ -600,7 +608,7 @@
           {
             "type": "url",
             "id": "url",
-            "label": "Button url"
+            "label": "Button link"
           },
           {
             "type": "header",

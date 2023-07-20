@@ -186,37 +186,37 @@ h6,
 
 h1,
 .h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-h1, 56px);
   line-height: 1.2;
 }
 
 h2,
 .h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h2, 48px);
   line-height: 1.2;
 }
 
 h3,
 .h3 {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h3, 40px);
   line-height: 1.2;
 }
 
 h4,
 .h4 {
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-h4, 32px);
   line-height: 1.3;
 }
 
 h5,
 .h5{
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-h5, 24px);
   line-height: 1.4;
 }
 
 h6,
 .h6 {
-  font-size: var(--font-size-h6);
+  font-size: var(--font-size-h6, 20px);
   line-height: 1.4;
 }
 
@@ -434,34 +434,6 @@ img {
 .overlay-dark .button.button--outlined:active,
 .palette-two .button.button--outlined:active {
   background: var(--background-accent-secondary-2-active, #F4B8418F);
-}
-
-.box-shadow-xxs {
-  box-shadow: var(--shadow-xxs);
-}
-
-.box-shadow-xs {
-  box-shadow: var(--shadow-xs);
-}
-
-.box-shadow-sm {
-  box-shadow: var(--shadow-sm);
-}
-
-.box-shadow-md {
-  box-shadow: var(--shadow-md);
-}
-
-.box-shadow-lg {
-  box-shadow: var(--shadow-lg);
-}
-
-.box-shadow-xl {
-  box-shadow: var(--shadow-xl);
-}
-
-.box-shadow-xxl {
-  box-shadow: var(--shadow-xxl);
 }
 
 .container {
