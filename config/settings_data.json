@@ -7,7 +7,7 @@
         "block_order": [],
         "settings": {
           "bar_message": "Free shipping from €50",
-          "bar_text": "Call Us 24/7 +1 755 302 8549",
+          "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
           "color_palette": "one",
           "hide_bar": false,
           "icon": "phone",

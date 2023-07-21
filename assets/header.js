@@ -9,7 +9,7 @@ class Header {
       body: "body",
       link: "a",
       bar: ".announcement-bar",
-      text: ".announcement-bar__message",
+      barBlock: ".announcement-bar__text",
       view: ".preview-bar__container",
       header: ".header",
       headerNav: ".header__nav-wrapper",
@@ -25,9 +25,7 @@ class Header {
 
     this.classes = {
       sticky: "header--sticky",
-      notSticky: "header--not-sticky",
-      phone: "announcement-bar__phone",
-      link: "announcement-bar__phone-link"
+      notSticky: "header--not-sticky"
     };
 
     this.modifier = {
@@ -67,7 +65,7 @@ class Header {
     this.body = document.querySelector(this.selector.body);
     this.view = document.querySelector(this.selector.view);
     this.bar = this.section.querySelector(this.selector.bar);
-    this.text = this.section.querySelector(this.selector.text);
+    this.barBlocks = this.section.querySelectorAll(this.selector.barBlock);
     this.menu = this.section.querySelector(this.selector.menu);
     this.bottom = this.section.querySelector(this.selector.menuBottom);
     this.item = this.section.querySelector(this.selector.menuItem);
@@ -85,7 +83,7 @@ class Header {
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
-    this.setReddirectLinks();
+    this.produceEmailPhone();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
@@ -271,32 +269,34 @@ class Header {
     this.section.removeAttribute(this.attr.style);
   }
 
-  setReddirectLinks() {
-    if (!this.text) return false;
+  // produce links to allow users to send emails and call phone numbers
+  produceEmailPhone() {
+    if (!this.barBlocks.length) return false;
 
-    const links = this.text.querySelectorAll(this.selector.link);
+    const keepOnly = /[^a-zA-Z0-9,\-.?!@+]/g,
+          specChars = /[\()\-\s]/g,
+          phoneRegex = /(?:[-+() ]*\d){10,13}/gm,
+          emailRegex = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
 
-    if (!links.length) return false;
+    this.barBlocks.forEach(block => {
+      const links = block.querySelectorAll(this.selector.link);
 
-    const phoneRegex = /(?:[-+() ]*\d){10,13}/gm,
-          emailRegex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+      if (!links.length) return false;
 
-    links.forEach(link => {
-      let text = link.innerHTML,
-          href = link.getAttribute(this.attr.href),
-          res = text.match(phoneRegex) || text.match(emailRegex);
+      links.forEach(link => {
+        let href = link.getAttribute(this.attr.href);
+        const match = href.match(phoneRegex) || href.match(emailRegex);
 
-      if (res?.length) {
-        res = res[0].trim();
+        if (match?.length) {
+          href = match[0].replace(keepOnly, '')
 
-        if (text.match(phoneRegex)) href = `tel:${res.replaceAll(/[\()\-\s]/g, "")}`;
+          if (href.match(phoneRegex)) href = `tel:${href.replaceAll(specChars, '')}`;
+          if (href.match(emailRegex)) href = `mailto:${href}`;
 
-        if (text.match(emailRegex)) href = `mailto:${res}`;
-      }
-
-      link.setAttribute(this.attr.href, href);
-      link.classList.add(this.classes.link);
-    });
+          link.setAttribute(this.attr.href, href);
+        }
+      });
+    })
   }
 }
 

@@ -24,18 +24,18 @@
   align-items: center;
 }
 
-.announcement-bar__phone-link {
+.announcement-bar__text {
+  text-align: center;
+}
+
+.announcement-bar__text a {
   color: inherit;
   text-decoration: none;
   font-size: inherit;
 }
 
-.announcement-bar__phone-link:hover {
+.announcement-bar__text a:hover {
   text-decoration: underline;
-}
-
-.announcement-bar__text {
-  text-align: center;
 }
 
 .announcement-bar__menu-list {
