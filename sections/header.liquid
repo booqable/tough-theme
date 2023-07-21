@@ -4,7 +4,6 @@
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
 {%- assign login_placeholder     = section.settings.login_placeholder -%}
 {%- assign signup_placeholder    = section.settings.signup_placeholder -%}
-{%- assign menu_back_placeholder = section.settings.menu_back_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
 {%- assign logo_vector           = section.settings.logo_vector -%}
 {%- assign custom_title          = section.settings.custom_title -%}
@@ -186,7 +185,7 @@
                             <i class="menu__item-icon">
                               {%- render 'icon-arrow-down' -%}
                             </i>
-                            {{- menu_back_placeholder -}}
+                            {{- link.title -}}
                           </label>
                         {%- endunless -%}
 
@@ -219,7 +218,7 @@
                                           <i class="menu__item-icon">
                                             {%- render 'icon-arrow-down' -%}
                                           </i>
-                                          {{- menu_back_placeholder -}}
+                                          {{- childlink.title -}}
                                         </label>
                                       {%- endunless -%}
 
@@ -363,13 +362,6 @@
         "id": "signup_placeholder",
         "label": "'Create account' button label",
         "default": "Create account"
-      },
-      {
-        "type": "text",
-        "id": "menu_back_placeholder",
-        "label": "Button 'Back' label",
-        "info": "Note: This button is in the mobile dropdown menu in 'From left' or 'From right' mode of the Menu appearance settings",
-        "default": "Back"
       },
       {
         "type": "image_picker",
