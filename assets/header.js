@@ -7,8 +7,9 @@ class Header {
 
     this.selector = {
       body: "body",
+      link: "a",
       bar: ".announcement-bar",
-      text: ".announcement-bar__message",
+      barBlock: ".announcement-bar__text",
       view: ".preview-bar__container",
       header: ".header",
       headerNav: ".header__nav-wrapper",
@@ -24,9 +25,7 @@ class Header {
 
     this.classes = {
       sticky: "header--sticky",
-      notSticky: "header--not-sticky",
-      phone: "announcement-bar__phone",
-      link: "announcement-bar__phone-link"
+      notSticky: "header--not-sticky"
     };
 
     this.modifier = {
@@ -46,6 +45,7 @@ class Header {
     };
 
     this.attr = {
+      href: "href",
       class: "class",
       style: "style"
     };
@@ -65,7 +65,7 @@ class Header {
     this.body = document.querySelector(this.selector.body);
     this.view = document.querySelector(this.selector.view);
     this.bar = this.section.querySelector(this.selector.bar);
-    this.text = this.section.querySelector(this.selector.text);
+    this.barBlocks = this.section.querySelectorAll(this.selector.barBlock);
     this.menu = this.section.querySelector(this.selector.menu);
     this.bottom = this.section.querySelector(this.selector.menuBottom);
     this.item = this.section.querySelector(this.selector.menuItem);
@@ -83,7 +83,7 @@ class Header {
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
-    this.clickablePhone();
+    this.produceEmailPhone();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
@@ -96,7 +96,7 @@ class Header {
   headerFixed() {
     if (!this.sticky) return false;
 
-    this.section.style.position = this.props.fixed
+    this.section.style.position = this.props.fixed;
   }
 
   cssVar(key, val) {
@@ -269,37 +269,33 @@ class Header {
     this.section.removeAttribute(this.attr.style);
   }
 
-  clickablePhone() {
-    if (!this.text) return false;
+  // produce links to allow users to send emails and call phone numbers
+  produceEmailPhone() {
+    if (!this.barBlocks.length) return false;
 
-    let time = "24/7 ",
-        html = this.text.innerHTML;
+    const keepOnly = /[^a-zA-Z0-9,\-.?!@+]/g,
+          specChars = /[\()\-\s]/g,
+          phoneRegex = /(?:[-+() ]*\d){10,13}/gm,
+          emailRegex = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
 
-    const phoneRegex = /(?:[-+() ]*\d){10,13}/gm;
+    this.barBlocks.forEach(block => {
+      const links = block.querySelectorAll(this.selector.link);
 
-    if (html.includes(time)) html = html.replaceAll(`${time}`, '');
+      if (!links.length) return false;
 
-    const phoneNumbers = html.match(phoneRegex);
+      links.forEach(link => {
+        let href = link.getAttribute(this.attr.href);
+        const match = href.match(phoneRegex) || href.match(emailRegex);
 
-    if (!phoneNumbers.length) return false;
+        if (match?.length) {
+          href = match[0].replace(keepOnly, '')
 
-    phoneNumbers.forEach(phoneNumber => {
-      phoneNumber = phoneNumber.trim();
+          if (href.match(phoneRegex)) href = `tel:${href.replaceAll(specChars, '')}`;
+          if (href.match(emailRegex)) href = `mailto:${href}`;
 
-      const href = phoneNumber.replaceAll(/[\()\-\s]/g, "");
-
-      const newHtml = this.text.innerHTML.replace(phoneNumber,
-        `<span class="${this.classes.phone}">
-           <a class="${this.classes.link}"
-              href="tel:${href}"
-              style="${this.props.fontSize}: 14px"
-           >
-             ${phoneNumber}
-           </a>
-         </span>
-        `);
-
-      this.text.innerHTML = newHtml;
+          link.setAttribute(this.attr.href, href);
+        }
+      });
     })
   }
 }
