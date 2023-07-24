@@ -22,7 +22,7 @@
       "block_order": [],
       "settings": {
         "behavior": "multiple",
-        "breadcrumbs_label": "products",
+        "breadcrumbs_url": "collections",
         "color_overlay": "dark",
         "color_palette": "one",
         "message_label": "Free shipping over $50",
