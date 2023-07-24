@@ -1,4 +1,4 @@
-.hero:only-child {
+.hero:last-child {
   margin-bottom: 50px;
 }
 
