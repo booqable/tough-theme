@@ -14,6 +14,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign show_breadcrumbs      = section.settings.show_breadcrumbs -%}
 {%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
+{%- assign breadcrumbs_url       = section.settings.breadcrumbs_url -%}
 {%- assign blocks                = section.blocks -%}
 {%- assign is_focal              = settings.use_focal_images -%}
 
@@ -25,16 +26,31 @@
   {%- assign carousel = true -%}
 {%- endif -%}
 
-{%- case breadcrumbs_label -%}
+{%- assign label = "" -%}
+
+{%- if breadcrumbs_label != blank -%}
+  {%- assign label = breadcrumbs_label -%}
+{%- endif -%}
+
+{%- case breadcrumbs_url -%}
   {%- when 'home' -%}
-    {%- assign label = "Home" -%}
-    {%- assign url   = routes.root_url -%}
+    {%- if breadcrumbs_label == blank -%}
+      {%- assign label = "Home" -%}
+    {%- endif -%}
+
+    {%- assign url     = routes.root_url -%}
   {%- when 'collections' -%}
-    {%- assign label = "Categories" -%}
-    {%- assign url   = routes.collections_url -%}
+    {%- if breadcrumbs_label == blank -%}
+      {%- assign label = "Collections" -%}
+    {%- endif -%}
+
+    {%- assign url     = routes.collections_url -%}
   {%- when 'products' -%}
-    {%- assign label = "Shop all" -%}
-    {%- assign url   = routes.all_products_collection_url -%}
+    {%- if breadcrumbs_label == blank -%}
+      {%- assign label = "Shop all" -%}
+    {%- endif -%}
+
+    {%- assign url     = routes.all_products_collection_url -%}
 {%- endcase -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -258,8 +274,14 @@
         "content": "Below you can change the content of section"
       },
       {
-        "type": "select",
+        "type": "text",
         "id": "breadcrumbs_label",
+        "label": "Breadcrumbs root label",
+        "info": "Note: You can use your own root label or leave the field blank to use the default label"
+      },
+      {
+        "type": "select",
+        "id": "breadcrumbs_url",
         "label": "Breadcrumbs root link",
         "options": [
           {
@@ -268,14 +290,14 @@
           },
           {
             "value": "collections",
-            "label": "Categories"
+            "label": "Collections"
           },
           {
             "value": "products",
             "label": "All products"
           }
         ],
-        "default": "products"
+        "default": "collections"
       },
       {
         "type": "text",
