@@ -104,23 +104,31 @@
 
 <script>
   const setColor = () => {
-    const section = document.querySelector('.hero').nextElementSibling;
+    const section = document.querySelector('.hero').nextElementSibling,
+          body = document.querySelector('body'),
+          target = document.querySelector('.hero__overlay');
 
-    if (!section) return false;
+    if (section) {
+      const children = [...section.children],
+            first = 'palette-one',
+            second = 'palette-two';
 
-    const target = document.querySelector('.hero__overlay'),
-          children = [...section.children];
+      children.forEach(child => {
+        const isFirst = child.classList.contains(first),
+              isSecond = child.classList.contains(second);
 
-    children.forEach(child => {
-      if (child.classList.contains('palette-one')) {
-        target.classList.add('palette-one')
-      } else if (child.classList.contains('palette-two')) {
-        target.classList.add('palette-two')
-      }
-    })
+        return isFirst ? target.classList.add(first)
+             : isSecond ? target.classList.add(second)
+             : false;
+      })
+    } else {
+      const res = getComputedStyle(body).backgroundColor;
+
+      target.style.setProperty('background-color',`${res}`);
+    }
   }
 
-  setTimeout(setColor, 250);
+  setTimeout(setColor, 300);
 
 </script>
 
