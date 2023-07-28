@@ -8,8 +8,8 @@ class Header {
     this.selector = {
       body: "body",
       link: "a",
-      bar: ".announcement-bar",
-      barBlock: ".announcement-bar__text",
+      bar: ".top-bar",
+      barBlock: ".top-bar__text",
       view: ".preview-bar__container",
       header: ".header",
       headerNav: ".header__nav-wrapper",
@@ -37,7 +37,7 @@ class Header {
 
     this.props = {
       height: '--header-height',
-      barHeight: '--announcement-height',
+      barHeight: '--top-bar-height',
       viewHeight: '--preview-height',
       linkHeight: '--menu-position',
       transform: '--header-transform',
