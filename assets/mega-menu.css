@@ -371,17 +371,16 @@
 }
 
 .scrolled-down .header--sticky .menu {
-  top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 1px);
+  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 1px);
 }
 
 .scrolled-down .header--sticky #mobile-menu-opener:checked ~ .menu {
-  max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 1px);
-  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 1px);
+  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 1px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 1px);
 }
 
 .preview-bar__container ~ .header .menu {
   height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0) + 3px);
-  /* top: calc(var(--header-height, 73px) + var(--preview-height, 0) - 2px); */
 }
 
 .preview-bar__container ~ .header .menu:not(.mobile-menu-top) .menu__dropdown {
@@ -402,16 +401,16 @@
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
-  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky .menu {
-  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
-  top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 3px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
+  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 3px);
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
-  max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
+  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
 }
 
 .palette-one .menu__opener:before,
@@ -1076,17 +1075,17 @@
   .scrolled-down .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
-    max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0));
+    max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0));
   }
 
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 73px) - var(--announcement-height, 0));
+    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0));
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 1px);
+    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 1px);
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide {

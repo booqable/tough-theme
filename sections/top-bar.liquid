@@ -1,7 +1,7 @@
-{%- assign hide_bar = section.settings.hide_bar -%}
+{%- assign show_bar = section.settings.show_bar -%}
 
-{%- if hide_bar != true -%}
-  {{ "announcement-bar.css" | asset_url | stylesheet_tag }}
+{%- if show_bar -%}
+  {{ "top-bar.css" | asset_url | stylesheet_tag }}
 
   {%- assign icon                  = section.settings.icon -%}
   {%- assign bar_text              = section.settings.bar_text -%}
@@ -54,33 +54,33 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div
-    class="announcement-bar__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} announcement-bar__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} announcement-bar__wrapper--padding-bottom{%- endif -%}"
+    class="top-bar__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} top-bar__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} top-bar__wrapper--padding-bottom{%- endif -%}"
     style="{{- variables | escape -}}"
   >
-    <div class="announcement-bar__container container">
-      <div class="announcement-bar__info">
+    <div class="top-bar__container container">
+      <div class="top-bar__info">
         {%- render 'icon', icon: icon -%}
 
         {%- if bar_text != blank -%}
-          <span class="announcement-bar__text announcement-bar__message">
+          <span class="top-bar__text top-bar__message">
             {{- bar_text -}}
           </span>
         {%- endif -%}
       </div>
 
-      <span class="announcement-bar__text">
+      <span class="top-bar__text">
         {%- if bar_message != blank -%}
           {{- bar_message -}}
         {%- endif -%}
       </span>
 
-      <nav class="announcement-bar__menu">
+      <nav class="top-bar__menu">
         {%- if bar_menu != blank -%}
-          <ul class="announcement-bar__menu-list">
+          <ul class="top-bar__menu-list">
             {%- for link in bar_menu.items -%}
               {%- if link != blank -%}
-                <li class="announcement-bar__menu-item">
-                  <a href="{{ link.url }}" class="announcement-bar__menu-link">
+                <li class="top-bar__menu-item">
+                  <a href="{{ link.url }}" class="top-bar__menu-link">
                     {{- link.title -}}
                   </a>
                 </li>
@@ -95,51 +95,20 @@
 
 {% schema %}
   {
-    "name": "Announcement bar",
+    "name": "Top bar",
     "tag": "section",
-    "class": "announcement-bar",
+    "class": "top-bar",
     "templates": [],
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of bar"
-      },
-      {
-        "type": "contentEditor",
-        "id": "bar_text",
-        "label": "Text",
-        "default": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
-        "info": "You can use phone numbers and emails, and make them clickable as simple links. Phone numbers accept sign '+', round brackets, dashes and spaces. For example, +1 (123) 456-7890"
-      },
-      {
-        "type": "contentEditor",
-        "id": "bar_message",
-        "label": "Message",
-        "default": "Free shipping from €50"
-      },
-      {
-        "type": "menu",
-        "id": "bar_menu",
-        "label": "Anoncement menu",
-        "info": "Use menus with one or couple of links max"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the bar"
+        "content": "General settings"
       },
       {
         "type": "checkbox",
-        "id": "hide_bar",
-        "default": false,
-        "label": "Hide bar"
+        "id": "show_bar",
+        "default": true,
+        "label": "Show top bar"
       },
       {
         "type": "select",
@@ -156,6 +125,12 @@
           }
         ],
         "default": "one"
+      },
+      {
+        "type": "contentEditor",
+        "id": "bar_message",
+        "label": "Main message",
+        "default": "Free shipping from €50"
       },
       {
         "type": "select",
@@ -224,6 +199,19 @@
       {
         "type": "header",
         "content": "Desktop settings"
+      },
+      {
+        "type": "contentEditor",
+        "id": "bar_text",
+        "label": "Secondary message",
+        "default": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+        "info": "You can use phone numbers and emails, and make them clickable as simple links. Phone numbers accept sign '+', round brackets, dashes and spaces. For example, +1 (123) 456-7890"
+      },
+      {
+        "type": "menu",
+        "id": "bar_menu",
+        "label": "Menu",
+        "info": "Use menus with a maximum of a couple of links"
       },
       {
         "type": "select",
