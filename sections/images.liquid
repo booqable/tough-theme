@@ -311,8 +311,8 @@
                         <iframe
                           class="images__video"
                           src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
-                          width="988"
-                          height="556"
+                          width="1920"
+                          height="1080"
                           frameborder="0"
                           allow="autoplay; fullscreen"
                           allowfullscreen
@@ -378,7 +378,7 @@
         </div>
 
         <div class="carousel__counter">
-          {%- for block in blocks limit: 8) -%}
+          {%- for block in blocks limit: 8 -%}
             {%- assign length = forloop.length -%}
           {%- endfor -%}
 
