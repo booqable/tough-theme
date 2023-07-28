@@ -88,20 +88,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
-      },
-      {
-        "type": "number",
-        "id": "limit",
-        "label": "Collections limit for pagination",
-        "min": 4,
-        "max": 24,
-        "default": 8,
-        "info": "Note: Use positive numbers only. Min number is 4, max number is 24"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -122,7 +109,7 @@
       {
         "type": "select",
         "id": "color_overlay",
-        "label": "Overlay color",
+        "label": "Image overlay color",
         "options": [
           {
             "value": "dark",
@@ -134,6 +121,14 @@
           }
         ],
         "default": "dark"
+      },
+      {
+        "type": "number",
+        "id": "limit",
+        "label": "Pagination limit",
+        "min": 4,
+        "max": 24,
+        "default": 8
       },
       {
         "type": "header",

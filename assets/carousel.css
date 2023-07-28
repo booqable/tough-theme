@@ -317,53 +317,67 @@
   fill: var(--color-primary-2, #FFFFFF);
 }
 
-.overlay-light .carousel__fluid .carousel__btn {
+.overlay-light .carousel__fluid .carousel__btn,
+.palette-one .carousel__fluid .carousel__btn {
   background: var(--color-black-08, #0B1A2614);
 }
 
-.overlay-light .carousel__fluid .carousel__btn path {
+.overlay-light .carousel__fluid .carousel__btn path,
+.palette-one .carousel__fluid .carousel__btn path {
   fill: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__btn:hover {
+.overlay-light .carousel__fluid .carousel__btn:hover,
+.palette-one .carousel__fluid .carousel__btn:hover {
   border-color: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__dot {
+.overlay-light .carousel__fluid .carousel__dot,
+.palette-one .carousel__fluid .carousel__dot {
   background: var(--color-black-45, #0B1A2673);
 }
 
 .overlay-light .carousel__fluid .carousel__dot:hover,
-.overlay-light .carousel__fluid .carousel__dot.active {
+.overlay-light .carousel__fluid .carousel__dot.active,
+.palette-one .carousel__fluid .carousel__dot:hover,
+.palette-one .carousel__fluid .carousel__dot.active {
   background: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__counter {
+.overlay-light .carousel__fluid .carousel__counter,
+.palette-one .carousel__fluid .carousel__counter {
   color: var(--color-black, #0B1A26);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn {
+.overlay-dark .carousel__fluid .carousel__btn,
+.palette-two .carousel__fluid .carousel__btn {
   background: var(--color-white-08, #FFFFFF14);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn path {
+.overlay-dark .carousel__fluid .carousel__btn path,
+.palette-two .carousel__fluid .carousel__btn path {
   fill: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn:hover {
+.overlay-dark .carousel__fluid .carousel__btn:hover,
+.palette-two .carousel__fluid .carousel__btn:hover {
   border-color: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__dot {
+.overlay-dark .carousel__fluid .carousel__dot,
+.palette-two .carousel__fluid .carousel__dot {
   background: var(--color-white-45, #FFFFFF73);
 }
 
 .overlay-dark .carousel__fluid .carousel__dot:hover,
-.overlay-dark .carousel__fluid .carousel__dot.active {
+.overlay-dark .carousel__fluid .carousel__dot.active,
+.palette-two .carousel__fluid .carousel__dot:hover,
+.palette-two .carousel__fluid .carousel__dot.active {
   background: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__counter {
+.overlay-dark .carousel__fluid .carousel__counter,
+.palette-two .carousel__fluid .carousel__counter {
   color: var(--color-white, #FFFFFF);
 }
 

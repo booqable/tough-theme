@@ -7,7 +7,7 @@
 
   Usage:
 
-  {%- render 'accordion',
+  {%- render 'accordion-block',
       blocks: blocks,
       behavior: your_id
   -%}
@@ -15,7 +15,7 @@
 {% endcomment %}
 
 {%- if blocks.size > 0 -%}
-  <ul class="accordion">
+  <ul class="accordion-block">
     {%- for block in blocks -%}
       {%- assign heading = block.settings.heading -%}
       {%- assign content = block.settings.content -%}
@@ -34,17 +34,17 @@
           {%- assign content = block.settings.returns -%}
       {% endcase %}
 
-      <li class="accordion__item" id="{{- block.id -}}">
+      <li class="accordion-block__item" id="{{- block.id -}}">
         {%- if heading != blank -%}
           <input
             {% if behavior == "single" %}type="radio"{% else %}type="checkbox"{% endif %}
-            class="accordion__trigger"
-            id="accordion-{{- block.id -}}"
-            name="accordion-trigger"
+            class="accordion-block__trigger"
+            id="accordion-block-{{- block.id -}}"
+            name="accordion trigger"
           />
 
-          <h3 class="accordion__heading">
-            <label class="accordion__label" for="accordion-{{- block.id -}}">
+          <h3 class="accordion-block__heading">
+            <label class="accordion-block__label" for="accordion-block-{{- block.id -}}">
               {{- heading -}}
               {%- render 'icon-arrow-right' -%}
             </label>
@@ -52,7 +52,7 @@
         {%- endif -%}
 
         {%- if content != blank -%}
-          <div class="accordion__content">
+          <div class="accordion-block__content">
             <p>{{- content -}}</p>
           </div>
         {%- endif -%}

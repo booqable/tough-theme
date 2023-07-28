@@ -8,22 +8,10 @@
 }
 
 .form__title {
-  font-size: 48px;
+  font-size: var(--font-size-h2, 48px);
   font-weight: var(--font-weight-bold, 700);
   line-height: var(--line-height-sm, 1.2);
   margin-bottom: 22px;
-}
-
-.form__title--sm {
-  font-size: var(--font-size-h3, 40px);
-}
-
-.form__title--md {
-  font-size: var(--font-size-h2, 48px);
-}
-
-.form__title--lg {
-  font-size: var(--font-size-h1, 56px);
 }
 
 .form__label {
@@ -63,56 +51,6 @@
 .form__field.error::placeholder,
 .form__textarea.error::placeholder {
   color: var(--color-red, #C23434);
-}
-
-.form__checkbox {
-  opacity: 0;
-  margin-left: 4px;
-}
-
-.form__approval {
-  padding: 0 0 30px;
-}
-
-.form__approval .form__label {
-  position: relative;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  margin-top: -23px;
-}
-
-.form__approval .form__label a {
-  text-decoration: underline;
-}
-
-.form__approval .form__label a:hover {
-  text-decoration: none;
-}
-
-.form__approval .form__label:before {
-  content:'';
-  appearance: none;
-  border: 1px solid transparent;
-  padding: 9px;
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.form__checkbox:checked ~ .form__label:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 2px;
-  left: 7px;
-  width: 6px;
-  height: 12px;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
 }
 
 .form__info {
@@ -157,20 +95,6 @@
   border-color: var(--background-accent, #F4B841);
 }
 
-.palette-one .form__approval .form__label:before {
-  border-color: var(--color-border, #0B1A2626);
-  background: var(--background-primary, #FFFFFF);
-}
-
-.palette-one .form__checkbox:checked ~ .form__label:after {
-  border-color: var(--color-accent, #0B1A26);
-}
-
-.palette-one .form__approval .form__checkbox:checked ~ .form__label:before {
-  border-color: var(--background-accent, #F4B841);
-  background: var(--background-accent, #F4B841);
-}
-
 .palette-one .form__info .success i {
   color: var(--color-outline, #F4B841);
 }
@@ -201,20 +125,6 @@
 .palette-two .form__textarea:focus,
 .palette-two .form__textarea:focus-visible {
   border-color: var(--background-accent-2, #F4B841);
-}
-
-.palette-two .form__approval .form__label:before {
-  border-color: var(--color-border-2, #FFFFFF47);
-  background: var(--background-primary-2, #0B1A26);
-}
-
-.palette-two .form__checkbox:checked ~ .form__label:after {
-  border-color: var(--color-accent-2, #0B1A26);
-}
-
-.palette-two .form__approval .form__checkbox:checked ~ .form__label:before {
-  border-color: var(--background-accent-2, #F4B841);
-  background: var(--background-accent-2, #F4B841);
 }
 
 .palette-two .form__info .success i {

@@ -126,7 +126,7 @@
     "name": "Columns",
     "tag": "section",
     "class": "columns",
-    "description": "Display a section of columns",
+    "description": "Add sections to highhlight features or contact details",
     "blocks":[
       {
         "type": "column",
@@ -134,20 +134,19 @@
         "settings": [
           {
             "type": "header",
-            "content": "Basic settings"
+            "content": "General settings"
           },
           {
-            "type": "paragraph",
-            "content": "Below you can change the content of column"
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
           },
           {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-          {
-            "type": "paragraph",
-            "content": "Only 1 variant can be visible: Image or Icon. Image has precedence of icon"
+            "type": "contentEditor",
+            "id": "text",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
           },
           {
             "type": "select",
@@ -187,19 +186,13 @@
                 "label": "Tagline"
               }
             ],
-            "default": "phone"
+            "default": "phone",
+            "info": "Only visible if no image is selected"
           },
           {
-            "type": "text",
-            "id": "title",
-            "label": "Title",
-            "default": "Title"
-          },
-          {
-            "type": "contentEditor",
-            "id": "text",
-            "label": "Description",
-            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in ero."
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
           },
           {
             "type": "header",
@@ -214,14 +207,6 @@
             "type": "url",
             "id": "button_url",
             "label": "Button link"
-          },
-          {
-            "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance of column"
           },
           {
             "type": "select",
@@ -246,11 +231,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -275,7 +256,7 @@
       {
         "type": "select",
         "id": "grid",
-        "label": "Grid",
+        "label": "Layout",
         "options": [
           {
             "value": "two",

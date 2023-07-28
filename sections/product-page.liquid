@@ -260,24 +260,74 @@
 
 {% schema %}
   {
-    "name": "Product",
+    "name": "Product information",
     "tag": "section",
     "class": "product-main",
     "templates": ["product"],
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
+        "content": "General settings"
       },
       {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "type": "text",
+        "id": "variation_label",
+        "label": "Variations label",
+        "default": "Variation"
+      },
+      {
+        "type": "text",
+        "id": "message_label",
+        "label": "Message label",
+        "default": "Free shipping over $50"
+      },
+      {
+        "type": "select",
+        "id": "color_palette",
+        "label": "Color palette",
+        "options": [
+          {
+            "value": "one",
+            "label": "Color set 1"
+          },
+          {
+            "value": "two",
+            "label": "Color set 2"
+          }
+        ],
+        "default": "one"
+      },
+      {
+        "type": "select",
+        "id": "color_overlay",
+        "label": "Image overlay color",
+        "options": [
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "light",
+            "label": "Light"
+          }
+        ],
+        "default": "dark"
+      },
+      {
+        "type": "header",
+        "content": "Breadcrumbs settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_breadcrumbs",
+        "default": true,
+        "label": "Show breadcrumbs"
       },
       {
         "type": "text",
         "id": "breadcrumbs_label",
         "label": "Breadcrumbs root label",
-        "info": "Note: You can use your own root label or leave the field blank to use the default label"
+        "info": "Leave blank to use the default label"
       },
       {
         "type": "select",
@@ -300,75 +350,17 @@
         "default": "collections"
       },
       {
-        "type": "text",
-        "id": "variation_label",
-        "label": "Variations label",
-        "default": "Variation"
-      },
-      {
-        "type": "text",
-        "id": "message_label",
-        "label": "Message label",
-        "default": "Free shipping over $50"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
-      },
-      {
-        "type": "select",
-        "id": "color_palette",
-        "label": "Color palette",
-        "options": [
-          {
-            "value": "one",
-            "label": "Color set 1"
-          },
-          {
-            "value": "two",
-            "label": "Color set 2"
-          }
-        ],
-        "default": "one"
-      },
-      {
-        "type": "select",
-        "id": "color_overlay",
-        "label": "Overlay color",
-        "options": [
-          {
-            "value": "dark",
-            "label": "Dark"
-          },
-          {
-            "value": "light",
-            "label": "Light"
-          }
-        ],
-        "default": "dark"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_breadcrumbs",
-        "default": true,
-        "label": "Show breadcrumbs"
-      },
-      {
         "type": "header",
         "content": "Carousel settings"
       },
       {
         "type": "number",
         "id": "timer",
-        "label": "Auto-rotate timer",
+        "label": "Rotation time",
         "min": 0,
         "max": 100,
         "default": 5,
-        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+        "info": "In seconds. Set to 0 to disable auto rotation"
       },
       {
         "type": "header",

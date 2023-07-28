@@ -100,23 +100,20 @@
 {% schema %}
   {
     "name": "Text",
-    "description": "Display the section with title and description",
+    "description": "Show the section with title and description",
     "tag": "section",
     "class": "text",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "content": "General settings"
       },
       {
         "type": "text",
         "id": "tag",
         "label": "Tagline",
-        "default": "Tagline"
+        "default": "Tagline",
+        "info": "Leave blank to hide tagline"
       },
       {
         "type": "text",
@@ -125,38 +122,15 @@
         "default": "Products"
       },
       {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
         "type": "text",
         "id": "bg_text",
         "label": "Background text"
       },
       {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label",
-        "info": "Note: Leave label blank to disable the button"
-      },
-      {
-        "type": "url",
-        "id": "button_url",
-        "label": "Button link"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       },
       {
         "type": "select",
@@ -173,6 +147,21 @@
           }
         ],
         "default": "one"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "info": "Leave blank to hide the button"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button link"
       },
       {
         "type": "header",

@@ -25,7 +25,8 @@ class Header {
 
     this.classes = {
       sticky: "header--sticky",
-      notSticky: "header--not-sticky"
+      notSticky: "header--not-sticky",
+      opened: "header--menu-opened"
     };
 
     this.modifier = {
@@ -255,7 +256,7 @@ class Header {
 
     if (!this.notSticky) return false;
 
-    this.section.classList.add(this.classes.sticky);
+    this.section.classList.add(this.classes.opened);
     this.section.style.position = this.props.fixed;
   }
 
@@ -264,7 +265,7 @@ class Header {
 
     if (!this.notSticky) return false;
 
-    this.section.classList.remove(this.classes.sticky);
+    this.section.classList.remove(this.classes.opened);
     window.scrollTo(0, 0);
     this.section.removeAttribute(this.attr.style);
   }

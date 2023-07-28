@@ -2,8 +2,8 @@
 
 {%- if blocks.size > 0 -%}
 
-  {{ "faq.css" | asset_url | stylesheet_tag }}
   {{ "accordion.css" | asset_url | stylesheet_tag }}
+  {{ "accordion-block.css" | asset_url | stylesheet_tag }}
 
   {%- assign title                 = section.settings.title -%}
   {%- assign description           = section.settings.description -%}
@@ -64,10 +64,10 @@
   {% comment %} CSS variables end {% endcomment %}
 
   <div
-    class="faq__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} faq__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} faq__wrapper--padding-bottom{%- endif -%}"
+    class="accordion__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} accordion__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} accordion__wrapper--padding-bottom{%- endif -%}"
     style="{{- variables | escape -}}"
   >
-    <div class="faq__container container">
+    <div class="accordion__container container">
       {%- if title != blank or description != blank or bg_text != blank -%}
         {%- render 'section-header',
             title: title,
@@ -76,7 +76,7 @@
         -%}
       {%- endif -%}
 
-      {%- render 'accordion',
+      {%- render 'accordion-block',
           blocks: blocks,
           behavior: behavior
       -%}
@@ -86,18 +86,14 @@
 
 {% schema %}
   {
-    "name": "FAQ",
-    "description": "Display FAQ section.",
+    "name": "Accordion",
+    "description": "Add collapsable sections that allow visitors to reveal information like FAQ's",
     "tag": "section",
-    "class": "faq",
+    "class": "accordion",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "content": "General settings"
       },
       {
         "type": "text",
@@ -106,24 +102,16 @@
         "default": "Frequently asked questions"
       },
       {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
-      },
-      {
         "type": "text",
         "id": "bg_text",
         "label": "Background text",
         "default": "FAQ"
       },
       {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
+        "type": "contentEditor",
+        "id": "description",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       {
         "type": "select",
@@ -144,7 +132,7 @@
       {
         "type": "select",
         "id": "behavior",
-        "label": "Accordion mode",
+        "label": "Collapse behaviour",
         "options": [
           {
             "value": "single",
@@ -264,27 +252,23 @@
     ],
     "blocks": [
       {
-        "type": "question",
-        "name": "Question",
+        "type": "item",
+        "name": "Item",
         "settings": [
           {
             "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
+            "content": "General settings"
           },
           {
             "type": "text",
             "id": "heading",
-            "label": "Question",
+            "label": "Title",
             "default": "How do I rent a product from your shop?"
           },
           {
             "type": "contentEditor",
             "id": "content",
-            "label": "Answer",
+            "label": "Description",
             "default": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
           }
         ]

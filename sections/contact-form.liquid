@@ -1,22 +1,14 @@
 {{ "contact-form.css" | asset_url | stylesheet_tag }}
 
 {%- assign name                  = section.settings.name -%}
-{%- assign name_holder           = section.settings.name_holder -%}
 {%- assign email                 = section.settings.email -%}
-{%- assign email_holder          = section.settings.email_holder -%}
 {%- assign message               = section.settings.message -%}
-{%- assign message_holder        = section.settings.message_holder -%}
-{%- assign agreement_label       = section.settings.agreement_label -%}
-{%- assign agreement_link        = section.settings.agreement_link -%}
-{%- assign agreement_url         = section.settings.agreement_url -%}
 {%- assign button_label          = section.settings.button_label -%}
 {%- assign success_message       = section.settings.success_message -%}
 {%- assign error_message         = section.settings.error_message -%}
 {%- assign bg_image              = section.settings.bg_image -%}
 {%- assign title                 = section.settings.title -%}
-{%- assign title_size            = section.settings.title_size -%}
 {%- assign description           = section.settings.description -%}
-{%- assign description_size      = section.settings.description_size -%}
 {%- assign placement             = section.settings.placement -%}
 {%- assign color_palette         = section.settings.color_palette -%}
 {%- assign padding_top           = section.settings.padding_top -%}
@@ -229,17 +221,13 @@
 {% schema %}
   {
     "name": "Contact form",
-    "description": "Display a contact form on your website.",
+    "description": "Add a way for visitors to contact you",
     "tag": "section",
     "class": "contact-form",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "content": "General settings"
       },
       {
         "type": "text",
@@ -254,92 +242,9 @@
         "default": "Tell something about your company, describe what you do and what makes you unique."
       },
       {
-        "type": "text",
-        "id": "name",
-        "label": "Name label",
-        "default": "Name"
-      },
-      {
-        "type": "text",
-        "id": "name_holder",
-        "label": "Name placeholder",
-        "default": "Your name"
-      },
-      {
-        "type": "text",
-        "id": "email",
-        "label": "Email label",
-        "default": "Email"
-      },
-      {
-        "type": "text",
-        "id": "email_holder",
-        "label": "Email placeholder",
-        "default": "Your email"
-      },
-      {
-        "type": "text",
-        "id": "message",
-        "label": "Message label",
-        "default": "Message"
-      },
-      {
-        "type": "text",
-        "id": "message_holder",
-        "label": "Message placeholder",
-        "default": "Type your message..."
-      },
-      {
-        "type": "text",
-        "id": "agreement_label",
-        "label": "Agreement",
-        "default": "I accept the"
-      },
-      {
-        "type": "text",
-        "id": "agreement_link",
-        "label": "Agreement link",
-        "default": "Terms"
-      },
-      {
-        "type": "url",
-        "id": "agreement_url",
-        "label": "Agreement link url"
-      },
-      {
-        "type": "text",
-        "id": "success_message",
-        "label": "Success message",
-        "default": "Thanks for your message! We'll get back to you shortly."
-      },
-      {
-        "type": "text",
-        "id": "error_message",
-        "label": "Error message",
-        "default": "Oops, something went wrong. Please fix the errors and try again."
-      },
-      {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label",
-        "default": "Submit"
-      },
-      {
         "type": "image_picker",
         "id": "bg_image",
         "label": "Background image"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "select",
@@ -358,44 +263,38 @@
         "default": "two"
       },
       {
-        "type": "select",
-        "id": "title_size",
-        "label": "Title size",
-        "options": [
-          {
-            "value": "sm",
-            "label": "Small"
-          },
-          {
-            "value": "md",
-            "label": "Middle"
-          },
-          {
-            "value": "lg",
-            "label": "Large"
-          }
-        ],
-        "default": "md"
+        "type": "header",
+        "content": "Translations"
       },
       {
-        "type": "select",
-        "id": "description_size",
-        "label": "Description size",
-        "options": [
-          {
-            "value": "sm",
-            "label": "Small"
-          },
-          {
-            "value": "md",
-            "label": "Middle"
-          },
-          {
-            "value": "lg",
-            "label": "Large"
-          }
-        ],
-        "default": "lg"
+        "type": "text",
+        "id": "name",
+        "label": "Name"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Email"
+      },
+      {
+        "type": "text",
+        "id": "message",
+        "label": "Message"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Submit button label"
+      },
+      {
+        "type": "text",
+        "id": "success_message",
+        "label": "Success message"
+      },
+      {
+        "type": "text",
+        "id": "error_message",
+        "label": "Error message"
       },
       {
         "type": "header",
@@ -405,7 +304,6 @@
         "type": "select",
         "id": "placement",
         "label": "Form placement",
-        "info": "Note: Applicable only when at least 1 block is visible",
         "options": [
           {
             "value": "left",
@@ -527,25 +425,9 @@
         "limit": 1,
         "settings": [
           {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          },
-          {
-            "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance and the components' functionality of the block"
           },
           {
             "type": "select",
@@ -575,48 +457,10 @@
         "limit": 1,
         "settings": [
           {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
             "type": "text",
             "id": "heading",
             "default": "Hire from us",
             "label": "Heading"
-          },
-          {
-            "type": "contentEditor",
-            "id": "text",
-            "default": "Tell something about your company, describe what you do and what makes you unique.",
-            "label": "Text"
-          },
-          {
-            "type": "header",
-            "content": "Buttons"
-          },
-          {
-            "type": "text",
-            "id": "label",
-            "default": "Shop collection",
-            "info": "Note: Leave label blank to disable the button",
-            "label": "Button label"
-          },
-          {
-            "type": "url",
-            "id": "url",
-            "label": "Button link"
-          },
-          {
-            "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance and the components' functionality of the block"
           },
           {
             "type": "select",
@@ -639,6 +483,12 @@
             "default": "lg"
           },
           {
+            "type": "contentEditor",
+            "id": "text",
+            "default": "Tell something about your company, describe what you do and what makes you unique.",
+            "label": "Text"
+          },
+          {
             "type": "select",
             "id": "text_size",
             "label": "Text size",
@@ -657,22 +507,6 @@
               }
             ],
             "default": "md"
-          },
-          {
-            "type": "select",
-            "id": "button_style",
-            "label": "Button style",
-            "options": [
-              {
-                "value": "primary",
-                "label": "Filled"
-              },
-              {
-                "value": "outlined",
-                "label": "Outlined"
-              }
-            ],
-            "default": "primary"
           },
           {
             "type": "select",
@@ -713,6 +547,38 @@
               }
             ],
             "default": "top"
+          },
+          {
+            "type": "header",
+            "content": "Buttons"
+          },
+          {
+            "type": "text",
+            "id": "label",
+            "default": "Shop collection",
+            "info": "Leave blank to hide the button",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Button link"
+          },
+          {
+            "type": "select",
+            "id": "button_style",
+            "label": "Button style",
+            "options": [
+              {
+                "value": "primary",
+                "label": "Filled"
+              },
+              {
+                "value": "outlined",
+                "label": "Outlined"
+              }
+            ],
+            "default": "primary"
           }
         ]
       }

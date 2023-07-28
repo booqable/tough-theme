@@ -107,26 +107,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
-      },
-      {
-        "type": "text",
-        "id": "message",
-        "label": "Message",
-        "default": "Sorry, there are no products in this collection yet",
-        "info": "Note: This message appears when the collection exist, but doesn't have any products"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -145,19 +126,25 @@
         "default": "one"
       },
       {
-        "type": "number",
-        "id": "limit",
-        "label": "Product limit for pagination",
-        "min": 6,
-        "max": 24,
-        "default": 6,
-        "info": "Note: Use positive numbers only. Min number is 6, max number is 24"
-      },
-      {
         "type": "checkbox",
         "id": "show_excerpt",
         "default": true,
         "label": "Show excerpt of product"
+      },
+      {
+        "type": "number",
+        "id": "limit",
+        "label": "Pagination limit",
+        "min": 6,
+        "max": 24,
+        "default": 6
+      },
+      {
+        "type": "text",
+        "id": "message",
+        "label": "Message",
+        "default": "Sorry, there are no products in this collection yet",
+        "info": "This message appears when the collection exist, but doesn't have any products"
       },
       {
         "type": "header",
@@ -166,7 +153,7 @@
       {
         "type": "select",
         "id": "grid",
-        "label": "Grid",
+        "label": "Layout",
         "options": [
           {
             "value": "two",

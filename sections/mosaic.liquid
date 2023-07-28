@@ -138,41 +138,13 @@
 {% schema %}
   {
     "name": "Mosaic",
-    "description": "Display a list of individual articles and news.",
+    "description": "Add text with images in various layouts",
     "tag": "section",
     "class": "mosaic",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
-      },
-      {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label",
-        "default": "See all Articles",
-        "info": "Note: Leave label blank to disable the button"
-      },
-      {
-        "type": "url",
-        "id": "button_url",
-        "label": "Button link"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -192,12 +164,28 @@
       },
       {
         "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "See all Articles",
+        "info": "Leave blank to hide the button"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button link"
+      },
+      {
+        "type": "header",
         "content": "Desktop settings"
       },
       {
         "type": "select",
         "id": "size",
-        "label": "Article size",
+        "label": "Layout",
         "options": [
           {
             "value": "small",
@@ -323,22 +311,14 @@
         "settings": [
           {
             "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
+            "content": "General settings"
           },
           {
             "type": "text",
             "id": "article_tag",
             "label": "Tagline",
-            "default": "Tagline"
+            "default": "Tagline",
+            "info": "Leave blank to hide tagline"
           },
           {
             "type": "text",
@@ -353,6 +333,11 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
             "type": "header",
             "content": "Buttons"
           },
@@ -360,7 +345,7 @@
             "type": "text",
             "id": "article_btn",
             "label": "Button label",
-            "info": "Note: Leave label blank to disable the button",
+            "info": "Leave blank to hide the button",
             "default": "Read more"
           },
           {

@@ -143,31 +143,19 @@
 {% schema %}
   {
     "name": "Logos",
-    "description": "Display section with logos",
+    "description": "Show logos of your partners or brands you cary",
     "tag": "section",
     "class": "logos",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "content": "General settings"
       },
       {
         "type": "text",
         "id": "title",
         "label": "Title",
         "default": "Used by the world's most average companies"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "select",
@@ -192,7 +180,7 @@
       {
         "type": "select",
         "id": "text_position",
-        "label": "Text positioning",
+        "label": "Title position",
         "options": [
           {
             "value": "left",
@@ -264,7 +252,7 @@
       {
         "type": "select",
         "id": "text_position_mobile",
-        "label": "Text positioning",
+        "label": "Title position",
         "options": [
           {
             "value": "left",
@@ -336,17 +324,9 @@
         "name": "Logo",
         "settings":[
           {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
-          {
             "type": "image_picker",
             "id": "image",
-            "label": "Logo"
+            "label": "Image"
           }
         ]
       }

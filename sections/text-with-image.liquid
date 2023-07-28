@@ -1,4 +1,4 @@
-{{ "image-with-text.css" | asset_url | stylesheet_tag }}
+{{ "text-with-image.css" | asset_url | stylesheet_tag }}
 
 {%- assign tag                   = section.settings.tag -%}
 {%- assign title                 = section.settings.title -%}
@@ -130,34 +130,34 @@
 {% comment %} CSS variables end {% endcomment %}
 
 <div
-  class="image-text__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if margin_top != blank %} image-text__wrapper--margin-top{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} image-text__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} image-text__wrapper--padding-bottom{%- endif -%}"
+  class="text-image__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if margin_top != blank %} text-image__wrapper--margin-top{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} text-image__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} text-image__wrapper--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
 >
-  <div class="image-text__container container">
-    <div class="image-text__columns">
-      <div class="image-text__col">
+  <div class="text-image__container container">
+    <div class="text-image__columns">
+      <div class="text-image__col">
         {%- if tag != blank -%}
-          <span class="image-text__tag">{{- tag -}}</span>
+          <span class="text-image__tag">{{- tag -}}</span>
         {%- endif -%}
 
         {%- if title != blank -%}
-          <h2 class="image-text__title">{{- title -}}</h2>
+          <h2 class="text-image__title">{{- title -}}</h2>
         {%- endif -%}
 
         {%- if description != blank -%}
-          <div class="image-text__description">{{- description -}}</div>
+          <div class="text-image__description">{{- description -}}</div>
         {%- endif -%}
 
         {%- if button_1 != blank or button_2 != blank -%}
-          <div class="image-text__buttons">
+          <div class="text-image__buttons">
             {%- if button_1 != blank and button_url_1 != blank -%}
-              <a href="{{ button_url_1 }}" class="image-text__button button button--primary button--large">
+              <a href="{{ button_url_1 }}" class="text-image__button button button--primary button--large">
                 {{- button_1 -}}
               </a>
             {%- endif -%}
 
             {%- if button_2 != blank and button_url_2 != blank -%}
-              <a href="{{ button_url_2 }}" class="image-text__button button button--secondary">
+              <a href="{{ button_url_2 }}" class="text-image__button button button--secondary">
                 {{- button_2 -}}
                 {%- render 'icon-arrow-right' -%}
               </a>
@@ -167,14 +167,14 @@
       </div>
 
       {%- if image != blank -%}
-        <div class="image-text__col">
-          <div class="image-text__holder">
-            <div class="image-text__image-wrapper">
+        <div class="text-image__col">
+          <div class="text-image__holder">
+            <div class="text-image__image-wrapper">
               {%- if image.url != blank -%}
                 {%- render 'image',
                   image: image,
                   loading: 'lazy',
-                  class: 'image-text__image',
+                  class: 'text-image__image',
                   size: 'm'
                 -%}
               {%- endif -%}
@@ -185,37 +185,29 @@
     </div>
   </div>
 
-  <div class="image-text__bg-image-wrapper">
+  <div class="text-image__bg-image-wrapper">
     {%- render 'image-background-web' -%}
-    <div class="image-text__bg-overlay container"></div>
+    <div class="text-image__bg-overlay container"></div>
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Image with Text",
-    "description": "Display sectiion with image and text",
+    "name": "Text with image",
+    "description": "Add text with an optional image to highlight a page or product",
     "tag": "section",
-    "class": "image-text",
+    "class": "text-image",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Image (optional)"
+        "content": "General settings"
       },
       {
         "type": "text",
         "id": "tag",
         "label": "Tagline",
-        "default": "Tagline"
+        "default": "Tagline",
+        "info": "Leave blank to hide tagline"
       },
       {
         "type": "text",
@@ -230,40 +222,25 @@
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
       },
       {
-        "type": "header",
-        "content": "Buttons"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image (optional)"
       },
       {
-        "type": "text",
-        "id": "button_1",
-        "label": "Button 1 label",
-        "info": "Note: Leave label blank to disable the button",
-        "default": "Button"
-      },
-      {
-        "type": "url",
-        "id": "button_url_1",
-        "label": "Button 1 link"
-      },
-      {
-        "type": "text",
-        "id": "button_2",
-        "label": "Button 2 label",
-        "info": "Note: Leave label blank to disable the button",
-        "default": "Button"
-      },
-      {
-        "type": "url",
-        "id": "button_url_2",
-        "label": "Button 2 link"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "type": "select",
+        "id": "image_position",
+        "label": "Image position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right"
       },
       {
         "type": "select",
@@ -282,20 +259,32 @@
         "default": "two"
       },
       {
-        "type": "select",
-        "id": "image_position",
-        "label": "Image position",
-        "options": [
-          {
-            "value": "left",
-            "label": "Left"
-          },
-          {
-            "value": "right",
-            "label": "Right"
-          }
-        ],
-        "default": "right"
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_1",
+        "label": "Button 1 label",
+        "info": "Leave blank to hide the button",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_1",
+        "label": "Button 1 link"
+      },
+      {
+        "type": "text",
+        "id": "button_2",
+        "label": "Button 2 label",
+        "info": "Leave blank to hide the button",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_2",
+        "label": "Button 2 link"
       },
       {
         "type": "header",
@@ -324,7 +313,7 @@
           }
         ],
         "default": "none",
-        "info": "Note: You can use this indentation if the image is too height and overlaped the context of section above"
+        "info": "You can use this indentation if the image is too height and overlaped the context of section above"
       },
       {
         "type": "select",

@@ -29,7 +29,7 @@
           "menu": "main-menu",
           "menu_back_placeholder": "Back",
           "menu_opener_mobile": "left",
-          "menu_dropdown_style": "full",
+          "menu_style": "horizontal",
           "menu_position": "left-center",
           "menu_position_mobile": "top",
           "padding_top": "medium",

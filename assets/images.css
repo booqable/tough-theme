@@ -8,10 +8,6 @@
   position: relative;
 }
 
-.images__video-wrapper {
-  height: 100%;
-}
-
 .images__container {
   width: 100%;
   height: 100%;
@@ -115,11 +111,11 @@
   color: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .images__vision {
+.overlay-dark ~ .images__vision {
   background: var(--color-black, #0B1A26);
 }
 
-.overlay-dark .images__vision-wrapper--overlay:after {
+.overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
   background: linear-gradient(357.73deg, var(--color-black, #0B1A26) 3.03%, var(--color-black-00, #0B1A2600) 31.83%),
    linear-gradient(180deg, var(--color-black, #0B1A26) 6.67%, var(--color-black-00, #0B1A2600) 105.81%),
    linear-gradient(0deg, var(--color-black-45, #0B1A2673), var(--color-black-45, #0B1A2673));
@@ -137,11 +133,11 @@
   color: var(--color-black, #0B1A26);
 }
 
-.overlay-light .images__vision {
+.overlay-light ~ .images__vision {
   background: var(--color-white, #FFFFFF);
 }
 
-.overlay-light .images__vision-wrapper--overlay:after {
+.overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
   background: linear-gradient(357.73deg, var(--color-white, #FFFFFF) 3.03%, var(--color-white-00, #FFFFFF00) 31.83%),
    linear-gradient(180deg, var(--color-white, #FFFFFF) 6.67%, var(--color-white-00, #FFFFFF00) 105.81%),
    linear-gradient(0deg, var(--color-white-45, #FFFFFF73), var(--color-white-45, #FFFFFF73));
@@ -150,7 +146,7 @@
 @media (min-width: 428px) {
   .images {
     aspect-ratio: auto;
-    height: 588px;
+    height: 560px;
   }
 }
 
@@ -160,7 +156,7 @@
   }
 
   .images__container {
-    height: var(--height, auto);
+    height: calc(var(--height, auto) - var(--header-height, 105px));
   }
 
   .images__container--padding-top {
@@ -169,14 +165,6 @@
 
   .images__container--padding-bottom {
     padding-bottom: var(--padding-bottom, 80px);
-  }
-
-  .images__video-wrapper {
-    aspect-ratio: 16 / 9;
-  }
-
-  .images__video-wrapper .images__container {
-    height: 100%;
   }
 
   .images__vision-wrapper {
@@ -192,8 +180,13 @@
   }
 
   .images__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     max-width: none;
     object-fit: cover;
   }
@@ -214,7 +207,19 @@
     padding-right: var(--padding-right, 0);
   }
 
+  .images__wrapper-full-height .images__video {
+    width: auto;
+    height: 100%;
+  }
+
   .images .carousel .images__content {
     padding-top: 9px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .images__wrapper-full-height .images__video {
+    width: 100%;
+    height: auto;
   }
 }

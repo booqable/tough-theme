@@ -50,12 +50,12 @@
 .menu {
   font-weight: var(--font-weight-regular, 400);
   position: absolute;
-  height: calc(100vh - var(--header-height, 73px) + 52px);
+  height: calc(100vh - var(--header-height, 73px) + 1px);
   top: calc(var(--header-height, 73px) - 1px);
   width: var(--menu-width);
   left: var(--menu-left);
   right: var(--menu-right);
-  bottom: -35px;
+  bottom: 0;
   max-height: var(--menu-max-height);
   transition: width var(--animation-duration, 200ms) var(--transition-function-ease-out),
     top var(--animation-duration, 200ms) var(--transition-function-ease-out),
@@ -73,7 +73,6 @@
   top: 0;
   left: 0;
   border-top: 1px solid transparent;
-  padding-bottom: 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -241,7 +240,7 @@
 #mobile-menu-opener:checked ~ .menu {
   pointer-events: all;
   z-index: 1;
-  max-height: calc(100vh + 35px);
+  max-height: calc(100vh - var(--header-height, 73px) + 1px);
   width: 100%;
 }
 
@@ -375,19 +374,45 @@
   top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 1px);
 }
 
-.preview-bar__container ~ .header .menu,
+.scrolled-down .header--sticky #mobile-menu-opener:checked ~ .menu {
+  max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 1px);
+  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 1px);
+}
+
+.preview-bar__container ~ .header .menu {
+  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0) + 3px);
+  /* top: calc(var(--header-height, 73px) + var(--preview-height, 0) - 2px); */
+}
+
 .preview-bar__container ~ .header .menu:not(.mobile-menu-top) .menu__dropdown {
-  height: calc(100vh - var(--header-height, 73px) + var(--padding-bottom-mobile, 0) + var(--padding-top-mobile, 0) + 35px - var(--preview-height));
+  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0) + 3px);
 }
 
-.preview-bar__container ~ .header--sticky .menu,
+.preview-bar__container ~ .header #mobile-menu-opener:checked ~ .menu {
+  max-height: calc(100vh - var(--header-height, 73px) + 3px);
+}
+
+.preview-bar__container ~ .header--sticky .menu {
+  height: calc(100vh - var(--header-height, 73px) + 3px);
+  top: calc(var(--header-height, 73px) - 3px);
+}
+
 .preview-bar__container ~ .header--sticky .menu:not(.mobile-menu-top) .menu__dropdown {
-  height: calc(100vh - var(--header-height, 73px) + 35px);
+  height: calc(100vh - var(--header-height, 73px) + 3px);
 }
 
+.scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
+  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
+}
 
+.scrolled-down .preview-bar__container ~ .header--sticky .menu {
+  height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
+  top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 3px);
+}
 
-
+.scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
+  max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0) + 3px);
+}
 
 .palette-one .menu__opener:before,
 .palette-one .menu__opener:after,
@@ -641,6 +666,10 @@
     margin-left: -22px;
   }
 
+  .menu__item.has-dropdown.active .menu__dropdown-opener:has(+ .menu__link) .menu__item-icon {
+    transform:rotate(180deg);
+  }
+
   .menu__bottom {
     display: none;
   }
@@ -845,7 +874,7 @@
   .menu-wide.mobile-menu-top .menu__item .menu__dropdown,
   .menu-wide .menu__item .menu__dropdown {
     position: absolute;
-    top: calc(var(--header-height, 65px) - 1px);
+    top: calc(var(--header-height, 73px));
     left: 50%;
     right: auto;
     width: 100vw;
@@ -996,7 +1025,7 @@
   .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,
   .header--sticky .menu-wide .menu__dropdown {
     position: fixed;
-    top: calc(var(--header-height, 65px) - 1px);
+    top: calc(var(--header-height, 73px));
     left: 0;
     right: 0;
     width: 100%;
@@ -1008,7 +1037,7 @@
   .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
   .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
   .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
-    max-height: calc(100vh - var(--header-height, 65px));
+    max-height: calc(100vh - var(--header-height, 73px));
     overflow: auto;
   }
 
@@ -1020,14 +1049,14 @@
   .header--sticky .header-logo-centered .menu-wide .menu__dropdown,
   .header--sticky .header-menu-bottom .menu-wide.mobile-menu-top .menu__dropdown,
   .header--sticky .header-menu-bottom .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 65px) - 1px);
+    top: calc(var(--header-height, 73px) - 1px);
     transform: none !important;
     overflow: hidden;
   }
 
   .header--sticky .header-menu-bottom .menu-wide.mobile-menu-top .menu__dropdown,
   .header--sticky .header-menu-bottom .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 65px) - 1px);
+    top: calc(var(--header-height, 73px) - 1px);
   }
 
   .resize-active .menu {
@@ -1040,27 +1069,33 @@
 
   .preview-bar__container ~ .header .menu {
     height: 100%;
+    top: 0;
   }
 
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item.active > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
-    max-height: calc(100vh - var(--header-height, 65px) + var(--announcement-height, 0));
+    max-height: calc(100vh - var(--header-height, 73px) + var(--announcement-height, 0));
   }
 
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 65px) - var(--announcement-height, 0) - 1px);
+    top: calc(var(--header-height, 73px) - var(--announcement-height, 0));
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 65px)  - var(--announcement-height, 0) - 1px);
+    top: calc(var(--header-height, 73px) - var(--announcement-height, 0) - 1px);
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide {
     top: 0;
+  }
+
+  .scrolled-down .preview-bar__container ~ .header--sticky .menu {
+    top: 0;
+    height: 100%;
   }
 
   .loaded .menu__dropdown{
