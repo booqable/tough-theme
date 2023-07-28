@@ -138,6 +138,11 @@ body .growth > section:first-child{
   padding-top: calc(var(--header-height) - 2px);
 }
 
+.header--not-sticky.header--menu-opened ~ #main {
+  margin-top: var(--preview-height);
+  padding-top: calc(var(--header-height) - 1px);
+}
+
 h1,
 h2,
 h3,

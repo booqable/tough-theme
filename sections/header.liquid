@@ -7,7 +7,7 @@
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
 {%- assign menu                  = section.settings.menu -%}
-{%- assign menu_dropdown_style   = section.settings.menu_dropdown_style -%}
+{%- assign menu_style            = section.settings.menu_style -%}
 {%- assign menu_position         = section.settings.menu_position -%}
 {%- assign menu_position_mobile  = section.settings.menu_position_mobile -%}
 {%- assign color_palette         = section.settings.color_palette -%}
@@ -80,26 +80,29 @@
       --header-justify-content: flex-start;
   {%- endcase -%}
 
-  {%- case menu_position_mobile -%}
-    {%- when 'left' -%}
-      --menu-transform: translate(-100%, 0);
-      --menu-width: 0;
-      --menu-left: 0;
-      --menu-right: auto;
-      --menu-max-height: none;
-    {%- when 'right' -%}
-      --menu-transform: translate(100%, 0);
-      --menu-width: 0;
-      --menu-left: auto;
-      --menu-right: 0;
-      --menu-max-height: none;
-    {%- when 'top' -%}
-      --menu-transform: translate(0, -100%);
-      --menu-width: 100%;
-      --menu-left: 0;
-      --menu-right: 0;
-      --menu-max-height: 0;
-  {%- endcase -%}
+  {%- if menu_position_mobile == "top" -%}
+    --menu-transform: translate(0, -100%);
+    --menu-width: 100%;
+    --menu-left: 0;
+    --menu-right: 0;
+    --menu-max-height: 0;
+  {%- endif -%}
+
+  {%- if menu_position_mobile == "side" and menu_opener_mobile == "left" -%}
+    --menu-transform: translate(-100%, 0);
+    --menu-width: 0;
+    --menu-left: 0;
+    --menu-right: auto;
+    --menu-max-height: none;
+  {%- endif -%}
+
+  {%- if menu_position_mobile == "side" and menu_opener_mobile == "right" -%}
+    --menu-transform: translate(100%, 0);
+    --menu-width: 0;
+    --menu-left: auto;
+    --menu-right: 0;
+    --menu-max-height: none;
+  {%- endif -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
@@ -114,19 +117,11 @@
         custom_alt: shop.name
     -%}
   {%- elsif custom_title != blank -%}
-    <h2 class="header__logo-text">
-      {{- custom_title -}}
-    </h2>
+    <h2 class="header__logo-text">{{- custom_title -}}</h2>
   {%- elsif shop.logo_url != blank -%}
-    <img
-      src="{{ shop.logo_url }}"
-      alt="{{ shop.name }}"
-      class="header__logo-image"
-    >
+    <img class="header__logo-image" src="{{ shop.logo_url }}" alt="{{ shop.name }}">
   {%- else -%}
-    <h2 class="header__logo-text">
-      {{- shop.name -}}
-    </h2>
+    <h2 class="header__logo-text">{{- shop.name -}}</h2>
   {%- endif -%}
 {%- endcapture -%}
 
@@ -152,7 +147,9 @@
         <span></span>
       </label>
 
-      <nav class="header__nav menu{% if padding_bottom != blank %} menu--position{% endif %}{% if menu_dropdown_style == "full" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} mobile-menu-top{%- endif -%}" style="display: none;">
+      <nav class="header__nav menu{% if padding_bottom != blank %} menu--position{% endif %}{% if menu_style == "horizontal" %} menu-wide{% endif %}{% if menu_position_mobile == "top" %} mobile-menu-top{%- endif -%}"
+           style="display: none;"
+      >
         <div class="menu__wrapper">
           <ul class="header__nav-list menu__list">
             {%- for link in menu.items -%}
@@ -288,8 +285,6 @@
 
     <div class="header__cart">
       {{- cart_button -}}
-
-      <i class="fa-regular fa-spinner-third fa-spin"></i>
     </div>
   </div>
 {%- endcapture -%}
@@ -337,17 +332,13 @@
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
+        "content": "General settings"
       },
       {
-        "type": "paragraph",
-        "content": "Below you can change the content of header"
-      },
-      {
-        "type": "text",
-        "id": "search_placeholder",
-        "label": "Search placeholder",
-        "default": "Search"
+        "type": "checkbox",
+        "id": "sticky_header",
+        "default": true,
+        "label": "Fixed at the top of screen"
       },
       {
         "type": "image_picker",
@@ -358,26 +349,12 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "info": "Note: Header logo always overrides this title"
+        "info": "Visible if logo image is not chosen"
       },
       {
         "type": "menu",
         "id": "menu",
-        "label": "Mega menu"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the header"
-      },
-      {
-        "type": "checkbox",
-        "id": "sticky_header",
-        "default": true,
-        "label": "Sticky header"
+        "label": "Menu"
       },
       {
         "type": "select",
@@ -394,6 +371,12 @@
           }
         ],
         "default": "two"
+      },
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search placeholder",
+        "default": "Search"
       },
       {
         "type": "checkbox",
@@ -435,19 +418,19 @@
       },
       {
         "type": "select",
-        "id": "menu_dropdown_style",
-        "label": "Dropdown menu style",
+        "id": "menu_style",
+        "label": "Menu style",
         "options": [
           {
-            "value": "short",
-            "label": "Short menu"
+            "value": "vertical",
+            "label": "Vertical"
           },
           {
-            "value": "full",
-            "label": "Full width menu"
+            "value": "horizontal",
+            "label": "Horizontal"
           }
         ],
-        "default": "full"
+        "default": "horizontal"
       },
       {
         "type": "select",
@@ -496,7 +479,7 @@
       {
         "type": "select",
         "id": "menu_opener_mobile",
-        "label": "Menu opener position",
+        "label": "Menu icon position",
         "options": [
           {
             "value": "left",
@@ -516,15 +499,11 @@
         "options": [
           {
             "value": "top",
-            "label": "From top"
+            "label": "Top"
           },
           {
-            "value": "right",
-            "label": "From right"
-          },
-          {
-            "value": "left",
-            "label": "From left"
+            "value": "side",
+            "label": "Side"
           }
         ],
         "default": "top"

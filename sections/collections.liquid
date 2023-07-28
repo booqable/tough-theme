@@ -75,17 +75,13 @@
 {% schema %}
   {
     "name": "Collections",
-    "description": "Display a list of collections.",
+    "description": "Add a list of collections to your page",
     "tag": "section",
     "class": "collections",
     "settings": [
       {
         "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -106,7 +102,7 @@
       {
         "type": "select",
         "id": "color_overlay",
-        "label": "Overlay color",
+        "label": "Image overlay color",
         "options": [
           {
             "value": "dark",
@@ -230,14 +226,6 @@
         "type": "collection",
         "name": "Collection",
         "settings": [
-          {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
           {
             "type": "collection",
             "id": "collection",

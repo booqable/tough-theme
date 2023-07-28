@@ -102,11 +102,7 @@
     "settings": [
       {
         "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -125,19 +121,18 @@
         "default": "one"
       },
       {
-        "type": "number",
-        "id": "limit",
-        "label": "Products limit for pagination",
-        "min": 6,
-        "max": 24,
-        "default": 6,
-        "info": "Note: Use positive numbers only. Min number is 6, max number is 24"
-      },
-      {
         "type": "checkbox",
         "id": "show_excerpt",
         "default": true,
         "label": "Show excerpt of product"
+      },
+      {
+        "type": "number",
+        "id": "limit",
+        "label": "Pagination limit",
+        "min": 6,
+        "max": 24,
+        "default": 6
       },
       {
         "type": "header",
@@ -146,7 +141,7 @@
       {
         "type": "select",
         "id": "grid",
-        "label": "Grid",
+        "label": "Layout",
         "options": [
           {
             "value": "two",

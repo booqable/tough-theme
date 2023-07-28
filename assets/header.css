@@ -1,9 +1,11 @@
 .header {
   position: relative;
   z-index: 1000;
+  margin-top: var(--preview-height);
   margin-bottom: -1px;
 }
 
+.header--menu-opened,
 .header--sticky {
   top: var(--header-transform, 0);
   left: 0;
@@ -220,7 +222,7 @@
 }
 
 .header__cart {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,7 +248,7 @@
 }
 
 .header__mobile-menu-opener-left .header__search-wrapper {
-  right: -59px;
+  right: -26px;
 }
 
 .loaded .header__search-wrapper {

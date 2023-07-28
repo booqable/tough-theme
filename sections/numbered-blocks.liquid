@@ -133,17 +133,13 @@
 {% schema %}
   {
     "name": "Numbered blocks",
-    "description": "Display a section of numbered blocks.",
+    "description": "Add a section of numbered blocks",
     "tag": "section",
     "class": "numbered-blocks",
     "settings": [
       {
         "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -274,16 +270,12 @@
         "settings": [
           {
             "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
+            "content": "General settings"
           },
           {
             "type": "text",
             "id": "heading",
-            "label": "Heading",
+            "label": "Title",
             "default": "Medium length section heading goes here"
           },
           {
@@ -293,6 +285,12 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
           },
           {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "Square images are recommended"
+          },
+          {
             "type": "header",
             "content": "Buttons"
           },
@@ -300,7 +298,7 @@
             "type": "text",
             "id": "button_1",
             "label": "Button 1 label",
-            "info": "Note: Leave label blank to disable the button",
+            "info": "Leave blank to hide the button",
             "default": "Button"
           },
           {
@@ -312,19 +310,13 @@
             "type": "text",
             "id": "button_2",
             "label": "Button 2 label",
-            "info": "Note: Leave label blank to disable the button",
+            "info": "Leave blank to hide the button",
             "default": "Button"
           },
           {
             "type": "url",
             "id": "button_url_2",
             "label": "Button 2 link"
-          },
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image",
-            "info": "Note: For better displaying, the picture should be square"
           }
         ]
       }

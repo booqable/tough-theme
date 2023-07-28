@@ -17,27 +17,14 @@
         "image"
       ],
       "settings": {
-        "agreement_label": "I accept the",
-        "agreement_link": "Terms",
-        "button_label": "Submit",
         "color_palette": "two",
         "description": "Tell something about your company, describe what you do and what makes you unique.",
-        "description_size": "lg",
-        "email": "Email",
-        "email_holder": "Your email",
-        "error_message": "Oops, something went wrong. Please fix the errors and try again.",
-        "message": "Message",
-        "message_holder": "Type your message...",
-        "name": "Name",
-        "name_holder": "Your name",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "placement": "left",
-        "success_message": "Thanks for your message! We'll get back to you shortly.",
-        "title": "Contact us",
-        "title_size": "md"
+        "title": "Contact us"
       },
       "disabled": null
     },
@@ -86,6 +73,7 @@
       ],
       "settings": {
         "color_palette": "one",
+        "grid": "three",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
         "padding_top": "large",
@@ -112,8 +100,8 @@
       },
       "disabled": null
     },
-    "offices": {
-      "type": "offices",
+    "locations": {
+      "type": "locations",
       "blocks": {
         "tab": {
           "type": "tab",
@@ -164,6 +152,6 @@
     "contact-form",
     "columns",
     "text",
-    "offices"
+    "locations"
   ]
 }

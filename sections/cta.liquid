@@ -97,17 +97,13 @@
 {% schema %}
   {
     "name": "Call to action",
-    "description": "Display Call to action section.",
+    "description": "Draw visitors' attentionwith a CTA section",
     "tag": "section",
     "class": "cta",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "content": "General settings"
       },
       {
         "type": "text",
@@ -122,45 +118,9 @@
         "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "text",
-        "id": "button_1",
-        "label": "Button 1 label",
-        "info": "Note: Leave label blank to disable the button",
-        "default": "Button"
-      },
-      {
-        "type": "url",
-        "id": "button_url_1",
-        "label": "Button 1 link"
-      },
-      {
-        "type": "text",
-        "id": "button_2",
-        "label": "Button 2 label",
-        "info": "Note: Leave label blank to disable the button",
-        "default": "Button"
-      },
-      {
-        "type": "url",
-        "id": "button_url_2",
-        "label": "Button 2 link"
-      },
-      {
         "type": "image_picker",
         "id": "image",
-        "label": "Image"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the section"
+        "label": "Background image"
       },
       {
         "type": "select",
@@ -177,6 +137,34 @@
           }
         ],
         "default": "two"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_1",
+        "label": "Button 1 label",
+        "info": "Leave blank to hide the button",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_1",
+        "label": "Button 1 link"
+      },
+      {
+        "type": "text",
+        "id": "button_2",
+        "label": "Button 2 label",
+        "info": "Leave blank to hide the button",
+        "default": "Button"
+      },
+      {
+        "type": "url",
+        "id": "button_url_2",
+        "label": "Button 2 link"
       },
       {
         "type": "header",

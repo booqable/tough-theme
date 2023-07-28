@@ -137,16 +137,23 @@
     "name": "Hero",
     "tag": "section",
     "class": "hero",
-    "description": "Display a section with Name and Description of page",
+    "description": "Engage visitors by giving great first impression",
     "templates": ["collection", "list-collections", "page"],
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
+        "content": "General settings"
       },
       {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background image"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_bg",
+        "default": true,
+        "label": "Show background image"
       },
       {
         "type": "text",
@@ -157,19 +164,6 @@
         "type": "contentEditor",
         "id": "custom_description",
         "label": "Custom description"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Background image"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
       },
       {
         "type": "select",
@@ -192,12 +186,6 @@
         "id": "show_datepicker",
         "default": true,
         "label": "Show datepicker"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_bg",
-        "default": true,
-        "label": "Show background image"
       },
       {
         "type": "header",

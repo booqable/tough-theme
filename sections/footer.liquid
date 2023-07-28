@@ -71,19 +71,11 @@
         custom_alt: shop.name
     -%}
   {%- elsif custom_title != blank -%}
-    <h2 class="footer__logo-text">
-      {{- custom_title -}}
-    </h2>
+    <h2 class="footer__logo-text">{{- custom_title -}}</h2>
   {%- elsif shop.logo_url != blank -%}
-    <img
-      src="{{ shop.logo_url }}"
-      alt="{{ shop.name }}"
-      class="footer__logo-image"
-    >
+    <img class="footer__logo-image" src="{{ shop.logo_url }}" alt="{{ shop.name }}">
   {%- else -%}
-    <h2 class="footer__logo-text">
-      {{- shop.name -}}
-    </h2>
+    <h2 class="footer__logo-text">{{- shop.name -}}</h2>
   {%- endif -%}
 {%- endcapture -%}
 
@@ -216,11 +208,7 @@
     "settings":[
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of footer"
+        "content": "General settings"
       },
       {
         "type": "image_picker",
@@ -231,20 +219,20 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "description": "Note: Footer logo always overrides this title"
+        "description": "Visible if logo image is not chosen"
       },
       {
         "type": "text",
         "id": "bottom_text",
         "label": "Bottom text",
         "default": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
-        "info": "Note: This template keeps the year auto-updated and returns the name of your company. You can replace it with any text"
+        "info": "This template keeps the year auto-updated and returns the name of your company. You can replace it with any text"
       },
       {
         "type": "menu",
         "id": "bottom_menu",
         "label": "Bottom menu",
-        "info": "Note: This menu located at the bottom of footer"
+        "info": "This menu located at the bottom of footer"
       },
       {
         "type": "header",
@@ -367,11 +355,7 @@
         "settings": [
           {
             "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of the menu block"
+            "content": "General settings"
           },
           {
             "type": "text",
@@ -383,7 +367,7 @@
             "type": "menu",
             "id": "menu",
             "label": "Menu",
-            "info": "Note: Submenu isn't supported"
+            "info": "Submenu isn't supported"
           },
           {
             "type": "header",

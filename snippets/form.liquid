@@ -4,20 +4,12 @@
 
   id - id
   title - "string" *required,
-  title_size - "string" optional,
   description - "string" *required,
-  description_size - "string" optional,
   name - "string" *required,
-  name_holder - "string" optional,
   email - "string" *required,
-  email_holder - "string" optional,
   message - "string" *required,
-  message_holder - "string" optional,
   success_message - "string" *required,
   error_message - "string" *required,
-  agreement_label - "string" *required,
-  agreement_link - "string" optional,
-  agreement_url - url *required only if agreement_link is exist, else - optional
   button_label - "string" *required,
   button_variables - "string" optional
 
@@ -26,20 +18,12 @@
   {%- render "form",
       id: your_id,
       title: your_id,
-      title_size: your_id,
       description: your_id,
-      description_size: your_id,
       name: your_id,
-      name_holder: your_id,
       email: your_id,
-      email_holder: your_id,
       message: your_id,
-      message_holder: your_id,
       success_message: your_id,
       error_message: your_id,
-      agreement_label: your_id,
-      agreement_link: your_id,
-      agreement_url: your_id,
       button_label: your_id,
       button_variables
   -%}
@@ -50,11 +34,11 @@
 
 <div id="{{- id -}}" class="form__inner" style="{{- button_variables | escape -}}">
   {%- if title != blank -%}
-    <h2 class="form__title form__title--{{- title_size -}}">{{- title -}}</h2>
+    <h2 class="form__title">{{- title -}}</h2>
   {%- endif -%}
 
   {%- if description != blank -%}
-    <div class="form__text{% if description_size == "lg" %} text-large{% endif %}{% if description_size == "md" %} text-medium{%- endif -%}">
+    <div class="form__text">
       {{- description -}}
     </div>
   {%- endif -%}
@@ -74,8 +58,8 @@
         id="author"
         class="form__field{% if form.errors.author %} error{%- endif -%}"
         name="form[author]"
-        title="{%- if name != blank -%}{{- name -}}{%- else -%}Name{%- endif -%}"
-        placeholder="{{- name_holder -}}"
+        title="(e.g. Jon Doe)"
+        placeholder="{%- if name != blank -%}{{- name -}}{%- else -%}Your name{%- endif -%}"
         {%- if form.errors != blank -%}
           value="{{ form.author }}"
         {%- endif -%}
@@ -97,7 +81,7 @@
         class="form__field{% if form.errors.email %} error{%- endif -%}"
         name="form[email]"
         title="(e.g. mail@domain.com)"
-        placeholder="{{- email_holder -}}"
+        placeholder="{%- if email != blank -%}{{- email -}}{%- else -%}Your email{%- endif -%}"
         {%- if form.errors != blank -%}
           value="{{ form.email }}"
         {%- endif -%}
@@ -117,55 +101,35 @@
         id="body"
         class="form__textarea{% if form.errors.body %} error{%- endif -%}"
         name="form[body]"
-        title="{%- if message != blank -%}{{- message -}}{%- else -%}Message{%- endif -%}"
-        placeholder="{{- message_holder -}}"
+        title="Describe what you want in more detail"
+        placeholder="{%- if message != blank -%}{{- message -}}...{%- else -%}Type your message...{%- endif -%}"
         rows="5"
       >
         {%- if form.errors != blank -%}{{- form.body | strip -}}{%- endif -%}
       </textarea>
     </div>
 
-    {%- if agreement_label != blank -%}
-      <div class="form__approval">
-        <input
-          type="checkbox"
-          id="checkbox"
-          class="form__checkbox{% if form.errors.checkbox %} error{%- endif -%}"
-          name="form[checkbox]"
-          title="{{- agreement_label -}}"
-          {%- if form.errors != blank -%}
-            value="{{ form.checkbox }}"
-          {%- endif -%}
-          required
-        >
-
-        <label class="form__label" for="checkbox">
-          {{- agreement_label -}}
-          &nbsp;
-          {%- if agreement_link != blank and agreement_url != blank -%}
-            <a href="{{  agreement_url }}">{{- agreement_link -}}</a>
-          {%- endif -%}
-        </label>
-      </div>
-    {%- endif -%}
-
     <div class="form__info">
       {%- if form.posted_successfully -%}
         <p class="success">
-          <i class="fa-solid fa-circle-check"></i> {{- success_message -}}
+          <i class="fa-solid fa-circle-check"></i> {%- if success_message != blank -%}{{- success_message -}}{%- else -%}Thanks for your message! We'll get back to you shortly{%- endif -%}
         </p>
       {%- endif -%}
 
       {%- if form.errors != blank -%}
         <p class="error">
-          <i class="fa-solid fa-circle-exclamation"></i> {{- error_message -}}
+          <i class="fa-solid fa-circle-exclamation"></i> {%- if error_message != blank -%}{{- error_message -}}{%- else -%}Oops, something went wrong. Please fix the errors and try again{%- endif -%}
         </p>
       {%- endif -%}
     </div>
 
     <div class="form__submit">
       <button class="button button--large button--primary">
-        {{- button_label -}}
+        {%- if button_label != blank -%}
+          {{- button_label -}}
+        {%- else -%}
+          Submit
+        {%- endif -%}
       </button>
     </div>
   {%- endform -%}

@@ -177,22 +177,12 @@
     "name": "Hero",
     "tag": "section",
     "class": "hero",
-    "description": "Display a section with a search query and the number of results found",
+    "description": "Engage visitors by giving great first impression",
     "templates": ["search"],
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Search results title",
-        "default": "Search results for"
+        "content": "General settings"
       },
       {
         "type": "image_picker",
@@ -200,41 +190,16 @@
         "label": "Background image"
       },
       {
-        "type": "paragraph",
-        "content": "Note: The settings below are applicable when search results have at least 1 product"
+        "type": "checkbox",
+        "id": "show_bg",
+        "default": true,
+        "label": "Show background image"
       },
       {
         "type": "text",
-        "id": "results_label",
-        "label": "Results label",
-        "default": "results"
-      },
-      {
-        "type": "paragraph",
-        "content": "Note: The settings below are applicable when search results are empty"
-      },
-      {
-        "type": "contentEditor",
-        "id": "message",
-        "label": "Message",
-        "default": "No results found"
-      },
-      {
-        "type": "header",
-        "content": "Buttons"
-      },
-      {
-        "type": "text",
-        "id": "button_label",
-        "label": "Button label"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
+        "id": "title",
+        "label": "Search results title",
+        "default": "Search results for"
       },
       {
         "type": "select",
@@ -253,10 +218,33 @@
         "default": "two"
       },
       {
-        "type": "checkbox",
-        "id": "show_bg",
-        "default": true,
-        "label": "Show background image"
+        "type": "paragraph",
+        "content": "The settings below are applicable when search results have at least 1 product"
+      },
+      {
+        "type": "text",
+        "id": "results_label",
+        "label": "Results label",
+        "default": "results"
+      },
+      {
+        "type": "paragraph",
+        "content": "The settings below are applicable when search results are empty"
+      },
+      {
+        "type": "contentEditor",
+        "id": "message",
+        "label": "Message",
+        "default": "No results found"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
       },
       {
         "type": "header",

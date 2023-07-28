@@ -6,7 +6,6 @@
   {{ "products.css" | asset_url | stylesheet_tag }}
   {{ "product-card.css" | asset_url | stylesheet_tag }}
 
-  {%- assign limit                 = section.settings.limit -%}
   {%- assign show_navigation       = section.settings.show_navigation -%}
   {%- assign show_pagination       = section.settings.show_pagination -%}
   {%- assign color_palette         = section.settings.color_palette -%}
@@ -94,7 +93,7 @@
           <div class="carousel__wrapper">
         {%- endif -%}
 
-            {%- for item in items limit: limit -%}
+            {%- for item in items limit: 8 -%}
               {% case items_type %}
                 {% when "blocks" %}
                   {% assign product = item.settings.product %}
@@ -136,7 +135,7 @@
 
           {%- if show_pagination -%}
             <div class="carousel__pagination hidden" aria-label="Carousel pagination" aria-hidden="true">
-              {%- for item in items limit: limit -%}
+              {%- for item in items limit: 8 -%}
                 {%- assign first = forloop.first -%}
                 {%- assign index = forloop.index -%}
 
@@ -155,31 +154,13 @@
 {% schema %}
   {
     "name": "Products carousel",
-    "description": "Display products from a collection or in a list of individual products. There is a carousel layout",
+    "description": "Show individual products or products from a collection in a sliding carousel",
     "tag": "section",
     "class": "products",
     "settings": [
       {
         "type": "header",
-        "content": "Basic settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the content of section"
-      },
-      {
-        "type": "collection",
-        "id": "collection",
-        "label": "Collection",
-        "info": "Note: The collection takes precedence over 'Product' blocks"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance and the components' functionality of the section"
+        "content": "General settings"
       },
       {
         "type": "select",
@@ -198,32 +179,27 @@
         "default": "one"
       },
       {
-        "type": "paragraph",
-        "content": "Note: The carousel appears automatically when there are more than 1 product in this section and then below settings of the carousel are working"
-      },
-      {
         "type": "checkbox",
         "id": "show_excerpt",
         "default": true,
         "label": "Show excerpt of product"
       },
       {
-        "type": "number",
-        "id": "limit",
-        "label": "Maximum products to show",
-        "min": 0,
-        "max": 8,
-        "default": 6,
-        "info": "Note: Use positive numbers only. The maximum number of products to show is 8"
+        "type": "header",
+        "content": "Collection (optional)"
       },
       {
-        "type": "number",
-        "id": "timer",
-        "label": "Auto-rotate timer",
-        "min": 0,
-        "max": 100,
-        "default": 5,
-        "info": "Note: Use only positive numbers for pauses between rotating slides. Unit - seconds. Set 0 to turn off auto rotate. Max number = 100"
+        "type": "paragraph",
+        "content": "When you select a collection, any product blocks will be ignored. The carousel can show a maximum of 8 products"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "Carousel settings"
       },
       {
         "type": "checkbox",
@@ -235,7 +211,16 @@
         "type": "checkbox",
         "id": "show_pagination",
         "default": true,
-        "label": "Show pagination dots"
+        "label": "Show page bullets"
+      },
+      {
+        "type": "number",
+        "id": "timer",
+        "label": "Rotation time",
+        "min": 0,
+        "max": 100,
+        "default": 5,
+        "info": "In seconds. Set to 0 to disable auto rotation"
       },
       {
         "type": "header",
@@ -348,14 +333,6 @@
         "type": "product",
         "name": "Product",
         "settings": [
-          {
-            "type": "header",
-            "content": "Basic settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the content of block"
-          },
           {
             "type": "product",
             "id": "product",
