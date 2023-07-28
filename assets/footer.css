@@ -15,15 +15,20 @@
 }
 
 .footer__logo-wrapper {
-  max-width: 150px;
   padding: 0 0 23px;
 }
 
 .footer__logo-wrapper img {
+  max-width: 150px;
   width: 100%;
 }
 
 .footer__logo-text {
+  font-size: 24px;
+  line-height: var(--line-height-md, 1.3333);
+  font-weight: var(--font-weight-semibold, 600);
+  margin: 0;
+  color: currentColor;
   word-break: break-word;
 }
 

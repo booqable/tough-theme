@@ -219,28 +219,7 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "description": "Visible if logo image is not chosen"
-      },
-      {
-        "type": "text",
-        "id": "bottom_text",
-        "label": "Bottom text",
-        "default": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
-        "info": "This template keeps the year auto-updated and returns the name of your company. You can replace it with any text"
-      },
-      {
-        "type": "menu",
-        "id": "bottom_menu",
-        "label": "Bottom menu",
-        "info": "This menu located at the bottom of footer"
-      },
-      {
-        "type": "header",
-        "content": "Advanced settings"
-      },
-      {
-        "type": "paragraph",
-        "content": "Below you can change the appearance of the footer"
+        "info": "Visible if logo image is empty"
       },
       {
         "type": "select",
@@ -257,6 +236,19 @@
           }
         ],
         "default": "one"
+      },
+      {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Bottom message",
+        "default": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
+        "info": "This template keeps the year auto-updated and returns the name of your company. Leave blank to hide the text"
+      },
+      {
+        "type": "menu",
+        "id": "bottom_menu",
+        "label": "Bottom menu",
+        "info": "This menu located at the bottom of footer"
       },
       {
         "type": "header",
@@ -360,7 +352,7 @@
           {
             "type": "text",
             "id": "heading",
-            "label": "Heading",
+            "label": "Title",
             "default": "Column One"
           },
           {
@@ -371,20 +363,12 @@
           },
           {
             "type": "header",
-            "content": "Advanced settings"
-          },
-          {
-            "type": "paragraph",
-            "content": "Below you can change the appearance and the components' functionality of the menu block"
-          },
-          {
-            "type": "header",
             "content": "Mobile settings"
           },
           {
             "type": "select",
             "id": "menu_align",
-            "label": "Horizontal alignment",
+            "label": "Alignment",
             "options": [
               {
                 "value": "left",
