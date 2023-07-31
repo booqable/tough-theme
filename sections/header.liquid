@@ -3,7 +3,6 @@
 
 {%- assign search_placeholder    = section.settings.search_placeholder -%}
 {%- assign logo                  = section.settings.logo -%}
-{%- assign logo_vector           = section.settings.logo_vector -%}
 {%- assign custom_title          = section.settings.custom_title -%}
 {%- assign menu_opener_mobile    = section.settings.menu_opener_mobile -%}
 {%- assign menu                  = section.settings.menu -%}
@@ -16,7 +15,7 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign sticky_header         = section.settings.sticky_header -%}
-{%- assign hide_search           = section.settings.hide_search -%}
+{%- assign show_search           = section.settings.show_search -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 {%- assign facebook              = settings.social_facebook_link -%}
 {%- assign instagram             = settings.social_instagram_link -%}
@@ -279,9 +278,9 @@
 {% comment %} Right side buttons component {% endcomment %}
 {%- capture header_links -%}
   <div class="header__links">
-    {% unless hide_search %}
+    {%- if show_search -%}
       {{- header_search -}}
-    {% endunless %}
+    {%- endif -%}
 
     <div class="header__cart">
       {{- cart_button -}}
@@ -349,7 +348,7 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "info": "Visible if logo image is not chosen"
+        "info": "Visible if logo image is empty"
       },
       {
         "type": "menu",
@@ -380,9 +379,9 @@
       },
       {
         "type": "checkbox",
-        "id": "hide_search",
-        "default": false,
-        "label": "Hide search"
+        "id": "show_search",
+        "default": true,
+        "label": "Show search"
       },
       {
         "type": "header",

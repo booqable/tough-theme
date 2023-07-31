@@ -22,12 +22,9 @@
         "blocks": {},
         "block_order": [],
         "settings": {
-          "color_overlay": "dark",
           "color_palette": "two",
           "custom_title": "{{ shop.name }}",
-          "login_placeholder": "Log in",
           "menu": "main-menu",
-          "menu_back_placeholder": "Back",
           "menu_opener_mobile": "left",
           "menu_style": "horizontal",
           "menu_position": "left-center",
@@ -37,7 +34,7 @@
           "padding_bottom": "small",
           "padding_bottom_mobile": "medium",
           "search_placeholder": "Search",
-          "signup_placeholder": "Create account",
+          "show_search": true,
           "sticky_header": true
         },
         "disabled": null
@@ -49,7 +46,6 @@
             "type": "menu",
             "settings": {
               "heading": "Column One",
-              "links_color": true,
               "menu": "column-1",
               "menu_align": "left"
             }
@@ -58,7 +54,6 @@
             "type": "menu",
             "settings": {
               "heading": "Column Two",
-              "links_color": false,
               "menu": "column-1",
               "menu_align": "left"
             }
@@ -67,7 +62,6 @@
             "type": "menu",
             "settings": {
               "heading": "Column Three",
-              "links_color": false,
               "menu": "column-1",
               "menu_align": "left"
             }
@@ -76,7 +70,6 @@
             "type": "menu",
             "settings": {
               "heading": "Column Four",
-              "links_color": false,
               "menu": "column-1",
               "menu_align": "left"
             }
@@ -85,7 +78,6 @@
             "type": "menu",
             "settings": {
               "heading": "Column Five",
-              "links_color": false,
               "menu": "column-1",
               "menu_align": "left"
             }
