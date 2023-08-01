@@ -18,18 +18,31 @@
     },
     "collection-page": {
       "type": "collection-page",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "heading": "Collections",
+            "menu": "main-menu"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item"
+      ],
       "settings": {
         "color_palette": "one",
         "grid": "three",
         "limit": 6,
         "message": "Sorry, there are no products in this collection yet",
+        "mobile_toggler": "Menu",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
         "padding_top_mobile": "small",
-        "show_excerpt": true
+        "show_excerpt": true,
+        "sticky_sidebar": true
       },
       "disabled": null
     }

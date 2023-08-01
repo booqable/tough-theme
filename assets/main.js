@@ -51,7 +51,6 @@ class Main {
 
   elements() {
     this.timer = undefined;
-    this.images = document.querySelectorAll(this.selector.image);
     this.footer = document.querySelector(this.selector.footer);
     this.search = document.querySelector(this.selector.search);
     if (this.search) this.input = this.search.querySelector(this.selector.input);
@@ -97,7 +96,9 @@ class Main {
 
     clearTimeout(this.focalImageTimeout);
 
-    this.images.forEach(image => {
+    const images = document.querySelectorAll(this.selector.image);
+
+    images.forEach(image => {
       const x = image.getAttribute(this.data.focalX),
             y = image.getAttribute(this.data.focalY);
 

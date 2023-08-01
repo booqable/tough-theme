@@ -186,7 +186,6 @@
                         <ul class="menu__dropdown-list">
                           {%- for childlink in link.items -%}
                             {%- assign childlink_index = forloop.index -%}
-                            {%- assign link_name = childlink.title | downcase | strip -%}
 
                             {%- if childlink != blank -%}
                               <li class="menu__dropdown-item">
