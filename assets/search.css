@@ -13,6 +13,12 @@
   justify-content: center;
 }
 
+.search__grid {
+  font-size: 16px;
+  font-weight: var(--font-weight-regular, 400);
+  line-height: var(--line-height-lg, 1.5);
+}
+
 .search-results .product-card {
   min-width: auto;
 }
@@ -43,6 +49,28 @@
 
   .search-results {
     gap: 24px;
+  }
+
+  .search__grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 23.25%) 1fr;
+    gap: 0 5.07%;
+    grid-template-areas:
+      "sidebar grid"
+      "pagination pagination";
+  }
+
+  .search__grid .search__sidebar {
+    grid-area: sidebar;
+  }
+
+  .search__grid .search-results {
+    grid-area: grid;
+    grid-auto-rows: fit-content(100%);
+  }
+
+  .search__grid .search__pagination {
+    grid-area: pagination;
   }
 }
 

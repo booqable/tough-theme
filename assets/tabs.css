@@ -109,23 +109,21 @@
 }
 
 .tabs__select-drop {
-  visibility: hidden;
-	pointer-events: none;
-	margin: -1px 0 0;
-	padding: 0;
+  pointer-events: none;
+  padding: 0;
   max-height: 0;
   overflow-y: auto;
-	opacity: 0;
   border: 1px solid transparent;
-	transition: opacity var(--animation-duration, 200ms) var(--transition-function-ease-out),
+  border-top-width: 0;
+  border-bottom-width: 0;
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out),
       max-height var(--animation-duration, 200ms) var(--transition-function-ease-out);;
 }
 
 .tabs__select #tabs-select-opener:checked ~ .tabs__select-drop {
-  visibility: visible;
   pointer-events: all;
-  opacity: 1;
   max-height: 1000px;
+  border-bottom-width: 1px;
 }
 
 .tabs__select #tabs-select-opener:checked ~ .tabs__select-opener svg {

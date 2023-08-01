@@ -5,6 +5,7 @@
   product - { product } *required,
   placeholder - image *optional,
   focal - boolean *optional,
+  img_size - string *optional,
   show_excerpt - boolean *optional
 
   Usage:
@@ -13,6 +14,7 @@
       product: your_id,
       placeholder: your_id,
       focal: your_id,
+      img_size: your_string,
       show_excerpt: true
   -%}
 
@@ -34,6 +36,10 @@
     {%- assign image = placeholder -%}
   {%- else -%}
     {%- assign image = blank -%}
+  {%- endif -%}
+
+  {%- if img_size == blank -%}
+    {%- assign img_size = 'm' -%}
   {%- endif -%}
 
   {% if focal %}
@@ -68,7 +74,7 @@
         loading: 'lazy',
         class: 'product-card__image',
         focal: points,
-        size: 'm'
+        size: img_size
       -%}
     {%- endif -%}
 
