@@ -34,7 +34,7 @@
 
 .sidebar__menu-opener {
   position: absolute;
-  top: 5px;
+  top: 6px;
   right: 0;
   height: 12px;
   width: 12px;
@@ -80,7 +80,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   transform: translate(0, -100%);
   overflow: hidden;
   transition: transform var(--animation-duration, 200ms) var(--transition-function-ease-out);
