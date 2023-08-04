@@ -8,9 +8,13 @@
           "type": "slide",
           "settings": {
             "button_1": "Check out products",
+            "button_url_1": "booqable://products/",
             "button_2": "More info",
+            "button_url_2": "booqable://root/",
             "color_overlay": "dark",
             "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
+            "image": "booqable://assets/image-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
             "overlay_opacity": 80,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
@@ -54,27 +58,37 @@
       "blocks": {
         "logo": {
           "type": "logo",
-          "settings": {},
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1.png"
+          },
           "disabled": null
         },
         "logo_478138": {
           "type": "logo",
-          "settings": {},
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-2.png"
+          },
           "disabled": null
         },
         "logo_478148": {
           "type": "logo",
-          "settings": {},
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3.png"
+          },
           "disabled": null
         },
         "logo_478178": {
           "type": "logo",
-          "settings": {},
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1.png"
+          },
           "disabled": null
         },
         "logo_478118": {
           "type": "logo",
-          "settings": {},
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3.png"
+          },
           "disabled": null
         }
       },
@@ -162,9 +176,12 @@
       "block_order": [],
       "settings": {
         "button_1": "Button",
+        "button_url_1": "booqable://root/",
         "button_2": "Button",
+        "button_url_2": "booqable://root/",
         "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
+        "image": "booqable://assets/image-building.jpg",
         "image_position": "right",
         "margin_top": "none",
         "padding_bottom": "large",
@@ -268,30 +285,37 @@
         "block": {
           "type": "block",
           "settings": {
-            "heading": "Medium length section heading goes here",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_url_1": "booqable://root/",
+            "button_2": "Button",
+            "button_url_2": "booqable://root/",
+            "heading": "Medium length section heading goes here",
+            "image": "booqable://assets/image-placeholder-step-1.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
           },
           "disabled": null
         },
         "block_242972": {
           "type": "block",
           "settings": {
-            "heading": "Medium length section heading goes here",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_2": "Button",
+            "button_url_2": "booqable://root/",
+            "heading": "Medium length section heading goes here",
+            "image": "booqable://assets/image-placeholder-step-2.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
           },
           "disabled": null
         },
         "block_535502": {
           "type": "block",
           "settings": {
-            "heading": "Medium length section heading goes here",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "button_1": "Button",
-            "button_2": "Button"
+            "button_url_1": "booqable://root/",
+            "button_2": "Button",
+            "heading": "Medium length section heading goes here",
+            "image": "booqable://assets/image-placeholder-step-3.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
           },
           "disabled": null
         }
@@ -336,8 +360,10 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
             "article_tag": "Tagline",
             "heading": "Our biggest project",
+            "image": "booqable://assets/image-placeholder-mosaic.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
@@ -348,6 +374,7 @@
             "article_btn": "Read more",
             "article_tag": "Tagline",
             "heading": "January Update",
+            "image": "booqable://assets/image-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
@@ -358,6 +385,7 @@
             "article_btn": "Read more",
             "article_tag": "Tagline",
             "heading": "December Update",
+            "image": "booqable://assets/image-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
@@ -431,7 +459,9 @@
       "block_order": [],
       "settings": {
         "button_1": "Button",
+        "button_url_1": "booqable://root/",
         "button_2": "Button",
+        "button_url_2": "booqable://root/",
         "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "padding_bottom": "large",

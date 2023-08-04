@@ -103,6 +103,10 @@
     --menu-max-height: none;
   {%- endif -%}
 {%- endcapture -%}
+
+{%- capture cart_variables -%}
+  --cart-icon-size: 22px;
+{%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
 {% comment %} Logo component {% endcomment %}
@@ -281,7 +285,7 @@
       {{- header_search -}}
     {%- endif -%}
 
-    <div class="header__cart">
+    <div class="header__cart" style="{{- cart_variables | escape -}}">
       {{- cart_button -}}
     </div>
   </div>
@@ -336,7 +340,7 @@
         "type": "checkbox",
         "id": "sticky_header",
         "default": true,
-        "label": "Fixed at the top of screen"
+        "label": "Stick to top"
       },
       {
         "type": "image_picker",
@@ -347,7 +351,7 @@
         "type": "text",
         "id": "custom_title",
         "label": "Custom title",
-        "info": "Visible if logo image is empty"
+        "info": "Displayed when no logo is added"
       },
       {
         "type": "menu",
@@ -371,16 +375,16 @@
         "default": "two"
       },
       {
-        "type": "text",
-        "id": "search_placeholder",
-        "label": "Search placeholder",
-        "default": "Search"
-      },
-      {
         "type": "checkbox",
         "id": "show_search",
         "default": true,
         "label": "Show search"
+      },
+      {
+        "type": "text",
+        "id": "search_placeholder",
+        "label": "Search placeholder",
+        "default": "Search"
       },
       {
         "type": "header",

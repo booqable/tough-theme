@@ -13,6 +13,12 @@
 
 {%- if show_datepicker -%}
   {{ "date-picker.css" | asset_url | stylesheet_tag }}
+
+  {%- if color_palette == "one" -%}
+    {%- assign background_accent = settings.accent_background -%}
+  {%- elsif color_palette == "two" -%}
+    {%- assign background_accent = settings.accent_background_2 -%}
+  {%- endif -%}
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -53,6 +59,8 @@
       --padding-bottom-mobile: 75px;
   {%- endcase -%}
 {%- endcapture -%}
+
+{%- include 'date-picker-variables' -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
@@ -77,7 +85,10 @@
   {%- if show_datepicker -%}
     <div class="hero__container hero__container--bottom">
       <div class="hero__container container">
-        <bq-date-picker data-primary-color="{{ settings.accent_background }}"></bq-date-picker>
+        <div class="hero__date-picker date-picker__component">
+          <bq-date-picker style="{{- datepicker_variables | escape-}}"></bq-date-picker>
+          <bq-date-picker-modal branding-color="{{- background_accent -}}"></bq-date-picker-modal>
+        </div>
       </div>
       <div class="hero__overlay"></div>
     </div>

@@ -67,6 +67,12 @@
 
 .numbered-blocks__buttons {
   margin: 30px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.numbered-blocks__button.button--outlined {
+  margin-right: 24px;
 }
 
 .numbered-blocks__image {
