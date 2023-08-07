@@ -105,29 +105,17 @@
       "blocks": {
         "tab": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, Sydney NSW 2000 AU",
-            "heading": "Sydney",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         },
         "tab_257387": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, New York NY 10000 USA",
-            "heading": "New York",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         },
         "tab_257388": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, London 2000 , United Kingdom",
-            "heading": "London",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         }
       },

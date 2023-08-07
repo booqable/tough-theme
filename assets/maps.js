@@ -3,11 +3,13 @@ class Map {
     this.block = block;
 
     this.selector = {
-      map: ".map"
+      map: ".map",
+      link: ".tabs__link"
     };
 
     this.attr = {
       id: "id",
+      href: "href",
       address: "data-address"
     };
 
@@ -20,6 +22,8 @@ class Map {
       noImage: "no-image"
     };
 
+    this.message = 'is not a valid address, please check it again';
+    this.linkArr = [];
     this.zoom = 18;
   }
 
@@ -32,6 +36,7 @@ class Map {
 
   elements() {
     this.maps = this.block.querySelectorAll(this.selector.map);
+    this.links = this.block.querySelectorAll(this.selector.link);
   }
 
   events() {
@@ -43,10 +48,8 @@ class Map {
 
     this.maps.forEach(map => {
       const id = map.getAttribute(this.attr.id),
-            attr = map.getAttribute(this.attr.address),
-            address = attr.replace("<p>", "").replace("</p>", ""),
-            errorMessage = `${address} - is not a valid address, please check it again`,
-            url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
+        address = map.getAttribute(this.attr.address),
+        url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
 
       const getData = async () => {
         try {
@@ -82,15 +85,36 @@ class Map {
       const message = () => {
         const div = document.createElement(this.elem.div);
         div.classList.add(this.classes.error);
-        div.innerHTML = errorMessage;
+        div.innerHTML = `${address} - ${this.message}`;
         this.block.parentElement.classList.add(this.classes.noImage);
         return map.appendChild(div);
       }
 
       getData().then(data => {
-        data.length ? renderMap(data) : message();
+        data.length
+          ? (renderMap(data), this.getUrl(data))
+          : message()
       });
     });
+  }
+
+  getUrl(data) {
+    if (!this.links.length) return false;
+
+    const link = `https://www.openstreetmap.org/?mlat=4${data[0].lat}&amp;mlon=${data[0].lon}#map=${this.zoom}/${data[0].lat}/${data[0].lon}`
+    this.linkArr.push(link);
+    this.setUrl(this.linkArr);
+  }
+
+  setUrl(arr) {
+    this.links.forEach((link, i) => {
+      const valueIndex = Math.floor(i / 2);
+      link.setAttribute(this.attr.href, arr[valueIndex]);
+      console.log(link);
+      console.log(i);
+
+
+    })
   }
 }
 
