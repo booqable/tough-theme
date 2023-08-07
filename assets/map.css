@@ -1,5 +1,7 @@
 .map {
+  aspect-ratio: 16 / 9;
   height: 100%;
+  max-width: 100%;
 }
 
 .map__error {
