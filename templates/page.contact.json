@@ -126,6 +126,7 @@
       ],
       "settings": {
         "color_palette": "one",
+        "marker": "booqable://assets/icon-marker.png",
         "opener": "Open to view the list of offices",
         "placement": "right",
         "padding_bottom": "large",

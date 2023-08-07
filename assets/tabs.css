@@ -1,7 +1,3 @@
-.tabs--desktop {
-  display: none;
-}
-
 .tabs {
   display: grid;
   gap: 30px;
@@ -63,10 +59,6 @@
   pointer-events: none;
 }
 
-.tabs__contents {
-  direction: ltr;
-}
-
 .tabs__content {
   display: none;
   height: 100%;
@@ -79,13 +71,6 @@
 .tabs__image-wrapper {
   height: 100%;
   aspect-ratio: 16 / 9;
-}
-
-.tabs__image {
-  max-width: none;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
 }
 
 .tabs__select {
@@ -186,12 +171,14 @@
     direction : var(--direction, ltr);
   }
 
-  .tabs--desktop {
-    display: block;
+  .tabs__select-opener {
+    display: none;
   }
 
-  .tabs--mobile {
-    display: none;
+  .tabs__select-drop {
+    pointer-events: all;
+    max-height: none;
+    border-width: 0;
   }
 
   .tabs__trigger {
