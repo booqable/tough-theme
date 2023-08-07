@@ -49,8 +49,8 @@ class Map {
 
     this.maps.forEach(map => {
       const id = map.getAttribute(this.attr.id),
-        address = map.getAttribute(this.attr.address),
-        url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
+            address = map.getAttribute(this.attr.address),
+            url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
 
       const getData = async () => {
         try {
@@ -63,6 +63,7 @@ class Map {
 
       const renderMap = (obj) => {
         const marker = document.querySelector(this.selector.marker),
+              markerSize = [40, 55],
               lon = obj[0]?.lon,
               lat = obj[0]?.lat;
 
@@ -83,7 +84,7 @@ class Map {
                 anchor: [0.5, 60],
                 anchorXUnits: 'fraction',
                 anchorYUnits: 'pixels',
-                imgSize: [40, 55],
+                imgSize: markerSize,
                 img: marker
               })
             })
@@ -92,17 +93,21 @@ class Map {
 
         const interaction = ol.interaction.defaults.defaults({
           mouseWheelZoom: false
-        })
+        });
 
-        new ol.Map({
+        const view = new ol.View({
+          center: ol.proj.fromLonLat([lon, lat]),
+          zoom: this.zoom
+        });
+
+        const options = {
           target: id,
           layers: layers,
           interactions: interaction,
-          view: new ol.View({
-            center: ol.proj.fromLonLat([lon, lat]),
-            zoom: this.zoom
-          })
-        });
+          view: view
+        }
+
+        new ol.Map(options);
       }
 
       const message = () => {
