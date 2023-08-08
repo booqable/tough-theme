@@ -146,13 +146,13 @@
               {%- if marker != blank -%}
                 <div class="map-marker" style="transform: translate(0, -100%); position: relative; z-index: -1;">
                   {%- render 'image',
-                  image: marker,
-                  loading: 'lazy',
-                  class: 'map-marker__image',
-                  size: 'm'
+                    image: marker,
+                    loading: 'lazy',
+                    class: 'map-marker__image',
+                    size: 'm'
                   -%}
-                {%- endif -%}
-              </div>
+                </div>
+              {%- endif -%}
             </div>
           </div>
         {%- endif -%}
