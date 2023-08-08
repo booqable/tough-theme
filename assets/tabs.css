@@ -48,11 +48,13 @@
   display: inline-block;
   vertical-align: top;
   margin: 0 0 18px;
+  pointer-events: none;
 }
 
 .tabs__address {
   font-style: normal;
   margin: 0 0 30px;
+  pointer-events: none;
 }
 
 .tabs__address p {

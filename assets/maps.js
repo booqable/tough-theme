@@ -4,7 +4,7 @@ class Map {
 
     this.selector = {
       map: ".map",
-      marker: ".map-marker__image",
+      icon: ".map-icon__image",
       link: ".tabs__link"
     };
 
@@ -23,7 +23,7 @@ class Map {
       noImage: "no-image"
     };
 
-    this.message = 'is not a valid address, please check it again';
+    this.addressErrorMessage = `we can't find this address, please check it again`;
     this.linkArr = [];
     this.zoom = 18;
   }
@@ -50,20 +50,22 @@ class Map {
     this.maps.forEach(map => {
       const id = map.getAttribute(this.attr.id),
             address = map.getAttribute(this.attr.address),
-            url = `https://nominatim.openstreetmap.org/search?q=${address}&format=json`;
+            url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json`;
 
       const getData = async () => {
         try {
           const res = await fetch(url);
           return await res.json();
         } catch (error) {
-          console.log(error);
+          console.error(error);
         }
       };
 
       const renderMap = (obj) => {
-        const marker = document.querySelector(this.selector.marker),
-              markerSize = [40, 55],
+        const icon = document.querySelector(this.selector.icon),
+              iconWidth = icon?.getBoundingClientRect().width,
+              iconHeight = icon?.getBoundingClientRect().height,
+              iconSize = iconWidth && iconHeight ? [iconWidth, iconHeight] : [40, 55],
               lon = obj[0]?.lon,
               lat = obj[0]?.lat;
 
@@ -84,8 +86,8 @@ class Map {
                 anchor: [0.5, 60],
                 anchorXUnits: 'fraction',
                 anchorYUnits: 'pixels',
-                imgSize: markerSize,
-                img: marker
+                imgSize: iconSize,
+                img: icon
               })
             })
           })
@@ -110,31 +112,28 @@ class Map {
         new ol.Map(options);
       }
 
-      const message = () => {
+      const errorMessage = () => {
         const div = document.createElement(this.elem.div);
         div.classList.add(this.classes.error);
-        div.innerHTML = `${address} - ${this.message}`;
+        div.innerHTML = `${address} - ${this.addressErrorMessage}`;
         this.block.parentElement.classList.add(this.classes.noImage);
         return map.appendChild(div);
       }
 
       getData().then(data => {
-        data.length ? (renderMap(data), this.getUrl(data)) : message()
+        data.length ? (renderMap(data), this.setUrl(data)) : errorMessage()
       });
     });
   }
 
-  getUrl(data) {
+  setUrl(data) {
     if (!this.links.length) return false;
 
     const link = `https://www.openstreetmap.org/?mlat=${data[0].lat}&amp;mlon=${data[0].lon}#map=${this.zoom}/${data[0].lat}/${data[0].lon}`
     this.linkArr.push(link);
-    this.setUrl(this.linkArr);
-  }
 
-  setUrl(arr) {
     this.links.forEach((link, i) => {
-      link.setAttribute(this.attr.href, arr[i]);
+      link.setAttribute(this.attr.href, this.linkArr[i]);
     })
   }
 }

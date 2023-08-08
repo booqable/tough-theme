@@ -5,7 +5,6 @@ class Tabs {
     this.selector = {
       tab: ".tabs__trigger",
       content: ".tabs__content",
-      select: ".tabs__select",
       opener: "#tabs-select-opener"
     }
 
@@ -37,7 +36,7 @@ class Tabs {
   }
 
   events() {
-    document.addEventListener("click", this.closeModals.bind(this));
+    document.addEventListener("click", this.closeDrop.bind(this));
     document.addEventListener("click", this.tabsTrigger.bind(this));
   }
 
@@ -85,20 +84,15 @@ class Tabs {
     })
   }
 
-  closeModals(e) {
-    this.killModal(e, this.opener, this.selector.select);
-  }
+  // closing dropdown on click the location
+  closeDrop(e) {
+    if (!this.tabs.length) return false;
 
-  // closing modal window on click outside it
-  killModal(e, elem, parent) {
-    if (!elem) return false;
+    const target = e.target;
 
-    let target = e.target,
-        parentElem = target.closest(parent);
+    if (!target.classList.contains(this.classes.tab)) return false;
 
-    if (parentElem !== null) return false;
-
-    elem.checked = false;
+    this.opener.checked = false;
   }
 }
 
