@@ -36,8 +36,8 @@
       },
       "disabled": null
     },
-    "text": {
-      "type": "text",
+    "title": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -107,7 +107,7 @@
   "order": [
     "hero-product",
     "product-page",
-    "text",
+    "title",
     "products"
   ]
 }

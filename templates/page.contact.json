@@ -81,8 +81,8 @@
       },
       "disabled": false
     },
-    "text": {
-      "type": "text",
+    "title": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -151,7 +151,7 @@
   "order": [
     "contact-form",
     "columns",
-    "text",
+    "title",
     "locations"
   ]
 }
