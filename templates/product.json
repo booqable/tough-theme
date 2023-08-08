@@ -67,6 +67,16 @@
           "settings": {},
           "disabled": null
         },
+        "product_123456": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123457": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
         "product_123452": {
           "type": "product",
           "settings": {},
@@ -76,6 +86,8 @@
       "block_order": [
         "product",
         "product_123455",
+        "product_123456",
+        "product_123457",
         "product_123452"
       ],
       "settings": {
