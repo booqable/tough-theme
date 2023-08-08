@@ -6,7 +6,9 @@
   loading - "string" optional,
   class - "string" optional,
   focal - image.coordinates optional
-  size - "string" optional
+  size - "string" optional,
+  custom_width: "string" optional,
+  custom_size: "string" optional,
   custom_alt: "string" optional
 
   Usage:
@@ -16,7 +18,9 @@
       loading: 'lazy',
       class: 'your_class',
       focal: points,
-      size: 'm',
+      size: 'm',              - use only this one property
+      custom_width: '170',    - or these two
+      custom_size: '170px',     instead of 'size' property
       custom_alt: your_id
   -%}
 

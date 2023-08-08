@@ -16,7 +16,7 @@
 
   {%- assign opener                = section.settings.opener -%}
   {%- assign placement             = section.settings.placement -%}
-  {%- assign marker                = section.settings.marker -%}
+  {%- assign icon                  = section.settings.icon -%}
   {%- assign color_palette         = section.settings.color_palette -%}
   {%- assign padding_top           = section.settings.padding_top -%}
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -144,10 +144,10 @@
           <div data-content="tab-{{- index -}}" class="tabs__content{% if first %} active{%- endif -%}">
             <div class="tabs__image-wrapper{% if image == blank %} no-image{%- endif -%}">
               <div id="map-{{- block.id -}}" class="map" data-address="{{- address -}}, {{ city }}, {{ zipcode }}"></div>
-              {%- if marker != blank -%}
+              {%- if icon != blank -%}
                 <div class="map-icon" style="transform: translate(0, -100%); position: relative; z-index: -1;">
                   {%- render 'image',
-                    image: marker,
+                    image: icon,
                     class: 'map-icon__image',
                     custom_width: '40',
                     custom_size: '40px'
@@ -245,7 +245,7 @@
       },
       {
         "type": "image_picker",
-        "id": "marker",
+        "id": "icon",
         "label": "Map marker"
       },
       {
