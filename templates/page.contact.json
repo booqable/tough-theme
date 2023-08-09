@@ -127,7 +127,7 @@
       "settings": {
         "color_palette": "one",
         "icon": "booqable://assets/icon-marker.png",
-        "opener": "Open to view the list of locations",
+        "opener": "Open to see a list of locations",
         "placement": "right",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
