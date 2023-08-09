@@ -105,29 +105,17 @@
       "blocks": {
         "tab": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, Sydney NSW 2000 AU",
-            "heading": "Sydney",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         },
         "tab_257387": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, New York NY 10000 USA",
-            "heading": "New York",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         },
         "tab_257388": {
           "type": "tab",
-          "settings": {
-            "address": "123 Sample St, London 2000 , United Kingdom",
-            "heading": "London",
-            "label": "View Map"
-          },
+          "settings": {},
           "disabled": null
         }
       },
@@ -138,7 +126,8 @@
       ],
       "settings": {
         "color_palette": "one",
-        "opener": "Open to view the list of offices",
+        "icon": "booqable://assets/icon-marker.png",
+        "opener": "Open to see a list of locations",
         "placement": "right",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
