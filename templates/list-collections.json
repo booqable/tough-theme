@@ -18,8 +18,8 @@
       },
       "disabled": null
     },
-    "text": {
-      "type": "text",
+    "title": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -55,7 +55,7 @@
   },
   "order": [
     "hero",
-    "text",
+    "title",
     "list-collections"
   ]
 }

@@ -111,8 +111,8 @@
       },
       "disabled": false
     },
-    "text": {
-      "type": "text",
+    "title": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -193,8 +193,8 @@
       },
       "disabled": null
     },
-    "text_987654": {
-      "type": "text",
+    "title_987654": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -260,8 +260,8 @@
       },
       "disabled": null
     },
-    "text_987655": {
-      "type": "text",
+    "title_987655": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -334,8 +334,8 @@
       },
       "disabled": null
     },
-    "text_987656": {
-      "type": "text",
+    "title_987656": {
+      "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -477,14 +477,14 @@
     "images",
     "date-picker",
     "logos",
-    "text",
+    "title",
     "collections",
     "text-with-image",
-    "text_987654",
+    "title_987654",
     "products",
-    "text_987655",
+    "title_987655",
     "numbered-blocks",
-    "text_987656",
+    "title_987656",
     "mosaic",
     "accordion",
     "cta"
