@@ -665,6 +665,7 @@
     margin-left: -22px;
   }
 
+  .menu__item.has-dropdown:hover .menu__dropdown-opener:has(+ .menu__link) .menu__item-icon,
   .menu__item.has-dropdown.active .menu__dropdown-opener:has(+ .menu__link) .menu__item-icon {
     transform:rotate(180deg);
   }
