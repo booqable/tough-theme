@@ -1,7 +1,7 @@
 .header {
   position: relative;
   z-index: 1000;
-  margin-top: var(--preview-height);
+  margin-top: var(--preview-height, 0) !important;
   margin-bottom: -1px;
 }
 
