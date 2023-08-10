@@ -4,13 +4,12 @@
   position: relative;
 }
 
-.text-image__wrapper:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100%;
-  height: var(--margin-top, 0);
+.text-image:first-child .text-image__wrapper {
+  position: static;
+}
+
+.text-image:first-child {
+  position: relative;
 }
 
 .text-image__wrapper--padding-top {
@@ -77,7 +76,12 @@
 }
 
 .text-image__bg-image-wrapper svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   min-height: 100%;
+  min-width: 100%;
   opacity: 0.1;
 }
 
@@ -107,10 +111,6 @@
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one.text-image__wrapper:before {
-  background: var(--background-primary, #FFFFFF);
-}
-
 .palette-one .text-image__tag {
   color: var(--color-outline, #F4B841);
 }
@@ -128,10 +128,6 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two.text-image__wrapper:before {
-  background: var(--background-primary-2, #0B1A26);
-}
-
 .palette-two .text-image__tag {
   color: var(--color-outline-2, #F4B841);
 }
@@ -145,8 +141,8 @@
 }
 
 @media (min-width: 768px) {
-  .text-image__wrapper--margin-top {
-    margin-top: var(--margin-top, 0);
+  .text-image__spacer {
+    height: var(--height, 0);
   }
 
   .text-image__columns {
@@ -210,6 +206,10 @@
     background: linear-gradient(to var(--direction-overlay), var(--background-primary-00, #FFFFFF00) 0%, var(--background-primary-10, #FFFFFF1A) 20%, var(--background-primary-45, #FFFFFF73) 40%, var(--background-primary, #FFFFFF) 100%);
   }
 
+  .palette-one.text-image__spacer {
+    background: var(--background-primary, #FFFFFF);
+  }
+
   .palette-two .text-image__holder {
     border: 2px solid var(--background-accent-2, #F4B841);
   }
@@ -220,6 +220,10 @@
 
   .palette-two .text-image__bg-overlay::after {
     background: linear-gradient(to var(--direction-overlay), var(--background-primary-2-00, #0B1A2600) 0%, var(--background-primary-2-10, #0B1A261A) 20%, var(--background-primary-2-45, #0B1A2673) 40%, var(--background-primary-2, #0B1A26) 100%);
+  }
+
+  .palette-two.text-image__spacer {
+    background: var(--background-primary-2, #0B1A26);
   }
 }
 

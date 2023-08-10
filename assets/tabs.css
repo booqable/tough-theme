@@ -75,6 +75,12 @@
   max-width: 100%;
 }
 
+.tabs__empty {
+  padding: 24px;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+}
+
 .tabs__select {
   height: 100%;
 }

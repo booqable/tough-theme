@@ -98,8 +98,13 @@
 }
 
 .hero__vision-wrapper svg {
-  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   min-height: 100%;
+  min-width: 100%;
+  opacity: 0.1;
 }
 
 .palette-one.hero__wrapper {

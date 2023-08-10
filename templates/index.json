@@ -183,11 +183,11 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
         "image": "booqable://assets/image-building.jpg",
         "image_position": "right",
-        "margin_top": "none",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
         "padding_top": "large",
         "padding_top_mobile": "large",
+        "space_height": "none",
         "tag": "Tagline",
         "title": "Medium length section heading goes here"
       },

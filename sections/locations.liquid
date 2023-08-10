@@ -8,11 +8,14 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- if locations_array.size > 0 -%}
+{%- if section.blocks.size > 0 -%}
   {{ "locations.css" | asset_url | stylesheet_tag }}
   {{ "tabs.css" | asset_url | stylesheet_tag }}
-  {{ "map.css" | asset_url | stylesheet_tag }}
-  <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+
+  {%- if locations_array.size > 0 -%}
+    {{ "map.css" | asset_url | stylesheet_tag }}
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+  {%- endif -%}
 
   {%- assign opener                = section.settings.opener -%}
   {%- assign placement             = section.settings.placement -%}
@@ -93,39 +96,53 @@
         {%- assign country         = location.country -%}
         {%- assign label           = block.settings.label -%}
 
-        {%- if address != blank or city != blank or zipcode != blank or region != blank or country != blank -%}
-          <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}" id="{{- block.id -}}">
+        <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}" id="{{- block.id -}}">
+          <span class="tabs__heading">
             {%- if city != blank -%}
-              <span class="tabs__heading">{{- city -}}</span>
+              {{- city -}}
+            {%- else -%}
+              City {{ index }}
+            {%- endif -%}
+          </span>
+
+          <address class="tabs__address">
+            {%- if address != blank -%}
+              {{- address -}},
+            {%- else -%}
+              {{ index }} Example Street,
             {%- endif -%}
 
-            {%- if address != blank or city != blank or zipcode != blank or region != blank or country != blank -%}
-              <address class="tabs__address">
-                {%- if address != blank -%}
-                  {{- address -}},
-                {%- endif -%}
-                {% if city != blank %}
-                  {{ city }},
-                {% endif %}
-                {% if region != blank %}
-                  {{ region }},
-                {% endif %}
-                {% if zipcode != blank %}
-                  {{ zipcode }},
-                {% endif %}
-                {% if country != blank %}
-                  {{ country }}
-                {% endif %}
-              </address>
-            {%- endif -%}
+            {% if city != blank %}
+              {{ city }},
+            {% else %}
+              City,
+            {% endif %}
 
-            {%- if label != blank and address != blank or label != blank and city != blank or label != blank and zipcode != blank or label != blank and region != blank or label != blank and country != blank -%}
-              <a href="#!" class="tabs__link button button--secondary" target="_blank">
-                {{- label -}}
-              </a>
-            {%- endif -%}
-          </li>
-        {%- endif -%}
+            {% if region != blank %}
+              {{ region }},
+            {% else %}
+              Region,
+            {% endif %}
+
+            {% if zipcode != blank %}
+              {{ zipcode }},
+            {% else %}
+              Zipcode,
+            {% endif %}
+
+            {% if country != blank %}
+              {{ country }}
+            {% else %}
+              Country
+            {% endif %}
+          </address>
+
+          {%- if label != blank and address != blank or label != blank and city != blank or label != blank and zipcode != blank or label != blank and region != blank or label != blank and country != blank -%}
+            <a href="#!" class="tabs__link button button--secondary" target="_blank">
+              {{- label -}}
+            </a>
+          {%- endif -%}
+        </li>
       {%- endfor -%}
     </ul>
   {%- endcapture -%}
@@ -140,10 +157,11 @@
         {%- assign address  = location.address_line_1 -%}
         {%- assign zipcode  = location.zipcode -%}
 
-        {%- if address != blank or city != blank or zipcode != blank -%}
-          <div data-content="tab-{{- index -}}" class="tabs__content{% if first %} active{%- endif -%}">
-            <div class="tabs__image-wrapper{% if image == blank %} no-image{%- endif -%}">
+        <div data-content="tab-{{- index -}}" class="tabs__content{% if first %} active{%- endif -%}">
+          <div class="tabs__image-wrapper{% unless location != blank %} no-image{%- endunless -%}">
+            {%- if address != blank or city != blank or zipcode != blank -%}
               <div id="map-{{- block.id -}}" class="map" data-address="{{- address -}}, {{ city }}, {{ zipcode }}"></div>
+
               {%- if icon != blank -%}
                 <div class="map-icon" style="transform: translate(0, -100%); position: relative; z-index: -1;">
                   {%- render 'image',
@@ -154,9 +172,13 @@
                   -%}
                 </div>
               {%- endif -%}
-            </div>
+            {%- else -%}
+              <div class="tabs__empty">
+                Here will be a map with your location {{ index }}
+              </div>
+            {%- endif -%}
           </div>
-        {%- endif -%}
+        </div>
       {%- endfor -%}
     </div>
   {%- endcapture -%}
@@ -185,7 +207,10 @@
   </div>
 
   <script src="{{ "tabs.js" | asset_url }}" defer></script>
-  <script src="{{ "maps.js" | asset_url }}" defer></script>
+
+  {%- if locations_array.size > 0 -%}
+    <script src="{{ "maps.js" | asset_url }}" defer></script>
+  {%- endif -%}
 {%- endif -%}
 
 {% schema %}
@@ -252,7 +277,7 @@
         "type": "text",
         "id": "opener",
         "label": "Mobile opener",
-        "default": "Open to see a list of locations"
+        "default": "List of locations"
       },
       {
         "type": "header",
