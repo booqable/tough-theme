@@ -72,7 +72,7 @@
 *:not(i),
 *:not(i)::before,
 *:not(i)::after {
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
 }
 
 * {
@@ -159,7 +159,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: var(--font-heading) !important;
+  font-family: var(--font-heading, sans-serif) !important;
   margin-bottom: 1.5625rem;;
 }
 
