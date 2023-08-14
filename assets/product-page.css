@@ -188,7 +188,7 @@
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper .bq-price-details span.bq-price {
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
   font-size: 24px;
   line-height: 1.4;
   font-weight: var(--font-weight-semibold, 600);
@@ -196,7 +196,7 @@
 
 .product-main__info .booqable-component
   .booqable-product-button-wrapper [class*="AvailabilityLink"] {
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
   font-size: 14px !important;
   height: auto;
   text-underline-offset: 2px;
@@ -214,7 +214,7 @@
   height: 50px !important;
   border-radius: 0 !important;
   font-size: 16px !important;
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
   line-height: var(--line-height-lg, 1.5);
 }
 
@@ -246,7 +246,7 @@
 .product-main__info .booqable-component
   .booqable-product-button-wrapper .bq-button [class*="Label"] {
   color: inherit;
-  font-family: var(--font-body);
+  font-family: var(--font-body, sans-serif);
 }
 
 .product-main__info .booqable-component
