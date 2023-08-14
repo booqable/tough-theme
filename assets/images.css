@@ -211,10 +211,6 @@
     width: auto;
     height: 100%;
   }
-
-  .images .carousel .images__content {
-    padding-top: 9px;
-  }
 }
 
 @media (min-width: 1920px) {

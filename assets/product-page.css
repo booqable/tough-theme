@@ -101,10 +101,17 @@
 .product-main__gallery .carousel__fluid .carousel__dot {
   height: 100px;
   width: 80px;
+  display: inline-block;
+  vertical-align: top;
   flex: 0 0 80px;
   border-radius: 0;
   margin: 0;
   opacity: 1;
+}
+
+.product-main__gallery .carousel__dot:after,
+.product-main__gallery .carousel__fluid .carousel__dot:after {
+  display: none;
 }
 
 .product-main__gallery .carousel__dot:hover .carousel__dot-wrapper,
