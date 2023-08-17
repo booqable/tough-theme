@@ -13,6 +13,8 @@
   --grid-auto-flow: dense;
 
   /* Colors */
+  --color-alabama-crimson: #B40030;
+  --color-azureish-white: #D7E2FF;
   --color-black: #0B1A26;
   --color-black-00: #0B1A2600;
   --color-black-08: #0B1A2614;
@@ -21,6 +23,7 @@
   --color-dark-gray: #0B1A2659;
   --color-green: #51C234;
   --color-red: #C23434;
+  --color-light-red: #F5CFCF;
   --color-begonia: #FF6E6E;
   --color-white: #FFFFFF;
   --color-white-00: #FFFFFF00;
@@ -119,16 +122,16 @@ body #main {
   flex: 1 1 auto;
 }
 
-body .growth {
+body .stretch {
   display: flex;
   flex-direction: column;
 }
 
-body .growth > * {
+body .stretch > * {
   width: 100%;
 }
 
-body .growth > section:first-child{
+body .stretch > section:first-child{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -229,10 +232,6 @@ h6,
   line-height: 1.4;
 }
 
-input {
-  font-size: var(--font-body, sans-serif);
-}
-
 a {
   display: inline-block;
   vertical-align: top;
@@ -253,7 +252,45 @@ ul{
 
 input,
 textarea {
+  font-size: var(--font-body, sans-serif);
   border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.palette-one input:-webkit-autofill,
+.palette-one input:-webkit-autofill:hover,
+.palette-one input:-webkit-autofill:focus
+.palette-one input:-webkit-autofill:active,
+.palette-one textarea:-webkit-autofill,
+.palette-one textarea:-webkit-autofill:hover
+.palette-one textarea:-webkit-autofill:focus,
+.palette-one textarea:-webkit-autofill:active {
+  color: var(--color-primary, #0B1A26) !important;
+  -webkit-text-fill-color: var(--color-primary, #0B1A26) !important;
+}
+
+.palette-two input:-webkit-autofill,
+.palette-two input:-webkit-autofill:hover,
+.palette-two input:-webkit-autofill:focus
+.palette-two input:-webkit-autofill:active,
+.palette-two textarea:-webkit-autofill,
+.palette-two textarea:-webkit-autofill:hover
+.palette-two textarea:-webkit-autofill:focus,
+.palette-two textarea:-webkit-autofill:active {
+  color: var(--color-primary-2, #FFFFFF) !important;
+  -webkit-text-fill-color: var(--color-primary-2, #FFFFFF) !important;
 }
 
 img {

@@ -114,6 +114,7 @@
 	transition: visibility var(--animation-duration, 200ms) var(--transition-function-ease-out),
     top var(--animation-duration, 200ms) var(--transition-function-ease-out),
 		opacity var(--animation-duration, 200ms) var(--transition-function-ease-out);
+  display: block !important;
 }
 
 .header__search-wrapper form {

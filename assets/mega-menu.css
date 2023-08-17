@@ -63,6 +63,7 @@
     max-height var(--animation-duration, 200ms) var(--transition-function-ease-out);
   overflow: hidden;
   pointer-events: none;
+  display: block !important;
 }
 
 .menu__wrapper {
@@ -134,6 +135,7 @@
   transition: width var(--animation-duration, 200ms) var(--transition-function-ease-out);
   overflow: hidden;
   pointer-events: none;
+  display: block !important;
 }
 
 .menu__dropdown-wrapper {
