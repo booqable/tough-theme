@@ -31,7 +31,7 @@
         "effect": "slide",
         "height": "small",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "small",
+        "padding_bottom_mobile": "large",
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "pause": true,
