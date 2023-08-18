@@ -12,7 +12,7 @@
 
 .palette-one.text__wrapper {
   background: var(--background-primary, #FFFFFF);
-  color: var(--color-third, #0B1A2659);
+  color: var(--color-third, #0B1A2666);
 }
 
 .palette-one .text__title {
@@ -21,7 +21,7 @@
 
 .palette-two.text__wrapper {
   background: var(--background-primary-2, #0B1A26);
-  color: var(--color-third-2, #FFFFFF59);
+  color: var(--color-third-2, #FFFFFF66);
 }
 
 .palette-two .text__title {

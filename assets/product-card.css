@@ -99,7 +99,7 @@ bq-product-availability::part(available) {
 }
 
 .palette-one .product-card {
-  color: var(--color-third, #0B1A2659);
+  color: var(--color-third, #0B1A2666);
   background: var(--background-primary, #FFFFFF);
   border: 1px solid var(--color-border, #0B1A2626);
 }
@@ -126,7 +126,7 @@ bq-product-availability::part(available) {
 }
 
 .palette-two .product-card {
-  color: var(--color-third-2, #FFFFFF59);
+  color: var(--color-third-2, #FFFFFF66);
   background: var(--background-primary-2, #0B1A26);
   border: 1px solid var(--color-border-2, #FFFFFF47);
 }

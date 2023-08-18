@@ -108,7 +108,7 @@
 }
 
 .palette-one.hero__wrapper {
-  color: var(--color-third, #0B1A2659);
+  color: var(--color-third, #0B1A2666);
   background: var(--background-primary, #FFFFFF);
 }
 
@@ -137,7 +137,7 @@
 }
 
 .palette-two.hero__wrapper {
-  color: var(--color-third-2, #FFFFFF59);
+  color: var(--color-third-2, #FFFFFF66);
   background: var(--background-primary-2, #0B1A26);
 }
 

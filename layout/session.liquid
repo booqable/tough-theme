@@ -7,15 +7,12 @@
     <meta name="theme-color" content="{%- if settings.accent_background != blank -%}{{- settings.accent_background -}}{%- else -%}{{- branding_color -}}{%- endif -%}">
     {% comment %} Base stylesheets {% endcomment %}
     {{ "base.css" | asset_url | stylesheet_tag }}
-    {{ "rx.css" | asset_url | stylesheet_tag }}
     {% comment %} Fonts {% endcomment %}
     <script src="https://kit.fontawesome.com/ff3b3de2b5.js" crossorigin="anonymous"></script>
     {{ content_for_header }}
 
     {% include 'fonts' %}
     {% include 'root-styles' %}
-
-    {% include 'page-metadata' %}
   </head>
   <body>
 
@@ -30,10 +27,7 @@
 
     {% section 'footer' %}
 
-    <script src="{{ "lazysizes.min.js" | asset_url }}" defer></script>
-    <script src="{{ "main.js" | asset_url }}" defer></script>
     <script src="{{ "header.js" | asset_url }}" defer></script>
-    <script src="{{ "carousel.js" | asset_url }}" defer></script>
 
     {{ content_for_body }}
 
