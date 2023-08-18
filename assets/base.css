@@ -497,6 +497,10 @@ img {
   overflow: hidden;
 }
 
+.tagline {
+  font-family: var(--font-tagline, sans-serif);
+}
+
 [data-focus="true"] {
   box-shadow: 0 0 0 3px #F4B84199;
 }

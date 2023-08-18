@@ -122,6 +122,13 @@
         "default": "barlow"
       },
       {
+        "type": "font_picker",
+        "id": "tagline_font",
+        "label": "Tagline",
+        "info": "Font used for taglines",
+        "default": "barlow"
+      },
+      {
         "type": "header",
         "content": "Font sizes"
       },
@@ -132,7 +139,7 @@
         "min": 40,
         "max": 80,
         "default": 56,
-        "info": "Use positive numbers between 40 and 80 only"
+        "info": "Min: 40, max: 80"
       },
       {
         "type": "number",
@@ -141,7 +148,7 @@
         "min": 30,
         "max": 70,
         "default": 48,
-        "info": "Use positive numbers between 30 and 70 only"
+        "info": "Min: 30, max: 70"
       },
       {
         "type": "number",
@@ -150,7 +157,7 @@
         "min": 25,
         "max": 65,
         "default": 40,
-        "info": "Use positive numbers between 25 and 65 only"
+        "info": "Min: 25, max: 65"
       },
       {
         "type": "number",
@@ -159,7 +166,7 @@
         "min": 20,
         "max": 50,
         "default": 32,
-        "info": "Use positive numbers between 20 and 50 only"
+        "info": "Min: 20, max: 50"
       },
       {
         "type": "number",
@@ -168,7 +175,7 @@
         "min": 18,
         "max": 32,
         "default": 24,
-        "info": "Use positive numbers between 18 and 32 only"
+        "info": "Min: 18, max: 32"
       },
       {
         "type": "number",
@@ -177,7 +184,7 @@
         "min": 16,
         "max": 26,
         "default": 20,
-        "info": "Use positive numbers between 16 and 26 only"
+        "info": "Min: 16, max: 26"
       }
     ]
   },
