@@ -23,7 +23,7 @@
       "settings": {
         "breadcrumbs_label": "",
         "breadcrumbs_url": "collections",
-        "color_overlay": "dark",
+        "infinity_scroll": true,
         "color_palette": "one",
         "message_label": "Free shipping over $50",
         "padding_bottom": "small",
@@ -31,7 +31,8 @@
         "padding_top": "small",
         "padding_top_mobile": "small",
         "show_breadcrumbs": true,
-        "timer": 5,
+        "show_controls": true,
+        "show_thumbnails": true,
         "variation_label": "Variant"
       },
       "disabled": null
