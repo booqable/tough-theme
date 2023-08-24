@@ -243,7 +243,6 @@
   margin-bottom: 3px;
 }
 
-.carousel__fluid .carousel__dot:hover,
 .carousel__fluid .carousel__dot.active {
   opacity: 1;
 }
@@ -285,17 +284,12 @@
   background: var(--color-primary-30, #0B1A264D);
 }
 
-.palette-one .carousel__dot:hover:after,
 .palette-one .carousel__dot.active:after {
   background: var(--color-primary, #0B1A26);
 }
 
 .palette-one .carousel__btn {
   border-color: var(--color-border, #0B1A2626);
-}
-
-.palette-one .carousel__btn:hover {
-  border-color: var(--color-primary, #0B1A26);
 }
 
 .palette-one .carousel__btn path {
@@ -306,17 +300,12 @@
   background: var(--color-primary-2-30, #FFFFFF4D);
 }
 
-.palette-two .carousel__dot:hover:after,
 .palette-two .carousel__dot.active:after {
   background: var(--color-primary-2, #FFFFFF);
 }
 
 .palette-two .carousel__btn {
   border-color: var(--color-border-2, #FFFFFF47);
-}
-
-.palette-two .carousel__btn:hover {
-  border-color: var(--color-primary-2, #FFFFFF);
 }
 
 .palette-two .carousel__btn path {
@@ -333,19 +322,12 @@
   fill: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__btn:hover,
-.palette-one .carousel__fluid .carousel__btn:hover {
-  border-color: var(--color-black, #0B1A26);
-}
-
 .overlay-light .carousel__fluid .carousel__dot:after,
 .palette-one .carousel__fluid .carousel__dot:after {
   background: var(--color-black-45, #0B1A2673);
 }
 
-.overlay-light .carousel__fluid .carousel__dot:hover:after,
 .overlay-light .carousel__fluid .carousel__dot.active:after,
-.palette-one .carousel__fluid .carousel__dot:hover:after,
 .palette-one .carousel__fluid .carousel__dot.active:after {
   background: var(--color-black, #0B1A26);
 }
@@ -365,19 +347,12 @@
   fill: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn:hover,
-.palette-two .carousel__fluid .carousel__btn:hover {
-  border-color: var(--color-white, #FFFFFF);
-}
-
 .overlay-dark .carousel__fluid .carousel__dot:after,
 .palette-two .carousel__fluid .carousel__dot:after {
   background: var(--color-white-45, #FFFFFF73);
 }
 
-.overlay-dark .carousel__fluid .carousel__dot:hover:after,
 .overlay-dark .carousel__fluid .carousel__dot.active:after,
-.palette-two .carousel__fluid .carousel__dot:hover:after,
 .palette-two .carousel__fluid .carousel__dot.active:after {
   background: var(--color-white, #FFFFFF);
 }
@@ -462,5 +437,48 @@
 
   .carousel__item:last-child .carousel__inner {
     padding-right: 0;
+  }
+}
+
+@media (hover: hover) {
+  .carousel__fluid .carousel__dot:hover {
+    opacity: 1;
+  }
+
+  .palette-one .carousel__btn:hover {
+    border-color: var(--color-primary, #0B1A26);
+  }
+
+  .palette-one .carousel__dot:hover:after {
+    background: var(--color-primary, #0B1A26);
+  }
+
+
+  .palette-two .carousel__btn:hover {
+    border-color: var(--color-primary-2, #FFFFFF);
+  }
+
+  .palette-two .carousel__dot:hover:after {
+    background: var(--color-primary-2, #FFFFFF);
+  }
+
+  .overlay-light .carousel__fluid .carousel__btn:hover,
+  .palette-one .carousel__fluid .carousel__btn:hover {
+    border-color: var(--color-black, #0B1A26);
+  }
+
+  .overlay-light .carousel__fluid .carousel__dot:hover:after,
+  .palette-one .carousel__fluid .carousel__dot:hover:after {
+    background: var(--color-black, #0B1A26);
+  }
+
+  .overlay-dark .carousel__fluid .carousel__btn:hover,
+  .palette-two .carousel__fluid .carousel__btn:hover {
+    border-color: var(--color-white, #FFFFFF);
+  }
+
+  .overlay-dark .carousel__fluid .carousel__dot:hover:after,
+  .palette-two .carousel__fluid .carousel__dot:hover:after {
+    background: var(--color-white, #FFFFFF);
   }
 }
