@@ -19,8 +19,6 @@ class Carousel {
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
       dot: "carousel__dot",
-      thumb: "carousel__thumb",
-      thumbNav: "carousel__navigation-thumbs",
       prev: "prev",
       next: "next",
       init: "initialized"
@@ -28,24 +26,23 @@ class Carousel {
 
     this.modifiers = {
       active: "active",
-      indent: "indent",
       hidden: "hidden",
       show: "show",
       hide: "hide"
     }
 
     this.data = {
-      index: "data-index",
-      prev: "prev",
-      next: "next"
-    };
+      index: "data-index"
+    }
 
     this.event = {
+      prev: "prev",
+      next: "next",
       start: "touchstart",
       end: "touchend",
       enter: "mouseenter",
       leave: "mouseleave"
-    };
+    }
 
     this.timer = 100;
     this.interval;
@@ -144,8 +141,8 @@ class Carousel {
           width = this.item.getBoundingClientRect().width,
           height = this.item.getBoundingClientRect().height,
           index = parseInt(target?.getAttribute(this.data.index)),
-          prev = this.data.prev,
-          next = this.data.next;
+          prev = this.event.prev,
+          next = this.event.next;
 
     let element, left, top, scrollX, scrollY, clientX, clientY, children, valueLeft = 0, valueTop = 0;
 
@@ -258,7 +255,7 @@ class Carousel {
     let i, condition, lastIndex, nextIndex, scrollToLast, scrollToNext, scrollToVal;
 
     switch (trigger) {
-      case this.data.prev:
+      case this.event.prev:
         condition = unit === 0;
         lastIndex = Math.ceil((scrollVal - clientVal) / size + 1);
         nextIndex = Math.ceil(unit / size);
@@ -267,7 +264,7 @@ class Carousel {
 
         break;
 
-      case this.data.next:
+      case this.event.next:
         condition = unit >= scrollVal - clientVal - 16;
         lastIndex = 1;
         nextIndex = parseInt(unit / size + 2);
@@ -487,7 +484,6 @@ class Carousel {
           width = this.item.getBoundingClientRect().width,
           index = this.getCurrentDot().index,
           dots = this.getCurrentDot().dots,
-          thumb = dots[0].classList.contains(this.classes.thumb),
           size = dots.length,
           isFade = this.block.classList.contains(this.classes.fade),
           newIndex = Math.ceil(left / width),
