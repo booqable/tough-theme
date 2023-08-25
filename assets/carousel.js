@@ -6,6 +6,8 @@ class Carousel {
       navi: ".carousel__navigation",
       pagination: ".carousel__pagination",
       btn: ".carousel__btn",
+      prev: ".carousel__btn.prev",
+      next: ".carousel__btn.next",
       dot: ".carousel__dot",
       wrapper: ".carousel__wrapper",
       item: ".carousel__item",
@@ -15,7 +17,6 @@ class Carousel {
 
     this.classes = {
       show: "show",
-      full: "carousel__fluid",
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
       dot: "carousel__dot",
@@ -36,6 +37,7 @@ class Carousel {
     }
 
     this.event = {
+      click: "click",
       prev: "prev",
       next: "next",
       start: "touchstart",
@@ -44,15 +46,12 @@ class Carousel {
       leave: "mouseleave"
     }
 
-    this.timer = 100;
     this.interval;
-    this.index;
-    this.start = 0;
-    this.end = 0;
-    this.touchstart = 0;
-    this.touchend = 0;
-    this.scrollTimer = null;
-    this.scrollArr = [];
+    this.touchstart = null;
+    this.touchend = null;
+    this.wheelTimeout;
+    this.isWheeling = false;
+    this.infinite = true;
   }
 
   init() {
@@ -84,9 +83,9 @@ class Carousel {
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
-    document.addEventListener('wheel', this.touchpadSwipePoints.bind(this));
-    document.addEventListener('touchstart', this.touchscreenSwipePoints.bind(this));
-    document.addEventListener('touchend', this.touchscreenSwipePoints.bind(this));
+    document.addEventListener('wheel', this.touchpadPoints.bind(this));
+    document.addEventListener('touchstart', this.touchscreenPoints.bind(this));
+    document.addEventListener('touchend', this.touchscreenPoints.bind(this));
     window.addEventListener('resize', this.hideControls.bind(this));
     window.addEventListener('resize', this.hidePaginationDots.bind(this));
   }
@@ -205,7 +204,7 @@ class Carousel {
             scrollVal: scrollY,
             scrollToVal: valueTop,
             size: height,
-            trigger: next,
+            trigger: next
           }
 
           valueTop = this.slideEfect(e, options);
@@ -217,7 +216,7 @@ class Carousel {
             scrollVal: scrollX,
             scrollToVal: valueLeft,
             size: width,
-            trigger: next,
+            trigger: next
           }
 
           valueLeft = this.slideEfect(e, options);
@@ -274,8 +273,8 @@ class Carousel {
         break;
     }
 
-    i = condition ? lastIndex : nextIndex;
-    scrollToVal = condition ? scrollToLast : scrollToNext;
+    i = condition && this.infinite ? lastIndex : nextIndex;
+    scrollToVal = condition && this.infinite ? scrollToLast : scrollToNext;
 
     this.pagination(e, i);
 
@@ -301,26 +300,26 @@ class Carousel {
   }
 
   // change slides in Fade effect mode
-  fadeClass(value) {
+  fadeClass(ind) {
     const isFade = this.block.classList.contains(this.classes.fade);
 
-    if (!isFade) return false;
-    if (typeof value === 'undefined') return false;
+    if (!isFade || !ind || ind === 0 || ind > this.items.length) return false;
 
     this.items.forEach((el, i) => {
       el.classList.replace(this.modifiers.show, this.modifiers.hide);
-      if (i + 1 === value) el.classList.replace(this.modifiers.hide, this.modifiers.show);
+      if (i + 1 === ind) el.classList.replace(this.modifiers.hide, this.modifiers.show);
     })
   }
 
   // change active dot of the pagination
-  pagination(e, i) {
+  pagination(e, i, el) {
     const target = e?.target,
-          isDot = target?.classList.contains(this.classes.dot);
+          isDot = target?.classList.contains(this.classes.dot),
+          dots = el ?? this.dots;
 
     if (!isDot && typeof i === 'undefined') return false;
 
-    this.dots.forEach(dot => {
+    dots.forEach(dot => {
       const index = parseInt(dot.getAttribute(this.data.index));
 
       dot.classList.remove(this.modifiers.active);
@@ -385,147 +384,69 @@ class Carousel {
   }
 
   // touchpoints detection on touch screens
-  touchscreenSwipePoints(e) {
-    const target = e?.target,
-          wrapper = target?.closest(this.selector.wrapper),
-          isPrev = target?.classList.contains(this.classes.prev),
-          isNext = target?.classList.contains(this.classes.next),
-          isDot = target?.classList.contains(this.classes.dot),
-          dots = this.getCurrentDot().dots,
-          left = this.wrap.scrollLeft;
+  touchscreenPoints(e) {
+    const wrap = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots;
 
-    if (!dots.length && !wrapper) return false;
+    if (!dots.length && !wrap) return false;
 
-    if (isPrev || isNext || isDot) return false;
-
-    if (e.type === this.event.start) {
-      this.touchstart = e.changedTouches[0].screenX;
-      this.start = left
-    }
+    if (e.type === this.event.start) this.touchstart = e.changedTouches[0].screenX;
 
     if (e.type === this.event.end) {
       this.touchend = e.changedTouches[0].screenX;
-        setTimeout(() => {
-          this.end = left
+      this.touchscreenDirection(wrap);
+    }
+  }
 
-          this.paginationIndex(undefined);
-        }, this.timer);
+  touchscreenDirection(el) {
+    const left = el?.scrollLeft,
+          scroll = el?.scrollWidth,
+          client = el?.clientWidth,
+          next = el?.parentElement.querySelector(this.selector.next),
+          prev = el?.parentElement.querySelector(this.selector.prev),
+          isFade = el?.parentElement.classList.contains(this.classes.fade),
+          leftSwipe = this.touchstart > this.touchend,
+          rightSwipe = this.touchend > this.touchstart,
+          dots = this.getCurrentDot().dots,
+          index = this.getCurrentDot().index;
+
+    if (!isFade) {
+      if (left >= 0 && left <= scroll - client) {
+        this.infinite = false;
+
+        if (leftSwipe) this.trigger(next, this.event.click)
+        if (rightSwipe) this.trigger(prev, this.event.click)
+
+        this.infinite = true;
+      }
+    } else {
+      if (leftSwipe && index < dots.length) this.pagination(undefined, index + 1);
+      if (rightSwipe && index > 1) this.pagination(undefined, index - 1);
     }
   }
 
   // touchpad touchpoints detection
-  touchpadSwipePoints(e) {
-    const target = e?.target.closest(this.selector.wrapper),
-          dots = this.getCurrentDot().dots,
-          index = this.getCurrentDot().index,
-          left = this.wrap.scrollLeft,
-          isFade = this.block.classList.contains(this.classes.fade),
-          isFull = target?.parentElement.classList.contains(this.classes.full);
+  touchpadPoints(e) {
+    const wrap = e?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots;
 
-    if (!dots.length && !target && !index) return false;
+    if (!dots.length && !wrap) return false;
 
-    let direction;
-
+    let index = this.getCurrentDot().index;
     const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
 
-    if (delta === -1) {
-      if (!isFade) {
-        this.scrollArr.push(left)
-      } else {
-        if (isFull) {
-          this.scrollArr.push(delta)
-          direction = "left"
-        }
-      }
-    } else if (delta === 1) {
-      if (!isFade) {
-        this.scrollArr.push(left)
-      } else {
-        if (isFull) {
-          this.scrollArr.push(delta)
-          direction = "right"
-        }
-      }
+    if (!this.isWheeling) {
+      this.isWheeling = true;
+
+      if (delta === -1 && index > 1) index = index - 1
+      if (delta === 1 && index < dots.length) index = index + 1
+
+      this.pagination(undefined, index)
     }
 
-    const points = () => {
-      const first = this.scrollArr[0];
-      const last = this.scrollArr.pop();
-      let value;
+    clearTimeout(this.wheelTimeout);
 
-      if (!isFade && first > last || !isFade && first < last) {
-        this.touchstart = last;
-        this.touchend = first;
-        this.start = last;
-        this.end = first;
-
-        value = undefined;
-      }
-
-      if (isFade && first === -1 || isFade && first === 1) {
-        value = direction
-      }
-
-      this.paginationIndex(value);
-    }
-
-    window.clearTimeout(this.scrollTimer);
-
-    this.scrollTimer = setTimeout(() => {
-      points();
-
-      this.scrollArr = [];
-    }, 50);
-  }
-
-  // next dot index calculation for touchpad and touchscreens scrolling
-  paginationIndex(val) {
-    const left = this.wrap.scrollLeft,
-          width = this.item.getBoundingClientRect().width,
-          index = this.getCurrentDot().index,
-          dots = this.getCurrentDot().dots,
-          size = dots.length,
-          isFade = this.block.classList.contains(this.classes.fade),
-          newIndex = Math.ceil(left / width),
-          leftDiff = this.end - this.start,
-          rightDiff = this.start - this.end;
-
-    let leftMove, rightMove;
-
-    if (val === "right") {
-      leftMove = true
-    } else if (val === "left") {
-      rightMove = true
-    } else {
-      leftMove = this.touchstart > this.touchend;
-      rightMove = this.touchstart < this.touchend;
-    }
-
-    switch (true) {
-      case leftMove:
-        if (!isFade && leftDiff > 20) {
-          this.index = newIndex + 1;
-        } else {
-          this.index = index >= size ? index : index + 1
-        }
-
-        break;
-
-      case rightMove:
-        if (!isFade && rightDiff > 20) {
-          if (left < width) {
-            this.index = 1
-          } else {
-            this.index = newIndex
-          }
-        } else {
-          this.index = index <= 1 ? index : index - 1
-        }
-
-        break;
-    }
-
-    this.pagination(undefined, this.index);
+    this.wheelTimeout = setTimeout(() => this.isWheeling = false, 100);
   }
 
   // get the active dot index
@@ -551,6 +472,20 @@ class Carousel {
       top: top,
       behavior: "smooth",
     });
+  }
+
+  trigger(el, eventType) {
+    if (!el) return false;
+
+    if (typeof eventType === 'string' && typeof el[eventType] === 'function') {
+      el[eventType]();
+    } else {
+      const event =
+        typeof eventType === 'string'
+          ? new Event(eventType, {bubbles: true})
+          : eventType;
+      el.dispatchEvent(event);
+    }
   }
 
   getPrevSibling(element, selector) {
