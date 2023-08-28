@@ -67,14 +67,27 @@
 >
   <div class="cta__container container">
     {%- if title != blank or description != blank or button_1 != blank or button_2 != blank -%}
-      {%- render 'section-header',
-        title: title,
-        text: description,
-        btn_primary: button_1,
-        btn_primary_url: button_url_1,
-        btn_outline: button_2,
-        btn_outline_url: button_url_2
-      -%}
+      <div class="cta__header">
+        {%- if title != blank -%}
+          <h2 class="cta__header-title">{{- title -}}</h2>
+        {%- endif -%}
+
+        {%- if description != blank -%}
+          <div class="cta__header-description">{{- description -}}</div>
+        {%- endif -%}
+
+        {%- if button_1 != blank or button_2 != blank -%}
+          <div class="cta__header-buttons">
+            {%- if button_1 != blank and button_url_1 != blank -%}
+              <a href="{{  btn_primary_url }}" class="cta__header-button button button--primary button--large">{{- button_1 -}}</a>
+            {%- endif -%}
+
+            {%- if button_2 != blank and button_url_2 != blank -%}
+              <a href="{{  btn_outline_url }}" class="cta__header-button button button--outlined button--large">{{- button_2 -}}</a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
     {%- endif -%}
   </div>
 

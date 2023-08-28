@@ -5,9 +5,6 @@
   {{ "accordion.css" | asset_url | stylesheet_tag }}
   {{ "accordion-block.css" | asset_url | stylesheet_tag }}
 
-  {%- assign title                 = section.settings.title -%}
-  {%- assign description           = section.settings.description -%}
-  {%- assign bg_text               = section.settings.bg_text -%}
   {%- assign behavior              = section.settings.behavior -%}
   {%- assign color_palette         = section.settings.color_palette -%}
   {%- assign padding_top           = section.settings.padding_top -%}
@@ -68,14 +65,6 @@
     style="{{- variables | escape -}}"
   >
     <div class="accordion__container container">
-      {%- if title != blank or description != blank or bg_text != blank -%}
-        {%- render 'section-header',
-            title: title,
-            text: description,
-            background: bg_text
-        -%}
-      {%- endif -%}
-
       {%- render 'accordion-block',
           blocks: blocks,
           behavior: behavior
@@ -94,24 +83,6 @@
       {
         "type": "header",
         "content": "General settings"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title",
-        "default": "Frequently asked questions"
-      },
-      {
-        "type": "text",
-        "id": "bg_text",
-        "label": "Background text",
-        "default": "FAQ"
-      },
-      {
-        "type": "contentEditor",
-        "id": "description",
-        "label": "Description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       {
         "type": "select",
