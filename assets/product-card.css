@@ -51,6 +51,7 @@
 }
 
 .product-card__title {
+  font-family: var(--font-body, sans-serif);
   font-size: 18px;
   line-height: var(--line-height-lg, 1.5);
   margin: 0;
