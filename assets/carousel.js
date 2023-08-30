@@ -6,6 +6,8 @@ class Carousel {
       navi: ".carousel__navigation",
       pagination: ".carousel__pagination",
       btn: ".carousel__btn",
+      prev: ".carousel__btn.prev",
+      next: ".carousel__btn.next",
       dot: ".carousel__dot",
       wrapper: ".carousel__wrapper",
       item: ".carousel__item",
@@ -15,12 +17,9 @@ class Carousel {
 
     this.classes = {
       show: "show",
-      full: "carousel__fluid",
       fade: "carousel__fade-effect",
       pause: "carousel__pause",
       dot: "carousel__dot",
-      thumb: "carousel__thumb",
-      thumbNav: "carousel__navigation-thumbs",
       prev: "prev",
       next: "next",
       init: "initialized"
@@ -28,20 +27,31 @@ class Carousel {
 
     this.modifiers = {
       active: "active",
-      indent: "indent",
       hidden: "hidden",
       show: "show",
       hide: "hide"
     }
 
     this.data = {
-      index: "data-index",
-      prev: "prev",
-      next: "next"
-    };
+      index: "data-index"
+    }
 
-    this.tablet = 992;
-    this.timer = 500;
+    this.event = {
+      click: "click",
+      prev: "prev",
+      next: "next",
+      start: "touchstart",
+      end: "touchend",
+      enter: "mouseenter",
+      leave: "mouseleave"
+    }
+
+    this.interval;
+    this.touchstart = null;
+    this.touchend = null;
+    this.wheelTimeout;
+    this.isWheeling = false;
+    this.infinite = true;
   }
 
   init() {
@@ -61,19 +71,11 @@ class Carousel {
     this.dots = this.block.querySelectorAll(this.selector.dot);
     this.count = this.block.querySelector(this.selector.count);
     this.timers = this.block.querySelectorAll(this.selector.timer);
-    this.interval;
-    this.index;
-    this.start = 0;
-    this.end = 0;
-    this.touchstart = 0;
-    this.touchend = 0;
-    this.scrollTimer = null;
-    this.scrollArr = [];
   }
 
-  events(e) {
+  events() {
     this.carouselInit();
-    this.startTimer(e);
+    this.startTimer();
     this.pauseAutoRotate();
     this.hideControls();
     this.hidePaginationDots();
@@ -81,25 +83,11 @@ class Carousel {
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
     this.listener(this.btns, 'click', this.navigation);
-    document.addEventListener('wheel', this.touchpadSwipePoints.bind(this));
-    document.addEventListener('touchstart', this.screenSwipePoints.bind(this));
-    document.addEventListener('touchend', this.screenSwipePoints.bind(this));
-    window.addEventListener('resize', this.hidePaginationDots.bind(this));
+    document.addEventListener('wheel', this.touchpadPoints.bind(this));
+    document.addEventListener('touchstart', this.touchscreenPoints.bind(this));
+    document.addEventListener('touchend', this.touchscreenPoints.bind(this));
     window.addEventListener('resize', this.hideControls.bind(this));
-  }
-
-  listener(arr, event, func) {
-    arr.forEach(el => {
-      el.addEventListener(`${event}`, func.bind(this));
-    })
-  }
-
-  startTimer(e) {
-    this.timers.forEach(timer => {
-      const time = timer.value * 1000;
-
-      this.autoRotate(e, time);
-    })
+    window.addEventListener('resize', this.hidePaginationDots.bind(this));
   }
 
   carouselInit() {
@@ -108,66 +96,245 @@ class Carousel {
     this.block.classList.add(this.classes.init);
   }
 
-  getPrevSibling(element, selector) {
-    if (element) {
-      let sibling = element.previousElementSibling;
-
-      while (sibling) {
-        if (sibling.matches(selector)) return sibling;
-        sibling = sibling.previousElementSibling;
-      }
-    }
-  };
-
-  // change slides in Fade effect mode
-  fadeClass(value) {
-    const isEl = this.block.classList.contains(this.classes.fade);
-
-    if (!isEl) return false;
-    if (typeof value === 'undefined') return false;
-
-    this.items.forEach((el, i) => {
-      el.classList.replace(this.modifiers.show, this.modifiers.hide);
-      if (i + 1 === value) el.classList.replace(this.modifiers.hide, this.modifiers.show);
-    })
+  startTimer() {
+    this.timers.forEach(timer => this.autoRotate(timer.value * 1000))
   }
 
   // autorotate slides of carousel
-  autoRotate(e, time) {
+  autoRotate(time) {
     if (!time) return false;
 
-    this.interval = setInterval(() => {
-      this.navigation(e, time);
-    }, time);
+    this.interval = setInterval(() => this.navigation(undefined, time), time);
 
-    return () => {
-      clearInterval(this.interval);
-    }
+    return () => clearInterval(this.interval);
   }
 
   // pause autorotate slides on hover and touch devices
   pauseAutoRotate() {
-    const isEl = this.block.classList.contains(this.classes.pause);
+    const isPause = this.block.classList.contains(this.classes.pause);
 
-    if (!isEl) return false;
+    if (!isPause) return false;
     if (!this.items.length) return false;
 
-    const func = e => {
-      if(e.type === "mouseenter" || e.type === "touchstart") clearInterval(this.interval);
-      if(e.type === "mouseleave" || e.type === "touchend") this.startTimer(e);
+    const func = event => {
+      if (event.type === this.event.enter || event.type === this.event.start) clearInterval(this.interval);
+      if (event.type === this.event.leave || event.type === this.event.end) this.startTimer();
     }
 
-    this.block.addEventListener('mouseenter', func);
-    this.block.addEventListener('mouseleave', func);
-    this.block.addEventListener('touchstart', func);
-    this.block.addEventListener('touchend', func);
+    this.block.addEventListener(this.event.enter, func);
+    this.block.addEventListener(this.event.leave, func);
+    this.block.addEventListener(this.event.start, func);
+    this.block.addEventListener(this.event.end, func);
+  }
+
+  // slide the carousel left/right or top/bottom and change the index of the active dot of the pagination
+  navigation(event, time) {
+    const target = event?.target,
+          isPrev = target?.classList.contains(this.classes.prev),
+          isNext = target?.classList.contains(this.classes.next),
+          isDot = target?.classList.contains(this.classes.dot);
+
+    if (!isPrev && !isNext && !isDot && !time) return false;
+
+    const isFade = this.block.classList.contains(this.classes.fade),
+          width = this.item.getBoundingClientRect().width,
+          height = this.item.getBoundingClientRect().height,
+          index = parseInt(target?.getAttribute(this.data.index)),
+          prev = this.event.prev,
+          next = this.event.next;
+
+    let element, left, top, scrollX, scrollY, clientX, clientY, children, valueLeft = 0, valueTop = 0;
+
+    element = isDot || isPrev || isNext
+      ? this.getPrevSibling(target?.parentElement, this.selector.wrapper)
+      : this.wrap;
+
+    top = element.scrollTop;
+    left = element.scrollLeft;
+    scrollX = element.scrollWidth;
+    scrollY = element.scrollHeight;
+    clientX = element.clientWidth;
+    clientY = element.clientHeight;
+    children = [...element.children];
+
+    if (isPrev) {
+      if (!isFade) {
+        if (scrollY > scrollX) {
+          const options = {
+            currentScroll: top,
+            clientVal: clientY,
+            scrollVal: scrollY,
+            scrollToVal: valueTop,
+            size: height,
+            trigger: prev
+          }
+
+          valueTop = this.slideEfect(event, options);
+
+        } else {
+          const options = {
+            currentScroll: left,
+            clientVal: clientX,
+            scrollVal: scrollX,
+            scrollToVal: valueLeft,
+            size: width,
+            trigger: prev
+          }
+
+          valueLeft = this.slideEfect(event, options);
+        }
+
+      } else {
+        const options = {
+          items: children,
+          index: 0,
+          last: this.items.length
+        }
+
+        this.fadeEffect(event, options);
+      }
+    }
+
+    if (isNext || time) {
+      if (!isFade) {
+        if (scrollY > scrollX) {
+          const options = {
+            currentScroll: top,
+            clientVal: clientY,
+            scrollVal: scrollY,
+            scrollToVal: valueTop,
+            size: height,
+            trigger: next
+          }
+
+          valueTop = this.slideEfect(event, options);
+
+        } else {
+          const options = {
+            currentScroll: left,
+            clientVal: clientX,
+            scrollVal: scrollX,
+            scrollToVal: valueLeft,
+            size: width,
+            trigger: next
+          }
+
+          valueLeft = this.slideEfect(event, options);
+        }
+
+      } else {
+        const options = {
+          items: children,
+          index: this.items.length,
+          last: 1,
+          nextNumber: 1,
+          nextIndex: 2
+        }
+
+        this.fadeEffect(event, options);
+      }
+    }
+
+    if (isDot && !isFade) valueLeft = width * (index - 1);
+
+    if (!isFade) {
+      const options = {
+        element: element,
+        left: valueLeft,
+        top: valueTop
+      }
+
+      this.scrollTo(options);
+    }
+  }
+
+  // logic of Carousel's Prev and Next buttons (including vertical carousel)
+  slideEfect(event, options) {
+    const {currentScroll, scrollVal, clientVal, size, trigger} = options;
+    let i, condition, lastIndex, nextIndex, scrollToLast, scrollToNext, scrollToVal;
+
+    switch (trigger) {
+      case this.event.prev:
+        condition = currentScroll === 0;
+        lastIndex = Math.ceil((scrollVal - clientVal) / size + 1);
+        nextIndex = Math.ceil(currentScroll / size);
+        scrollToLast = scrollVal;
+        scrollToNext = currentScroll - size;
+
+        break;
+
+      case this.event.next:
+        condition = currentScroll >= scrollVal - clientVal - 16;
+        lastIndex = 1;
+        nextIndex = parseInt(currentScroll / size + 2);
+        scrollToLast = 0;
+        scrollToNext = currentScroll + size;
+
+        break;
+    }
+
+    i = condition && this.infinite ? lastIndex : nextIndex;
+    scrollToVal = condition && this.infinite ? scrollToLast : scrollToNext;
+
+    this.pagination(event, i);
+
+    return scrollToVal
+  }
+
+  // search new index for active slide on Fade carousel mode
+  fadeEffect(event, options) {
+    const {items, index, last, nextNumber, nextIndex} = options;
+    let i;
+
+    items.forEach((item, itemIndex) => {
+      if (item.classList.contains(this.classes.show)) {
+        const condition = itemIndex + (nextNumber ?? 0),
+              next = itemIndex + (nextIndex ?? 0);
+
+        i = condition === index ? last : next
+      }
+    })
+
+    this.pagination(event, i);
+    this.fadeClass(i);
+  }
+
+  // change slides in Fade effect mode
+  fadeClass(index) {
+    const isFade = this.block.classList.contains(this.classes.fade);
+
+    if (!isFade || !index || index > this.items.length) return false;
+
+    this.items.forEach((item, itemIndex) => {
+      item.classList.replace(this.modifiers.show, this.modifiers.hide);
+      if (itemIndex + 1 === index) item.classList.replace(this.modifiers.hide, this.modifiers.show);
+    })
+  }
+
+  // change active dot of the pagination
+  pagination(event, index) {
+    const target = event?.target,
+          isDot = target?.classList.contains(this.classes.dot);
+
+    if (!isDot && typeof index === 'undefined') return false;
+
+    this.dots.forEach(dot => {
+      const activeIndex = parseInt(dot.getAttribute(this.data.index));
+
+      dot.classList.remove(this.modifiers.active);
+
+      if (isDot) target.classList.add(this.modifiers.active);
+      if (activeIndex === index) dot.classList.add(this.modifiers.active);
+      if (typeof index === 'undefined') index = parseInt(target.getAttribute(this.data.index));
+    })
+
+    this.counter(index);
+    this.fadeClass(index);
   }
 
   // hide not used dots of the pagination
   hidePaginationDots() {
     if (!this.dots) return false;
-
-    if (this.dots[0].classList.contains(this.classes.thumb)) return false;
 
     const client = this.wrap.clientWidth,
           scroll = this.wrap.scrollWidth,
@@ -186,234 +353,24 @@ class Carousel {
     }
   }
 
-  // change active dot of the pagination
-  pagination(e, i) {
-    const target = e?.target,
-          isEl = target?.classList.contains(this.classes.dot);
+  // hide all controls if viewport is bigger than the width of all slides
+  hideControls() {
+    if (!this.navi && !this.pagi) return false;
 
-    if (!isEl && typeof i === 'undefined') return false;
+    const clientX = this.wrap.clientWidth,
+          scrollX = this.wrap.scrollWidth,
+          clientY = this.wrap.clientHeight,
+          scrollY = this.wrap.scrollHeight;
 
-    this.dots.forEach(el => {
-      const value = parseInt(el.getAttribute(this.data.index));
-
-      el.classList.remove(this.modifiers.active);
-
-      if (isEl) target.classList.add(this.modifiers.active);
-      if (value === i) el.classList.add(this.modifiers.active);
-      if (typeof i === 'undefined') i = parseInt(target.getAttribute(this.data.index));
-    })
-
-    this.counter(e, i);
-    this.fadeClass(i);
-  }
-
-  // slide the carousel left/right and change the index of the active dot of the pagination
-  navigation(e, time) {
-    const target = e?.target,
-          isPrev = target?.classList.contains(this.classes.prev),
-          isNext = target?.classList.contains(this.classes.next),
-          isDot = target?.classList.contains(this.classes.dot);
-
-    if (!isPrev && !isNext && !isDot && !time && time === 0) return false;
-
-    const isFade = this.block.classList.contains(this.classes.fade),
-          fullWidth = this.block.classList.contains(this.classes.full),
-          isThumb = target?.classList.contains(this.classes.thumb),
-          isThumbs = target?.parentElement.classList.contains(this.classes.thumbNav),
-          index = parseInt(target?.getAttribute(this.data.index)),
-          prev = this.data.prev,
-          next = this.data.next;
-
-    let parent, element, left, top, scrollX, scrollY, clientX, clientY, children;
-
-    let width = this.item.getBoundingClientRect().width,
-        height = this.item.getBoundingClientRect().height,
-        valueLeft = 0,
-        valueTop = 0;
-
-    if (isDot || isPrev || isNext) {
-      if (isThumb) {
-        parent = target?.closest(this.selector.pagination);
-
-        const item = this.getPrevSibling(parent, this.selector.wrapper).querySelector(this.selector.item);
-        width = item.getBoundingClientRect().width;
-
-      } else {
-        parent = target?.parentElement
-      }
-
-      element = this.getPrevSibling(parent, this.selector.wrapper);
-    } else {
-      element = this.wrap;
-    }
-
-    top = element.scrollTop;
-    left = element.scrollLeft;
-    scrollX = element.scrollWidth;
-    scrollY = element.scrollHeight;
-    clientX = element.clientWidth;
-    clientY = element.clientHeight;
-    children = [...element.children];
-
-    if (isPrev) {
-      if (!isFade) {
-        if (scrollY > scrollX) {
-          const options = {
-            unit: top,
-            clientVal: clientY,
-            scrollVal: scrollY,
-            scrollToVal: valueTop,
-            size: height,
-            button: prev,
-            thumbsNav: isThumbs
-          }
-
-          valueTop = this.slideEfect(e, options);
-
-        } else {
-          const options = {
-            unit: left,
-            clientVal: clientX,
-            scrollVal: scrollX,
-            scrollToVal: valueLeft,
-            size: width,
-            button: prev,
-            thumbsNav: isThumbs,
-            fullWidth: fullWidth
-          }
-
-          valueLeft = this.slideEfect(e, options);
-
-        }
-
-      } else {
-        const options = {
-          arr: children,
-          equal: 0,
-          last: this.items.length
-        }
-
-        this.fadeEffect(e, options);
-      }
-    }
-
-    if (isNext || time && time !== 0) {
-      if (!isFade) {
-        if (scrollY > scrollX) {
-          const options = {
-            unit: top,
-            clientVal: clientY,
-            scrollVal: scrollY,
-            scrollToVal: valueTop,
-            size: height,
-            button: next,
-            thumbsNav: isThumbs
-          }
-
-          valueTop = this.slideEfect(e, options);
-
-        } else {
-          const options = {
-            unit: left,
-            clientVal: clientX,
-            scrollVal: scrollX,
-            scrollToVal: valueLeft,
-            size: width,
-            button: next,
-            thumbsNav: isThumbs
-          }
-
-          valueLeft = this.slideEfect(e, options);
-
-        }
-
-      } else {
-        const options = {
-          arr: children,
-          equal: this.items.length,
-          last: 1,
-          nextNumber: 1,
-          nextIndex: 2
-        }
-
-        this.fadeEffect(e, options);
-      }
-    }
-
-    if (isDot && !isFade) valueLeft = width * (index - 1);
-
-    if (!isFade) {
-      const options = {
-        el: element,
-        left: valueLeft,
-        top: valueTop
-      }
-
-      this.scrollTo(options);
-    }
-  }
-
-  // logic of Carousel's Prev and Next buttons (including vertical carousel)
-  slideEfect(e, options) {
-    const {unit, scrollVal, clientVal, size, button, thumbsNav, fullWidth} = options;
-    let i, condition, lastIndex, nextIndex, scrollToLast, scrollToNext, scrollToVal;
-
-    switch (button) {
-      case this.data.prev:
-        condition = unit === 0;
-        lastIndex = Math.ceil((scrollVal - clientVal) / size + 1);
-        nextIndex = Math.ceil(unit / size);
-        scrollToLast = scrollVal;
-        scrollToNext = unit - size;
-
-        break;
-
-      case this.data.next:
-        condition = unit >= scrollVal - clientVal - 16;
-        lastIndex = 1;
-        nextIndex = parseInt(unit / size + 2);
-        scrollToLast = 0;
-        scrollToNext = unit + size;
-
-        break;
-    }
-
-    if (condition) {
-      i = lastIndex;
-      if (fullWidth && clientVal < this.tablet) i -= 1;
-      scrollToVal = scrollToLast;
-    } else {
-      i = nextIndex;
-      scrollToVal = scrollToNext;
-    }
-
-    if (!thumbsNav) {
-      this.pagination(e, i);
-    }
-
-    return scrollToVal
-  }
-
-  // search new index for active slide on Fade carousel mode
-  fadeEffect(e, options) {
-    const {arr, equal, last, nextNumber, nextIndex} = options;
-    let i;
-
-    arr.forEach((el, index) => {
-      if (el.classList.contains(this.classes.show)) {
-        const condition = index + (nextNumber ?? 0);
-        const next = index + (nextIndex ?? 0);
-
-        condition === equal ? i = last : i = next
-      }
-    })
-
-    this.pagination(e, i);
-    this.fadeClass(i);
+    clientX === scrollX && clientY === scrollY
+      ? (this.navi?.classList.add(this.modifiers.hidden),
+         this.pagi?.classList.add(this.modifiers.hidden))
+      : (this.navi?.classList.remove(this.modifiers.hidden),
+         this.pagi?.classList.remove(this.modifiers.hidden))
   }
 
   // change index of counter of slides
-  counter(e, i) {
+  counter(i) {
     if (!this.count) return false;
 
     if (i === 0 || typeof i === 'undefined') return false;
@@ -425,180 +382,70 @@ class Carousel {
     this.count.innerHTML = `${num}${i}`;
   }
 
-  scrollTo(options) {
-    const {el, left, top} = options;
+  // touchpoints detection on touch screens
+  touchscreenPoints(event) {
+    const wrap = event?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots;
 
-    el.scrollTo({
-      left: left,
-      top: top,
-      behavior: "smooth",
-    });
+    if (!dots.length && !wrap) return false;
+
+    if (event.type === this.event.start) this.touchstart = event.changedTouches[0].screenX;
+
+    if (event.type === this.event.end) {
+      this.touchend = event.changedTouches[0].screenX;
+      this.touchscreenDirection(wrap);
+    }
   }
 
-  hideControls() {
-    if (!this.navi && !this.pagi) return false;
+  touchscreenDirection(wrap) {
+    const left = wrap?.scrollLeft,
+          scroll = wrap?.scrollWidth,
+          client = wrap?.clientWidth,
+          next = wrap?.parentElement.querySelector(this.selector.next),
+          prev = wrap?.parentElement.querySelector(this.selector.prev),
+          isFade = wrap?.parentElement.classList.contains(this.classes.fade),
+          leftSwipe = this.touchstart > this.touchend,
+          rightSwipe = this.touchend > this.touchstart,
+          dots = this.getCurrentDot().dots,
+          index = this.getCurrentDot().index;
 
-    const clientX = this.wrap.clientWidth,
-          scrollX = this.wrap.scrollWidth,
-          clientY = this.wrap.clientHeight,
-          scrollY = this.wrap.scrollHeight;
+    if (!isFade) {
+      if (left >= 0 && left <= scroll - client) {
+        this.infinite = false;
 
-    if (clientX === scrollX && clientY === scrollY) {
-      this.navi?.classList.add(this.modifiers.hidden);
-      this.pagi?.classList.add(this.modifiers.hidden);
-      if (this.navi?.classList.contains(this.classes.thumbNav)) {
-        this.navi?.parentElement.classList.remove(this.modifiers.indent);
+        if (leftSwipe) this.trigger(next, this.event.click)
+        if (rightSwipe) this.trigger(prev, this.event.click)
+
+        this.infinite = true;
       }
     } else {
-      this.navi?.classList.remove(this.modifiers.hidden);
-      this.pagi?.classList.remove(this.modifiers.hidden);
-      if (this.navi?.classList.contains(this.classes.thumbNav)) {
-        this.navi?.parentElement.classList.add(this.modifiers.indent);
-      }
-    }
-  }
-
-  // touchpoints detection on touch screens
-  screenSwipePoints(e) {
-    const target = e?.target.closest(this.selector.wrapper),
-          dots = this.getCurrentDot().dots,
-          left = this.wrap.scrollLeft;
-
-    if (!dots.length && !target) return false;
-
-    if (e.type === "touchstart") {
-      this.touchstart = e.changedTouches[0].screenX;
-      this.start = left
-    }
-
-    if (e.type === "touchend") {
-      this.touchend = e.changedTouches[0].screenX;
-        setTimeout(() => {
-          this.end = left
-
-          this.paginationIndex(undefined);
-        }, this.timer);
+      if (leftSwipe && index < dots.length) this.pagination(undefined, index + 1);
+      if (rightSwipe && index > 1) this.pagination(undefined, index - 1);
     }
   }
 
   // touchpad touchpoints detection
-  touchpadSwipePoints(e) {
-    const target = e?.target.closest(this.selector.wrapper),
-          dots = this.getCurrentDot().dots,
-          index = this.getCurrentDot().index,
-          left = this.wrap.scrollLeft,
-          isFade = this.block.classList.contains(this.classes.fade),
-          isFull = target?.parentElement.classList.contains(this.classes.full);
+  touchpadPoints(event) {
+    const wrap = event?.target.closest(this.selector.wrapper),
+          dots = this.getCurrentDot().dots;
 
-    if (!dots.length && !target && !index) return false;
+    if (!dots.length && !wrap) return false;
 
-    let direction;
+    let index = this.getCurrentDot().index;
+    const delta = event.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
 
-    const delta = e.deltaX; // Get the scroll direction (+1 for scroll right, -1 for scroll left)
+    if (!this.isWheeling) {
+      this.isWheeling = true;
 
-    if (delta === -1) {
-      if (!isFade) {
-        this.scrollArr.push(left)
-      } else {
-        if (isFull) {
-          this.scrollArr.push(delta)
-          direction = "left"
-        }
-      }
-    } else if (delta === 1) {
-      if (!isFade) {
-        this.scrollArr.push(left)
-      } else {
-        if (isFull) {
-          this.scrollArr.push(delta)
-          direction = "right"
-        }
-      }
+      if (delta === -1 && index > 1) index = index - 1
+      if (delta === 1 && index < dots.length) index = index + 1
+
+      this.pagination(undefined, index)
     }
 
-    const points = () => {
-      const first = this.scrollArr[0];
-      const last = this.scrollArr.pop();
-      let value;
+    clearTimeout(this.wheelTimeout);
 
-      if (!isFade && first > last || !isFade && first < last) {
-        this.touchstart = last;
-        this.touchend = first;
-        this.start = last;
-        this.end = first;
-
-        value = undefined;
-      }
-
-      if (isFade && first === -1 || isFade && first === 1) {
-        value = direction
-      }
-
-      this.paginationIndex(value);
-    }
-
-    window.clearTimeout(this.scrollTimer);
-
-    this.scrollTimer = setTimeout(() => {
-      points();
-
-      this.scrollArr = [];
-    }, 50);
-  }
-
-  // next dot index calculation for touchpad and touchscreens scrolling
-  paginationIndex(val) {
-    const left = this.wrap.scrollLeft,
-          width = this.item.getBoundingClientRect().width,
-          index = this.getCurrentDot().index,
-          dots = this.getCurrentDot().dots,
-          thumb = dots[0].classList.contains(this.classes.thumb),
-          size = dots.length,
-          isFade = this.block.classList.contains(this.classes.fade),
-          newIndex = Math.ceil(left / width),
-          leftDiff = this.end - this.start,
-          rightDiff = this.start - this.end;
-
-    let leftMove, rightMove;
-
-    if (val === "right") {
-      leftMove = true
-    } else if (val === "left") {
-      rightMove = true
-    } else {
-      leftMove = this.touchstart > this.touchend;
-      rightMove = this.touchstart < this.touchend;
-    }
-
-    switch (true) {
-      case leftMove:
-        if (!isFade && leftDiff > 20) {
-          this.index = newIndex + 1;
-
-          if (thumb) this.index -= 1
-        } else {
-          this.index = index >= size ? index : index + 1
-        }
-
-        break;
-
-      case rightMove:
-        if (!isFade && rightDiff > 20) {
-          if (left < width) {
-            this.index = 1
-          } else {
-            this.index = newIndex
-
-            if (thumb) this.index += 1
-          }
-        } else {
-          this.index = index <= 1 ? index : index - 1
-        }
-
-        break;
-    }
-
-    this.pagination(undefined, this.index);
+    this.wheelTimeout = setTimeout(() => this.isWheeling = false, 100);
   }
 
   // get the active dot index
@@ -606,9 +453,7 @@ class Carousel {
     let index = 1,
         dots = [...this.dots];
 
-    dots = dots.filter(dot => {
-      return !dot.classList.contains(this.modifiers.hidden);
-    })
+    dots = dots.filter(dot => !dot.classList.contains(this.modifiers.hidden))
 
     dots.forEach(dot => {
       if (dot.classList.contains(this.modifiers.active))
@@ -616,6 +461,47 @@ class Carousel {
     })
 
     return {index, dots};
+  }
+
+  scrollTo(options) {
+    const {element, left, top} = options;
+
+    element.scrollTo({
+      left: left,
+      top: top,
+      behavior: "smooth",
+    });
+  }
+
+  trigger(element, eventType) {
+    if (!element) return false;
+
+    if (typeof eventType === 'string' && typeof element[eventType] === 'function') {
+      element[eventType]();
+    } else {
+      const event =
+        typeof eventType === 'string'
+          ? new Event(eventType, {bubbles: true})
+          : eventType;
+      element.dispatchEvent(event);
+    }
+  }
+
+  getPrevSibling(element, selector) {
+    if (element) {
+      let sibling = element.previousElementSibling;
+
+      while (sibling) {
+        if (sibling.matches(selector)) return sibling;
+        sibling = sibling.previousElementSibling;
+      }
+    }
+  }
+
+  listener(nodes, event, func) {
+    nodes.forEach(node => {
+      node.addEventListener(`${event}`, func.bind(this));
+    })
   }
 }
 

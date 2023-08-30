@@ -162,7 +162,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: var(--font-heading, sans-serif) !important;
+  font-family: var(--font-heading, sans-serif);
   margin-bottom: 1.5625rem;;
 }
 
@@ -515,6 +515,11 @@ bq-mini-cart::part(bq-icon-cart) {
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
+.palette-one bq-mini-cart::part(bq-cart-lines) {
+  background-color: var(--background-accent, #F4B841);
+  color: var(--color-accent, #0B1A26);
+}
+
 .palette-one bq-mini-cart::part(bq-icon-cart) {
   color: var(--color-primary, #0B1A26);
 }
@@ -525,6 +530,11 @@ bq-mini-cart::part(bq-icon-cart) {
 
 .palette-one bq-mini-cart::part(bq-icon-cart):active {
   color: var(--color-outline-active, #F4B841BA);
+}
+
+.palette-two bq-mini-cart::part(bq-cart-lines) {
+  background-color: var(--background-accent-2, #F4B841);
+  color: var(--color-accent-2, #0B1A26);
 }
 
 .palette-two bq-mini-cart::part(bq-icon-cart) {
