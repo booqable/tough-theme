@@ -141,7 +141,7 @@
                           {%- endif -%}
 
                           {%- if description != blank -%}
-                            <blockquote class="testimonials__blockquote">
+                            <blockquote class="testimonials__blockquote text-medium">
                               <q class="testimonials__quote">
                                 {{- description -}}
                               </q>
@@ -398,8 +398,8 @@
           {
             "type": "image_picker",
             "id": "image",
-            "label": "Image",
-            "default": "booqable://assets/image-hero.jpg"
+            "label": "Image (optional)",
+            "default": "booqable://assets/image-placeholder.png"
           },
           {
             "type": "text",

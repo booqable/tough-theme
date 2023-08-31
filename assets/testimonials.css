@@ -21,9 +21,7 @@
 }
 
 .testimonials__blockquote {
-  font-size: 24px;
   font-weight: var(--font-weight-light, 300);
-  line-height: var(--line-height-lg, 1.5);
   letter-spacing: -0.003em;
   padding-bottom: var(--padding-text, 48px);
 }
@@ -112,16 +110,7 @@
   }
 
   .testimonials__blockquote {
-    font-size: 32px;
     padding: 0;
-  }
-
-  .testimonials__cite {
-    font-size: 24px;
-  }
-
-  .testimonials__small {
-    font-size: 16px;
   }
 
   .testimonials__content {
