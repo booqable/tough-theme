@@ -80,8 +80,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 100%;
   min-width: 100%;
-  min-height: 100%;
   opacity: 0.1;
 }
 
@@ -170,6 +170,13 @@
 
 .palette-two .contact-form__background:before {
   background: linear-gradient(to var(--direction-overlay), var(--background-primary-2-00, #0B1A2600) 0%, var(--background-primary-2-10, #0B1A261A) 20%, var(--background-primary-2-45, #0B1A2673) 40%, var(--background-primary-2, #0B1A26) 100%);
+}
+
+@media (min-width: 810px) {
+  .contact-form__background svg {
+    min-height: 100%;
+    height: auto;
+  }
 }
 
 @media (min-width: 992px) {

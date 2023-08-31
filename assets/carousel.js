@@ -18,6 +18,7 @@ class Carousel {
     this.classes = {
       show: "show",
       fade: "carousel__fade-effect",
+      full: "carousel__full-width",
       pause: "carousel__pause",
       dot: "carousel__dot",
       prev: "prev",
@@ -137,6 +138,7 @@ class Carousel {
     if (!isPrev && !isNext && !isDot && !time) return false;
 
     const isFade = this.block.classList.contains(this.classes.fade),
+          isFull = this.block.classList.contains(this.classes.full),
           width = this.item.getBoundingClientRect().width,
           height = this.item.getBoundingClientRect().height,
           index = parseInt(target?.getAttribute(this.data.index)),
@@ -156,6 +158,8 @@ class Carousel {
     clientX = element.clientWidth;
     clientY = element.clientHeight;
     children = [...element.children];
+
+    if (isFull) scrollX = width * children.length;
 
     if (isPrev) {
       if (!isFade) {

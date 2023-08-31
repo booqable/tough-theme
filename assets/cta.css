@@ -65,10 +65,10 @@
 
 .cta__image-wrapper svg {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
-  min-height: 100%;
+  transform: translate(-50%, -50%);
+  height: 100%;
   min-width: 100%;
 }
 
@@ -167,6 +167,13 @@
 
 .palette-two .cta__image-wrapper:after {
   background: linear-gradient(180.44deg, var(--background-accent-2, #F4B841) 51.3%, var(--background-accent-2-00, #F4B84100) 81.06%);
+}
+
+@media (min-width: 810px) {
+  .cta__image-wrapper svg {
+    min-height: 100%;
+    height: auto;
+  }
 }
 
 @media (min-width: 992px) {
