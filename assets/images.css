@@ -150,6 +150,16 @@
   }
 }
 
+@media (min-width: 768px) {
+  .images__vision-wrapper--desktop {
+    display: block;
+  }
+
+  .images__vision-wrapper--mobile {
+    display: none;
+  }
+}
+
 @media (min-width: 992px) {
   .images {
     height: auto;
@@ -169,14 +179,6 @@
 
   .images__vision-wrapper {
     display: block;
-  }
-
-  .images__vision-wrapper--desktop {
-    display: block;
-  }
-
-  .images__vision-wrapper--mobile {
-    display: none;
   }
 
   .images__video {

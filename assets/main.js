@@ -62,9 +62,7 @@ class Main {
     this.setLoadedClass();
     this.focalImages();
     if (this.search) this.searchInputAutoFill();
-    this.notch();
 
-    window.addEventListener("resize", this.notch.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("message", this.messagesListener.bind(this));
   }
@@ -89,9 +87,7 @@ class Main {
     if (!window.imageFocus) {
       if (this.focalImageTimeout) clearTimeout(this.focalImageTimeout);
 
-      this.focalImageTimeout = setTimeout(() => {
-        initFocalImages();
-      }, 10);
+      this.focalImageTimeout = setTimeout(() => initFocalImages(), 10);
 
       return;
     }
@@ -173,40 +169,6 @@ class Main {
       }
     }
   };
-
-  notch() {
-    const doc = document.documentElement,
-          styles = window.getComputedStyle(doc),
-          topVal = parseInt(styles.getPropertyValue("--notch-top")),
-          rightVal = parseInt(styles.getPropertyValue("--notch-right")),
-          bottomVal = parseInt(styles.getPropertyValue("--notch-bottom")),
-          leftVal = parseInt(styles.getPropertyValue("--notch-left")),
-          propsArr = [topVal, rightVal, bottomVal, leftVal];
-
-    let notch;
-
-    propsArr.filter((e) => e > 0 );
-
-    if (propsArr.length > 0) notch = true;
-
-    this.deviceOrientation(doc, notch);
-  };
-
-  deviceOrientation(doc, notch) {
-    const screen = {
-      width : window.innerWidth,
-      height : window.innerHeight
-    };
-
-    if (screen.width > screen.height) {
-      doc.setAttribute("data-orientation", "landscape");
-    } else {
-      doc.setAttribute("data-orientation", "portrait");
-    }
-
-    console.log(screen.width);
-    console.log(screen.height);
-  }
 }
 
 const main = new Main(document.querySelector('body'));
