@@ -60,7 +60,7 @@
   {%- endcase -%}
 {%- endcapture -%}
 
-{%- include 'date-picker-variables' -%}
+{%- include 'variables-date-picker' -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="date-picker__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">

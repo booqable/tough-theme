@@ -15,15 +15,6 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign image_position        = section.settings.image_position -%}
-{%- assign image_placeholder     = settings.image_placeholder -%}
-
-{%- if image != blank -%}
-  {%- assign image = image -%}
-{%- elsif image_placeholder != blank -%}
-  {%- assign image = image_placeholder -%}
-{%- else -%}
-  {%- assign image = blank -%}
-{%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture spacer_variable -%}
@@ -143,7 +134,7 @@
     <div class="text-image__columns">
       <div class="text-image__col">
         {%- if tag != blank -%}
-          <span class="text-image__tag">{{- tag -}}</span>
+          <span class="text-image__tag tagline">{{- tag -}}</span>
         {%- endif -%}
 
         {%- if title != blank -%}

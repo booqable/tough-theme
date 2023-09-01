@@ -96,12 +96,12 @@
 
   <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
-      <div class="carousel carousel__fluid carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
+      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
         <div class="carousel__wrapper">
     {%- endif -%}
 
-          {%- for block in blocks limit: 8 -%}
+          {%- for block in blocks -%}
             {%- assign first                = forloop.first -%}
             {%- assign title                = block.settings.title -%}
             {%- assign description          = block.settings.description -%}
@@ -385,7 +385,7 @@
         </div>
 
         <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
-          {%- for block in blocks limit: 8 -%}
+          {%- for block in blocks -%}
             {%- assign first = forloop.first -%}
             {%- assign index = forloop.index -%}
 
@@ -396,7 +396,7 @@
         </div>
 
         <div class="carousel__counter">
-          {%- for block in blocks limit: 8 -%}
+          {%- for block in blocks -%}
             {%- assign length = forloop.length -%}
           {%- endfor -%}
 
@@ -430,7 +430,8 @@
           {
             "type": "image_picker",
             "id": "image",
-            "label": "Image"
+            "label": "Image",
+            "default": "booqable://assets/image-hero.jpg"
           },
           {
             "type": "image_picker",

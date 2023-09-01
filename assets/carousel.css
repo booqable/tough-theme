@@ -127,10 +127,6 @@
   transition: border var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__btn:hover {
-  border-color: var(--color-primary, #0B1A26);
-}
-
 .carousel__btn svg {
   width: 16px;
   height: 16px;
@@ -149,26 +145,35 @@
   height: 100%;
 }
 
-.carousel__fluid .carousel__item,
-.carousel__fluid .carousel__item:last-child {
-  height: 100%;
-}
-
-.carousel__fluid .carousel__item:last-child {
+.carousel__full-width .carousel__item:last-child {
   min-width: var(--slide-width-mobile);
   max-width: var(--slide-width-mobile);
 }
 
-.carousel__fluid .carousel__item:not(:first-child) {
+.carousel__full-width .carousel__inner {
+  padding-right: 16px;
+}
+
+.carousel__edges .carousel__item,
+.carousel__edges .carousel__item:last-child {
+  height: 100%;
+}
+
+.carousel__edges .carousel__item:last-child {
+  min-width: var(--slide-width-mobile);
+  max-width: var(--slide-width-mobile);
+}
+
+.carousel__edges .carousel__item:not(:first-child) {
   display: none;
 }
 
-.carousel__fluid .carousel__inner,
-.carousel__fluid .carousel__item:last-child .carousel__inner {
+.carousel__edges .carousel__inner,
+.carousel__edges .carousel__item:last-child .carousel__inner {
   padding: 0;
 }
 
-.carousel__fluid .carousel__item.show {
+.carousel__edges .carousel__item.show {
   position: static;
   opacity: 1;
   visibility: visible;
@@ -176,7 +181,7 @@
         opacity calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-out);
 }
 
-.carousel__fluid .carousel__item.hide {
+.carousel__edges .carousel__item.hide {
   position: absolute;
   z-index: -1;
   visibility: hidden;
@@ -185,11 +190,11 @@
         opacity calc(var(--animation-duration, 400ms) + 200ms) var(--transition-function-ease-in);
 }
 
-.carousel__fluid .images__text-area {
+.carousel__edges .images__text-area {
   margin-bottom: var(--margin-bottom-mobile, 0);
 }
 
-.carousel__fluid .carousel__navigation {
+.carousel__edges .carousel__navigation {
   bottom: 18px;
   right: auto;
   left: 50%;
@@ -203,7 +208,7 @@
   margin: 0;
 }
 
-.carousel__fluid .carousel__btn {
+.carousel__edges .carousel__btn {
   position: relative;
   border-color: transparent;
   cursor: pointer;
@@ -218,15 +223,15 @@
   justify-content: center;
 }
 
-.carousel__fluid .carousel__btn.prev {
+.carousel__edges .carousel__btn.prev {
   margin-right: 24px;
 }
 
-.carousel__fluid .carousel__btn.prev svg {
+.carousel__edges .carousel__btn.prev svg {
   transform: rotate(180deg);
 }
 
-.carousel__fluid .carousel__pagination {
+.carousel__edges .carousel__pagination {
   bottom: 31px;
   left: 50%;
   z-index: 2;
@@ -238,17 +243,16 @@
   align-items: center;
 }
 
-.carousel__fluid .carousel__dot {
+.carousel__edges .carousel__dot {
   opacity: 1;
   margin-bottom: 3px;
 }
 
-.carousel__fluid .carousel__dot:hover,
-.carousel__fluid .carousel__dot.active {
+.carousel__edges .carousel__dot.active {
   opacity: 1;
 }
 
-.carousel__fluid .carousel__counter {
+.carousel__edges .carousel__counter {
   position: absolute;
   z-index: 0;
   bottom: 28px;
@@ -263,21 +267,21 @@
   padding: 0 var(--horizontal-padding);
 }
 
-.carousel__fluid .carousel__divider {
+.carousel__edges .carousel__divider {
   margin: 0 16px;
 }
 
-.carousel__fluid .carousel__divider,
-.carousel__fluid .carousel__divider + span {
+.carousel__edges .carousel__divider,
+.carousel__edges .carousel__divider + span {
   opacity: 0.4;
 }
 
-.carousel__fluid.carousel.initialized .carousel__item,
-.carousel__fluid.carousel.initialized .carousel__item:not(:first-child) {
+.carousel.carousel__edges.initialized .carousel__item,
+.carousel.carousel__edges.initialized .carousel__item:not(:first-child) {
   display: block;
 }
 
-.carousel.carousel__fluid.carousel__fade-effect .carousel__wrapper {
+.carousel.carousel__edges.carousel__fade-effect .carousel__wrapper {
   overflow: hidden;
 }
 
@@ -285,17 +289,12 @@
   background: var(--color-primary-30, #0B1A264D);
 }
 
-.palette-one .carousel__dot:hover:after,
 .palette-one .carousel__dot.active:after {
   background: var(--color-primary, #0B1A26);
 }
 
 .palette-one .carousel__btn {
   border-color: var(--color-border, #0B1A2626);
-}
-
-.palette-one .carousel__btn:hover {
-  border-color: var(--color-primary, #0B1A26);
 }
 
 .palette-one .carousel__btn path {
@@ -306,7 +305,6 @@
   background: var(--color-primary-2-30, #FFFFFF4D);
 }
 
-.palette-two .carousel__dot:hover:after,
 .palette-two .carousel__dot.active:after {
   background: var(--color-primary-2, #FFFFFF);
 }
@@ -315,75 +313,57 @@
   border-color: var(--color-border-2, #FFFFFF47);
 }
 
-.palette-two .carousel__btn:hover {
-  border-color: var(--color-primary-2, #FFFFFF);
-}
-
 .palette-two .carousel__btn path {
   fill: var(--color-primary-2, #FFFFFF);
 }
 
-.overlay-light .carousel__fluid .carousel__btn,
-.palette-one .carousel__fluid .carousel__btn {
+.overlay-light .carousel__edges .carousel__btn,
+.palette-one .carousel__edges .carousel__btn {
   background: var(--color-black-08, #0B1A2614);
 }
 
-.overlay-light .carousel__fluid .carousel__btn path,
-.palette-one .carousel__fluid .carousel__btn path {
+.overlay-light .carousel__edges .carousel__btn path,
+.palette-one .carousel__edges .carousel__btn path {
   fill: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__btn:hover,
-.palette-one .carousel__fluid .carousel__btn:hover {
-  border-color: var(--color-black, #0B1A26);
-}
-
-.overlay-light .carousel__fluid .carousel__dot:after,
-.palette-one .carousel__fluid .carousel__dot:after {
+.overlay-light .carousel__edges .carousel__dot:after,
+.palette-one .carousel__edges .carousel__dot:after {
   background: var(--color-black-45, #0B1A2673);
 }
 
-.overlay-light .carousel__fluid .carousel__dot:hover:after,
-.overlay-light .carousel__fluid .carousel__dot.active:after,
-.palette-one .carousel__fluid .carousel__dot:hover:after,
-.palette-one .carousel__fluid .carousel__dot.active:after {
+.overlay-light .carousel__edges .carousel__dot.active:after,
+.palette-one .carousel__edges .carousel__dot.active:after {
   background: var(--color-black, #0B1A26);
 }
 
-.overlay-light .carousel__fluid .carousel__counter,
-.palette-one .carousel__fluid .carousel__counter {
+.overlay-light .carousel__edges .carousel__counter,
+.palette-one .carousel__edges .carousel__counter {
   color: var(--color-black, #0B1A26);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn,
-.palette-two .carousel__fluid .carousel__btn {
+.overlay-dark .carousel__edges .carousel__btn,
+.palette-two .carousel__edges .carousel__btn {
   background: var(--color-white-08, #FFFFFF14);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn path,
-.palette-two .carousel__fluid .carousel__btn path {
+.overlay-dark .carousel__edges .carousel__btn path,
+.palette-two .carousel__edges .carousel__btn path {
   fill: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__btn:hover,
-.palette-two .carousel__fluid .carousel__btn:hover {
-  border-color: var(--color-white, #FFFFFF);
-}
-
-.overlay-dark .carousel__fluid .carousel__dot:after,
-.palette-two .carousel__fluid .carousel__dot:after {
+.overlay-dark .carousel__edges .carousel__dot:after,
+.palette-two .carousel__edges .carousel__dot:after {
   background: var(--color-white-45, #FFFFFF73);
 }
 
-.overlay-dark .carousel__fluid .carousel__dot:hover:after,
-.overlay-dark .carousel__fluid .carousel__dot.active:after,
-.palette-two .carousel__fluid .carousel__dot:hover:after,
-.palette-two .carousel__fluid .carousel__dot.active:after {
+.overlay-dark .carousel__edges .carousel__dot.active:after,
+.palette-two .carousel__edges .carousel__dot.active:after {
   background: var(--color-white, #FFFFFF);
 }
 
-.overlay-dark .carousel__fluid .carousel__counter,
-.palette-two .carousel__fluid .carousel__counter {
+.overlay-dark .carousel__edges .carousel__counter,
+.palette-two .carousel__edges .carousel__counter {
   color: var(--color-white, #FFFFFF);
 }
 
@@ -412,34 +392,38 @@
     padding-right: 32px;
   }
 
-  .carousel__fluid .carousel__item,
-  .carousel__fluid .carousel__item:last-child {
+  .carousel__full-width .carousel__inner {
+    padding-right: 32px;
+  }
+
+  .carousel__edges .carousel__item,
+  .carousel__edges .carousel__item:last-child {
     min-width: var(--slide-width);
     max-width: var(--slide-width);
   }
 
-  .carousel__fluid .images__text-area {
+  .carousel__edges .images__text-area {
     margin-bottom: var(--margin-bottom, 0);
   }
 
-  .carousel__fluid .carousel__navigation {
+  .carousel__edges .carousel__navigation {
     bottom: 33px;
   }
 
-  .carousel__fluid .carousel__dot {
+  .carousel__edges .carousel__dot {
     width: 48px;
     height: 16px;
     margin-right: 4px;
     margin-left: 4px;
   }
 
-  .carousel__fluid .carousel__dot:after {
+  .carousel__edges .carousel__dot:after {
     border-radius: 0;
     width: 100%;
     height: 2px;
   }
 
-  .carousel__fluid .carousel__counter {
+  .carousel__edges .carousel__counter {
     bottom: 33px;
   }
 }
@@ -462,5 +446,53 @@
 
   .carousel__item:last-child .carousel__inner {
     padding-right: 0;
+  }
+
+  .carousel__full-width .carousel__item:last-child .carousel__inner,
+  .carousel__full-width .carousel__inner {
+    padding: 0;
+  }
+}
+
+@media (hover: hover) {
+  .carousel__edges .carousel__dot:hover {
+    opacity: 1;
+  }
+
+  .palette-one .carousel__btn:hover {
+    border-color: var(--color-primary, #0B1A26);
+  }
+
+  .palette-one .carousel__dot:hover:after {
+    background: var(--color-primary, #0B1A26);
+  }
+
+
+  .palette-two .carousel__btn:hover {
+    border-color: var(--color-primary-2, #FFFFFF);
+  }
+
+  .palette-two .carousel__dot:hover:after {
+    background: var(--color-primary-2, #FFFFFF);
+  }
+
+  .overlay-light .carousel__edges .carousel__btn:hover,
+  .palette-one .carousel__edges .carousel__btn:hover {
+    border-color: var(--color-black, #0B1A26);
+  }
+
+  .overlay-light .carousel__edges .carousel__dot:hover:after,
+  .palette-one .carousel__edges .carousel__dot:hover:after {
+    background: var(--color-black, #0B1A26);
+  }
+
+  .overlay-dark .carousel__edges .carousel__btn:hover,
+  .palette-two .carousel__edges .carousel__btn:hover {
+    border-color: var(--color-white, #FFFFFF);
+  }
+
+  .overlay-dark .carousel__edges .carousel__dot:hover:after,
+  .palette-two .carousel__edges .carousel__dot:hover:after {
+    background: var(--color-white, #FFFFFF);
   }
 }

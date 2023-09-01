@@ -49,7 +49,7 @@
   {%- assign id      = product.id -%}
   {%- assign url     = product.url -%}
   {%- assign name    = product.name -%}
-  {%- assign excerpt = product.description | truncate: 125, " ..." -%}
+  {%- assign excerpt = product.description | truncate: 118, " ..." -%}
   {%- assign price   = product | product_price -%}
   {%- assign period  = product | product_price_label -%}
 
@@ -84,9 +84,11 @@
   </div>
 
   <div class="product-card__meta">
-    {%- if product != blank -%}
-      {{ product | product_availability }}
-    {%- endif -%}
+    <div class="product-card__availability">
+      {%- if product != blank -%}
+        {{- product | product_availability -}}
+      {%- endif -%}
+    </div>
 
     <h3 class="product-card__title">
       {%- if product != blank -%}

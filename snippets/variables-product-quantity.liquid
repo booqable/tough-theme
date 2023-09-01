@@ -1,0 +1,57 @@
+{%- capture product_quantity -%}
+  --add-button-button-border-radius: 0;
+  --add-button-button-padding: 14px;
+  --add-button-button-max-width: 100%;
+  --add-button-button-width: 100%;
+  --add-button-control-height: 50px;
+  --add-button-gap: 16px;
+  --add-button-input-border-radius: 0;
+  --add-button-input-padding: 8px 12px;
+  --add-button-input-width: 110px;
+  --add-button-label-weight: 700;
+
+  {%- if color_palette == "one" -%}
+    {%- if settings.background != blank -%}
+      --add-button-input-background-color: {{ settings.background }};
+    {%- endif -%}
+
+    {%- if settings.primary_color != blank -%}
+      --add-button-input-color: {{ settings.primary_color }};
+      --add-button-input-border: 1px solid {{ settings.primary_color | append: "26" }};
+    {%- endif -%}
+
+    {%- if settings.accent_background != blank -%}
+      --add-button-button-color: {{ settings.accent_background }};
+    {%- else -%}
+      --add-button-button-color: {{- branding_color -}};
+    {%- endif -%}
+
+    {%- if settings.accent_color != blank -%}
+      --add-button-button-label-color: {{- settings.accent_color -}};
+    {%- else -%}
+      --add-button-button-label-color: {%- if settings.primary_color != blank -%}{{- settings.primary_color -}}{%- endif -%};
+    {%- endif -%}
+
+  {%- elsif color_palette == "two" -%}
+    {%- if settings.background_2 != blank -%}
+      --add-button-input-background-color: {{ settings.background_2 }};
+    {%- endif -%}
+
+    {%- if settings.primary_color_2 != blank -%}
+      --add-button-input-color: {{ settings.primary_color_2 }};
+      --add-button-input-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
+    {%- endif -%}
+
+    {%- if settings.accent_background_2 != blank -%}
+      --add-button-button-color: {{ settings.accent_background_2 }};
+    {%- else -%}
+      --add-button-button-color: {{- branding_color -}};
+    {%- endif -%}
+
+    {%- if settings.accent_color_2 != blank -%}
+      --add-button-button-label-color: {{- settings.accent_color_2 -}};
+    {%- else -%}
+      --add-button-button-label-color: {%- if settings.primary_color_2 != blank -%}{{- settings.primary_color_2 -}}{%- endif -%};
+    {%- endif -%}
+  {%- endif -%}
+{%- endcapture -%}
