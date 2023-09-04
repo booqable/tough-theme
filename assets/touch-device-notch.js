@@ -58,15 +58,14 @@ class TouchDevice {
           paddingRight = parseInt(styles.getPropertyValue(this.cssVars.areaRight)),
           paddingBottom = parseInt(styles.getPropertyValue(this.cssVars.areaBottom)),
           paddingLeft = parseInt(styles.getPropertyValue(this.cssVars.areaLeft)),
+          paddings = [paddingTop, paddingRight, paddingBottom, paddingLeft],
+          hasPositive = paddings.some(value => value > 0),
           screen = {
             width : window.innerWidth,
             height : window.innerHeight
           };
 
     this.doc.classList.add(this.modifier.touch);
-
-    let paddings = [paddingTop, paddingRight, paddingBottom, paddingLeft],
-        hasPositive = paddings.some(value => value > 0);
 
     hasPositive && screen.width > screen.height
       ? this.doc.setAttribute(this.data.orientation, this.props.landscape)
