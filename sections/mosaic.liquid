@@ -6,7 +6,7 @@
 
   {%- assign button_label          = section.settings.button_label -%}
   {%- assign button_url            = section.settings.button_url -%}
-  {%- assign size                  = section.settings.size -%}
+  {%- assign layout                = section.settings.layout -%}
   {%- assign color_palette         = section.settings.color_palette -%}
   {%- assign padding_top           = section.settings.padding_top -%}
   {%- assign padding_bottom        = section.settings.padding_bottom -%}
@@ -67,7 +67,7 @@
     style="{{- variables | escape -}}"
   >
     <div class="mosaic__container container">
-      <div class="mosaic__list mosaic__list-{{ size }}{% if blocks.size > 3 %} mosaic__list-two-rows{%- endif -%}">
+      <div class="mosaic__list mosaic__list-{{ layout }}{% if blocks.size > 3 %} mosaic__list-two-rows{%- endif -%}">
         {%- for block in blocks -%}
           {%- assign article_tag     = block.settings.article_tag -%}
           {%- assign heading         = block.settings.heading -%}
@@ -184,7 +184,7 @@
       },
       {
         "type": "select",
-        "id": "size",
+        "id": "layout",
         "label": "Layout",
         "options": [
           {

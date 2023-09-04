@@ -510,7 +510,28 @@ img {
 }
 
 .tagline {
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
   font-family: var(--font-tagline, sans-serif);
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  margin: 0 0 20px;
+}
+
+.palette-one .tagline {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-two .tagline {
+  color: var(--color-outline-2, #F4B841);
+}
+
+@media (min-width: 1100px) {
+  .tagline {
+    margin: 0 0 16px;
+  }
 }
 
 [data-focus="true"] {
