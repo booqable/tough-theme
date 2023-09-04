@@ -64,14 +64,16 @@
     <div class="numbered-blocks__list">
       <div class="numbered-blocks__container container">
         {%- for block in section.blocks -%}
-          {%- assign index        = forloop.index -%}
-          {%- assign heading      = block.settings.heading -%}
-          {%- assign text         = block.settings.text -%}
-          {%- assign button_1     = block.settings.button_1 -%}
-          {%- assign button_2     = block.settings.button_2 -%}
-          {%- assign button_url_1 = block.settings.button_url_1 -%}
-          {%- assign button_url_2 = block.settings.button_url_2 -%}
-          {%- assign image        = block.settings.image -%}
+          {%- assign index          = forloop.index -%}
+          {%- assign heading        = block.settings.heading -%}
+          {%- assign text           = block.settings.text -%}
+          {%- assign button_1       = block.settings.button_1 -%}
+          {%- assign text_alignment = block.settings.text_alignment -%}
+          {%- assign button_2       = block.settings.button_2 -%}
+          {%- assign button_url_1   = block.settings.button_url_1 -%}
+          {%- assign button_url_2   = block.settings.button_url_2 -%}
+          {%- assign image          = block.settings.image -%}
+          {%- assign image_position = block.settings.image_position -%}
 
           {%- if image != blank -%}
             {%- assign image = block.settings.image -%}
@@ -81,7 +83,31 @@
             {%- assign image = blank -%}
           {%- endif -%}
 
-          <div class="numbered-blocks__item" id="{{- block.id -}}">
+          {% comment %} CSS variables start {% endcomment %}
+          {%- capture block_variables -%}
+            {%- case image_position -%}
+              {%- when 'left' -%}
+                --flex-direction: row-reverse;
+                --border-left: 1px;
+                --border-right: 0;
+              {%- when 'right' -%}
+                --flex-direction: row;
+                --border-left: 0;
+                --border-right: 1px;
+            {%- endcase -%}
+
+            {%- case text_alignment -%}
+              {%- when 'top' -%}
+                --vertical-alignment: flex-start;
+              {%- when 'middle' -%}
+                --vertical-alignment: center;
+              {%- when 'bottom' -%}
+                --vertical-alignment: flex-end;
+            {%- endcase -%}
+          {%- endcapture -%}
+          {% comment %} CSS variables end {% endcomment %}
+
+          <div class="numbered-blocks__item" id="{{- block.id -}}" style="{{- block_variables | escape -}}">
             <div class="numbered-blocks__item-col">
               <div class="numbered-blocks__text-area">
                 <span class="numbered-blocks__index">{{- index -}}</span>
@@ -317,6 +343,46 @@
             "type": "url",
             "id": "button_url_2",
             "label": "Button 2 link"
+          },
+          {
+            "type": "header",
+            "content": "Desktop settings"
+          },
+          {
+            "type": "select",
+            "id": "text_alignment",
+            "label": "Text alignment",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "middle",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ],
+            "default": "middle"
+          },
+          {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image position",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "right"
           }
         ]
       }

@@ -292,7 +292,9 @@
             "button_url_2": "booqable://root/",
             "heading": "Medium length section heading goes here",
             "image": "booqable://assets/image-placeholder-step-1.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+            "image_position": "right",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text_alignment": "middle"
           },
           "disabled": null
         },
@@ -304,7 +306,9 @@
             "button_url_2": "booqable://root/",
             "heading": "Medium length section heading goes here",
             "image": "booqable://assets/image-placeholder-step-2.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+            "image_position": "left",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text_alignment": "middle"
           },
           "disabled": null
         },
@@ -316,7 +320,9 @@
             "button_2": "Button",
             "heading": "Medium length section heading goes here",
             "image": "booqable://assets/image-placeholder-step-3.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat."
+            "image_position": "right",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text_alignment": "middle"
           },
           "disabled": null
         }
