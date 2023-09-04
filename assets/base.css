@@ -1,4 +1,10 @@
 :root {
+  /* paddings of touchscreen devices with a notch */
+  --safe-area-top: env(safe-area-inset-top);
+  --safe-area-right: env(safe-area-inset-right);
+  --safe-area-bottom: env(safe-area-inset-bottom);
+  --safe-area-left: env(safe-area-inset-left);
+
   /* Sizes */
   --max-width: 1272px;
   --max-width-narrow: 770px;
@@ -98,6 +104,7 @@
 html {
   overflow-x: hidden;
   height: 100%;
+  padding: env(safe-area-inset);
 }
 
 body {
@@ -492,6 +499,10 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--horizontal-padding, 16px);
+}
+
+.touch[data-orientation='landscape'] .container {
+  padding: 0 calc(44px + var(--horizontal-padding, 16px));
 }
 
 .overflow-hidden {

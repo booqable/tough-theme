@@ -261,7 +261,11 @@ class Header {
   }
 
   removeOverflow() {
-    this.doc.removeAttribute(this.attr.class);
+    const classes = this.doc.classList;
+
+    classes.length > 1
+      ? this.doc.classList.remove(this.modifier.overflow)
+      : this.doc.removeAttribute(this.attr.class)
 
     if (!this.notSticky) return false;
 

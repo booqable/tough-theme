@@ -87,9 +87,7 @@ class Main {
     if (!window.imageFocus) {
       if (this.focalImageTimeout) clearTimeout(this.focalImageTimeout);
 
-      this.focalImageTimeout = setTimeout(() => {
-        initFocalImages();
-      }, 10);
+      this.focalImageTimeout = setTimeout(() => initFocalImages(), 10);
 
       return;
     }
