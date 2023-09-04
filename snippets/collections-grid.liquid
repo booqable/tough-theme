@@ -18,22 +18,19 @@
 {%- assign multiple = false -%}
 
 {%- for item in items -%}
-  {%- case items_type -%}
-    {%- when "blocks" -%}
-      {%- if items.size > 1 -%}
-        {%- assign multiple = true -%}
-      {%- endif -%}
-  {%- endcase -%}
+  {%- if items.size > 1 -%}
+    {%- assign multiple = true -%}
+  {%- endif -%}
 {%- endfor -%}
 
 <ul class="collections__list collections__list-{{ items.size }}{% if multiple %} collections__list--multiple{%- endif -%}">
   {%- for item in items -%}
-    {% case items_type %}
-      {% when "blocks" %}
+    {%- case items_type -%}
+      {%- when "blocks" -%}
         {%- assign collection = item.settings.collection -%}
-      {% when "collections" %}
+      {%- when "collections" -%}
         {%- assign collection = item -%}
-    {% endcase %}
+    {%- endcase -%}
 
     {%- assign id = item.id -%}
     {%- assign url = "" -%}
