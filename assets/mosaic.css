@@ -89,6 +89,21 @@
   width: 100%;
 }
 
+.mosaic__list-small .mosaic__image {
+  max-height: none;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mosaic__list-small .mosaic__item-col.no-image,
+.mosaic__list-small .mosaic__item-col--image {
+  height: auto;
+  aspect-ratio: 1 / 0.867;
+  position: relative;
+}
+
 .mosaic__show-wrapper {
   padding: 8px 0 0;
   text-align: center;

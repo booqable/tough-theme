@@ -399,11 +399,11 @@
       "settings": {
         "button_label": "See all Articles",
         "color_palette": "one",
+        "layout": "left",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
-        "padding_top_mobile": "small",
-        "size": "left"
+        "padding_top_mobile": "small"
       },
       "disabled": null
     },
