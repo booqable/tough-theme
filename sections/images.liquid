@@ -39,11 +39,11 @@
 
     {%- case height -%}
       {%- when 'small' -%}
-        --height: 605px;
+        --height: 640px;
       {%- when 'medium' -%}
-        --height: 755px;
+        --height: 790px;
       {%- when 'large' -%}
-        --height: 905px;
+        --height: 940px;
       {%- when 'full' -%}
         --height: 100vh;
     {%- endcase -%}
@@ -103,6 +103,7 @@
 
           {%- for block in blocks -%}
             {%- assign first                = forloop.first -%}
+            {%- assign tag                  = block.settings.tag -%}
             {%- assign title                = block.settings.title -%}
             {%- assign description          = block.settings.description -%}
             {%- assign button_1             = block.settings.button_1 -%}
@@ -287,6 +288,10 @@
                   >
                     <div class="images__text-area">
                       <div class="images__content">
+                        {%- if tag != blank -%}
+                          <span class="images__tag tagline">{{- tag -}}</span>
+                        {%- endif -%}
+
                         {%- if title != blank -%}
                           <h1 class="images__title">{{- title -}}</h1>
                         {%- endif -%}
@@ -443,6 +448,12 @@
             "id": "video_url",
             "label": "Video URL (optional)",
             "info": "Youtube, Vimeo. If you paste video link here, any images will be ignored"
+          },
+          {
+            "type": "text",
+            "id": "tag",
+            "label": "Tagline",
+            "info": "Leave blank to hide tagline"
           },
           {
             "type": "contentEditor",

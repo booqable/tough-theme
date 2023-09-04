@@ -30,16 +30,6 @@
   flex-direction: var(--flex-direction-mobile, column);
 }
 
-.text-image__tag {
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
-  font-weight: var(--font-weight-semibold, 600);
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  margin: 0 0 18px;
-}
-
 .text-image__title {
   font-weight: var(--font-weight-bold, 700);
   margin-bottom: 25px;
@@ -111,10 +101,6 @@
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one .text-image__tag {
-  color: var(--color-outline, #F4B841);
-}
-
 .palette-one .text-image__bg-image-wrapper path {
   fill: var(--color-primary, #0B1A26);
 }
@@ -126,10 +112,6 @@
 .palette-two.text-image__wrapper {
   color: var(--color-third-2, #FFFFFF66);
   background: var(--background-primary-2, #0B1A26);
-}
-
-.palette-two .text-image__tag {
-  color: var(--color-outline-2, #F4B841);
 }
 
 .palette-two .text-image__bg-image-wrapper path {
