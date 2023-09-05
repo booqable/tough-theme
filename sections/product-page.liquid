@@ -108,7 +108,7 @@
     -%}
 
     <div class="product-main__wrapper">
-      <div class="product-main__gallery" data-style="{{- product_gallery | escape -}}">
+      <div class="product-main__gallery"">
         {{ product | product_gallery:
           enable_thumbnails: show_thumbnails,
           enable_controls: show_controls,
@@ -131,7 +131,7 @@
             </div>
           {%- endif -%}
 
-          <div class="product-main__variation" data-style="{{- product_variations | escape -}}">
+          <div class="product-main__variation">
             {%- if product.variants.size > 1 -%}
               <div class="product-main__variation-label">
                 {{- variation_label -}}
@@ -150,7 +150,7 @@
             {{- product | availability_calendar -}}
           </div>
 
-          <div class="product-info__quantity" data-style="{{- product_quantity | escape -}}">
+          <div class="product-info__quantity">
             {{- product | product_button -}}
           </div>
 
@@ -163,30 +163,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  const changeDefaultVariables = (el, data) => {
-    if (!el) return false;
-
-    const style = data?.getAttribute('data-style');
-
-    data?.removeAttribute('data-style');
-    el?.setAttribute('style', style);
-  };
-
-  const images = document.querySelector('bq-product-gallery'),
-        variant = document.querySelector('bq-product-variations-select'),
-        bundle = document.querySelector('bq-bundle-items'),
-        quantity = document.querySelector('bq-product-button'),
-        dataImages = document.querySelector('.product-main__gallery'),
-        dataVariant = document.querySelector('.product-main__variation'),
-        dataQuantity = document.querySelector('.product-info__quantity');
-
-  changeDefaultVariables(images, dataImages);
-  changeDefaultVariables(variant, dataVariant);
-  changeDefaultVariables(bundle, dataVariant);
-  changeDefaultVariables(quantity, dataQuantity);
-</script>
 
 {% schema %}
   {

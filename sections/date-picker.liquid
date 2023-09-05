@@ -59,8 +59,6 @@
       --padding-bottom-mobile: 24px;
   {%- endcase -%}
 {%- endcapture -%}
-
-{%- include 'variables-date-picker' -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="date-picker__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
@@ -75,8 +73,7 @@
     {%- endif -%}
 
     <div class="date-picker__component">
-      <bq-date-picker style="{{- datepicker_variables | escape-}}"></bq-date-picker>
-      <bq-date-picker-modal branding-color="{{- background_accent -}}"></bq-date-picker-modal>
+      {%- include 'date-picker' -%}
     </div>
   </div>
 </div>

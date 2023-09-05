@@ -1,37 +1,40 @@
-{%- capture product_variations -%}
-  --variation-select-font-size: 16px;
-  --variation-select-padding: 0 40px 0 10px;
-  --variation-select-control-height: 50px;
-  --variation-select-border-radius: 0;
-  --bundle-items-image-size: 50px;
-  --bundle-items-image-border-radius: 0;
-  --bundle-items-cell-padding: 5px;
-  --bundle-items-font-size: 15px;
+{%- style -%}
+  bq-bundle-items,
+  bq-product-variations-select {
+    --variation-select-font-size: 16px;
+    --variation-select-padding: 0 40px 0 10px;
+    --variation-select-control-height: 50px;
+    --variation-select-border-radius: 0;
+    --bundle-items-image-size: 50px;
+    --bundle-items-image-border-radius: 0;
+    --bundle-items-cell-padding: 5px;
+    --bundle-items-font-size: 15px;
 
-  {%- if color_palette == "one" -%}
-    {%- if settings.background != blank -%}
-      --variation-select-background-color: {{ settings.background }};
-      --bundle-items-background-color: {{ settings.background }};
-    {%- endif -%}
+    {%- if color_palette == "one" -%}
+      {%- if settings.background != blank -%}
+        --variation-select-background-color: {{ settings.background }};
+        --bundle-items-background-color: {{ settings.background }};
+      {%- endif -%}
 
-    {%- if settings.primary_color != blank -%}
-      --variation-select-color: {{ settings.primary_color }};
-      --variation-select-border: 1px solid {{ settings.primary_color | append: "26" }};
-      --bundle-items-color: {{ settings.primary_color }};
-      --bundle-items-image-border: 1px solid {{ settings.primary_color | append: "26" }};
-    {%- endif -%}
+      {%- if settings.primary_color != blank -%}
+        --variation-select-color: {{ settings.primary_color }};
+        --variation-select-border: 1px solid {{ settings.primary_color | append: "26" }};
+        --bundle-items-color: {{ settings.primary_color }};
+        --bundle-items-image-border: 1px solid {{ settings.primary_color | append: "26" }};
+      {%- endif -%}
 
-  {%- elsif color_palette == "two" -%}
-    {%- if settings.background_2 != blank -%}
-      --variation-select-background-color: {{ settings.background_2 }};
-      --bundle-items-background-color: {{ settings.background_2 }};
-    {%- endif -%}
+    {%- elsif color_palette == "two" -%}
+      {%- if settings.background_2 != blank -%}
+        --variation-select-background-color: {{ settings.background_2 }};
+        --bundle-items-background-color: {{ settings.background_2 }};
+      {%- endif -%}
 
-    {%- if settings.primary_color_2 != blank -%}
-      --variation-select-color: {{ settings.primary_color_2 }};
-      --variation-select-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
-      --bundle-items-color: {{ settings.primary_color }};
-      --bundle-items-image-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
+      {%- if settings.primary_color_2 != blank -%}
+        --variation-select-color: {{ settings.primary_color_2 }};
+        --variation-select-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
+        --bundle-items-color: {{ settings.primary_color }};
+        --bundle-items-image-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
+      {%- endif -%}
     {%- endif -%}
-  {%- endif -%}
-{%- endcapture -%}
+  }
+{%- endstyle -%}
