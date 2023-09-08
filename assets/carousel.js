@@ -19,11 +19,16 @@ class Carousel {
       show: "show",
       fade: "carousel__fade-effect",
       full: "carousel__full-width",
+      edges: "carousel__edges",
       pause: "carousel__pause",
       dot: "carousel__dot",
       prev: "prev",
       next: "next",
-      init: "initialized"
+      init: "initialized",
+      dark: "overlay-dark",
+      light: "overlay-light",
+      showDark: "show-overlay-dark",
+      showLight: "show-overlay-light"
     }
 
     this.modifiers = {
@@ -80,6 +85,7 @@ class Carousel {
     this.pauseAutoRotate();
     this.hideControls();
     this.hidePaginationDots();
+    this.setOverlay(1);
 
     this.listener(this.dots, 'click', this.pagination);
     this.listener(this.dots, 'click', this.navigation);
@@ -334,6 +340,7 @@ class Carousel {
 
     this.counter(index);
     this.fadeClass(index);
+    this.setOverlay(index);
   }
 
   // hide not used dots of the pagination
@@ -465,6 +472,45 @@ class Carousel {
     })
 
     return {index, dots};
+  }
+
+  // add/change overlay class to change colors of navigation/pagination buttons of images carousel with overlay
+  setOverlay(index) {
+    const isEdge = this.block.classList.contains(this.classes.edges);
+
+    if (!isEdge || !index || index > this.items.length) return false;
+
+    this.items.forEach((item, itemIndex) => {
+      const isLight = item.classList.contains(this.classes.light),
+            isDark = item.classList.contains(this.classes.dark);
+
+      const optionsLight = {
+        addClass: this.classes.showLight,
+        oldClass: this.classes.showDark,
+        newClass: this.classes.showLight
+      }
+
+      const optionsDark = {
+        addClass: this.classes.showDark,
+        oldClass: this.classes.showLight,
+        newClass: this.classes.showDark
+      }
+
+      if (itemIndex + 1 === index) {
+        if (isLight) this.setClass(this.wrap, optionsLight)
+        if (isDark) this.setClass(this.wrap, optionsDark)
+      }
+    })
+  }
+
+  setClass(element, options) {
+    const {addClass, oldClass, newClass} = options,
+          isOld = element.classList.contains(oldClass),
+          isNew = element.classList.contains(newClass);
+
+    !isOld && !isNew
+      ? element.classList.add(addClass)
+      : element.classList.replace(oldClass, newClass)
   }
 
   scrollTo(options) {

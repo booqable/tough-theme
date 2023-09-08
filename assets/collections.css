@@ -112,28 +112,52 @@
   background: var(--color-image-placeholder-2, #FFFFFF47);
 }
 
-.overlay-dark .collections__heading {
-  color: var(--color-white, #FFFFFF);
+.palette-one.overlay-dark .collections__heading {
+  color: var(--color-overlay, #FFFFFF);
 }
 
-.overlay-dark .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-black, #0B1A26) 8.87%, var(--color-black-00, #0B1A2600) 95.37%);
+.palette-one.overlay-dark .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--background-overlay, #0B1A26) 8.87%, var(--background-overlay-00, #0B1A2600) 95.37%);
 }
 
-.overlay-dark .collections__link .collections__image-item:after {
-  background: var(--color-black, #0B1A26);
+.palette-one.overlay-dark .collections__link .collections__image-item:after {
+  background: var(--background-overlay, #0B1A26);
 }
 
-.overlay-light .collections__heading {
-  color: var(--color-black, #0B1A26);
+.palette-one.overlay-light .collections__heading {
+  color: var(--background-overlay, #0B1A26);
 }
 
-.overlay-light .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-white, #FFFFFF) 8.87%, var(--color-white-00, #FFFFFF00) 95.37%);
+.palette-one.overlay-light .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-overlay, #FFFFFF) 8.87%, var(--color-overlay-00, #FFFFFF00) 95.37%);
 }
 
-.overlay-light .collections__link .collections__image-item:after {
-  background: var(--color-white, #FFFFFF);
+.palette-one.overlay-light .collections__link .collections__image-item:after {
+  background: var(--color-overlay, #FFFFFF);
+}
+
+.palette-two.overlay-dark .collections__heading {
+  color: var(--color-overlay-2, #FFFFFF);
+}
+
+.palette-two.overlay-dark .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--background-overlay-2, #0B1A26) 8.87%, var(--background-overlay-2-00, #0B1A2600) 95.37%);
+}
+
+.palette-two.overlay-dark .collections__link .collections__image-item:after {
+  background: var(--background-overlay-2, #0B1A26);
+}
+
+.palette-two.overlay-light .collections__heading {
+  color: var(--background-overlay-2, #0B1A26);
+}
+
+.palette-two.overlay-light .collections__link .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-overlay-2, #FFFFFF) 8.87%, var(--color-overlay-2-00, #FFFFFF00) 95.37%);
+}
+
+.palette-two.overlay-light .collections__link .collections__image-item:after {
+  background: var(--color-overlay-2, #FFFFFF);
 }
 
 @media (min-width: 768px) {

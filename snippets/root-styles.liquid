@@ -58,6 +58,22 @@
       --color-outline-active: {{- branding_color | append: "BA" -}};
     {%- endif -%}
 
+    {%- if settings.overlay_background != blank -%}
+      --background-overlay: {{- settings.overlay_background -}};
+      --background-overlay-00: {{- settings.overlay_background | append: "00" -}};
+      --background-overlay-08: {{- settings.overlay_background | append: "14" -}};
+      --background-overlay-45: {{- settings.overlay_background | append: "73" -}};
+      --background-overlay-gray: {{- settings.overlay_background | append: "59" -}};
+    {%- endif -%}
+
+    {%- if settings.overlay_color != blank -%}
+      --color-overlay: {{- settings.overlay_color -}};
+      --color-overlay-00: {{- settings.overlay_color | append: "00" -}};
+      --color-overlay-08: {{- settings.overlay_color | append: "14" -}};
+      --color-overlay-45: {{- settings.overlay_color | append: "73" -}};
+      --color-overlay-gray: {{- settings.overlay_color | append: "59" -}};
+    {%- endif -%}
+
     {%- if settings.background_2 != blank -%}
       --background-primary-2: {{- settings.background_2 -}};
       --background-primary-2-00: {{- settings.background_2 | append: "00" -}};
@@ -114,6 +130,22 @@
       --color-outline-2: {{- branding_color -}};
       --color-outline-2-hover: {{- branding_color | append: "CC" -}};
       --color-outline-2-active: {{- branding_color | append: "BA" -}};
+    {%- endif -%}
+
+    {%- if settings.overlay_background_2 != blank -%}
+      --background-overlay-2: {{- settings.overlay_background_2 -}};
+      --background-overlay-2-00: {{- settings.overlay_background_2 | append: "00" -}};
+      --background-overlay-2-08: {{- settings.overlay_background_2 | append: "14" -}};
+      --background-overlay-2-45: {{- settings.overlay_background_2 | append: "73" -}};
+      --background-overlay-2-gray: {{- settings.overlay_background_2 | append: "59" -}};
+    {%- endif -%}
+
+    {%- if settings.overlay_color_2 != blank -%}
+      --color-overlay-2: {{- settings.overlay_color_2 -}};
+      --color-overlay-2-00: {{- settings.overlay_color_2 | append: "00" -}};
+      --color-overlay-2-08: {{- settings.overlay_color_2 | append: "14" -}};
+      --color-overlay-2-45: {{- settings.overlay_color_2 | append: "73" -}};
+      --color-overlay-2-gray: {{- settings.overlay_color_2 | append: "59" -}};
     {%- endif -%}
 
     {%- if settings.heading_font != blank -%}
