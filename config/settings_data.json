@@ -8,7 +8,7 @@
         "settings": {
           "bar_message": "Free shipping from €50",
           "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
-          "color_palette": "two",
+          "color_palette": "one",
           "icon": "phone",
           "padding_top": "medium",
           "padding_top_mobile": "medium",
@@ -22,11 +22,11 @@
         "blocks": {},
         "block_order": [],
         "settings": {
-          "color_palette": "one",
+          "color_palette": "two",
           "custom_title": "{{ shop.name }}",
-          "logo": "booqable://assets/image-store-logo-black.png",
+          "logo": "booqable://assets/image-store-logo-white.png",
           "menu": "main-menu",
-          "menu_opener_mobile": "right",
+          "menu_opener_mobile": "left",
           "menu_style": "horizontal",
           "menu_position": "left-center",
           "menu_position_mobile": "top",
