@@ -2,9 +2,6 @@ class Header {
   constructor(section) {
     this.section = section;
 
-    this.minHeight = 180;
-    this.mediaQuery = 1100;
-
     this.selector = {
       body: "body",
       link: "a",
@@ -20,13 +17,16 @@ class Header {
       menuOpener: "#mobile-menu-opener",
       search: ".header__search",
       searchOpener: "#search-opener",
+      searchInput: ".header__search-input",
+      searchReset: ".header__search-reset",
       checkbox: "input[type=checkbox]"
     };
 
     this.classes = {
       sticky: "header--sticky",
       notSticky: "header--not-sticky",
-      opened: "header--menu-opened"
+      opened: "header--menu-opened",
+      filled: "filled"
     };
 
     this.modifier = {
@@ -35,14 +35,21 @@ class Header {
       active: "active"
     };
 
-    this.props = {
+    this.cssVar = {
       height: '--header-height',
       barHeight: '--top-bar-height',
       viewHeight: '--preview-height',
       linkHeight: '--menu-position',
-      transform: '--header-transform',
-      fontSize: 'font-size',
+      transform: '--header-transform'
+    };
+
+    this.props = {
       fixed: 'fixed'
+    };
+
+    this.event = {
+      mouseenter: 'mouseenter',
+      mouseleave: 'mouseleave'
     };
 
     this.attr = {
@@ -50,12 +57,14 @@ class Header {
       class: "class",
       style: "style"
     };
+
+    this.minHeight = 180;
+    this.mediaQuery = 1100;
+    this.last = 0;
   }
 
   init() {
-    if (!this.section) {
-      return false;
-    }
+    if (!this.section) return false;
 
     this.elements();
     this.events();
@@ -64,19 +73,20 @@ class Header {
   elements() {
     this.doc = document.documentElement;
     this.body = document.querySelector(this.selector.body);
-    this.view = document.querySelector(this.selector.view);
+    this.preview = document.querySelector(this.selector.view);
     this.bar = this.section.querySelector(this.selector.bar);
     this.barBlocks = this.section.querySelectorAll(this.selector.barBlock);
     this.menu = this.section.querySelector(this.selector.menu);
-    this.bottom = this.section.querySelector(this.selector.menuBottom);
-    this.item = this.section.querySelector(this.selector.menuItem);
-    this.items = this.section.querySelectorAll(this.selector.menuDrop);
+    this.menuBottom = this.section.querySelector(this.selector.menuBottom);
+    this.menuItem = this.section.querySelector(this.selector.menuItem);
+    this.menuDrops = this.section.querySelectorAll(this.selector.menuDrop);
     this.menuOpener = this.section.querySelector(this.selector.menuOpener);
     this.searchOpener = this.section.querySelector(this.selector.searchOpener);
-    this.dropOpeners = this.menu.querySelectorAll(this.selector.checkbox);
+    this.searchInput = this.section.querySelector(this.selector.searchInput);
+    this.searchReset = this.section.querySelector(this.selector.searchReset);
+    this.checkboxes = this.menu.querySelectorAll(this.selector.checkbox);
     this.sticky = this.section.classList.contains(this.classes.sticky);
     this.notSticky = this.section.classList.contains(this.classes.notSticky);
-    this.last = 0;
   }
 
   events() {
@@ -84,10 +94,13 @@ class Header {
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
-    this.produceEmailPhone();
+    this.setEmailPhone();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
+    document.addEventListener("click", this.searchFocus.bind(this));
+    document.addEventListener("click", this.searchClear.bind(this));
+    document.addEventListener("keyup", this.showSearchClear.bind(this));
     window.addEventListener("scroll", this.scrollProps.bind(this));
     window.addEventListener("resize", this.headerHeight.bind(this));
     window.addEventListener("resize", this.menuPosition.bind(this));
@@ -100,13 +113,6 @@ class Header {
     this.section.style.position = this.props.fixed;
   }
 
-  cssVar(key, val) {
-    this.doc.style.setProperty(
-      `${key}`,
-      `${val}px`
-    );
-  }
-
   // getting height of header and set css variables
   headerHeight() {
     let height = this.section.getBoundingClientRect().height,
@@ -115,18 +121,18 @@ class Header {
 
     if (this.bar) {
       barHeight = this.bar.getBoundingClientRect().height;
-      this.cssVar(this.props.barHeight, Math.floor(barHeight));
+      this.setCssVar(this.cssVar.barHeight, Math.floor(barHeight));
     }
 
-    if (this.view) {
-      viewHeight = this.view.getBoundingClientRect().height;
+    if (this.preview) {
+      viewHeight = this.preview.getBoundingClientRect().height;
 
       if (this.sticky) height += viewHeight;
 
-      this.cssVar(this.props.viewHeight, Math.floor(viewHeight));
+      this.setCssVar(this.cssVar.viewHeight, Math.floor(viewHeight));
     }
 
-    this.cssVar(this.props.height, Math.floor(height));
+    this.setCssVar(this.cssVar.height, Math.floor(height));
   }
 
   // setting properties when scroll page
@@ -139,18 +145,18 @@ class Header {
 
     if (current <= this.minHeight) {
       this.body.classList.remove(this.modifier.scroll);
-      this.cssVar(this.props.transform, 0);
+      this.setCssVar(this.cssVar.transform, 0);
 
       return;
     }
 
     if (current > this.last && !isScroll) { // down
       this.body.classList.add(this.modifier.scroll);
-      this.cssVar(this.props.transform, -height);
+      this.setCssVar(this.cssVar.transform, -height);
 
     } else if (current < this.last - 10 && isScroll) { // up
       this.body.classList.remove(this.modifier.scroll);
-      this.cssVar(this.props.transform, 0)
+      this.setCssVar(this.cssVar.transform, 0)
     }
 
     this.last = current;
@@ -158,16 +164,16 @@ class Header {
 
   // add css variable when desktop menu is in bottom mode for menu positioning
   menuPosition() {
-    if (!this.bottom) return false;
+    if (!this.menuBottom) return false;
 
-    let height = this.item.getBoundingClientRect().height;
+    const height = this.menuItem.getBoundingClientRect().height;
 
-    this.cssVar(this.props.linkHeight, height);
+    this.setCssVar(this.cssVar.linkHeight, height);
   }
 
   // adding overflow:hidden when menu opened while header is not sticky on mobile
   menuOverflow(e) {
-    const target = e.target.previousElementSibling;
+    const target = e?.target.previousElementSibling;
 
     if (target !== this.menuOpener) return false;
 
@@ -188,20 +194,19 @@ class Header {
 
   // closing all dropdowns when mobile menu closed
   closeMobileDrop() {
-    this.dropOpeners.forEach(opener => opener.checked = false)
+    this.checkboxes.forEach(checkbox => checkbox.checked = false)
   }
 
   // closing modals of search and mobile menu on click on header icons
   closeModals(e) {
     this.killModal(e, this.searchOpener, this.selector.search);
 
-    let target = e.target,
-        searchOpener = this.searchOpener,
-        checked = this.menuOpener.checked,
-        block = this.selector.header;
+    const target = e.target,
+          searchOpener = this.searchOpener,
+          isChecked = this.menuOpener.checked;
 
-    if (target === searchOpener && checked) {
-      block = this.selector.headerNav;
+    if (target === searchOpener && isChecked) {
+      const block = this.selector.headerNav;
       this.closeMobileDrop();
       this.removeOverflow();
       this.killModal(e, this.menuOpener, block);
@@ -212,17 +217,17 @@ class Header {
   killModal(e, elem, parent) {
     if (!elem) return false;
 
-    let target = e.target,
-        parentElem = target.closest(parent);
+    const target = e.target,
+          outside = target.closest(parent);
 
-    if (parentElem !== null) return false;
+    if (outside !== null) return false;
 
     elem.checked = false;
   }
 
   // closing modal windows of header on hover and add class on menu items on desktop
   hoverClose() {
-    if (!this.items.length) return false;
+    if (!this.menuDrops.length) return false;
 
     const event = e => {
       const target = e.target,
@@ -230,13 +235,13 @@ class Header {
             time = 500;
 
       switch (type) {
-        case "mouseenter":
+        case this.event.mouseenter:
           this.closeModals(e);
           target.classList.add(this.modifier.active);
 
           break;
 
-        case "mouseleave":
+        case this.event.mouseleave:
           setTimeout(() => {
             target.classList.remove(this.modifier.active);
           }, time);
@@ -245,9 +250,9 @@ class Header {
       }
     }
 
-    this.items.forEach((item) => {
-      item.addEventListener('mouseenter', event);
-      item.addEventListener('mouseleave', event);
+    this.menuDrops.forEach((item) => {
+      item.addEventListener(this.event.mouseenter, event);
+      item.addEventListener(this.event.mouseleave, event);
     });
   }
 
@@ -274,8 +279,8 @@ class Header {
     this.section.removeAttribute(this.attr.style);
   }
 
-  // produce links to allow users to send emails and call phone numbers
-  produceEmailPhone() {
+  // convert links to allow users to send emails and call phone numbers
+  setEmailPhone() {
     if (!this.barBlocks.length) return false;
 
     const keepOnly = /[^a-zA-Z0-9,\-.?!@+]/g,
@@ -302,6 +307,48 @@ class Header {
         }
       });
     })
+  }
+
+  // set focus to the input field when opening the search popup
+  searchFocus(e) {
+    const target = e?.target;
+
+    if (target !== this.searchOpener) return false;
+
+    setTimeout(() => {
+      this.searchInput.focus();
+
+      this.showSearchClear();
+    }, 30);
+  }
+
+  // clear input field
+  searchClear(e) {
+    const target = e?.target;
+
+    if (target !== this.searchReset) return false;
+
+    e.preventDefault();
+
+    this.searchInput.value = "";
+    this.searchInput.parentElement.classList.remove(this.classes.filled);
+    this.searchInput.focus();
+  }
+
+  // add/remove class to parent of search input field
+  showSearchClear() {
+    if (!this.searchInput) return false;
+
+    this.searchInput.value.length !== 0
+      ? this.searchInput.parentElement.classList.add(this.classes.filled)
+      : this.searchInput.parentElement.classList.remove(this.classes.filled)
+  }
+
+  setCssVar(key, val) {
+    this.doc.style.setProperty(
+      `${key}`,
+      `${val}px`
+    );
   }
 }
 
