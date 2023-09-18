@@ -68,6 +68,10 @@
   margin-right: 5px;
 }
 
+.form__submit {
+  margin-bottom: calc(-1 * var(--button-margin-bottom, 16px));
+}
+
 .form__submit button {
   width: 100%;
 }

@@ -104,9 +104,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- capture cart_variables -%}
-  --cart-icon-size: 22px;
-{%- endcapture -%}
+{%- include 'variables-mini-cart' -%}
 {% comment %} CSS variables end {% endcomment %}
 
 {% comment %} Logo component {% endcomment %}
@@ -272,7 +270,7 @@
           </i>
           <input type="search" name="q" class="header__search-input" placeholder="{{- search_placeholder -}}">
         </div>
-        <button class="header__search-reset"></button>
+        <span class="header__search-reset"></span>
       </form>
     </div>
   </div>
@@ -285,7 +283,7 @@
       {{- header_search -}}
     {%- endif -%}
 
-    <div class="header__cart" style="{{- cart_variables | escape -}}">
+    <div class="header__cart">
       {{- cart_button -}}
     </div>
   </div>

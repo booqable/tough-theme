@@ -83,7 +83,7 @@
       --text-margin-right: auto;
       --text-margin-left: 0;
       --text-margin-top: 0;
-      --text-margin-bottom: 50px;
+      --text-margin-bottom: 34px;
       --left: -35px;
       --right: auto;
       --left-image: 55px;
@@ -103,7 +103,7 @@
       --justify-content: flex-start;
       --text-margin-right: 0;
       --text-margin-left: auto;
-      --text-margin-top: 50px;
+      --text-margin-top: 34px;
       --text-margin-bottom: 0;
       --left: auto;
       --right: -35px;
@@ -127,7 +127,7 @@
 {% endif %}
 
 <div
-  class="text-image__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} text-image__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} text-image__wrapper--padding-bottom{%- endif -%}"
+  class="text-image__wrapper text-medium{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} text-image__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} text-image__wrapper--padding-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
 >
   <div class="text-image__container container">

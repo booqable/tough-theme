@@ -91,6 +91,8 @@
 .header__search-opener {
   color: inherit;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .header__search-opener svg {
@@ -171,7 +173,7 @@
 .header__search-input {
   min-width: 230px;
   width: 100%;
-  padding: 12px 43px 15px;
+  padding: 14px 43px;
   font-size: 16px;
   line-height: var(--line-height-sm, 1.2);
   border: 1px solid transparent;
