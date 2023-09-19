@@ -124,7 +124,7 @@
   justify-content: space-between;
 }
 
-.header__search-wrapper .header__search-opener {
+.header__search-reset {
   position: absolute;
   right: 0;
   top: 50%;
@@ -133,10 +133,14 @@
   transform: translate(0, -50%);
   display: flex;
   align-items: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
 }
 
-.header__search-wrapper .header__search-opener:after,
-.header__search-wrapper .header__search-opener:before {
+.header__search-reset:after,
+.header__search-reset:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -147,7 +151,7 @@
   transition: background var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.header__search-wrapper .header__search-opener:before {
+.header__search-reset:before {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
@@ -179,21 +183,7 @@
 }
 
 .header__search-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  height: 12px;
-  width: 12px;
-  margin-left: 10px;
-  border-radius: 50%;
-  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
-    no-repeat 50% 50%;
-  background-size: contain;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.header__search-input:focus::-webkit-search-cancel-button {
-  opacity: 0.3;
-  pointer-events: all;
+  display: none !important;
 }
 
 .header__search-input::-webkit-search-decoration {
@@ -234,18 +224,18 @@
   border-bottom: 1px solid var(--color-border, #0B1A2626);
 }
 
-.palette-one .header__search-wrapper .header__search-opener:after,
-.palette-one .header__search-wrapper .header__search-opener:before {
+.palette-one .header__search-reset:after,
+.palette-one .header__search-reset:before {
   background: var(--color-primary, #0B1A26);
 }
 
-.palette-one .header__search-wrapper .header__search-opener:hover:after,
-.palette-one .header__search-wrapper .header__search-opener:hover:before {
+.palette-one .header__search-reset:hover:after,
+.palette-one .header__search-reset:hover:before {
   background: var(--color-outline-hover, #F4B841CC);
 }
 
-.palette-one .header__search-wrapper .header__search-opener:active:after,
-.palette-one .header__search-wrapper .header__search-opener:active:before {
+.palette-one .header__search-reset:active:after,
+.palette-one .header__search-reset:active:before {
   background: var(--color-outline-active, #F4B841BA);
 }
 
@@ -253,9 +243,6 @@
   color: var(--color-primary, #0B1A26);
   background: var(--background-primary, #FFFFFF);
   border-bottom-color: var(--background-accent, #F4B841);
-}
-
-.palette-one .header__search-input:focus {
   border-color: var(--background-accent, #F4B841);
 }
 
@@ -291,37 +278,29 @@
   border-bottom: 1px solid var(--color-border-2, #FFFFFF47);
 }
 
-.palette-two .header__search-wrapper .header__search-opener:after,
-.palette-two .header__search-wrapper .header__search-opener:before {
+.palette-two .header__search-reset:after,
+.palette-two .header__search-reset:before {
   background: var(--color-primary-2, #FFFFFF);
 }
 
-.palette-two .header__search-wrapper .header__search-opener:hover:after,
-.palette-two .header__search-wrapper .header__search-opener:hover:before {
+.palette-two .header__search-reset:hover:after,
+.palette-two .header__search-reset:hover:before {
   background: var(--color-outline-2-hover, #F4B841CC);
 }
 
-.palette-two .header__search-wrapper .header__search-opener:active:after,
-.palette-two .header__search-wrapper .header__search-opener:active:before {
+.palette-two .header__search-reset:active:after,
+.palette-two .header__search-reset:active:before {
   background: var(--color-outline-2-active, #F4B841BA);
 }
 
 .palette-two .header__search-input {
   color: var(--color-primary-2, #FFFFFF);
   background: var(--background-primary-2, #0B1A26);
-  border-bottom-color: var(--background-accent-2, #F4B841);
-}
-
-.palette-two .header__search-input:focus {
   border-color: var(--background-accent-2, #F4B841);
 }
 
 .palette-two .header__search-input::placeholder {
   color: var(--color-placeholder-2, #FFFFFF59);
-}
-
-.palette-two .header__search-input::-webkit-search-cancel-button {
-  filter: invert(1);
 }
 
 .palette-two .header__search-input:-webkit-autofill,
@@ -396,6 +375,16 @@
 
   .header__search-wrapper {
     right: -5px;
+  }
+
+  .header__search-input-wrapper ~ .header__search-reset {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .header__search-input-wrapper.filled ~ .header__search-reset {
+    opacity: 1;
+    visibility: visible;
   }
 
   .header__search {
