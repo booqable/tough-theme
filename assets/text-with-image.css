@@ -1,6 +1,4 @@
 .text-image__wrapper {
-  font-size: 18px;
-  line-height: var(--line-height-lg, 1.5);
   position: relative;
 }
 
@@ -37,8 +35,10 @@
 
 .text-image__buttons {
   margin-top: 37px;
+  margin-bottom: calc(-1 * var(--button-margin-bottom, 16px));
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .text-image__buttons .button--primary {

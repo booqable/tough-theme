@@ -44,6 +44,10 @@
   padding-bottom: 0;
 }
 
+.images__buttons {
+  margin-bottom: calc(-1 * var(--button-margin-bottom, 16px));
+}
+
 .images__button:not(:last-child) {
   margin-right: 15px;
 }

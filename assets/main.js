@@ -3,7 +3,6 @@ class Main {
     this.container = container;
 
     this.selector = {
-      input: "input",
       footer: "footer",
       search: "#search",
       image: ".focal-image",
@@ -16,7 +15,6 @@ class Main {
     };
 
     this.params = {
-      q: "q",
       out: "out",
       true: "true",
       block: "block",
@@ -38,30 +36,25 @@ class Main {
 
     this.time = 500;
     this.timeScroll = 300;
+    this.timer = undefined;
+    this.focalImageTimeout;
   }
 
   init() {
-    if (!this.container) {
-      return false;
-    }
+    if (!this.container) return false;
 
     this.elements();
     this.events();
   }
 
   elements() {
-    this.timer = undefined;
     this.footer = document.querySelector(this.selector.footer);
     this.search = document.querySelector(this.selector.search);
-    if (this.search) this.input = this.search.querySelector(this.selector.input);
-    this.url = new URL(window.location.href);
-    this.focalImageTimeout;
   }
 
   events() {
     this.setLoadedClass();
     this.focalImages();
-    if (this.search) this.searchInputAutoFill();
 
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("message", this.messagesListener.bind(this));
@@ -110,15 +103,6 @@ class Main {
       image.style.opacity = 1;
     });
   };
-
-  // autofill search input field
-  searchInputAutoFill() {
-    const query = this.url.searchParams.get(this.params.q);
-
-    if (!query) return false;
-
-    this.input.value = query;
-  }
 
   // scroll page to the focused element on the sidebar in the theme editor
   scrollToFocus(target) {
