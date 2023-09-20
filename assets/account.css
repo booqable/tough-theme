@@ -301,7 +301,7 @@
 }
 
 .palette-one .account-fieldset--error .account-fieldset__label {
-  background:  linear-gradient(0deg, var(--color-light-red, #F5CFCF) 0%, var(--color-light-red, #F5CFCF) 48%, transparent 48%);
+  background:  linear-gradient(0deg, var(--color-red-light, #F5CFCF) 0%, var(--color-red-light, #F5CFCF) 48%, transparent 48%);
   color: var(--color-red, #C23434);
 }
 
@@ -311,7 +311,7 @@
 }
 
 .palette-one .account-fieldset--error .account-fieldset__input {
-  background-color: var(--color-light-red, #F5CFCF);
+  background-color: var(--color-red-light, #F5CFCF);
   border-color: var(--color-red, #C23434);
   color: var(--color-red, #C23434);
 }
@@ -405,18 +405,18 @@
 
 .palette-two .account-fieldset--error .account-fieldset__label {
   background:  linear-gradient(0deg, var(--color-alabama-crimson, #B40030) 0%, var(--color-alabama-crimson, #B40030) 48%, transparent 48%);
-  color: var(--color-light-red, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 .palette-two .account__error-message,
 .palette-two .account-fieldset--error .account-fieldset__static-label {
-  color: var(--color-light-red, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 .palette-two .account-fieldset--error .account-fieldset__input {
   background-color: var(--color-alabama-crimson, #B40030);
-  border-color: var(--color-light-red, #F5CFCF);
-  color: var(--color-light-red, #F5CFCF);
+  border-color: var(--color-red-light, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 @media screen and (min-width: 375px) {

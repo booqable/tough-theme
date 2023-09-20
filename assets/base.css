@@ -21,22 +21,13 @@
   /* Colors */
   --color-alabama-crimson: #B40030;
   --color-azureish-white: #D7E2FF;
-  --color-black: #0B1A26;
-  --color-black-00: #0B1A2600;
-  --color-black-08: #0B1A2614;
-  --color-black-45: #0B1A2673;
-  --color-black-90: #0B1A26E6;
-  --color-dark-gray: #0B1A2659;
-  --color-green: #51C234;
-  --color-red: #C23434;
-  --color-light-red: #F5CFCF;
   --color-begonia: #FF6E6E;
+  --color-black: #0B1A26;
+  --color-black-08: #0B1A2614;
+  --color-red: #C23434;
+  --color-red-light: #F5CFCF;
   --color-white: #FFFFFF;
-  --color-white-00: #FFFFFF00;
-  --color-white-08: #FFFFFF14;
-  --color-white-45: #FFFFFF73;
   --color-white-90: #FFFFFFE6;
-  --color-white-gray: #FFFFFF59;
 
   /* Font weights */
   --font-weight-light: 300;
