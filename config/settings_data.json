@@ -105,5 +105,221 @@
         "disabled": null
       }
     }
+  },
+  "variations": {
+    "default": {
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "bar_message": "Free shipping from €50",
+            "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+            "color_palette": "one",
+            "icon": "phone",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true
+          }
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "color_palette": "two",
+            "custom_title": "{{ shop.name }}",
+            "logo": "booqable://assets/image-store-logo-white.png",
+            "menu": "main-menu",
+            "menu_opener_mobile": "left",
+            "menu_style": "horizontal",
+            "menu_position": "left-center",
+            "menu_position_mobile": "top",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "padding_bottom": "small",
+            "padding_bottom_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": true,
+            "sticky_header": true
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_menu": "bottom-menu",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
+            "color_palette": "one",
+            "custom_title": "{{ shop.name }}",
+            "logo": "booqable://assets/image-store-logo-black.png",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
+            "padding_top_mobile": "small"
+          },
+          "disabled": null
+        }
+      }
+    },
+    "tough": {
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "bar_message": "Free shipping from €50",
+            "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+            "color_palette": "one",
+            "icon": "phone",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true
+          }
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "color_palette": "two",
+            "custom_title": "{{ shop.name }}",
+            "logo": "booqable://assets/image-store-logo-white.png",
+            "menu": "main-menu",
+            "menu_opener_mobile": "left",
+            "menu_style": "horizontal",
+            "menu_position": "left-center",
+            "menu_position_mobile": "top",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "padding_bottom": "small",
+            "padding_bottom_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": true,
+            "sticky_header": true
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              }
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_menu": "bottom-menu",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }}. All right reserved.",
+            "color_palette": "one",
+            "custom_title": "{{ shop.name }}",
+            "logo": "booqable://assets/image-store-logo-black.png",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
+            "padding_top_mobile": "small"
+          },
+          "disabled": null
+        }
+      }
+    }
   }
 }

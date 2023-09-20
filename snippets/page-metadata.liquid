@@ -8,6 +8,12 @@
   <meta name="twitter:title" content="{{ page_title }}">
 {% endif %}
 
+<meta property="og:site_name" content="{{ shop.name }}">
+
+{% if shop.favicon_url %}
+  <link rel="shortcut icon" href={{ shop.favicon_url }} />
+{% endif %}
+
 {% if page_description != blank %}
   <meta name="description" content="{{ page_description }}">
   <meta property="og:description" content="{{ page_description }}">

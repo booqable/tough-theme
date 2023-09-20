@@ -8,7 +8,6 @@ class Header {
       bar: ".top-bar",
       barBlock: ".top-bar__text",
       view: ".preview-bar__container",
-      header: ".header",
       headerNav: ".header__nav-wrapper",
       menu: ".menu",
       menuItem: ".menu__item",
@@ -58,9 +57,14 @@ class Header {
       style: "style"
     };
 
+    this.params = {
+      q: "q"
+    };
+
     this.minHeight = 180;
     this.mediaQuery = 1100;
     this.last = 0;
+    this.url = new URL(window.location.href);
   }
 
   init() {
@@ -95,12 +99,13 @@ class Header {
     this.menuPosition();
     this.hoverClose();
     this.setEmailPhone();
+    this.searchAutoFill();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
     document.addEventListener("click", this.searchFocus.bind(this));
     document.addEventListener("click", this.searchClear.bind(this));
-    document.addEventListener("keyup", this.showSearchClear.bind(this));
+    document.addEventListener("keyup", this.showClearButton.bind(this));
     window.addEventListener("scroll", this.scrollProps.bind(this));
     window.addEventListener("resize", this.headerHeight.bind(this));
     window.addEventListener("resize", this.menuPosition.bind(this));
@@ -310,8 +315,8 @@ class Header {
   }
 
   // set focus to the input field when opening the search popup
-  searchFocus(e) {
-    const target = e?.target;
+  searchFocus(event) {
+    const target = event?.target;
 
     if (target !== this.searchOpener) return false;
 
@@ -323,12 +328,10 @@ class Header {
   }
 
   // clear input field
-  searchClear(e) {
-    const target = e?.target;
+  searchClear(event) {
+    const target = event?.target;
 
     if (target !== this.searchReset) return false;
-
-    e.preventDefault();
 
     this.searchInput.value = "";
     this.searchInput.parentElement.classList.remove(this.classes.filled);
@@ -336,12 +339,23 @@ class Header {
   }
 
   // add/remove class to parent of search input field
-  showSearchClear() {
+  showClearButton() {
     if (!this.searchInput) return false;
 
     this.searchInput.value.length !== 0
       ? this.searchInput.parentElement.classList.add(this.classes.filled)
       : this.searchInput.parentElement.classList.remove(this.classes.filled)
+  }
+
+  // autofill search input field
+  searchAutoFill() {
+    if (!this.searchInput) return false;
+
+    const query = this.url.searchParams.get(this.params.q);
+
+    if (!query) return false;
+
+    this.searchInput.value = query;
   }
 
   setCssVar(key, val) {

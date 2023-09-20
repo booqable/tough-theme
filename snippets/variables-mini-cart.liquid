@@ -1,0 +1,36 @@
+{% style %}
+  bq-minicart-button {
+    --minicart-button-size: 24px;
+    --minicart-button-badge-size: 20px;
+    --minicart-button-border-radius: 50%;
+    --minicart-button-font-size: 14px;
+    --minicart-button-font: var(--font-body, --minicart-font, sans-serif);
+
+    {%- if color_palette == "one" -%}
+      {%- if settings.primary_color != blank -%}
+        --minicart-button-color: var(--color-primary, #0B1A26);
+      {%- endif -%}
+
+      {%- if settings.accent_background != blank -%}
+        --minicart-button-accent-color: var(--background-accent, #F4B841);
+      {%- endif -%}
+
+      {%- if settings.accent_color != blank -%}
+        --minicart-button-badge-color: var(--color-accent, #0B1A26);
+      {%- endif -%}
+
+    {%- elsif color_palette == "two" -%}
+      {%- if settings.primary_color_2 != blank -%}
+        --minicart-button-color: var(--color-primary-2, #FFFFFF);
+      {%- endif -%}
+
+      {%- if settings.accent_background_2 != blank -%}
+        --minicart-button-accent-color: var(--background-accent-2, #F4B841);
+      {%- endif -%}
+
+      {%- if settings.accent_color_2 != blank -%}
+        --minicart-button-badge-color: var(--color-accent-2, #FFFFFF);
+      {%- endif -%}
+    {%- endif -%}
+  }
+{% endstyle %}
