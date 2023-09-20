@@ -7,7 +7,7 @@
         "image": {
           "type": "image",
           "settings": {
-            "image": "booqable://assets/image-building-2.jpg",
+            "image": "booqable://assets/image-tough-building-2.jpg",
             "image_align": "top"
           },
           "disabled": null
@@ -126,7 +126,7 @@
       ],
       "settings": {
         "color_palette": "one",
-        "icon": "booqable://assets/icon-marker.png",
+        "icon": "booqable://assets/image-tough-marker.png",
         "opener": "List of locations",
         "placement": "right",
         "padding_bottom": "large",

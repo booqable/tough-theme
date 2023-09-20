@@ -13,8 +13,8 @@
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
             "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
-            "image": "booqable://assets/image-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image": "booqable://assets/image-tough-hero.jpg",
+            "image_mobile": "booqable://assets/image-tough-hero-mobile.jpg",
             "overlay_opacity": 80,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
@@ -59,35 +59,35 @@
         "logo": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-white.png"
           },
           "disabled": null
         },
         "logo_478138": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-2.png"
+            "image": "booqable://assets/image-partner-logo-2-white.png"
           },
           "disabled": null
         },
         "logo_478148": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-white.png"
           },
           "disabled": null
         },
         "logo_478178": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-white.png"
           },
           "disabled": null
         },
         "logo_478118": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-white.png"
           },
           "disabled": null
         }
@@ -181,7 +181,7 @@
         "button_url_2": "booqable://root/",
         "color_palette": "two",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
-        "image": "booqable://assets/image-building.jpg",
+        "image": "booqable://assets/image-tough-building.jpg",
         "image_position": "right",
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
@@ -219,6 +219,21 @@
           "settings": {},
           "disabled": null
         },
+        "product_123455": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123454": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123453": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
         "product_123452": {
           "type": "product",
           "settings": {},
@@ -242,6 +257,9 @@
       },
       "block_order": [
         "product",
+        "product_123455",
+        "product_123454",
+        "product_123453",
         "product_123452",
         "product_123451",
         "product_123450",
@@ -291,7 +309,7 @@
             "button_2": "Button",
             "button_url_2": "booqable://root/",
             "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-1.jpg",
+            "image": "booqable://assets/image-tough-step-1.jpg",
             "image_position": "right",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "text_alignment": "middle"
@@ -305,7 +323,7 @@
             "button_2": "Button",
             "button_url_2": "booqable://root/",
             "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-2.jpg",
+            "image": "booqable://assets/image-tough-step-2.jpg",
             "image_position": "left",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "text_alignment": "middle"
@@ -319,7 +337,7 @@
             "button_url_1": "booqable://root/",
             "button_2": "Button",
             "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-3.jpg",
+            "image": "booqable://assets/image-tough-step-3.jpg",
             "image_position": "right",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
             "text_alignment": "middle"
@@ -370,7 +388,7 @@
             "article_btn_url": "booqable://root/",
             "article_tag": "Tagline",
             "heading": "Our biggest project",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
+            "image": "booqable://assets/image-tough-mosaic.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
@@ -381,7 +399,7 @@
             "article_btn": "Read more",
             "article_tag": "Tagline",
             "heading": "January Update",
-            "image": "booqable://assets/image-bell.png",
+            "image": "booqable://assets/image-tough-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
@@ -392,7 +410,7 @@
             "article_btn": "Read more",
             "article_tag": "Tagline",
             "heading": "December Update",
-            "image": "booqable://assets/image-bell.png",
+            "image": "booqable://assets/image-tough-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           },
           "disabled": null
