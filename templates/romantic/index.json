@@ -12,9 +12,9 @@
             "button_2": "More info",
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-            "image": "booqable://assets/image-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique.",
+            "image": "booqable://assets/image-romantic-hero.jpeg",
+            "image_mobile": "",
             "overlay_opacity": 40,
             "text_position": "center",
             "text_position_mobile": "center",
@@ -59,35 +59,35 @@
         "logo": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-black.png"
           },
           "disabled": null
         },
         "logo_478138": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-2.png"
+            "image": "booqable://assets/image-partner-logo-2-black.png"
           },
           "disabled": null
         },
         "logo_478148": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-black.png"
           },
           "disabled": null
         },
         "logo_478178": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-black.png"
           },
           "disabled": null
         },
         "logo_478118": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-black.png"
           },
           "disabled": null
         }
@@ -238,7 +238,7 @@
           "type": "testimonial",
           "settings": {
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-            "image": "booqable://assets/image-placeholder.png",
+            "image": "booqable://assets/image-romantic-testimonials.jpg",
             "name": "Name Surname",
             "position": "Position, Company name",
             "stars": 5,
@@ -250,7 +250,7 @@
           "type": "testimonial",
           "settings": {
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-            "image": "booqable://assets/image-placeholder.png",
+            "image": "booqable://assets/image-romantic-testimonials.jpg",
             "name": "Name Surname",
             "position": "Position, Company name",
             "stars": 4,
@@ -288,7 +288,7 @@
             "button_url_2": "",
             "color_overlay": "dark",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. Duis <br>cursus, mi quis viverra ornare, eros dolor interdum nulla, ut <br>commodo diam libero vitae erat.",
-            "image": "booqable://assets/image-hero.jpg",
+            "image": "booqable://assets/image-romantic-ceremony.png",
             "image_mobile": "",
             "overlay_opacity": 64,
             "text_position": "center",
@@ -331,26 +331,6 @@
       },
       "disabled": null
     },
-
-    "title_987655": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "tag": "Rent a product",
-        "title": "How does it work"
-      },
-      "disabled": null
-    },
     "numbered-blocks": {
       "type": "numbered-blocks",
       "blocks": {
@@ -361,10 +341,10 @@
             "button_url_1": "",
             "button_2": "",
             "button_url_2": "",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-1.jpg",
+            "heading": "",
+            "image": "booqable://assets/image-romantic-step-1.png",
             "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -375,10 +355,10 @@
             "button_1": "",
             "button_2": "",
             "button_url_2": "",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-2.jpg",
+            "heading": "",
+            "image": "booqable://assets/image-romantic-step-2.png",
             "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -389,10 +369,10 @@
             "button_1": "",
             "button_url_1": "",
             "button_2": "",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-placeholder-step-3.jpg",
+            "heading": "",
+            "image": "booqable://assets/image-romantic-step-2.png",
             "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -406,7 +386,7 @@
       "settings": {
         "color_palette": "two",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
+        "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small"
       },
@@ -418,16 +398,16 @@
       "block_order": [],
       "settings": {
         "bg_text": "",
-        "button_label": "",
-        "button_url": "",
+        "button_label": "See all",
+        "button_url": "booqable://root/",
         "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "padding_top": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "tag": "Mosaic content section",
-        "title": "News & articles"
+        "tag": "",
+        "title": "Latest fashion news"
       },
       "disabled": null
     },
@@ -439,10 +419,10 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "Tagline",
-            "heading": "Our biggest project",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "article_tag": "Category",
+            "heading": "A Guide On The Maid Of Honor’s Duties",
+            "image": "booqable://assets/image-romantic-mosaic-1.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
         },
@@ -450,10 +430,11 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "Tagline",
-            "heading": "January Update",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Category",
+            "heading": "The Wedding Favor Ideas Guide",
+            "image": "booqable://assets/image-romantic-mosaic-2.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
         },
@@ -461,10 +442,11 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "Tagline",
-            "heading": "December Update",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Category",
+            "heading": "The Wedding Order Of Events Guide",
+            "image": "booqable://assets/image-romantic-mosaic-3.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
         }
@@ -475,30 +457,29 @@
         "article_456232"
       ],
       "settings": {
-        "button_label": "See all Articles",
+        "button_label": "See all",
         "color_palette": "one",
         "layout": "small",
-        "padding_bottom": "large",
+        "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small"
       },
       "disabled": null
     },
-    "title_987650": {
-      "type": "title",
+    "text_987650": {
+      "type": "text",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "",
+        "align": "center",
         "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "padding_top": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "tag": "",
-        "title": "Frequently asked questions"
+        "title": "Frequently asked questions",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       "disabled": null
     },
@@ -538,7 +519,7 @@
       "settings": {
         "behavior": "multiple",
         "color_palette": "two",
-        "padding_bottom": "large",
+        "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small"
@@ -556,11 +537,10 @@
     "logos",
     "images_870989",
     "text",
-    "title_987655",
     "numbered-blocks",
     "title_987656",
     "mosaic",
-    "title_987650",
+    "text_987650",
     "accordion"
   ]
 }
