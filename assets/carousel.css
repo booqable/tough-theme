@@ -1,5 +1,6 @@
 .carousel {
   height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -154,11 +155,6 @@
   padding-right: 16px;
 }
 
-.carousel__edges .carousel__item,
-.carousel__edges .carousel__item:last-child {
-  height: 100%;
-}
-
 .carousel__edges .carousel__item:last-child {
   min-width: var(--slide-width-mobile);
   max-width: var(--slide-width-mobile);
@@ -170,6 +166,8 @@
 
 .carousel__edges .carousel__inner,
 .carousel__edges .carousel__item:last-child .carousel__inner {
+  display: flex;
+  align-items: stretch;
   padding: 0;
 }
 
@@ -245,7 +243,7 @@
 
 .carousel__edges .carousel__dot {
   opacity: 1;
-  margin-bottom: 3px;
+  margin-bottom: 0;
 }
 
 .carousel__edges .carousel__dot.active {
@@ -459,6 +457,7 @@
     height: 16px;
     margin-right: 4px;
     margin-left: 4px;
+    margin-bottom: 3px;
   }
 
   .carousel__edges .carousel__dot:after {

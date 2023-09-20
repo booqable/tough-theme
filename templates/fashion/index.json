@@ -12,9 +12,9 @@
             "button_2": "More info",
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
-            "image": "booqable://assets/image-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. ",
+            "image": "booqable://assets/image-fashion-hero.png",
+            "image_mobile": "",
             "overlay_opacity": 40,
             "text_position": "center",
             "text_position_mobile": "top-left",
@@ -59,35 +59,35 @@
         "logo": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-black.png"
           },
           "disabled": null
         },
         "logo_478138": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-2.png"
+            "image": "booqable://assets/image-partner-logo-2-black.png"
           },
           "disabled": null
         },
         "logo_478148": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-black.png"
           },
           "disabled": null
         },
         "logo_478178": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1.png"
+            "image": "booqable://assets/image-partner-logo-1-black.png"
           },
           "disabled": null
         },
         "logo_478118": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3.png"
+            "image": "booqable://assets/image-partner-logo-3-black.png"
           },
           "disabled": null
         }
@@ -220,7 +220,7 @@
           "type": "testimonial",
           "settings": {
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-            "image": "booqable://assets/image-placeholder.png",
+            "image": "booqable://assets/image-fashion-testimonials.jpg",
             "name": "Name Surname",
             "position": "Position, Company name",
             "stars": 5,
@@ -232,7 +232,7 @@
           "type": "testimonial",
           "settings": {
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-            "image": "booqable://assets/image-placeholder.png",
+            "image": "booqable://assets/image-fashion-testimonials.jpg",
             "name": "Name Surname",
             "position": "Position, Company name",
             "stars": 4,
@@ -270,7 +270,7 @@
             "button_url_2": "",
             "color_overlay": "dark",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. Duis <br>cursus, mi quis viverra ornare, eros dolor interdum nulla, ut <br>commodo diam libero vitae erat.",
-            "image": "booqable://assets/image-hero.jpg",
+            "image": "booqable://assets/image-fashion-clothes.png",
             "image_mobile": "",
             "overlay_opacity": 64,
             "text_position": "center",
@@ -324,9 +324,9 @@
             "button_2": "",
             "button_url_2": "",
             "heading": "",
-            "image": "booqable://assets/image-placeholder-step-1.jpg",
+            "image": "booqable://assets/image-fashion-step-1.jpg",
             "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -338,9 +338,9 @@
             "button_2": "",
             "button_url_2": "",
             "heading": "",
-            "image": "booqable://assets/image-placeholder-step-2.jpg",
+            "image": "booqable://assets/image-fashion-step-2.jpg",
             "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -352,9 +352,9 @@
             "button_url_1": "",
             "button_2": "",
             "heading": "",
-            "image": "booqable://assets/image-placeholder-step-3.jpg",
+            "image": "booqable://assets/image-fashion-step-2.jpg",
             "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
             "text_alignment": "bottom"
           },
           "disabled": null
@@ -403,7 +403,7 @@
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
             "heading": "A Guide On The Maid Of Honor’s Duties",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
+            "image": "booqable://assets/image-fashion-mosaic-1.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
@@ -415,7 +415,7 @@
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
             "heading": "The Wedding Favor Ideas Guide",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
+            "image": "booqable://assets/image-fashion-mosaic-2.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
@@ -427,7 +427,7 @@
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
             "heading": "The Wedding Order Of Events Guide",
-            "image": "booqable://assets/image-placeholder-mosaic.jpg",
+            "image": "booqable://assets/image-fashion-mosaic-3.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
           },
           "disabled": null
