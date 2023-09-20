@@ -64,7 +64,7 @@
   style="{{- variables | escape -}}"
 >
   <div class="account__container container">
-    <h3 class="account__title">
+    <h3 class="account__title text-center">
       {%- if title != blank -%}
         {{- title -}}
       {%- else -%}
@@ -72,7 +72,7 @@
       {%- endif -%}
     </h3>
 
-    <div class="account__divider">
+    <div class="account__divider text-center">
       <span>
         {%- if description != blank -%}
           {{- description -}}
@@ -204,9 +204,9 @@
 
             <label class="account-fieldset__radio-label" for="user_legal_type_person">
               {%- if private_label != blank -%}
-                {{- private_label -}}
+                <span>{{- private_label -}}</span>
               {%- else -%}
-                Private
+                <span>Private</span>
               {%- endif -%}
             </label>
           </div>
@@ -222,9 +222,9 @@
 
             <label class="account-fieldset__radio-label" for="user_legal_type_commercial">
               {%- if company_label != blank -%}
-                {{- company_label -}}
+                <span>{{- company_label -}}</span>
               {%- else -%}
-                Company
+                <span>Company</span>
               {%- endif -%}
             </label>
           </div>

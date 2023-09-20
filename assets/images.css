@@ -44,6 +44,10 @@
   padding-bottom: 0;
 }
 
+.images__buttons {
+  margin-bottom: calc(-1 * var(--button-margin-bottom, 16px));
+}
+
 .images__button:not(:last-child) {
   margin-right: 15px;
 }
@@ -99,48 +103,100 @@
   scroll-padding: 0;
 }
 
-.overlay-dark .images__title {
-  color: var(--color-white, #FFFFFF);
+.palette-one .overlay-dark .images__title {
+  color: var(--color-overlay, #FFFFFF);
 }
 
-.overlay-dark .images__description {
-  color: var(--color-white-gray, #FFFFFF59);
+.palette-one .overlay-dark .images__description {
+  color: var(--color-overlay-gray, #FFFFFF59);
 }
 
-.overlay-dark .images__buttons .button--outlined {
-  color: var(--color-white, #FFFFFF);
+.palette-one .overlay-dark .images__buttons .button--outlined {
+  color: var(--color-overlay, #FFFFFF);
 }
 
-.overlay-dark ~ .images__vision {
-  background: var(--color-black, #0B1A26);
+.palette-one .overlay-dark .images__vision,
+.palette-one .overlay-dark ~ .images__vision {
+  background: var(--background-overlay, #0B1A26);
 }
 
-.overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--color-black, #0B1A26) 3.03%, var(--color-black-00, #0B1A2600) 31.83%),
-   linear-gradient(180deg, var(--color-black, #0B1A26) 6.67%, var(--color-black-00, #0B1A2600) 105.81%),
-   linear-gradient(0deg, var(--color-black-45, #0B1A2673), var(--color-black-45, #0B1A2673));
+.palette-one .overlay-dark .images__vision .images__vision-wrapper--overlay:after,
+.palette-one .overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--background-overlay, #0B1A26) 3.03%, var(--background-overlay-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--background-overlay, #0B1A26) 6.67%, var(--background-overlay-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--background-overlay-45, #0B1A2673), var(--background-overlay-45, #0B1A2673));
 }
 
-.overlay-light .images__title {
-  color: var(--color-black, #0B1A26);
+.palette-one .overlay-light .images__title {
+  color: var(--background-overlay, #0B1A26);
 }
 
-.overlay-light .images__description {
-  color: var(--color-dark-gray, #0B1A2659);
+.palette-one .overlay-light .images__description {
+  color: var(--background-overlay-gray, #0B1A2659);
 }
 
-.overlay-light .images__buttons .button--outlined {
-  color: var(--color-black, #0B1A26);
+.palette-one .overlay-light .images__buttons .button--outlined {
+  color: var(--background-overlay, #0B1A26);
 }
 
-.overlay-light ~ .images__vision {
-  background: var(--color-white, #FFFFFF);
+.palette-one .overlay-light .images__vision,
+.palette-one .overlay-light ~ .images__vision {
+  background: var(--color-overlay, #FFFFFF);
 }
 
-.overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--color-white, #FFFFFF) 3.03%, var(--color-white-00, #FFFFFF00) 31.83%),
-   linear-gradient(180deg, var(--color-white, #FFFFFF) 6.67%, var(--color-white-00, #FFFFFF00) 105.81%),
-   linear-gradient(0deg, var(--color-white-45, #FFFFFF73), var(--color-white-45, #FFFFFF73));
+.palette-one .overlay-light .images__vision .images__vision-wrapper--overlay:after,
+.palette-one .overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--color-overlay, #FFFFFF) 3.03%, var(--color-overlay-00, #FFFFFF00) 31.83%),
+   linear-gradient(180deg, var(--color-overlay, #FFFFFF) 6.67%, var(--color-overlay-00, #FFFFFF00) 105.81%),
+   linear-gradient(0deg, var(--color-overlay-45, #FFFFFF73), var(--color-overlay-45, #FFFFFF73));
+}
+
+.palette-two .overlay-dark .images__title {
+  color: var(--color-overlay-2, #FFFFFF);
+}
+
+.palette-two .overlay-dark .images__description {
+  color: var(--color-overlay-2-gray, #FFFFFF59);
+}
+
+.palette-two .overlay-dark .images__buttons .button--outlined {
+  color: var(--color-overlay-2, #FFFFFF);
+}
+
+.palette-two .overlay-dark .images__vision,
+.palette-two .overlay-dark ~ .images__vision {
+  background: var(--background-overlay-2, #0B1A26);
+}
+
+.palette-two .overlay-dark .images__vision .images__vision-wrapper--overlay:after,
+.palette-two .overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--background-overlay-2, #0B1A26) 3.03%, var(--background-overlay-2-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--background-overlay-2, #0B1A26) 6.67%, var(--background-overlay-2-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--background-overlay-2-45, #0B1A2673), var(--background-overlay-2-45, #0B1A2673));
+}
+
+.palette-two .overlay-light .images__title {
+  color: var(--background-overlay-2, #0B1A26);
+}
+
+.palette-two .overlay-light .images__description {
+  color: var(--background-overlay-2-gray, #0B1A2659);
+}
+
+.palette-two .overlay-light .images__buttons .button--outlined {
+  color: var(--background-overlay-2, #0B1A26);
+}
+
+.palette-two .overlay-light .images__vision,
+.palette-two .overlay-light ~ .images__vision {
+  background: var(--color-overlay-2, #FFFFFF);
+}
+
+.palette-two .overlay-light .images__vision .images__vision-wrapper--overlay:after,
+.palette-two .overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--color-overlay-2, #FFFFFF) 3.03%, var(--color-overlay-2-00, #FFFFFF00) 31.83%),
+   linear-gradient(180deg, var(--color-overlay-2, #FFFFFF) 6.67%, var(--color-overlay-2-00, #FFFFFF00) 105.81%),
+   linear-gradient(0deg, var(--color-overlay-2-45, #FFFFFF73), var(--color-overlay-2-45, #FFFFFF73));
 }
 
 @media (min-width: 428px) {

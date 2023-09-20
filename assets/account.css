@@ -12,23 +12,19 @@
 }
 
 .account__container {
-  max-width: 400px;
+  max-width: 480px;
   padding: 0 var(--horizontal-padding);
 }
 
 .account__title {
   font-size: 20px;
-  font-weight: var(--font-weight-semibold, 600);
+  font-weight: var(--font-weight-bold, 700);
   line-height: var(--line-height-md, 1.33);
-}
-
-.account__title--centered {
-  text-align: center;
 }
 
 .account__title-icon {
   font-size: 32px;
-  margin-left: 0 auto 16px;
+  margin: 0 auto 16px;
   text-align: center;
 }
 
@@ -38,13 +34,10 @@
   margin-bottom: 24px;
 }
 
-.account__description--centered {
-  text-align: center;
-}
-
 .account__button {
   text-align: center;
   text-decoration: none;
+  margin-bottom: 0;
   width: 100%;
 }
 
@@ -57,17 +50,18 @@
 
 .account-fieldset__label {
   font-size: 14px;
-  left: 16px;
-  padding: 0 2px;
+  left: 12px;
+  padding: 0 4px;
   position: relative;
-  top: 8px;
-  transition-duration: 300ms;
+  top: 12px;
+  transition-duration: var(--animation-duration, 200ms);
   transition-property: top, color, background-color;
 }
 
 .account-fieldset__label:not(:has(+ input:focus)):has(+ input:placeholder-shown) {
   font-size: 16px;
-  top: 33px;
+  top: 38px;
+  cursor: initial;
 }
 
 .account-fieldset__static-label,
@@ -81,21 +75,21 @@
   border-radius: 0;
   border: 1px solid transparent;
   font-size: 16px;
-  line-height: 32px;
+  line-height: var(--line-height-xl, 2);
   margin: 0 0 6px 0;
-  padding: 8px;
+  padding: 8px 16px;
   width: 100%;
 }
 
 .account-fieldset__input:focus {
   border-width: 2px;
-  line-height: 30px;
+  padding: 7px 15px;
   outline: none;
-  padding: 8px 7px;
 }
 
 .account-fieldset__radio-label {
   display: flex;
+  align-items: center;
   position: relative;
   line-height: var(--line-height-xs, 1);
 }
@@ -130,6 +124,7 @@
 .account-checkbox__label {
   position: relative;
   display: flex;
+  align-items: center;
   line-height: var(--line-height-xs, 1);
   margin-bottom: 40px;
 }
@@ -141,6 +136,8 @@
   padding: 8px;
   cursor: pointer;
   margin-right: 8px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 [id^='user_agreement_accepted']:checked + .account-checkbox__label:after {
@@ -301,7 +298,7 @@
 }
 
 .palette-one .account-fieldset--error .account-fieldset__label {
-  background:  linear-gradient(0deg, var(--color-light-red, #F5CFCF) 0%, var(--color-light-red, #F5CFCF) 48%, transparent 48%);
+  background:  linear-gradient(0deg, var(--color-red-light, #F5CFCF) 0%, var(--color-red-light, #F5CFCF) 48%, transparent 48%);
   color: var(--color-red, #C23434);
 }
 
@@ -311,7 +308,7 @@
 }
 
 .palette-one .account-fieldset--error .account-fieldset__input {
-  background-color: var(--color-light-red, #F5CFCF);
+  background-color: var(--color-red-light, #F5CFCF);
   border-color: var(--color-red, #C23434);
   color: var(--color-red, #C23434);
 }
@@ -405,18 +402,18 @@
 
 .palette-two .account-fieldset--error .account-fieldset__label {
   background:  linear-gradient(0deg, var(--color-alabama-crimson, #B40030) 0%, var(--color-alabama-crimson, #B40030) 48%, transparent 48%);
-  color: var(--color-light-red, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 .palette-two .account__error-message,
 .palette-two .account-fieldset--error .account-fieldset__static-label {
-  color: var(--color-light-red, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 .palette-two .account-fieldset--error .account-fieldset__input {
   background-color: var(--color-alabama-crimson, #B40030);
-  border-color: var(--color-light-red, #F5CFCF);
-  color: var(--color-light-red, #F5CFCF);
+  border-color: var(--color-red-light, #F5CFCF);
+  color: var(--color-red-light, #F5CFCF);
 }
 
 @media screen and (min-width: 375px) {
@@ -432,7 +429,7 @@
 
 @media screen and (min-width: 810px) {
   .account__title {
-    font-size: 36px;
+    font-size: 40px;
     line-height: var(--line-height-sm, 1.2);
   }
 }

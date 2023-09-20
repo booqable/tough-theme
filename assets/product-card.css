@@ -46,10 +46,6 @@
   flex-grow: 1;
 }
 
-.product-card__availability {
-  padding: 0 0 10px;
-}
-
 .product-card__title {
   font-family: var(--font-body, sans-serif);
   font-size: 18px;
@@ -60,13 +56,14 @@
 
 .product-card__description {
   font-size: 14px;
-  padding: 0 0 8px;
+  padding: 4px 0 8px;
   flex-grow: 0;
 }
 
 .product-card__price-info {
   font-size: 16px;
   font-weight: var(--font-weight-regular, 400);
+  padding-top: 10px;
   flex-grow: 1;
   display: flex;
   align-items: flex-end;
@@ -74,20 +71,28 @@
 
 .product-card__price-wrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .product-card__price,
 bq-product-price {
   font-size: 20px;
+  line-height: 19px;
   font-weight: var(--font-weight-semibold, 600);
 }
 
 .product-card__price-separator {
   padding: 0 3px;
+  line-height: 17px;
+}
+
+.product-card__period {
+  line-height: 17px;
 }
 
 bq-product-availability {
+  display: inline-block;
+  margin: 9px 0 16px;
   font-size: 14px;
   line-height: var(--line-height-xs, 1);
   font-weight: var(--font-weight-medium, 500);

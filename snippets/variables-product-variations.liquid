@@ -12,28 +12,28 @@
 
     {%- if color_palette == "one" -%}
       {%- if settings.background != blank -%}
-        --variation-select-background-color: {{ settings.background }};
-        --bundle-items-background-color: {{ settings.background }};
+        --variation-select-background-color: var(--background-primary, #FFFFFF);
+        --bundle-items-background-color: var(--background-primary, #FFFFFF);
       {%- endif -%}
 
       {%- if settings.primary_color != blank -%}
-        --variation-select-color: {{ settings.primary_color }};
-        --variation-select-border: 1px solid {{ settings.primary_color | append: "26" }};
-        --bundle-items-color: {{ settings.primary_color }};
-        --bundle-items-image-border: 1px solid {{ settings.primary_color | append: "26" }};
+        --variation-select-color: var(--color-primary, #0B1A26);
+        --variation-select-border: 1px solid var(--color-border, #0B1A2626);
+        --bundle-items-color: var(--color-primary, #0B1A26);
+        --bundle-items-image-border: 1px solid var(--color-border, #0B1A2626);
       {%- endif -%}
 
     {%- elsif color_palette == "two" -%}
       {%- if settings.background_2 != blank -%}
-        --variation-select-background-color: {{ settings.background_2 }};
-        --bundle-items-background-color: {{ settings.background_2 }};
+        --variation-select-background-color: var(--background-primary-2, #0B1A26);
+        --bundle-items-background-color: var(--background-primary-2, #0B1A26);
       {%- endif -%}
 
       {%- if settings.primary_color_2 != blank -%}
-        --variation-select-color: {{ settings.primary_color_2 }};
-        --variation-select-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
-        --bundle-items-color: {{ settings.primary_color }};
-        --bundle-items-image-border: 1px solid {{ settings.primary_color_2 | append: "47" }};
+        --variation-select-color: var(--color-primary-2, #FFFFFF);
+        --variation-select-border: 1px solid var(--color-border-2, #FFFFFF47);
+        --bundle-items-color: var(--color-primary-2, #FFFFFF);
+        --bundle-items-image-border: 1px solid var(--color-border-2, #FFFFFF47);
       {%- endif -%}
     {%- endif -%}
   }

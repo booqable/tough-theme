@@ -279,11 +279,11 @@
             {% comment %} CSS variables end {% endcomment %}
 
             {%- if carousel -%}
-              <div class="carousel__item{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
+              <div class="carousel__item overlay-{{ color_overlay }}{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
                 <div class="carousel__inner">
             {%- endif -%}
                   <div
-                    class="images__container container{% if color_overlay != blank %} overlay-{{ color_overlay }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%  endif %}"
+                    class="images__container container{% unless carousel %} overlay-{{ color_overlay }}{% endunless %}{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%  endif %}"
                     style="{{- text_variables | escape -}}"
                   >
                     <div class="images__text-area">

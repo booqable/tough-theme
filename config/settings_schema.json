@@ -56,6 +56,20 @@
         "default": "#F4B841"
       },
       {
+        "type": "color",
+        "id": "overlay_background",
+        "label": "Alternative background",
+        "info": "Used to make text readable on top of the background images",
+        "default": "#0B1A26"
+      },
+      {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Alternative color",
+        "info": "Used for text on top of the background images",
+        "default": "#FFFFFF"
+      },
+      {
         "type": "header",
         "content": "Color set 2"
       },
@@ -97,6 +111,20 @@
         "label": "Accent outline",
         "info": "Also used for accent text without background",
         "default": "#F4B841"
+      },
+      {
+        "type": "color",
+        "id": "overlay_background_2",
+        "label": "Alternative background",
+        "info": "Used to make text readable on top of the background images",
+        "default": "#0B1A26"
+      },
+      {
+        "type": "color",
+        "id": "overlay_color_2",
+        "label": "Alternative color",
+        "info": "Used for text on top of the background images",
+        "default": "#FFFFFF"
       }
     ]
   },

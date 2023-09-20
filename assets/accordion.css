@@ -1,8 +1,3 @@
-.accordion__wrapper {
-  font-size: 18px;
-  line-height: var(--line-height-lg, 1.5);
-}
-
 .accordion__wrapper--padding-top {
   padding-top: var(--padding-top-mobile, 40px);
 }
