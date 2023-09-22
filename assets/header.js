@@ -182,7 +182,7 @@ class Header {
 
     if (target !== this.menuOpener) return false;
 
-    this.menuOpener.checked ? this.closeMenu() : this.addOverflow()
+    this.menuOpener?.checked ? this.closeMenu() : this.addOverflow()
   }
 
   closeMenu() {
@@ -193,7 +193,7 @@ class Header {
   closeMenuResize() {
     if (window.innerWidth >= this.mediaQuery) {
       this.closeMenu(),
-      this.menuOpener.checked = false
+      this.menuOpener?.checked = false
     }
   }
 
@@ -210,7 +210,7 @@ class Header {
 
     const target = e.target,
           searchOpener = this.searchOpener,
-          isChecked = this.menuOpener.checked;
+          isChecked = this.menuOpener?.checked;
 
     if (target === searchOpener && isChecked) {
       const block = this.selector.headerNav;
