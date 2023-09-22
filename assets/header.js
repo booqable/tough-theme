@@ -182,7 +182,7 @@ class Header {
 
     if (target !== this.menuOpener) return false;
 
-    this.menuOpener?.checked ? this.closeMenu() : this.addOverflow()
+    this.menuOpener && this.menuOpener.checked ? this.closeMenu() : this.addOverflow()
   }
 
   closeMenu() {
@@ -192,8 +192,9 @@ class Header {
 
   closeMenuResize() {
     if (window.innerWidth >= this.mediaQuery) {
-      this.closeMenu(),
-      this.menuOpener?.checked = false
+      this.closeMenu();
+
+      if (this.menuOpener) this.menuOpener.checked = false
     }
   }
 
@@ -209,8 +210,11 @@ class Header {
     this.killModal(e, this.searchOpener, this.selector.search);
 
     const target = e.target,
-          searchOpener = this.searchOpener,
-          isChecked = this.menuOpener?.checked;
+          searchOpener = this.searchOpener;
+
+    let isChecked = false;
+
+    if (this.menuOpener) isChecked = this.menuOpener.checked;
 
     if (target === searchOpener && isChecked) {
       const block = this.selector.headerNav;
