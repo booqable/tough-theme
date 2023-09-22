@@ -199,7 +199,7 @@ class Header {
 
   // closing all dropdowns when mobile menu closed
   closeMobileDrop() {
-    this.checkboxes.forEach(checkbox => checkbox.checked = false)
+    this.checkboxes?.forEach(checkbox => checkbox.checked = false)
   }
 
   // closing modals of search and mobile menu on click on header icons
