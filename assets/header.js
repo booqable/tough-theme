@@ -88,7 +88,7 @@ class Header {
     this.searchOpener = this.section.querySelector(this.selector.searchOpener);
     this.searchInput = this.section.querySelector(this.selector.searchInput);
     this.searchReset = this.section.querySelector(this.selector.searchReset);
-    this.checkboxes = this.menu.querySelectorAll(this.selector.checkbox);
+    this.checkboxes = this.menu?.querySelectorAll(this.selector.checkbox);
     this.sticky = this.section.classList.contains(this.classes.sticky);
     this.notSticky = this.section.classList.contains(this.classes.notSticky);
   }
