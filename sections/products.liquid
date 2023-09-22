@@ -29,7 +29,7 @@
 
   {%- assign carousel = false -%}
 
-  {%- if blocks.size > 1 and show_carousel or collection.items_count > 1 and show_carousel -%}
+  {%- if blocks.size > 1 or collection.items_count > 1 -%}
     {{ "carousel.css" | asset_url | stylesheet_tag }}
 
     {%- assign carousel = true -%}
@@ -88,7 +88,7 @@
     style="{{- variables | escape -}}"
   >
     <div class="products__container container">
-      <div class="products__list{% if carousel %} carousel carousel__pause{% if show_pagination or show_navigation %} carousel--controls{% endif %}{% else %} products__list--grid{%- endif -%}">
+      <div class="products__list{% if carousel %} carousel carousel__pause{% if show_pagination or show_navigation %} carousel--controls{% endif %}{% endif %}{% unless show_carousel %} carousel__destroy{%- endunless -%}">
         {%- if carousel -%}
           <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
           <div class="carousel__wrapper">

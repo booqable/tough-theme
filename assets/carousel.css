@@ -44,8 +44,7 @@
 
 .carousel__item {
   position: relative;
-  min-width: var(--slide-width-mobile);
-  max-width: var(--slide-width-mobile);
+  width: var(--slide-width-mobile);
   transition: all calc(var(--animation-duration, 200ms) + 200ms) var(--transition-function-ease);
   padding: 0;
   scroll-snap-align: start;
@@ -423,8 +422,7 @@
   }
 
   .carousel__item {
-    min-width: var(--slide-width);
-    max-width: var(--slide-width);
+    width: var(--slide-width);
   }
 
   .carousel__item:last-child {
@@ -469,6 +467,23 @@
 
   .carousel__edges .carousel__counter {
     bottom: 33px;
+  }
+
+  .carousel__destroy .carousel__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 24px;
+    margin: 0;
+    width: 100%;
+    scroll-padding: 0;
+  }
+
+  .carousel__destroy .carousel__inner {
+    padding: 0;
+  }
+
+  .carousel__destroy .carousel__item {
+    width: 100%;
   }
 }
 

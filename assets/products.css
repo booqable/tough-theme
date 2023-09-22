@@ -10,11 +10,11 @@
   display: flex;
 }
 
-.products__list.products__list--grid {
+/* .products__list.carousel__destroy {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));
   gap: 16px;
-}
+} */
 
 .palette-one.products__wrapper {
   background: var(--background-primary, #FFFFFF);
@@ -25,10 +25,10 @@
 }
 
 @media (min-width: 992px) {
-  .products__list.products__list--grid {
+  /* .products__list.carousel__destroy {
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
     gap: 24px;
-  }
+  } */
 }
 
 @media (min-width: 1200px) {
