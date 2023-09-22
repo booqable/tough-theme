@@ -199,7 +199,7 @@ class Header {
 
   // closing all dropdowns when mobile menu closed
   closeMobileDrop() {
-    if (!this.checkboxes.length) return false;
+    if (!this.checkboxes?.length) return false;
 
     this.checkboxes.forEach(checkbox => checkbox.checked = false)
   }
