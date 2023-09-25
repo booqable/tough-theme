@@ -110,13 +110,21 @@
 	padding: 0;
 	position: absolute;
   top: 100%;
-  right: -104px;
+  right: -75px;
 	min-width: calc(100vw - 60px);
 	opacity: 0;
 	transition: visibility var(--animation-duration, 200ms) var(--transition-function-ease-out),
     top var(--animation-duration, 200ms) var(--transition-function-ease-out),
 		opacity var(--animation-duration, 200ms) var(--transition-function-ease-out);
   display: block !important;
+}
+
+.touch[data-orientation='landscape'] .header__search-wrapper {
+  right: -75px;
+}
+
+.touch[data-orientation='landscape'] .header__mobile-menu-opener-left .header__search-wrapper {
+  right: -25px;
 }
 
 .header__search-wrapper form {
@@ -345,7 +353,7 @@
 
 @media (min-width: 576px) {
   .header__search-wrapper {
-    right: -50px;
+    right: -25px;
     min-width: calc(100vw - 160px);
   }
 

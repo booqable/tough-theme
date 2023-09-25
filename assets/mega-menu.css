@@ -229,6 +229,10 @@
   padding-right: 40px;
 }
 
+.touch[data-orientation='portrait'] .menu__bottom {
+  padding-bottom: 30px;
+}
+
 .menu__icons {
   display: flex;
   flex-direction: row-reverse;
