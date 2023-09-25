@@ -94,8 +94,7 @@
   height: auto;
   pointer-events: none;
   max-height: 0;
-  padding: 32px 0 0;
-  margin: 0 16px;
+  margin: 32px 16px 0;
   overflow-y: auto;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
@@ -121,7 +120,8 @@
 
 [id^="sidebar-mobile-opener"]:checked ~ .sidebar__nav {
   max-height: 500px;
-  margin-bottom: 50px;
+  padding: 32px 0 0;
+  margin: 0 16px 50px;
   pointer-events: all;
 }
 
