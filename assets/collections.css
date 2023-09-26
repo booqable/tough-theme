@@ -170,11 +170,11 @@
   }
 
   .collections__list-2 .collections__item:after {
-    aspect-ratio: 1 / 0.7;
+    aspect-ratio: 1 / 0.92;
   }
 
   .collections__list-3 .collections__item:after {
-    aspect-ratio: 1 / 1.08;
+    aspect-ratio: 1 / 1.42;
   }
 }
 

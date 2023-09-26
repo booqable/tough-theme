@@ -46,7 +46,6 @@
 .carousel__item {
   position: relative;
   min-width: var(--slide-width-mobile);
-  max-width: var(--slide-width-mobile);
   transition: all calc(var(--animation-duration, 200ms) + 200ms) var(--transition-function-ease);
   padding: 0;
   scroll-snap-align: start;
@@ -55,7 +54,6 @@
 
 .carousel__item:last-child {
   min-width: calc(var(--slide-width-mobile) + 16px);
-  max-width: calc(var(--slide-width-mobile) + 16px);
 }
 
 .carousel__item:last-child .carousel__inner {
@@ -148,7 +146,6 @@
 
 .carousel__full-width .carousel__item:last-child {
   min-width: var(--slide-width-mobile);
-  max-width: var(--slide-width-mobile);
 }
 
 .carousel__full-width .carousel__inner {
@@ -157,7 +154,6 @@
 
 .carousel__edges .carousel__item:last-child {
   min-width: var(--slide-width-mobile);
-  max-width: var(--slide-width-mobile);
 }
 
 .carousel__edges .carousel__item:not(:first-child) {
@@ -422,12 +418,10 @@
 
   .carousel__item {
     min-width: var(--slide-width);
-    max-width: var(--slide-width);
   }
 
   .carousel__item:last-child {
     min-width: calc(var(--slide-width) + 32px);
-    max-width: calc(var(--slide-width) + 32px);
   }
 
   .carousel__item:last-child .carousel__inner {
@@ -441,7 +435,6 @@
   .carousel__edges .carousel__item,
   .carousel__edges .carousel__item:last-child {
     min-width: var(--slide-width);
-    max-width: var(--slide-width);
   }
 
   .carousel__edges .images__text-area {
@@ -469,6 +462,33 @@
   .carousel__edges .carousel__counter {
     bottom: 33px;
   }
+
+  .carousel__destroy .carousel__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-padding: 0;
+  }
+
+  .carousel__destroy .carousel__inner {
+    padding: 0;
+  }
+
+  .carousel__destroy .carousel__item {
+    min-width: 100%;
+  }
+
+  .carousel__destroy .carousel__item:last-child .carousel__inner {
+    padding-right: 0;
+  }
+
+  .carousel__destroy .carousel__navigation,
+  .carousel__destroy .carousel__pagination {
+    display: none;
+  }
 }
 
 @media (min-width: 1273px) {
@@ -484,7 +504,6 @@
 
   .carousel__item:last-child {
     min-width: calc(var(--slide-width) - 32px);
-    max-width: calc(var(--slide-width) - 32px);
   }
 
   .carousel__item:last-child .carousel__inner {
@@ -494,6 +513,10 @@
   .carousel__full-width .carousel__item:last-child .carousel__inner,
   .carousel__full-width .carousel__inner {
     padding: 0;
+  }
+
+  .carousel__destroy .carousel__item {
+    min-width: 100%;
   }
 }
 

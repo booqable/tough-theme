@@ -71,7 +71,7 @@
 
 .product-card__price-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .product-card__price,
