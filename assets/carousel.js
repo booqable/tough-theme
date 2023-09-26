@@ -146,53 +146,35 @@ class Carousel {
     const isFade = this.block.classList.contains(this.classes.fade),
           isFull = this.block.classList.contains(this.classes.full),
           width = this.item.getBoundingClientRect().width,
-          height = this.item.getBoundingClientRect().height,
           index = parseInt(target?.getAttribute(this.data.index)),
           prev = this.event.prev,
           next = this.event.next;
 
-    let element, left, top, scrollX, scrollY, clientX, clientY, children, valueLeft = 0, valueTop = 0;
+    let element, left, scrollX, clientX, children, valueLeft = 0;
 
     element = isDot || isPrev || isNext
       ? this.getPrevSibling(target?.parentElement, this.selector.wrapper)
       : this.wrap;
 
-    top = element.scrollTop;
     left = element.scrollLeft;
     scrollX = element.scrollWidth;
-    scrollY = element.scrollHeight;
     clientX = element.clientWidth;
-    clientY = element.clientHeight;
     children = [...element.children];
 
     if (isFull) scrollX = width * children.length;
 
     if (isPrev) {
       if (!isFade) {
-        if (scrollY > scrollX) {
-          const options = {
-            currentScroll: top,
-            clientVal: clientY,
-            scrollVal: scrollY,
-            scrollToVal: valueTop,
-            size: height,
-            trigger: prev
-          }
-
-          valueTop = this.slideEfect(event, options);
-
-        } else {
-          const options = {
-            currentScroll: left,
-            clientVal: clientX,
-            scrollVal: scrollX,
-            scrollToVal: valueLeft,
-            size: width,
-            trigger: prev
-          }
-
-          valueLeft = this.slideEfect(event, options);
+        const options = {
+          currentScroll: left,
+          clientVal: clientX,
+          scrollVal: scrollX,
+          scrollToVal: valueLeft,
+          size: width,
+          trigger: prev
         }
+
+        valueLeft = this.slideEfect(event, options);
 
       } else {
         const options = {
@@ -207,30 +189,16 @@ class Carousel {
 
     if (isNext || time) {
       if (!isFade) {
-        if (scrollY > scrollX) {
-          const options = {
-            currentScroll: top,
-            clientVal: clientY,
-            scrollVal: scrollY,
-            scrollToVal: valueTop,
-            size: height,
-            trigger: next
-          }
-
-          valueTop = this.slideEfect(event, options);
-
-        } else {
-          const options = {
-            currentScroll: left,
-            clientVal: clientX,
-            scrollVal: scrollX,
-            scrollToVal: valueLeft,
-            size: width,
-            trigger: next
-          }
-
-          valueLeft = this.slideEfect(event, options);
+        const options = {
+          currentScroll: left,
+          clientVal: clientX,
+          scrollVal: scrollX,
+          scrollToVal: valueLeft,
+          size: width,
+          trigger: next
         }
+
+        valueLeft = this.slideEfect(event, options);
 
       } else {
         const options = {
@@ -251,7 +219,7 @@ class Carousel {
       const options = {
         element: element,
         left: valueLeft,
-        top: valueTop
+        top: 0
       }
 
       this.scrollTo(options);
