@@ -468,6 +468,7 @@
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
     gap: 24px;
     margin: 0;
+    padding: 0;
     width: 100%;
     scroll-padding: 0;
   }
@@ -482,6 +483,11 @@
 
   .carousel__destroy .carousel__item:last-child .carousel__inner {
     padding-right: 0;
+  }
+
+  .carousel__destroy .carousel__navigation,
+  .carousel__destroy .carousel__pagination {
+    display: none;
   }
 }
 
