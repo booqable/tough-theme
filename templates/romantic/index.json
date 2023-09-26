@@ -293,7 +293,7 @@
             "overlay_opacity": 64,
             "text_position": "center",
             "text_position_mobile": "center",
-            "tagline": "Highlight",
+            "tag": "Highlight",
             "title": "Podium table <br>for the ceremony"
           },
           "disabled": null

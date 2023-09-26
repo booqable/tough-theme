@@ -125,7 +125,7 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "tag": "Our collections",
+        "tag": "OUR COLLECTIONS",
         "title": "We can service you in each category"
       },
       "disabled": null
@@ -188,7 +188,7 @@
         "padding_top": "large",
         "padding_top_mobile": "large",
         "space_height": "none",
-        "tag": "Tagline",
+        "tag": "TAGLINE",
         "title": "Medium length section heading goes here"
       },
       "disabled": null
@@ -206,7 +206,7 @@
         "padding_bottom_mobile": "small",
         "padding_top": "large",
         "padding_top_mobile": "medium",
-        "tag": "Tagline",
+        "tag": "TAGLINE",
         "title": "Products"
       },
       "disabled": null
@@ -293,7 +293,7 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "large",
-        "tag": "Rent a product",
+        "tag": "RENT A PRODUCT",
         "title": "How does it work"
       },
       "disabled": null
@@ -373,7 +373,7 @@
         "padding_bottom_mobile": "small",
         "padding_top": "large",
         "padding_top_mobile": "medium",
-        "tag": "Mosaic content section",
+        "tag": "MOSAIC CONTENT SECTION",
         "title": "News & articles"
       },
       "disabled": null
@@ -386,7 +386,7 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "Tagline",
+            "article_tag": "TAGLINE",
             "heading": "Our biggest project",
             "image": "booqable://assets/image-tough-mosaic.jpg",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -397,7 +397,7 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "Tagline",
+            "article_tag": "TAGLINE",
             "heading": "January Update",
             "image": "booqable://assets/image-tough-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -408,7 +408,7 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "Tagline",
+            "article_tag": "TAGLINE",
             "heading": "December Update",
             "image": "booqable://assets/image-tough-bell.png",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."

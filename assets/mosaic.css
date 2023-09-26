@@ -39,6 +39,8 @@
 
 .mosaic__tag {
   margin: 0 0 8px;
+  font-family: var(--font-body, sans-serif);
+  font-size: 14px;
 }
 
 .mosaic__heading {

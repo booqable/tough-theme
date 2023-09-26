@@ -513,11 +513,10 @@ img {
 .tagline {
   display: inline-block;
   vertical-align: top;
-  text-transform: uppercase;
   font-family: var(--font-tagline, sans-serif);
   font-weight: var(--font-weight-semibold, 600);
   line-height: var(--line-height-lg, 1.5);
-  font-size: 14px;
+  font-size: var(--font-size-tagline, 14px);
   letter-spacing: 0.03em;
   margin: 0 0 20px;
 }

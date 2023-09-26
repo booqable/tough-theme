@@ -124,6 +124,7 @@
     "heading_font": "bona-nova",
     "body_font": "poppins",
     "tagline_font": "dancing-script",
+    "tagline_size": 47,
     "image_placeholder": "booqable://assets/image-romantic-placeholder.jpg"
   },
   "variations": {
@@ -252,6 +253,7 @@
       "heading_font": "barlow",
       "body_font": "barlow",
       "tagline_font": "barlow",
+      "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-tough-placeholder.png"
     },
     "romantic": {
@@ -379,6 +381,7 @@
       "heading_font": "bona-nova",
       "body_font": "poppins",
       "tagline_font": "dancing-script",
+      "tagline_size": 47,
       "image_placeholder": "booqable://assets/image-romantic-placeholder.jpg"
     },
     "fashion": {
@@ -506,6 +509,7 @@
       "heading_font": "poppins",
       "body_font": "poppins",
       "tagline_font": "roboto",
+      "tagline_size": 47,
       "image_placeholder": "booqable://assets/image-fashion-placeholder.jpg"
     }
   }
