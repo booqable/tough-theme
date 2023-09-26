@@ -91,7 +91,7 @@
     </div>
 
     {%- form 'register' -%}
-      <div class="{%- if form.errors.name -%}account-fieldset--error{%- endif -%}">
+      <div class="account-fieldset__block{% if form.errors.name %} account-fieldset--error{%- endif -%}">
         <label for="user_name" class="account-fieldset__label">
           {%- if name_label != blank -%}
             {{- name_label -}}
@@ -115,7 +115,7 @@
         </div>
       </div>
 
-      <div class="{%- if form.errors.email -%}account-fieldset--error{%- endif -%}">
+      <div class="account-fieldset__block{% if form.errors.email %} account-fieldset--error{%- endif -%}">
         <label for="user_email" class="account-fieldset__label">
           {%- if email_label != blank -%}
             {{- email_label -}}
@@ -139,7 +139,7 @@
         </div>
       </div>
 
-      <div class="{%- if form.errors.password -%}account-fieldset--error{%- endif -%}">
+      <div class="account-fieldset__block{% if form.errors.password %} account-fieldset--error{%- endif -%}">
         <label for="user_password" class="account-fieldset__label">
           {%- if password_label != blank -%}
             {{- password_label -}}
@@ -161,7 +161,7 @@
         </div>
       </div>
 
-      <div class="account__divider{% if form.errors.password_confirmation %} account-fieldset--error{%- endif -%}">
+      <div class="account__divider account-fieldset__block{% if form.errors.password_confirmation %} account-fieldset--error{%- endif -%}">
         <label for="user_password_confirmation" class="account-fieldset__label">
           {%- if password_confirmation != blank -%}
             {{- password_confirmation -}}
