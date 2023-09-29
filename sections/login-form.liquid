@@ -74,13 +74,21 @@
     {%- endif -%}
 
     {%- form 'login' -%}
-      <div>
+      <div class="account-fieldset__block">
         <label for="user_email" class="account-fieldset__label">
           {%- if email_label != blank -%}
             {{- email_label -}}
           {%- else -%}
             Email
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if email_label != blank -%}
+              {{- email_label -}}
+            {%- else -%}
+              Email
+            {%- endif -%}
+          </span>
         </label>
 
         <input
@@ -94,13 +102,21 @@
           id="user_email">
       </div>
 
-      <div>
+      <div class="account-fieldset__block account__divider--small">
         <label for="user_password" class="account-fieldset__label">
           {%- if password_label != blank -%}
             {{- password_label -}}
           {%- else -%}
             Password
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if password_label != blank -%}
+              {{- password_label -}}
+            {%- else -%}
+              Password
+            {%- endif -%}
+          </span>
         </label>
 
         <input

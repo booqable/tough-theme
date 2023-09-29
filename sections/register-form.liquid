@@ -98,6 +98,14 @@
           {%- else -%}
             Full name
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if name_label != blank -%}
+              {{- name_label -}}
+            {%- else -%}
+              Full name
+            {%- endif -%}
+          </span>
         </label>
 
         <input
@@ -122,6 +130,14 @@
           {%- else -%}
             Email
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if email_label != blank -%}
+              {{- email_label -}}
+            {%- else -%}
+              Email
+            {%- endif -%}
+          </span>
         </label>
 
         <input
@@ -146,6 +162,14 @@
           {%- else -%}
             Password
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if password_label != blank -%}
+              {{- password_label -}}
+            {%- else -%}
+              Password
+            {%- endif -%}
+          </span>
         </label>
 
         <input
@@ -161,13 +185,21 @@
         </div>
       </div>
 
-      <div class="account__divider account-fieldset__block{% if form.errors.password_confirmation %} account-fieldset--error{%- endif -%}">
+      <div class="account-fieldset__block{% if form.errors.password_confirmation %} account-fieldset--error{%- endif -%}">
         <label for="user_password_confirmation" class="account-fieldset__label">
           {%- if password_confirmation != blank -%}
             {{- password_confirmation -}}
           {%- else -%}
             Password confirmation
           {%- endif -%}
+
+          <span class="account-fieldset__label-backlight">
+            {%- if password_confirmation != blank -%}
+              {{- password_confirmation -}}
+            {%- else -%}
+              Password confirmation
+            {%- endif -%}
+          </span>
         </label>
 
         <input
@@ -183,17 +215,17 @@
         </div>
       </div>
 
-      <div class="account__divider{% if form.errors.customer %} account-fieldset--error{%- endif -%}">
-        <label class="account-fieldset__static-label">
+      <div class="account__type account__divider{% if form.errors.customer %} account-fieldset--error{%- endif -%}">
+        <span class="account-fieldset__static-label">
           {%- if account_type_label != blank -%}
             {{- account_type_label -}}
           {%- else -%}
             Account type
           {%- endif -%}
-        </label>
+        </span>
 
-        <div class="account-type-options">
-          <div class="account-type-options__first-option">
+        <div class="account__type-options">
+          <div class="account__type-options--first-option">
             <input
               type="radio"
               name="user[legal_type]"
@@ -235,7 +267,7 @@
         </div>
       </div>
 
-      <div class="account__divider--small">
+      <div class="account__type account__divider--small">
         <input
           value="true"
           type="checkbox"
@@ -251,19 +283,19 @@
             {%- else -%}
               I agree to the
             {%- endif -%}
-          </span>
 
-          <a
-            class="account__link"
-            href="https://booqable.com/agreement"
-            target="_blank"
-          >
-            {%- if agreements_label != blank -%}
-              {{- agreements_label -}}
-            {%- else -%}
-              Terms and agreements
-            {%- endif -%}
-          </a>
+            <a
+              class="account__link"
+              href="https://booqable.com/agreement"
+              target="_blank"
+            >
+              {%- if agreements_label != blank -%}
+                {{- agreements_label -}}
+              {%- else -%}
+                Terms and agreements
+              {%- endif -%}
+            </a>
+          </span>
         </label>
 
         <div class="account__error-message">

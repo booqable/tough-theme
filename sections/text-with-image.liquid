@@ -15,6 +15,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign image_position        = section.settings.image_position -%}
+{%- assign background_style      = settings.background_style -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture spacer_variable -%}
@@ -86,17 +87,19 @@
       --text-margin-bottom: 34px;
       --left: -35px;
       --right: auto;
-      --left-image: 55px;
-      --right-image: auto;
-      --left-bg: auto;
-      --right-bg: -15%;
-      --top-bg: auto;
-      --bottom-bg: 0;
-      --rotate-bg: 71.35% 59.5%;
-      --left-overlay: calc(100% - 200px);
-      --right-overlay: auto;
-      --direction-overlay: left;
-      --transform-overlay: translate(-50%, 0);
+      --image-left: 55px;
+      --image-right: auto;
+      --bg-image-left: auto;
+      --bg-image-right: 0;
+      --overlay-left: auto;
+      --overlay-right: -15%;
+      --overlay-top: auto;
+      --overlay-bottom: 0;
+      --overlay-rotate: 71.35% 59.5%;
+      --overlay-left-ex: calc(100% - 200px);
+      --overlay-right-ex: auto;
+      --overlay-direction: left;
+      --overlay-transform: translate(-50%, 0);
     {%- when 'right' -%}
       --flex-direction-mobile: column;
       --flex-direction: row;
@@ -107,17 +110,19 @@
       --text-margin-bottom: 0;
       --left: auto;
       --right: -35px;
-      --left-image: auto;
-      --right-image: 55px;
-      --left-bg: -15%;
-      --right-bg: auto;
-      --top-bg: 0;
-      --bottom-bg: auto;
-      --rotate-bg: 28.65% 40.5%;
-      --left-overlay: auto;
-      --right-overlay: calc(100% - 200px);
-      --direction-overlay: right;
-      --transform-overlay: translate(-40%, 0);
+      --image-left: auto;
+      --image-right: 55px;
+      --bg-image-left: 0;
+      --bg-image-right: auto;
+      --overlay-left: -15%;
+      --overlay-right: auto;
+      --overlay-top: 0;
+      --overlay-bottom: auto;
+      --overlay-rotate: 28.65% 40.5%;
+      --overlay-left-ex: auto;
+      --overlay-right-ex: calc(100% - 200px);
+      --overlay-direction: right;
+      --overlay-transform: translate(-40%, 0);
     {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
@@ -182,10 +187,18 @@
     </div>
   </div>
 
-  <div class="text-image__bg-image-wrapper">
-    {%- render 'image-background-web' -%}
-    <div class="text-image__bg-overlay container"></div>
-  </div>
+  {%- unless background_style == 'none' -%}
+    {%- if background_style == 'cubes' -%}
+      <div class="text-image__bg-default-wrapper">
+        {%- render 'image-background-cubes' -%}
+        <div class="text-image__bg-overlay container"></div>
+      </div>
+    {%- elsif background_style == 'floral' -%}
+      <div class="text-image__bg-floral-wrapper">
+        {%- render 'image-background-flover-2' -%}
+      </div>
+    {%- endif -%}
+  {%- endunless -%}
 </div>
 
 <script>

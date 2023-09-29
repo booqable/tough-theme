@@ -58,6 +58,10 @@
   z-index: 0;
 }
 
+.hero__vision--indent {
+  bottom: 35px;
+}
+
 .hero__vision-wrapper {
   height: 100%;
 }
@@ -107,6 +111,18 @@
   opacity: 0.1;
 }
 
+.hero__vision-floral-wrapper {
+  height: 100%;
+}
+
+.hero__vision-floral-wrapper svg {
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  opacity: 0.2;
+  max-height: 100%;
+}
+
 .palette-one.hero__wrapper {
   color: var(--color-third, #0B1A2666);
   background: var(--background-primary, #FFFFFF);
@@ -132,6 +148,8 @@
   background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--background-primary, #FFFFFF) 0%, var(--background-primary-00, #FFFFFF00) 100%);
 }
 
+.palette-one .hero__vision-floral-wrapper g,
+.palette-one .hero__vision-floral-wrapper path,
 .palette-one .hero__vision-wrapper path {
   fill: var(--color-primary, #0B1A26);
 }
@@ -161,6 +179,8 @@
   background: radial-gradient(43.14% 157.06% at 17.22% 51.25%, var(--background-primary-2, #0B1A26) 0%, var(--background-primary-2-00, #0B1A2600) 100%);
 }
 
+.palette-two .hero__vision-floral-wrapper g,
+.palette-two .hero__vision-floral-wrapper path,
 .palette-two .hero__vision-wrapper path {
   fill: var(--color-primary-2, #FFFFFF);
 }
