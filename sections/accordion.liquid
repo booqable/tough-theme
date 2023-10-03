@@ -80,7 +80,12 @@
           </div>
         {%- elsif background_style == 'floral' -%}
           <div class="accordion__background-floral-wrapper">
-            {%- render 'image-background-flover-2' -%}
+            <div class="accordion__background-floral-col">
+              {%- render 'image-background-flover-2' -%}
+            </div>
+            <div class="accordion__background-floral-col">
+              {%- render 'image-background-flover-3' -%}
+            </div>
           </div>
         {%- endif -%}
       </div>

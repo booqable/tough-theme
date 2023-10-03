@@ -59,6 +59,9 @@
 .product-info__availability bq-product-availability {
   font-family: var(--font-body, sans-serif);
   font-size: 14px;
+}
+
+.product-info__availability bq-product-availability[visible="true"] {
   margin-right: 20px;
 }
 
