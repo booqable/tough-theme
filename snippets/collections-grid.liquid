@@ -65,13 +65,17 @@
           </span>
       {%- if collection != blank -%}
         </a>
+      {%- endif -%}
 
         <h3 class="collections__heading">
-          <a href="{{ url }}">
-            {{- name -}}
-          </a>
+          {%- if collection != blank -%}
+            <a href="{{ url }}">
+              {{- name -}}
+            </a>
+          {%- else -%}
+            Category
+          {%- endif -%}
         </h3>
-      {%- endif -%}
     </li>
   {%- endfor -%}
 </ul>

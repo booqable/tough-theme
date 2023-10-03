@@ -164,7 +164,7 @@ h6,
 .h5,
 .h6 {
   font-family: var(--font-heading, sans-serif);
-  margin-bottom: 1.5625rem;;
+  margin-bottom: 1.5625rem;
 }
 
 .palette-one h1,
@@ -231,6 +231,21 @@ h6,
 .h6 {
   font-size: var(--font-size-h6, 20px);
   line-height: 1.4;
+}
+
+.classic-design h1,
+.classic-design h2,
+.classic-design h3,
+.classic-design h4,
+.classic-design h5,
+.classic-design h6,
+.classic-design .h1,
+.classic-design .h2,
+.classic-design .h3,
+.classic-design .h4,
+.classic-design .h5,
+.classic-design .h6 {
+  font-weight: var(--font-weight-regular, 400);
 }
 
 a {

@@ -18,7 +18,7 @@
             "overlay_opacity": 40,
             "text_position": "center",
             "text_position_mobile": "center",
-            "title": "Rent your day"
+            "title": "RENT YOUR DAY"
           },
           "disabled": null
         }
@@ -159,7 +159,7 @@
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "tag": "This week",
-        "title": "Popular products"
+        "title": "POPULAR PRODUCTS"
       },
       "disabled": null
     },
@@ -294,7 +294,7 @@
             "text_position": "center",
             "text_position_mobile": "center",
             "tag": "Highlight",
-            "title": "Podium table <br>for the ceremony"
+            "title": "PODIUM TABLE <br>FOR THE CEREMONY"
           },
           "disabled": null
         }
@@ -407,7 +407,7 @@
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "tag": "",
-        "title": "Latest fashion news"
+        "title": "WHAT’S GOING ON"
       },
       "disabled": null
     },
@@ -478,7 +478,7 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
+        "title": "FREQUENTLY ASKED QUESTIONS",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
       },
       "disabled": null
