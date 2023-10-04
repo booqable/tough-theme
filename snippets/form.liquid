@@ -33,80 +33,120 @@
 {{ "form.css" | asset_url | stylesheet_tag }}
 
 <div id="{{- id -}}" class="form__inner" style="{{- button_variables | escape -}}">
-  {%- if title != blank -%}
-    <h2 class="form__title">{{- title -}}</h2>
-  {%- endif -%}
+  <h2 class="form__title">
+    {%- if title != blank -%}
+      {{- title -}}
+    {%- else -%}
+      Contact us
+    {%- endif -%}
+  </h2>
 
-  {%- if description != blank -%}
-    <div class="form__text">
+  <div class="form__text">
+    {%- if description != blank -%}
       {{- description -}}
-    </div>
-  {%- endif -%}
+    {%- else -%}
+      Tell something about your company, describe what you do and what makes you unique.
+    {%- endif -%}
+  </div>
 
   {%- form 'contact' -%}
-    <div class="form__sender-name">
+    <div class="form__block{% if form.errors.author %} form__block--error{%- endif -%}">
       <label class="form__label" for="author">
         {%- if name != blank -%}
           {{- name -}}
         {%- else -%}
           Name
         {%- endif -%}
+
+        <span class="form__label-backlight">
+          {%- if name != blank -%}
+            {{- name -}}
+          {%- else -%}
+            Name
+          {%- endif -%}
+        </span>
       </label>
 
       <input
+        value="{{- form.author -}}"
+        placeholder=" "
+        class="form__input"
+        autocomplete="author"
         type="text"
-        id="author"
-        class="form__field{% if form.errors.author %} error{%- endif -%}"
         name="form[author]"
+        id="author"
         title="(e.g. Jon Doe)"
-        placeholder="{%- if name != blank -%}{{- name -}}{%- else -%}Your name{%- endif -%}"
-        {%- if form.errors != blank -%}
-          value="{{ form.author }}"
-        {%- endif -%}
       >
+
+      <div class="form__error-message">
+        {{- form.errors.author -}}
+      </div>
     </div>
 
-    <div class="form__sender-email">
+    <div class="form__block{% if form.errors.email %} form__block--error{%- endif -%}">
       <label class="form__label" for="email">
         {%- if email != blank -%}
           {{- email -}}
         {%- else -%}
           Email
         {%- endif -%}
+
+        <span class="form__label-backlight">
+          {%- if email != blank -%}
+            {{- email -}}
+          {%- else -%}
+            Email
+          {%- endif -%}
+        </span>
       </label>
 
       <input
+        value="{{- form.email -}}"
+        placeholder=" "
+        class="form__input"
+        autocomplete="email"
         type="email"
-        id="email"
-        class="form__field{% if form.errors.email %} error{%- endif -%}"
         name="form[email]"
+        id="email"
         title="(e.g. mail@domain.com)"
-        placeholder="{%- if email != blank -%}{{- email -}}{%- else -%}Your email{%- endif -%}"
-        {%- if form.errors != blank -%}
-          value="{{ form.email }}"
-        {%- endif -%}
       >
+
+      <div class="form__error-message">
+        {{- form.errors.email -}}
+      </div>
     </div>
 
-    <div class="form__message">
+    <div class="form__block form__message{% if form.errors.body %} form__block--error{%- endif -%}">
       <label class="form__label" for="body">
         {%- if message != blank -%}
           {{- message -}}
         {%- else -%}
           Message
         {%- endif -%}
+
+        <span class="form__label-backlight">
+          {%- if message != blank -%}
+            {{- message -}}
+          {%- else -%}
+            Message
+          {%- endif -%}
+        </span>
       </label>
 
       <textarea
-        id="body"
-        class="form__textarea{% if form.errors.body %} error{%- endif -%}"
+        value=" "
+        placeholder=" "
+        class="form__textarea"
         name="form[body]"
+        id="body"
         title="Describe what you want in more detail"
-        placeholder="{%- if message != blank -%}{{- message -}}...{%- else -%}Type your message...{%- endif -%}"
-        rows="5"
       >
-        {%- if form.errors != blank -%}{{- form.body | strip -}}{%- endif -%}
+        {%- if form.posted_successfully -%}{{- form.body | strip -}}{%- endif -%}
       </textarea>
+
+      <div class="form__error-message">
+        {{- form.errors.body | strip -}}
+      </div>
     </div>
 
     <div class="form__info">

@@ -1,6 +1,5 @@
 {{ "hero.css" | asset_url | stylesheet_tag }}
 
-{%- assign show_bg               = section.settings.show_bg -%}
 {%- assign show_datepicker       = section.settings.show_datepicker -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign color_palette         = section.settings.color_palette -%}
@@ -78,24 +77,6 @@
       <div class="hero__overlay"></div>
     </div>
   {%- endif -%}
-
-  <div class="hero__vision">
-    {%- if show_bg -%}
-      <div class="hero__vision-wrapper">
-        {%- if image != blank -%}
-          {%- render 'image',
-            image: image,
-            loading: 'lazy',
-            class: 'hero__image',
-            size: 'xxl'
-          -%}
-        {%- else -%}
-          {%- render 'image-background-web' -%}
-        {%- endif -%}
-        <div class="hero__vision-wrapper-overlay container"></div>
-      </div>
-    {%- endif -%}
-  </div>
 </div>
 
 <script>
@@ -144,12 +125,6 @@
         "type": "image_picker",
         "id": "image",
         "label": "Background image"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_bg",
-        "default": false,
-        "label": "Show background image"
       },
       {
         "type": "select",

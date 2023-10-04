@@ -4,13 +4,13 @@
 {%- assign message               = section.settings.message -%}
 {%- assign results_label         = section.settings.results_label -%}
 {%- assign button_label          = section.settings.button_label -%}
-{%- assign show_bg               = section.settings.show_bg -%}
 {%- assign image                 = section.settings.image -%}
 {%- assign color_palette         = section.settings.color_palette -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
+{%- assign background_style      = settings.background_style -%}
 
 {%- if results_count > 0 -%}
   {{ "date-picker.css" | asset_url | stylesheet_tag }}
@@ -122,23 +122,34 @@
     </div>
   {%- endif -%}
 
-  <div class="hero__vision">
-    {%- if show_bg -%}
+  {%- if image != blank -%}
+    <div class="hero__vision{% if show_datepicker %} hero__vision--indent{%- endif -%}">
       <div class="hero__vision-wrapper">
-        {%- if image != blank -%}
           {%- render 'image',
             image: image,
             loading: 'lazy',
             class: 'hero__image',
             size: 'xxl'
           -%}
-        {%- else -%}
-          {%- render 'image-background-web' -%}
-        {%- endif -%}
-          <div class="hero__vision-wrapper-overlay container"></div>
       </div>
-    {%- endif -%}
-  </div>
+      <div class="hero__vision-wrapper-overlay container"></div>
+    </div>
+  {%- else -%}
+    {%- unless background_style == 'none' -%}
+      <div class="hero__vision{% if show_datepicker %} hero__vision--indent{%- endif -%}">
+        {%- if background_style == 'cubes' -%}
+          <div class="hero__vision-wrapper">
+            {%- render 'image-background-cubes' -%}
+            <div class="hero__vision-wrapper-overlay container"></div>
+          </div>
+        {%- elsif background_style == 'floral' -%}
+          <div class="hero__vision-floral-wrapper">
+            {%- render 'image-background-flover-1' -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+  {%- endif -%}
 </div>
 
 {%- if results_count == 0 -%}
@@ -191,12 +202,6 @@
         "type": "image_picker",
         "id": "image",
         "label": "Background image"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_bg",
-        "default": true,
-        "label": "Show background image"
       },
       {
         "type": "text",

@@ -275,7 +275,7 @@
             "overlay_opacity": 64,
             "text_position": "center",
             "text_position_mobile": "center",
-            "tagline": "",
+            "tag": "",
             "title": "Discover what’s <br>trending"
           },
           "disabled": null

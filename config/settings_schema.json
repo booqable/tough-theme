@@ -6,6 +6,59 @@
     "theme_author": "Booqable"
   },
   {
+    "name": "General styling",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Element design"
+      },
+      {
+        "type": "paragraph",
+        "content": "Adjust the design of various elements throughout your website, including product cards and collection cards"
+      },
+      {
+        "type": "select",
+        "id": "element_design",
+        "options": [
+          {
+            "value": "modern",
+            "label": "Modern"
+          },
+          {
+            "value": "classic",
+            "label": "Classic"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Background style"
+      },
+      {
+        "type": "paragraph",
+        "content": "Show subtle background images on various sections of your website"
+      },
+      {
+        "type": "select",
+        "id": "background_style",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "cubes",
+            "label": "Isometric cubes"
+          },
+          {
+            "value": "floral",
+            "label": "Floral elements"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
@@ -194,6 +247,14 @@
         "max": 26,
         "default": 20,
         "info": "Min: 16, max: 26"
+      },
+      {
+        "type": "number",
+        "id": "tagline_size",
+        "label": "Tagline",
+        "min": 14,
+        "max": 50,
+        "info": "Min: 14, max: 50"
       }
     ]
   },
