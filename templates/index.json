@@ -492,8 +492,8 @@
       },
       "disabled": null
     },
-    "cta": {
-      "type": "cta",
+    "call-to-action": {
+      "type": "call-to-action",
       "blocks": {},
       "block_order": [],
       "settings": {
@@ -501,7 +501,7 @@
         "button_url_1": "booqable://root/",
         "button_2": "Button",
         "button_url_2": "booqable://root/",
-        "color_palette": "two",
+        "color_palette": "three",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
@@ -527,6 +527,6 @@
     "mosaic",
     "title_987650",
     "accordion",
-    "cta"
+    "call-to-action"
   ]
 }

@@ -109,6 +109,47 @@
         "id": "overlay_color_2",
         "label": "Alternative color",
         "info": "Used for text on top of the background images"
+      },
+      {
+        "type": "header",
+        "content": "Color set 3"
+      },
+      {
+        "type": "paragraph",
+        "content": "Used for sections like 'Top bar' and 'Call to action'"
+      },
+      {
+        "type": "color",
+        "id": "background_3",
+        "label": "Background"
+      },
+      {
+        "type": "color",
+        "id": "primary_color_3",
+        "label": "Primary text"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color_3",
+        "label": "Secondary text"
+      },
+      {
+        "type": "color",
+        "id": "accent_background_3",
+        "label": "Accent background",
+        "info": "Used as a background of solid buttons, etc."
+      },
+      {
+        "type": "color",
+        "id": "accent_color_3",
+        "label": "Accent text",
+        "info": "Used for text on top of the accent background"
+      },
+      {
+        "type": "color",
+        "id": "accent_outline_3",
+        "label": "Accent outline",
+        "info": "Also used for accent text without background"
       }
     ]
   },
