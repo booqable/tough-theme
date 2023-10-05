@@ -59,7 +59,7 @@
   bottom: 0;
 }
 
-.error-404__background::after {
+.error-404__background-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -68,7 +68,7 @@
   left: 0;
 }
 
-.error-404__background svg {
+.error-404__background-wrapper svg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -76,6 +76,37 @@
   height: 100%;
   min-width: 100%;
   opacity: 0.1;
+}
+
+.error-404__background-floral-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.error-404__background-floral-wrapper svg {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  opacity: 0.2;
+  max-height: 100%;
+}
+
+.error-404__background-floral-col {
+  position: relative;
+  width: 100%;
+}
+
+.error-404__background-floral-col:first-child {
+  display: none;
+}
+
+.error-404__background-floral-col:first-child svg {
+  transform:rotate(180deg);
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  max-height: none;
 }
 
 .palette-one.error-404__content {
@@ -87,10 +118,11 @@
   color: var(--color-outline, #F4B841);
 }
 
-.palette-one .error-404__background::after {
+.palette-one .error-404__background-wrapper::after {
   background: linear-gradient(173.19deg, var(--background-primary, #FFFFFF) 33.02%, var(--background-primary-00, #FFFFFF00) 93.23%);
 }
 
+.palette-one .error-404__background g,
 .palette-one .error-404__background path {
   fill: var(--color-primary, #0B1A26);
 }
@@ -104,16 +136,23 @@
   color: var(--color-outline-2, #F4B841);
 }
 
-.palette-two .error-404__background::after {
+.palette-two .error-404__background-wrapper::after {
   background: linear-gradient(173.19deg, var(--background-primary-2, #0B1A26) 33.02%, var(--background-primary-2-00, #0B1A2600) 93.23%);
 }
 
+.palette-two .error-404__background g,
 .palette-two .error-404__background path {
   fill: var(--color-primary-2, #FFFFFF);
 }
 
+@media (min-width: 768px) {
+  .error-404__background-floral-col:first-child {
+    display: block;
+  }
+}
+
 @media (min-width: 810px) {
-  .error-404__background svg {
+  .error-404__background-wrapper svg {
     min-height: 100%;
     height: auto;
   }

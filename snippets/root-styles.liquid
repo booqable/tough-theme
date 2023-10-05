@@ -217,6 +217,9 @@
     {%- if settings.h6_size != blank -%}
       --font-size-h6: {{- settings.h6_size | append: "px" -}};
     {%- endif -%}
+    {%- if settings.tagline_size != blank -%}
+      --font-size-tagline: {{- settings.tagline_size | append: "px" -}};
+    {%- endif -%}
 
     {%- if settings.animation_duration != blank -%}
       --animation-duration: {{- settings.animation_duration | append: "ms"-}};

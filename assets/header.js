@@ -1,6 +1,6 @@
 class Header {
-  constructor(section) {
-    this.section = section;
+  constructor(block) {
+    this.block = block;
 
     this.selector = {
       body: "body",
@@ -68,7 +68,7 @@ class Header {
   }
 
   init() {
-    if (!this.section) return false;
+    if (!this.block) return false;
 
     this.elements();
     this.events();
@@ -78,19 +78,19 @@ class Header {
     this.doc = document.documentElement;
     this.body = document.querySelector(this.selector.body);
     this.preview = document.querySelector(this.selector.view);
-    this.bar = this.section.querySelector(this.selector.bar);
-    this.barBlocks = this.section.querySelectorAll(this.selector.barBlock);
-    this.menu = this.section.querySelector(this.selector.menu);
-    this.menuBottom = this.section.querySelector(this.selector.menuBottom);
-    this.menuItem = this.section.querySelector(this.selector.menuItem);
-    this.menuDrops = this.section.querySelectorAll(this.selector.menuDrop);
-    this.menuOpener = this.section.querySelector(this.selector.menuOpener);
-    this.searchOpener = this.section.querySelector(this.selector.searchOpener);
-    this.searchInput = this.section.querySelector(this.selector.searchInput);
-    this.searchReset = this.section.querySelector(this.selector.searchReset);
+    this.bar = this.block.querySelector(this.selector.bar);
+    this.barBlocks = this.block.querySelectorAll(this.selector.barBlock);
+    this.menu = this.block.querySelector(this.selector.menu);
+    this.menuBottom = this.block.querySelector(this.selector.menuBottom);
+    this.menuItem = this.block.querySelector(this.selector.menuItem);
+    this.menuDrops = this.block.querySelectorAll(this.selector.menuDrop);
+    this.menuOpener = this.block.querySelector(this.selector.menuOpener);
+    this.searchOpener = this.block.querySelector(this.selector.searchOpener);
+    this.searchInput = this.block.querySelector(this.selector.searchInput);
+    this.searchReset = this.block.querySelector(this.selector.searchReset);
     this.checkboxes = this.menu?.querySelectorAll(this.selector.checkbox);
-    this.sticky = this.section.classList.contains(this.classes.sticky);
-    this.notSticky = this.section.classList.contains(this.classes.notSticky);
+    this.sticky = this.block.classList.contains(this.classes.sticky);
+    this.notSticky = this.block.classList.contains(this.classes.notSticky);
   }
 
   events() {
@@ -115,12 +115,12 @@ class Header {
   headerFixed() {
     if (!this.sticky) return false;
 
-    this.section.style.position = this.props.fixed;
+    this.block.style.position = this.props.fixed;
   }
 
   // getting height of header and set css variables
   headerHeight() {
-    let height = this.section.getBoundingClientRect().height,
+    let height = this.block.getBoundingClientRect().height,
         barHeight = 0,
         viewHeight = 0;
 
@@ -161,7 +161,7 @@ class Header {
 
     } else if (current < this.last - 10 && isScroll) { // up
       this.body.classList.remove(this.modifier.scroll);
-      this.setCssVar(this.cssVar.transform, 0)
+      this.setCssVar(this.cssVar.transform, 0);
     }
 
     this.last = current;
@@ -194,7 +194,7 @@ class Header {
     if (window.innerWidth >= this.mediaQuery) {
       this.closeMenu();
 
-      if (this.menuOpener) this.menuOpener.checked = false
+      if (this.menuOpener) this.menuOpener.checked = false;
     }
   }
 
@@ -202,7 +202,7 @@ class Header {
   closeMobileDrop() {
     if (!this.checkboxes?.length) return false;
 
-    this.checkboxes.forEach(checkbox => checkbox.checked = false)
+    this.checkboxes.forEach(checkbox => checkbox.checked = false);
   }
 
   // closing modals of search and mobile menu on click on header icons
@@ -272,22 +272,18 @@ class Header {
 
     if (!this.notSticky) return false;
 
-    this.section.classList.add(this.classes.opened);
-    this.section.style.position = this.props.fixed;
+    this.block.classList.add(this.classes.opened);
+    this.block.style.position = this.props.fixed;
   }
 
   removeOverflow() {
-    const classes = this.doc.classList;
-
-    classes.length > 1
-      ? this.doc.classList.remove(this.modifier.overflow)
-      : this.doc.removeAttribute(this.attr.class)
+    this.doc.classList.remove(this.modifier.overflow);
 
     if (!this.notSticky) return false;
 
-    this.section.classList.remove(this.classes.opened);
+    this.block.classList.remove(this.classes.opened);
     window.scrollTo(0, 0);
-    this.section.removeAttribute(this.attr.style);
+    this.block.removeAttribute(this.attr.style);
   }
 
   // convert links to allow users to send emails and call phone numbers

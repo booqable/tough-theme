@@ -13,7 +13,7 @@ class Carousel {
       item: ".carousel__item",
       timer: ".carousel__timer",
       count: ".carousel__count"
-    }
+    };
 
     this.classes = {
       show: "show",
@@ -29,18 +29,18 @@ class Carousel {
       light: "overlay-light",
       showDark: "show-overlay-dark",
       showLight: "show-overlay-light"
-    }
+    };
 
     this.modifiers = {
       active: "active",
       hidden: "hidden",
       show: "show",
       hide: "hide"
-    }
+    };
 
     this.data = {
       index: "data-index"
-    }
+    };
 
     this.event = {
       click: "click",
@@ -50,7 +50,7 @@ class Carousel {
       end: "touchend",
       enter: "mouseenter",
       leave: "mouseleave"
-    }
+    };
 
     this.interval;
     this.touchstart = null;
@@ -104,7 +104,7 @@ class Carousel {
   }
 
   startTimer() {
-    this.timers.forEach(timer => this.autoRotate(timer.value * 1000))
+    this.timers.forEach(timer => this.autoRotate(timer.value * 1000));
   }
 
   // autorotate slides of carousel
@@ -154,7 +154,7 @@ class Carousel {
 
     element = isDot || isPrev || isNext
       ? this.getPrevSibling(target?.parentElement, this.selector.wrapper)
-      : this.wrap;
+      : this.wrap
 
     left = element.scrollLeft;
     scrollX = element.scrollWidth;
@@ -172,7 +172,7 @@ class Carousel {
           scrollToVal: valueLeft,
           size: width,
           trigger: prev
-        }
+        };
 
         valueLeft = this.slideEfect(event, options);
 
@@ -181,7 +181,7 @@ class Carousel {
           items: children,
           index: 0,
           last: this.items.length
-        }
+        };
 
         this.fadeEffect(event, options);
       }
@@ -196,7 +196,7 @@ class Carousel {
           scrollToVal: valueLeft,
           size: width,
           trigger: next
-        }
+        };
 
         valueLeft = this.slideEfect(event, options);
 
@@ -207,7 +207,7 @@ class Carousel {
           last: 1,
           nextNumber: 1,
           nextIndex: 2
-        }
+        };
 
         this.fadeEffect(event, options);
       }
@@ -256,7 +256,7 @@ class Carousel {
 
     this.pagination(event, i);
 
-    return scrollToVal
+    return scrollToVal;
   }
 
   // search new index for active slide on Fade carousel mode
@@ -392,8 +392,8 @@ class Carousel {
       if (left >= 0 && left <= scroll - client) {
         this.infinite = false;
 
-        if (leftSwipe) this.trigger(next, this.event.click)
-        if (rightSwipe) this.trigger(prev, this.event.click)
+        if (leftSwipe) this.trigger(next, this.event.click);
+        if (rightSwipe) this.trigger(prev, this.event.click);
 
         this.infinite = true;
       }
@@ -416,10 +416,10 @@ class Carousel {
     if (!this.isWheeling) {
       this.isWheeling = true;
 
-      if (delta === -1 && index > 1) index = index - 1
-      if (delta === 1 && index < dots.length) index = index + 1
+      if (delta === -1 && index > 1) index = index - 1;
+      if (delta === 1 && index < dots.length) index = index + 1;
 
-      this.pagination(undefined, index)
+      this.pagination(undefined, index);
     }
 
     clearTimeout(this.wheelTimeout);
@@ -432,7 +432,7 @@ class Carousel {
     let index = 1,
         dots = [...this.dots];
 
-    dots = dots.filter(dot => !dot.classList.contains(this.modifiers.hidden))
+    dots = dots.filter(dot => !dot.classList.contains(this.modifiers.hidden));
 
     dots.forEach(dot => {
       if (dot.classList.contains(this.modifiers.active))
@@ -500,7 +500,7 @@ class Carousel {
       const event =
         typeof eventType === 'string'
           ? new Event(eventType, {bubbles: true})
-          : eventType;
+          : eventType
       element.dispatchEvent(event);
     }
   }

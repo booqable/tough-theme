@@ -105,6 +105,8 @@
         "disabled": null
       }
     },
+    "element_design": "modern",
+    "background_style": "cubes",
     "background": "#FFFFFF",
     "background_2": "#0B1A26",
     "background_3": "#F4B841",
@@ -130,6 +132,7 @@
     "heading_font": "barlow",
     "body_font": "barlow",
     "tagline_font": "barlow",
+    "tagline_size": 14,
     "image_placeholder": "booqable://assets/image-tough-placeholder.png"
   },
   "variations": {
@@ -239,6 +242,8 @@
           "disabled": null
         }
       },
+      "element_design": "modern",
+      "background_style": "cubes",
       "background": "#FFFFFF",
       "background_2": "#0B1A26",
       "background_3": "#F4B841",
@@ -264,6 +269,7 @@
       "heading_font": "barlow",
       "body_font": "barlow",
       "tagline_font": "barlow",
+      "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-tough-placeholder.png"
     },
     "romantic": {
@@ -372,6 +378,8 @@
           "disabled": null
         }
       },
+      "element_design": "classic",
+      "background_style": "floral",
       "background": "#FFFFFF",
       "background_2": "#E3DAD0",
       "background_3": "#BA975D",
@@ -397,6 +405,7 @@
       "heading_font": "bona-nova",
       "body_font": "poppins",
       "tagline_font": "dancing-script",
+      "tagline_size": 47,
       "image_placeholder": "booqable://assets/image-romantic-placeholder.jpg"
     },
     "fashion": {
@@ -505,6 +514,8 @@
           "disabled": null
         }
       },
+      "element_design": "classic",
+      "background_style": "none",
       "background": "#FFFFFF",
       "background_2": "#F4F2F2",
       "background_3": "#BBBBBB",
@@ -530,6 +541,7 @@
       "heading_font": "poppins",
       "body_font": "poppins",
       "tagline_font": "roboto",
+      "tagline_size": 47,
       "image_placeholder": "booqable://assets/image-fashion-placeholder.jpg"
     }
   }

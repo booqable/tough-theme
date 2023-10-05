@@ -65,8 +65,7 @@
   width: 100%;
 }
 
-.contact-form__background,
-.contact-form__background-image-wrapper {
+.contact-form__background {
   position: absolute;
   top: 0;
   left: 0;
@@ -92,7 +91,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  transform: var(--overlay-direction, 0);
+  transform: var(--overlay-rotate);
 }
 
 .contact-form__background:before {
@@ -101,17 +100,18 @@
   top: 0;
   bottom: 0;
   width: 9999px;
-  left: var(--left-overlay);
-  right: var(--right-overlay);
+  left: var(--overlay-left);
+  right: var(--overlay-right);
   z-index: 1;
 }
 
-.contact-form__background-image-wrapper img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  opacity: 0.3;
+.contact-form__background-floral svg {
+  position: absolute;
+  left: var(--bg-left, 30px);
+  right: var(--bg-right, auto);
+  bottom: 0;
+  opacity: 0.2;
+  max-height: 100%;
 }
 
 .palette-one.contact-form__wrapper {
@@ -131,6 +131,7 @@
   color: var(--color-primary, #0B1A26);
 }
 
+.palette-one .contact-form__background g,
 .palette-one .contact-form__background path {
   fill: var(--color-primary, #0B1A26);
 }
@@ -140,7 +141,7 @@
 }
 
 .palette-one .contact-form__background:before {
-  background: linear-gradient(to var(--direction-overlay), var(--background-primary-00, #FFFFFF00) 0%, var(--background-primary-10, #FFFFFF1A) 20%, var(--background-primary-45, #FFFFFF73) 40%, var(--background-primary, #FFFFFF) 100%);
+  background: linear-gradient(to var(--overlay-direction), var(--background-primary-00, #FFFFFF00) 0%, var(--background-primary-10, #FFFFFF1A) 20%, var(--background-primary-45, #FFFFFF73) 40%, var(--background-primary, #FFFFFF) 100%);
 }
 
 .palette-two.contact-form__wrapper {
@@ -160,6 +161,7 @@
   color: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-two .contact-form__background g,
 .palette-two .contact-form__background path {
   fill: var(--color-primary-2, #FFFFFF);
 }
@@ -169,7 +171,7 @@
 }
 
 .palette-two .contact-form__background:before {
-  background: linear-gradient(to var(--direction-overlay), var(--background-primary-2-00, #0B1A2600) 0%, var(--background-primary-2-10, #0B1A261A) 20%, var(--background-primary-2-45, #0B1A2673) 40%, var(--background-primary-2, #0B1A26) 100%);
+  background: linear-gradient(to var(--overlay-direction), var(--background-primary-2-00, #0B1A2600) 0%, var(--background-primary-2-10, #0B1A261A) 20%, var(--background-primary-2-45, #0B1A2673) 40%, var(--background-primary-2, #0B1A26) 100%);
 }
 
 @media (min-width: 810px) {
@@ -195,7 +197,8 @@
 
   .contact-form__content {
     justify-content: var(--align-items, flex-start);
-    padding: 0 0 var(--padding-bottom, 0);
+    padding: 0 0 var(--padding-bottom, 0px);
+    order : var(--order, 1);
   }
 
   .contact-form__holder {
@@ -214,12 +217,17 @@
     content: "";
     position: absolute;
     top: 30px;
-    left: var(--left, 0);
-    right: var(--right, 0);
+    left: var(--left, 0px);
+    right: var(--right, 0px);
     width: 100%;
     height: 100%;
     border: 2px solid transparent;
     z-index: -1;
+  }
+
+  .contact-form__wrapper--bg-reverse .contact-form__background-floral svg {
+    left: var(--bg-right, auto);
+    right: var(--bg-left, 30px);
   }
 
   .palette-one .contact-form__holder.no-image:after,
@@ -229,6 +237,24 @@
 
   .palette-two .contact-form__holder.no-image:after,
   .palette-two .contact-form__image-wrapper:after {
+    border-color: var(--background-accent-2, #F4B841);
+  }
+
+  .classic-design .contact-form__holder.no-image:after,
+  .classic-design .contact-form__image-wrapper:after {
+    display: none;
+  }
+
+  .classic-design .contact-form__image {
+    padding: 8px;
+    border: 1px solid transparent;
+  }
+
+  .classic-design .palette-one .contact-form__image {
+    border-color: var(--background-accent, #F4B841);
+  }
+
+  .classic-design .palette-two .contact-form__image {
     border-color: var(--background-accent-2, #F4B841);
   }
 }

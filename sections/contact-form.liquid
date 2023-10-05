@@ -6,7 +6,6 @@
 {%- assign button_label          = section.settings.button_label -%}
 {%- assign success_message       = section.settings.success_message -%}
 {%- assign error_message         = section.settings.error_message -%}
-{%- assign bg_image              = section.settings.bg_image -%}
 {%- assign title                 = section.settings.title -%}
 {%- assign description           = section.settings.description -%}
 {%- assign placement             = section.settings.placement -%}
@@ -17,6 +16,7 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 {%- assign id                    = section.key -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
+{%- assign background_style      = settings.background_style -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -67,25 +67,31 @@
   {%- case placement -%}
     {%- when 'left' -%}
       --order: 1;
-      --overlay-direction: rotate(0deg);
       --left: 48px;
       --right: auto;
-      --left-overlay: auto;
-      --right-overlay: calc(100% - 100px);
-      --direction-overlay: right;
+      --overlay-rotate: rotate(0deg);
+      --overlay-left: auto;
+      --overlay-right: calc(100% - 100px);
+      --overlay-direction: right;
+      --bg-left: 30px;
+      --bg-right: auto;
     {%- when 'right' -%}
       --order: -1;
-      --overlay-direction: rotate(180deg);
       --left: auto;
       --right: 48px;
-      --left-overlay: calc(100% - 100px);
-      --right-overlay: auto;
-      --direction-overlay: left;
+      --overlay-rotate: rotate(180deg);
+      --overlay-left: calc(100% - 100px);
+      --overlay-right: auto;
+      --overlay-direction: left;
+      --bg-left: auto;
+      --bg-right: 30px;
   {%- endcase -%}
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
 {% if section.blocks.size > 0 %}
+  {%- assign text_block = false -%}
+
   {% capture children %}
     {% for block in section.blocks %}
       {%- assign image           = block.settings.image -%}
@@ -167,6 +173,8 @@
           </div>
 
         {% when "text" %}
+          {%- assign text_block = true -%}
+
           {%- if heading != blank or text != blank or label != blank and url != blank -%}
             <div
               class="contact-form__content"
@@ -191,7 +199,7 @@
   {% endcapture %}
 {%- endif -%}
 
-<div class="contact-form__wrapper form-{{- section.key -}}{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} contact-form__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} contact-form__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
+<div class="contact-form__wrapper form-{{- section.key -}}{% if text_block %} contact-form__wrapper--bg-reverse{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if padding_top != blank or padding_top_mobile != blank %} contact-form__wrapper--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} contact-form__wrapper--padding-bottom{%- endif -%}" style="{{- variables | escape -}}">
   <div class="contact-form__container container">
     <div class="contact-form__inner{% if section.blocks.size > 0 %} contact-form__inner--grid{%- endif -%}">
       <div class="contact-form__form">
@@ -202,20 +210,18 @@
       {%- endif -%}
     </div>
   </div>
-  <div class="contact-form__background">
-    {%- if bg_image.url != blank -%}
-      <div class="contact-form__background-image-wrapper">
-        {%- render 'image',
-          image: bg_image,
-          loading: 'lazy',
-          class: 'contact-form__background-image',
-          size: 'm'
-        -%}
+
+  {%- unless background_style == 'none' -%}
+    {%- if background_style == 'cubes' -%}
+      <div class="contact-form__background">
+        {%- render 'image-background-cubes' -%}
       </div>
-    {%- else -%}
-      {%- render 'image-background-web' -%}
+    {%- elsif background_style == 'floral' -%}
+      <div class="contact-form__background-floral">
+        {%- render 'image-background-flover-2' -%}
+      </div>
     {%- endif -%}
-  </div>
+  {%- endunless -%}
 </div>
 
 {% schema %}
@@ -240,11 +246,6 @@
         "id": "description",
         "label": "Description",
         "default": "Tell something about your company, describe what you do and what makes you unique."
-      },
-      {
-        "type": "image_picker",
-        "id": "bg_image",
-        "label": "Background image"
       },
       {
         "type": "select",

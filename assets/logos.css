@@ -101,7 +101,7 @@
 
   .logos__col + .logos__logos {
     justify-content: var(--justify-content, flex-start);
-    padding: var(--padding, 0);
+    padding: var(--padding, 0px);
   }
 
   .logos__title {

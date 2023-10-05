@@ -11,7 +11,6 @@
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "show_bg": true,
         "show_datepicker": true
       },
       "disabled": null
