@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: calc(50% - 8px);
+  height: calc(var(--datepicker-height, 80px) / 2);
   z-index: -1;
   background: var(--background-primary, #FFFFFF);
 }
@@ -59,7 +59,7 @@
 }
 
 .hero__vision--indent {
-  bottom: 35px;
+  bottom: calc(var(--datepicker-height, 80px) / 2 - 5px);
 }
 
 .hero__vision-wrapper {

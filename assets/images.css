@@ -18,7 +18,7 @@
 }
 
 .images__container--padding-bottom {
-  padding-bottom: var(--padding-bottom-mobile, 40px);
+  padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--datepicker-block-height, 0px));
 }
 
 .images__text-area {
@@ -149,6 +149,10 @@
    linear-gradient(0deg, var(--color-overlay-45, #FFFFFF73), var(--color-overlay-45, #FFFFFF73));
 }
 
+.palette-one .images__datepicker-overlay {
+  background: var(--background-primary, #FFFFFF);
+}
+
 .palette-two .overlay-dark .images__title,
 .palette-two .overlay-dark .images__description {
   color: var(--color-overlay-2, #FFFFFF);
@@ -191,18 +195,42 @@
    linear-gradient(0deg, var(--color-overlay-2-45, #FFFFFF73), var(--color-overlay-2-45, #FFFFFF73));
 }
 
+.palette-two .images__datepicker-overlay {
+  background: var(--background-primary-2, #0B1A26);
+}
+
 .images__wrapper-with-datepicker {
   flex-direction: column;
 }
 
 .images__wrapper-with-datepicker .images__vision {
-  bottom: 35px;
+  bottom: calc(var(--datepicker-height, 80px) / 2 - 5px);
 }
+
+.images__wrapper-with-datepicker .images__datepicker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* .images__wrapper-with-datepicker .carousel .images__vision {
+  bottom: calc(-1 * var(--datepicker-height, 80px));
+} */
 
 .images__datepicker-container {
   margin-top: -1px;
   padding-bottom: 1px;
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.images__datepicker-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--datepicker-height, 80px) / 2);
 }
 
 @media (min-width: 428px) {
@@ -223,19 +251,23 @@
 
 @media (min-width: 992px) {
   .images__container {
-    height: calc(var(--height, auto) - var(--header-height, 105px));
+    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--datepicker-block-height, 0px));
   }
 
   .images__container--padding-top {
-    padding-top: var(--padding-top, 80px);
+    padding-top: var(--padding-top, 60px);
   }
 
   .images__container--padding-bottom {
-    padding-bottom: var(--padding-bottom, 80px);
+    padding-bottom: calc(var(--padding-bottom, 60px) + var(--datepicker-block-height, 0px));
   }
 
   .images__vision-wrapper {
     display: block;
+  }
+
+  .images__vision-wrapper--mobile {
+    display: none;
   }
 
   .images__video {

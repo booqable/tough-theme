@@ -189,7 +189,7 @@
 }
 
 .carousel__edges .carousel__navigation {
-  bottom: 18px;
+  bottom: calc(18px + var(--datepicker-block-height, 0px));
   right: auto;
   left: 50%;
   width: 100%;
@@ -226,7 +226,7 @@
 }
 
 .carousel__edges .carousel__pagination {
-  bottom: 31px;
+  bottom: calc(31px + var(--datepicker-block-height, 0px));
   left: 50%;
   z-index: 2;
   max-width: calc(var(--max-width) - var(--horizontal-padding) * 3 - 104px * 2);
@@ -249,7 +249,7 @@
 .carousel__edges .carousel__counter {
   position: absolute;
   z-index: 0;
-  bottom: 28px;
+  bottom: calc(28px + var(--datepicker-block-height, 0px));
   right: 50%;
   width: 100%;
   max-width: var(--max-width);
@@ -442,7 +442,7 @@
   }
 
   .carousel__edges .carousel__navigation {
-    bottom: 33px;
+    bottom: calc(33px + var(--datepicker-block-height, 0px));
   }
 
   .carousel__edges .carousel__dot {
@@ -460,7 +460,7 @@
   }
 
   .carousel__edges .carousel__counter {
-    bottom: 33px;
+    bottom: calc(33px + var(--datepicker-block-height, 0px));
   }
 
   .carousel__destroy .carousel__wrapper {

@@ -21,6 +21,7 @@
   {%- assign timer                 = section.settings.timer -%}
   {%- assign pause                 = section.settings.pause -%}
   {%- assign effect                = section.settings.effect -%}
+  {%- assign datepicker_title      = section.settings.datepicker_title -%}
   {%- assign show_datepicker       = section.settings.show_datepicker -%}
 
   {%- assign carousel = false -%}
@@ -107,7 +108,7 @@
 
   <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if show_datepicker %} images__wrapper-with-datepicker{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
-      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{%- endif -%}" aria-label="Gallery">
+      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker %} carousel-with-datepicker{%- endif -%}" aria-label="Gallery">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
         <div class="carousel__wrapper">
     {%- endif -%}
@@ -424,10 +425,23 @@
     {%- endif -%}
 
     {%- if show_datepicker -%}
-      <div class="images__datepicker-container container">
-        <div class="images__datepicker-inner date-picker__component">
-          {%- include 'date-picker' -%}
+      <div class="images__datepicker">
+        <div class="images__datepicker-container container">
+          {%- if datepicker_title != blank -%}
+            <h2 class="date-picker__title">
+              <span class="date-picker__icon">
+                {%- render 'icon-arrow-right-full' -%}
+              </span>
+              {{- datepicker_title -}}
+            </h2>
+          {%- endif -%}
+
+          <div class="images__datepicker-inner date-picker__component">
+            {%- include 'date-picker' -%}
+          </div>
         </div>
+
+        <div class="images__datepicker-overlay"></div>
       </div>
     {%- endif -%}
   </div>
@@ -660,10 +674,20 @@
         "default": "two"
       },
       {
+        "type": "header",
+        "content": "Date picker settings"
+      },
+      {
         "type": "checkbox",
         "id": "show_datepicker",
         "default": true,
         "label": "Show date picker"
+      },
+      {
+        "type": "text",
+        "id": "datepicker_title",
+        "label": "Title",
+        "default": "Check availability:"
       },
       {
         "type": "header",

@@ -453,32 +453,40 @@ class Carousel {
             isDark = item.classList.contains(this.classes.dark);
 
       const optionsLight = {
+        elements: { wrap: this.wrap },
         addClass: this.classes.showLight,
         oldClass: this.classes.showDark,
         newClass: this.classes.showLight
       }
 
       const optionsDark = {
+        elements: { wrap: this.wrap },
         addClass: this.classes.showDark,
         oldClass: this.classes.showLight,
         newClass: this.classes.showDark
       }
 
       if (itemIndex + 1 === index) {
-        if (isLight) this.setClass(this.wrap, optionsLight)
-        if (isDark) this.setClass(this.wrap, optionsDark)
+        if (isLight) this.setClass(optionsLight)
+        if (isDark) this.setClass(optionsDark)
       }
     })
   }
 
-  setClass(element, options) {
-    const {addClass, oldClass, newClass} = options,
-          isOld = element.classList.contains(oldClass),
-          isNew = element.classList.contains(newClass);
+  setClass(options) {
+    const {elements, addClass, oldClass, newClass} = options;
 
-    !isOld && !isNew
-      ? element.classList.add(addClass)
-      : element.classList.replace(oldClass, newClass)
+    let isOld, isNew;
+
+    Object.values(elements).forEach(element => {
+      isOld = element.classList.contains(oldClass),
+      isNew = element.classList.contains(newClass);
+
+      !isOld && !isNew
+        ? element.classList.add(addClass)
+        : element.classList.replace(oldClass, newClass)
+    })
+
   }
 
   scrollTo(options) {
