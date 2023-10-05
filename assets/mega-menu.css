@@ -133,7 +133,7 @@
   right: 0;
   bottom: 0;
   width: 0;
-  height: calc(100vh - var(--header-height, 73px) + var(--padding-bottom-mobile, 0) + var(--padding-top-mobile, 0) + 35px);
+  height: calc(100vh - var(--header-height, 73px) + var(--padding-bottom-mobile, 0px) + var(--padding-top-mobile, 0px) + 35px);
   max-height: var(--menu-max-height);
   margin: 0;
   grid-area: item-3;
@@ -387,20 +387,20 @@
 }
 
 .scrolled-down .header--sticky .menu {
-  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 1px);
+  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0px) - 1px);
 }
 
 .scrolled-down .header--sticky #mobile-menu-opener:checked ~ .menu {
-  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 1px);
-  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 1px);
+  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px) + 1px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px) + 1px);
 }
 
 .preview-bar__container ~ .header .menu {
-  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0) + 3px);
+  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0px) + 3px);
 }
 
 .preview-bar__container ~ .header .menu:not(.mobile-menu-top) .menu__dropdown {
-  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0) + 3px);
+  height: calc(100vh - var(--header-height, 73px) - var(--preview-height, 0px) + 3px);
 }
 
 .preview-bar__container ~ .header #mobile-menu-opener:checked ~ .menu {
@@ -417,16 +417,16 @@
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
-  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px) + 3px);
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky .menu {
-  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
-  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 3px);
+  height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px) + 3px);
+  top: calc(var(--header-height, 73px) - var(--top-bar-height, 0px) - 3px);
 }
 
 .scrolled-down .preview-bar__container ~ .header--sticky #mobile-menu-opener:checked ~ .menu {
-  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0) + 3px);
+  max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px) + 3px);
 }
 
 .palette-one .menu__opener:before,
@@ -622,7 +622,7 @@
   }
 
   .menu--position .menu__list {
-    margin: calc(-1 * var(--padding-bottom, 0)) 0 calc(-1 * var(--padding-bottom, 0));
+    margin: calc(-1 * var(--padding-bottom, 0px)) 0 calc(-1 * var(--padding-bottom, 0px));
   }
 
   .menu__link {
@@ -830,7 +830,7 @@
   }
 
   .header-menu-bottom .menu__list {
-    margin: 0 0 calc(-1 * var(--padding-bottom, 0));
+    margin: 0 0 calc(-1 * var(--padding-bottom, 0px));
   }
 
   .header-menu-bottom .menu__item {
@@ -840,12 +840,12 @@
 
   .header-menu-bottom .menu__item > .menu__dropdown-opener {
     margin-top: 12px;
-    margin-bottom: var(--padding-bottom, 0);
+    margin-bottom: var(--padding-bottom, 0px);
   }
 
   .header-menu-bottom .menu__item > .menu__link {
     padding-top: 12px;
-    padding-bottom: var(--padding-bottom, 0);
+    padding-bottom: var(--padding-bottom, 0px);
   }
 
   .header-menu-bottom .menu__dropdown,
@@ -1092,17 +1092,17 @@
   .scrolled-down .header--sticky .menu-wide .menu__item.active > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__item:hover > .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__item:hover > .menu__dropdown {
-    max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0));
+    max-height: calc(100vh - var(--header-height, 73px) + var(--top-bar-height, 0px));
   }
 
   .scrolled-down .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0));
+    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0px));
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide.mobile-menu-top .menu__dropdown,
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide .menu__dropdown {
-    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0) - 1px);
+    top: calc(var(--header-height, 73px) - var(--top-bar-height, 0px) - 1px);
   }
 
   .scrolled-down .header--sticky .header-menu-bottom .menu-wide {

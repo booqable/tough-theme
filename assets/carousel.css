@@ -185,7 +185,7 @@
 }
 
 .carousel__edges .images__text-area {
-  margin-bottom: var(--margin-bottom-mobile, 0);
+  margin-bottom: var(--margin-bottom-mobile, 0px);
 }
 
 .carousel__edges .carousel__navigation {
@@ -438,7 +438,7 @@
   }
 
   .carousel__edges .images__text-area {
-    margin-bottom: var(--margin-bottom, 0);
+    margin-bottom: var(--margin-bottom, 0px);
   }
 
   .carousel__edges .carousel__navigation {

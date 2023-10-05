@@ -132,6 +132,7 @@
     "heading_font": "barlow",
     "body_font": "barlow",
     "tagline_font": "barlow",
+    "tagline_size": 14,
     "image_placeholder": "booqable://assets/image-tough-placeholder.png"
   },
   "variations": {

@@ -6,11 +6,11 @@ class Tabs {
       tab: ".tabs__trigger",
       content: ".tabs__content",
       opener: "#tabs-select-opener"
-    }
+    };
 
     this.classes = {
       tab: "tabs__trigger"
-    }
+    };
 
     this.modifiers = {
       active: "active"
@@ -56,7 +56,7 @@ class Tabs {
       attr: this.data.trigger,
       val: attr,
       mod: this.modifiers.active
-    }
+    };
 
     this.tabsClass(options);
 
@@ -67,7 +67,7 @@ class Tabs {
       attr: this.data.content,
       val: attr,
       mod: this.modifiers.active
-    }
+    };
 
     this.tabsClass(options);
   }
@@ -108,5 +108,5 @@ const initTabs = (el = ".tabs") => {
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initTabs()
+  if (e.target.readyState === "complete") initTabs();
 });

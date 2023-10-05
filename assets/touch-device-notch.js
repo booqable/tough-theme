@@ -1,6 +1,6 @@
 class TouchDevice {
-  constructor(container) {
-    this.container = container;
+  constructor(block) {
+    this.block = block;
 
     this.modifier = {
       touch: "touch"
@@ -24,9 +24,7 @@ class TouchDevice {
   }
 
   init() {
-    if (!this.container) {
-      return false;
-    }
+    if (!this.block) return false;
 
     this.elements();
     this.events();
