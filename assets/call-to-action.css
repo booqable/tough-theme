@@ -45,7 +45,6 @@
   margin-right: 8px;
 }
 
-.cta__image-floral-wrapper,
 .cta__image-wrapper {
   position: absolute;
   top: 0;
@@ -79,34 +78,6 @@
   top: 0;
   bottom: -120px;
   right: 0;
-}
-
-.cta__image-floral-wrapper {
-  display: flex;
-}
-
-.cta__image-floral-wrapper-col {
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
-.cta__image-floral-wrapper-col:last-child {
-  display: none;
-}
-
-.cta__image-floral-wrapper-col svg {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  opacity: 0.2;
-  max-height: 100%;
-}
-
-.cta__image-floral-wrapper-col:last-child svg {
-  right: 0;
-  left: auto;
-  max-height: none;
 }
 
 .palette-one.cta__wrapper {
@@ -147,11 +118,6 @@
 
 .palette-one .cta__image-wrapper path {
   fill: var(--color-primary, #0B1A26);
-}
-
-.palette-one .cta__image-floral-wrapper g,
-.palette-one .cta__image-floral-wrapper path {
-  fill: var(--color-accent, #0B1A26);
 }
 
 .palette-one .cta__image-wrapper:after {
@@ -198,19 +164,52 @@
   fill: var(--color-primary-2, #FFFFFF);
 }
 
-.palette-two .cta__image-floral-wrapper g,
-.palette-two .cta__image-floral-wrapper path {
-  fill: var(--color-accent-2, #0B1A26);
-}
-
 .palette-two .cta__image-wrapper:after {
   background: linear-gradient(180.44deg, var(--background-accent-2, #F4B841) 51.3%, var(--background-accent-2-00, #F4B84100) 81.06%);
 }
 
-@media (min-width: 768px) {
-  .cta__image-floral-wrapper-col:last-child {
-    display: block;
-  }
+.palette-three.cta__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
+.palette-three .cta__header-button.button--primary {
+  background: var(--background-accent-3, #0B1A26);
+  border-color: var(--background-accent-3, #0B1A26);
+  color: var(--color-accent-3, #FFFFFF);
+}
+
+.palette-three .cta__header-button.button--primary:hover {
+  background: var(--background-accent-3, #0B1A26);
+  border-color: var(--background-accent-3, #0B1A26);
+  opacity: 0.85;
+}
+
+.palette-three .cta__header-button.button--primary:active {
+  background: var(--background-accent-3, #0B1A26);
+  border-color: var(--background-accent-3, #0B1A26);
+  opacity: 0.8;
+}
+
+.palette-three .cta__header-button.button--outlined {
+  color: var(--color-accent-3, #FFFFFF);
+  border-color: var(--background-accent-3, #0B1A26);
+}
+
+.palette-three .cta__header-button.button--outlined:hover {
+  background: var(--background-accent-3-hover, #0B1A2652);
+}
+
+.palette-three .cta__header-button.button--outlined:active {
+  background: var(--background-accent-3-active, #0B1A268F);
+}
+
+.palette-three .cta__image-wrapper path {
+  fill: var(--color-secondary-3, #FFFFFF);
+}
+
+.palette-three .cta__image-wrapper:after {
+  background: linear-gradient(180.44deg, var(--background-primary-3, #F4B841) 51.3%, var(--background-primary-3-00, #F4B84100) 81.06%);
 }
 
 @media (min-width: 810px) {
