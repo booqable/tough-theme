@@ -151,7 +151,7 @@
 
 @media (min-width: 768px) {
   .text-image__spacer {
-    height: var(--height, 0);
+    height: var(--height, 0px);
   }
 
   .text-image__columns {

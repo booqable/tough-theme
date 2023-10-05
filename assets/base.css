@@ -564,7 +564,7 @@ img {
 }
 
 .title__wrapper--padding-bottom {
-  padding-bottom: var(--padding-bottom-mobile, 0);
+  padding-bottom: var(--padding-bottom-mobile, 0px);
 }
 
 .title__title {
@@ -648,7 +648,7 @@ img {
   }
 
   .title__wrapper--padding-bottom {
-    padding-bottom: var(--padding-bottom, 0);
+    padding-bottom: var(--padding-bottom, 0px);
   }
 
   .title__col {

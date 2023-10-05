@@ -1,6 +1,6 @@
 class Main {
-  constructor(container) {
-    this.container = container;
+  constructor(block) {
+    this.block = block;
 
     this.selector = {
       datePicker: ".date-picker__component",
@@ -48,7 +48,7 @@ class Main {
   }
 
   init() {
-    if (!this.container) return false;
+    if (!this.block) return false;
 
     this.elements();
     this.events();
@@ -91,17 +91,17 @@ class Main {
 
   // adding class while resizing window
   setResizeClass() {
-    this.container.classList.add(this.modifier.resize);
+    this.block.classList.add(this.modifier.resize);
     clearTimeout(this.timer);
 
     this.timer = setTimeout(() => {
-      this.container.classList.remove(this.modifier.resize);
+      this.block.classList.remove(this.modifier.resize);
     }, this.time);
   }
 
   // adding class after loading content
   setLoadedClass() {
-    this.container.classList.add(this.modifier.loaded);
+    this.block.classList.add(this.modifier.loaded);
   }
 
   // change focus positioning of image

@@ -294,8 +294,8 @@
   }
 
   .images__description {
-    padding-left: var(--padding-left, 0);
-    padding-right: var(--padding-right, 0);
+    padding-left: var(--padding-left, 0px);
+    padding-right: var(--padding-right, 0px);
   }
 
   .images__wrapper-full-height .images__video {

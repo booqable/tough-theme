@@ -1,4 +1,4 @@
-class Media {
+class Banner {
   constructor(block) {
     this.block = block;
 
@@ -27,31 +27,27 @@ class Media {
   videoInit() {
     if (!this.nodes.length) return false;
 
-    this.nodes.forEach(item => {
-      const el = item.querySelector(this.selector.video),
-            id = el?.value;
+    this.nodes.forEach(node => {
+      const video = node.querySelector(this.selector.video),
+            videoId = video?.value;
 
-      if (!id) return false;
+      if (!videoId) return false;
 
-      const frame = item.querySelector(this.selector.player).id;
+      const player = node.querySelector(this.selector.player).id;
 
-      this.video(id, frame);
+      this.video(videoId, player);
     })
   }
 
   video(video, player) {
     // API call this function when the video player is ready.
-    const onPlayerReady = (e) => {
-      e.target.playVideo();
-    }
+    const onPlayerReady = (e) => e.target.playVideo();
 
     // API call this function when the video player is changing state.
     // It helps resolve an issue of embeddable youtube video into the site
     // when it's not autoplayable after screen locked and unlocked
     const onPlayerStateChange = (e) => {
-      if (e.target.getPlayerState() !== 3) {
-        e.target.playVideo();
-      }
+      if (e.target.getPlayerState() !== 3) e.target.playVideo();
     }
 
     // Create an <iframe> (and YouTube player) after the API code downloads.
@@ -84,11 +80,11 @@ const initBanner = (el = ".images") => {
   if (!nodes.length) return false;
 
   nodes.forEach(node => {
-    const init = new Media(node);
+    const init = new Banner(node);
     init.init();
   });
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initBanner()
+  if (e.target.readyState === "complete") initBanner();
 });

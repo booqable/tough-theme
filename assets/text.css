@@ -3,7 +3,7 @@
 }
 
 .text__wrapper--padding-bottom {
-  padding-bottom: var(--padding-bottom-mobile, 0);
+  padding-bottom: var(--padding-bottom-mobile, 0px);
 }
 
 .text__wrapper {
@@ -34,6 +34,6 @@
   }
 
   .text__wrapper--padding-bottom {
-    padding-bottom: var(--padding-bottom, 0);
+    padding-bottom: var(--padding-bottom, 0px);
   }
 }

@@ -150,5 +150,5 @@ const initMap = (el = ".locations__wrapper") => {
 };
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initMap()
+  if (e.target.readyState === "complete") initMap();
 });

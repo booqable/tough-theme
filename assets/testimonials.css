@@ -46,7 +46,7 @@
 }
 
 .testimonials__image-wrapper {
-  padding-bottom: var(--padding-image, 0);
+  padding-bottom: var(--padding-image, 0px);
 }
 
 .testimonials__image {
