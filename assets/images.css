@@ -191,6 +191,20 @@
    linear-gradient(0deg, var(--color-overlay-2-45, #FFFFFF73), var(--color-overlay-2-45, #FFFFFF73));
 }
 
+.images__wrapper-with-datepicker {
+  flex-direction: column;
+}
+
+.images__wrapper-with-datepicker .images__vision {
+  bottom: 35px;
+}
+
+.images__datepicker-container {
+  margin-top: -1px;
+  padding-bottom: 1px;
+  width: 100%;
+}
+
 @media (min-width: 428px) {
   .images__container {
     min-height: 560px;
