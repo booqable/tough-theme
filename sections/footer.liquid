@@ -177,13 +177,22 @@
       {{- footer_menu -}}
 
     </div>
-
-    <div class="footer__bottom{% if bottom_text == blank and footer_bottom_menu == blank %} footer__bottom--copyright-hidden{%- endif -%}">
-      {%- unless bottom_text == blank and footer_bottom_menu == blank -%}
+    <div class="footer__bottom{% if bottom_text == blank and footer_bottom_menu == blank and show_powered_by == false %} footer__bottom--copyright-hidden{%- endif -%}">
+      {%- if bottom_text != blank or footer_bottom_menu != blank or show_powered_by -%}
         <div class="footer__copy">
-          {%- if bottom_text != blank -%}
+          {%- if bottom_text != blank or show_powered_by -%}
             <p>
-              {{ bottom_text }}
+              {%- if bottom_text != blank -%}
+                {{ bottom_text }}
+              {%- endif -%}
+
+              {%- if bottom_text != blank and show_powered_by -%}
+                &nbsp;|&nbsp;
+              {%- endif -%}
+
+              {%- if show_powered_by -%}
+                <a href="https://booqable.com/?source=Shop&campaign=Cart" target="_blank" title="Powered by Booqable Rental Software">Powered by Booqable</a>
+              {%- endif -%}
             </p>
           {%- endif -%}
 
@@ -191,7 +200,7 @@
             {{- footer_bottom_menu -}}
           {%- endif -%}
         </div>
-      {%- endunless -%}
+      {%- endif -%}
 
       {{- footer_icons -}}
 

@@ -83,6 +83,16 @@
   color: var(--color-accent-2, #0B1A26);
 }
 
+.palette-three.top-bar__wrapper {
+  color: var(--color-primary-3, #0B1A26);
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three.top-bar__wrapper .fa,
+.palette-three.top-bar__wrapper .far {
+  color: var(--color-primary-3, #0B1A26);
+}
+
 @media (min-width: 992px) {
   .top-bar__wrapper--padding-top {
     padding-top: var(--padding-top, 0);
