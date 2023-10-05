@@ -1,4 +1,4 @@
-{{ "cta.css" | asset_url | stylesheet_tag }}
+{{ "call-to-action.css" | asset_url | stylesheet_tag }}
 
 {%- assign title                 = section.settings.title -%}
 {%- assign description           = section.settings.description -%}
@@ -147,9 +147,13 @@
           {
             "value": "two",
             "label": "Color set 2"
+          },
+          {
+            "value": "three",
+            "label": "Color set 3"
           }
         ],
-        "default": "two"
+        "default": "three"
       },
       {
         "type": "header",

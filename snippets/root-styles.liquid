@@ -148,6 +148,47 @@
       --color-overlay-2-gray: {{- settings.overlay_color_2 | append: "59" -}};
     {%- endif -%}
 
+    {%- if settings.background_3 != blank -%}
+      --background-primary-3: {{- settings.background_3 -}};
+      --background-primary-3-00: {{- settings.background_3 | append: "00" -}};
+    {%- endif -%}
+
+    {%- if settings.primary_color_3 != blank -%}
+      --color-primary-3: {{- settings.primary_color_3 -}};
+      --color-primary-3-hover: {{- settings.primary_color_3 | append: "52" -}};
+      --color-primary-3-active: {{- settings.primary_color_3 | append: "8F" -}};
+    {%- endif -%}
+
+    {%- if settings.secondary_color_3 != blank -%}
+      --color-secondary-3: {{- settings.secondary_color_3 -}};
+    {%- endif -%}
+
+    {%- if settings.accent_background_3 != blank -%}
+      --background-accent-3: {{- settings.accent_background_3 -}};
+      --background-accent-3-hover: {{- settings.accent_background_3 | append: "BA" -}};
+      --background-accent-3-active: {{- settings.accent_background_3 | append: "A6" -}};
+    {%- else -%}
+      --background-accent-3: {{- branding_color -}};
+      --background-accent-3-hover: {{- branding_color | append: "BA" -}};
+      --background-accent-3-active: {{- branding_color | append: "A6" -}};
+    {%- endif -%}
+
+    {%- if settings.accent_color_3 != blank -%}
+      --color-accent-3: {{- settings.accent_color_3 -}};
+    {%- else -%}
+      --color-accent-3: {%- if settings.primary_color_3 != blank -%}{{- settings.primary_color_3 -}}{%- endif -%};
+    {%- endif -%}
+
+    {%- if settings.accent_outline_3 != blank -%}
+      --color-outline-3: {{- settings.accent_outline_3 -}};
+      --color-outline-3-hover: {{- settings.accent_outline_3 | append: "CC" -}};
+      --color-outline-3-active: {{- settings.accent_outline_3 | append: "BA" -}};
+    {%- else -%}
+      --color-outline-3: {{- branding_color -}};
+      --color-outline-3-hover: {{- branding_color | append: "CC" -}};
+      --color-outline-3-active: {{- branding_color | append: "BA" -}};
+    {%- endif -%}
+
     {%- if settings.heading_font != blank -%}
       --font-heading: {{ settings.heading_font.family }}, {{ settings.heading_font.fallback_families }};
     {%- endif -%}
