@@ -27,7 +27,7 @@
         "slide"
       ],
       "settings": {
-        "color_palette": "two",
+        "color_palette": "one",
         "effect": "slide",
         "height": "small",
         "padding_bottom": "medium",

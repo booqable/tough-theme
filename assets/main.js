@@ -3,8 +3,8 @@ class Main {
     this.block = block;
 
     this.selector = {
-      datePicker: ".date-picker__component",
-      datePickerParent: ".images__datepicker",
+      datePicker: ".datepicker__component",
+      datePickerBlock: ".datepicker",
       footer: "footer",
       search: "#search",
       image: ".focal-image",
@@ -58,28 +58,27 @@ class Main {
     this.footer = document.querySelector(this.selector.footer);
     this.search = document.querySelector(this.selector.search);
     this.datePicker = document.querySelector(this.selector.datePicker);
-    this.datePickerParent = document.querySelector(this.selector.datePickerParent);
+    this.datePickerBlock = document.querySelector(this.selector.datePickerBlock);
   }
 
   events() {
     this.setLoadedClass();
     this.focalImages();
+    this.getDatePickerHeight();
 
-    setTimeout(() => this.datepickerHeight(), 100);
-
-    window.addEventListener("resize", this.datepickerHeight.bind(this));
+    window.addEventListener("resize", this.getDatePickerHeight.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
     window.addEventListener("message", this.messagesListener.bind(this));
   }
 
-  datepickerHeight() {
+  getDatePickerHeight() {
     if (!this.datePicker) return false;
 
     const height = parseInt(this.datePicker.getBoundingClientRect().height);
-    const parentHeight = parseInt(this.datePickerParent.getBoundingClientRect().height);
+    const parentHeight = parseInt(this.datePickerBlock.getBoundingClientRect().height);
 
-    this.setCssVar(this.cssVar.height, height)
-    this.setCssVar(this.cssVar.parentHeight, parentHeight)
+    this.setCssVar(this.cssVar.height, height);
+    this.setCssVar(this.cssVar.parentHeight, parentHeight);
   }
 
   setCssVar(key, val) {

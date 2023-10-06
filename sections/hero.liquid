@@ -12,8 +12,6 @@
 {%- assign background_style      = settings.background_style -%}
 
 {%- if show_datepicker -%}
-  {{ "date-picker.css" | asset_url | stylesheet_tag }}
-
   {%- if color_palette == "one" -%}
     {%- assign background_accent = settings.accent_background -%}
   {%- elsif color_palette == "two" -%}
@@ -81,9 +79,9 @@
   </div>
 
   {%- if show_datepicker -%}
-    <div class="hero__container hero__container--bottom">
+    <div class="hero__datepicker datepicker">
       <div class="hero__container container">
-        <div class="hero__date-picker date-picker__component">
+        <div class="hero__datepicker-component datepicker__component">
           {%- include 'date-picker' -%}
         </div>
       </div>

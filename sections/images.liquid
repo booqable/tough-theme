@@ -33,8 +33,6 @@
   {%- endif -%}
 
   {%- if show_datepicker -%}
-    {{ "date-picker.css" | asset_url | stylesheet_tag }}
-
     {%- if color_palette == "one" -%}
       {%- assign background_accent = settings.accent_background -%}
     {%- elsif color_palette == "two" -%}
@@ -425,18 +423,18 @@
     {%- endif -%}
 
     {%- if show_datepicker -%}
-      <div class="images__datepicker">
+      <div class="images__datepicker datepicker">
         <div class="images__datepicker-container container">
           {%- if datepicker_title != blank -%}
-            <h2 class="date-picker__title">
-              <span class="date-picker__icon">
+            <h2 class="images__datepicker-title">
+              <span class="images__datepicker-icon">
                 {%- render 'icon-arrow-right-full' -%}
               </span>
               {{- datepicker_title -}}
             </h2>
           {%- endif -%}
 
-          <div class="images__datepicker-inner date-picker__component">
+          <div class="images__datepicker-component datepicker__component">
             {%- include 'date-picker' -%}
           </div>
         </div>

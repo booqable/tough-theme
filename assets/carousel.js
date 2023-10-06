@@ -12,7 +12,8 @@ class Carousel {
       wrapper: ".carousel__wrapper",
       item: ".carousel__item",
       timer: ".carousel__timer",
-      count: ".carousel__count"
+      count: ".carousel__count",
+      datePicker: ".datepicker"
     };
 
     this.classes = {
@@ -153,7 +154,7 @@ class Carousel {
     let element, left, scrollX, clientX, children, valueLeft = 0;
 
     element = isDot || isPrev || isNext
-      ? this.getPrevSibling(target?.parentElement, this.selector.wrapper)
+      ? this.getSiblingElement(target?.parentElement, this.selector.wrapper, "prev")
       : this.wrap
 
     left = element.scrollLeft;
@@ -448,37 +449,42 @@ class Carousel {
 
     if (!isEdge || !index || index > this.items.length) return false;
 
+    const elements = {
+      wrap: this.wrap,
+      datePicker: this.getSiblingElement(this.block, this.selector.datePicker, "next")
+    };
+
     this.items.forEach((item, itemIndex) => {
       const isLight = item.classList.contains(this.classes.light),
             isDark = item.classList.contains(this.classes.dark);
 
       const optionsLight = {
-        elements: { wrap: this.wrap },
         addClass: this.classes.showLight,
         oldClass: this.classes.showDark,
         newClass: this.classes.showLight
-      }
+      };
 
       const optionsDark = {
-        elements: { wrap: this.wrap },
         addClass: this.classes.showDark,
         oldClass: this.classes.showLight,
         newClass: this.classes.showDark
-      }
+      };
 
       if (itemIndex + 1 === index) {
-        if (isLight) this.setClass(optionsLight)
-        if (isDark) this.setClass(optionsDark)
+        if (isLight) this.setClass(elements, optionsLight);
+        if (isDark) this.setClass(elements, optionsDark);
       }
     })
   }
 
-  setClass(options) {
-    const {elements, addClass, oldClass, newClass} = options;
+  setClass(elements, options) {
+    const {addClass, oldClass, newClass} = options;
 
     let isOld, isNew;
 
     Object.values(elements).forEach(element => {
+      if (!element) return false;
+
       isOld = element.classList.contains(oldClass),
       isNew = element.classList.contains(newClass);
 
@@ -486,7 +492,6 @@ class Carousel {
         ? element.classList.add(addClass)
         : element.classList.replace(oldClass, newClass)
     })
-
   }
 
   scrollTo(options) {
@@ -513,14 +518,25 @@ class Carousel {
     }
   }
 
-  getPrevSibling(element, selector) {
-    if (element) {
-      let sibling = element.previousElementSibling;
+  getSiblingElement(element, selector, direction) {
+    if (!element) return false;
 
-      while (sibling) {
-        if (sibling.matches(selector)) return sibling;
-        sibling = sibling.previousElementSibling;
-      }
+    let sibling;
+
+    const setSibling = () => {
+      sibling = direction === this.event.prev
+                ? element.previousElementSibling
+                : direction === this.event.next
+                ? element.nextElementSibling
+                : false
+    }
+
+    setSibling();
+
+    while (sibling) {
+      if (sibling.matches(selector)) return sibling;
+
+      setSibling();
     }
   }
 
