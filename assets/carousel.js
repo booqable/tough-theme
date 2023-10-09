@@ -154,7 +154,7 @@ class Carousel {
     let element, left, scrollX, clientX, children, valueLeft = 0;
 
     element = isDot || isPrev || isNext
-      ? this.getSiblingElement(target?.parentElement, this.selector.wrapper, "prev")
+      ? this.getSiblingElement(target?.parentElement, this.selector.wrapper, this.event.prev)
       : this.wrap
 
     left = element.scrollLeft;
@@ -451,7 +451,7 @@ class Carousel {
 
     const elements = {
       wrap: this.wrap,
-      datePicker: this.getSiblingElement(this.block, this.selector.datePicker, "next")
+      datePicker: this.getSiblingElement(this.block, this.selector.datePicker, this.event.next)
     };
 
     this.items.forEach((item, itemIndex) => {
