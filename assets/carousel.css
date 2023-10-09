@@ -189,7 +189,7 @@
 }
 
 .carousel__edges .carousel__navigation {
-  bottom: calc(18px + var(--datepicker-block-height, 0px));
+  bottom: 18px;
   right: auto;
   left: 50%;
   width: 100%;
@@ -226,7 +226,7 @@
 }
 
 .carousel__edges .carousel__pagination {
-  bottom: calc(31px + var(--datepicker-block-height, 0px));
+  bottom: 31px;
   left: 50%;
   z-index: 2;
   max-width: calc(var(--max-width) - var(--horizontal-padding) * 3 - 104px * 2);
@@ -249,7 +249,7 @@
 .carousel__edges .carousel__counter {
   position: absolute;
   z-index: 0;
-  bottom: calc(28px + var(--datepicker-block-height, 0px));
+  bottom: 28px;
   right: 50%;
   width: 100%;
   max-width: var(--max-width);
@@ -277,6 +277,18 @@
 
 .carousel.carousel__edges.carousel__fade-effect .carousel__wrapper {
   overflow: hidden;
+}
+
+.carousel-with-datepicker.carousel__edges .carousel__navigation {
+  bottom: calc(18px + var(--datepicker-block-height, 0px));
+}
+
+.carousel-with-datepicker.carousel__edges .carousel__pagination {
+  bottom: calc(31px + var(--datepicker-block-height, 0px));
+}
+
+.carousel-with-datepicker.carousel__edges .carousel__counter {
+  bottom: calc(28px + var(--datepicker-block-height, 0px));
 }
 
 .palette-one .carousel__dot:after {
@@ -442,7 +454,7 @@
   }
 
   .carousel__edges .carousel__navigation {
-    bottom: calc(33px + var(--datepicker-block-height, 0px));
+    bottom: 33px;
   }
 
   .carousel__edges .carousel__dot {
@@ -460,7 +472,7 @@
   }
 
   .carousel__edges .carousel__counter {
-    bottom: calc(33px + var(--datepicker-block-height, 0px));
+    bottom: 33px;
   }
 
   .carousel__destroy .carousel__wrapper {
@@ -488,6 +500,14 @@
   .carousel__destroy .carousel__navigation,
   .carousel__destroy .carousel__pagination {
     display: none;
+  }
+
+  .carousel-with-datepicker.carousel__edges .carousel__navigation {
+    bottom: calc(33px + var(--datepicker-block-height, 0px));
+  }
+
+  .carousel-with-datepicker.carousel__edges .carousel__counter {
+    bottom: calc(33px + var(--datepicker-block-height, 0px));
   }
 }
 
