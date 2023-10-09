@@ -130,11 +130,11 @@
 }
 
 .images__wrapper-with-datepicker .images__container--padding-bottom {
-  padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--datepicker-block-height, 0px));
+  padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--datepicker-block-height, 70px));
 }
 
 .images__wrapper-with-datepicker .images__vision {
-  bottom: calc(var(--datepicker-height, 80px) / 2 - 5px);
+  bottom: calc(var(--datepicker-height, 70px) / 2 - 5px);
 }
 
 .images__datepicker {
@@ -385,11 +385,11 @@
   }
 
   .images__wrapper-with-datepicker .images__container {
-    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--datepicker-block-height, 0px));
+    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--datepicker-block-height, 70px) + var(--padding-bottom, 60px));
   }
 
   .images__wrapper-with-datepicker .images__container--padding-bottom {
-    padding-bottom: calc(var(--padding-bottom, 60px) + var(--datepicker-block-height, 0px));
+    padding-bottom: calc(var(--padding-bottom, 60px) + var(--datepicker-block-height, 70px));
   }
 }
 
