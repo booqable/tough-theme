@@ -471,22 +471,22 @@ class Carousel {
       };
 
       if (itemIndex + 1 === index) {
-        if (isLight) this.setClass(elements, optionsLight);
-        if (isDark) this.setClass(elements, optionsDark);
+        if (isLight) this.setClass(elements, optionsLight)
+        if (isDark) this.setClass(elements, optionsDark)
       }
     })
   }
 
   setClass(elements, options) {
-    const {addClass, oldClass, newClass} = options;
+    const { addClass, oldClass, newClass } = options
 
     let isOld, isNew;
 
     Object.values(elements).forEach(element => {
       if (!element) return false;
 
-      isOld = element.classList.contains(oldClass),
-      isNew = element.classList.contains(newClass);
+      isOld = element.classList.contains(oldClass)
+      isNew = element.classList.contains(newClass)
 
       !isOld && !isNew
         ? element.classList.add(addClass)
@@ -524,11 +524,11 @@ class Carousel {
     let sibling;
 
     const setSibling = () => {
-      sibling = direction === this.event.prev
-                ? element.previousElementSibling
-                : direction === this.event.next
-                ? element.nextElementSibling
-                : false
+      if (direction === this.event.prev) {
+        sibling = element.previousElementSibling
+      } else if (direction === this.event.next) {
+        sibling = element.nextElementSibling
+      }
     }
 
     setSibling();

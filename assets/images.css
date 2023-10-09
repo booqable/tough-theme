@@ -34,6 +34,10 @@
   font-size: var(--font-size-h2);
 }
 
+.images__title * {
+  font-family: var(--font-heading, sans-serif);
+}
+
 .images__description:not(:last-child) {
   padding: 0 0 38px;
 }
