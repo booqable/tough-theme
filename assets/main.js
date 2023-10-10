@@ -4,7 +4,7 @@ class Main {
 
     this.selector = {
       datePicker: "bq-date-picker",
-      datePickerBlock: ".datepicker",
+      datePickerBlock: ".date-picker",
       footer: "footer",
       search: "#search",
       image: ".focal-image",
@@ -37,8 +37,8 @@ class Main {
     };
 
     this.cssVar = {
-      datePickerHeight: '--datepicker-height',
-      datePickerBlockHeight: '--datepicker-block-height',
+      datePickerHeight: '--date-picker-height',
+      datePickerBlockHeight: '--date-picker-block-height',
     };
 
     this.time = 500;
@@ -85,7 +85,7 @@ class Main {
     document.documentElement.style.setProperty(
       `${key}`,
       `${val}px`
-    );
+    )
   }
 
   // adding class while resizing window
@@ -125,12 +125,12 @@ class Main {
         focus: {
           x: parseFloat(x) || 0,
           y: parseFloat(y) || 0,
-        },
+        }
       });
 
       image.style.opacity = 1;
-    });
-  };
+    })
+  }
 
   // scroll page to the focused element on the sidebar in the theme editor
   scrollToFocus(target) {
@@ -139,14 +139,14 @@ class Main {
     setTimeout(() => {
       target?.scrollIntoView({ behavior: this.props.behavior, block: this.props.block });
     }, this.timeScroll);
-  };
+  }
 
   // remove focus from element in the theme editor
   removeFocus() {
     const focuses = document.querySelectorAll(this.selector.focus);
 
     focuses?.forEach((node) => node.removeAttribute(this.data.focus));
-  };
+  }
 
   messagesListener({ type, data, isTrusted }) {
     if (type !== this.params.type) return false;
@@ -180,11 +180,11 @@ class Main {
           break;
       }
     }
-  };
+  }
 }
 
 const main = new Main(document.querySelector('body'));
 
 document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") main.init();
-});
+})

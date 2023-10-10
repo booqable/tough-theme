@@ -259,7 +259,7 @@ class Header {
 
           break;
       }
-    }
+    };
 
     this.menuDrops.forEach((item) => {
       item.addEventListener(this.event.mouseenter, event);
@@ -305,14 +305,14 @@ class Header {
         const match = href.match(phoneRegex) || href.match(emailRegex);
 
         if (match?.length) {
-          href = match[0].replace(keepOnly, '')
+          href = match[0].replace(keepOnly, '');
 
           if (href.match(phoneRegex)) href = `tel:${href.replaceAll(specChars, '')}`;
           if (href.match(emailRegex)) href = `mailto:${href}`;
 
           link.setAttribute(this.attr.href, href);
         }
-      });
+      })
     })
   }
 
@@ -372,4 +372,4 @@ const stickyHeader = new Header(document.querySelector('.header'));
 
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") stickyHeader.init();
-});
+})

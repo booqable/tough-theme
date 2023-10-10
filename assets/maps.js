@@ -107,7 +107,7 @@ class Map {
           layers: layers,
           interactions: interaction,
           view: view
-        }
+        };
 
         new ol.Map(options);
       }
@@ -118,18 +118,18 @@ class Map {
         div.innerHTML = `${address} - ${this.addressErrorMessage}`;
         this.block.parentElement.classList.add(this.classes.noImage);
         return map.appendChild(div);
-      }
+      };
 
       getData().then(data => {
         data.length ? (renderMap(data), this.setUrl(data)) : errorMessage()
       });
-    });
+    })
   }
 
   setUrl(data) {
     if (!this.links.length) return false;
 
-    const link = `https://www.openstreetmap.org/?mlat=${data[0].lat}&amp;mlon=${data[0].lon}#map=${this.zoom}/${data[0].lat}/${data[0].lon}`
+    const link = `https://www.openstreetmap.org/?mlat=${data[0].lat}&amp;mlon=${data[0].lon}#map=${this.zoom}/${data[0].lat}/${data[0].lon}`;
     this.linkArr.push(link);
 
     this.links.forEach((link, i) => {
@@ -146,9 +146,9 @@ const initMap = (el = ".locations__wrapper") => {
   nodes.forEach(node => {
     const maps = new Map(node);
     maps.init();
-  });
-};
+  })
+}
 
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initMap();
-});
+})

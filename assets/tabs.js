@@ -73,7 +73,7 @@ class Tabs {
   }
 
   tabsClass(options) {
-    const {arr, attr, val, mod} = options;
+    const { arr, attr, val, mod } = options;
 
     arr?.forEach(el => {
       const id = el?.getAttribute(attr);
@@ -104,9 +104,9 @@ const initTabs = (el = ".tabs") => {
   nodes.forEach(node => {
     const tabs = new Tabs(node);
     tabs.init();
-  });
-};
+  })
+}
 
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initTabs();
-});
+})

@@ -279,16 +279,16 @@
   overflow: hidden;
 }
 
-.carousel-with-datepicker.carousel__edges .carousel__navigation {
-  bottom: calc(18px + var(--datepicker-block-height, 0px));
+.carousel-with-date-picker.carousel__edges .carousel__navigation {
+  bottom: calc(18px + var(--date-picker-block-height, 0px));
 }
 
-.carousel-with-datepicker.carousel__edges .carousel__pagination {
-  bottom: calc(31px + var(--datepicker-block-height, 0px));
+.carousel-with-date-picker.carousel__edges .carousel__pagination {
+  bottom: calc(31px + var(--date-picker-block-height, 0px));
 }
 
-.carousel-with-datepicker.carousel__edges .carousel__counter {
-  bottom: calc(28px + var(--datepicker-block-height, 0px));
+.carousel-with-date-picker.carousel__edges .carousel__counter {
+  bottom: calc(28px + var(--date-picker-block-height, 0px));
 }
 
 .palette-one .carousel__dot:after {
@@ -502,12 +502,12 @@
     display: none;
   }
 
-  .carousel-with-datepicker.carousel__edges .carousel__navigation {
-    bottom: calc(33px + var(--datepicker-block-height, 0px));
+  .carousel-with-date-picker.carousel__edges .carousel__navigation {
+    bottom: calc(33px + var(--date-picker-block-height, 0px));
   }
 
-  .carousel-with-datepicker.carousel__edges .carousel__counter {
-    bottom: calc(33px + var(--datepicker-block-height, 0px));
+  .carousel-with-date-picker.carousel__edges .carousel__counter {
+    bottom: calc(33px + var(--date-picker-block-height, 0px));
   }
 }
 

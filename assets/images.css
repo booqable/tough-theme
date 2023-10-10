@@ -129,26 +129,26 @@
   }
 }
 
-.images__wrapper-with-datepicker {
+.images__wrapper-with-date-picker {
   flex-direction: column;
 }
 
-.images__wrapper-with-datepicker .images__container--padding-bottom {
-  padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--datepicker-block-height, 70px));
+.images__wrapper-with-date-picker .images__container--padding-bottom {
+  padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--date-picker-block-height, 70px));
 }
 
-.images__wrapper-with-datepicker .images__vision {
-  bottom: calc(var(--datepicker-height, 70px) / 2 - 5px);
+.images__wrapper-with-date-picker .images__vision {
+  bottom: calc(var(--date-picker-height, 70px) / 2 - 5px);
 }
 
-.images__datepicker {
+.images__date-picker {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
 }
 
-.images__datepicker-container {
+.images__date-picker-container {
   margin-top: -1px;
   padding-bottom: 1px;
   width: 100%;
@@ -156,34 +156,34 @@
   z-index: 1;
 }
 
-.images__datepicker-icon {
+.images__date-picker-icon {
   margin: 0 8px 0 0;
 }
 
-.images__datepicker-icon svg {
+.images__date-picker-icon svg {
   transform: translateY(15%) rotate(90deg);
   animation: 1.5s infinite alternate move;
   width: 16px;
   height: 17px;
 }
 
-.images__datepicker-title {
+.images__date-picker-title {
   display: flex;
   font-size: 18px;
   font-weight: var(--font-weight-regular, 400);
 }
 
-.images__datepicker-component {
-  min-height: var(--datepicker-height, 70px);
+.images__date-picker-component {
+  min-height: var(--date-picker-height, 70px);
   margin: 0 1px;
 }
 
-.images__datepicker-overlay {
+.images__date-picker-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: calc(var(--datepicker-height, 80px) / 2);
+  height: calc(var(--date-picker-height, 80px) / 2);
 }
 
 .palette-one .overlay-dark .images__title,
@@ -228,27 +228,27 @@
    linear-gradient(0deg, var(--color-overlay-45, #FFFFFF73), var(--color-overlay-45, #FFFFFF73));
 }
 
-.palette-one .images__datepicker-overlay {
+.palette-one .images__date-picker-overlay {
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one > .overlay-light ~ .images__datepicker path,
-.palette-one .images__datepicker.show-overlay-light .images__datepicker-icon path {
+.palette-one > .overlay-light ~ .images__date-picker path,
+.palette-one .images__date-picker.show-overlay-light .images__date-picker-icon path {
   fill: var(--background-overlay, #0B1A26);
 }
 
-.palette-one > .overlay-light ~ .images__datepicker .images__datepicker-title,
-.palette-one .images__datepicker.show-overlay-light .images__datepicker-title {
+.palette-one > .overlay-light ~ .images__date-picker .images__date-picker-title,
+.palette-one .images__date-picker.show-overlay-light .images__date-picker-title {
   color: var(--background-overlay, #0B1A26);
 }
 
-.palette-one > .overlay-dark ~ .images__datepicker path,
-.palette-one .images__datepicker.show-overlay-dark .images__datepicker-icon path {
+.palette-one > .overlay-dark ~ .images__date-picker path,
+.palette-one .images__date-picker.show-overlay-dark .images__date-picker-icon path {
   fill: var(--color-overlay, #FFFFFF);
 }
 
-.palette-one > .overlay-dark ~ .images__datepicker .images__datepicker-title,
-.palette-one .images__datepicker.show-overlay-dark .images__datepicker-title {
+.palette-one > .overlay-dark ~ .images__date-picker .images__date-picker-title,
+.palette-one .images__date-picker.show-overlay-dark .images__date-picker-title {
   color: var(--color-overlay, #FFFFFF);
 }
 
@@ -294,27 +294,27 @@
    linear-gradient(0deg, var(--color-overlay-2-45, #FFFFFF73), var(--color-overlay-2-45, #FFFFFF73));
 }
 
-.palette-two .images__datepicker-overlay {
+.palette-two .images__date-picker-overlay {
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two > .overlay-light ~ .images__datepicker path,
-.palette-two .images__datepicker.show-overlay-light .images__datepicker-icon path {
+.palette-two > .overlay-light ~ .images__date-picker path,
+.palette-two .images__date-picker.show-overlay-light .images__date-picker-icon path {
   fill: var(--background-overlay-2, #0B1A26);
 }
 
-.palette-two > .overlay-light ~ .images__datepicker .images__datepicker-title,
-.palette-two .images__datepicker.show-overlay-light .images__datepicker-title {
+.palette-two > .overlay-light ~ .images__date-picker .images__date-picker-title,
+.palette-two .images__date-picker.show-overlay-light .images__date-picker-title {
   color: var(--background-overlay-2, #0B1A26);
 }
 
-.palette-two > .overlay-dark ~ .images__datepicker path,
-.palette-two .images__datepicker.show-overlay-dark .images__datepicker-icon path {
+.palette-two > .overlay-dark ~ .images__date-picker path,
+.palette-two .images__date-picker.show-overlay-dark .images__date-picker-icon path {
   fill: var(--color-overlay-2, #FFFFFF);
 }
 
-.palette-two > .overlay-dark ~ .images__datepicker .images__datepicker-title,
-.palette-two .images__datepicker.show-overlay-dark .images__datepicker-title {
+.palette-two > .overlay-dark ~ .images__date-picker .images__date-picker-title,
+.palette-two .images__date-picker.show-overlay-dark .images__date-picker-title {
   color: var(--color-overlay-2, #FFFFFF);
 }
 
@@ -388,12 +388,12 @@
     height: 100%;
   }
 
-  .images__wrapper-with-datepicker .images__container {
-    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--datepicker-block-height, 70px) + var(--padding-bottom, 60px));
+  .images__wrapper-with-date-picker .images__container {
+    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 60px));
   }
 
-  .images__wrapper-with-datepicker .images__container--padding-bottom {
-    padding-bottom: calc(var(--padding-bottom, 60px) + var(--datepicker-block-height, 70px));
+  .images__wrapper-with-date-picker .images__container--padding-bottom {
+    padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
   }
 }
 

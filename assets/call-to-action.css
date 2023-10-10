@@ -80,6 +80,42 @@
   right: 0;
 }
 
+.cta__image-floral-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.cta__image-floral-wrapper svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(-20px, 25%);
+  opacity: 0.2;
+}
+
+.cta__image-floral-wrapper-col {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cta__image-floral-wrapper-col:last-child {
+  display: none;
+}
+
+.cta__image-floral-wrapper-col:last-child svg {
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  max-height: none;
+  transform: translate(50px, 0px);
+}
+
 .palette-one.cta__wrapper {
   background: var(--background-accent, #F4B841);
   color: var(--color-primary, #0B1A26);
@@ -116,6 +152,9 @@
   background: var(--color-primary-active, #0B1A268F);
 }
 
+.palette-one .cta__image-floral-wrapper g,
+.palette-one .cta__image-floral-wrapper path,
+.palette-one .cta__image-wrapper g,
 .palette-one .cta__image-wrapper path {
   fill: var(--color-primary, #0B1A26);
 }
@@ -160,6 +199,9 @@
   background: var(--color-primary-2-active, #FFFFFF8F);
 }
 
+.palette-two .cta__image-floral-wrapper g,
+.palette-two .cta__image-floral-wrapper path,
+.palette-two .cta__image-wrapper g,
 .palette-two .cta__image-wrapper path {
   fill: var(--color-primary-2, #FFFFFF);
 }
@@ -204,12 +246,26 @@
   background: var(--background-accent-3-active, #0B1A268F);
 }
 
+.palette-three .cta__image-floral-wrapper g,
+.palette-three .cta__image-floral-wrapper path,
+.palette-three .cta__image-wrapper g,
 .palette-three .cta__image-wrapper path {
   fill: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .cta__image-wrapper:after {
   background: linear-gradient(180.44deg, var(--background-primary-3, #F4B841) 51.3%, var(--background-primary-3-00, #F4B84100) 81.06%);
+}
+
+@media (min-width: 667px) {
+  .cta__image-floral-wrapper svg,
+  .cta__image-wrapper svg {
+    height: auto;
+  }
+
+  .cta__image-floral-wrapper-col:last-child {
+    display: block;
+  }
 }
 
 @media (min-width: 810px) {

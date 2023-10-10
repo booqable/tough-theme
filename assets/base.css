@@ -151,6 +151,10 @@ body .stretch > section:first-child{
   padding-top: calc(var(--header-height) - 1px);
 }
 
+.preview-bar__container {
+  z-index: 1002 !important;
+}
+
 h1,
 h2,
 h3,

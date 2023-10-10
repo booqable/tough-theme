@@ -13,7 +13,7 @@ class Carousel {
       item: ".carousel__item",
       timer: ".carousel__timer",
       count: ".carousel__count",
-      datePicker: ".datepicker"
+      datePicker: ".date-picker"
     };
 
     this.classes = {
@@ -229,7 +229,7 @@ class Carousel {
 
   // logic of Carousel's Prev and Next buttons (including vertical carousel)
   slideEfect(event, options) {
-    const {currentScroll, scrollVal, clientVal, size, trigger} = options;
+    const { currentScroll, scrollVal, clientVal, size, trigger } = options;
     let i, condition, lastIndex, nextIndex, scrollToLast, scrollToNext, scrollToVal;
 
     switch (trigger) {
@@ -262,7 +262,7 @@ class Carousel {
 
   // search new index for active slide on Fade carousel mode
   fadeEffect(event, options) {
-    const {items, index, last, nextNumber, nextIndex} = options;
+    const { items, index, last, nextNumber, nextIndex } = options;
     let i;
 
     items.forEach((item, itemIndex) => {
@@ -440,7 +440,7 @@ class Carousel {
         index = parseInt(dot.getAttribute(this.data.index));
     })
 
-    return {index, dots};
+    return { index, dots };
   }
 
   // add/change overlay class to change colors of navigation/pagination buttons of images carousel with overlay
@@ -471,8 +471,8 @@ class Carousel {
       };
 
       if (itemIndex + 1 === index) {
-        if (isLight) this.setClass(elements, optionsLight)
-        if (isDark) this.setClass(elements, optionsDark)
+        if (isLight) this.setClass(elements, optionsLight);
+        if (isDark) this.setClass(elements, optionsDark);
       }
     })
   }
@@ -485,8 +485,8 @@ class Carousel {
     Object.values(elements).forEach(element => {
       if (!element) return false;
 
-      isOld = element.classList.contains(oldClass)
-      isNew = element.classList.contains(newClass)
+      isOld = element.classList.contains(oldClass);
+      isNew = element.classList.contains(newClass);
 
       !isOld && !isNew
         ? element.classList.add(addClass)
@@ -495,7 +495,7 @@ class Carousel {
   }
 
   scrollTo(options) {
-    const {element, left, top} = options;
+    const { element, left, top } = options;
 
     element.scrollTo({
       left: left,
@@ -525,9 +525,9 @@ class Carousel {
 
     const setSibling = () => {
       if (direction === this.event.prev) {
-        sibling = element.previousElementSibling
+        sibling = element.previousElementSibling;
       } else if (direction === this.event.next) {
-        sibling = element.nextElementSibling
+        sibling = element.nextElementSibling;
       }
     }
 
@@ -555,9 +555,9 @@ const initCarousel = (el = ".carousel") => {
   nodes.forEach(node => {
     const carousel = new Carousel(node);
     carousel.init();
-  });
-};
+  })
+}
 
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initCarousel();
-});
+})

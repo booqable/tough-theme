@@ -77,8 +77,7 @@
   bottom: auto;
   right: 0;
   max-height: none;
-  transform:rotate(-80deg) scaleX(-1);
-
+  transform: rotate(-80deg) scaleX(-1);
 }
 
 .accordion .section-header__text {
