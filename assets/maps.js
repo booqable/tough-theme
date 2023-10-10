@@ -6,22 +6,22 @@ class Map {
       map: ".map",
       icon: ".map-icon__image",
       link: ".tabs__link"
-    };
+    }
 
     this.attr = {
       id: "id",
       href: "href",
       address: "data-address"
-    };
+    }
 
     this.elem = {
       div: "div"
-    };
+    }
 
     this.classes = {
       error: "map__error",
       noImage: "no-image"
-    };
+    }
 
     this.addressErrorMessage = `we can't find this address, please check it again`;
     this.linkArr = [];

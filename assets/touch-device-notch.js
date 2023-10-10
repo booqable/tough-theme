@@ -4,23 +4,23 @@ class TouchDevice {
 
     this.modifier = {
       touch: "touch"
-    };
+    }
 
     this.props = {
       portrait: "portrait",
       landscape: "landscape"
-    };
+    }
 
     this.cssVars = {
       areaTop: "--safe-area-top",
       areaRight: "--safe-area-right",
       areaBottom: "--safe-area-bottom",
       areaLeft: "--safe-area-left"
-    };
+    }
 
     this.data = {
       orientation: "data-orientation"
-    };
+    }
   }
 
   init() {

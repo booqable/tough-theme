@@ -1,4 +1,4 @@
-class Banner {
+class VideoYoutube {
   constructor(block) {
     this.block = block;
 
@@ -6,7 +6,7 @@ class Banner {
       vision: ".images__vision",
       video: ".images__video-id",
       player: ".images__video"
-    };
+    }
   }
 
   init() {
@@ -74,17 +74,17 @@ class Banner {
   }
 }
 
-const initBanner = (el = ".images") => {
+const initVideo = (el = ".images") => {
   const nodes = document.querySelectorAll(el);
 
   if (!nodes.length) return false;
 
   nodes.forEach(node => {
-    const init = new Banner(node);
+    const init = new VideoYoutube(node);
     init.init();
   })
 }
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initBanner();
+  if (e.target.readyState === "complete") initVideo();
 })

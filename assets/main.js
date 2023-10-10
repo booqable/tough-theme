@@ -9,12 +9,12 @@ class Main {
       search: "#search",
       image: ".focal-image",
       focus: "[data-focus]"
-    };
+    }
 
     this.modifier = {
       loaded: "loaded",
       resize: "resize-active"
-    };
+    }
 
     this.params = {
       out: "out",
@@ -23,23 +23,23 @@ class Main {
       footer: "footer",
       type: "message",
       section: "section"
-    };
+    }
 
     this.props = {
       behavior: "smooth",
       block: "center"
-    };
+    }
 
     this.data = {
       focalX: "data-focal-x",
       focalY: "data-focal-y",
       focus: "data-focus"
-    };
+    }
 
     this.cssVar = {
       datePickerHeight: '--date-picker-height',
       datePickerBlockHeight: '--date-picker-block-height',
-    };
+    }
 
     this.time = 500;
     this.timeScroll = 300;

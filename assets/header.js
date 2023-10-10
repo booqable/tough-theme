@@ -19,20 +19,20 @@ class Header {
       searchInput: ".header__search-input",
       searchReset: ".header__search-reset",
       checkbox: "input[type=checkbox]"
-    };
+    }
 
     this.classes = {
       sticky: "header--sticky",
       notSticky: "header--not-sticky",
       opened: "header--menu-opened",
       filled: "filled"
-    };
+    }
 
     this.modifier = {
       scroll: "scrolled-down",
       overflow: "overflow-hidden",
       active: "active"
-    };
+    }
 
     this.cssVar = {
       height: '--header-height',
@@ -40,26 +40,26 @@ class Header {
       viewHeight: '--preview-height',
       linkHeight: '--menu-position',
       transform: '--header-transform'
-    };
+    }
 
     this.props = {
       fixed: 'fixed'
-    };
+    }
 
     this.event = {
       mouseenter: 'mouseenter',
       mouseleave: 'mouseleave'
-    };
+    }
 
     this.attr = {
       href: "href",
       class: "class",
       style: "style"
-    };
+    }
 
     this.params = {
       q: "q"
-    };
+    }
 
     this.minHeight = 180;
     this.mediaQuery = 1100;
@@ -364,7 +364,7 @@ class Header {
     this.doc.style.setProperty(
       `${key}`,
       `${val}px`
-    );
+    )
   }
 }
 

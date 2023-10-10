@@ -6,20 +6,20 @@ class Tabs {
       tab: ".tabs__trigger",
       content: ".tabs__content",
       opener: "#tabs-select-opener"
-    };
+    }
 
     this.classes = {
       tab: "tabs__trigger"
-    };
+    }
 
     this.modifiers = {
       active: "active"
-    };
+    }
 
     this.data = {
       content: "data-content",
       trigger: "data-trigger"
-    };
+    }
   }
 
   init() {
@@ -56,7 +56,7 @@ class Tabs {
       attr: this.data.trigger,
       val: attr,
       mod: this.modifiers.active
-    };
+    }
 
     this.tabsClass(options);
 
@@ -67,7 +67,7 @@ class Tabs {
       attr: this.data.content,
       val: attr,
       mod: this.modifiers.active
-    };
+    }
 
     this.tabsClass(options);
   }
