@@ -14,7 +14,7 @@ class Carousel {
       timer: ".carousel__timer",
       count: ".carousel__count",
       datePicker: ".date-picker"
-    };
+    }
 
     this.classes = {
       show: "show",
@@ -30,18 +30,18 @@ class Carousel {
       light: "overlay-light",
       showDark: "show-overlay-dark",
       showLight: "show-overlay-light"
-    };
+    }
 
     this.modifiers = {
       active: "active",
       hidden: "hidden",
       show: "show",
       hide: "hide"
-    };
+    }
 
     this.data = {
       index: "data-index"
-    };
+    }
 
     this.event = {
       click: "click",
@@ -51,7 +51,7 @@ class Carousel {
       end: "touchend",
       enter: "mouseenter",
       leave: "mouseleave"
-    };
+    }
 
     this.interval;
     this.touchstart = null;
@@ -173,7 +173,7 @@ class Carousel {
           scrollToVal: valueLeft,
           size: width,
           trigger: prev
-        };
+        }
 
         valueLeft = this.slideEfect(event, options);
 
@@ -182,7 +182,7 @@ class Carousel {
           items: children,
           index: 0,
           last: this.items.length
-        };
+        }
 
         this.fadeEffect(event, options);
       }
@@ -197,7 +197,7 @@ class Carousel {
           scrollToVal: valueLeft,
           size: width,
           trigger: next
-        };
+        }
 
         valueLeft = this.slideEfect(event, options);
 
@@ -208,7 +208,7 @@ class Carousel {
           last: 1,
           nextNumber: 1,
           nextIndex: 2
-        };
+        }
 
         this.fadeEffect(event, options);
       }
@@ -452,7 +452,7 @@ class Carousel {
     const elements = {
       wrap: this.wrap,
       datePicker: this.getSiblingElement(this.block, this.selector.datePicker, this.event.next)
-    };
+    }
 
     this.items.forEach((item, itemIndex) => {
       const isLight = item.classList.contains(this.classes.light),
@@ -462,13 +462,13 @@ class Carousel {
         addClass: this.classes.showLight,
         oldClass: this.classes.showDark,
         newClass: this.classes.showLight
-      };
+      }
 
       const optionsDark = {
         addClass: this.classes.showDark,
         oldClass: this.classes.showLight,
         newClass: this.classes.showDark
-      };
+      }
 
       if (itemIndex + 1 === index) {
         if (isLight) this.setClass(elements, optionsLight);
@@ -478,7 +478,7 @@ class Carousel {
   }
 
   setClass(elements, options) {
-    const { addClass, oldClass, newClass } = options
+    const { addClass, oldClass, newClass } = options;
 
     let isOld, isNew;
 
@@ -501,7 +501,7 @@ class Carousel {
       left: left,
       top: top,
       behavior: "smooth",
-    });
+    })
   }
 
   trigger(element, eventType) {
@@ -523,20 +523,26 @@ class Carousel {
 
     let sibling;
 
-    const setSibling = () => {
-      if (direction === this.event.prev) {
+    switch (direction) {
+      case this.event.prev:
         sibling = element.previousElementSibling;
-      } else if (direction === this.event.next) {
+
+        while (sibling) {
+          if (sibling.matches(selector)) return sibling;
+          sibling = sibling.previousElementSibling;
+        }
+
+        break;
+
+      case this.event.next:
         sibling = element.nextElementSibling;
-      }
-    }
 
-    setSibling();
+        while (sibling) {
+          if (sibling.matches(selector)) return sibling;
+          sibling = sibling.nextElementSibling;
+        }
 
-    while (sibling) {
-      if (sibling.matches(selector)) return sibling;
-
-      setSibling();
+        break;
     }
   }
 
