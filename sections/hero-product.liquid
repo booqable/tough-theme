@@ -9,8 +9,6 @@
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 
 {%- if show_datepicker -%}
-  {{ "date-picker.css" | asset_url | stylesheet_tag }}
-
   {%- if color_palette == "one" -%}
     {%- assign background_accent = settings.accent_background -%}
   {%- elsif color_palette == "two" -%}
@@ -68,9 +66,9 @@
 
 <div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
   {%- if show_datepicker -%}
-    <div class="hero__container hero__container--bottom{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
+    <div class="hero__date-picker date-picker{% if padding_top != blank or padding_top_mobile != blank %} hero__date-picker--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__date-picker--padding-bottom{%- endif -%}">
       <div class="hero__container container">
-        <div class="hero__date-picker date-picker__component">
+        <div class="hero__date-picker-component date-picker__component">
           {%- include 'date-picker' -%}
         </div>
       </div>
@@ -118,7 +116,7 @@
         "type": "checkbox",
         "id": "show_datepicker",
         "default": true,
-        "label": "Show datepicker"
+        "label": "Show date picker"
       },
       {
         "type": "header",

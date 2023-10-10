@@ -27,7 +27,7 @@
         "slide"
       ],
       "settings": {
-        "color_palette": "two",
+        "color_palette": "one",
         "effect": "slide",
         "height": "small",
         "padding_bottom": "medium",
@@ -35,21 +35,9 @@
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "pause": true,
+        "show_datepicker": true,
+        "datepicker_title": "",
         "timer": 5
-      },
-      "disabled": null
-    },
-    "date-picker": {
-      "type": "date-picker",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "color_palette": "one",
-        "title": "",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
       },
       "disabled": null
     },
@@ -303,7 +291,7 @@
         "slide"
       ],
       "settings": {
-        "color_palette": "two",
+        "color_palette": "one",
         "effect": "slide",
         "height": "medium",
         "padding_bottom": "medium",
@@ -311,6 +299,8 @@
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "pause": true,
+        "show_datepicker": false,
+        "datepicker_title": "",
         "timer": 5
       },
       "disabled": null
@@ -529,7 +519,6 @@
   },
   "order": [
     "images",
-    "date-picker",
     "collections",
     "title_987654",
     "products",

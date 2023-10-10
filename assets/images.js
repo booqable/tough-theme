@@ -5,8 +5,8 @@ class Banner {
     this.selector = {
       vision: ".images__vision",
       video: ".images__video-id",
-      player: ".images__video",
-    }
+      player: ".images__video"
+    };
   }
 
   init() {
@@ -70,7 +70,7 @@ class Banner {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
       }
-    });
+    })
   }
 }
 
@@ -82,9 +82,9 @@ const initBanner = (el = ".images") => {
   nodes.forEach(node => {
     const init = new Banner(node);
     init.init();
-  });
-};
+  })
+}
 
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initBanner();
-});
+})
