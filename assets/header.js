@@ -325,7 +325,7 @@ class Header {
     setTimeout(() => {
       this.searchInput.focus();
 
-      this.showSearchClear();
+      this.showClearButton();
     }, 30);
   }
 
