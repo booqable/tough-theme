@@ -249,7 +249,7 @@
 .bq-content.rx-content samp,
 .bq-content.rx-content kbd,
 .bq-content.rx-content code {
-  border-radius: 0;
+  border-radius: var(--border-radius, 0);
 }
 
 .bq-content.rx-content kbd {

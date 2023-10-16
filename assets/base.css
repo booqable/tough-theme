@@ -14,6 +14,7 @@
   /* Carousel */
   --slide-width: 318px;
   --slide-width-mobile: 314px;
+  --thumbnail-size: 80px;
 
   /* Mosaic section grid */
   --grid-row: 2;
@@ -24,6 +25,7 @@
   --color-begonia: #FF6E6E;
   --color-black: #0B1A26;
   --color-black-08: #0B1A2614;
+  --color-green: #51C234;
   --color-red: #C23434;
   --color-red-light: #F5CFCF;
   --color-white: #FFFFFF;
@@ -43,6 +45,9 @@
   --line-height-md: 1.3333;
   --line-height-lg: 1.5;
   --line-height-xl: 2;
+
+  /* Border-radius */
+  --border-radius: 0;
 
   /* Transitions */
   --transition-function-linear: linear;
@@ -273,7 +278,7 @@ ul{
 input,
 textarea {
   font-family: var(--font-body, sans-serif);
-  border-radius: 0;
+  border-radius: var(--border-radius, 0);
 }
 
 input:-webkit-autofill,
@@ -559,7 +564,7 @@ img {
 
 .tippy-box *,
 .bq-modal * {
-  border-radius: 0 !important;
+  border-radius: var(--border-radius, 0) !important;
 }
 
 
