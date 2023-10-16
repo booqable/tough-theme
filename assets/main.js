@@ -64,7 +64,7 @@ class Main {
   events() {
     this.setLoadedClass();
     this.focalImages();
-    setTimeout(() => this.getDatePickerHeight(), 500);
+    setTimeout(() => this.getDatePickerHeight(), 1000);
 
     window.addEventListener("resize", this.getDatePickerHeight.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
