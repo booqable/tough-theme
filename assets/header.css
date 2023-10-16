@@ -145,7 +145,7 @@
   align-items: center;
   background: none;
   border: none;
-  border-radius: 0;
+  border-radius: var(--border-radius, 0);
   cursor: pointer;
 }
 
@@ -185,7 +185,7 @@
   font-size: 16px;
   line-height: var(--line-height-sm, 1.2);
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: var(--border-radius, 0);
 }
 
 .header__search-input:focus {
