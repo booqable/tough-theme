@@ -11,8 +11,6 @@
     {%- if settings.primary_color != blank -%}
       --color-primary: {{- settings.primary_color -}};
       --color-primary-30: {{- settings.primary_color | append: "4D" -}};
-      --color-primary-45: {{- settings.primary_color | append: "73" -}};
-      --color-primary-80: {{- settings.primary_color | append: "CC" -}};
       --color-primary-hover: {{- settings.primary_color | append: "52" -}};
       --color-primary-active: {{- settings.primary_color | append: "8F" -}};
       --color-third: {{- settings.primary_color | append: "66"-}};
@@ -63,7 +61,6 @@
       --background-overlay-00: {{- settings.overlay_background | append: "00" -}};
       --background-overlay-08: {{- settings.overlay_background | append: "14" -}};
       --background-overlay-45: {{- settings.overlay_background | append: "73" -}};
-      --background-overlay-gray: {{- settings.overlay_background | append: "59" -}};
     {%- endif -%}
 
     {%- if settings.overlay_color != blank -%}
@@ -71,7 +68,6 @@
       --color-overlay-00: {{- settings.overlay_color | append: "00" -}};
       --color-overlay-08: {{- settings.overlay_color | append: "14" -}};
       --color-overlay-45: {{- settings.overlay_color | append: "73" -}};
-      --color-overlay-gray: {{- settings.overlay_color | append: "59" -}};
     {%- endif -%}
 
     {%- if settings.background_2 != blank -%}
@@ -85,8 +81,6 @@
     {%- if settings.primary_color_2 != blank -%}
       --color-primary-2: {{- settings.primary_color_2 -}};
       --color-primary-2-30: {{- settings.primary_color_2 | append: "4D" -}};
-      --color-primary-2-45: {{- settings.primary_color_2 | append: "73" -}};
-      --color-primary-2-80: {{- settings.primary_color_2 | append: "CC" -}};
       --color-primary-2-hover: {{- settings.primary_color_2 | append: "52" -}};
       --color-primary-2-active: {{- settings.primary_color_2 | append: "8F" -}};
       --color-third-2: {{- settings.primary_color_2 | append: "66"-}};
@@ -137,7 +131,6 @@
       --background-overlay-2-00: {{- settings.overlay_background_2 | append: "00" -}};
       --background-overlay-2-08: {{- settings.overlay_background_2 | append: "14" -}};
       --background-overlay-2-45: {{- settings.overlay_background_2 | append: "73" -}};
-      --background-overlay-2-gray: {{- settings.overlay_background_2 | append: "59" -}};
     {%- endif -%}
 
     {%- if settings.overlay_color_2 != blank -%}
@@ -145,7 +138,6 @@
       --color-overlay-2-00: {{- settings.overlay_color_2 | append: "00" -}};
       --color-overlay-2-08: {{- settings.overlay_color_2 | append: "14" -}};
       --color-overlay-2-45: {{- settings.overlay_color_2 | append: "73" -}};
-      --color-overlay-2-gray: {{- settings.overlay_color_2 | append: "59" -}};
     {%- endif -%}
 
     {%- if settings.background_3 != blank -%}
@@ -155,8 +147,6 @@
 
     {%- if settings.primary_color_3 != blank -%}
       --color-primary-3: {{- settings.primary_color_3 -}};
-      --color-primary-3-hover: {{- settings.primary_color_3 | append: "52" -}};
-      --color-primary-3-active: {{- settings.primary_color_3 | append: "8F" -}};
     {%- endif -%}
 
     {%- if settings.secondary_color_3 != blank -%}
@@ -177,16 +167,6 @@
       --color-accent-3: {{- settings.accent_color_3 -}};
     {%- else -%}
       --color-accent-3: {%- if settings.primary_color_3 != blank -%}{{- settings.primary_color_3 -}}{%- endif -%};
-    {%- endif -%}
-
-    {%- if settings.accent_outline_3 != blank -%}
-      --color-outline-3: {{- settings.accent_outline_3 -}};
-      --color-outline-3-hover: {{- settings.accent_outline_3 | append: "CC" -}};
-      --color-outline-3-active: {{- settings.accent_outline_3 | append: "BA" -}};
-    {%- else -%}
-      --color-outline-3: {{- branding_color -}};
-      --color-outline-3-hover: {{- branding_color | append: "CC" -}};
-      --color-outline-3-active: {{- branding_color | append: "BA" -}};
     {%- endif -%}
 
     {%- if settings.heading_font != blank -%}

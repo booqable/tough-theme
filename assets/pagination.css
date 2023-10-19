@@ -98,7 +98,7 @@
 .palette-two .pagination .deco,
 .palette-two .pagination .current,
 .palette-two .pagination span a {
-  color: var(--color-secondary-2, #4E5D78);
+  color: var(--color-secondary-2, #E1E4E8);
 }
 
 .palette-two .pagination .deco,
@@ -122,7 +122,7 @@
 }
 
 .palette-two .pagination path {
-  fill: var(--color-secondary-2, #4E5D78);
+  fill: var(--color-secondary-2, #E1E4E8);
 }
 
 .palette-two .pagination .prev[data-enabled="true"] a:hover path,
