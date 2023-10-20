@@ -50,6 +50,7 @@
   --border-radius: 0;
 
   /* Transitions */
+  --animation-duration: 200ms;
   --transition-function-linear: linear;
   --transition-function-ease: ease;
   --transition-function-ease-in: ease-in;
