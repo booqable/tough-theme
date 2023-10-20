@@ -10,31 +10,47 @@
     --bundle-items-cell-padding: 5px;
     --bundle-items-font-size: 15px;
 
-    {%- if color_palette == "one" -%}
-      {%- if settings.background != blank -%}
-        --variation-select-background-color: var(--background-primary, #FFFFFF);
-        --bundle-items-background-color: var(--background-primary, #FFFFFF);
-      {%- endif -%}
+    {% if color_palette == "one" %}
+      {% if settings.background != blank %}
+        --variation-select-background-color: var(--background-primary);
+        --bundle-items-background-color: var(--background-primary);
+      {% else %}
+        --variation-select-background-color: #FFFFFF;
+        --bundle-items-background-color: #FFFFFF;
+      {% endif %}
 
-      {%- if settings.primary_color != blank -%}
-        --variation-select-color: var(--color-primary, #0B1A26);
-        --variation-select-border: 1px solid var(--color-border, #0B1A2626);
-        --bundle-items-color: var(--color-primary, #0B1A26);
-        --bundle-items-image-border: 1px solid var(--color-border, #0B1A2626);
-      {%- endif -%}
+      {% if settings.primary_color != blank %}
+        --variation-select-color: var(--color-primary);
+        --variation-select-border: 1px solid var(--color-border);
+        --bundle-items-color: var(--color-primary);
+        --bundle-items-image-border: 1px solid var(--color-border);
+      {% else %}
+        --variation-select-color: #0B1A26;
+        --variation-select-border: 1px solid #0B1A2626;
+        --bundle-items-color: #0B1A26;
+        --bundle-items-image-border: 1px solid #0B1A2626;
+      {% endif %}
 
-    {%- elsif color_palette == "two" -%}
-      {%- if settings.background_2 != blank -%}
-        --variation-select-background-color: var(--background-primary-2, #0B1A26);
-        --bundle-items-background-color: var(--background-primary-2, #0B1A26);
-      {%- endif -%}
+    {% elsif color_palette == "two" %}
+      {% if settings.background_2 != blank %}
+        --variation-select-background-color: var(--background-primary-2);
+        --bundle-items-background-color: var(--background-primary-2);
+      {% else %}
+        --variation-select-background-color: #0B1A26;
+        --bundle-items-background-color: #0B1A26;
+      {% endif %}
 
-      {%- if settings.primary_color_2 != blank -%}
-        --variation-select-color: var(--color-primary-2, #FFFFFF);
-        --variation-select-border: 1px solid var(--color-border-2, #FFFFFF47);
-        --bundle-items-color: var(--color-primary-2, #FFFFFF);
-        --bundle-items-image-border: 1px solid var(--color-border-2, #FFFFFF47);
-      {%- endif -%}
+      {% if settings.primary_color_2 != blank %}
+        --variation-select-color: var(--color-primary-2);
+        --variation-select-border: 1px solid var(--color-border-2);
+        --bundle-items-color: var(--color-primary-2);
+        --bundle-items-image-border: 1px solid var(--color-border-2);
+      {% else %}
+        --variation-select-color: #FFFFFF;
+        --variation-select-border: 1px solid #FFFFFF47;
+        --bundle-items-color: #FFFFFF;
+        --bundle-items-image-border: 1px solid #FFFFFF47;
+      {% endif %}
     {%- endif -%}
   }
 {%- endstyle -%}

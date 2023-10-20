@@ -563,9 +563,9 @@ img {
   box-shadow: 0 0 0 3px var(--color-outline, #F4B841);
 }
 
-.tippy-box *,
-.bq-modal * {
-  border-radius: var(--border-radius, 0) !important;
+.tippy-box *:not(label),
+.bq-modal *:not(label) {
+  border-radius: 0 !important;
 }
 
 
