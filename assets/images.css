@@ -183,7 +183,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: calc(var(--date-picker-height, 80px) / 2);
+  height: calc(var(--date-picker-height, 75px) / 2);
 }
 
 .palette-one .overlay-dark .images__title,
