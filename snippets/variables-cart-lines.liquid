@@ -19,53 +19,85 @@
 
     {% if color_palette == "one" %}
       {% if settings.primary_color != blank %}
-        --line-title-color: var(--color-primary, #0B1A26);
-        --line-price-color: var(--color-primary, #0B1A26);
-        --line-input-color: var(--color-primary, #0B1A26);
-        --line-bundle-item-quantity-color: var(--color-primary, #0B1A26);
-        --line-bundle-item-name-color: var(--color-primary, #0B1A26);
-        --line-border: 1px solid var(--color-border, #0B1A2626);
-        --line-image-border: 1px solid var(--color-border, #0B1A2626);
-        --line-control-border: 1px solid var(--color-border, #0B1A2626);
-        --line-variations-color: var(--color-third, #0B1A2666);
+        --line-title-color: var(--color-primary);
+        --line-price-color: var(--color-primary);
+        --line-input-color: var(--color-primary);
+        --line-bundle-item-quantity-color: var(--color-primary);
+        --line-bundle-item-name-color: var(--color-primary);
+        --line-border: 1px solid var(--color-border);
+        --line-image-border: 1px solid var(--color-border);
+        --line-control-border: 1px solid var(--color-border);
+        --line-variations-color: var(--color-third);
+      {% else %}
+        --line-title-color: #0B1A26;
+        --line-price-color: #0B1A26;
+        --line-input-color: #0B1A26;
+        --line-bundle-item-quantity-color: #0B1A26;
+        --line-bundle-item-name-color: #0B1A26;
+        --line-border: 1px solid #0B1A2626;
+        --line-image-border: 1px solid #0B1A2626;
+        --line-control-border: 1px solid #0B1A2626;
+        --line-variations-color: #0B1A2666;
       {% endif %}
 
       {% if settings.background != blank %}
-        --line-bundle-item-quantity-background: var(--background-primary, #FFFFFF);
+        --line-bundle-item-quantity-background: var(--background-primary);
+      {% else %}
+        --line-bundle-item-quantity-background: #FFFFFF;
       {% endif %}
 
       {% if settings.accent_background != blank %}
-        --line-toggle-color: var(--background-accent, #F4B841);
+        --line-toggle-color: var(--background-accent);
+      {% else %}
+        --line-toggle-color: #F4B841;
       {% endif %}
 
       {% if settings.accent_outline != blank %}
-        --line-icon-color: var(--color-outline, #F4B841);
+        --line-icon-color: var(--color-outline);
+      {% else %}
+        --line-icon-color: #F4B841;
       {% endif %}
 
     {% elsif color_palette == "two" %}
       {% if settings.primary_color_2 != blank %}
-        --line-title-color: var(--color-primary-2, #FFFFFF);
-        --line-price-color: var(--color-primary-2, #FFFFFF);
-        --line-input-color: var(--color-primary-2, #FFFFFF);
-        --line-bundle-item-quantity-color: var(--color-primary-2, #FFFFFF);
-        --line-bundle-item-name-color: var(--color-primary-2, #FFFFFF);
-        --line-border: 1px solid var(--color-border-2, #FFFFFF47);
-        --line-image-border: 1px solid var(--color-border-2, #FFFFFF47);
-        --line-control-border: 1px solid var(--color-border-2, #FFFFFF47);
-        --line-variations-color: var(--color-third-2, #FFFFFF66);
+        --line-title-color: var(--color-primary-2);
+        --line-price-color: var(--color-primary-2);
+        --line-input-color: var(--color-primary-2);
+        --line-bundle-item-quantity-color: var(--color-primary-2);
+        --line-bundle-item-name-color: var(--color-primary-2);
+        --line-border: 1px solid var(--color-border-2);
+        --line-image-border: 1px solid var(--color-border-2);
+        --line-control-border: 1px solid var(--color-border-2);
+        --line-variations-color: var(--color-third-2);
+      {% else %}
+        --line-title-color: #FFFFFF;
+        --line-price-color: #FFFFFF;
+        --line-input-color: #FFFFFF;
+        --line-bundle-item-quantity-color: #FFFFFF;
+        --line-bundle-item-name-color: #FFFFFF;
+        --line-border: 1px solid #FFFFFF47;
+        --line-image-border: 1px solid #FFFFFF47;
+        --line-control-border: 1px solid #FFFFFF47;
+        --line-variations-color: #FFFFFF66;
       {% endif %}
 
       {% if settings.background_2 != blank %}
-        --line-bundle-item-quantity-background: var(--background-primary-2, #0B1A26);
+        --line-bundle-item-quantity-background: var(--background-primary-2);
+      {% else %}
+        --line-bundle-item-quantity-background: #0B1A26;
       {% endif %}
 
       {% if settings.accent_background_2 != blank %}
-        --line-toggle-color: var(--background-accent-2, #F4B841);
+        --line-toggle-color: var(--background-accent-2);
+      {% else %}
+        --line-toggle-color: #F4B841;
       {% endif %}
 
       {% if settings.accent_outline_2 != blank %}
-        --line-icon-color: var(--color-outline-2, #F4B841);
+        --line-icon-color: var(--color-outline-2);
+      {% else %}
+        --line-icon-color: #F4B841;
       {% endif %}
-    {% endif %}
+    {%- endif -%}
   }
 {% endstyle %}

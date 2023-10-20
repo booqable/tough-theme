@@ -31,15 +31,15 @@
   <body>
 
     <header class="header" id="header">
-      {% section 'top-bar' %}
-      {% section 'header' %}
+      {%- section 'top-bar' -%}
+      {%- section 'header' -%}
     </header>
 
     <main id="main">
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {%- section 'footer' -%}
 
     <script src="{{ "lazysizes.min.js" | asset_url }}" defer></script>
     <script src="{{ "touch-device-notch.js" | asset_url }}" defer></script>
@@ -50,6 +50,14 @@
     {%- if template == "index" -%}
       <script src="{{ "images.js" | asset_url }}" defer></script>
     {%- endif -%}
+
+    {%- if settings.background_3 != blank -%}
+      {%- assign background_accent = settings.background_3 -%}
+    {%- else -%}
+      {%- assign background_accent = branding_color -%}
+    {%- endif -%}
+
+    <bq-date-picker-modal branding-color="{{- background_accent -}}"></bq-date-picker-modal>
 
     {{ content_for_body }}
 

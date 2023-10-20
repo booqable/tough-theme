@@ -19,44 +19,66 @@
     --totals-error-font-size: 16px;
     --totals-error-font-weight: 400;
 
-    {%- if color_palette == "one" -%}
+    {% if color_palette == "one" %}
       {% if settings.primary_color != blank %}
-        --secondary-button-button-label-color: var(--color-primary, #0B1A26);
-        --totals-text-color: var(--color-primary, #0B1A26);
-        --totals-border: 1px solid var(--color-border, #0B1A2626);
+        --secondary-button-button-label-color: var(--color-primary);
+        --totals-text-color: var(--color-primary);
+        --totals-border: 1px solid var(--color-border);
+      {% else %}
+        --secondary-button-button-label-color: #0B1A26;
+        --totals-text-color: #0B1A26;
+        --totals-border: 1px solid #0B1A2626;
       {% endif %}
 
       {% if settings.background != blank %}
-        --secondary-button-button-color: var(--background-primary, #FFFFFF);
+        --secondary-button-button-color: var(--background-primary);
+      {% else %}
+        --secondary-button-button-color: #FFFFFF;
       {% endif %}
 
       {% if settings.accent_background != blank %}
-        --book-button-button-color: var(--background-accent, #F4B841);
-        --secondary-button-button-border: 1px solid var(--background-accent, #F4B841);
+        --book-button-button-color: var(--background-accent);
+        --secondary-button-button-border: 1px solid var(--background-accent);
+      {% else %}
+        --book-button-button-color: #F4B841;
+        --secondary-button-button-border: 1px solid #F4B841;
       {% endif %}
 
       {% if settings.accent_color != blank %}
-        --book-button-button-label-color: var(--color-accent, #0B1A26);
+        --book-button-button-label-color: var(--color-accent);
+      {% else %}
+        --book-button-button-label-color: #0B1A26;
       {% endif %}
 
-    {%- elsif color_palette == "two" -%}
+    {% elsif color_palette == "two" %}
       {% if settings.primary_color_2 != blank %}
-        --secondary-button-button-label-color: var(--color-primary-2, #FFFFFF);
-        --totals-text-color: var(--color-primary-2, #FFFFFF);
-        --totals-border: 1px solid var(--color-border-2, #FFFFFF47);
+        --secondary-button-button-label-color: var(--color-primary-2);
+        --totals-text-color: var(--color-primary-2);
+        --totals-border: 1px solid var(--color-border-2);
+      {% else %}
+        --secondary-button-button-label-color: #FFFFFF;
+        --totals-text-color: #FFFFFF;
+        --totals-border: 1px solid #FFFFFF47;
       {% endif %}
 
       {% if settings.background_2 != blank %}
-        --secondary-button-button-color: var(--background-primary-2, #0B1A26);
+        --secondary-button-button-color: var(--background-primary-2);
+      {% else %}
+        --secondary-button-button-color: #0B1A26;
       {% endif %}
 
       {% if settings.accent_background_2 != blank %}
-        --book-button-button-color: var(--background-accent-2, #F4B841);
-        --secondary-button-button-border: 1px solid var(--background-accent-2, #F4B841);
+        --book-button-button-color: var(--background-accent-2);
+        --secondary-button-button-border: 1px solid var(--background-accent-2);
+      {% else %}
+        --book-button-button-color: #F4B841;
+        --secondary-button-button-border: 1px solid #F4B841;
       {% endif %}
 
       {% if settings.accent_color_2 != blank %}
-        --book-button-button-label-color: var(--color-accent-2, #0B1A26);
+        --book-button-button-label-color: var(--color-accent-2);
+      {% else %}
+        --book-button-button-label-color: #0B1A26;
       {% endif %}
     {%- endif -%}
   }

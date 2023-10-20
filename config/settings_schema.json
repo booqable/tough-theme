@@ -174,7 +174,8 @@
       {
         "type": "color",
         "id": "background_3",
-        "label": "Background"
+        "label": "Background",
+        "info": "Also used as the background color of 'Apply' button of Date picker modal window"
       },
       {
         "type": "color",
