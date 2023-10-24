@@ -218,7 +218,7 @@
         "type": "font_picker",
         "id": "heading_font",
         "label": "Heading",
-        "info": "Font used for headers"
+        "info": "Font used for headings"
       },
       {
         "type": "font_picker",
@@ -239,7 +239,7 @@
       {
         "type": "number",
         "id": "h1_size",
-        "label": "Header 1",
+        "label": "Heading 1",
         "min": 40,
         "max": 80,
         "default": 56,
@@ -248,7 +248,7 @@
       {
         "type": "number",
         "id": "h2_size",
-        "label": "Header 2",
+        "label": "Heading 2",
         "min": 30,
         "max": 70,
         "default": 48,
@@ -257,38 +257,11 @@
       {
         "type": "number",
         "id": "h3_size",
-        "label": "Header 3",
+        "label": "Heading 3",
         "min": 25,
         "max": 65,
         "default": 40,
         "info": "Min: 25, max: 65"
-      },
-      {
-        "type": "number",
-        "id": "h4_size",
-        "label": "Header 4",
-        "min": 20,
-        "max": 50,
-        "default": 32,
-        "info": "Min: 20, max: 50"
-      },
-      {
-        "type": "number",
-        "id": "h5_size",
-        "label": "Header 5",
-        "min": 18,
-        "max": 32,
-        "default": 24,
-        "info": "Min: 18, max: 32"
-      },
-      {
-        "type": "number",
-        "id": "h6_size",
-        "label": "Header 6",
-        "min": 16,
-        "max": 26,
-        "default": 20,
-        "info": "Min: 16, max: 26"
       },
       {
         "type": "number",

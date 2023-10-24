@@ -300,15 +300,15 @@
                     <div class="images__text-area">
                       <div class="images__content">
                         {%- if tag != blank -%}
-                          <span class="images__tag tagline">{{- tag -}}</span>
+                          <strong class="images__tag tagline">{{- tag -}}</strong>
                         {%- endif -%}
 
                         {%- if title != blank -%}
-                          <h1 class="images__title">{{- title -}}</h1>
+                          <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
                         {%- endif -%}
 
                         {%- if description != blank -%}
-                          <div class="images__description text-medium">{{- description | truncate: 150, " ..." -}}</div>
+                          <div class="images__description text-medium bq-content rx-content">{{- description | truncate: 150, " ..." -}}</div>
                         {%- endif -%}
 
                         {%- if button_1 != blank or button_2 != blank -%}
