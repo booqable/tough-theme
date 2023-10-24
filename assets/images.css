@@ -31,7 +31,7 @@
 }
 
 .images__title {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h2, 48px);
 }
 
 .images__title * {
@@ -375,7 +375,7 @@
   }
 
   .images__title {
-    font-size: calc(var(--font-size-h1) + 1rem);
+    font-size: calc(var(--font-size-h1, 56px) + 1rem);
   }
 
   .images__description {

@@ -34,7 +34,7 @@
 }
 
 .hero__title {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h3, 40px);
 }
 
 .hero__title:only-child {

@@ -32,7 +32,7 @@
   color: currentColor;
 }
 
-.error-404__description {
+div.error-404__container .error-404__description {
   font-size: clamp(24px, 2.7vw, 40px);
   font-weight: var(--font-weight-medium, 500);
   line-height: var(--line-height-sm, 1.2);

@@ -60,6 +60,7 @@
 }
 
 .columns__title {
+  display: block;
   color: inherit;
   margin-bottom: 15px;
 }
