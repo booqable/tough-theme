@@ -409,11 +409,11 @@
   }
 
   .header__logo-wrapper:not(:empty) {
-    margin: 0 33px 0 0;
+    margin-right: 33px;
   }
 
   .header__links:not(:empty) {
-    margin: 0 0 0 33px;
+    margin-left: 33px;
   }
 
   .header__search-wrapper {
