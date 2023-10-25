@@ -107,7 +107,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .top-bar__text {
+  .top-bar__text:not(.top-bar__message) {
     padding: 0 10px;
   }
 
