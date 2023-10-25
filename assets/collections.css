@@ -38,6 +38,10 @@
   line-height: 1.4;
 }
 
+.collections__heading a {
+  font-family: inherit;
+}
+
 .collections__link {
   display: block;
   position: relative;
@@ -66,6 +70,7 @@
 }
 
 .collections__image-item {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -223,10 +228,12 @@
     aspect-ratio: 1 / 1.48;
   }
 
+  .collections__list-2 .collections__item > .collections__image-item:after,
   .collections__list-2 .collections__link:after {
     aspect-ratio: 1 / 0.92;
   }
 
+  .collections__list-3 .collections__item > .collections__image-item:after,
   .collections__list-3 .collections__link:after {
     aspect-ratio: 1 / 1.42;
   }
