@@ -545,142 +545,140 @@
       "image_placeholder": "booqable://assets/image-fashion-placeholder.jpg"
     },
     "snow": {
-      "current": {
-        "accent_outline_2": "#015FB8",
-        "tagline_font": "barlow",
-        "background_2": "#DDEEFF",
-        "accent_color_2": "#FFFFFF",
-        "accent_background": "#015FB8",
-        "primary_color": "#0B1A26",
-        "use_focal_images": true,
-        "secondary_color_2": "#E1E4E8",
-        "heading_font": "permanent-marker",
-        "body_font": "barlow",
-        "accent_outline": "#015FB8",
-        "background": "#FFFFFF",
-        "sections": {
-          "top-bar": {
-            "type": "top-bar",
-            "blocks": {},
-            "block_order": [],
-            "settings": {
-              "padding_top": "medium",
-              "padding_bottom_mobile": "medium",
-              "show_bar": true,
-              "icon": "phone",
-              "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
-              "padding_bottom": "medium",
-              "padding_top_mobile": "medium",
-              "bar_message": "<p>Free delivery to your chalet!</p>",
-              "color_palette": "two"
-            },
-            "disabled": null
+      "accent_outline_2": "#015FB8",
+      "tagline_font": "barlow",
+      "background_2": "#DDEEFF",
+      "accent_color_2": "#FFFFFF",
+      "accent_background": "#015FB8",
+      "primary_color": "#0B1A26",
+      "use_focal_images": true,
+      "secondary_color_2": "#E1E4E8",
+      "heading_font": "permanent-marker",
+      "body_font": "barlow",
+      "accent_outline": "#015FB8",
+      "background": "#FFFFFF",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "phone",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Free delivery to your chalet!</p>",
+            "color_palette": "two"
           },
-          "header": {
-            "type": "header",
-            "blocks": {},
-            "block_order": [],
-            "settings": {
-              "sticky_header": true,
-              "padding_top": "medium",
-              "padding_bottom_mobile": "medium",
-              "menu_position": "left-center",
-              "custom_title": "",
-              "show_search": true,
-              "menu_opener_mobile": "left",
-              "logo": "booqable://assets/clnx72n1t00pj3b6hg3ct6dlzskilogo.png",
-              "menu_style": "horizontal",
-              "menu_position_mobile": "top",
-              "padding_bottom": "small",
-              "padding_top_mobile": "medium",
-              "search_placeholder": "Search",
-              "menu": "47a84708-2946-4f05-af4e-196187da61b7",
-              "color_palette": "two"
-            },
-            "disabled": null
-          },
-          "footer": {
-            "type": "footer",
-            "blocks": {
-              "menu": {
-                "type": "menu",
-                "settings": {
-                  "heading": "Column One",
-                  "menu": "column-1",
-                  "menu_align": "left"
-                },
-                "disabled": null
-              },
-              "menu_789456": {
-                "type": "menu",
-                "settings": {
-                  "heading": "Column Two",
-                  "menu": "column-1",
-                  "menu_align": "left"
-                },
-                "disabled": null
-              },
-              "menu_789457": {
-                "type": "menu",
-                "settings": {
-                  "heading": "Column Three",
-                  "menu": "column-1",
-                  "menu_align": "left"
-                },
-                "disabled": null
-              },
-              "menu_789458": {
-                "type": "menu",
-                "settings": {
-                  "heading": "Column Four",
-                  "menu": "column-1",
-                  "menu_align": "left"
-                },
-                "disabled": null
-              },
-              "menu_789459": {
-                "type": "menu",
-                "settings": {
-                  "heading": "Column Five",
-                  "menu": "column-1",
-                  "menu_align": "left"
-                },
-                "disabled": null
-              }
-            },
-            "block_order": [
-              "menu",
-              "menu_789456",
-              "menu_789457",
-              "menu_789458",
-              "menu_789459"
-            ],
-            "settings": {
-              "bottom_text": "{{ \"now\" | date: \"%Y\" }} Slope Side Skis. All right reserved.",
-              "padding_top": "medium",
-              "padding_bottom_mobile": "small",
-              "custom_title": "Skiable",
-              "logo": "booqable://assets/clnx72znf00pt3b6h9itupcfyskilogo.png",
-              "bottom_menu": "bottom-menu",
-              "padding_bottom": "medium",
-              "padding_top_mobile": "small",
-              "color_palette": "one"
-            },
-            "disabled": null
-          }
+          "disabled": null
         },
-        "accent_color": "#FFFFFF",
-        "image_placeholder": "booqable://assets/clnk1htnz007g3b6hxm0h3f8simage106.png",
-        "h6_size": 20,
-        "h5_size": 24,
-        "h4_size": 32,
-        "h3_size": 40,
-        "h2_size": 48,
-        "accent_background_2": "#015FB8",
-        "h1_size": 56,
-        "secondary_color": "#4E5D78",
-        "primary_color_2": "#131314"
-      }
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "left-center",
+            "custom_title": "",
+            "show_search": true,
+            "menu_opener_mobile": "left",
+            "logo": "booqable://assets/clnx72n1t00pj3b6hg3ct6dlzskilogo.png",
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "small",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "47a84708-2946-4f05-af4e-196187da61b7",
+            "color_palette": "two"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Slope Side Skis. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "Skiable",
+            "logo": "booqable://assets/clnx72znf00pt3b6h9itupcfyskilogo.png",
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "one"
+          },
+          "disabled": null
+        }
+      },
+      "accent_color": "#FFFFFF",
+      "image_placeholder": "booqable://assets/clnk1htnz007g3b6hxm0h3f8simage106.png",
+      "h6_size": 20,
+      "h5_size": 24,
+      "h4_size": 32,
+      "h3_size": 40,
+      "h2_size": 48,
+      "accent_background_2": "#015FB8",
+      "h1_size": 56,
+      "secondary_color": "#4E5D78",
+      "primary_color_2": "#131314"
     }
   }
 }

@@ -1,45 +1,122 @@
 {
   "name": "Home",
   "sections": {
-    "images": {
-      "type": "images",
+    "title_987650": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "padding_top": "large",
+        "bg_text": "FAQ",
+        "padding_bottom_mobile": "small",
+        "title": "Frequently asked questions",
+        "padding_bottom": "small",
+        "tag": "",
+        "padding_top_mobile": "medium",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "color_palette": "two"
+      },
+      "disabled": false
+    },
+    "title_987654": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "/collections/all",
+        "padding_top": "medium",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "The perfect pair",
+        "padding_bottom": "small",
+        "tag": "Featured",
+        "padding_top_mobile": "medium",
+        "description": "<p>Choose from our selection of skis.</p>",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "products": {
+      "type": "products",
       "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Check out products",
-            "button_url_1": "booqable://products/",
-            "button_2": "More info",
-            "button_url_2": "booqable://root/",
-            "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
-            "image": "booqable://assets/image-tough-hero.jpg",
-            "image_mobile": "booqable://assets/image-tough-hero-mobile.jpg",
-            "overlay_opacity": 80,
-            "text_position": "middle-left",
-            "text_position_mobile": "top-left",
-            "title": "Rent heavy <br> equipment"
-          },
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {},
           "disabled": null
         }
       },
       "block_order": [
-        "slide"
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450"
       ],
       "settings": {
-        "color_palette": "two",
-        "effect": "slide",
-        "height": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "datepicker_title": "",
-        "timer": 5
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "small",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
       },
-      "disabled": null
+      "disabled": false
+    },
+    "title_987655": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "medium",
+        "bg_text": "Booking",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Booking is simple",
+        "padding_bottom": "small",
+        "tag": "Rent a product",
+        "padding_top_mobile": "large",
+        "description": "<p>Booking skis with skiable is easy, just follow these steps.</p>",
+        "color_palette": "one"
+      },
+      "disabled": true
+    },
+    "title_987656": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "large",
+        "bg_text": "News & articles",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "News & articles",
+        "padding_bottom": "small",
+        "tag": "Mosaic content section",
+        "padding_top_mobile": "medium",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "color_palette": "one"
+      },
+      "disabled": true
     },
     "logos": {
       "type": "logos",
@@ -47,35 +124,35 @@
         "logo": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1-white.png"
+            "image": "booqable://assets/image-partner-logo-1.png"
           },
           "disabled": null
         },
         "logo_478138": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-2-white.png"
+            "image": "booqable://assets/image-partner-logo-2.png"
           },
           "disabled": null
         },
         "logo_478148": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3-white.png"
+            "image": "booqable://assets/image-partner-logo-3.png"
           },
           "disabled": null
         },
         "logo_478178": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-1-white.png"
+            "image": "booqable://assets/image-partner-logo-1.png"
           },
           "disabled": null
         },
         "logo_478118": {
           "type": "logo",
           "settings": {
-            "image": "booqable://assets/image-partner-logo-3-white.png"
+            "image": "booqable://assets/image-partner-logo-3.png"
           },
           "disabled": null
         }
@@ -97,345 +174,7 @@
         "padding_top": "large",
         "padding_top_mobile": "large"
       },
-      "disabled": false
-    },
-    "title": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "Category",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "tag": "OUR COLLECTIONS",
-        "title": "We can service you in each category"
-      },
-      "disabled": null
-    },
-    "collections": {
-      "type": "collections",
-      "blocks": {
-        "collection": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_242972": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_242542": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        },
-        "collection_535502": {
-          "type": "collection",
-          "settings": {},
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "collection",
-        "collection_242972",
-        "collection_242542",
-        "collection_535502"
-      ],
-      "settings": {
-        "color_overlay": "dark",
-        "color_palette": "one",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Button",
-        "button_url_1": "booqable://root/",
-        "button_2": "Button",
-        "button_url_2": "booqable://root/",
-        "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
-        "image": "booqable://assets/image-tough-building.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "TAGLINE",
-        "title": "Medium length section heading goes here"
-      },
-      "disabled": null
-    },
-    "title_987654": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_label": "View all",
-        "button_url": "/collections/all",
-        "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "TAGLINE",
-        "title": "Products"
-      },
-      "disabled": null
-    },
-    "products": {
-      "type": "products",
-      "blocks": {
-        "product": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123455": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123454": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123453": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123452": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123451": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123450": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        },
-        "product_123449": {
-          "type": "product",
-          "settings": {},
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "product",
-        "product_123455",
-        "product_123454",
-        "product_123453",
-        "product_123452",
-        "product_123451",
-        "product_123450",
-        "product_123449"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
-        "show_carousel": true,
-        "show_excerpt": true,
-        "show_navigation": true,
-        "show_pagination": true,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "title_987655": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "How does it work",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "tag": "RENT A PRODUCT",
-        "title": "How does it work"
-      },
-      "disabled": null
-    },
-    "numbered-blocks": {
-      "type": "numbered-blocks",
-      "blocks": {
-        "block": {
-          "type": "block",
-          "settings": {
-            "button_1": "Button",
-            "button_url_1": "booqable://root/",
-            "button_2": "Button",
-            "button_url_2": "booqable://root/",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-tough-step-1.jpg",
-            "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-            "text_alignment": "middle"
-          },
-          "disabled": null
-        },
-        "block_242972": {
-          "type": "block",
-          "settings": {
-            "button_1": "Button",
-            "button_2": "Button",
-            "button_url_2": "booqable://root/",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-tough-step-2.jpg",
-            "image_position": "left",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-            "text_alignment": "middle"
-          },
-          "disabled": null
-        },
-        "block_535502": {
-          "type": "block",
-          "settings": {
-            "button_1": "Button",
-            "button_url_1": "booqable://root/",
-            "button_2": "Button",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-tough-step-3.jpg",
-            "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-            "text_alignment": "middle"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "block",
-        "block_242972",
-        "block_535502"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "title_987656": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "News & articles",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "MOSAIC CONTENT SECTION",
-        "title": "News & articles"
-      },
-      "disabled": null
-    },
-    "mosaic": {
-      "type": "mosaic",
-      "blocks": {
-        "article": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_btn_url": "booqable://root/",
-            "article_tag": "TAGLINE",
-            "heading": "Our biggest project",
-            "image": "booqable://assets/image-tough-mosaic.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          "disabled": null
-        },
-        "article_456231": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_tag": "TAGLINE",
-            "heading": "January Update",
-            "image": "booqable://assets/image-tough-bell.png",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          "disabled": null
-        },
-        "article_456232": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_tag": "TAGLINE",
-            "heading": "December Update",
-            "image": "booqable://assets/image-tough-bell.png",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "article",
-        "article_456231",
-        "article_456232"
-      ],
-      "settings": {
-        "button_label": "See all Articles",
-        "color_palette": "one",
-        "layout": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "title_987650": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "FAQ",
-        "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "",
-        "title": "Frequently asked questions"
-      },
-      "disabled": null
+      "disabled": true
     },
     "accordion": {
       "type": "accordion",
@@ -478,42 +217,325 @@
         "padding_top": "small",
         "padding_top_mobile": "small"
       },
+      "disabled": false
+    },
+    "mosaic": {
+      "type": "mosaic",
+      "blocks": {
+        "article": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Tagline",
+            "heading": "Our biggest project",
+            "image": "booqable://assets/image-placeholder-mosaic.jpg",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Tagline",
+            "heading": "January Update",
+            "image": "booqable://assets/image-bell.png",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Tagline",
+            "heading": "December Update",
+            "image": "booqable://assets/image-bell.png",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "article",
+        "article_456231",
+        "article_456232"
+      ],
+      "settings": {
+        "button_label": "See all Articles",
+        "color_palette": "one",
+        "layout": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": true
+    },
+    "numbered-blocks": {
+      "type": "numbered-blocks",
+      "blocks": {
+        "block": {
+          "type": "block",
+          "settings": {
+            "heading": "Select your rental dates",
+            "button_1": "Select dates",
+            "button_2": "",
+            "text": "<p>You can select the dates you would like to rent skis to see the availability of skis. </p>\n<p><b>Note:</b> Ski rentals are only available from October to March.</p>",
+            "image_position": "right",
+            "text_alignment": "middle",
+            "button_url_1": "booqable://root/",
+            "button_url_2": "booqable://root/",
+            "image": "booqable://assets/clnk1nvxk007r3b6h0nkv7zq6skicalendar.png"
+          },
+          "disabled": null
+        },
+        "block_242972": {
+          "type": "block",
+          "settings": {
+            "heading": "Choose your skis",
+            "button_1": "Choose skis",
+            "button_2": "",
+            "text": "<p>Choose your skis from the ones available when you want to hit the slopes. We have a wide selection that suits all ages and levels of ability.</p>",
+            "image_position": "left",
+            "text_alignment": "middle",
+            "button_url_1": "booqable://root/",
+            "button_url_2": "booqable://root/",
+            "image": "booqable://assets/clnk1tddl00833b6h3gfjzk4eskiproduct.png"
+          },
+          "disabled": null
+        },
+        "block_535502": {
+          "type": "block",
+          "settings": {
+            "button_1": "Reserve skis",
+            "button_url_1": "booqable://root/",
+            "button_2": "Button",
+            "heading": "Reserve and pay for your rentals",
+            "image": "booqable://assets/clnk2097k008n3b6h9mg2ingcskicheckout.png",
+            "image_position": "right",
+            "text": "<p>Once you're happy with your selection, you can reserve and pay for your skis online to ensure that they are ready for your arrival on the slopes.</p>",
+            "text_alignment": "middle"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "block",
+        "block_242972",
+        "block_535502"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": true
+    },
+    "date-picker": {
+      "type": "date-picker",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "color_palette": "two",
+        "title": "",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium"
+      },
       "disabled": null
     },
-    "call-to-action": {
-      "type": "call-to-action",
+    "cta": {
+      "type": "cta",
       "blocks": {},
       "block_order": [],
       "settings": {
         "button_1": "Button",
-        "button_url_1": "booqable://root/",
         "button_2": "Button",
+        "padding_top": "large",
+        "padding_bottom_mobile": "medium",
+        "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
-        "color_palette": "three",
+        "title": "Medium length heading goes here",
+        "padding_bottom": "large",
+        "padding_top_mobile": "medium",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "color_palette": "two"
+      },
+      "disabled": true
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "Book now",
+        "button_2": "More info",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "right",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "title": "Rent Skis online",
+        "padding_bottom": "large",
+        "tag": "Ski Rental",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/5ec1336a-360f-5ba7-ba15-509a71012c7f.jpg",
+        "description": "<p>Ski down freshly prepared slopes on brand-new skis! You’ll find the right equipment for a perfect day on the slopes at our ski hire centers, where you’ll be given the right advice at no extra cost.&nbsp;You can order from the comfort of your own home and simply pick them up when you arrive!</p>",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        },
+        "collection_535502": {
+          "type": "collection",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542",
+        "collection_535502"
+      ],
+      "settings": {
+        "color_overlay": "dark",
+        "color_palette": "one",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
-        "padding_top": "large",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": false
+    },
+    "title": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "medium",
+        "bg_text": "",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Hit the slopes in style",
+        "padding_bottom": "small",
+        "tag": "Book online",
         "padding_top_mobile": "medium",
-        "title": "Medium length heading goes here"
+        "description": "<p>Everything you need to hit the slopes in style.</p>",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "text_position_mobile": "top-left",
+            "button_url_1": "booqable://products/",
+            "color_overlay": "dark",
+            "button_url_2": "booqable://root/",
+            "title": "",
+            "image": "booqable://assets/11cf9963-3597-5d23-9869-516d7138392b.jpg",
+            "text_position": "center",
+            "overlay_opacity": "20",
+            "description": ""
+          },
+          "disabled": null
+        },
+        "slide_757031": {
+          "type": "slide",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "text_position_mobile": "top-left",
+            "color_overlay": "dark",
+            "title": "",
+            "image": "booqable://assets/832094ff-366b-56ad-92ea-c01b57e24cd4.jpg",
+            "text_position": "middle-left",
+            "overlay_opacity": 80,
+            "description": ""
+          },
+          "disabled": null
+        },
+        "slide_526815": {
+          "type": "slide",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "text_position_mobile": "top-left",
+            "color_overlay": "dark",
+            "title": "",
+            "image": "booqable://assets/04a8f333-89b4-5b5f-b3cc-3c4d02ef1f71.jpg",
+            "text_position": "middle-left",
+            "overlay_opacity": 80,
+            "description": ""
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide",
+        "slide_757031",
+        "slide_526815"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "height": "small",
+        "padding_bottom_mobile": "large",
+        "effect": "slide",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "color_palette": "two"
       },
       "disabled": null
     }
   },
   "order": [
-    "images",
-    "logos",
-    "title",
-    "collections",
     "text-with-image",
+    "date-picker",
+    "logos",
     "title_987654",
     "products",
+    "images",
+    "title",
+    "collections",
     "title_987655",
     "numbered-blocks",
     "title_987656",
     "mosaic",
     "title_987650",
     "accordion",
-    "call-to-action"
+    "cta"
   ]
 }
