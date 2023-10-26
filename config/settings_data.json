@@ -272,7 +272,7 @@
       "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-tough-placeholder.png"
     },
-    "romantic": {
+    "romance": {
       "sections": {
         "top-bar": {
           "type": "top-bar",
@@ -408,7 +408,7 @@
       "tagline_size": 47,
       "image_placeholder": "booqable://assets/image-romantic-placeholder.jpg"
     },
-    "fashion": {
+    "vogue": {
       "sections": {
         "top-bar": {
           "type": "top-bar",
