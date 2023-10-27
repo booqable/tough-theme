@@ -107,7 +107,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -50px;
   z-index: 1;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
@@ -128,22 +128,8 @@
   height: 100%;
 }
 
-.modern-design .collections__link .collections__image-item:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 50px;
-  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
-}
-
-.modern-design .collections__link:hover .collections__image-item:before {
-  bottom: 40px;
-}
-
-.modern-design .collections__link:hover .collections__image-item:after {
-  top: calc(100% - 40px);
+.modern-design .collections__item:hover .collections__link .collections__image-item:before {
+  bottom: 0;
 }
 
 .modern-design .palette-one .collections__image-item:before {
@@ -154,24 +140,16 @@
   color: var(--color-overlay, #FFFFFF);
 }
 
-.modern-design .palette-one.overlay-dark .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--background-overlay, #0B1A26) 8.87%, var(--background-overlay-00, #0B1A2600) 95.37%);
-}
-
-.modern-design .palette-one.overlay-dark .collections__link .collections__image-item:after {
-  background: var(--background-overlay, #0B1A26);
+.modern-design .palette-one.overlay-dark .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--background-overlay, #0B1A26) 10%, var(--background-overlay-00, #0B1A2600) 95.37%);
 }
 
 .modern-design .palette-one.overlay-light .collections__heading {
   color: var(--background-overlay, #0B1A26);
 }
 
-.modern-design .palette-one.overlay-light .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-overlay, #FFFFFF) 8.87%, var(--color-overlay-00, #FFFFFF00) 95.37%);
-}
-
-.modern-design .palette-one.overlay-light .collections__link .collections__image-item:after {
-  background: var(--color-overlay, #FFFFFF);
+.modern-design .palette-one.overlay-light .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-overlay, #FFFFFF) 10%, var(--color-overlay-00, #FFFFFF00) 95.37%);
 }
 
 .modern-design .palette-two .collections__image-item:before {
@@ -182,24 +160,16 @@
   color: var(--color-overlay-2, #FFFFFF);
 }
 
-.modern-design .palette-two.overlay-dark .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--background-overlay-2, #0B1A26) 8.87%, var(--background-overlay-2-00, #0B1A2600) 95.37%);
-}
-
-.modern-design .palette-two.overlay-dark .collections__link .collections__image-item:after {
-  background: var(--background-overlay-2, #0B1A26);
+.modern-design .palette-two.overlay-dark .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--background-overlay-2, #0B1A26) 10%, var(--background-overlay-2-00, #0B1A2600) 95.37%);
 }
 
 .modern-design .palette-two.overlay-light .collections__heading {
   color: var(--background-overlay-2, #0B1A26);
 }
 
-.modern-design .palette-two.overlay-light .collections__link .collections__image-item:before {
-  background: linear-gradient(0.13deg, var(--color-overlay-2, #FFFFFF) 8.87%, var(--color-overlay-2-00, #FFFFFF00) 95.37%);
-}
-
-.modern-design .palette-two.overlay-light .collections__link .collections__image-item:after {
-  background: var(--color-overlay-2, #FFFFFF);
+.modern-design .palette-two.overlay-light .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-overlay-2, #FFFFFF) 10%, var(--color-overlay-2-00, #FFFFFF00) 95.37%);
 }
 
 .classic-design .palette-one .collections__item {
