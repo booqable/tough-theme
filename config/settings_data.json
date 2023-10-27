@@ -6,7 +6,7 @@
         "blocks": {},
         "block_order": [],
         "settings": {
-          "bar_message": "Free shipping from €50",
+          "bar_message": "Get 15% off with code <b>CONSTRUCT</b> at checkout",
           "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
           "color_palette": "three",
           "icon": "phone",
@@ -143,7 +143,7 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "bar_message": "Free shipping from €50",
+            "bar_message": "Get 15% off with code <b>CONSTRUCT</b> at checkout",
             "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
             "color_palette": "three",
             "icon": "phone",
@@ -279,7 +279,7 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "bar_message": "Free shipping from €50",
+            "bar_message": "Get 15% off with code <b>ROMANCE</b> at checkout",
             "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
             "color_palette": "three",
             "icon": "phone",
@@ -415,7 +415,7 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "bar_message": "Free shipping from €50",
+            "bar_message": "Get 15% off with code <b>VOGUE</b> at checkout",
             "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
             "color_palette": "three",
             "icon": "phone",

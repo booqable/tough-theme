@@ -12,13 +12,13 @@
             "button_2": "More info",
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Suspendisse varius enim in <br> eros elementum tristique.",
+            "description": "Empower your construction endeavors with our<br> vast inventory of premium equipment rentals.",
             "image": "booqable://assets/image-tough-hero.jpg",
             "image_mobile": "booqable://assets/image-tough-hero-mobile.jpg",
             "overlay_opacity": 80,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "title": "Rent heavy <br> equipment"
+            "title": "Rent construction<br> equipment"
           },
           "disabled": null
         }
@@ -89,7 +89,7 @@
       ],
       "settings": {
         "color_palette": "two",
-        "title": "Used by the world's most average companies",
+        "title": "Trusted by the world's top companies",
         "text_position": "left",
         "text_position_mobile": "center",
         "padding_bottom": "medium",
@@ -108,13 +108,13 @@
         "button_label": "",
         "button_url": "",
         "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Explore our construction rental equipment",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "tag": "OUR COLLECTIONS",
-        "title": "We can service you in each category"
+        "title": "Shop by Category"
       },
       "disabled": null
     },
@@ -163,12 +163,12 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_1": "Button",
-        "button_url_1": "booqable://root/",
-        "button_2": "Button",
+        "button_1": "Book now",
+        "button_url_1": "booqable://collections/",
+        "button_2": "Learn more",
         "button_url_2": "booqable://root/",
         "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.,",
+        "description": "From project management to equipment maintenance, safety compliance, and more, our expertise is dedicated to servicing construction businesses. Let us be your trusted partner in building your success.",
         "image": "booqable://assets/image-tough-building.jpg",
         "image_position": "right",
         "padding_bottom": "large",
@@ -176,8 +176,8 @@
         "padding_top": "large",
         "padding_top_mobile": "large",
         "space_height": "none",
-        "tag": "TAGLINE",
-        "title": "Medium length section heading goes here"
+        "tag": "Construction",
+        "title": "Supporting Your Construction Business"
       },
       "disabled": null
     },
@@ -189,12 +189,12 @@
         "button_label": "View all",
         "button_url": "/collections/all",
         "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Our most rented products",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "large",
         "padding_top_mobile": "medium",
-        "tag": "TAGLINE",
+        "tag": "Featured",
         "title": "Products"
       },
       "disabled": null
@@ -272,17 +272,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "How does it work",
+        "bg_text": "How it works",
         "button_label": "",
         "button_url": "",
         "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Learn about the rental process",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "tag": "RENT A PRODUCT",
-        "title": "How does it work"
+        "title": "How it works"
       },
       "disabled": null
     },
@@ -292,42 +292,43 @@
         "block": {
           "type": "block",
           "settings": {
-            "button_1": "Button",
-            "button_url_1": "booqable://root/",
-            "button_2": "Button",
-            "button_url_2": "booqable://root/",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-tough-step-1.jpg",
+            "heading": "Choose your rental period",
+            "button_1": "Get started",
+            "button_2": "Learn more",
+            "text": "<p>Choose the dates you would like to rent construction equipment. This will allow you to see the availability of our products and if they line up with your expected dates.</p>",
             "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-            "text_alignment": "middle"
+            "text_alignment": "middle",
+            "button_url_1": "booqable://root/",
+            "button_url_2": "booqable://root/",
+            "image": "booqable://assets/image-tough-step-1.jpg"
           },
           "disabled": null
         },
         "block_242972": {
           "type": "block",
           "settings": {
-            "button_1": "Button",
+            "heading": "Select your equipment",
+            "button_1": "Select equipment",
             "button_2": "Button",
-            "button_url_2": "booqable://root/",
-            "heading": "Medium length section heading goes here",
-            "image": "booqable://assets/image-tough-step-2.jpg",
+            "text": "<p>Browse our inventory to see the products we have available and add your selected products to your cart to check out.</p>",
             "image_position": "left",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-            "text_alignment": "middle"
+            "text_alignment": "middle",
+            "button_url_1": "booqable://collections/",
+            "button_url_2": "booqable://root/",
+            "image": "booqable://assets/image-tough-step-2.jpg"
           },
           "disabled": null
         },
         "block_535502": {
           "type": "block",
           "settings": {
-            "button_1": "Button",
+            "button_1": "Book now",
             "button_url_1": "booqable://root/",
             "button_2": "Button",
-            "heading": "Medium length section heading goes here",
+            "heading": "Book and pay online",
             "image": "booqable://assets/image-tough-step-3.jpg",
             "image_position": "right",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+            "text": "<p>Finally, you can go to the checkout to book and pay for your equipment rental online. This will ensure that the products are reserved just for you.</p>",
             "text_alignment": "middle"
           },
           "disabled": null
@@ -356,12 +357,12 @@
         "button_label": "",
         "button_url": "",
         "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Get the latest construction rental news.",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "large",
         "padding_top_mobile": "medium",
-        "tag": "MOSAIC CONTENT SECTION",
+        "tag": "NEWS",
         "title": "News & articles"
       },
       "disabled": null
@@ -374,10 +375,10 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "TAGLINE",
+            "article_tag": "PROJECTS",
             "heading": "Our biggest project",
             "image": "booqable://assets/image-tough-mosaic.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "text": "See how we helped a company plan and execute a huge excavation project."
           },
           "disabled": null
         },
@@ -385,10 +386,10 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "TAGLINE",
+            "article_tag": "UPDATE",
             "heading": "January Update",
             "image": "booqable://assets/image-tough-bell.png",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "text": "What's in stock for January?"
           },
           "disabled": null
         },
@@ -396,10 +397,10 @@
           "type": "article",
           "settings": {
             "article_btn": "Read more",
-            "article_tag": "TAGLINE",
+            "article_tag": "UPDATE",
             "heading": "December Update",
             "image": "booqable://assets/image-tough-bell.png",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            "text": "What's in stock for December?"
           },
           "disabled": null
         }
@@ -427,7 +428,7 @@
       "settings": {
         "bg_text": "FAQ",
         "color_palette": "two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "description": "Explore the FAQs to ensure you're well-prepared for your construction project with us.",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "large",
@@ -443,24 +444,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "How can I rent construction equipment from {{ shop.name }}?",
+            "content": "Renting construction equipment from our business is a straightforward process. Begin by browsing our extensive inventory of construction equipment, including excavators, bulldozers, cranes, and more. Once you've selected the equipment you need for your project, submit a rental request or contact our team. We'll work with you to confirm availability, discuss rental terms, and provide you with a quote. After we've agreed on the details, we'll arrange for the equipment to be delivered to your project site. When your rental period is complete, we'll coordinate the equipment's pick-up. It's a convenient way to access the machinery you need for your construction projects."
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "What happens if the rented equipment breaks down or requires maintenance during my rental period?",
+            "content": "In the event that the rented equipment experiences a breakdown or requires maintenance during your rental period, please contact our support team immediately. We have a dedicated service team ready to assist you. Depending on the issue and its cause, we'll arrange for repairs or replacement as needed. The repair and maintenance costs for equipment issues that are not a result of misuse or neglect will typically be covered by our business. Please refer to our rental agreement for specific terms and conditions regarding equipment breakdowns and maintenance."
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "Can I extend the rental period if my construction project takes longer than expected?",
+            "content": "Yes, you have the option to extend the rental period if your construction project takes longer than initially planned. To do so, please contact our team as soon as you anticipate the need for an extension. We will work with you to arrange the necessary documentation and adjust the rental terms accordingly. Keep in mind that equipment availability may vary, so it's a good practice to notify us as soon as possible to ensure the continued availability of the equipment you need. We understand that construction schedules can change, and we're here to support your project's evolving needs."
           },
           "disabled": null
         }
@@ -490,12 +491,12 @@
         "button_2": "Button",
         "button_url_2": "booqable://root/",
         "color_palette": "three",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+        "description": "Trust {{ shop.name }} to deliver the right construction equipment for your job site.",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "large",
         "padding_top_mobile": "medium",
-        "title": "Medium length heading goes here"
+        "title": "Get the right equipment for the job"
       },
       "disabled": null
     }
