@@ -12,7 +12,7 @@
             "button_2": "More info",
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. ",
+            "description": "Unleash your inner fashionista with an<br/>array of stunning rental options for every occasion.",
             "image": "booqable://assets/image-fashion-hero.png",
             "image_mobile": "",
             "overlay_opacity": 40,
@@ -204,27 +204,39 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
-        "testimonial": {
+        "testimonial_1": {
           "type": "testimonial",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+            "description": "The selection of outfits is superb, and I was spoiled for choice. The process was seamless, and the customer service was top-notch. Thank you for making me look and feel fabulous! ",
             "image": "booqable://assets/image-fashion-testimonials.jpg",
-            "name": "Name Surname",
-            "position": "Position, Company name",
+            "name": "Emily",
+            "position": "New York City",
             "stars": 5,
-            "title": "Customer review"
+            "title": "A Fashionista's Dream Come True!"
           },
           "disabled": null
         },
-        "testimonial_478139": {
+        "testimonial_2": {
           "type": "testimonial",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+            "description": "Not only did I find the perfect dress, but the prices were incredibly reasonable. The entire rental process was a breeze, and the dress was pristine. I received compliments all night!",
             "image": "booqable://assets/image-fashion-testimonials.jpg",
-            "name": "Name Surname",
-            "position": "Position, Company name",
-            "stars": 4,
-            "title": "Customer review"
+            "name": "Sarah",
+            "position": "Los Angeles",
+            "stars": 5,
+            "title": "Affordable Elegance at Its Best"
+          },
+          "disabled": null
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "description": "The selection of designer dresses and accessories was fantastic. I rented a stunning gown that made me feel like a million bucks. The convenience and quick delivery were a game-changer. I'll be back for more events!",
+            "image": "booqable://assets/image-fashion-testimonials.jpg",
+            "name": "Erica",
+            "position": "Chicago",
+            "stars": 5,
+            "title": "A Lifesaver for Last-Minute Fashion Emergencies"
           },
           "disabled": null
         }
@@ -257,7 +269,7 @@
             "button_2": "",
             "button_url_2": "",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. Duis <br>cursus, mi quis viverra ornare, eros dolor interdum nulla, ut <br>commodo diam libero vitae erat.",
+            "description": "From viral sensations to groundbreaking innovations, this is your hub for discovering what's buzzing in the world right now.",
             "image": "booqable://assets/image-fashion-clothes.png",
             "image_mobile": "",
             "overlay_opacity": 64,
@@ -287,83 +299,6 @@
       },
       "disabled": null
     },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "two",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
-        "text": ""
-      },
-      "disabled": null
-    },
-    "numbered-blocks": {
-      "type": "numbered-blocks",
-      "blocks": {
-        "block": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_url_1": "",
-            "button_2": "",
-            "button_url_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-fashion-step-1.jpg",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        },
-        "block_242972": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_2": "",
-            "button_url_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-fashion-step-2.jpg",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        },
-        "block_535502": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_url_1": "",
-            "button_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-fashion-step-2.jpg",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "block",
-        "block_242972",
-        "block_535502"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
     "title_987656": {
       "type": "title",
       "blocks": {},
@@ -373,7 +308,7 @@
         "button_label": "See all",
         "button_url": "booqable://root/",
         "color_palette": "one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "description": "Get the inside scoop on what's new in fashion.",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
@@ -392,9 +327,9 @@
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
-            "heading": "A Guide On The Maid Of Honor’s Duties",
+            "heading": "Why Renting Is the Future of Wardrobe Sustainability",
             "image": "booqable://assets/image-fashion-mosaic-1.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "Explore the eco-friendly benefits of fashion rental and how it's contributing to a more sustainable future."
           },
           "disabled": null
         },
@@ -404,9 +339,9 @@
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
-            "heading": "The Wedding Favor Ideas Guide",
+            "heading": "The Ultimate Guide to Renting Designer Dresses",
             "image": "booqable://assets/image-fashion-mosaic-2.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "Discover how renting designer dresses can transform your wardrobe and make high-end fashion accessible."
           },
           "disabled": null
         },
@@ -416,9 +351,9 @@
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
             "article_tag": "Category",
-            "heading": "The Wedding Order Of Events Guide",
+            "heading": "Tips and Tricks for Nailing the Perfect Rental Look",
             "image": "booqable://assets/image-fashion-mosaic-3.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "This blog post offers valuable tips and tricks for selecting the ideal rental outfit for your next big event."
           },
           "disabled": null
         }
@@ -451,7 +386,7 @@
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "title": "Frequently asked questions",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+        "text": "Explore the FAQs to ensure you're well-prepared to embark on your fashion journey with us."
       },
       "disabled": null
     },
@@ -461,24 +396,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "How does the rental process work?",
+            "content": "Our fashion rental process is simple and convenient. First, browse our extensive collection of designer clothing and accessories. Once you've found the perfect item, select your rental duration, ranging from a few days to several weeks. Add the item to your cart and proceed to checkout. We'll ship the item to your doorstep, and you can enjoy wearing it for the specified rental period. When you're done, return it using the prepaid shipping label provided. We take care of cleaning and maintenance so you can sit back, relax, and enjoy the latest fashion trends without the commitment of buying"
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "What happens if I damage or stain a rented item?",
+            "content": "Accidents can happen, and we understand that. Please notify us immediately if you accidentally damage or stain. We have a dedicated team to assess and handle such situations. Depending on the damage or stain extent, you may incur additional charges, which will be communicated to you. We strongly recommend reviewing our rental agreement for specific terms and conditions regarding damage and stains. We take great care to maintain the quality of our items, so we appreciate your honesty and timely reporting of any issues."
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "Can I purchase a rented item if I fall in love with it?",
+            "content": "Absolutely! If you rent an item and find that you can't bear to part with it, you can purchase it. Contact our customer support team, and they will assist you in converting your rental into a purchase. In most cases, a portion of your rental fees can be applied toward the purchase price, making it an even better deal. Just keep in mind that the item's availability for purchase may vary, so it's a good idea to inquire as soon as you decide to keep it."
           },
           "disabled": null
         }
@@ -507,8 +442,6 @@
     "testimonials",
     "logos",
     "images_870989",
-    "text",
-    "numbered-blocks",
     "title_987656",
     "mosaic",
     "text_987650",

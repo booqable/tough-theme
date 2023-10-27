@@ -12,7 +12,7 @@
             "button_2": "More info",
             "button_url_2": "booqable://root/",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique.",
+            "description": "Transform your event into an unforgettable experience<br>with our extensive selection of high-quality decor rentals.",
             "image": "booqable://assets/image-romantic-hero.jpeg",
             "image_mobile": "",
             "overlay_opacity": 40,
@@ -225,24 +225,36 @@
         "testimonial": {
           "type": "testimonial",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+            "description": "<p>The array of decorations and themes to choose from was incredible. The team's support and attention to detail were exceptional, and they truly brought my dream wedding to life.</p>",
             "image": "booqable://assets/image-romantic-testimonials.jpg",
-            "name": "Name Surname",
-            "position": "Position, Company name",
+            "name": "Jessica",
+            "position": "Miami",
             "stars": 5,
-            "title": "Customer review"
+            "title": "Transformed My Event into a Fairytale!"
           },
           "disabled": null
         },
         "testimonial_478139": {
           "type": "testimonial",
           "settings": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
+            "description": "<p>Planning our wedding was a breeze with the help of {{ shop.name }}. Their collection of wedding decor was extensive and absolutely stunning. From elegant floral arrangements to whimsical lighting, they had it all. </p>",
             "image": "booqable://assets/image-romantic-testimonials.jpg",
-            "name": "Name Surname",
-            "position": "Position, Company name",
-            "stars": 4,
-            "title": "Customer review"
+            "name": "Sarah",
+            "position": "Los Angeles",
+            "stars": "5",
+            "title": "Stress-Free Wedding Planning Made Beautiful"
+          },
+          "disabled": null
+        },
+        "testimonial_675383": {
+          "type": "testimonial",
+          "settings": {
+            "image": "booqable://assets/image-romantic-testimonials.jpg",
+            "title": "The Secret to Our Dream Wedding",
+            "description": "<p>Our wedding was a dream come true, thanks to this event decor rental business. Their selection of wedding decor and accessories helped us create a day that was uniquely 'us'. Their team's expertise and support ensured that every detail was perfect.</p>",
+            "name": "Rebecca",
+            "position": "Chicago",
+            "stars": "5"
           },
           "disabled": null
         }
@@ -275,7 +287,7 @@
             "button_2": "",
             "button_url_2": "",
             "color_overlay": "dark",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Suspendisse varius enim in eros elementum tristique. Duis <br>cursus, mi quis viverra ornare, eros dolor interdum nulla, ut <br>commodo diam libero vitae erat.",
+            "description": "Make a lasting impression at your special event with a podium<br> table designed to add prestige and functionality to your ceremony.",
             "image": "booqable://assets/image-romantic-ceremony.png",
             "image_mobile": "",
             "overlay_opacity": 64,
@@ -302,83 +314,6 @@
         "show_datepicker": false,
         "datepicker_title": "",
         "timer": 5
-      },
-      "disabled": null
-    },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "two",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
-        "text": ""
-      },
-      "disabled": null
-    },
-    "numbered-blocks": {
-      "type": "numbered-blocks",
-      "blocks": {
-        "block": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_url_1": "",
-            "button_2": "",
-            "button_url_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-romantic-step-1.png",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        },
-        "block_242972": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_2": "",
-            "button_url_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-romantic-step-2.png",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        },
-        "block_535502": {
-          "type": "block",
-          "settings": {
-            "button_1": "",
-            "button_url_1": "",
-            "button_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-romantic-step-2.png",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "block",
-        "block_242972",
-        "block_535502"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
       },
       "disabled": null
     },
@@ -409,10 +344,10 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "Category",
+            "article_tag": "Guides",
             "heading": "A Guide On The Maid Of Honor’s Duties",
             "image": "booqable://assets/image-romantic-mosaic-1.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "From planning the perfect bridal shower to supporting the bride on her big day, learn how to excel in your duties."
           },
           "disabled": null
         },
@@ -421,10 +356,10 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "Category",
+            "article_tag": "Guide",
             "heading": "The Wedding Favor Ideas Guide",
             "image": "booqable://assets/image-romantic-mosaic-2.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "From personalized keepsakes to delicious treats, find inspiration to make your wedding favors unforgettable and leave a lasting impression."
           },
           "disabled": null
         },
@@ -433,10 +368,10 @@
           "settings": {
             "article_btn": "Read more",
             "article_btn_url": "booqable://root/",
-            "article_tag": "Category",
+            "article_tag": "Guide",
             "heading": "The Wedding Order Of Events Guide",
             "image": "booqable://assets/image-romantic-mosaic-3.jpg",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros."
+            "text": "Our comprehensive guide ensures a seamless and memorable wedding day, helping you plan every moment with confidence and precision."
           },
           "disabled": null
         }
@@ -469,7 +404,7 @@
         "padding_top": "medium",
         "padding_top_mobile": "medium",
         "title": "FREQUENTLY ASKED QUESTIONS",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+        "text": "Explore the FAQs to ensure you're well-prepared to embark on your event journey with us."
       },
       "disabled": null
     },
@@ -479,24 +414,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "How do I rent event decor from {{ shop.name }}?",
+            "content": "Renting event decor from us is a straightforward process. Start by browsing our wide selection of event decor items, including centerpieces, lighting, table linens, and more. Once you've chosen the items that match your event's style and theme, add them to your cart and proceed to checkout. Specify the date of your event, and we will deliver the decor to your chosen location. After your event, simply pack the items back into their original packaging and use the provided return label to send them back to us. It's a hassle-free way to elevate your event's atmosphere with our beautiful decor."
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "What if I need assistance with decor setup and arrangement at my event?",
+            "content": "We understand that setting up event decor can be a challenge. That's why we offer optional setup and arrangement services for your convenience. During the checkout process, you can choose to add our professional setup service. Our experienced team will ensure that the decor is placed and arranged according to your preferences, saving you time and effort. This service is available for an additional fee, and you can discuss your specific requirements with our team to create a customized setup plan."
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent a product from your shop?",
-            "content": "Lorem ipsum dolor sit amet consectetur. Ut sagittis massa diam bibendum netus in morbi. Imperdiet quis tempor nunc cum convallis massa. Risus egestas amet nam aliquet vulputate in non morbi blandit. Libero ultrices hendrerit purus id. Ultrices sed facilisi habitasse lobortis. Risus arcu donec duis id enim quam. Nisl pulvinar tortor amet posuere magna tincidunt."
+            "heading": "Is it possible to view the event decor items in person before renting them?",
+            "content": "Yes, you can view our event decor items in person before making a rental decision. We encourage you to schedule an appointment to visit our showroom and see the decor up close. This is a great opportunity to get a better sense of how the items will look at your event and discuss any questions or customization options with our staff. Our showroom visits are by appointment only to ensure that we can provide you with personalized attention and guidance. Contact us to schedule your visit and take the first step toward creating a stunning event decor setup."
           },
           "disabled": null
         }
@@ -525,8 +460,6 @@
     "testimonials",
     "logos",
     "images_870989",
-    "text",
-    "numbered-blocks",
     "title_987656",
     "mosaic",
     "text_987650",
