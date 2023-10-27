@@ -114,9 +114,3 @@
     padding-bottom: 16px;
   }
 }
-
-@media (min-width: 1200px) {
-  .logos__col + .logos__logos {
-    padding-left: 7.2%;
-  }
-}
