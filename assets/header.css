@@ -405,7 +405,7 @@
   }
 
   .header__content-inner.header__menu-position--centered {
-    grid-template-columns: 160px 1fr 160px;
+    grid-template-columns: minmax(160px, auto) 1fr 160px;
   }
 
   .header__logo-wrapper:not(:empty) {
@@ -563,5 +563,3 @@
     background: var(--color-border-2, #FFFFFF47);
   }
 }
-
-
