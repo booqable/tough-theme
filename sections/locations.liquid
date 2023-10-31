@@ -101,7 +101,7 @@
             {%- if city != blank -%}
               {{- city -}}
             {%- else -%}
-              City {{ index }}
+              Location name
             {%- endif -%}
           </span>
 
@@ -109,7 +109,7 @@
             {%- if address != blank -%}
               {{- address -}},
             {%- else -%}
-              {{ index }} Example Street,
+              Street,
             {%- endif -%}
 
             {% if city != blank %}
@@ -127,7 +127,7 @@
             {% if zipcode != blank %}
               {{ zipcode }},
             {% else %}
-              Zipcode,
+              ZIP code,
             {% endif %}
 
             {% if country != blank %}
@@ -173,9 +173,7 @@
                 </div>
               {%- endif -%}
             {%- else -%}
-              <div class="tabs__empty">
-                Here will be a map with your location {{ index }}
-              </div>
+              <div class="tabs__empty"></div>
             {%- endif -%}
           </div>
         </div>
