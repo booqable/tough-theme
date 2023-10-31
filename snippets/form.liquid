@@ -75,7 +75,6 @@
         type="text"
         name="form[author]"
         id="author"
-        title="(e.g. Jon Doe)"
       >
 
       <div class="form__error-message">
@@ -108,7 +107,6 @@
         type="email"
         name="form[email]"
         id="email"
-        title="(e.g. mail@domain.com)"
       >
 
       <div class="form__error-message">
@@ -139,7 +137,6 @@
         class="form__textarea"
         name="form[body]"
         id="body"
-        title="Describe what you want in more detail"
       >
         {%- if form.posted_successfully -%}{{- form.body | strip -}}{%- endif -%}
       </textarea>
