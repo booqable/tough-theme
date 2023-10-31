@@ -242,8 +242,9 @@
         }
       },
       "block_order": [
-        "testimonial",
-        "testimonial_478139"
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
       ],
       "settings": {
         "show_navigation": true,
