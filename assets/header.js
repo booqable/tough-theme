@@ -180,7 +180,7 @@ class Header {
   menuOverflow(e) {
     const target = e?.target.previousElementSibling;
 
-    if (target !== this.menuOpener) return false;
+    if (!target || target !== this.menuOpener) return false;
 
     this.menuOpener && this.menuOpener.checked ? this.closeMenu() : this.addOverflow()
   }
