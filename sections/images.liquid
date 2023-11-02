@@ -111,9 +111,31 @@
   {%- endcapture -%}
   {% comment %} CSS variables end {% endcomment %}
 
+  {%- assign default_color = nil -%}
+
+  {%- if color_palette == "one" -%}
+    {%- if settings.primary_color != blank -%}
+      {%- assign default_color = settings.primary_color -%}
+    {%- else -%}
+      {%- assign default_color = #0B1A26 -%}
+    {%- endif -%}
+  {%- elsif color_palette == "two" -%}
+    {%- if settings.primary_color_2 != blank -%}
+      {%- assign default_color = settings.primary_color_2 -%}
+    {%- else -%}
+      {%- assign default_color = #FFFFFF -%}
+    {%- endif -%}
+  {%- elsif color_palette == "three" -%}
+    {%- if settings.primary_color_3 != blank -%}
+      {%- assign default_color = settings.primary_color_3 -%}
+    {%- else -%}
+      {%- assign default_color = #0B1A26 -%}
+    {%- endif -%}
+  {%- endif -%}
+
   <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if show_datepicker %} images__wrapper-with-date-picker{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
-      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker %} carousel-with-date-picker{%- endif -%}" aria-label="Gallery">
+      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker %} carousel-with-date-picker{%- endif -%}" aria-label="Gallery" data-dafault-color="{{- default_color -}}">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
         <div class="carousel__wrapper">
     {%- endif -%}
@@ -132,8 +154,10 @@
             {%- assign video_url            = block.settings.video_url | strip -%}
             {%- assign image                = block.settings.image -%}
             {%- assign image_mobile         = block.settings.image_mobile -%}
+            {%- assign show_overlay         = block.settings.show_overlay -%}
             {%- assign overlay_opacity      = block.settings.overlay_opacity -%}
-            {%- assign color_overlay        = block.settings.color_overlay -%}
+            {%- assign overlay_color        = block.settings.overlay_color -%}
+            {%- assign overlay_background   = block.settings.overlay_background -%}
 
             {% comment %} CSS variables start {% endcomment %}
             {%- capture text_variables -%}
@@ -219,9 +243,9 @@
                   --margin-right: 0;
                   --padding-left: 37px;
                   --padding-right: 0;
-              {%- endcase -%}
+              {% endcase %}
 
-              {%- case text_position_mobile -%}
+              {% case text_position_mobile %}
                 {%- when 'top-left' -%}
                   --text-justify-content-mobile: flex-start;
                   --text-align-items-mobile: flex-start;
@@ -285,25 +309,32 @@
                   --margin-bottom-mobile: 60px;
                   --margin-left-mobile: auto;
                   --margin-right-mobile: 0;
-              {%- endcase -%}
-            {%- endcapture -%}
+              {% endcase %}
 
-            {%- capture image_variables -%}
-              {%- if overlay_opacity != blank -%}
-                --opacity-overlay: {{ overlay_opacity | append: "%"}};
+              {% if show_overlay %}
+                --color-overlay: {{- overlay_color -}};
               {%- endif -%}
             {%- endcapture -%}
+
+            {%- if show_overlay -%}
+              {%- capture image_variables -%}
+                --opacity-overlay: {{ overlay_opacity | append: "%"}};
+                --background-overlay: {{- overlay_background -}};
+                --background-overlay-00: {{- overlay_background | append: "00" -}};
+                --background-overlay-45: {{- overlay_background | append: "73" -}};
+              {%- endcapture -%}
+            {%- endif -%}
             {% comment %} CSS variables end {% endcomment %}
 
             {%- if carousel -%}
-              <div class="carousel__item overlay-{{ color_overlay }}{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}">
+              <div class="carousel__item{% if effect == 'fade' and first == false %} hide{% endif %}{% if effect == 'fade' and first %} show{%- endif -%}"{% if show_overlay %} data-overlay-color="{{- overlay_color | escape -}}"{%- endif -%}>
                 <div class="carousel__inner">
             {%- endif -%}
                   <div
-                    class="images__container container{% unless carousel %} overlay-{{ color_overlay }}{% endunless %}{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{%  endif %}"
+                    class="images__container container{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{% endif %}"
                     style="{{- text_variables | escape -}}"
                   >
-                    <div class="images__text-area">
+                    <div class="images__text-area{% if show_overlay %} images__text-area--color{%- endif -%}">
                       <div class="images__content">
                         {%- if tag != blank -%}
                           <strong class="images__tag tagline">{{- tag -}}</strong>
@@ -333,12 +364,12 @@
                     </div>
                   </div>
 
-                  <div class="images__vision" style="{{- image_variables | escape -}}">
+                  <div class="images__vision" {% if show_overlay %}style="{{- image_variables | escape -}}"{%- endif -%}>
                     {%- if video_url contains "youtube.com" -%}
                       {%- assign video_drop = video_url | split: "?v=" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
+                      <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                         <input id="video-{{- section.key -}}{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
                         <div id="player-{{- section.key -}}{{- block.id -}}" class="images__video"></div>
                       </div>
@@ -347,7 +378,7 @@
                       {%- assign video_drop = video_url | split: "/" -%}
                       {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="images__vision-wrapper images__vision-wrapper--overlay">
+                      <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                         <iframe
                           class="images__video"
                           src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
@@ -364,7 +395,7 @@
 
                     {%- elsif image != blank or image_mobile != blank -%}
                       {%- if image != blank -%}
-                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %} images__vision-wrapper--overlay">
+                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
@@ -375,7 +406,7 @@
                       {%- endif -%}
 
                       {%- if image_mobile != blank -%}
-                        <div class="images__vision-wrapper images__vision-wrapper--mobile images__vision-wrapper--overlay">
+                        <div class="images__vision-wrapper images__vision-wrapper--mobile{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image,
                             loading: 'lazy',
@@ -503,25 +534,28 @@
             "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
           },
           {
-            "type": "select",
-            "id": "color_overlay",
-            "label": "Image overlay color",
-            "options": [
-              {
-                "value": "dark",
-                "label": "Dark"
-              },
-              {
-                "value": "light",
-                "label": "Light"
-              }
-            ],
-            "default": "dark"
+            "type": "header",
+            "content": "Image overlay"
+          },
+          {
+            "type": "checkbox",
+            "id": "show_overlay",
+            "label": "Show overlay"
+          },
+          {
+            "type": "color",
+            "id": "overlay_background",
+            "label": "Overlay background color"
+          },
+          {
+            "type": "color",
+            "id": "overlay_color",
+            "label": "Overlay text color"
           },
           {
             "type": "number",
             "id": "overlay_opacity",
-            "label": "Image overlay percentage",
+            "label": "Overlay percentage",
             "min": 0,
             "max": 100,
             "default": 80
