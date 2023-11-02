@@ -143,10 +143,21 @@
     {%- if settings.background_3 != blank -%}
       --background-primary-3: {{- settings.background_3 -}};
       --background-primary-3-00: {{- settings.background_3 | append: "00" -}};
+      --background-primary-3-10: {{- settings.background_3 | append: "1A" -}};
+      --background-primary-3-45: {{- settings.background_3 | append: "73" -}};
+      --background-primary-3-60: {{- settings.background_3 | append: "99" -}};
     {%- endif -%}
 
     {%- if settings.primary_color_3 != blank -%}
       --color-primary-3: {{- settings.primary_color_3 -}};
+      --color-primary-3-30: {{- settings.primary_color_3 | append: "4D" -}};
+      --color-primary-3-hover: {{- settings.primary_color_3 | append: "52" -}};
+      --color-primary-3-active: {{- settings.primary_color_3 | append: "8F" -}};
+      --color-third-3: {{- settings.primary_color_3 | append: "66"-}};
+      --color-fourth-3: {{- settings.primary_color_3 | append: "26" -}};
+      --color-image-placeholder-3: {{- settings.primary_color_3 | append: "26" -}};
+      --color-placeholder-3: {{- settings.primary_color_3 | append: "59"  -}};
+      --color-border-3: {{- settings.primary_color_3 | append: "26" -}};
     {%- endif -%}
 
     {%- if settings.secondary_color_3 != blank -%}
@@ -155,18 +166,48 @@
 
     {%- if settings.accent_background_3 != blank -%}
       --background-accent-3: {{- settings.accent_background_3 -}};
+      --background-accent-3-00: {{- settings.accent_background_3 | append: "00" -}};
       --background-accent-3-hover: {{- settings.accent_background_3 | append: "BA" -}};
       --background-accent-3-active: {{- settings.accent_background_3 | append: "A6" -}};
+      --background-accent-secondary-3-hover: {{- settings.accent_background_3 | append: "52" -}};
+      --background-accent-secondary-3-active: {{- settings.accent_background_3 | append: "8F" -}};
     {%- else -%}
       --background-accent-3: {{- branding_color -}};
+      --background-accent-3-00: {{- branding_color | append: "00" -}};
       --background-accent-3-hover: {{- branding_color | append: "BA" -}};
       --background-accent-3-active: {{- branding_color | append: "A6" -}};
+      --background-accent-secondary-3-hover: {{- branding_color | append: "52" -}};
+      --background-accent-secondary-3-active: {{- branding_color | append: "8F" -}};
     {%- endif -%}
 
     {%- if settings.accent_color_3 != blank -%}
       --color-accent-3: {{- settings.accent_color_3 -}};
     {%- else -%}
       --color-accent-3: {%- if settings.primary_color_3 != blank -%}{{- settings.primary_color_3 -}}{%- endif -%};
+    {%- endif -%}
+
+    {%- if settings.accent_outline_3 != blank -%}
+      --color-outline-3: {{- settings.accent_outline_3 -}};
+      --color-outline-3-hover: {{- settings.accent_outline_3 | append: "CC" -}};
+      --color-outline-3-active: {{- settings.accent_outline_3 | append: "BA" -}};
+    {%- else -%}
+      --color-outline-3: {{- branding_color -}};
+      --color-outline-3-hover: {{- branding_color | append: "CC" -}};
+      --color-outline-3-active: {{- branding_color | append: "BA" -}};
+    {%- endif -%}
+
+    {%- if settings.overlay_background_3 != blank -%}
+      --background-overlay-3: {{- settings.overlay_background_3 -}};
+      --background-overlay-3-00: {{- settings.overlay_background_3 | append: "00" -}};
+      --background-overlay-3-08: {{- settings.overlay_background_3 | append: "14" -}};
+      --background-overlay-3-45: {{- settings.overlay_background_3 | append: "73" -}};
+    {%- endif -%}
+
+    {%- if settings.overlay_color_3 != blank -%}
+      --color-overlay-3: {{- settings.overlay_color_3 -}};
+      --color-overlay-3-00: {{- settings.overlay_color_3 | append: "00" -}};
+      --color-overlay-3-08: {{- settings.overlay_color_3 | append: "14" -}};
+      --color-overlay-3-45: {{- settings.overlay_color_3 | append: "73" -}};
     {%- endif -%}
 
     {%- if settings.heading_font != blank -%}

@@ -213,6 +213,41 @@
   background: var(--color-outline-2-active, #F4B841BA);
 }
 
+.palette-three .sidebar__nav-opener {
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .sidebar__nav-opener path {
+  fill: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .sidebar__menu a:hover {
+  color: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .sidebar__menu a:active {
+  color: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .sidebar__menu {
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .sidebar__menu-opener:before,
+.palette-three .sidebar__menu-opener:after {
+  background: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .sidebar__menu-opener:hover:before,
+.palette-three .sidebar__menu-opener:hover:after {
+  background: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .sidebar__menu-opener:active:before,
+.palette-three .sidebar__menu-opener:active:after {
+  background: var(--color-outline-3-active, #0B1A26BA);
+}
+
 .loaded .sidebar__menu-wrapper {
   display: block !important;
 }

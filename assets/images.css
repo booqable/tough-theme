@@ -318,6 +318,72 @@
   color: var(--color-overlay-2, #FFFFFF);
 }
 
+.palette-three .overlay-dark .images__title,
+.palette-three .overlay-dark .images__description {
+  color: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three .overlay-dark .images__buttons .button--outlined {
+  color: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three .overlay-dark .images__vision,
+.palette-three .overlay-dark ~ .images__vision {
+  background: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .overlay-dark .images__vision .images__vision-wrapper--overlay:after,
+.palette-three .overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--background-overlay-3, #0B1A26) 3.03%, var(--background-overlay-3-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--background-overlay-3, #0B1A26) 6.67%, var(--background-overlay-3-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--background-overlay-3-45, #0B1A2673), var(--background-overlay-3-45, #0B1A2673));
+}
+
+.palette-three .overlay-light .images__title,
+.palette-three .overlay-light .images__description {
+  color: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .overlay-light .images__buttons .button--outlined {
+  color: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .overlay-light .images__vision,
+.palette-three .overlay-light ~ .images__vision {
+  background: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three .overlay-light .images__vision .images__vision-wrapper--overlay:after,
+.palette-three .overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
+  background: linear-gradient(357.73deg, var(--color-overlay-3, #FFFFFF) 3.03%, var(--color-overlay-3-00, #FFFFFF00) 31.83%),
+   linear-gradient(180deg, var(--color-overlay-3, #FFFFFF) 6.67%, var(--color-overlay-3-00, #FFFFFF00) 105.81%),
+   linear-gradient(0deg, var(--color-overlay-3-45, #FFFFFF73), var(--color-overlay-3-45, #FFFFFF73));
+}
+
+.palette-three .images__date-picker-overlay {
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three > .overlay-light ~ .images__date-picker path,
+.palette-three .images__date-picker.show-overlay-light .images__date-picker-icon path {
+  fill: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three > .overlay-light ~ .images__date-picker .images__date-picker-title,
+.palette-three .images__date-picker.show-overlay-light .images__date-picker-title {
+  color: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three > .overlay-dark ~ .images__date-picker path,
+.palette-three .images__date-picker.show-overlay-dark .images__date-picker-icon path {
+  fill: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three > .overlay-dark ~ .images__date-picker .images__date-picker-title,
+.palette-three .images__date-picker.show-overlay-dark .images__date-picker-title {
+  color: var(--color-overlay-3, #FFFFFF);
+}
+
 @media (min-width: 428px) {
   .images__container {
     min-height: 560px;

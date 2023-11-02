@@ -86,6 +86,10 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
+.palette-three.collections__wrapper {
+  background: var(--background-primary-3, #F4B841);
+}
+
 .classic-design .collections__item {
   padding: 8px;
   border: 1px solid transparent;
@@ -172,6 +176,26 @@
   background: linear-gradient(0.13deg, var(--color-overlay-2, #FFFFFF) 10%, var(--color-overlay-2-00, #FFFFFF00) 95.37%);
 }
 
+.modern-design .palette-three .collections__image-item:before {
+  background: var(--color-image-placeholder-3, #0B1A2626);
+}
+
+.modern-design .palette-three.overlay-dark .collections__heading {
+  color: var(--color-overlay-3, #FFFFFF);
+}
+
+.modern-design .palette-three.overlay-dark .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--background-overlay-3, #0B1A26) 10%, var(--background-overlay-3-00, #0B1A2600) 95.37%);
+}
+
+.modern-design .palette-three.overlay-light .collections__heading {
+  color: var(--background-overlay-3, #0B1A26);
+}
+
+.modern-design .palette-three.overlay-light .collections__image-item:before {
+  background: linear-gradient(0.13deg, var(--color-overlay-3, #FFFFFF) 10%, var(--color-overlay-3-00, #FFFFFF00) 95.37%);
+}
+
 .classic-design .palette-one .collections__item {
   border-color: var(--background-accent, #F4B841);
 }
@@ -186,6 +210,14 @@
 
 .classic-design .palette-two .collections__heading a:hover {
   color: var(--color-outline-2, #F4B841);
+}
+
+.classic-design .palette-three .collections__item {
+  border-color: var(--background-accent-3, #0B1A26);
+}
+
+.classic-design .palette-three .collections__heading a:hover {
+  color: var(--color-outline-3, #0B1A26);
 }
 
 @media (min-width: 768px) {

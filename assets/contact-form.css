@@ -174,6 +174,36 @@
   background: linear-gradient(to var(--overlay-direction), var(--background-primary-2-00, #0B1A2600) 0%, var(--background-primary-2-10, #0B1A261A) 20%, var(--background-primary-2-45, #0B1A2673) 40%, var(--background-primary-2, #0B1A26) 100%);
 }
 
+.palette-three.contact-form__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .contact-form__heading {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .contact-form__holder.no-image {
+  background: var(--color-image-placeholder-3, #0B1A2626);
+}
+
+.palette-three .contact-form__button.button--outlined {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .contact-form__background g,
+.palette-three .contact-form__background path {
+  fill: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .contact-form__background:after {
+  background: radial-gradient(63.68% 231.83% at 28.65% 40.5%, var(--background-primary-3, #F4B841) 0%, var(--background-primary-3-00, #F4B84100) 100%);
+}
+
+.palette-three .contact-form__background:before {
+  background: linear-gradient(to var(--overlay-direction), var(--background-primary-3-00, #F4B84100) 0%, var(--background-primary-3-10, #F4B8411A) 20%, var(--background-primary-3-45, #F4B84173) 40%, var(--background-primary-3, #F4B841) 100%);
+}
+
 @media (min-width: 810px) {
   .contact-form__background svg {
     min-height: 100%;
@@ -240,6 +270,11 @@
     border-color: var(--background-accent-2, #F4B841);
   }
 
+  .palette-three .contact-form__holder.no-image:after,
+  .palette-three .contact-form__image-wrapper:after {
+    border-color: var(--background-accent-3, #0B1A26);
+  }
+
   .classic-design .contact-form__holder.no-image:after,
   .classic-design .contact-form__image-wrapper:after {
     display: none;
@@ -256,6 +291,10 @@
 
   .classic-design .palette-two .contact-form__image {
     border-color: var(--background-accent-2, #F4B841);
+  }
+
+  .classic-design .palette-three .contact-form__image {
+    border-color: var(--background-accent-3, #0B1A26);
   }
 }
 

@@ -1,28 +1,31 @@
 <script>
   const sections = document.querySelectorAll('.text-image'),
-        first = 'palette-one',
-        second = 'palette-two';
+        classes = ['palette-one', 'palette-two', 'palette-three'];
 
   sections.forEach(section => {
     const children = [...section.children];
 
     children.forEach(child => {
-      if(!child.classList.contains('text-image__spacer')) return false;
+      if (!child.classList.contains('text-image__spacer')) return false;
 
-      const prev = section.previousElementSibling;
+      const prevSection = section.previousElementSibling;
 
-      if(!prev) return false;
+      if (!prevSection) return false;
 
-      const prevChildren = [...prev.children];
+      const prevChildren = [...prevSection.children];
 
       prevChildren.forEach(item => {
-        const isFirst = item.classList.contains(first),
-              isSecond = item.classList.contains(second);
+        const itemClasses = classes.filter(className => item.classList.contains(className)),
+              childClasses = classes.filter(className => child.classList.contains(className));
 
-        return isFirst ? child.classList.replace(second, first)
-             : isSecond ? child.classList.replace(first, second)
-             : false;
-      })
-    })
-  })
+        itemClasses.forEach(itemClass => {
+          const replaceClass = childClasses.find(childClass => child.classList.contains(childClass));
+
+          if (replaceClass) {
+            child.classList.replace(replaceClass, itemClass);
+          }
+        });
+      });
+    });
+  });
 </script>

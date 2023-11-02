@@ -27,6 +27,12 @@
     {%- else -%}
       {%- assign background_accent = branding_color -%}
     {%- endif -%}
+  {%- elsif color_palette == "three" -%}
+    {%- if settings.accent_background_3 != blank -%}
+      {%- assign background_accent = settings.accent_background_3 -%}
+    {%- else -%}
+      {%- assign background_accent = branding_color -%}
+    {%- endif -%}
   {%- endif -%}
 {%- endif -%}
 
@@ -201,6 +207,10 @@
           {
             "value": "two",
             "label": "Color set 2"
+          },
+          {
+            "value": "three",
+            "label": "Color set 3"
           }
         ],
         "default": "two"

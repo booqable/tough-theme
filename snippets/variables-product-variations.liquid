@@ -51,6 +51,27 @@
         --bundle-items-color: #FFFFFF;
         --bundle-items-image-border: 1px solid #FFFFFF47;
       {% endif %}
+
+    {% elsif color_palette == "three" %}
+      {% if settings.background_3 != blank %}
+        --variation-select-background-color: var(--background-primary-3);
+        --bundle-items-background-color: var(--background-primary-3);
+      {% else %}
+        --variation-select-background-color: #F4B841;
+        --bundle-items-background-color: #F4B841;
+      {% endif %}
+
+      {% if settings.primary_color_3 != blank %}
+        --variation-select-color: var(--color-primary-3);
+        --variation-select-border: 1px solid var(--color-border-3);
+        --bundle-items-color: var(--color-primary-3);
+        --bundle-items-image-border: 1px solid var(--color-border-3);
+      {% else %}
+        --variation-select-color: #0B1A26;
+        --variation-select-border: 1px solid #0B1A2626;
+        --bundle-items-color: #0B1A26;
+        --bundle-items-image-border: 1px solid #0B1A2626;
+      {% endif %}
     {%- endif -%}
   }
 {%- endstyle -%}

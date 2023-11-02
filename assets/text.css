@@ -28,6 +28,15 @@
   color: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-three.text__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .text__title {
+  color: var(--color-primary-3, #0B1A26);
+}
+
 @media (min-width: 992px) {
   .text__wrapper--padding-top {
     padding-top: var(--padding-top, 37px);

@@ -26,6 +26,11 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
+.palette-three.cart__wrapper {
+  color: var(--color-third-3, #0B1A2666);
+  background: var(--background-primary-3, #F4B841);
+}
+
 @media screen and (min-width: 667px) {
   .cart .cart__footer {
     grid-template-columns: repeat(2, 1fr);

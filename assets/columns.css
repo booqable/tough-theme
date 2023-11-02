@@ -115,6 +115,24 @@
   color: var(--color-secondary-2, #E1E4E8);
 }
 
+.palette-three.columns__wrapper {
+  background: var(--color-fourth-3, #0B1A2626);
+}
+
+.palette-three .columns__item {
+  color: var(--color-primary-3, #0B1A26);
+  background: var(--background-primary-3, #F4B841);
+  border-color: var(--color-fourth-3, #0B1A2626);
+}
+
+.palette-three .columns__icon-wrapper i {
+  color: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .columns__description {
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
 @media (min-width: 992px) {
   .columns__wrapper--padding-top {
     padding-top: var(--padding-top, 112px);

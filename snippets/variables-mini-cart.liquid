@@ -58,6 +58,31 @@
       {% else %}
         --minicart-button-hover-color: #F4B841CC;
       {% endif %}
+
+    {% elsif color_palette == "three" %}
+      {% if settings.primary_color_3 != blank %}
+        --minicart-button-color: var(--color-primary-3);
+      {% else %}
+        --minicart-button-color: #0B1A26;
+      {% endif %}
+
+      {% if settings.accent_background_3 != blank %}
+        --minicart-button-accent-color: var(--background-accent-3);
+      {% else %}
+        --minicart-button-accent-color: #0B1A26;
+      {% endif %}
+
+      {% if settings.accent_color_3 != blank %}
+        --minicart-button-badge-color: var(--color-accent-3);
+      {% else %}
+        --minicart-button-badge-color: #FFFFFF;
+      {% endif %}
+
+      {% if settings.accent_outline_3 != blank %}
+        --minicart-button-hover-color: var(--color-outline-3-hover);
+      {% else %}
+        --minicart-button-hover-color: #0B1A26CC;
+      {% endif %}
     {%- endif -%}
   }
 {% endstyle %}

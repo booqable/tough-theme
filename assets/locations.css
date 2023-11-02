@@ -15,6 +15,10 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
+.palette-three.locations__wrapper {
+  background: var(--background-primary-3, #F4B841);
+}
+
 @media (min-width: 992px) {
   .locations__wrapper--padding-top {
     padding-top: var(--padding-top, 112px);

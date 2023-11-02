@@ -583,6 +583,83 @@
   background: var(--color-border-2, #FFFFFF47);
 }
 
+.palette-three .menu__opener:before,
+.palette-three .menu__opener:after,
+.palette-three .menu__opener span {
+  background: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .menu__opener:hover span,
+.palette-three .menu__opener:hover:before,
+.palette-three .menu__opener:hover:after {
+  background: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .menu__opener:active span,
+.palette-three .menu__opener:active:before,
+.palette-three .menu__opener:active:after {
+  background: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .menu__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  border-top-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .menu__item {
+  border-bottom-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .menu__link {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .menu__item:hover > .menu__link,
+.palette-three .menu__dropdown-item:hover > .menu__dropdown-link,
+.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover,
+.palette-three .menu__social .social-networks__link:hover {
+  color: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .menu__dropdown-item:active > .menu__dropdown-link,
+.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active,
+.palette-three .menu__social .social-networks__link:active {
+  color: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .menu__dropdown-opener path {
+  stroke: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .menu__dropdown-opener:hover path,
+.palette-three .menu__item:hover > .menu__dropdown-opener path,
+.palette-three .menu__dropdown-item:hover > .menu__dropdown-opener path {
+  stroke: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .menu__item:active > .menu__link,
+.palette-three .menu__item:active > .menu__dropdown-opener path,
+.palette-three .menu__dropdown-item:active > .menu__dropdown-opener path,
+.palette-three .menu__dropdown-opener:active path {
+  stroke: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .menu__dropdown-wrapper {
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .menu__dropdown-item {
+  border-bottom-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .menu__bottom {
+  border-top: 1px solid var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .mobile-menu-top .menu__link:after {
+  background: var(--color-border-3, #0B1A2626);
+}
+
 @media (min-width: 1100px) and (hover: hover) {
   .menu__opener {
     display: none;
@@ -1191,6 +1268,49 @@
   }
 
   .palette-two .menu-wide .menu__item > .menu__dropdown > .menu__dropdown-wrapper {
+    border-top: none;
+  }
+
+  .palette-three .menu__item.active > .menu__link,
+  .palette-three .menu__item:hover > .menu__link,
+  .palette-three .menu__item:active > .menu__link {
+    text-shadow: 0.5px 0 var(--color-primary-3, #0B1A26);
+    color: var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-three .menu__item > .menu__link:after {
+    background: var(--background-accent-3, #0B1A26);
+  }
+
+  .palette-three .menu__link:hover,
+  .palette-three .menu__link:active,
+  .palette-three .menu__dropdown-item:hover > .menu__dropdown-link,
+  .palette-three .menu__dropdown-item:active > .menu__dropdown-link {
+    color: var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-three .menu__item:hover > .menu__dropdown-opener path,
+  .palette-three .menu__item:active > .menu__dropdown-opener path,
+  .palette-three .menu__dropdown-item:hover > .menu__dropdown-opener path,
+  .palette-three .menu__dropdown-item:active > .menu__dropdown-opener path {
+    stroke: var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-three .menu__dropdown-link:hover,
+  .palette-three .menu__dropdown .menu__dropdown .menu__dropdown-link:hover,
+  .palette-three .menu-wide .menu__dropdown .menu__dropdown .menu__dropdown-link:hover {
+    text-shadow: 0.5px 0 var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-three .menu__dropdown-wrapper {
+    border-bottom-color: var(--background-accent-3, #0B1A26);
+  }
+
+  .palette-three .menu__item > .menu__dropdown > .menu__dropdown-wrapper {
+    border-top: 1px solid var(--color-border-3, #0B1A2626);
+  }
+
+  .palette-three .menu-wide .menu__item > .menu__dropdown > .menu__dropdown-wrapper {
     border-top: none;
   }
 }

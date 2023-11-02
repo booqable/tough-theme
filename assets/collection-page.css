@@ -37,6 +37,11 @@
   color: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-three.collection-page__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-primary-3, #0B1A26);
+}
+
 @media (min-width: 768px) {
   .collection-page__products {
     justify-content: start;

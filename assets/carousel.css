@@ -324,6 +324,22 @@
   fill: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-three .carousel__dot:after {
+  background: var(--color-primary-3-30, #0B1A264D);
+}
+
+.palette-three .carousel__dot.active:after {
+  background: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .carousel__btn {
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .carousel__btn path {
+  fill: var(--color-primary-3, #0B1A26);
+}
+
 .palette-one .carousel__edges .show-overlay-light ~ .carousel__navigation .carousel__btn,
 .palette-one .carousel__edges .carousel__btn {
   background: var(--background-overlay-08, #0B1A2614);
@@ -416,6 +432,53 @@
 
 .palette-two .carousel__edges .show-overlay-dark ~ .carousel__counter {
   color: var(--color-overlay-2, #FFFFFF);
+}
+
+.palette-three .carousel__edges .show-overlay-light ~ .carousel__navigation .carousel__btn,
+.palette-three .carousel__edges .carousel__btn {
+  background: var(--background-overlay-3-08, #0B1A2614);
+  border-color: transparent;
+}
+
+.palette-three .carousel__edges .show-overlay-dark ~ .carousel__navigation .carousel__btn {
+  background: var(--color-overlay-3-08, #FFFFFF14);
+  border-color: transparent;
+}
+
+.palette-three .carousel__edges .show-overlay-light ~ .carousel__navigation .carousel__btn path,
+.palette-three .carousel__edges .carousel__btn path {
+  fill: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .carousel__edges .show-overlay-dark ~ .carousel__navigation .carousel__btn path {
+  fill: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three .carousel__edges .show-overlay-light ~ .carousel__pagination .carousel__dot:after,
+.palette-three .carousel__edges .carousel__dot:after {
+  background: var(--background-overlay-3-45, #0B1A2673);
+}
+
+.palette-three .carousel__edges .show-overlay-dark ~ .carousel__pagination .carousel__dot:after {
+  background: var(--color-overlay-3-45, #FFFFFF73);
+}
+
+.palette-three .carousel__edges .show-overlay-light ~ .carousel__pagination .carousel__dot.active:after,
+.palette-three .carousel__edges .carousel__dot.active:after {
+  background: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .carousel__edges .show-overlay-dark ~ .carousel__pagination .carousel__dot.active:after {
+  background: var(--color-overlay-3, #FFFFFF);
+}
+
+.palette-three .carousel__edges .show-overlay-light ~ .carousel__counter,
+.palette-three .carousel__edges .carousel__counter {
+  color: var(--background-overlay-3, #0B1A26);
+}
+
+.palette-three .carousel__edges .show-overlay-dark ~ .carousel__counter {
+  color: var(--color-overlay-3, #FFFFFF);
 }
 
 @media (min-width: 992px) {
@@ -562,6 +625,14 @@
     background: var(--color-primary-2, #FFFFFF);
   }
 
+  .palette-three .carousel__btn:hover {
+    border-color: var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-three .carousel__dot:hover:after {
+    background: var(--color-primary-3, #0B1A26);
+  }
+
   .palette-one .carousel__edges .show-overlay-light ~ .carousel__navigation .carousel__btn:hover,
   .palette-one .carousel__edges .carousel__btn:hover {
     border-color: var(--background-overlay, #0B1A26);
@@ -596,5 +667,23 @@
 
   .palette-two .carousel__edges .show-overlay-dark ~ .carousel__pagination .carousel__dot:hover:after {
     background: var(--color-overlay-2, #FFFFFF);
+  }
+
+  .palette-three .carousel__edges .show-overlay-light ~ .carousel__navigation .carousel__btn:hover,
+  .palette-three .carousel__edges .carousel__btn:hover {
+    border-color: var(--background-overlay-3, #0B1A26);
+  }
+
+  .palette-three .carousel__edges .show-overlay-dark ~ .carousel__navigation .carousel__btn:hover {
+    border-color: var(--color-overlay-3, #FFFFFF);
+  }
+
+  .palette-three .carousel__edges .show-overlay-light ~ .carousel__pagination .carousel__dot:hover:after,
+  .palette-three .carousel__edges .carousel__dot:hover:after {
+    background: var(--background-overlay-3, #0B1A26);
+  }
+
+  .palette-three .carousel__edges .show-overlay-dark ~ .carousel__pagination .carousel__dot:hover:after {
+    background: var(--color-overlay-3, #FFFFFF);
   }
 }

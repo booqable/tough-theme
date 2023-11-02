@@ -214,6 +214,29 @@ div.form__block--error .form__textarea:focus {
   border-color: var(--color-border-2, #FFFFFF47);
 }
 
+.palette-three .form__label {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
+.palette-three .form__input,
+.palette-three .form__textarea {
+  color: var(--color-primary-3, #0B1A26);
+  background: var(--background-primary-3, #F4B841);
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .form__input:focus,
+.palette-three .form__input:focus-visible,
+.palette-three .form__textarea:focus,
+.palette-three .form__textarea:focus-visible {
+  border-color: var(--background-accent-3, #0B1A26);
+}
+
+.palette-three .form__info .success {
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
 @media (min-width: 992px) {
   .form__inner form {
     margin: 30px 0 0;
