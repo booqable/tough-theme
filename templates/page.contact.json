@@ -99,11 +99,48 @@
         "title": "Visit our stores"
       },
       "disabled": null
+    },
+    "locations": {
+      "type": "locations",
+      "blocks": {
+        "tab": {
+          "type": "tab",
+          "settings": {},
+          "disabled": null
+        },
+        "tab_257387": {
+          "type": "tab",
+          "settings": {},
+          "disabled": null
+        },
+        "tab_257388": {
+          "type": "tab",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "tab",
+        "tab_257387",
+        "tab_257388"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "icon": "booqable://assets/image-tough-marker.png",
+        "opener": "List of locations",
+        "placement": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium"
+      },
+      "disabled": false
     }
   },
   "order": [
     "contact-form",
     "columns",
-    "title"
+    "title",
+    "locations"
   ]
 }
