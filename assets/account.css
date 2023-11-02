@@ -462,7 +462,6 @@ div.account-fieldset--error .account-fieldset__input:focus {
   background: var(--background-primary-3, #F4B841);
 }
 
-.palette-three .account-checkbox__label,
 .palette-three .account__button--minimal,
 .palette-three .account__title-icon,
 .palette-three .account__breadcrumbs {
@@ -470,7 +469,10 @@ div.account-fieldset--error .account-fieldset__input:focus {
 }
 
 .palette-three .account__title + .account__divider,
-.palette-three .account__description {
+.palette-three .account__description,
+.palette-three .account-checkbox__label,
+.palette-three .account-fieldset__static-label,
+.palette-three .account-fieldset__radio-label {
   color: var(--color-third-3, #0B1A2666);
 }
 
@@ -480,17 +482,12 @@ div.account-fieldset--error .account-fieldset__input:focus {
 
 .palette-three .account-fieldset__label {
   background: var(--background-primary-3, #F4B841);
-  color: var(--color-secondary-3, #FFFFFF);
+  color: var(--color-third-3, #0B1A2666);
 }
 
 .palette-three .account-fieldset__label:not(:has(+ input:focus)):has(+ input:placeholder-shown) {
   background-color: transparent;
-  color: var(--color-secondary-3, #FFFFFF);
-}
-
-.palette-three .account-fieldset__static-label,
-.palette-three .account-fieldset__radio-label {
-  color: var(--color-secondary-3, #FFFFFF);
+  color: var(--color-third-3, #0B1A2666);
 }
 
 .palette-three .account-fieldset__input {

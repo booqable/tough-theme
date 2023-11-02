@@ -216,7 +216,7 @@ div.form__block--error .form__textarea:focus {
 
 .palette-three .form__label {
   background: var(--background-primary-3, #F4B841);
-  color: var(--color-secondary-3, #FFFFFF);
+  color: var(--color-third-3, #0B1A2666);
 }
 
 .palette-three .form__input,
