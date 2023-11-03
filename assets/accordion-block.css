@@ -79,6 +79,10 @@
   border-color: var(--color-border-2, #FFFFFF47);
 }
 
+.palette-three .accordion-block__item {
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
 @media (min-width: 1100px) {
   .accordion-block__label {
     padding-top: 19px;

@@ -7,14 +7,17 @@
     if (section) {
       const children = [...section.children],
             first = 'palette-one',
-            second = 'palette-two';
+            second = 'palette-two',
+            third = 'palette-three';
 
       children.forEach(child => {
         const isFirst = child.classList.contains(first),
-              isSecond = child.classList.contains(second);
+              isSecond = child.classList.contains(second),
+              isThird = child.classList.contains(third);
 
         return isFirst ? target.classList.add(first)
              : isSecond ? target.classList.add(second)
+             : isThird ? target.classList.add(third)
              : false;
       })
     } else {

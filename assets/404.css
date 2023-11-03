@@ -145,6 +145,24 @@ div.error-404__container .error-404__description {
   fill: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-three.error-404__content {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .error-404__description b {
+  color: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .error-404__background-wrapper::after {
+  background: linear-gradient(173.19deg, var(--background-primary-3, #F4B841) 33.02%, var(--background-primary-3-00, #F4B84100) 93.23%);
+}
+
+.palette-three .error-404__background g,
+.palette-three .error-404__background path {
+  fill: var(--color-primary-3, #0B1A26);
+}
+
 @media (min-width: 768px) {
   .error-404__background-floral-col:first-child {
     display: block;

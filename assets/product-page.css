@@ -152,6 +152,29 @@
   color: var(--color-secondary-2, #E1E4E8);
 }
 
+.palette-three.product-main__holder {
+  color: var(--color-primary-3, #0B1A26);
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .product-main__shipping-info,
+.palette-three .product-main__info .accordion__content {
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
+.palette-three .product-main__info .accordion {
+  border-top-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .product-main__info .accordion__item {
+  border: none;
+  border-bottom: 1px solid var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .product-main__info .accordion__content {
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
 @media (min-width: 768px) {
   .product-main__gallery {
     padding: 0 40px 50px 0;

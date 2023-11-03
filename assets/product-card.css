@@ -147,6 +147,29 @@ bq-product-availability[visible="true"] {
   color: var(--color-outline-2, #F4B841);
 }
 
+.palette-three .product-card {
+  color: var(--color-third-3, #0B1A2666);
+  background: var(--background-primary-3, #F4B841);
+  border: 1px solid var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .product-card__vision {
+  border-bottom: 1px solid var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .product-card__vision.no-image {
+  background: var(--color-image-placeholder-3, #0B1A2626);
+}
+
+.palette-three .product-card__price-info {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .product-card__price,
+.palette-three bq-product-price {
+  color: var(--color-outline-3, #0B1A26);
+}
+
 .classic-design .product-card {
   padding: 8px;
 }
@@ -170,8 +193,12 @@ bq-product-availability[visible="true"] {
   border: 1px solid var(--background-accent, #F4B841);
 }
 
-.classic-design .palette-one .product-card {
+.classic-design .palette-two .product-card {
   border: 1px solid var(--background-accent-2, #F4B841);
+}
+
+.classic-design .palette-three .product-card {
+  border: 1px solid var(--background-accent-3, #0B1A26);
 }
 
 @media (min-width: 992px) {

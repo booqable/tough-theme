@@ -76,3 +76,11 @@
 .palette-two .map .ol-control button:active {
   border-color: var(--background-accent-2-active, #F4B841BA);
 }
+
+.palette-three .map .ol-control button:hover {
+  border-color: var(--background-accent-3-hover, #0B1A26CC);
+}
+
+.palette-three .map .ol-control button:active {
+  border-color: var(--background-accent-3-active, #0B1A26BA);
+}

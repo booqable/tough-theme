@@ -103,18 +103,6 @@
         "info": "Also used for accent text without background"
       },
       {
-        "type": "color",
-        "id": "overlay_background",
-        "label": "Alternative background",
-        "info": "Used to make text readable on top of the background images"
-      },
-      {
-        "type": "color",
-        "id": "overlay_color",
-        "label": "Alternative color",
-        "info": "Used for text on top of the background images"
-      },
-      {
         "type": "header",
         "content": "Color set 2"
       },
@@ -152,24 +140,8 @@
         "info": "Also used for accent text without background"
       },
       {
-        "type": "color",
-        "id": "overlay_background_2",
-        "label": "Alternative background",
-        "info": "Used to make text readable on top of the background images"
-      },
-      {
-        "type": "color",
-        "id": "overlay_color_2",
-        "label": "Alternative color",
-        "info": "Used for text on top of the background images"
-      },
-      {
         "type": "header",
         "content": "Color set 3"
-      },
-      {
-        "type": "paragraph",
-        "content": "Used for sections like 'Top bar' and 'Call to action'"
       },
       {
         "type": "color",
@@ -191,7 +163,7 @@
         "type": "color",
         "id": "accent_background_3",
         "label": "Accent background",
-        "info": "Used as a background of solid buttons, etc."
+        "info": "Used as a background of solid buttons, date picker, etc."
       },
       {
         "type": "color",

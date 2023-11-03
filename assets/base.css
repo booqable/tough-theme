@@ -207,6 +207,21 @@ h6,
   color: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-three h1,
+.palette-three h2,
+.palette-three h3,
+.palette-three h4,
+.palette-three h5,
+.palette-three h6,
+.palette-three .h1,
+.palette-three .h2,
+.palette-three .h3,
+.palette-three .h4,
+.palette-three .h5,
+.palette-three .h6 {
+  color: var(--color-primary-3, #0B1A26);
+}
+
 h1,
 .h1 {
   font-size: var(--font-size-h1, 56px);
@@ -319,6 +334,18 @@ textarea:-webkit-autofill:active {
   -webkit-text-fill-color: var(--color-primary-2, #FFFFFF) !important;
 }
 
+.palette-three input:-webkit-autofill,
+.palette-three input:-webkit-autofill:hover,
+.palette-three input:-webkit-autofill:focus
+.palette-three input:-webkit-autofill:active,
+.palette-three textarea:-webkit-autofill,
+.palette-three textarea:-webkit-autofill:hover
+.palette-three textarea:-webkit-autofill:focus,
+.palette-three textarea:-webkit-autofill:active {
+  color: var(--color-primary-3, #0B1A26) !important;
+  -webkit-text-fill-color: var(--color-primary-3, #0B1A26) !important;
+}
+
 img {
   display: block;
   height: auto;
@@ -419,104 +446,127 @@ img {
   padding: 14px 24px;
 }
 
-.overlay-light .button.button--primary,
 .palette-one .button.button--primary {
   color: var(--color-accent, #0B1A26);
   background: var(--background-accent, #F4B841);
   border-color: var(--background-accent, #F4B841);
 }
 
-.overlay-light .button.button--primary:hover,
 .palette-one .button.button--primary:hover {
   background: var(--background-accent-hover, #F4B841CC);
   border-color: var(--background-accent-hover, #F4B841CC);
 }
 
-.overlay-light .button.button--primary:active,
 .palette-one .button.button--primary:active {
   background: var(--background-accent-active, #F4B841BA);
   border-color: var(--background-accent-active, #F4B841BA);
 }
 
-.overlay-light .button.button--secondary,
 .palette-one .button.button--secondary {
   color: var(--color-outline, #F4B841);
 }
 
-.overlay-light .button.button--secondary path,
 .palette-one .button.button--secondary path {
   fill: var(--color-outline, #F4B841);
 }
 
-.overlay-light .button.button--secondary:hover,
 .palette-one .button.button--secondary:hover {
   text-shadow: 0.5px 0 var(--color-outline, #F4B841);
 }
 
-.overlay-light .button.button--outlined,
 .palette-one .button.button--outlined {
   color: var(--color-accent, #0B1A26);
   border-color: var(--background-accent, #F4B841);
 }
 
-.overlay-light .button.button--outlined:hover,
 .palette-one .button.button--outlined:hover {
   background: var(--background-accent-secondary-hover, #F4B84152);
 }
 
-.overlay-light .button.button--outlined:active,
 .palette-one .button.button--outlined:active {
   background: var(--background-accent-secondary-active, #F4B8418F);
 }
 
-.overlay-dark .button.button--primary,
 .palette-two .button.button--primary {
   color: var(--color-accent-2, #0B1A26);
   background: var(--background-accent-2, #F4B841);
   border-color: var(--background-accent-2, #F4B841);
 }
 
-.overlay-dark .button.button--primary:hover,
 .palette-two .button.button--primary:hover {
   background: var(--background-accent-2-hover, #F4B841CC);
   border-color: var(--background-accent-2-hover, #F4B841CC);
 }
 
-.overlay-dark .button.button--primary:active,
 .palette-two .button.button--primary:active {
   background: var(--background-accent-2-active, #F4B841BA);
   border-color: var(--background-accent-2-active, #F4B841BA);
 }
 
-.overlay-dark .button.button--secondary,
 .palette-two .button.button--secondary {
   color: var(--color-outline-2, #F4B841);
 }
 
-.overlay-dark .button.button--secondary path,
 .palette-two .button.button--secondary path {
   fill: var(--color-outline-2, #F4B841);
 }
 
-.overlay-dark .button.button--secondary:hover,
 .palette-two .button.button--secondary:hover {
   text-shadow: 0.5px 0 var(--color-outline-2, #F4B841);
 }
 
-.overlay-dark .button.button--outlined,
 .palette-two .button.button--outlined {
   color: var(--color-accent-2, #0B1A26);
   border-color: var(--background-accent-2, #F4B841);
 }
 
-.overlay-dark .button.button--outlined:hover,
 .palette-two .button.button--outlined:hover {
   background: var(--background-accent-secondary-2-hover, #F4B84152);
 }
 
-.overlay-dark .button.button--outlined:active,
 .palette-two .button.button--outlined:active {
   background: var(--background-accent-secondary-2-active, #F4B8418F);
+}
+
+.palette-three .button.button--primary {
+  color: var(--color-accent-3, #FFFFFF);
+  background: var(--background-accent-3, #0B1A26);
+  border-color: var(--background-accent-3, #0B1A26);
+}
+
+.palette-three .button.button--primary:hover {
+  background: var(--background-accent-3-hover, #0B1A26CC);
+  border-color: var(--background-accent-3-hover, #0B1A26CC);
+}
+
+.palette-three .button.button--primary:active {
+  background: var(--background-accent-3-active, #0B1A26BA);
+  border-color: var(--background-accent-3-active, #0B1A26BA);
+}
+
+.palette-three .button.button--secondary {
+  color: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .button.button--secondary path {
+  fill: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .button.button--secondary:hover {
+  text-shadow: 0.5px 0 var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .button.button--outlined {
+  color: var(--color-accent-3, #FFFFFF);
+  border-color: var(--background-accent-3, #0B1A26);
+}
+
+.palette-three .button.button--outlined:hover {
+  background: var(--background-accent-secondary-3-hover, #0B1A2652);
+}
+
+.palette-three .button.button--outlined:active {
+  background: var(--background-accent-secondary-3-active, #0B1A268F);
 }
 
 .container {
@@ -551,6 +601,10 @@ img {
 
 .palette-two .tagline {
   color: var(--color-outline-2, #F4B841);
+}
+
+.palette-three .tagline {
+  color: var(--color-outline-3, #0B1A26);
 }
 
 @media (min-width: 1100px) {
@@ -624,6 +678,19 @@ img {
 
 .palette-two .title__bg-text {
   color: var(--color-fourth-2, #FFFFFF47);
+}
+
+.palette-three.title__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .title__title {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .title__bg-text {
+  color: var(--color-fourth-3, #0B1A2626);
 }
 
 @media (min-width: 768px) {

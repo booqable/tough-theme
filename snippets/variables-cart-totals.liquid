@@ -80,6 +80,37 @@
       {% else %}
         --book-button-button-label-color: #0B1A26;
       {% endif %}
+
+    {% elsif color_palette == "three" %}
+      {% if settings.primary_color_3 != blank %}
+        --secondary-button-button-label-color: var(--color-primary-3);
+        --totals-text-color: var(--color-primary-3);
+        --totals-border: 1px solid var(--color-border-3);
+      {% else %}
+        --secondary-button-button-label-color: #0B1A26;
+        --totals-text-color: #0B1A26;
+        --totals-border: 1px solid #0B1A2626;
+      {% endif %}
+
+      {% if settings.background_3 != blank %}
+        --secondary-button-button-color: var(--background-primary-3);
+      {% else %}
+        --secondary-button-button-color: #F4B841;
+      {% endif %}
+
+      {% if settings.accent_background_3 != blank %}
+        --book-button-button-color: var(--background-accent-3);
+        --secondary-button-button-border: 1px solid var(--background-accent-3);
+      {% else %}
+        --book-button-button-color: #0B1A26;
+        --secondary-button-button-border: 1px solid #0B1A26;
+      {% endif %}
+
+      {% if settings.accent_color_3 != blank %}
+        --book-button-button-label-color: var(--color-accent-3);
+      {% else %}
+        --book-button-button-label-color: #FFFFFF;
+      {% endif %}
     {%- endif -%}
   }
 {% endstyle %}

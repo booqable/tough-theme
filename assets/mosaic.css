@@ -129,7 +129,8 @@
 }
 
 .palette-one .mosaic__button.button:hover,
-.palette-two .mosaic__button.button:hover {
+.palette-two .mosaic__button.button:hover,
+.palette-three .mosaic__button.button:hover {
   text-shadow: 0.5px 0 currentColor;
 }
 
@@ -154,6 +155,29 @@
 
 .palette-two .mosaic__button.button path {
   fill: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-three.mosaic__wrapper {
+  color: var(--color-secondary, #FFFFFF);
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .mosaic__item {
+  background: var(--background-primary-3, #F4B841);
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .mosaic__item-col.no-image {
+  background: var(--color-image-placeholder-3, #0B1A2626);
+}
+
+.palette-three .mosaic__heading,
+.palette-three .mosaic__button.button {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .mosaic__button.button path {
+  fill: var(--color-primary-3, #0B1A26);
 }
 
 .classic-design .mosaic__item-col {
@@ -195,8 +219,14 @@
   border-color: var(--color-outline-2, #F4B841);
 }
 
+.classic-design .palette-three .mosaic__item,
+.classic-design .palette-three .mosaic__tag {
+  border-color: var(--color-outline-3, #0B1A26);
+}
+
 .classic-design .palette-one .mosaic__list-small .mosaic__item,
-.classic-design .palette-two .mosaic__list-small .mosaic__item {
+.classic-design .palette-two .mosaic__list-small .mosaic__item,
+.classic-design .palette-three .mosaic__list-small .mosaic__item {
   border: transparent;
 }
 

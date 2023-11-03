@@ -30,6 +30,10 @@
   margin: 0 var(--margin-right-mobile) 0 var(--margin-left-mobile);
 }
 
+.images__text-area.images__text-area--color {
+  color: var(--color-overlay, #FFFFFF);
+}
+
 .images__title {
   font-size: var(--font-size-h2, 48px);
 }
@@ -86,6 +90,9 @@
   right: 0;
   bottom: 0;
   opacity: var(--opacity-overlay, 100%);
+  background: linear-gradient(357.73deg, var(--background-overlay, #0B1A26) 3.03%, var(--background-overlay-00, #0B1A2600) 31.83%),
+   linear-gradient(180deg, var(--background-overlay, #0B1A26) 6.67%, var(--background-overlay-00, #0B1A2600) 105.81%),
+   linear-gradient(0deg, var(--background-overlay-45, #0B1A2673), var(--background-overlay-45, #0B1A2673));
 }
 
 .images__image {
@@ -186,136 +193,43 @@
   height: calc(var(--date-picker-height, 75px) / 2);
 }
 
-.palette-one .overlay-dark .images__title,
-.palette-one .overlay-dark .images__description {
-  color: var(--color-overlay, #FFFFFF);
+.palette-one .images__title,
+.palette-one .images__description {
+  color: var(--color-primary, #0B1A26);
 }
 
-.palette-one .overlay-dark .images__buttons .button--outlined {
-  color: var(--color-overlay, #FFFFFF);
+.palette-two .images__title,
+.palette-two .images__description {
+  color: var(--color-primary-2, #FFFFFF);
 }
 
-.palette-one .overlay-dark .images__vision,
-.palette-one .overlay-dark ~ .images__vision {
-  background: var(--background-overlay, #0B1A26);
+.palette-three .images__title,
+.palette-three .images__description {
+  color: var(--color-primary-3, #0B1A26);
 }
 
-.palette-one .overlay-dark .images__vision .images__vision-wrapper--overlay:after,
-.palette-one .overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--background-overlay, #0B1A26) 3.03%, var(--background-overlay-00, #0B1A2600) 31.83%),
-   linear-gradient(180deg, var(--background-overlay, #0B1A26) 6.67%, var(--background-overlay-00, #0B1A2600) 105.81%),
-   linear-gradient(0deg, var(--background-overlay-45, #0B1A2673), var(--background-overlay-45, #0B1A2673));
-}
-
-.palette-one .overlay-light .images__title,
-.palette-one .overlay-light .images__description {
-  color: var(--background-overlay, #0B1A26);
-}
-
-.palette-one .overlay-light .images__buttons .button--outlined {
-  color: var(--background-overlay, #0B1A26);
-}
-
-.palette-one .overlay-light .images__vision,
-.palette-one .overlay-light ~ .images__vision {
-  background: var(--color-overlay, #FFFFFF);
-}
-
-.palette-one .overlay-light .images__vision .images__vision-wrapper--overlay:after,
-.palette-one .overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--color-overlay, #FFFFFF) 3.03%, var(--color-overlay-00, #FFFFFF00) 31.83%),
-   linear-gradient(180deg, var(--color-overlay, #FFFFFF) 6.67%, var(--color-overlay-00, #FFFFFF00) 105.81%),
-   linear-gradient(0deg, var(--color-overlay-45, #FFFFFF73), var(--color-overlay-45, #FFFFFF73));
+.palette-one .images__text-area--color .images__title,
+.palette-one .images__text-area--color .images__description,
+.palette-one .images__text-area--color .images__buttons .button--outlined,
+.palette-two .images__text-area--color .images__title,
+.palette-two .images__text-area--color .images__description,
+.palette-two .images__text-area--color .images__buttons .button--outlined,
+.palette-three .images__text-area--color .images__title,
+.palette-three .images__text-area--color .images__description,
+.palette-three .images__text-area--color .images__buttons .button--outlined {
+  color: currentColor;
 }
 
 .palette-one .images__date-picker-overlay {
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one > .overlay-light ~ .images__date-picker path,
-.palette-one .images__date-picker.show-overlay-light .images__date-picker-icon path {
-  fill: var(--background-overlay, #0B1A26);
-}
-
-.palette-one > .overlay-light ~ .images__date-picker .images__date-picker-title,
-.palette-one .images__date-picker.show-overlay-light .images__date-picker-title {
-  color: var(--background-overlay, #0B1A26);
-}
-
-.palette-one > .overlay-dark ~ .images__date-picker path,
-.palette-one .images__date-picker.show-overlay-dark .images__date-picker-icon path {
-  fill: var(--color-overlay, #FFFFFF);
-}
-
-.palette-one > .overlay-dark ~ .images__date-picker .images__date-picker-title,
-.palette-one .images__date-picker.show-overlay-dark .images__date-picker-title {
-  color: var(--color-overlay, #FFFFFF);
-}
-
-.palette-two .overlay-dark .images__title,
-.palette-two .overlay-dark .images__description {
-  color: var(--color-overlay-2, #FFFFFF);
-}
-
-.palette-two .overlay-dark .images__buttons .button--outlined {
-  color: var(--color-overlay-2, #FFFFFF);
-}
-
-.palette-two .overlay-dark .images__vision,
-.palette-two .overlay-dark ~ .images__vision {
-  background: var(--background-overlay-2, #0B1A26);
-}
-
-.palette-two .overlay-dark .images__vision .images__vision-wrapper--overlay:after,
-.palette-two .overlay-dark ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--background-overlay-2, #0B1A26) 3.03%, var(--background-overlay-2-00, #0B1A2600) 31.83%),
-   linear-gradient(180deg, var(--background-overlay-2, #0B1A26) 6.67%, var(--background-overlay-2-00, #0B1A2600) 105.81%),
-   linear-gradient(0deg, var(--background-overlay-2-45, #0B1A2673), var(--background-overlay-2-45, #0B1A2673));
-}
-
-.palette-two .overlay-light .images__title,
-.palette-two .overlay-light .images__description {
-  color: var(--background-overlay-2, #0B1A26);
-}
-
-.palette-two .overlay-light .images__buttons .button--outlined {
-  color: var(--background-overlay-2, #0B1A26);
-}
-
-.palette-two .overlay-light .images__vision,
-.palette-two .overlay-light ~ .images__vision {
-  background: var(--color-overlay-2, #FFFFFF);
-}
-
-.palette-two .overlay-light .images__vision .images__vision-wrapper--overlay:after,
-.palette-two .overlay-light ~ .images__vision .images__vision-wrapper--overlay:after {
-  background: linear-gradient(357.73deg, var(--color-overlay-2, #FFFFFF) 3.03%, var(--color-overlay-2-00, #FFFFFF00) 31.83%),
-   linear-gradient(180deg, var(--color-overlay-2, #FFFFFF) 6.67%, var(--color-overlay-2-00, #FFFFFF00) 105.81%),
-   linear-gradient(0deg, var(--color-overlay-2-45, #FFFFFF73), var(--color-overlay-2-45, #FFFFFF73));
-}
-
 .palette-two .images__date-picker-overlay {
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two > .overlay-light ~ .images__date-picker path,
-.palette-two .images__date-picker.show-overlay-light .images__date-picker-icon path {
-  fill: var(--background-overlay-2, #0B1A26);
-}
-
-.palette-two > .overlay-light ~ .images__date-picker .images__date-picker-title,
-.palette-two .images__date-picker.show-overlay-light .images__date-picker-title {
-  color: var(--background-overlay-2, #0B1A26);
-}
-
-.palette-two > .overlay-dark ~ .images__date-picker path,
-.palette-two .images__date-picker.show-overlay-dark .images__date-picker-icon path {
-  fill: var(--color-overlay-2, #FFFFFF);
-}
-
-.palette-two > .overlay-dark ~ .images__date-picker .images__date-picker-title,
-.palette-two .images__date-picker.show-overlay-dark .images__date-picker-title {
-  color: var(--color-overlay-2, #FFFFFF);
+.palette-three .images__date-picker-overlay {
+  background: var(--background-primary-3, #F4B841);
 }
 
 @media (min-width: 428px) {

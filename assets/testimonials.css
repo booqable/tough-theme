@@ -96,6 +96,22 @@
   color: var(--color-secondary-2, #E1E4E8);
 }
 
+.palette-three.testimonials__wrapper {
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .testimonials__blockquote {
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .testimonials__cite {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .testimonials__small {
+  color: var(--color-secondary-3, #FFFFFF);
+}
+
 .classic-design .testimonials__image {
   padding: 8px;
   border: 1px solid transparent;
@@ -107,6 +123,10 @@
 
 .classic-design .palette-two .testimonials__image {
   border-color: var(--background-accent-2, #F4B841);
+}
+
+.classic-design .palette-three .testimonials__image {
+  border-color: var(--background-accent-3, #0B1A26);
 }
 
 @media (min-width: 992px) {

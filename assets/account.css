@@ -458,6 +458,81 @@ div.account-fieldset--error .account-fieldset__input:focus {
   border-color: var(--background-primary-2, #0B1A26);
 }
 
+.palette-three.account {
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .account__button--minimal,
+.palette-three .account__title-icon,
+.palette-three .account__breadcrumbs {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .account__title + .account__divider,
+.palette-three .account__description,
+.palette-three .account-checkbox__label,
+.palette-three .account-fieldset__static-label,
+.palette-three .account-fieldset__radio-label {
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .account__button--minimal:hover {
+  text-shadow: 0.5px 0 var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .account-fieldset__label {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .account-fieldset__label:not(:has(+ input:focus)):has(+ input:placeholder-shown) {
+  background-color: transparent;
+  color: var(--color-third-3, #0B1A2666);
+}
+
+.palette-three .account-fieldset__input {
+  background: var(--background-primary-3, #F4B841);
+  border-color: var(--color-border-3, #0B1A2626);
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .account-fieldset__input:focus {
+  border-color: var(--background-accent-3-active, #0B1A26BA);
+}
+
+.palette-three .account__link {
+  color: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .account__link:hover {
+  color: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .account__link:active {
+  color: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .account__alert--info {
+  border: 1px solid var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .account-fieldset__radio-label:before,
+.palette-three .account-checkbox__label:before {
+  border-color: var(--color-border-3, #0B1A2626);
+  background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three [id^='user_legal_type']:checked + .account-fieldset__radio-label:before,
+.palette-three [id^='user_agreement_accepted']:checked + .account-checkbox__label:before {
+  border-color: var(--background-accent-3, #0B1A26);
+  background: var(--background-accent-3, #0B1A26);
+}
+
+.palette-three [id^='user_legal_type']:checked + .account-fieldset__radio-label:after,
+.palette-three [id^='user_agreement_accepted']:checked + .account-checkbox__label:after {
+  border-color: var(--background-primary-3, #F4B841);
+}
+
 @media screen and (min-width: 375px) {
   .account__title {
     font-size: 24px;

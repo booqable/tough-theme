@@ -98,6 +98,47 @@
       {% else %}
         --line-icon-color: #F4B841;
       {% endif %}
+
+    {% elsif color_palette == "three" %}
+      {% if settings.primary_color_3 != blank %}
+        --line-title-color: var(--color-primary-3);
+        --line-price-color: var(--color-primary-3);
+        --line-input-color: var(--color-primary-3);
+        --line-bundle-item-quantity-color: var(--color-primary-3);
+        --line-bundle-item-name-color: var(--color-primary-3);
+        --line-border: 1px solid var(--color-border-3);
+        --line-image-border: 1px solid var(--color-border-3);
+        --line-control-border: 1px solid var(--color-border-3);
+        --line-variations-color: var(--color-third-3);
+      {% else %}
+        --line-title-color: #0B1A26;
+        --line-price-color: #0B1A26;
+        --line-input-color: #0B1A26;
+        --line-bundle-item-quantity-color: #0B1A26;
+        --line-bundle-item-name-color: #0B1A26;
+        --line-border: 1px solid #0B1A2626;
+        --line-image-border: 1px solid #0B1A2626;
+        --line-control-border: 1px solid #0B1A2626;
+        --line-variations-color: #0B1A2666;
+      {% endif %}
+
+      {% if settings.background_3 != blank %}
+        --line-bundle-item-quantity-background: var(--background-primary-3);
+      {% else %}
+        --line-bundle-item-quantity-background: #F4B841;
+      {% endif %}
+
+      {% if settings.accent_background_3 != blank %}
+        --line-toggle-color: var(--background-accent-3);
+      {% else %}
+        --line-toggle-color: #0B1A26;
+      {% endif %}
+
+      {% if settings.accent_outline_3 != blank %}
+        --line-icon-color: var(--color-outline-3);
+      {% else %}
+        --line-icon-color: #0B1A26;
+      {% endif %}
     {%- endif -%}
   }
 {% endstyle %}
