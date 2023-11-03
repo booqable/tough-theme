@@ -5,17 +5,18 @@
 {%- if blocks.size > 0 -%}
   {{ "images.css" | asset_url | stylesheet_tag }}
 
-  {%- assign color_palette         = section.settings.color_palette -%}
-  {%- assign height                = section.settings.height -%}
-  {%- assign padding_top           = section.settings.padding_top -%}
-  {%- assign padding_bottom        = section.settings.padding_bottom -%}
-  {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
-  {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-  {%- assign timer                 = section.settings.timer -%}
-  {%- assign pause                 = section.settings.pause -%}
-  {%- assign effect                = section.settings.effect -%}
-  {%- assign datepicker_title      = section.settings.datepicker_title -%}
-  {%- assign show_datepicker       = section.settings.show_datepicker -%}
+  {%- assign color_palette            = section.settings.color_palette -%}
+  {%- assign height                   = section.settings.height -%}
+  {%- assign padding_top              = section.settings.padding_top -%}
+  {%- assign padding_bottom           = section.settings.padding_bottom -%}
+  {%- assign padding_top_mobile       = section.settings.padding_top_mobile -%}
+  {%- assign padding_bottom_mobile    = section.settings.padding_bottom_mobile -%}
+  {%- assign timer                    = section.settings.timer -%}
+  {%- assign pause                    = section.settings.pause -%}
+  {%- assign effect                   = section.settings.effect -%}
+  {%- assign datepicker_title         = section.settings.datepicker_title -%}
+  {%- assign show_datepicker          = section.settings.show_datepicker -%}
+  {%- assign datepicker_no_background = section.settings.datepicker_no_background -%}
 
   {%- assign carousel = false -%}
 
@@ -477,7 +478,9 @@
           </div>
         </div>
 
-        <div class="images__date-picker-overlay"></div>
+        {%- unless datepicker_no_background -%}
+          <div class="images__date-picker-overlay"></div>
+        {%- endunless -%}
       </div>
     {%- endif -%}
   </div>
@@ -724,6 +727,12 @@
         "label": "Show date picker"
       },
       {
+        "type": "checkbox",
+        "id": "datepicker_no_background",
+        "default": false,
+        "label": "Hide background"
+      },
+      {
         "type": "text",
         "id": "datepicker_title",
         "label": "Title",
@@ -895,4 +904,3 @@
     ]
   }
 {% endschema %}
-
