@@ -153,6 +153,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
 }
 
 .images__date-picker-container {

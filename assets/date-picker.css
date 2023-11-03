@@ -1,0 +1,99 @@
+.date-picker__wrapper {
+  width: 100%;
+}
+
+.date-picker__container--padding-top {
+  padding-top: var(--padding-top-mobile, 16px);
+}
+
+.date-picker__container--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 16px);
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(15%) rotate(90deg);
+  }
+
+  33% {
+    transform: translateY(75%) rotate(90deg);
+  }
+
+  66% {
+    transform: translateY(-20%) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(15%) rotate(90deg);
+  }
+}
+
+.date-picker__icon {
+  margin: 0 8px 0 0;
+}
+
+.date-picker__icon svg {
+  transform: translateY(15%) rotate(90deg);
+  animation: 1.5s infinite alternate move;
+  width: 16px;
+  height: 17px;
+}
+
+.date-picker__title {
+  display: flex;
+  font-size: 18px;
+  font-weight: var(--font-weight-regular, 400);
+}
+
+.date-picker__component {
+  margin: 0 1px;
+}
+
+.palette-one.date-picker__wrapper {
+  background: var(--background-primary, #FFFFFF);
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-one .date-picker__icon path {
+  fill: var(--color-primary, #0B1A26);
+}
+
+.palette-one .date-picker__title {
+  color: var(--color-primary, #0B1A26);
+}
+
+.palette-two.date-picker__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .date-picker__icon path {
+  fill: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-two .date-picker__title {
+  color: var(--color-primary-2, #FFFFFF);
+}
+
+.palette-three.date-picker__wrapper {
+  background: var(--background-primary-3, #F4B841);
+  color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .date-picker__icon path {
+  fill: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .date-picker__title {
+  color: var(--color-primary-3, #0B1A26);
+}
+
+@media (min-width: 992px) {
+  .date-picker__container--padding-top {
+    padding-top: var(--padding-top, 16px);
+  }
+
+  .date-picker__container--padding-bottom {
+    padding-bottom: var(--padding-bottom, 16px);
+  }
+}

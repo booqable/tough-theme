@@ -236,6 +236,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
 
 .carousel__edges .carousel__dot {
