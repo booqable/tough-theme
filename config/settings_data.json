@@ -7,7 +7,7 @@
         "block_order": [],
         "settings": {
           "bar_message": "Get 15% off with code <b>CONSTRUCT</b> at checkout",
-          "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+          "bar_text": "Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a>",
           "color_palette": "three",
           "icon": "phone",
           "padding_top": "medium",
@@ -140,7 +140,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "Get 15% off with code <b>CONSTRUCT</b> at checkout",
-            "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+            "bar_text": "Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a>",
             "color_palette": "three",
             "icon": "phone",
             "padding_top": "medium",
@@ -272,7 +272,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "Get 15% off with code <b>ROMANCE</b> at checkout",
-            "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+            "bar_text": "Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a>",
             "color_palette": "three",
             "icon": "phone",
             "padding_top": "medium",
@@ -404,7 +404,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "Get 15% off with code <b>VOGUE</b> at checkout",
-            "bar_text": "Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a>",
+            "bar_text": "Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a>",
             "color_palette": "three",
             "icon": "phone",
             "padding_top": "medium",
@@ -558,7 +558,7 @@
             "padding_bottom_mobile": "medium",
             "show_bar": true,
             "icon": "empty",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a></p>",
             "padding_bottom": "medium",
             "padding_top_mobile": "medium",
             "bar_message": "<p>Get 15% off with code&nbsp;<b>RADICAL</b> at checkout</p>",
@@ -703,7 +703,7 @@
             "padding_bottom_mobile": "medium",
             "show_bar": true,
             "icon": "phone",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 0100\">+1 555 0100</a></p>",
             "padding_bottom": "medium",
             "padding_top_mobile": "medium",
             "bar_message": "<p>Book 4 bikes and get 20% off</p>",
