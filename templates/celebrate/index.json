@@ -6,15 +6,15 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "large",
         "bg_text": "FAQ",
-        "padding_bottom_mobile": "small",
-        "title": "Frequently asked questions",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "color_palette": "two",
         "description": "<p>Explore the FAQs to ensure you're well-prepared to book your party gear with us.</p>",
-        "color_palette": "two"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Frequently asked questions"
       },
       "disabled": false
     },
@@ -58,11 +58,13 @@
       ],
       "settings": {
         "color_palette": "two",
-        "color_overlay": "light",
+        "overlay_background": "#0B1A26",
+        "overlay_color": "#FFFFFF",
         "padding_top": "small",
         "padding_bottom": "large",
         "padding_top_mobile": "small",
-        "padding_bottom_mobile": "medium"
+        "padding_bottom_mobile": "medium",
+        "show_overlay": true
       },
       "disabled": null
     },
@@ -114,21 +116,21 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "",
         "button_2": "",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
         "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
-        "title": "For every party big or small",
-        "padding_bottom": "large",
-        "tag": "",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-celebrate-side.jpg",
+        "color_palette": "one",
         "description": "<p>Party&nbsp;Perfect brings together a bold collection of tents, tables, chairs, and lawn games made available to hire for your wedding, event, or birthday party. Our range of party equipment is high-quality, durable, and affordable so that you can have a fantastic event on a budget.</p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-celebrate-side.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "",
+        "title": "For every party big or small"
       },
       "disabled": false
     },
@@ -138,36 +140,36 @@
         "testimonial": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-celebrate-testimonial-1.jpg",
-            "title": "Perfect Party Essentials!",
             "description": "<p>I recently used this party rental service for my daughter's birthday and couldn't be happier. The tent, tables, and chairs were all top-notch quality. The delivery and setup were smooth, and the team was very professional. It made the party a huge success! Thanks so much!</p>",
+            "image": "booqable://assets/image-celebrate-testimonial-1.jpg",
             "name": "Sarah Thompson",
             "position": "Austin, Texas",
-            "stars": "5"
+            "stars": "5",
+            "title": "Perfect Party Essentials!"
           },
           "disabled": null
         },
         "testimonial_719346": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-celebrate-testimonial-2.jpg",
-            "title": "Exceeded Expectations!",
             "description": "<p>I rented tents, tables, and chairs for our backyard summer bash, and the exceptional service blew me away. The equipment was clean and well-maintained, and the tent looked stunning with the provided lighting. The rental process was hassle-free, and the staff was friendly and efficient. Our guests were wowed, and I'll use this rental service again!</p>",
+            "image": "booqable://assets/image-celebrate-testimonial-2.jpg",
             "name": "David Park",
             "position": "Dallas, Texas",
-            "stars": "5"
+            "stars": "5",
+            "title": "Exceeded Expectations!"
           },
           "disabled": null
         },
         "testimonial_115628": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-celebrate-testimonial-3.jpg",
-            "title": "A Stress-Free Event!",
             "description": "<p>I used this party rental business for my niece's graduation party, and it was a breeze from start to finish. The selection of tents, tables, chairs, and more was impressive. The setup team arrived on time and had everything ready before the guests arrived. The event went off without a hitch, and I credit it to this fantastic rental service. Kudos!</p>",
+            "image": "booqable://assets/image-celebrate-testimonial-3.jpg",
             "name": "Maria Rodriguez",
             "position": "Paris, Texas",
-            "stars": "5"
+            "stars": "5",
+            "title": "A Stress-Free Event!"
           },
           "disabled": null
         }
@@ -178,15 +180,15 @@
         "testimonial_115628"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "one",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": false
     },
@@ -229,12 +231,14 @@
         "collection_535502"
       ],
       "settings": {
-        "color_overlay": "light",
         "color_palette": "two",
+        "overlay_background": "#0B1A26",
+        "overlay_color": "#FFFFFF",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
-        "padding_top_mobile": "small"
+        "padding_top_mobile": "small",
+        "show_overlay": true
       },
       "disabled": null
     },
@@ -243,17 +247,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Discover our party rental products",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "button_url": "",
+        "color_palette": "two",
         "description": "",
-        "color_palette": "two"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Discover our party rental products"
       },
       "disabled": null
     },
@@ -265,19 +269,19 @@
           "settings": {
             "button_1": "Check out products",
             "button_2": "More info",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "center",
-            "video_url": "",
             "button_url_1": "booqable://products/",
-            "show_overlay": true,
             "button_url_2": "booqable://root/",
-            "title": "<p>Welcome to</p>\n<p>Party&nbsp;Perfect</p>",
+            "description": "",
             "image": "booqable://assets/image-celebrate-hero.jpg",
-            "text_position": "center",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
             "overlay_opacity": "30",
             "overlay_color": "white",
             "overlay_background": "black",
-            "description": ""
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "title": "<p>Welcome to</p>\n<p>Party&nbsp;Perfect</p>",
+            "video_url": ""
           },
           "disabled": null
         }
@@ -286,15 +290,17 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
+        "color_palette": "one",
+        "datepicker_title": "Check availability",
         "effect": "slide",
+        "height": "medium",
         "pause": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "color_palette": "one"
+        "show_datepicker": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -304,39 +310,39 @@
         "column": {
           "type": "column",
           "settings": {
-            "title": "Weddings",
-            "text": "<p>Elegant, romantic, timeless. We provide all you need for the perfect wedding day, from decor to seating.</p>",
+            "button_label": "Book now",
+            "button_style": "primary",
+            "button_url": "booqable://root/",
             "icon": "phone",
             "image": "booqable://assets/image-celebrate-column-1.jpg",
-            "button_label": "Book now",
-            "button_url": "booqable://root/",
-            "button_style": "primary"
+            "text": "<p>Elegant, romantic, timeless. We provide all you need for the perfect wedding day, from decor to seating.</p>",
+            "title": "Weddings"
           },
           "disabled": null
         },
         "column_365922": {
           "type": "column",
           "settings": {
-            "title": "Birthdays",
-            "text": "<p>Fun, vibrant, unforgettable. Make your birthday celebration extraordinary with our party rentals and decorations.</p>",
+            "button_label": "Book now",
+            "button_style": "primary",
+            "button_url": "booqable://root/",
             "icon": "phone",
             "image": "booqable://assets/image-celebrate-column-2.jpg",
-            "button_label": "Book now",
-            "button_url": "booqable://root/",
-            "button_style": "primary"
+            "text": "<p>Fun, vibrant, unforgettable. Make your birthday celebration extraordinary with our party rentals and decorations.</p>",
+            "title": "Birthdays"
           },
           "disabled": null
         },
         "column_784015": {
           "type": "column",
           "settings": {
-            "title": "Events",
-            "text": "<p>Versatile, seamless, memorable. Elevate any event with our extensive range of rental options and expert service.</p>",
-            "icon": "phone",
-            "button_style": "primary",
-            "image": "booqable://assets/image-celebrate-column-3.jpg",
             "button_label": "Book now",
-            "button_url": "booqable://root/"
+            "button_style": "primary",
+            "button_url": "booqable://root/",
+            "icon": "phone",
+            "image": "booqable://assets/image-celebrate-column-3.jpg",
+            "text": "<p>Versatile, seamless, memorable. Elevate any event with our extensive range of rental options and expert service.</p>",
+            "title": "Events"
           },
           "disabled": null
         }
