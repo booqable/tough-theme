@@ -803,6 +803,146 @@
           "disabled": null
         }
       }
+    },
+    "celebrate": {
+      "element_design": "classic",
+      "background_style": "none",
+      "accent_outline_2": "#0B1A26",
+      "tagline_font": "lato",
+      "background_2": "#D9D8D4",
+      "accent_color_2": "#0B1A26",
+      "background_3": "#0B1A26",
+      "accent_background": "#0B1A26",
+      "primary_color": "#0B1A26",
+      "secondary_color_2": "#0B1A26",
+      "heading_font": "lato",
+      "body_font": "lato",
+      "secondary_color_3": "#FAFAFA",
+      "accent_outline": "#0B1A26",
+      "background": "#FAFAFA",
+      "image_placeholder": "booqable://assets/image-celebrate-placeholder.jpg",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "phone",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>CELEBRATE</b>&nbsp;at checkout</p>",
+            "color_palette": "three"
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "large",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "left-center",
+            "custom_title": "Tentable",
+            "show_search": true,
+            "menu_opener_mobile": "left",
+            "logo": "booqable://assets/image-celebrate-logo.png",
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "c4f38b89-206d-4d8a-8f1e-bef82d120be7",
+            "color_palette": "one"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Party Perfect. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "Tentable",
+            "logo": "booqable://assets/image-celebrate-logo.png",
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "two"
+          },
+          "disabled": null
+        }
+      },
+      "accent_color": "#D9D8D4",
+      "h6_size": 20,
+      "h5_size": 24,
+      "h4_size": 32,
+      "h3_size": 40,
+      "h2_size": 48,
+      "accent_background_2": "#D9D8D4",
+      "h1_size": 56,
+      "secondary_color": "#0B1A26",
+      "primary_color_2": "#0B1A26",
+      "primary_color_3": "#FAFAFA"
     }
   }
 }
