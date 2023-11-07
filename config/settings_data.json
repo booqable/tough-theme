@@ -809,6 +809,138 @@
           "disabled": null
         }
       }
+    },
+    "focus": {
+      "accent_outline_2": "#0B1A26",
+      "background_2": "#CDEEE6",
+      "accent_color_2": "#FFFFFF",
+      "background_3": "#EA580B",
+      "accent_color_3": "#FFFFFF",
+      "accent_background": "#EA580B",
+      "primary_color": "#0B1A26",
+      "use_focal_images": true,
+      "secondary_color_2": "#E1E4E8",
+      "secondary_color_3": "#FFFFFF",
+      "accent_outline": "#EA580B",
+      "background": "#FFFFFF",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "empty",
+            "bar_text": "<p>✔︎ Fast and flexible ✔︎ Loyalty discount</p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>FOCUS</b>&nbsp;at checkout</p>",
+            "color_palette": "three"
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "left-below",
+            "custom_title": "Camerable",
+            "show_search": true,
+            "menu_opener_mobile": "left",
+            "logo": "booqable://assets/image-focus-logo.png",
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "small",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "ea08e576-bb0e-4ef7-ad2a-3f3b4f70e960",
+            "color_palette": "one"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} ProPixel Cameras. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "",
+            "logo": "booqable://assets/image-focus-logo.png",
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "one"
+          },
+          "disabled": null
+        }
+      },
+      "accent_color": "#FFFFFF",
+      "image_placeholder": "booqable://assets/image-focus-placeholder.jpg",
+      "accent_background_2": "#EA580B",
+      "accent_background_3": "#EA580B",
+      "secondary_color": "#0B1A26",
+      "primary_color_2": "#0B1A26",
+      "primary_color_3": "#FFFFFF"
     }
   },
   "current": {
