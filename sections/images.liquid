@@ -45,11 +45,21 @@
     {%- endif -%}
   {%- endif -%}
 
+  {%- unless carousel -%}
+    {%- assign overlay_color = nil -%}
+
+    {%- for block in blocks -%}
+      {%- assign overlay_color = block.settings.overlay_color -%}
+    {%- endfor -%}
+  {%- endunless -%}
+
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if carousel -%}
       --slide-width: 100%;
       --slide-width-mobile: 100%;
+    {%- else -%}
+      --overlay-color: {{- overlay_color -}};
     {%- endif -%}
 
     {%- case height -%}
