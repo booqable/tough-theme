@@ -1,0 +1,36 @@
+<script>
+  const setColor = () => {
+    const nodes = document.querySelectorAll('.section-with-date-picker'),
+          body = document.querySelector('body');
+
+    nodes.forEach(node => {
+      const section = node.parentElement.nextElementSibling,
+            target = node.querySelector('.section-with-date-picker__overlay');
+
+      if (section) {
+        const children = [...section.children],
+              first = 'palette-one',
+              second = 'palette-two',
+              third = 'palette-three';
+
+        children.forEach(child => {
+          const isFirst = child.classList.contains(first),
+                isSecond = child.classList.contains(second),
+                isThird = child.classList.contains(third);
+
+          return isFirst ? target.classList.add(first)
+              : isSecond ? target.classList.add(second)
+              : isThird ? target.classList.add(third)
+              : false;
+        });
+      } else {
+        const res = getComputedStyle(body).backgroundColor;
+
+        target.style.setProperty('background-color',`${res}`);
+      }
+    });
+  };
+
+  setTimeout(setColor, 350);
+
+</script>

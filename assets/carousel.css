@@ -342,24 +342,28 @@
 }
 
 .palette-one .carousel__edges .carousel__btn {
-  background: var(--overlay-color-08, #0B1A2624);
+  background: var(--overlay-color-08, #FFFFFF24);
   border-color: transparent;
 }
 
-.palette-one .carousel__edges .carousel__btn path {
-  fill: var(--overlay-color, #0B1A26);
+.palette-one .carousel__edges .carousel__btn path,
+.palette-one .carousel__edges ~ .date-picker .images__date-picker-title path,
+.palette-one.images__wrapper .images__date-picker-title path {
+  fill: var(--overlay-color, #FFFFFF);
 }
 
 .palette-one .carousel__edges .carousel__dot:after {
-  background: var(--overlay-color-45, #0B1A2673);
+  background: var(--overlay-color-45, #FFFFFF73);
 }
 
 .palette-one .carousel__edges .carousel__dot.active:after {
-  background: var(--overlay-color, #0B1A26);
+  background: var(--overlay-color, #FFFFFF);
 }
 
-.palette-one .carousel__edges .carousel__counter {
-  color: var(--overlay-color, #0B1A26);
+.palette-one .carousel__edges .carousel__counter,
+.palette-one .carousel__edges ~ .date-picker .images__date-picker-title,
+.palette-one.images__wrapper .images__date-picker-title {
+  color: var(--overlay-color, #FFFFFF);
 }
 
 .palette-two .carousel__edges .carousel__btn {
@@ -367,7 +371,9 @@
   border-color: transparent;
 }
 
-.palette-two .carousel__edges .carousel__btn path {
+.palette-two .carousel__edges .carousel__btn path,
+.palette-two .carousel__edges ~ .date-picker .images__date-picker-title path,
+.palette-two.images__wrapper .images__date-picker-title path {
   fill: var(--overlay-color, #FFFFFF);
 }
 
@@ -379,29 +385,35 @@
   background: var(--overlay-color, #FFFFFF);
 }
 
-.palette-two .carousel__edges .carousel__counter {
+.palette-two .carousel__edges .carousel__counter,
+.palette-two .carousel__edges ~ .date-picker .images__date-picker-title,
+.palette-two.images__wrapper .images__date-picker-title {
   color: var(--overlay-color, #FFFFFF);
 }
 
 .palette-three .carousel__edges .carousel__btn {
-  background: var(--overlay-color-08, #0B1A2624);
+  background: var(--overlay-color-08, #FFFFFF24);
   border-color: transparent;
 }
 
-.palette-three .carousel__edges .carousel__btn path {
-  fill: var(--overlay-color, #0B1A26);
+.palette-three .carousel__edges .carousel__btn path,
+.palette-three .carousel__edges ~ .date-picker .images__date-picker-title path,
+.palette-three.images__wrapper .images__date-picker-title path {
+  fill: var(--overlay-color, #FFFFFF);
 }
 
 .palette-three .carousel__edges .carousel__dot:after {
-  background: var(--overlay-color-45, #0B1A2673);
+  background: var(--overlay-color-45, #FFFFFF73);
 }
 
 .palette-three .carousel__edges .carousel__dot.active:after {
-  background: var(--overlay-color, #0B1A26);
+  background: var(--overlay-color, #FFFFFF);
 }
 
-.palette-three .carousel__edges .carousel__counter {
-  color: var(--overlay-color, #0B1A26);
+.palette-three .carousel__edges .carousel__counter,
+.palette-three .carousel__edges ~ .date-picker .images__date-picker-title,
+.palette-three.images__wrapper .images__date-picker-title {
+  color: var(--overlay-color, #FFFFFF);
 }
 
 @media (min-width: 992px) {

@@ -136,15 +136,15 @@
   }
 }
 
-.images__wrapper-with-date-picker {
+.images__wrapper.section-with-date-picker {
   flex-direction: column;
 }
 
-.images__wrapper-with-date-picker .images__container--padding-bottom {
+.images__wrapper.section-with-date-picker .images__container--padding-bottom {
   padding-bottom: calc(var(--padding-bottom-mobile, 40px) + var(--date-picker-block-height, 70px));
 }
 
-.images__wrapper-with-date-picker .images__vision {
+.images__wrapper.section-with-date-picker .images__vision {
   bottom: calc(var(--date-picker-height, 70px) / 2 - 5px);
 }
 
@@ -221,15 +221,15 @@
   color: currentColor;
 }
 
-.palette-one .images__date-picker-overlay {
+.palette-one.images__date-picker-overlay {
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-two .images__date-picker-overlay {
+.palette-two.images__date-picker-overlay {
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-three .images__date-picker-overlay {
+.palette-three.images__date-picker-overlay {
   background: var(--background-primary-3, #F4B841);
 }
 
@@ -303,11 +303,11 @@
     height: 100%;
   }
 
-  .images__wrapper-with-date-picker .images__container {
+  .images__wrapper.section-with-date-picker .images__container {
     height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 60px));
   }
 
-  .images__wrapper-with-date-picker .images__container--padding-bottom {
+  .images__wrapper.section-with-date-picker .images__container--padding-bottom {
     padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
   }
 }

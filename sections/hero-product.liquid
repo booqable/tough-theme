@@ -78,7 +78,7 @@
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-<div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
+<div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if show_datepicker %} section-with-date-picker{%- endif -%}" style="{{- variables | escape -}}">
   {%- if show_datepicker -%}
     <div class="hero__date-picker date-picker{% if padding_top != blank or padding_top_mobile != blank %} hero__date-picker--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__date-picker--padding-bottom{%- endif -%}">
       <div class="hero__container container">
@@ -86,12 +86,12 @@
           {%- include 'date-picker' -%}
         </div>
       </div>
-      <div class="hero__overlay"></div>
+      <div class="hero__overlay section-with-date-picker__overlay"></div>
     </div>
   {%- endif -%}
 </div>
 
-{% include 'script-hero-background' %}
+{% include 'script-date-picker-background' %}
 
 {% schema %}
   {
