@@ -6,14 +6,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "small",
-        "padding_bottom_mobile": "small",
-        "title": "Visit our 3 locations across New York",
-        "padding_bottom": "medium",
-        "tag": "Locations",
-        "padding_top_mobile": "medium",
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
+        "color_palette": "one",
         "description": "<p>Find us wherever you are</p>",
-        "color_palette": "one"
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "medium",
+        "tag": "Locations",
+        "title": "Visit our 3 locations across New York"
       },
       "disabled": null
     },
@@ -56,17 +59,17 @@
         "product_123451"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "small",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
-        "collection": null,
         "color_palette": "one",
-        "show_excerpt": true
+        "collection": null,
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_navigation": true,
+        "show_pagination": true,
+        "show_carousel": true,
+        "show_excerpt": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -75,17 +78,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "What our customers say",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "large",
+        "button_url": "",
+        "color_palette": "one",
         "description": "<p>Rated 4.8 stars based on 749 reviews</p>",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "tag": "",
+        "title": "What our customers say"
       },
       "disabled": false
     },
@@ -94,17 +97,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "small",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Daily shooter",
-        "padding_bottom": "small",
-        "tag": "Blog",
-        "padding_top_mobile": "medium",
+        "button_url": "",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "medium",
+        "tag": "Blog",
+        "title": "Daily shooter"
       },
       "disabled": false
     },
@@ -148,13 +151,13 @@
       ],
       "settings": {
         "color_palette": "one",
-        "title": "Choose from the most-loved camera brands",
-        "text_position": "left",
-        "text_position_mobile": "center",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
-        "padding_top_mobile": "large"
+        "padding_top_mobile": "large",
+        "text_position": "left",
+        "text_position_mobile": "center",
+        "title": "Choose from the most-loved camera brands"
       },
       "disabled": null
     },
@@ -218,36 +221,36 @@
         "testimonial": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-focus-testimonial-1.jpg",
-            "title": "Exceptional Camera Rental Service",
             "description": "<p><em>I recently rented a camera from this New York-based camera rental business, and I couldn't be happier with the experience. The staff was knowledgeable and helped me select the perfect camera for my photography project. The equipment was in pristine condition, and the rental process was seamless. I'll definitely be coming back for all my future camera rental needs. Five stars!</em></p>",
+            "image": "booqable://assets/image-focus-testimonial-1.jpg",
             "name": "Thomas Murray",
             "position": "Brooklyn, New York",
-            "stars": "5"
+            "stars": "5",
+            "title": "Exceptional Camera Rental Service"
           },
           "disabled": null
         },
         "testimonial_285833": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-focus-testimonial-2.jpg",
-            "title": "Hassle-Free Camera Rental in the Big Apple",
             "description": "<p>As a professional photographer, I frequently require top-notch cameras for my assignments. This camera rental business in New York consistently delivers excellent service. The gear is always well-maintained, and their prices are competitive. The convenience of their location in the city is an added bonus. If you're in need of camera equipment in New York, this is the place to go!</p>",
+            "image": "booqable://assets/image-focus-testimonial-2.jpg",
             "name": "James Parker",
             "position": "Rochester, New York",
-            "stars": "4"
+            "stars": "4",
+            "title": "Hassle-Free Camera Rental in the Big Apple"
           },
           "disabled": null
         },
         "testimonial_820026": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-focus-testimonial-3.jpg",
-            "title": "The Go-To Spot for Camera Rentals",
             "description": "<p>Very nice and good service. In terms of price also fine, this way you can first try a lens before you buy one yourself. Picking it up an afternoon earlier and bringing it back the morning later while only 1 day rent is calculated is also very nice. Definitely recommended if you want to try out a lens!</p>",
+            "image": "booqable://assets/image-focus-testimonial-3.jpg",
             "name": "Marcus Clarke",
             "position": "New York, New York",
-            "stars": "5"
+            "stars": "5",
+            "title": "The Go-To Spot for Camera Rentals"
           },
           "disabled": null
         }
@@ -258,15 +261,15 @@
         "testimonial_820026"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "one",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     },
@@ -302,11 +305,13 @@
       ],
       "settings": {
         "color_palette": "one",
-        "color_overlay": "dark",
-        "padding_top": "small",
+        "overlay_color": "#FFFFFF",
+        "overlay_background": "#0B1A26",
         "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
         "padding_top_mobile": "small",
-        "padding_bottom_mobile": "medium"
+        "show_overlay": true
       },
       "disabled": null
     },
@@ -315,17 +320,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "small",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "New equipment",
-        "padding_bottom": "small",
-        "tag": "Featured",
-        "padding_top_mobile": "small",
+        "button_url": "",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "tag": "Featured",
+        "title": "New equipment"
       },
       "disabled": null
     },
@@ -337,19 +342,18 @@
           "settings": {
             "button_1": "More info",
             "button_2": "",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://collections/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": null,
-            "title": "<p>RED Dragon-X 8K</p>",
-            "image": "booqable://assets/image-focus-hero.jpg",
-            "text_position": "bottom-left",
-            "overlay_opacity": "50",
             "description": "<p>Now available to rent!</p>",
-            "overlay_background": "#000000"
+            "image": "booqable://assets/image-focus-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#000000",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "50",
+            "show_overlay": true,
+            "text_position": "bottom-left",
+            "text_position_mobile": "top-left",
+            "title": "<p>RED Dragon-X 8K</p>"
           },
           "disabled": null
         }
@@ -358,15 +362,17 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "large",
-        "padding_bottom_mobile": "large",
+        "color_palette": "one",
         "effect": "slide",
-        "pause": true,
+        "height": "large",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "color_palette": "one"
+        "pause": true,
+        "show_datepicker": true,
+        "datepicker_title": "Check availability",
+        "timer": 5
       },
       "disabled": null
     },
@@ -409,16 +415,16 @@
         "product_403891"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "small",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -428,30 +434,30 @@
         "column": {
           "type": "column",
           "settings": {
-            "title": "Brooklyn",
-            "text": "<p>414 HICKS ST </p><p>BROOKLYN </p><p>NY 11201-6659</p>",
+            "button_style": "secondary",
             "icon": "map-marker",
-            "button_style": "secondary"
+            "text": "<p>414 HICKS ST </p><p>BROOKLYN </p><p>NY 11201-6659</p>",
+            "title": "Brooklyn"
           },
           "disabled": null
         },
         "column_464165": {
           "type": "column",
           "settings": {
-            "title": "New York",
-            "text": "<p>229 E 116TH ST </p>\n<p>NEW YORK </p>\n<p>NY 10029-1417</p>",
+            "button_style": "secondary",
             "icon": "map-marker",
-            "button_style": "secondary"
+            "text": "<p>229 E 116TH ST </p>\n<p>NEW YORK </p>\n<p>NY 10029-1417</p>",
+            "title": "New York"
           },
           "disabled": null
         },
         "column_618904": {
           "type": "column",
           "settings": {
-            "title": "Rochester",
-            "text": "<p>PO BOX 40181 </p><p>ROCHESTER </p><p>NY 14604-0181</p>",
+            "button_style": "secondary",
             "icon": "map-marker",
-            "button_style": "secondary"
+            "text": "<p>PO BOX 40181 </p><p>ROCHESTER </p><p>NY 14604-0181</p>",
+            "title": "Rochester"
           },
           "disabled": null
         }
@@ -464,10 +470,10 @@
       "settings": {
         "color_palette": "one",
         "grid": "three",
-        "padding_top": "small",
         "padding_bottom": "small",
-        "padding_top_mobile": "large",
-        "padding_bottom_mobile": "large"
+        "padding_bottom_mobile": "large",
+        "padding_top": "small",
+        "padding_top_mobile": "large"
       },
       "disabled": false
     },
@@ -476,14 +482,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "large",
-        "padding_bottom_mobile": "small",
-        "title": "Popular cameras",
-        "padding_bottom": "small",
-        "tag": "Featured",
-        "padding_top_mobile": "medium",
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Featured",
+        "title": "Popular cameras"
       },
       "disabled": null
     }
