@@ -456,7 +456,7 @@ class Carousel {
 
     if (!isEdge || !index || index > this.items.length) return false;
 
-    const defaultColor = this.block.getAttribute(this.data.defaultColor)
+    const defaultColor = this.block.getAttribute(this.data.defaultColor);
 
     this.items.forEach((item, itemIndex) => {
       const overlayColor = item.getAttribute(this.data.overlayColor);
@@ -476,7 +476,7 @@ class Carousel {
   }
 
   setCssVar(key, val) {
-    this.block.style.setProperty(
+    this.block.parentElement.style.setProperty(
       `${key}`,
       `${val}`
     )

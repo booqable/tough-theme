@@ -346,7 +346,8 @@
   border-color: transparent;
 }
 
-.palette-one .carousel__edges .carousel__btn path {
+.palette-one .carousel__edges .carousel__btn path,
+.palette-one .carousel__edges ~ .date-picker .images__date-picker-title path {
   fill: var(--overlay-color, #0B1A26);
 }
 
@@ -358,7 +359,8 @@
   background: var(--overlay-color, #0B1A26);
 }
 
-.palette-one .carousel__edges .carousel__counter {
+.palette-one .carousel__edges .carousel__counter,
+.palette-one .carousel__edges ~ .date-picker .images__date-picker-title {
   color: var(--overlay-color, #0B1A26);
 }
 
@@ -367,7 +369,8 @@
   border-color: transparent;
 }
 
-.palette-two .carousel__edges .carousel__btn path {
+.palette-two .carousel__edges .carousel__btn path,
+.palette-two .carousel__edges ~ .date-picker .images__date-picker-title path {
   fill: var(--overlay-color, #FFFFFF);
 }
 
@@ -379,7 +382,8 @@
   background: var(--overlay-color, #FFFFFF);
 }
 
-.palette-two .carousel__edges .carousel__counter {
+.palette-two .carousel__edges .carousel__counter,
+.palette-two .carousel__edges ~ .date-picker .images__date-picker-title {
   color: var(--overlay-color, #FFFFFF);
 }
 
@@ -388,7 +392,8 @@
   border-color: transparent;
 }
 
-.palette-three .carousel__edges .carousel__btn path {
+.palette-three .carousel__edges .carousel__btn path,
+.palette-three .carousel__edges ~ .date-picker .images__date-picker-title path {
   fill: var(--overlay-color, #0B1A26);
 }
 
@@ -400,7 +405,8 @@
   background: var(--overlay-color, #0B1A26);
 }
 
-.palette-three .carousel__edges .carousel__counter {
+.palette-three .carousel__edges .carousel__counter,
+.palette-three .carousel__edges ~ .date-picker .images__date-picker-title {
   color: var(--overlay-color, #0B1A26);
 }
 
