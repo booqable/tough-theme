@@ -305,16 +305,18 @@
           "settings": {
             "button_1": "Book now",
             "button_2": "",
-            "image_mobile": null,
-            "text_position_mobile": "top-left",
             "button_url_1": "booqable://collections/mountain-bikes",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Rent mountain</p>\n<p>bikes easily</p>",
+            "description": "<p>Explore the trails </p>\n<p>with our selection of mountain bikes</p>\n<p>and accessories</p>",
             "image": "booqable://assets/image-endure-hero.jpg",
+            "image_mobile": null,
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 60,
+            "show_overlay": true,
             "text_position": "middle-left",
-            "overlay_opacity": "60",
-            "description": "<p>Explore the trails </p>\n<p>with our selection of mountain bikes</p>\n<p>and accessories</p>"
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent mountain</p>\n<p>bikes easily</p>"
           },
           "disabled": null
         }
