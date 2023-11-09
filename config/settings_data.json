@@ -1,6 +1,6 @@
 {
   "variations": {
-    "default": {
+    "construct": {
       "sections": {
         "top-bar": {
           "type": "top-bar",
