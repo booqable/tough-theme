@@ -306,7 +306,7 @@
       "settings": {
         "color_palette": "one",
         "overlay_color": "#FFFFFF",
-        "overlay_background": "#0B1A26",
+        "overlay_background": "#000000",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
@@ -349,7 +349,7 @@
             "image_mobile": "booqable://assets/image-hero-mobile.jpg",
             "overlay_background": "#000000",
             "overlay_color": "#FFFFFF",
-            "overlay_opacity": "50",
+            "overlay_opacity": 50,
             "show_overlay": true,
             "text_position": "bottom-left",
             "text_position_mobile": "top-left",

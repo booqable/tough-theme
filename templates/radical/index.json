@@ -346,17 +346,19 @@
           "settings": {
             "button_1": "Book your camera",
             "button_2": "",
-            "image_mobile": "",
-            "text_position_mobile": "center",
             "button_url_1": "booqable://products/",
-            "color_overlay": "dark",
             "button_url_2": "",
-            "title": "<p>The Latest Trends<br>Behind the Lens</p>",
-            "tag": "",
+            "description": "<p>Explore the tools that top photographers and<br>content creators are using to create stunning visuals.<br></p>",
             "image": "booqable://image-radical-background.jpg",
-            "text_position": "center",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
             "overlay_opacity": 64,
-            "description": "<p>Explore the tools that top photographers and<br>content creators are using to create stunning visuals.<br></p>"
+            "show_overlay": true,
+            "tag": "",
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "title": "<p>The Latest Trends<br>Behind the Lens</p>"
           },
           "disabled": null
         }
@@ -470,7 +472,7 @@
       "settings": {
         "show_overlay": true,
         "overlay_color": "#ffffff",
-        "overlay_background": "#333333",
+        "overlay_background": "#131314",
         "color_palette": "two",
         "padding_bottom": "small",
         "padding_bottom_mobile": "large",
@@ -487,16 +489,18 @@
           "settings": {
             "button_1": "Check out products",
             "button_2": "More info",
-            "image_mobile": "",
-            "text_position_mobile": "top-left",
             "button_url_1": "booqable://products/",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Your camera, lens,</p>\n<p>and lighting partner</p>",
+            "description": "<p>Unlock your creative potential and seize every moment in<br>stunning detail with our extensive selection of camera rentals.</p>",
             "image": "booqable://assets/image-radical-hero.jpg",
-            "text_position": "center",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
             "overlay_opacity": 40,
-            "description": "<p>Unlock your creative potential and seize every moment in<br>stunning detail with our extensive selection of camera rentals.</p>"
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Your camera, lens,</p>\n<p>and lighting partner</p>"
           },
           "disabled": null
         }
