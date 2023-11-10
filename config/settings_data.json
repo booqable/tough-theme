@@ -1086,6 +1086,137 @@
           "disabled": null
         }
       }
+    },
+    "utility": {
+      "element_design": "modern",
+      "background_style": "none",
+      "background": "#FFFFFF",
+      "background_2": "#1E3A8A",
+      "primary_color": "#0B1A26",
+      "primary_color_2": "#FFFFFF",
+      "secondary_color": "#4E5D78",
+      "secondary_color_2": "#E1E4E8",
+      "accent_background": "#1E3A8A",
+      "accent_background_2": "#1E3A8A",
+      "accent_color": "#FFFFFF",
+      "accent_color_2": "#FFFFFF",
+      "accent_outline": "#1E3A8A",
+      "accent_outline_2": "#FFFFFF",
+      "heading_font": "inter",
+      "body_font": "inter",
+      "tagline_font": "inter",
+      "image_placeholder": "booqable://assets/image-utility-placeholder.jpg",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>UTILITY</b>&nbsp;at checkout</p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\"><b>+1 755 555 8549</b></a></p>",
+            "color_palette": "two",
+            "icon": "phone",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "color_palette": "one",
+            "custom_title": "Trailerable",
+            "logo": "booqable://assets/image-utility-logo.png",
+            "menu": "912feef0-ecf9-4bb8-a0c1-2f21a28fefde",
+            "menu_style": "horizontal",
+            "menu_opener_mobile": "left",
+            "menu_position": "left-below",
+            "menu_position_mobile": "top",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "large",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": false,
+            "sticky_header": true
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "color_palette": "two",
+            "bottom_menu": "bottom-menu",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Haul-Away Trailers. All right reserved.",
+            "custom_title": "Haul-Away Trailers",
+            "logo": null,
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
+            "padding_top_mobile": "small"
+          },
+          "disabled": null
+        }
+      }
     }
   }
 }
