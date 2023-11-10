@@ -509,17 +509,18 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "small",
-        "padding_bottom_mobile": "large",
-        "effect": "slide",
+        "color_palette": "one",
         "datepicker_title": "",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     }

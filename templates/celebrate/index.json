@@ -293,6 +293,7 @@
         "color_palette": "one",
         "datepicker_title": "Check availability",
         "effect": "slide",
+        "full_width": true,
         "height": "medium",
         "pause": true,
         "padding_bottom": "medium",

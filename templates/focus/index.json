@@ -363,7 +363,9 @@
       ],
       "settings": {
         "color_palette": "one",
+        "datepicker_title": "Check availability",
         "effect": "slide",
+        "full_width": true,
         "height": "large",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
@@ -371,7 +373,6 @@
         "padding_top_mobile": "large",
         "pause": true,
         "show_datepicker": true,
-        "datepicker_title": "Check availability",
         "timer": 5
       },
       "disabled": null

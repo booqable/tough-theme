@@ -95,6 +95,10 @@
    linear-gradient(0deg, var(--background-overlay-45, #0B1A2673), var(--background-overlay-45, #0B1A2673));
 }
 
+.images__vision .container {
+  height: 100%;
+}
+
 .images__image {
   position: absolute;
   top: 50%;

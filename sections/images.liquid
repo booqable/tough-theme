@@ -22,6 +22,12 @@
     {{ "carousel.css" | asset_url | stylesheet_tag }}
 
     {%- assign carousel = true -%}
+  {%- else -%}
+    {%- assign overlay_color = nil -%}
+
+    {%- for block in blocks -%}
+      {%- assign overlay_color = block.settings.overlay_color -%}
+    {%- endfor -%}
   {%- endif -%}
 
   {%- if show_datepicker -%}
@@ -45,14 +51,6 @@
       {%- endif -%}
     {%- endif -%}
   {%- endif -%}
-
-  {%- unless carousel -%}
-    {%- assign overlay_color = nil -%}
-
-    {%- for block in blocks -%}
-      {%- assign overlay_color = block.settings.overlay_color -%}
-    {%- endfor -%}
-  {%- endunless -%}
 
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
@@ -374,57 +372,63 @@
                   </div>
 
                   <div class="images__vision" {% if show_overlay %}style="{{- image_variables | escape -}}"{%- endif -%}>
-                    {%- if video_url contains "youtube.com" -%}
-                      {%- assign video_drop = video_url | split: "?v=" -%}
-                      {%- assign video_id   = video_drop | last | strip -%}
+                    {%- unless full_width -%}
+                      <div class="container">
+                    {%- endunless -%}
+                        {%- if video_url contains "youtube.com" -%}
+                          {%- assign video_drop = video_url | split: "?v=" -%}
+                          {%- assign video_id   = video_drop | last | strip -%}
 
-                      <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
-                        <input id="video-{{- section.key -}}{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
-                        <div id="player-{{- section.key -}}{{- block.id -}}" class="images__video"></div>
+                          <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                            <input id="video-{{- section.key -}}{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
+                            <div id="player-{{- section.key -}}{{- block.id -}}" class="images__video"></div>
+                          </div>
+
+                        {%- elsif video_url contains "vimeo.com" -%}
+                          {%- assign video_drop = video_url | split: "/" -%}
+                          {%- assign video_id   = video_drop | last | strip -%}
+
+                          <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                            <iframe
+                              class="images__video"
+                              src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
+                              width="1920"
+                              height="1080"
+                              frameborder="0"
+                              allow="autoplay; fullscreen"
+                              allowfullscreen
+                              autoplay
+                              muted
+                              loop
+                            ></iframe>
+                          </div>
+
+                        {%- elsif image != blank or image_mobile != blank -%}
+                          {%- if image != blank -%}
+                            <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                              {%- render 'image',
+                                image: image,
+                                loading: 'lazy',
+                                class: 'images__image',
+                                size: 'xxl'
+                              -%}
+                            </div>
+                          {%- endif -%}
+
+                          {%- if image_mobile != blank -%}
+                            <div class="images__vision-wrapper images__vision-wrapper--mobile{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
+                              {%- render 'image',
+                                image: image,
+                                loading: 'lazy',
+                                class: 'images__image',
+                                size: 'l'
+                              -%}
+                            </div>
+                          {%- endif -%}
+                        {%- endif -%}
+                    {%- unless full_width -%}
                       </div>
-
-                    {%- elsif video_url contains "vimeo.com" -%}
-                      {%- assign video_drop = video_url | split: "/" -%}
-                      {%- assign video_id   = video_drop | last | strip -%}
-
-                      <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
-                        <iframe
-                          class="images__video"
-                          src="https://player.vimeo.com/video/{{- video_id -}}?autoplay=1&muted=1&loop=1&autopause=0&controls=0&background=1"
-                          width="1920"
-                          height="1080"
-                          frameborder="0"
-                          allow="autoplay; fullscreen"
-                          allowfullscreen
-                          autoplay
-                          muted
-                          loop
-                        ></iframe>
-                      </div>
-
-                    {%- elsif image != blank or image_mobile != blank -%}
-                      {%- if image != blank -%}
-                        <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
-                          {%- render 'image',
-                            image: image,
-                            loading: 'lazy',
-                            class: 'images__image',
-                            size: 'xxl'
-                          -%}
-                        </div>
-                      {%- endif -%}
-
-                      {%- if image_mobile != blank -%}
-                        <div class="images__vision-wrapper images__vision-wrapper--mobile{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
-                          {%- render 'image',
-                            image: image,
-                            loading: 'lazy',
-                            class: 'images__image',
-                            size: 'l'
-                          -%}
-                        </div>
-                      {%- endif -%}
-                    {%- endif -%}
+                    {%- endunless -%}
                   </div>
             {%- if carousel -%}
                 </div>
@@ -525,12 +529,6 @@
             "id": "video_url",
             "label": "Video URL (optional)",
             "info": "Youtube, Vimeo. If you paste video link here, any images will be ignored"
-          },
-          {
-            "type": "checkbox",
-            "id": "full_width",
-            "label": "Full-width background",
-            "default": true
           },
           {
             "type": "text",
@@ -732,6 +730,12 @@
           }
         ],
         "default": "two"
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full-width background",
+        "default": true
       },
       {
         "type": "header",

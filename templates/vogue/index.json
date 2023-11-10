@@ -31,6 +31,7 @@
       "settings": {
         "color_palette": "one",
         "effect": "slide",
+        "full_width": true,
         "height": "small",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
@@ -294,6 +295,7 @@
       "settings": {
         "color_palette": "one",
         "effect": "slide",
+        "full_width": true,
         "height": "medium",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
