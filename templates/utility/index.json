@@ -6,15 +6,15 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "large",
         "bg_text": "FAQ",
-        "padding_bottom_mobile": "small",
-        "title": "Frequently asked questions",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "color_palette": "two",
         "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your trailer journey with us.</p>",
-        "color_palette": "two"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
@@ -57,16 +57,16 @@
         "product_143849"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "none",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -75,17 +75,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "/collections/all",
-        "padding_top": "large",
         "bg_text": "Safe driving",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Popular trailers",
-        "padding_bottom": "small",
-        "tag": "Trailers",
-        "padding_top_mobile": "medium",
+        "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Trailers",
+        "title": "Popular trailers"
       },
       "disabled": null
     },
@@ -128,16 +128,16 @@
         "product_123450"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "none",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -147,13 +147,13 @@
       "block_order": [],
       "settings": {
         "align": "left",
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "3️⃣ Return your trailer with gate key",
+        "color_palette": "one",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
         "padding_top_mobile": "medium",
-        "color_palette": "one"
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "3️⃣ Return your trailer with gate key"
       },
       "disabled": null
     },
@@ -162,15 +162,15 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "large",
         "bg_text": "Accessories",
-        "padding_bottom_mobile": "small",
-        "title": "Featured accessories",
-        "padding_bottom": "small",
-        "tag": "Accessories",
-        "padding_top_mobile": "medium",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Accessories",
+        "title": "Featured accessories"
       },
       "disabled": null
     },
@@ -223,13 +223,13 @@
       "block_order": [],
       "settings": {
         "align": "left",
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "1️⃣ Browse and book your trailer",
+        "color_palette": "one",
         "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
         "padding_top_mobile": "medium",
-        "color_palette": "one"
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "1️⃣ Browse and book your trailer"
       },
       "disabled": null
     },
@@ -238,14 +238,14 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "padding_top": "small",
-        "padding_bottom_mobile": "small",
-        "title": "How it works",
-        "padding_bottom": "small",
-        "tag": "Information",
-        "padding_top_mobile": "medium",
+        "color_palette": "one",
         "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p>",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "medium",
+        "tag": "Information",
+        "title": "How it works"
       },
       "disabled": null
     },
@@ -254,21 +254,21 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "",
         "button_2": "",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
         "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
-        "title": "Providing trailer rentals for over 25 years",
-        "padding_bottom": "large",
-        "tag": "Trailers",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-utility-side.jpg",
+        "color_palette": "one",
         "description": "<p>With a proud history spanning over 25 years, our commitment to excellence and unwavering dedication to customer satisfaction has made us a trusted name in the world of trailer rentals. Throughout this time, we've honed our expertise, refined our selection, and cultivated a reputation for reliability and quality that is second to none. </p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-utility-side.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Trailers",
+        "title": "Providing trailer rentals for over 25 years"
       },
       "disabled": false
     },
@@ -311,15 +311,14 @@
         "collection_535502"
       ],
       "settings": {
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_overlay": true,
-        "overlay_color": "#FFFFFF",
-        "color_overlay": "dark",
-        "padding_bottom": "large",
-        "padding_top_mobile": "small",
+        "color_palette": "one",
         "overlay_background": "#131314",
-        "color_palette": "one"
+        "overlay_color": "#FFFFFF",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_overlay": true
       },
       "disabled": false
     },
@@ -328,17 +327,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "small",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Explore all trailers",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "button_url": "",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Explore all trailers"
       },
       "disabled": false
     },
@@ -350,19 +349,18 @@
           "settings": {
             "button_1": "View trailers",
             "button_2": "",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": null,
-            "title": "<p>Rent trailers for personal</p>\n<p>and commercial use</p>",
-            "image": "booqable://assets/image-utility-hero.jpg",
-            "text_position": "middle-left",
-            "overlay_opacity": "40",
             "description": "",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-utility-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "middle-left",
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent trailers for personal</p>\n<p>and commercial use</p>"
           },
           "disabled": null
         }
@@ -371,15 +369,16 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
+        "color_palette": "two",
         "effect": "slide",
-        "pause": true,
+        "full_width": true,
+        "height": "medium",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "color_palette": "two"
+        "pause": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -389,13 +388,13 @@
       "block_order": [],
       "settings": {
         "align": "left",
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "2️⃣ Collect your trailer with a gate key",
+        "color_palette": "one",
         "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
         "padding_top_mobile": "medium",
-        "color_palette": "one"
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "2️⃣ Collect your trailer with a gate key"
       },
       "disabled": null
     },
@@ -438,16 +437,16 @@
         "product_758420"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "none",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     }
