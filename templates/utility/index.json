@@ -1,0 +1,472 @@
+{
+  "name": "Home",
+  "sections": {
+    "title_987650": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "padding_top": "large",
+        "bg_text": "FAQ",
+        "padding_bottom_mobile": "small",
+        "title": "Frequently asked questions",
+        "padding_bottom": "small",
+        "tag": "",
+        "padding_top_mobile": "medium",
+        "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your trailer journey with us.</p>",
+        "color_palette": "two"
+      },
+      "disabled": null
+    },
+    "products_344724": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "a5bacc58-6421-4b57-96b6-87c4760dd26e"
+          },
+          "disabled": null
+        },
+        "product_735080": {
+          "type": "product",
+          "settings": {
+            "product": "f791b3ad-17c9-4f75-8994-aec38a5989bb"
+          },
+          "disabled": null
+        },
+        "product_329451": {
+          "type": "product",
+          "settings": {
+            "product": "232b5f3b-a7a0-4c75-bb64-57fc47a01de8"
+          },
+          "disabled": null
+        },
+        "product_143849": {
+          "type": "product",
+          "settings": {
+            "product": "77002e81-af6b-4ca6-bf0c-65d538244767"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_735080",
+        "product_329451",
+        "product_143849"
+      ],
+      "settings": {
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "none",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    },
+    "title_987654": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "/collections/all",
+        "padding_top": "large",
+        "bg_text": "Safe driving",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Popular trailers",
+        "padding_bottom": "small",
+        "tag": "Trailers",
+        "padding_top_mobile": "medium",
+        "description": "",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "1a953438-078d-4026-a21e-df24c389b292"
+          },
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {
+            "product": "6ff3782e-148c-4e0a-84cd-39dc9f615761"
+          },
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {
+            "product": "7b9f2836-f553-4cbf-8f5e-29acd49a17bc"
+          },
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {
+            "product": "4df3d66e-3376-4e11-9d77-76ed1e3a7fb8"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450"
+      ],
+      "settings": {
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "none",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    },
+    "text_911380": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "padding_top": "none",
+        "padding_bottom_mobile": "medium",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "3️⃣ Return your trailer with gate key",
+        "padding_bottom": "medium",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "title_215468": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "padding_top": "large",
+        "bg_text": "Accessories",
+        "padding_bottom_mobile": "small",
+        "title": "Featured accessories",
+        "padding_bottom": "small",
+        "tag": "Accessories",
+        "padding_top_mobile": "medium",
+        "description": "",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "heading": "How can I rent a trailer from your business?",
+            "content": "<p>Renting a trailer from our business is a straightforward process. Start by browsing our trailer inventory, which includes various types such as utility trailers, enclosed trailers, and more. Once you've selected the trailer that suits your needs, specify your desired rental period and provide the necessary information. We'll prepare the trailer for pickup at our rental location or arrange for delivery to your specified address. You can also choose any additional accessories or equipment you might need for your towing requirements. When your rental period is complete, return the trailer to our rental location or arrange for pickup, and we'll ensure it's properly maintained for the next renter.</p>"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "heading": "What happens if I encounter issues or damages to the rented trailer during my use?",
+            "content": "<p>If you encounter any issues or damages to the rented trailer during your use, please notify us promptly. We understand that unexpected situations can arise. Depending on the nature and extent of the issue or damage, we will assess and determine the necessary course of action. You may be responsible for repair or replacement costs, so it's advisable to review our rental agreement for specific terms and conditions related to trailer damages. Your prompt communication is appreciated, as it helps us maintain the quality of our rental equipment.</p>"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "heading": "Can I extend the rental period for a trailer if I need it for a longer duration than initially planned?",
+            "content": "<p>Yes, you can extend the rental period for a trailer if you require it for a longer duration than initially planned. To do so, please contact our team to discuss your needs and arrange for an extension. We will work with you to update the rental terms and ensure the continued availability of the trailer. Keep in mind that trailer availability may vary, so it's best to notify us about your extension needs as early as possible to secure the equipment. We're committed to accommodating your changing towing requirements.</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_478139",
+        "item_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "two",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "padding_top": "none",
+        "padding_bottom_mobile": "medium",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "1️⃣ Browse and book your trailer",
+        "padding_bottom": "small",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "title_390530": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "padding_top": "small",
+        "padding_bottom_mobile": "small",
+        "title": "How it works",
+        "padding_bottom": "small",
+        "tag": "Information",
+        "padding_top_mobile": "medium",
+        "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p>",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "",
+        "button_2": "",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "right",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "title": "Providing trailer rentals for over 25 years",
+        "padding_bottom": "large",
+        "tag": "Trailers",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/image-utility-side.jpg",
+        "description": "<p>With a proud history spanning over 25 years, our commitment to excellence and unwavering dedication to customer satisfaction has made us a trusted name in the world of trailer rentals. Throughout this time, we've honed our expertise, refined our selection, and cultivated a reputation for reliability and quality that is second to none. </p>",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "b17b5cf2-fa19-48cd-a699-ec5ee0c73a1c"
+          },
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {
+            "collection": "4cefe413-1552-43ef-9251-3bc9037ea304"
+          },
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {
+            "collection": "ae721f18-a2d7-473c-bbf0-b2f8df78a45b"
+          },
+          "disabled": null
+        },
+        "collection_535502": {
+          "type": "collection",
+          "settings": {
+            "collection": "53bbdf26-979d-4e1a-86ab-0788a204496d"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542",
+        "collection_535502"
+      ],
+      "settings": {
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_overlay": true,
+        "overlay_color": "#FFFFFF",
+        "color_overlay": "dark",
+        "padding_bottom": "large",
+        "padding_top_mobile": "small",
+        "overlay_background": "#131314",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "title": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "small",
+        "bg_text": "",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Explore all trailers",
+        "padding_bottom": "small",
+        "tag": "",
+        "padding_top_mobile": "medium",
+        "description": "",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "View trailers",
+            "button_2": "",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "text_position_mobile": "top-left",
+            "show_overlay": true,
+            "button_url_1": "booqable://products/",
+            "overlay_color": "#FFFFFF",
+            "color_overlay": "dark",
+            "button_url_2": null,
+            "title": "<p>Rent trailers for personal</p>\n<p>and commercial use</p>",
+            "image": "booqable://assets/image-utility-hero.jpg",
+            "text_position": "middle-left",
+            "overlay_opacity": "40",
+            "description": "",
+            "overlay_background": "#131314"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "height": "medium",
+        "padding_bottom_mobile": "large",
+        "effect": "slide",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "color_palette": "two"
+      },
+      "disabled": null
+    },
+    "text_267639": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "padding_top": "none",
+        "padding_bottom_mobile": "medium",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
+        "title": "2️⃣ Collect your trailer with a gate key",
+        "padding_bottom": "small",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "products_347669": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "800c2ab4-2367-4859-9ea3-8fc9ac3f2a1b"
+          },
+          "disabled": null
+        },
+        "product_566619": {
+          "type": "product",
+          "settings": {
+            "product": "deef3aa7-b454-49c0-86e3-0f35ab29735d"
+          },
+          "disabled": null
+        },
+        "product_665072": {
+          "type": "product",
+          "settings": {
+            "product": "30fc19ab-771e-4435-96ce-0384e5ae4644"
+          },
+          "disabled": null
+        },
+        "product_758420": {
+          "type": "product",
+          "settings": {
+            "product": "33650c42-1706-496b-a211-453bea5374ef"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_566619",
+        "product_665072",
+        "product_758420"
+      ],
+      "settings": {
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "none",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "none",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "title_987654",
+    "products",
+    "title",
+    "collections",
+    "text-with-image",
+    "title_390530",
+    "text",
+    "text_267639",
+    "text_911380",
+    "title_215468",
+    "products_344724",
+    "products_347669",
+    "title_987650",
+    "accordion"
+  ]
+}

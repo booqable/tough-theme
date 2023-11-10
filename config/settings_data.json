@@ -1086,6 +1086,142 @@
           "disabled": null
         }
       }
+    },
+    "utility": {
+      "accent_outline_2": "#1E3A8A",
+      "tagline_font": "inter",
+      "element_design": "modern",
+      "background_2": "#1E3A8A",
+      "accent_color_2": "#FFFFFF",
+      "accent_background": "#1E3A8A",
+      "primary_color": "#0B1A26",
+      "secondary_color_2": "#E1E4E8",
+      "heading_font": "inter",
+      "body_font": "inter",
+      "accent_outline": "#1E3A8A",
+      "background": "#FFFFFF",
+      "accent_color": "#FFFFFF",
+      "image_placeholder": "booqable://assets/image-utility-placeholder.jpg",
+      "h6_size": 20,
+      "h5_size": 24,
+      "h4_size": 32,
+      "h3_size": 40,
+      "h2_size": 48,
+      "accent_background_2": "#1E3A8A",
+      "h1_size": 56,
+      "secondary_color": "#4E5D78",
+      "primary_color_2": "#FFFFFF",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "phone",
+            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b><a href=\"+1 755 302 8549\"><b></b></a></p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>UTILITY</b>&nbsp;at checkout</p>",
+            "color_palette": "two"
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "large",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "left-below",
+            "custom_title": "Trailerable",
+            "show_search": false,
+            "menu_opener_mobile": "left",
+            "logo": "booqable://assets/image-utility-logo.png",
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "912feef0-ecf9-4bb8-a0c1-2f21a28fefde",
+            "color_palette": "one"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Haul-Away Trailers. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "Haul-Away Trailers",
+            "logo": null,
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "two"
+          },
+          "disabled": null
+        }
+      }
     }
   }
 }
