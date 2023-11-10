@@ -118,6 +118,10 @@
   scroll-padding: 0;
 }
 
+.images__wrapper-full-width {
+
+}
+
 @keyframes move {
   0% {
     transform: translateY(15%) rotate(90deg);
