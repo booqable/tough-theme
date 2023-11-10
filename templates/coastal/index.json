@@ -7,13 +7,13 @@
       "block_order": [],
       "settings": {
         "align": "left",
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
-        "text": "<p>Discover the ultimate way to savor the picturesque beauty of the lake with our pontoon boat rentals. We present a diverse fleet for your choosing, featuring premium tritoons, premium cruise pontoons, and our standard fishing pontoon boats. </p>\n<p>\n\nIn this upcoming year of 2023, all our boats and motors are entirely brand new. Our Premium pontoons boast enhanced furnishings, increased deck space, and a powerful bimini top, ensuring an unmatched quality in rental boats. </p>\n<p>\n\nFor those looking to experience fishing opportunities, our Standard Fishing Pontoon rentals can accommodate up to 8 individuals. These boats have 4 fishing seats, standard bench seating, stereo systems, and a bimini top.\n</p>\n<p><b>\nAdditional Information:\n</b></p>\n<ul><li>\nThe rental cost includes all essential safety equipment.</li></ul>\n<ul><li><span style=\"font-size: 16px;\">Gasoline costs are separate from the rental rates and are settled after your rental</span><span style=\"font-size: 16px;\">.</span></li></ul>\n<ul><li>A damage and/or security deposit, along with a valid driver's license, are mandatory.\n</li></ul>\n<ul><li>Responsibility for any damage to rental boats and equipment, including propellers, falls on the customer.\n</li></ul>\n<ul><li>To rent a boat with a motor, you must be 18 years or older.</li></ul>",
-        "title": "Information about our pontoon rentals",
+        "color_palette": "two",
         "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
-        "color_palette": "two"
+        "text": "<p>Discover the ultimate way to savor the picturesque beauty of the lake with our pontoon boat rentals. We present a diverse fleet for your choosing, featuring premium tritoons, premium cruise pontoons, and our standard fishing pontoon boats. </p>\n<p>\n\nIn this upcoming year of 2023, all our boats and motors are entirely brand new. Our Premium pontoons boast enhanced furnishings, increased deck space, and a powerful bimini top, ensuring an unmatched quality in rental boats. </p>\n<p>\n\nFor those looking to experience fishing opportunities, our Standard Fishing Pontoon rentals can accommodate up to 8 individuals. These boats have 4 fishing seats, standard bench seating, stereo systems, and a bimini top.\n</p>\n<p><b>\nAdditional Information:\n</b></p>\n<ul><li>\nThe rental cost includes all essential safety equipment.</li></ul>\n<ul><li><span style=\"font-size: 16px;\">Gasoline costs are separate from the rental rates and are settled after your rental</span><span style=\"font-size: 16px;\">.</span></li></ul>\n<ul><li>A damage and/or security deposit, along with a valid driver's license, are mandatory.\n</li></ul>\n<ul><li>Responsibility for any damage to rental boats and equipment, including propellers, falls on the customer.\n</li></ul>\n<ul><li>To rent a boat with a motor, you must be 18 years or older.</li></ul>",
+        "title": "Information about our pontoon rentals"
       },
       "disabled": null
     },
@@ -23,14 +23,14 @@
         "text": {
           "type": "text",
           "settings": {
-            "heading": "Hire from us",
             "button_style": "primary",
+            "content_align": "top",
             "content_justify": "left",
-            "text": "<h4 data-ux=\"ContentHeading\" data-aid=\"CONTACT_INFO_BIZ_NAME_REND\" data-typography=\"HeadingDelta\">Coastal</h4><p data-ux=\"ContentText\" data-aid=\"CONTACT_INFO_ADDRESS_REND\" data-typography=\"BodyAlpha\">3125 Columbia Blvd, Titusville, Florida 32780, United States</p><p data-ux=\"ContentText\" data-typography=\"BodyAlpha\"><a data-ux=\"Link\" data-aid=\"CONTACT_INFO_PHONE_REND\" href=\"tel:3306372075\" data-typography=\"LinkAlpha\" data-tccl=\"ux2.CONTACT.contact7.Content.Default.Link.Default.8284.click,click\"></a>(321) 268-1778<a data-ux=\"Link\" data-aid=\"CONTACT_INFO_EMAIL_REND\" href=\"mailto:info@mosquitomarina.com\" data-typography=\"LinkAlpha\" data-tccl=\"ux2.CONTACT.contact7.Content.Default.Link.Default.8285.click,click\"></a></p><h4 data-ux=\"ContentHeading\" data-aid=\"CONTACT_HOURS_TITLE_REND\" data-typography=\"HeadingDelta\">Hours</h4><p>Mon 08:00 am – 06:00 pm<br>Tue 08:00 am – 06:00 pm<br>Wed 08:00 am – 06:00 pm<br>Thu 08:00 am – 06:00 pm<br>Fri 08:00 am – 07:00 pm<br>Sat 08:00 am – 07:00 pm<br>Sun 08:00 am – 06:00 pm<br></p>",
-            "text_size": "md",
-            "label": "Shop collection",
+            "heading": "Hire from us",
             "heading_size": "lg",
-            "content_align": "top"
+            "label": "Shop collection",
+            "text": "<h4 data-ux=\"ContentHeading\" data-aid=\"CONTACT_INFO_BIZ_NAME_REND\" data-typography=\"HeadingDelta\">Coastal</h4><p data-ux=\"ContentText\" data-aid=\"CONTACT_INFO_ADDRESS_REND\" data-typography=\"BodyAlpha\">3125 Columbia Blvd, Titusville, Florida 32780, United States</p><p data-ux=\"ContentText\" data-typography=\"BodyAlpha\"><a data-ux=\"Link\" data-aid=\"CONTACT_INFO_PHONE_REND\" href=\"tel:3306372075\" data-typography=\"LinkAlpha\" data-tccl=\"ux2.CONTACT.contact7.Content.Default.Link.Default.8284.click,click\"></a>(321) 268-1778<a data-ux=\"Link\" data-aid=\"CONTACT_INFO_EMAIL_REND\" href=\"mailto:info@mosquitomarina.com\" data-typography=\"LinkAlpha\" data-tccl=\"ux2.CONTACT.contact7.Content.Default.Link.Default.8285.click,click\"></a></p><h4 data-ux=\"ContentHeading\" data-aid=\"CONTACT_HOURS_TITLE_REND\" data-typography=\"HeadingDelta\">Hours</h4><p>Mon 08:00 am – 06:00 pm<br>Tue 08:00 am – 06:00 pm<br>Wed 08:00 am – 06:00 pm<br>Thu 08:00 am – 06:00 pm<br>Fri 08:00 am – 07:00 pm<br>Sat 08:00 am – 07:00 pm<br>Sun 08:00 am – 06:00 pm<br></p>",
+            "text_size": "md"
           },
           "disabled": null
         }
@@ -55,21 +55,21 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "",
         "button_2": "",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "left",
         "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
-        "title": "Come see us!",
-        "padding_bottom": "large",
-        "tag": "About Us",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-coastal-about.jpg",
+        "color_palette": "two",
         "description": "<p>Coastal is open for business every day. We provide extensive fishing equipment and supplies, marine accessories, beverages, snacks, and live bait such as minnows, wax worms, nightcrawlers, and red worms.</p>",
-        "color_palette": "two"
+        "image": "booqable://assets/image-coastal-about.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "About Us",
+        "title": "Come see us!"
       },
       "disabled": false
     },
@@ -112,15 +112,14 @@
         "collection_535502"
       ],
       "settings": {
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_overlay": false,
-        "overlay_color": "#FFFFFF",
-        "color_overlay": "dark",
-        "padding_bottom": "large",
-        "padding_top_mobile": "small",
+        "color_palette": "two",
         "overlay_background": "#000000",
-        "color_palette": "two"
+        "overlay_color": "#FFFFFF",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_overlay": false
       },
       "disabled": null
     },
@@ -129,17 +128,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Pontoons for every occasion",
-        "padding_bottom": "small",
-        "tag": "Our fleet",
-        "padding_top_mobile": "medium",
+        "button_url": "",
         "description": "",
-        "color_palette": "two"
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Our fleet",
+        "title": "Pontoons for every occasion"
       },
       "disabled": null
     },
@@ -151,19 +150,18 @@
           "settings": {
             "button_1": "View pontoons",
             "button_2": "",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": null,
-            "title": "<p>Pontoon&nbsp;rental</p>\n<p>by the lake</p>",
-            "image": "booqable://assets/image-coastal-hero.jpg",
-            "text_position": "center",
-            "overlay_opacity": "30",
             "description": "",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-coastal-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "30",
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Pontoon&nbsp;rental</p>\n<p>by the lake</p>"
           },
           "disabled": null
         }
@@ -172,17 +170,17 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
-        "effect": "slide",
+        "color_palette": "two",
         "datepicker_title": "",
-        "pause": true,
+        "effect": "slide",
+        "height": "medium",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     }
