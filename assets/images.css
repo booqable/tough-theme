@@ -76,6 +76,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  max-width: calc(var(--max-width) + 8px);
+  margin: 0 auto;
 }
 
 .images__vision-wrapper--desktop {
@@ -93,10 +95,6 @@
   background: linear-gradient(357.73deg, var(--background-overlay, #0B1A26) 3.03%, var(--background-overlay-00, #0B1A2600) 31.83%),
    linear-gradient(180deg, var(--background-overlay, #0B1A26) 6.67%, var(--background-overlay-00, #0B1A2600) 105.81%),
    linear-gradient(0deg, var(--background-overlay-45, #0B1A2673), var(--background-overlay-45, #0B1A2673));
-}
-
-.images__vision .container {
-  height: 100%;
 }
 
 .images__image {
@@ -122,8 +120,8 @@
   scroll-padding: 0;
 }
 
-.images__wrapper-full-width {
-
+.images__wrapper-full-width .images__vision-wrapper {
+  max-width: none;
 }
 
 @keyframes move {
@@ -317,6 +315,16 @@
 
   .images__wrapper.section-with-date-picker .images__container--padding-bottom {
     padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
+  }
+}
+
+@media (min-width: 1281px) {
+  .images__text-area {
+    padding: 0 var(--padding-no-full-width);
+  }
+
+  .images__wrapper-full-width .images__text-area {
+    padding: 0;
   }
 }
 
