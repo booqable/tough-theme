@@ -76,7 +76,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: calc(var(--max-width) + 8px);
+  max-width: calc(var(--max-width) - var(--horizontal-padding) * 2);
   margin: 0 auto;
 }
 
@@ -330,7 +330,7 @@
   }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1248px) {
   .images__text-area {
     padding: 0 var(--padding-no-full-width);
   }
