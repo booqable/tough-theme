@@ -6,17 +6,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "/collections/all",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "none",
-        "title": "Browse popular pieces",
-        "padding_bottom": "small",
-        "tag": "Trending",
-        "padding_top_mobile": "medium",
+        "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "<p>What's chic right now?</p>",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Trending",
+        "title": "Browse popular pieces"
       },
       "disabled": null
     },
@@ -75,16 +75,16 @@
         "product_221538"
       ],
       "settings": {
-        "show_carousel": false,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "large",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": false,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -136,13 +136,13 @@
       ],
       "settings": {
         "color_palette": "two",
-        "title": "Featured in",
-        "text_position": "center",
-        "text_position_mobile": "center",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
-        "padding_top_mobile": "small"
+        "padding_top_mobile": "small",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "title": "Featured in"
       },
       "disabled": false
     },
@@ -194,20 +194,20 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "View style collections",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
         "button_url_1": "booqable://root/",
-        "title": "Rent by style",
-        "padding_bottom": "large",
-        "tag": "Style",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-chic-side-1.jpg",
+        "color_palette": "one",
         "description": "<p>Style your home with complete collections in Scandinavian, Countryside, and Danish styles. We offer a wide variety of complementary furniture in these styles.</p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-chic-side-1.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Style",
+        "title": "Rent by style"
       },
       "disabled": null
     },
@@ -248,20 +248,20 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "View furniture",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "left",
         "button_url_1": "booqable://root/",
-        "title": "Browse all furniture",
-        "padding_bottom": "large",
-        "tag": "Furniture",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-chic-side-2.jpg",
+        "color_palette": "two",
         "description": "<p>Browse our range of chic and stylish luxury furniture. Select pieces all in one style or mix and match to create your own unique look.</p>",
-        "color_palette": "two"
+        "image": "booqable://assets/image-chic-side-2.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Furniture",
+        "title": "Browse all furniture"
       },
       "disabled": null
     },
@@ -311,15 +311,15 @@
         "testimonial_378990"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "two",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     },
@@ -331,20 +331,19 @@
           "settings": {
             "button_1": "Check out products",
             "button_2": "More info",
-            "image_mobile": "",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Rent luxury furniture </p>\n<p>and feel at home</p>",
-            "tag": "",
-            "image": "booqable://assets/image-chic-hero.jpg",
-            "text_position": "center",
-            "overlay_opacity": 40,
             "description": "<p>Luxury furniture delivered to your door for days, </p>\n<p>weeks, or months. It's up to you to style your home.</p>",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-chic-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "tag": "",
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent luxury furniture </p>\n<p>and feel at home</p>"
           },
           "disabled": null
         }
@@ -353,17 +352,18 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
-        "effect": "slide",
+        "color_palette": "one",
         "datepicker_title": "",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     }
