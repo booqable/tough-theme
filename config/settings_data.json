@@ -101,7 +101,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -233,7 +234,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -365,7 +367,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -528,7 +531,8 @@
             "padding_top": "medium",
             "padding_top_mobile": "small",
             "padding_bottom": "medium",
-            "padding_bottom_mobile": "small"
+            "padding_bottom_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -666,7 +670,8 @@
             "padding_top": "medium",
             "padding_top_mobile": "small",
             "padding_bottom": "medium",
-            "padding_bottom_mobile": "small"
+            "padding_bottom_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -804,7 +809,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -942,7 +948,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -1081,7 +1088,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }
@@ -1212,7 +1220,8 @@
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
             "padding_top": "medium",
-            "padding_top_mobile": "small"
+            "padding_top_mobile": "small",
+            "show_payments": true
           },
           "disabled": null
         }

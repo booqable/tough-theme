@@ -9,6 +9,7 @@
 {%- assign padding_bottom         = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile     = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile  = section.settings.padding_bottom_mobile -%}
+{%- assign show_payments          = section.settings.show_payments -%}
 {%- assign facebook               = settings.social_facebook_link -%}
 {%- assign instagram              = settings.social_instagram_link -%}
 {%- assign twitter                = settings.social_twitter_link -%}
@@ -134,7 +135,7 @@
         </div>
       {%- endif -%}
 
-      {%- if payment_methods.size > 0 -%}
+      {%- if show_payments and payment_methods.size > 0 -%}
         <div class="footer__payments payments">
           {%- include "payments" -%}
         </div>
@@ -262,6 +263,12 @@
         "id": "bottom_menu",
         "label": "Bottom menu",
         "info": "This menu located at the bottom of footer"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payments",
+        "label": "Show payment icons",
+        "default": true
       },
       {
         "type": "header",
