@@ -199,7 +199,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 var(--horizontal-padding);
+  padding: 0 16px;
   margin: 0;
 }
 
@@ -260,7 +260,7 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 18px;
-  padding: 0 var(--horizontal-padding);
+  padding: 0 16px;
 }
 
 .carousel__edges .carousel__divider {
@@ -507,6 +507,18 @@
 
   .carousel-with-date-picker.carousel__edges .carousel__counter {
     bottom: calc(33px + var(--date-picker-block-height, 0px));
+  }
+}
+
+@media (min-width: 1248px) {
+  .carousel__edges .carousel__counter,
+  .carousel__edges .carousel__navigation {
+    padding: 0 calc(var(--padding-no-full-width) + var(--horizontal-padding));
+  }
+
+  .images__wrapper-full-width .carousel__edges .carousel__counter,
+  .images__wrapper-full-width .carousel__edges .carousel__navigation {
+    padding: 0 16px;
   }
 }
 

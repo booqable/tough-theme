@@ -325,16 +325,16 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "large",
-        "padding_bottom_mobile": "large",
+        "color_palette": "two",
         "effect": "slide",
+        "full_width": true,
+        "height": "large",
         "pause": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "color_palette": "two",
-        "datepicker_no_background": true
+        "timer": 5
       },
       "disabled": null
     },

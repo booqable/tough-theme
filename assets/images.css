@@ -76,6 +76,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  max-width: calc(var(--max-width) - var(--horizontal-padding) * 2);
+  margin: 0 auto;
 }
 
 .images__vision-wrapper--desktop {
@@ -116,6 +118,10 @@
   width: 100%;
   margin: 0;
   scroll-padding: 0;
+}
+
+.images__wrapper-full-width .images__vision-wrapper {
+  max-width: none;
 }
 
 @keyframes move {
@@ -199,14 +205,26 @@
   color: var(--color-primary, #0B1A26);
 }
 
+.palette-one .images__vision {
+  background: var(--background-primary, #FFFFFF);
+}
+
 .palette-two .images__title,
 .palette-two .images__description {
   color: var(--color-primary-2, #FFFFFF);
 }
 
+.palette-two .images__vision {
+  background: var(--background-primary-2, #0B1A26);
+}
+
 .palette-three .images__title,
 .palette-three .images__description {
   color: var(--color-primary-3, #0B1A26);
+}
+
+.palette-three .images__vision {
+  background: var(--background-primary-3, #F4B841);
 }
 
 .palette-one .images__text-area--color .images__title,
@@ -310,6 +328,25 @@
   .images__wrapper.section-with-date-picker .images__container--padding-bottom {
     padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
   }
+}
+
+@media (min-width: 1248px) {
+  .images__text-area {
+    padding: 0 var(--padding-no-full-width);
+  }
+
+  .images__date-picker-component {
+    margin: 0 var(--padding-no-full-width);
+  }
+
+  .images__wrapper-full-width .images__text-area {
+    padding: 0;
+  }
+
+  .images__wrapper-full-width .images__date-picker-component {
+    margin: 0 1px;
+  }
+
 }
 
 @media (min-width: 1920px) {
