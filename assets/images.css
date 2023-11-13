@@ -154,7 +154,7 @@
   bottom: calc(var(--date-picker-height, 70px) / 2 - 5px);
 }
 
-.images__date-picker {
+.images__date-picker--bottom {
   position: absolute;
   left: 0;
   right: 0;

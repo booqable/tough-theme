@@ -143,8 +143,8 @@
 
   {%- if show_datepicker -%}
     {%- capture date_picker -%}
-      <div class="images__date-picker date-picker">
-        <div class="images__date-picker-container container">
+      <div class="images__date-picker{% if datepicker_position == "bottom" %} images__date-picker--bottom date-picker{%- endif -%}">
+        <div class="images__date-picker-container{% if datepicker_position == "bottom" %} container{%- endif -%}">
           {%- if datepicker_title != blank -%}
             <h2 class="images__date-picker-title">
               <span class="images__date-picker-icon">
