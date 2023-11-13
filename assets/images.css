@@ -336,7 +336,7 @@
   }
 
   .images__date-picker-component {
-    margin: 0 36px;
+    margin: 0 var(--padding-no-full-width);
   }
 
   .images__wrapper-full-width .images__text-area {
