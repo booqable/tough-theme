@@ -173,6 +173,7 @@
         "color_palette": "two",
         "datepicker_title": "",
         "effect": "slide",
+        "full_width": true,
         "height": "medium",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "large",
