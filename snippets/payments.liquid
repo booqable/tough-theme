@@ -11,11 +11,48 @@
 {% style %}
   .payment {
     padding: 0 16px 0 0;
-    margin: 0 calc(-1 * (var(--social-spacing, 6px) - 6px));
+    margin: 0 calc(-1 * (var(--social-spacing) - 4px));
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .payment i {
-    margin: 0 calc(var(--social-spacing, 6px) - 6px);
+    margin: 0 calc(var(--social-spacing) - 4px);
+  }
+
+  .payment span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .payment svg {
+    width: 35px;
+    height: 31px;
+  }
+
+  .palette-one .payment span:not([title="Bancontact"]) path {
+    fill: var(--color-primary, #0B1A26);
+  }
+
+  .palette-two .payment span:not([title="Bancontact"]) path {
+    fill: var(--color-primary-2, #FFFFFF);
+  }
+
+  .palette-three .payment span:not([title="Bancontact"]) path {
+    fill: var(--color-primary-3, #0B1A26);
+  }
+
+  .palette-one .payment span[title="Bancontact"] .st1 {
+    fill: var(--color-primary, #0B1A26);
+  }
+
+  .palette-two .payment span[title="Bancontact"] .st1 {
+    fill: var(--color-primary-2, #FFFFFF);
+  }
+
+  .palette-three .payment span[title="Bancontact"] .st1 {
+    fill: var(--color-primary-3, #0B1A26);
   }
 {% endstyle %}
 
