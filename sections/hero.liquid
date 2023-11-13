@@ -85,8 +85,12 @@
       {%- if custom_description != blank -%}
         <div class="hero__description text-medium bq-content rx-content">{{- custom_description -}}</div>
       {%- else -%}
-        {%- if page_description != blank -%}
-          <div class="hero__description text-medium">{{- page_description -}}</div>
+        {%- if template == "collection" -%}
+          <div class="hero__description text-medium bq-content rx-content">{{- collection.description -}}</div>
+        {%- else -%}
+          {%- if page_description != blank -%}
+            <div class="hero__description text-medium bq-content rx-content">{{- page_description -}}</div>
+          {%- endif -%}
         {%- endif -%}
       {%- endif -%}
     </div>
