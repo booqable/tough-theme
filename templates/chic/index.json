@@ -353,6 +353,7 @@
       ],
       "settings": {
         "color_palette": "one",
+        "datepicker_position": "bottom",
         "datepicker_title": "",
         "effect": "slide",
         "full_width": true,

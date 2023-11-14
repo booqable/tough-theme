@@ -30,6 +30,8 @@
       ],
       "settings": {
         "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
         "effect": "slide",
         "full_width": true,
         "height": "small",
@@ -39,7 +41,6 @@
         "padding_top_mobile": "large",
         "pause": true,
         "show_datepicker": true,
-        "datepicker_title": "",
         "timer": 5
       },
       "disabled": null
@@ -294,6 +295,8 @@
       ],
       "settings": {
         "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
         "effect": "slide",
         "full_width": true,
         "height": "medium",
@@ -303,7 +306,6 @@
         "padding_top_mobile": "large",
         "pause": true,
         "show_datepicker": false,
-        "datepicker_title": "",
         "timer": 5
       },
       "disabled": null

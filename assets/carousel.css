@@ -513,12 +513,12 @@
 @media (min-width: 1248px) {
   .carousel__edges .carousel__counter,
   .carousel__edges .carousel__navigation {
-    padding: 0 calc(var(--padding-no-full-width) + var(--horizontal-padding));
+    padding: 0 calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
   }
 
   .images__wrapper-full-width .carousel__edges .carousel__counter,
   .images__wrapper-full-width .carousel__edges .carousel__navigation {
-    padding: 0 16px;
+    padding: 0 var(--horizontal-padding, 16px);
   }
 }
 
