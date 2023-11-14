@@ -1398,15 +1398,15 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "show_bar": true,
-            "icon": "phone",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
-            "padding_bottom": "medium",
-            "padding_top_mobile": "medium",
             "bar_message": "<p>Get 15% off with code&nbsp;<b>WAVERUNNER</b>&nbsp;at checkout</p>",
-            "color_palette": "three"
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "color_palette": "three",
+            "icon": "phone",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
           },
           "disabled": null
         },
@@ -1415,21 +1415,21 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "sticky_header": true,
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "menu_position": "left-center",
+            "color_palette": "one",
             "custom_title": "Surfside Supply Co.",
-            "show_search": true,
-            "menu_opener_mobile": "left",
             "logo": null,
-            "menu_style": "horizontal",
+            "menu": "eda8eb53-b79d-4786-9def-2a04d123a80c",
+            "menu_opener_mobile": "left",
+            "menu_position": "left-center",
             "menu_position_mobile": "top",
+            "menu_style": "horizontal",
             "padding_bottom": "small",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
             "padding_top_mobile": "medium",
             "search_placeholder": "Search",
-            "menu": "eda8eb53-b79d-4786-9def-2a04d123a80c",
-            "color_palette": "one"
+            "show_search": true,
+            "sticky_header": true
           },
           "disabled": null
         },
@@ -1490,15 +1490,16 @@
             "menu_789459"
           ],
           "settings": {
+            "bottom_menu": "bottom-menu",
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} Surfside Supply Co. All right reserved.",
-            "padding_top": "medium",
-            "padding_bottom_mobile": "small",
+            "color_palette": "one",
             "custom_title": "Surfside Supply Co.",
             "logo": null,
-            "bottom_menu": "bottom-menu",
             "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
             "padding_top_mobile": "small",
-            "color_palette": "one"
+            "show_payments": true
           },
           "disabled": null
         }
