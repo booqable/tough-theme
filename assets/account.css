@@ -314,7 +314,7 @@ div.account-fieldset--error .account-fieldset__input:focus {
 
 .palette-one .account__title + .account__divider,
 .palette-one .account__description {
-  color: var(--color-third, #0B1A2666);
+  color: var(--color-secondary, #4E5D78);
 }
 
 .palette-one .account__button--minimal:hover {
@@ -393,7 +393,7 @@ div.account-fieldset--error .account-fieldset__input:focus {
 
 .palette-two .account__title + .account__divider,
 .palette-two .account__description {
-  color: var(--color-third-2, #FFFFFF66);
+  color: var(--color-secondary-2, #E1E4E8);
 }
 
 .palette-two .account__button--minimal:hover {
@@ -473,7 +473,7 @@ div.account-fieldset--error .account-fieldset__input:focus {
 .palette-three .account-checkbox__label,
 .palette-three .account-fieldset__static-label,
 .palette-three .account-fieldset__radio-label {
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .account__button--minimal:hover {
@@ -482,12 +482,12 @@ div.account-fieldset--error .account-fieldset__input:focus {
 
 .palette-three .account-fieldset__label {
   background: var(--background-primary-3, #F4B841);
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .account-fieldset__label:not(:has(+ input:focus)):has(+ input:placeholder-shown) {
   background-color: transparent;
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .account-fieldset__input {
