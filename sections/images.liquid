@@ -14,6 +14,7 @@
   {%- assign pause                    = section.settings.pause -%}
   {%- assign effect                   = section.settings.effect -%}
   {%- assign datepicker_title         = section.settings.datepicker_title -%}
+  {%- assign datepicker_position      = section.settings.datepicker_position -%}
   {%- assign show_datepicker          = section.settings.show_datepicker -%}
 
   {%- assign carousel = false -%}
@@ -140,7 +141,32 @@
     {%- endif -%}
   {%- endif -%}
 
-  <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if full_width %} images__wrapper-full-width{% endif %}{% if show_datepicker %} section-with-date-picker{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
+  {%- if show_datepicker -%}
+    {%- capture date_picker -%}
+      <div class="images__date-picker{% if datepicker_position == "bottom" %} date-picker{%- endif -%}">
+        <div class="images__date-picker-container{% if datepicker_position == "bottom" %} container{%- endif -%}">
+          {%- if datepicker_title != blank -%}
+            <h2 class="images__date-picker-title">
+              <span class="images__date-picker-icon">
+                {%- render 'icon-arrow-right-full' -%}
+              </span>
+              {{- datepicker_title -}}
+            </h2>
+          {%- endif -%}
+
+          <div class="images__date-picker-component date-picker__component">
+            {%- include 'date-picker' -%}
+          </div>
+        </div>
+
+        {%- if datepicker_position == "bottom" -%}
+          <div class="images__date-picker-overlay section-with-date-picker__overlay"></div>
+        {%- endif -%}
+      </div>
+    {%- endcapture -%}
+  {%- endif -%}
+
+  <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if full_width %} images__wrapper-full-width{% endif %}{% if show_datepicker and datepicker_position == "bottom" %} section-with-date-picker{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
       <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker %} carousel-with-date-picker{%- endif -%}" aria-label="Gallery" data-dafault-color="{{- default_color -}}">
         <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
@@ -352,7 +378,11 @@
                         {%- endif -%}
 
                         {%- if description != blank -%}
-                          <div class="images__description text-medium bq-content rx-content">{{- description | truncate: 150, " ..." -}}</div>
+                          <div class="images__description text-medium bq-content rx-content">{{- description | strip_html | truncate: 150, " ..." -}}</div>
+                        {%- endif -%}
+
+                        {%- if datepicker_position == "in_text" -%}
+                          {{- date_picker -}}
                         {%- endif -%}
 
                         {%- if button_1 != blank or button_2 != blank -%}
@@ -467,25 +497,8 @@
       </div>
     {%- endif -%}
 
-    {%- if show_datepicker -%}
-      <div class="images__date-picker date-picker">
-        <div class="images__date-picker-container container">
-          {%- if datepicker_title != blank -%}
-            <h2 class="images__date-picker-title">
-              <span class="images__date-picker-icon">
-                {%- render 'icon-arrow-right-full' -%}
-              </span>
-              {{- datepicker_title -}}
-            </h2>
-          {%- endif -%}
-
-          <div class="images__date-picker-component date-picker__component">
-            {%- include 'date-picker' -%}
-          </div>
-        </div>
-
-        <div class="images__date-picker-overlay section-with-date-picker__overlay"></div>
-      </div>
+    {%- if datepicker_position == "bottom" -%}
+      {{- date_picker -}}
     {%- endif -%}
   </div>
 {%- endif -%}
@@ -746,6 +759,22 @@
         "id": "datepicker_title",
         "label": "Title",
         "default": "Check availability:"
+      },
+      {
+        "type": "select",
+        "id": "datepicker_position",
+        "label": "Position",
+        "options": [
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          },
+          {
+            "value": "in_text",
+            "label": "In CTA section"
+          }
+        ],
+        "default": "bottom"
       },
       {
         "type": "header",

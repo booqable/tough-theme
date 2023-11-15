@@ -171,6 +171,7 @@
       ],
       "settings": {
         "color_palette": "two",
+        "datepicker_position": "bottom",
         "datepicker_title": "",
         "effect": "slide",
         "full_width": true,
