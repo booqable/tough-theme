@@ -1504,6 +1504,135 @@
           "disabled": null
         }
       }
+    },
+    "connect": {
+      "accent_background_2": "#FFFFFF",
+      "accent_background": "#FFFFFF",
+      "accent_color_2": "#1A1A1A",
+      "accent_color": "#1A1A1A",
+      "accent_outline_2": "#FFFFFF",
+      "accent_outline": "#FFFFFF",
+      "background_2": "#1A1A1A",
+      "background": "#FFFFFF",
+      "body_font": "roboto",
+      "element_design": "modern",
+      "heading_font": "roboto",
+      "primary_color_2": "#FFFFFF",
+      "primary_color": "#1A1A1A",
+      "secondary_color_2": "#E1E4E8",
+      "secondary_color": "#4E5D78",
+      "tagline_font": "roboto",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "phone",
+            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b><a href=\"+1 755 302 8549\"></a></p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>CONNECT</b>&nbsp;at checkout</p>",
+            "color_palette": "one"
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "large",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "left-right",
+            "custom_title": "{{ shop.name }}",
+            "show_search": true,
+            "menu_opener_mobile": "left",
+            "logo": "booqable://assets/image-connect-logo.png",
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "76885238-5987-4be3-b6d7-89ae5c65eae5",
+            "color_palette": "two"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} SpaceSurf. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "{{ shop.name }}",
+            "logo": "booqable://assets/image-connect-logo.png",
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "two"
+          },
+          "disabled": null
+        }
+      }
     }
   }
 }
