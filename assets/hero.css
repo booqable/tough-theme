@@ -131,7 +131,7 @@
 }
 
 .palette-one.hero__wrapper {
-  color: var(--color-third, #0B1A2666);
+  color: var(--color-secondary, #4E5D78);
   background: var(--background-primary, #FFFFFF);
 }
 
@@ -162,7 +162,7 @@
 }
 
 .palette-two.hero__wrapper {
-  color: var(--color-third-2, #FFFFFF66);
+  color: var(--color-secondary-2, #E1E4E8);
   background: var(--background-primary-2, #0B1A26);
 }
 
@@ -193,7 +193,7 @@
 }
 
 .palette-three.hero__wrapper {
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
   background: var(--background-primary-3, #F4B841);
 }
 
