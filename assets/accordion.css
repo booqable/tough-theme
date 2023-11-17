@@ -98,7 +98,7 @@
 
 .palette-one.accordion__wrapper {
   background: var(--background-primary, #FFFFFF);
-  color: var(--color-third, #0B1A2666);
+  color: var(--color-secondary, #4E5D78);
 }
 
 .palette-one .accordion-block__item {
@@ -118,7 +118,7 @@
 
 .palette-two.accordion__wrapper {
   background: var(--background-primary-2, #0B1A26);
-  color: var(--color-third-2, #FFFFFF66);
+  color: var(--color-secondary-2, #E1E4E8);
 }
 
 .palette-two .accordion-block__item {
@@ -138,7 +138,7 @@
 
 .palette-three.accordion__wrapper {
   background: var(--background-primary-3, #F4B841);
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .accordion-block__item {

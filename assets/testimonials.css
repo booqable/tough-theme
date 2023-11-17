@@ -69,7 +69,7 @@
 }
 
 .palette-one .testimonials__blockquote {
-  color: var(--color-third, #0B1A2666);
+  color: var(--color-secondary, #4E5D78);
 }
 
 .palette-one .testimonials__cite {
@@ -85,7 +85,7 @@
 }
 
 .palette-two .testimonials__blockquote {
-  color: var(--color-third-2, #FFFFFF66);
+  color: var(--color-secondary-2, #E1E4E8);
 }
 
 .palette-two .testimonials__cite {
@@ -101,7 +101,7 @@
 }
 
 .palette-three .testimonials__blockquote {
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
 }
 
 .palette-three .testimonials__cite {

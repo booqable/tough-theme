@@ -102,7 +102,7 @@ bq-product-availability[visible="true"] {
 }
 
 .palette-one .product-card {
-  color: var(--color-third, #0B1A2666);
+  color: var(--color-secondary, #4E5D78);
   background: var(--background-primary, #FFFFFF);
   border: 1px solid var(--color-border, #0B1A2626);
 }
@@ -125,7 +125,7 @@ bq-product-availability[visible="true"] {
 }
 
 .palette-two .product-card {
-  color: var(--color-third-2, #FFFFFF66);
+  color: var(--color-secondary-2, #E1E4E8);
   background: var(--background-primary-2, #0B1A26);
   border: 1px solid var(--color-border-2, #FFFFFF47);
 }
@@ -148,7 +148,7 @@ bq-product-availability[visible="true"] {
 }
 
 .palette-three .product-card {
-  color: var(--color-third-3, #0B1A2666);
+  color: var(--color-secondary-3, #FFFFFF);
   background: var(--background-primary-3, #F4B841);
   border: 1px solid var(--color-border-3, #0B1A2626);
 }

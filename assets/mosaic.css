@@ -158,7 +158,7 @@
 }
 
 .palette-three.mosaic__wrapper {
-  color: var(--color-secondary, #FFFFFF);
+  color: var(--color-secondary-3, #FFFFFF);
   background: var(--background-primary-3, #F4B841);
 }
 
