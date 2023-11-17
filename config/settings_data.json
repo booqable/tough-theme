@@ -1637,6 +1637,155 @@
           "disabled": null
         }
       }
+    },
+    "charge": {
+      "accent_outline_2": "#EBEBEB",
+      "tagline_font": "raleway",
+      "background_style": "none",
+      "element_design": "modern",
+      "background_2": "#9C8B73",
+      "accent_outline_3": "#0B1A26",
+      "accent_color_2": "#0B1A26",
+      "background_3": "#F4B841",
+      "accent_color_3": "#FFFFFF",
+      "accent_background": "#9C8B73",
+      "primary_color": "#0B1A26",
+      "overlay_color_2": "#FFFFFF",
+      "use_focal_images": true,
+      "secondary_color_2": "#E1E4E8",
+      "heading_font": "raleway",
+      "body_font": "raleway",
+      "secondary_color_3": "#FFFFFF",
+      "accent_outline": "#9C8B73",
+      "background": "#EBEBEB",
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "show_bar": true,
+            "icon": "phone",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "medium",
+            "bar_message": "<p>Free shipping from €50</p>",
+            "color_palette": "two"
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "sticky_header": true,
+            "padding_top": "medium",
+            "padding_bottom_mobile": "medium",
+            "menu_position": "center-left",
+            "custom_title": "EcoRide",
+            "show_search": true,
+            "menu_opener_mobile": "left",
+            "logo": null,
+            "menu_style": "horizontal",
+            "menu_position_mobile": "top",
+            "padding_bottom": "small",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "menu": "main-menu",
+            "color_palette": "one"
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} EcoRide. All right reserved.",
+            "padding_top": "medium",
+            "padding_bottom_mobile": "small",
+            "custom_title": "EcoRide",
+            "logo": null,
+            "bottom_menu": "bottom-menu",
+            "padding_bottom": "medium",
+            "padding_top_mobile": "small",
+            "color_palette": "two"
+          },
+          "disabled": null
+        }
+      },
+      "accent_color": "#FFFFFF",
+      "image_placeholder": "booqable://assets/image-charge-placeholder.png",
+      "overlay_background_2": "#0B1A26",
+      "h6_size": 20,
+      "tagline_size": 14,
+      "h5_size": 24,
+      "overlay_color": "#FFFFFF",
+      "h4_size": 32,
+      "h3_size": 40,
+      "h2_size": 48,
+      "accent_background_2": "#EBEBEB",
+      "h1_size": 56,
+      "accent_background_3": "#0B1A26",
+      "secondary_color": "#4E5D78",
+      "primary_color_2": "#FFFFFF",
+      "primary_color_3": "#0B1A26",
+      "overlay_background": "#0B1A26"
     }
   }
 }
