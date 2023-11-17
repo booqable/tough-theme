@@ -1,0 +1,301 @@
+{
+  "name": "Home",
+  "sections": {
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "heading": "Great for rural areas",
+            "content": "<div>Living in a rural area has its charms, but sometimes staying connected can be a challenge. Starlink changes the game by providing high-speed internet access to even the most remote locations. Whether you're nestled in the mountains, surrounded by dense forests, or residing in a remote farmhouse, Starlink's global satellite network ensures you have a reliable connection to work, study, stream, and stay connected with loved ones.<br></div>"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "heading": "Great for events",
+            "content": "<p>Set up temporary Starlink terminals to provide high-speed Wi-Fi access to all your attendees. Whether it's live streaming, ticket sales, or just keeping guests connected, Starlink's low latency and high bandwidth make it perfect for large-scale events where traditional internet infrastructure may be lacking.</p>"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "heading": "Great for travel",
+            "content": "<p>Whether you're on a cross-country road trip, sailing the high seas, or camping in a remote wilderness, Starlink's portability and global coverage ensure you're always connected. Use the compact Starlink terminal to set up a reliable Wi-Fi hotspot wherever you go.</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_478139",
+        "item_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "two",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": false
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "two",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "text": "<p>Connecting you to the stars, one kit at a time.</p>",
+        "title": "Why use SpaceSurf?"
+      },
+      "disabled": null
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "button_style": "outlined",
+            "content_align": "top",
+            "content_justify": "right",
+            "heading": "Book with us",
+            "heading_size": "lg",
+            "label": "Rent a Starlink",
+            "text": "<p>We service customers across the country with Starlink rentals. Book today to get started on your journey.</p>",
+            "text_size": "md",
+            "url": "booqable://root/"
+          },
+          "disabled": false
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "description": "<p>If you have questions, please fill out the form below and our team will be happy to assist.</p>",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "placement": "right",
+        "title": "Contact us"
+      },
+      "disabled": null
+    },
+    "text_230012": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "text": "",
+        "title": "Benefits of Starlink"
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "",
+        "button_2": "Rent a Starlink",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "color_palette": "two",
+        "description": "<p>Starlink is a satellite internet constellation project developed by SpaceX. It aims to provide high-speed, low-latency internet access worldwide to underserved and remote areas. Thousands of small satellites are being launched into orbit to create a network that can deliver internet connectivity to users on the ground, including in rural and remote regions where traditional internet infrastructure is lacking.</p>",
+        "image": "booqable://assets/image-connect-side-1.png",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Starlink",
+        "title": "What is Starlink?"
+      },
+      "disabled": null
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "image": null,
+            "title": "Seamless Connectivity with Starlink Dish Rental",
+            "description": "<p>The installation was easy, and the service provided lightning-fast internet, even in the most rural areas. The rental process was hassle-free, and the customer support was outstanding. Thanks to this service, I can  work and stay connected from my peaceful retreat.</p>",
+            "name": "Emily",
+            "position": "Denver",
+            "stars": "5"
+          },
+          "disabled": null
+        },
+        "testimonial_536677": {
+          "type": "testimonial",
+          "settings": {
+            "image": null,
+            "title": "Starlink Rental: Connecting Communities",
+            "description": "<p>Renting a Starlink dish was a breeze, and it arrived quickly. It transformed our community, allowing us to enjoy fast and reliable internet. The rental fees were reasonable, and the impact on our daily lives has been profound. A remarkable service for bridging the digital divide!</p>",
+            "name": "Sarah",
+            "position": "Helena",
+            "stars": "5"
+          },
+          "disabled": null
+        },
+        "testimonial_134984": {
+          "type": "testimonial",
+          "settings": {
+            "image": null,
+            "title": "Starlink on Demand - The Future is Here!",
+            "description": "<p> The convenience and speed it offered were incredible. I streamed movies, worked remotely, and stayed connected without a glitch. The return process was straightforward, and the team was very responsive. Whether you need a temporary or long-term solution, this Starlink dish rental service is a game-changer.</p>",
+            "name": "Michael",
+            "position": "Colorado",
+            "stars": "5"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_536677",
+        "testimonial_134984"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "",
+            "button_2": "Rent a Starlink",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Superfast, low-latency internet anywhere</p>",
+            "image": "booqable://assets/image-connect-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "middle-right",
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent a Starlink&nbsp;<br> Kit from $29/day</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "large",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "plus",
+            "image": "booqable://assets/image-connect-column-1.jpg",
+            "text": "<p>We guarantee delivery on the evening before the first date of your rental period.</p>",
+            "title": "Fast Delivery"
+          },
+          "disabled": null
+        },
+        "column_410035": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "map-marker",
+            "image": "booqable://assets/image-connect-column-2.jpg",
+            "text": "<p>Setting up your Starlink dish only takes a few minutes, so you can get started quickly.</p>",
+            "title": "Easy install"
+          },
+          "disabled": null
+        },
+        "column_452851": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "minus",
+            "image": "booqable://assets/image-connect-column-3.jpg",
+            "text": "<p>Send your Starlink device back to us on the end date of your rental period.</p>",
+            "title": "Simple returns"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column",
+        "column_410035",
+        "column_452851"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "three",
+        "padding_top": "medium",
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "padding_bottom_mobile": "large"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "text-with-image",
+    "text_230012",
+    "accordion",
+    "text",
+    "columns",
+    "testimonials",
+    "contact-form"
+  ]
+}
