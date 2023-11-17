@@ -1513,6 +1513,7 @@
       "accent_outline_2": "#FFFFFF",
       "accent_outline": "#FFFFFF",
       "background_2": "#1A1A1A",
+      "background_style": "none",
       "background": "#FFFFFF",
       "body_font": "roboto",
       "element_design": "modern",
@@ -1522,21 +1523,22 @@
       "secondary_color_2": "#E1E4E8",
       "secondary_color": "#4E5D78",
       "tagline_font": "roboto",
+      "tagline_size": 14,
       "sections": {
         "top-bar": {
           "type": "top-bar",
           "blocks": {},
           "block_order": [],
           "settings": {
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "show_bar": true,
-            "icon": "phone",
-            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b><a href=\"+1 755 302 8549\"></a></p>",
-            "padding_bottom": "medium",
-            "padding_top_mobile": "medium",
             "bar_message": "<p>Get 15% off with code&nbsp;<b>CONNECT</b>&nbsp;at checkout</p>",
-            "color_palette": "one"
+            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b><a href=\"+1 755 302 8549\"></a></p>",
+            "color_palette": "one",
+            "icon": "phone",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
           },
           "disabled": null
         },
@@ -1545,21 +1547,21 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "sticky_header": true,
-            "padding_top": "large",
-            "padding_bottom_mobile": "medium",
-            "menu_position": "left-right",
+            "color_palette": "two",
             "custom_title": "{{ shop.name }}",
-            "show_search": true,
-            "menu_opener_mobile": "left",
             "logo": "booqable://assets/image-connect-logo.png",
-            "menu_style": "horizontal",
-            "menu_position_mobile": "top",
-            "padding_bottom": "medium",
-            "padding_top_mobile": "medium",
-            "search_placeholder": "Search",
             "menu": "76885238-5987-4be3-b6d7-89ae5c65eae5",
-            "color_palette": "two"
+            "menu_opener_mobile": "left",
+            "menu_position": "left-right",
+            "menu_position_mobile": "top",
+            "menu_style": "horizontal",
+            "padding_top": "large",
+            "padding_top_mobile": "medium",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": true,
+            "sticky_header": true
           },
           "disabled": null
         },
@@ -1620,15 +1622,16 @@
             "menu_789459"
           ],
           "settings": {
+            "bottom_menu": "bottom-menu",
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} SpaceSurf. All right reserved.",
-            "padding_top": "medium",
-            "padding_bottom_mobile": "small",
+            "color_palette": "two",
             "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-connect-logo.png",
-            "bottom_menu": "bottom-menu",
             "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
             "padding_top_mobile": "small",
-            "color_palette": "two"
+            "show_payments": true
           },
           "disabled": null
         }

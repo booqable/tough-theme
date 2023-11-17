@@ -50,13 +50,13 @@
       "block_order": [],
       "settings": {
         "align": "center",
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
-        "text": "<p>Connecting you to the stars, one kit at a time.</p>",
-        "title": "Why use SpaceSurf?",
+        "color_palette": "two",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
-        "color_palette": "two"
+        "text": "<p>Connecting you to the stars, one kit at a time.</p>",
+        "title": "Why use SpaceSurf?"
       },
       "disabled": null
     },
@@ -66,15 +66,15 @@
         "text": {
           "type": "text",
           "settings": {
-            "heading": "Book with us",
             "button_style": "outlined",
+            "content_align": "top",
             "content_justify": "right",
-            "text": "<p>We service customers across the country with Starlink rentals. Book today to get started on your journey.</p>",
-            "url": "booqable://root/",
-            "text_size": "md",
-            "label": "Rent a Starlink",
+            "heading": "Book with us",
             "heading_size": "lg",
-            "content_align": "top"
+            "label": "Rent a Starlink",
+            "text": "<p>We service customers across the country with Starlink rentals. Book today to get started on your journey.</p>",
+            "text_size": "md",
+            "url": "booqable://root/"
           },
           "disabled": false
         }
@@ -83,14 +83,14 @@
         "text"
       ],
       "settings": {
-        "placement": "right",
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
-        "title": "Contact us",
-        "padding_bottom": "medium",
-        "padding_top_mobile": "medium",
+        "color_palette": "two",
         "description": "<p>If you have questions, please fill out the form below and our team will be happy to assist.</p>",
-        "color_palette": "two"
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "placement": "right",
+        "title": "Contact us"
       },
       "disabled": null
     },
@@ -100,13 +100,13 @@
       "block_order": [],
       "settings": {
         "align": "center",
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
-        "text": "",
-        "title": "Benefits of Starlink",
+        "color_palette": "two",
         "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
-        "color_palette": "two"
+        "text": "",
+        "title": "Benefits of Starlink"
       },
       "disabled": null
     },
@@ -115,21 +115,21 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "",
         "button_2": "Rent a Starlink",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
         "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
-        "title": "What is Starlink?",
-        "padding_bottom": "large",
-        "tag": "Starlink",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-connect-side-1.png",
+        "color_palette": "two",
         "description": "<p>Starlink is a satellite internet constellation project developed by SpaceX. It aims to provide high-speed, low-latency internet access worldwide to underserved and remote areas. Thousands of small satellites are being launched into orbit to create a network that can deliver internet connectivity to users on the ground, including in rural and remote regions where traditional internet infrastructure is lacking.</p>",
-        "color_palette": "two"
+        "image": "booqable://assets/image-connect-side-1.png",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Starlink",
+        "title": "What is Starlink?"
       },
       "disabled": null
     },
@@ -179,15 +179,15 @@
         "testimonial_134984"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "two",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     },
@@ -199,19 +199,18 @@
           "settings": {
             "button_1": "",
             "button_2": "Rent a Starlink",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Rent a Starlink&nbsp;<br> Kit from $29/day</p>",
-            "image": "booqable://assets/image-connect-hero.jpg",
-            "text_position": "middle-right",
-            "overlay_opacity": "40",
             "description": "<p>Superfast, low-latency internet anywhere</p>",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-connect-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "middle-right",
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent a Starlink&nbsp;<br> Kit from $29/day</p>"
           },
           "disabled": null
         }
@@ -220,15 +219,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "large",
-        "padding_bottom_mobile": "large",
+        "color_palette": "two",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
         "effect": "slide",
-        "pause": true,
+        "full_width": true,
+        "height": "large",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "color_palette": "two"
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -238,33 +241,33 @@
         "column": {
           "type": "column",
           "settings": {
-            "title": "Fast Delivery",
-            "text": "<p>We guarantee delivery on the evening before the first date of your rental period.</p>",
-            "icon": "plus",
             "button_style": "secondary",
-            "image": "booqable://assets/image-connect-column-1.jpg"
+            "icon": "plus",
+            "image": "booqable://assets/image-connect-column-1.jpg",
+            "text": "<p>We guarantee delivery on the evening before the first date of your rental period.</p>",
+            "title": "Fast Delivery"
           },
           "disabled": null
         },
         "column_410035": {
           "type": "column",
           "settings": {
-            "title": "Easy install",
-            "text": "<p>Setting up your Starlink dish only takes a few minutes, so you can get started quickly.</p>",
-            "icon": "map-marker",
             "button_style": "secondary",
-            "image": "booqable://assets/image-connect-column-2.jpg"
+            "icon": "map-marker",
+            "image": "booqable://assets/image-connect-column-2.jpg",
+            "text": "<p>Setting up your Starlink dish only takes a few minutes, so you can get started quickly.</p>",
+            "title": "Easy install"
           },
           "disabled": null
         },
         "column_452851": {
           "type": "column",
           "settings": {
-            "title": "Simple returns",
-            "text": "<p>Send your Starlink device back to us on the end date of your rental period.</p>",
-            "icon": "minus",
             "button_style": "secondary",
-            "image": "booqable://assets/image-connect-column-3.jpg"
+            "icon": "minus",
+            "image": "booqable://assets/image-connect-column-3.jpg",
+            "text": "<p>Send your Starlink device back to us on the end date of your rental period.</p>",
+            "title": "Simple returns"
           },
           "disabled": null
         }
