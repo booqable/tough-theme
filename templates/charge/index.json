@@ -6,17 +6,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "booqable://root/",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "See all",
-        "padding_bottom_mobile": "none",
-        "title": "Popular e-bikes",
-        "padding_bottom": "none",
-        "tag": "E-bikes",
-        "padding_top_mobile": "medium",
+        "button_url": "booqable://root/",
+        "color_palette": "one",
         "description": "<p>Explore our most popular e-bikes</p>",
-        "color_palette": "one"
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "E-bikes",
+        "title": "Popular e-bikes"
       },
       "disabled": null
     },
@@ -75,16 +75,16 @@
         "product_646906"
       ],
       "settings": {
-        "show_carousel": false,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "medium",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_navigation": true,
+        "show_pagination": true,
+        "show_carousel": false,
+        "show_excerpt": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -93,17 +93,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": null,
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "See all",
-        "padding_bottom_mobile": "small",
-        "title": "From the blog",
-        "padding_bottom": "small",
-        "tag": "Blog",
-        "padding_top_mobile": "medium",
+        "button_url": null,
+        "color_palette": "one",
         "description": "<p>Read our latest e-bike advice</p>",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Blog",
+        "title": "From the blog"
       },
       "disabled": null
     },
@@ -112,20 +112,20 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "Learn more",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
         "button_url_1": "booqable://root/",
-        "title": "Ready for everything you can throw at them",
-        "padding_bottom": "large",
-        "tag": "Durability",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-charge-side-2.jpg",
+        "color_palette": "one",
         "description": "<p>We stock only the most durable e-bikes, so you don't have any surprises on your ride. Whether you want to through the city or hit the gravel, these e-bikes can take it.</p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-charge-side-2.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Durability",
+        "title": "Ready for everything you can throw at them"
       },
       "disabled": null
     },
@@ -193,20 +193,19 @@
           "settings": {
             "button_1": "Shop our products",
             "button_2": "",
-            "image_mobile": "",
-            "text_position_mobile": "center",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": "",
-            "title": "<p>Go further with</p>\n<p>electric</p>",
-            "tag": "",
-            "image": "booqable://assets/image-charge-hero-2.jpg",
-            "text_position": "center",
-            "overlay_opacity": "40",
             "description": "<p>Choose e-bikes to expand your travel radius and explore more.</p>",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-charge-hero-2.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "tag": "",
+            "title": "<p>Go further with</p>\n<p>electric</p>"
           },
           "disabled": null
         }
@@ -215,17 +214,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
-        "effect": "slide",
+        "color_palette": "one",
+        "datepicker_position": "bottom",
         "datepicker_title": "",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": false,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     },
@@ -234,20 +235,20 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "Learn more",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "left",
         "button_url_1": "booqable://root/",
-        "title": "Enjoying your ride? Why let battery stop you?",
-        "padding_bottom": "large",
-        "tag": "Battery",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-charge-side-1.jpg",
+        "color_palette": "two",
         "description": "<p>We know the feeling when you're enjoying your ride, and suddenly, your battery is low. That's why we provide long-range batteries with every e-bike so they can go as far as you want to take them.</p>",
-        "color_palette": "two"
+        "image": "booqable://assets/image-charge-side-1.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Battery",
+        "title": "Enjoying your ride? Why let battery stop you?"
       },
       "disabled": null
     },
@@ -297,15 +298,15 @@
         "testimonial_683446"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "two",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     },
@@ -317,19 +318,18 @@
           "settings": {
             "button_1": "Book your e-bike",
             "button_2": "More info",
-            "image_mobile": "",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Your eco-friendly</p>\n<p>adventure awaits..</p>",
-            "image": "booqable://assets/image-charge-hero.jpg",
-            "text_position": "center",
-            "overlay_opacity": 40,
             "description": "<p>Rent your e-bike from EcoRide and prepare to start your adventure</p>",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-charge-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Your eco-friendly</p>\n<p>adventure awaits..</p>"
           },
           "disabled": null
         }
@@ -338,17 +338,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "small",
-        "padding_bottom_mobile": "large",
-        "effect": "slide",
+        "color_palette": "one",
+        "datepicker_position": "bottom",
         "datepicker_title": "",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     }
