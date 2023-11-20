@@ -19,6 +19,7 @@
 
     {% if color_palette == "one" %}
       {% if settings.primary_color != blank %}
+        --lines-empty-text-color: var(--color-primary);
         --line-title-color: var(--color-primary);
         --line-price-color: var(--color-primary);
         --line-input-color: var(--color-primary);
@@ -28,6 +29,7 @@
         --line-image-border: 1px solid var(--color-border);
         --line-control-border: 1px solid var(--color-border);
       {% else %}
+        --lines-empty-text-color: #0B1A26;
         --line-title-color: #0B1A26;
         --line-price-color: #0B1A26;
         --line-input-color: #0B1A26;
@@ -64,6 +66,7 @@
 
     {% elsif color_palette == "two" %}
       {% if settings.primary_color_2 != blank %}
+        --lines-empty-text-color: var(--color-primary-2);
         --line-title-color: var(--color-primary-2);
         --line-price-color: var(--color-primary-2);
         --line-input-color: var(--color-primary-2);
@@ -73,6 +76,7 @@
         --line-image-border: 1px solid var(--color-border-2);
         --line-control-border: 1px solid var(--color-border-2);
       {% else %}
+        --lines-empty-text-color: #FFFFFF;
         --line-title-color: #FFFFFF;
         --line-price-color: #FFFFFF;
         --line-input-color: #FFFFFF;
@@ -109,6 +113,7 @@
 
     {% elsif color_palette == "three" %}
       {% if settings.primary_color_3 != blank %}
+        --lines-empty-text-color: var(--color-primary-3);
         --line-title-color: var(--color-primary-3);
         --line-price-color: var(--color-primary-3);
         --line-input-color: var(--color-primary-3);
@@ -118,6 +123,7 @@
         --line-image-border: 1px solid var(--color-border-3);
         --line-control-border: 1px solid var(--color-border-3);
       {% else %}
+        --lines-empty-text-color: #0B1A26;
         --line-title-color: #0B1A26;
         --line-price-color: #0B1A26;
         --line-input-color: #0B1A26;
