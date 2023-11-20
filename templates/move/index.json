@@ -1,0 +1,203 @@
+{
+  "name": "Home",
+  "sections": {
+    "images_848774": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Order now",
+            "button_2": "",
+            "text_position_mobile": "top-left",
+            "show_overlay": true,
+            "button_url_1": "booqable://root/",
+            "overlay_color": "#FFF",
+            "color_overlay": "dark",
+            "title": "<p>Getting you moving quickly</p>",
+            "image": "booqable://assets/image-move-hero-2.jpg",
+            "text_position": "center",
+            "overlay_opacity": "40",
+            "description": "",
+            "overlay_background": "#131314"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "height": "small",
+        "padding_bottom_mobile": "small",
+        "effect": "slide",
+        "datepicker_title": "Check availability:",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": false,
+        "color_palette": "two"
+      },
+      "disabled": null
+    },
+    "text-with-image_510414": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "View packages",
+        "button_2": "Get in touch",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "left",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "title": "For big and small removals",
+        "padding_bottom": "large",
+        "tag": "Get started",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/image-move-side-2.jpg",
+        "description": "<p>Whether you're planning a major household relocation or a small-scale move, our versatile boxes and expert solutions are tailored to meet your specific requirements. Our extensive range of box sizes and packing accessories ensures that you can easily customize your order to suit the scale of your move. </p>",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "Learn more",
+        "button_2": "",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "right",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "title": "Make moving easier",
+        "padding_bottom": "large",
+        "tag": "Moving boxes",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/image-move-side-1.jpg",
+        "description": "<p>We understand that the process of relocating can be a daunting task, and that's why we're here to simplify it for you. Our high-quality, eco-friendly boxes are designed to make packing and transporting your belongings a breeze. </p>",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Order now",
+            "button_2": "",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "text_position_mobile": "top-left",
+            "show_overlay": true,
+            "button_url_1": "booqable://products/",
+            "overlay_color": "#FFFFFF",
+            "color_overlay": "dark",
+            "button_url_2": null,
+            "title": "<p>Move-in,</p>\n<p>rent out</p>",
+            "image": "booqable://assets/image-move-hero.jpg",
+            "text_position": "center",
+            "overlay_opacity": "40",
+            "description": "",
+            "overlay_background": "#131314"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "height": "medium",
+        "padding_bottom_mobile": "large",
+        "datepicker_no_background": true,
+        "effect": "slide",
+        "datepicker_title": "",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": true,
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column": {
+          "type": "column",
+          "settings": {
+            "title": "Step 1: Order your boxes",
+            "text": "<p>Browse our website, select your rental period, and book the boxes you require.</p>",
+            "icon": "plus",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        },
+        "column_714659": {
+          "type": "column",
+          "settings": {
+            "title": "Step 2: We deliver your boxes",
+            "text": "<p>We will deliver your boxes to your door on the start date  you select.</p>",
+            "icon": "envelope",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        },
+        "column_987110": {
+          "type": "column",
+          "settings": {
+            "title": "Step 3: Move your stuff",
+            "text": "<p>Move all your stuff with ease over your rental period.</p>",
+            "icon": "map-marker",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        },
+        "column_669937": {
+          "type": "column",
+          "settings": {
+            "title": "Step 4: We pick up your boxes",
+            "text": "<p>We will pick up your moving boxes from your door on your selected end date.</p>",
+            "icon": "minus",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column",
+        "column_714659",
+        "column_987110",
+        "column_669937"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "two",
+        "padding_top": "large",
+        "padding_bottom": "large",
+        "padding_top_mobile": "large",
+        "padding_bottom_mobile": "large"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "text-with-image",
+    "text-with-image_510414",
+    "columns",
+    "images_848774"
+  ]
+}
