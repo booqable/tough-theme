@@ -15,25 +15,7 @@
 {%- if results_count > 0 -%}
   {%- assign show_datepicker = true -%}
 
-  {%- if color_palette == "one" -%}
-    {%- if settings.accent_background != blank -%}
-      {%- assign background_accent = settings.accent_background -%}
-    {%- else -%}
-      {%- assign background_accent = branding_color -%}
-    {%- endif -%}
-  {%- elsif color_palette == "two" -%}
-    {%- if settings.accent_background_2 != blank -%}
-      {%- assign background_accent = settings.accent_background_2 -%}
-    {%- else -%}
-      {%- assign background_accent = branding_color -%}
-    {%- endif -%}
-  {%- elsif color_palette == "three" -%}
-    {%- if settings.accent_background_3 != blank -%}
-      {%- assign background_accent = settings.accent_background_3 -%}
-    {%- else -%}
-      {%- assign background_accent = branding_color -%}
-    {%- endif -%}
-  {%- endif -%}
+  {%- render 'background-accent', color_palette: color_palette -%}
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -127,12 +109,13 @@
 
   {%- if results_count > 0 -%}
     <div class="hero__date-picker date-picker">
-      <div class="hero__container container">
-        <div class="hero__date-picker-component date-picker__component">
-          {%- include 'date-picker' -%}
-        </div>
-      </div>
-      <div class="hero__overlay section-with-date-picker__overlay"></div>
+      {%- render 'date-picker',
+          key: section.key,
+          color_palette: color_palette,
+          background: background_accent,
+          position: "bottom",
+          title: nil
+      -%}
     </div>
   {%- endif -%}
 
@@ -169,8 +152,6 @@
 {%- if results_count == 0 -%}
   {% include 'script-full-height' %}
 {%- endif -%}
-
-{% include 'script-date-picker-background' %}
 
 {% schema %}
   {

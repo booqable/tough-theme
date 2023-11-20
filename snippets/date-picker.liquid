@@ -1,5 +1,107 @@
+{% comment %}
+
+  This snippet is used for rendering the Date picker
+
+  key: section id *required,
+  color_palette: "string" *required,
+  background: "string" *required,
+  position: "string" optional,
+  title: "string" optional
+
+  Usage:
+
+  {%- render 'date-picker',
+      key: section.key,
+      color_palette: color_palette,
+      background: background_accent,
+      position: datepicker_position,
+      title: datepicker_title
+  -%}
+
+{% endcomment %}
+
 {%- style -%}
-  #section-{{ section.key }} bq-date-picker {
+  @keyframes move {
+    0% {
+      transform: translateY(15%) rotate(90deg);
+    }
+
+    33% {
+      transform: translateY(75%) rotate(90deg);
+    }
+
+    66% {
+      transform: translateY(-20%) rotate(90deg);
+    }
+
+    100% {
+      transform: translateY(15%) rotate(90deg);
+    }
+  }
+
+  .date-picker__icon {
+    margin: 0 8px 0 0;
+  }
+
+  .date-picker__icon svg {
+    transform: translateY(15%) rotate(90deg);
+    animation: 1.5s infinite alternate move;
+    width: 16px;
+    height: 17px;
+  }
+
+  .date-picker__title {
+    display: flex;
+    font-size: 18px;
+    font-weight: var(--font-weight-regular, 400);
+  }
+
+  .date-picker__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--date-picker-height, 75px) / 2);
+    z-index: -1;
+    background: var(--background-primary, #FFFFFF);
+  }
+
+  .date-picker__container {
+    position: relative;
+    padding-bottom: 1px;
+    z-index: 1;
+  }
+
+  .date-picker__component {
+    min-height: var(--date-picker-height, 70px);
+    margin: 0 1px;
+  }
+
+  #section-{{ key }} .palette-one .date-picker__title path {
+    fill: var(--color-primary, #0B1A26);
+  }
+
+  #section-{{ key }} .palette-one.date-picker__overlay {
+    background: var(--background-primary, #FFFFFF);
+  }
+
+  #section-{{ key }} .palette-two .date-picker__title path {
+    fill: var(--color-primary-2, #FFFFFF);
+  }
+
+  #section-{{ key }} .palette-two.date-picker__overlay {
+    background: var(--background-primary-2, #0B1A26);
+  }
+
+  #section-{{ key }} .palette-three .date-picker__title path {
+    fill: var(--color-primary-3, #0B1A26);
+  }
+
+  #section-{{ key }} .palette-three.date-picker__overlay {
+    background: var(--background-primary-3, #F4B841);
+  }
+
+  #section-{{ key }} bq-date-picker {
     --date-picker-border-radius: var(--border-radius, 0);
     --date-picker-cleanstate-padding: 11px 22px;
     --date-picker-section-padding: 12px;
@@ -116,4 +218,33 @@
   }
 {%- endstyle -%}
 
-<bq-date-picker branding-color="{{- background_accent -}}"></bq-date-picker>
+{%- assign bottom = true -%}
+
+{%- if position != "bottom" -%}
+  {%- assign bottom = false -%}
+{%- endif -%}
+
+<div class="date-picker__instance{% if bottom %} date-picker-instance{%- endif -%}">
+  <div class="date-picker__container{% if bottom %} container{%- endif -%}">
+    {%- if title != blank -%}
+      <h2 class="date-picker__title">
+        <span class="date-picker__icon">
+          {%- render 'icon-arrow-right-full' -%}
+        </span>
+        {{- title -}}
+      </h2>
+    {%- endif -%}
+
+    <div class="date-picker__component">
+      <bq-date-picker branding-color="{{- background -}}"></bq-date-picker>
+    </div>
+  </div>
+
+  {%- if bottom -%}
+    <div class="date-picker__overlay section-with-date-picker__overlay"></div>
+  {%- endif -%}
+</div>
+
+{%- if bottom -%}
+  {% render 'script-date-picker-background' %}
+{%- endif -%}

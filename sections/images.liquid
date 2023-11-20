@@ -32,25 +32,7 @@
   {%- endif -%}
 
   {%- if show_datepicker -%}
-    {%- if color_palette == "one" -%}
-      {%- if settings.accent_background != blank -%}
-        {%- assign background_accent = settings.accent_background -%}
-      {%- else -%}
-        {%- assign background_accent = branding_color -%}
-      {%- endif -%}
-    {%- elsif color_palette == "two" -%}
-      {%- if settings.accent_background_2 != blank -%}
-        {%- assign background_accent = settings.accent_background_2 -%}
-      {%- else -%}
-        {%- assign background_accent = branding_color -%}
-      {%- endif -%}
-    {%- elsif color_palette == "three" -%}
-      {%- if settings.accent_background_3 != blank -%}
-        {%- assign background_accent = settings.accent_background_3 -%}
-      {%- else -%}
-        {%- assign background_accent = branding_color -%}
-      {%- endif -%}
-    {%- endif -%}
+    {%- render 'background-accent', color_palette: color_palette -%}
   {%- endif -%}
 
   {% comment %} CSS variables start {% endcomment %}
@@ -143,25 +125,14 @@
 
   {%- if show_datepicker -%}
     {%- capture date_picker -%}
-      <div class="images__date-picker{% if datepicker_position == "bottom" %} date-picker{%- endif -%}">
-        <div class="images__date-picker-container{% if datepicker_position == "bottom" %} container{%- endif -%}">
-          {%- if datepicker_title != blank -%}
-            <h2 class="images__date-picker-title">
-              <span class="images__date-picker-icon">
-                {%- render 'icon-arrow-right-full' -%}
-              </span>
-              {{- datepicker_title -}}
-            </h2>
-          {%- endif -%}
-
-          <div class="images__date-picker-component date-picker__component">
-            {%- include 'date-picker' -%}
-          </div>
-        </div>
-
-        {%- if datepicker_position == "bottom" -%}
-          <div class="images__date-picker-overlay section-with-date-picker__overlay"></div>
-        {%- endif -%}
+      <div class="images__date-picker date-picker">
+        {%- render 'date-picker',
+            key: section.key,
+            color_palette: color_palette,
+            background: background_accent,
+            position: datepicker_position,
+            title: datepicker_title
+        -%}
       </div>
     {%- endcapture -%}
   {%- endif -%}
@@ -502,8 +473,6 @@
     {%- endif -%}
   </div>
 {%- endif -%}
-
-{% include 'script-date-picker-background' %}
 
 {% schema %}
   {

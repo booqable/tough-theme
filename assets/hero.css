@@ -8,16 +8,6 @@
   flex-grow: 1;
 }
 
-.hero__overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc(var(--date-picker-height, 75px) / 2);
-  z-index: -1;
-  background: var(--background-primary, #FFFFFF);
-}
-
 .hero__container {
   position: relative;
   z-index: 1;
@@ -120,22 +110,14 @@
   max-height: 100%;
 }
 
-.hero__date-picker {
+.hero .date-picker__instance {
   position: relative;
   z-index: 1;
   padding-top: 16px;
 }
 
-.hero__date-picker-component {
-  margin: 0 1px;
-}
-
 .palette-one.hero__wrapper {
   color: var(--color-secondary, #4E5D78);
-  background: var(--background-primary, #FFFFFF);
-}
-
-.palette-one.hero__overlay {
   background: var(--background-primary, #FFFFFF);
 }
 
@@ -166,10 +148,6 @@
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two.hero__overlay {
-  background: var(--background-primary-2, #0B1A26);
-}
-
 .palette-two .hero__title {
   color: var(--color-primary-2, #FFFFFF);
 }
@@ -194,10 +172,6 @@
 
 .palette-three.hero__wrapper {
   color: var(--color-secondary-3, #FFFFFF);
-  background: var(--background-primary-3, #F4B841);
-}
-
-.palette-three.hero__overlay {
   background: var(--background-primary-3, #F4B841);
 }
 
