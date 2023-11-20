@@ -77,6 +77,24 @@
     margin: 0 1px;
   }
 
+  .section-with-date-picker {
+    flex-direction: column;
+  }
+
+  .section-with-date-picker .date-picker__instance {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    max-width: none;
+    margin: 0;
+  }
+
+  .section-with-date-picker .date-picker__title {
+    justify-content: flex-start;
+  }
+
   #section-{{ key }} .palette-one .date-picker__title path {
     fill: var(--color-primary, #0B1A26);
   }

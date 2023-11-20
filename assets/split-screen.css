@@ -1,9 +1,5 @@
 .split-screen__wrapper {
-
-}
-
-.split-screen__container {
-
+  position: relative;
 }
 
 .split-screen__container--padding-top {
@@ -15,16 +11,22 @@
 }
 
 .split-screen__columns {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: var(--flex-direction-column, column);
 }
 
 .split-screen__col {
-  width: 100%;
+  text-align: center;
+}
+
+.split-screen__col--image {
+  width: calc(100% + var(--horizontal-padding, 16px) * 2);
+  margin-left: calc(-1 * var(--horizontal-padding, 16px));
 }
 
 .split-screen__image {
-
+  width: 100%;
 }
 
 .split-screen__heading {
@@ -45,8 +47,32 @@
 }
 
 .split-screen__date-picker {
-  margin-top: 40px;
   max-width: 400px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.split-screen__wrapper--image-first .split-screen__col--image {
+  margin-top: calc(-1 * var(--padding-top-mobile, 64px));
+  margin-bottom: var(--padding-bottom-mobile, 64px);
+}
+
+.split-screen__wrapper--text-first .split-screen__col--image {
+  margin-top: var(--padding-top-mobile, 64px);
+  margin-bottom: calc(-1 * var(--padding-bottom-mobile, 64px));
+}
+
+.split-screen__wrapper.section-with-date-picker .split-screen__date-picker {
+  margin-top: 0;
+}
+
+.split-screen__wrapper.section-with-date-picker .split-screen__container--padding-bottom {
+  padding-bottom: calc(var(--padding-bottom-mobile, 64px) + var(--date-picker-block-height, 70px));
+}
+
+.split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first .split-screen__container--padding-bottom {
+  padding-bottom: var(--padding-bottom-mobile, 64px);
 }
 
 .palette-one.split-screen__wrapper {
@@ -65,6 +91,13 @@
 }
 
 @media (min-width: 992px) {
+  .split-screen__container {
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
   .split-screen__container--padding-top {
     padding-top: var(--padding-top, 112px);
   }
@@ -73,8 +106,54 @@
     padding-bottom: var(--padding-bottom, 112px);
   }
 
+  .split-screen__text-area {
+    padding-left: var(--padding-left, 52px);
+    padding-right: var(--padding-right, 52px);
+  }
+
   .split-screen__buttons,
   .split-screen__date-picker {
     margin-top: 64px;
+  }
+
+  .split-screen__columns {
+    flex-direction: var(--flex-direction-row, row);
+  }
+
+  .split-screen__col {
+      width: 50%;
+      text-align: var(--text-align, left);
+  }
+
+  .split-screen__date-picker {
+    margin-left: var(--margin-left, 0);
+    margin-right: var(--margin-right, auto);
+  }
+
+  .split-screen__image {
+    position: absolute;
+    top: 0;
+    width: calc(50% - var(--horizontal-padding, 16px));
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  .split-screen__wrapper--text-first .split-screen__col--image,
+  .split-screen__wrapper--image-first .split-screen__col--image {
+    margin: 0;
+  }
+
+  .split-screen__wrapper--image-first .split-screen__image {
+    left: var(--horizontal-padding, 16px);
+  }
+
+  .split-screen__wrapper--text-first .split-screen__image {
+    right: var(--horizontal-padding, 16px);
+  }
+
+  .split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first .split-screen__container--padding-bottom,
+  .split-screen__wrapper.section-with-date-picker .split-screen__container--padding-bottom {
+    padding-bottom: calc(var(--padding-bottom, 112px) + var(--date-picker-block-height, 70px));
   }
 }
