@@ -1,0 +1,369 @@
+{
+  "name": "Home",
+  "sections": {
+    "title_987654": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "See all",
+        "button_url": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>Explore our most popular e-bikes</p>",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "E-bikes",
+        "title": "Popular e-bikes"
+      },
+      "disabled": null
+    },
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_222763": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_481257": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_148659": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_646906": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450",
+        "product_222763",
+        "product_481257",
+        "product_148659",
+        "product_646906"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_navigation": true,
+        "show_pagination": true,
+        "show_carousel": false,
+        "show_excerpt": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "title_987656": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "See all",
+        "button_url": null,
+        "color_palette": "one",
+        "description": "<p>Read our latest e-bike advice</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Blog",
+        "title": "From the blog"
+      },
+      "disabled": null
+    },
+    "text-with-image_754675": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Learn more",
+        "button_2": "Button",
+        "button_url_1": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>We stock only the most durable e-bikes, so you don't have any surprises on your ride. Whether you want to through the city or hit the gravel, these e-bikes can take it.</p>",
+        "image": "booqable://assets/image-charge-side-2.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Durability",
+        "title": "Ready for everything you can throw at them"
+      },
+      "disabled": null
+    },
+    "mosaic": {
+      "type": "mosaic",
+      "blocks": {
+        "article": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "Tips for Exploring Downtown with E-Bike Rentals",
+            "image": "booqable://assets/image-charge-article-1.jpg",
+            "text": "<p>Packed with practical advice, this guide offers valuable tips for those looking to explore city centers using electric bicycles.</p>"
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "The Ultimate Guide to E-Bike Rentals for Urban Explorers",
+            "image": "booqable://assets/image-charge-article-2.jpg",
+            "text": "<p>This comprehensive guide covers everything from choosing the right e-bike for your needs to finding the best rental services in your area.</p>"
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "How E-Bike Rentals are Changing the Way We Travel",
+            "image": "booqable://assets/image-charge-article-3.jpg",
+            "text": "<p>This article delves into the exciting world of electric bicycle rentals, showcasing how they are transforming the way we explore new destinations. </p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "article",
+        "article_456231",
+        "article_456232"
+      ],
+      "settings": {
+        "button_label": "See all",
+        "color_palette": "one",
+        "layout": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": null
+    },
+    "images_870989": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Shop our products",
+            "button_2": "",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "",
+            "description": "<p>Choose e-bikes to expand your travel radius and explore more.</p>",
+            "image": "booqable://assets/image-charge-hero-2.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "tag": "",
+            "title": "<p>Go further with</p>\n<p>electric</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": false,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Learn more",
+        "button_2": "Button",
+        "button_url_1": "booqable://root/",
+        "color_palette": "two",
+        "description": "<p>We know the feeling when you're enjoying your ride, and suddenly, your battery is low. That's why we provide long-range batteries with every e-bike so they can go as far as you want to take them.</p>",
+        "image": "booqable://assets/image-charge-side-1.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Battery",
+        "title": "Enjoying your ride? Why let battery stop you?"
+      },
+      "disabled": null
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>I had an absolute blast with this e-bike rental business! I rented an e-bike to explore the picturesque countryside, and it was an unforgettable experience. The e-bike was in excellent condition, and the battery lasted throughout my journey. The friendly staff even provided me with route recommendations. I'm so grateful for the opportunity to enjoy nature in an eco-friendly way. </p>",
+            "image": "booqable://assets/image-fashion-testimonials.jpg",
+            "name": "Mark",
+            "position": "Portland",
+            "stars": 5,
+            "title": "Eco-Friendly Adventure at Its Finest!"
+          },
+          "disabled": null
+        },
+        "testimonial_478139": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>I needed a convenient way to navigate the city, and this e-bike rental service was the perfect solution. The e-bike I rented was not only comfortable but also super easy to use. It saved me time and money on my daily commute, and I felt like I was making a positive impact on the environment. An excellent service for urban adventurers! </p>",
+            "image": "booqable://assets/image-fashion-testimonials.jpg",
+            "name": "Lisa",
+            "position": "San Francisco",
+            "stars": "5",
+            "title": "Effortless City Commute with E-Bike Bliss"
+          },
+          "disabled": null
+        },
+        "testimonial_683446": {
+          "type": "testimonial",
+          "settings": {
+            "image": "booqable://assets/image-charge-testimonial.jpg",
+            "title": "E-Bike Rental: The Ultimate Outdoor Adventure",
+            "description": "<p>My friends and I decided to explore the nearby trails and opted for e-bikes from this rental business. It was a fantastic decision! The e-bikes were powerful and handled the hilly terrain like a champ. The rental process was quick and hassle-free, and we spent the day having a thrilling adventure. This service is a game-changer for outdoor enthusiasts.</p>",
+            "name": "Chris",
+            "position": "Denver",
+            "stars": "5"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_478139",
+        "testimonial_683446"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "image_position": "right",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Book your e-bike",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Rent your e-bike from EcoRide and prepare to start your adventure</p>",
+            "image": "booqable://assets/image-charge-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Your eco-friendly</p>\n<p>adventure awaits..</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "title_987654",
+    "products",
+    "images_870989",
+    "text-with-image",
+    "text-with-image_754675",
+    "testimonials",
+    "title_987656",
+    "mosaic"
+  ]
+}

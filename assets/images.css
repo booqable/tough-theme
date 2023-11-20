@@ -362,7 +362,8 @@
   }
 
   .images__wrapper.section-with-date-picker .images__date-picker-container {
-    padding: 0 calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
+    padding-left: calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
+    padding-right: calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
   }
 
   .images__date-picker--bottom .images__date-picker-component {
@@ -374,7 +375,8 @@
   }
 
   .images__wrapper.section-with-date-picker.images__wrapper-full-width .images__date-picker-container {
-    padding: 0 var(--horizontal-padding, 16px);
+    padding-left: var(--horizontal-padding, 16px);
+    padding-right: var(--horizontal-padding, 16px);
   }
 
   .images__wrapper-full-width .images__date-picker--bottom .images__date-picker-component {
