@@ -1776,6 +1776,139 @@
           "disabled": null
         }
       }
+    },
+    "move": {
+      "accent_background_2": "#D62A2A",
+      "accent_background": "#D62A2A",
+      "accent_color_2": "#FFFFFF",
+      "accent_color": "#FFFFFF",
+      "accent_outline_2": "#FFFFFF",
+      "accent_outline": "#D62A2A",
+      "background_2": "#D62A2A",
+      "background_style": "none",
+      "background": "#FCFCFC",
+      "body_font": "oswald",
+      "element_design": "modern",
+      "heading_font": "oswald",
+      "image_placeholder": "booqable://assets/062cfbb9-48f7-5640-815b-f0535403aafa.jpg",
+      "primary_color_2": "#FFFFFF",
+      "primary_color": "#0B1A26",
+      "secondary_color_2": "#E1E4E8",
+      "secondary_color": "#4E5D78",
+      "tagline_font": "oswald",
+      "tagline_size": 14,
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "bar_message": "<p>Get 15% off with code <b>MOVE</b> at checkout.</p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\">+1 555 302 8549</a></p>",
+            "color_palette": "one",
+            "icon": "phone",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "color_palette": "two",
+            "custom_title": "Boxable",
+            "logo": "booqable://assets/image-move-logo.png",
+            "menu": "d1f418d1-16f1-44bb-ad50-fe99ba8411b6",
+            "menu_opener_mobile": "left",
+            "menu_position": "left-right",
+            "menu_position_mobile": "top",
+            "menu_style": "horizontal",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "large",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": true,
+            "sticky_header": true
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_menu": "bottom-menu",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} CrateShifters. All right reserved.",
+            "color_palette": "two",
+            "custom_title": "CrateShifters",
+            "logo": "booqable://assets/image-move-logo.png",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
+            "padding_top_mobile": "small",
+            "show_payments": true
+          },
+          "disabled": null
+        }
+      }
     }
   }
 }
