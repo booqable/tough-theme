@@ -71,7 +71,7 @@
   padding-bottom: calc(var(--padding-bottom-mobile, 64px) + var(--date-picker-block-height, 70px));
 }
 
-.split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first .split-screen__container--padding-bottom {
+.split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first.split-screen__wrapper--with-image .split-screen__container--padding-bottom {
   padding-bottom: var(--padding-bottom-mobile, 64px);
 }
 
@@ -152,7 +152,7 @@
     right: var(--horizontal-padding, 16px);
   }
 
-  .split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first .split-screen__container--padding-bottom,
+  .split-screen__wrapper.section-with-date-picker.split-screen__wrapper--text-first.split-screen__wrapper--with-image .split-screen__container--padding-bottom,
   .split-screen__wrapper.section-with-date-picker .split-screen__container--padding-bottom {
     padding-bottom: calc(var(--padding-bottom, 112px) + var(--date-picker-block-height, 70px));
   }
