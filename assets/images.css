@@ -124,75 +124,18 @@
   max-width: none;
 }
 
-@keyframes move {
-  0% {
-    transform: translateY(15%) rotate(90deg);
-  }
-
-  33% {
-    transform: translateY(75%) rotate(90deg);
-  }
-
-  66% {
-    transform: translateY(-20%) rotate(90deg);
-  }
-
-  100% {
-    transform: translateY(15%) rotate(90deg);
-  }
+.images__date-picker:not(:last-child) {
+  margin-bottom: 36px;
 }
 
-.images__date-picker {
+.images__wrapper .date-picker__instance {
   max-width: 400px;
   margin-left: var(--margin-left-mobile);
   margin-right: var(--margin-right-mobile);
 }
 
-.images__date-picker:not(:last-child) {
-  margin-bottom: 36px;
-}
-
-.images__date-picker-container {
-  margin-top: -1px;
-  padding-bottom: 1px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.images__date-picker-icon {
-  margin: 0 8px 0 0;
-}
-
-.images__date-picker-icon svg {
-  transform: translateY(15%) rotate(90deg);
-  animation: 1.5s infinite alternate move;
-  width: 16px;
-  height: 17px;
-}
-
-.images__date-picker-title {
-  display: flex;
-  font-size: 18px;
-  font-weight: var(--font-weight-regular, 400);
+.images__wrapper .date-picker__title {
   justify-content: var(--text-justify-content-mobile, flex-start);
-}
-
-.images__date-picker-component {
-  min-height: var(--date-picker-height, 70px);
-  margin: 0 1px;
-}
-
-.images__date-picker-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: calc(var(--date-picker-height, 75px) / 2);
-}
-
-.images__wrapper.section-with-date-picker {
-  flex-direction: column;
 }
 
 .images__wrapper.section-with-date-picker .images__container--padding-bottom {
@@ -201,20 +144,6 @@
 
 .images__wrapper.section-with-date-picker .images__vision {
   bottom: calc(var(--date-picker-height, 70px) / 2 - 5px);
-}
-
-.images__wrapper.section-with-date-picker .images__date-picker {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  max-width: none;
-  margin: 0;
-}
-
-.images__wrapper.section-with-date-picker .images__date-picker-title {
-  justify-content: flex-start;
 }
 
 .palette-one .images__title,
@@ -254,18 +183,6 @@
 .palette-three .images__text-area--color .images__description,
 .palette-three .images__text-area--color .images__buttons .button--outlined {
   color: currentColor;
-}
-
-.palette-one.images__date-picker-overlay {
-  background: var(--background-primary, #FFFFFF);
-}
-
-.palette-two.images__date-picker-overlay {
-  background: var(--background-primary-2, #0B1A26);
-}
-
-.palette-three.images__date-picker-overlay {
-  background: var(--background-primary-3, #F4B841);
 }
 
 @media (min-width: 428px) {
@@ -333,12 +250,12 @@
     padding-right: var(--padding-right, 0px);
   }
 
-  .images__date-picker {
+  .images__wrapper .date-picker__instance {
     margin-left: var(--margin-left, auto);
     margin-right: var(--margin-right, auto);
   }
 
-  .images__date-picker-title {
+  .images__wrapper .date-picker__title {
     justify-content: var(--text-justify-content, flex-start);
   }
 
@@ -361,28 +278,19 @@
     padding: 0 var(--padding-no-full-width, 56px);
   }
 
-  .images__wrapper.section-with-date-picker .images__date-picker-container {
+  .images__wrapper.section-with-date-picker .date-picker__container {
     padding-left: calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
     padding-right: calc(var(--padding-no-full-width, 56px) + var(--horizontal-padding, 16px));
-  }
-
-  .images__date-picker--bottom .images__date-picker-component {
-    margin: 0 var(--padding-no-full-width, 56px);
   }
 
   .images__wrapper-full-width .images__text-area {
     padding: 0;
   }
 
-  .images__wrapper.section-with-date-picker.images__wrapper-full-width .images__date-picker-container {
+  .images__wrapper.section-with-date-picker.images__wrapper-full-width .date-picker__container {
     padding-left: var(--horizontal-padding, 16px);
     padding-right: var(--horizontal-padding, 16px);
   }
-
-  .images__wrapper-full-width .images__date-picker--bottom .images__date-picker-component {
-    margin: 0 1px;
-  }
-
 }
 
 @media (min-width: 1920px) {

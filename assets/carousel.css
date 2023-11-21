@@ -347,9 +347,9 @@
 }
 
 .palette-one .carousel__edges .carousel__btn path,
-.palette-one .carousel__edges ~ .date-picker .images__date-picker-title path,
-.palette-one.images__wrapper .images__date-picker-title path {
-  fill: var(--overlay-color, #FFFFFF);
+.palette-one .carousel__edges ~ .date-picker .date-picker__title path,
+.palette-one.images__wrapper .date-picker__title path {
+  fill: var(--overlay-color, #FFFFFF) !important;
 }
 
 .palette-one .carousel__edges .carousel__dot:after {
@@ -361,8 +361,8 @@
 }
 
 .palette-one .carousel__edges .carousel__counter,
-.palette-one .carousel__edges ~ .date-picker .images__date-picker-title,
-.palette-one.images__wrapper .images__date-picker-title {
+.palette-one .carousel__edges ~ .date-picker .date-picker__title,
+.palette-one.images__wrapper .date-picker__title {
   color: var(--overlay-color, #FFFFFF);
 }
 
@@ -372,9 +372,9 @@
 }
 
 .palette-two .carousel__edges .carousel__btn path,
-.palette-two .carousel__edges ~ .date-picker .images__date-picker-title path,
-.palette-two.images__wrapper .images__date-picker-title path {
-  fill: var(--overlay-color, #FFFFFF);
+.palette-two .carousel__edges ~ .date-picker .date-picker__title path,
+.palette-two.images__wrapper .date-picker__title path {
+  fill: var(--overlay-color, #FFFFFF) !important;
 }
 
 .palette-two .carousel__edges .carousel__dot:after {
@@ -386,8 +386,8 @@
 }
 
 .palette-two .carousel__edges .carousel__counter,
-.palette-two .carousel__edges ~ .date-picker .images__date-picker-title,
-.palette-two.images__wrapper .images__date-picker-title {
+.palette-two .carousel__edges ~ .date-picker .date-picker__title,
+.palette-two.images__wrapper .date-picker__title {
   color: var(--overlay-color, #FFFFFF);
 }
 
@@ -397,9 +397,9 @@
 }
 
 .palette-three .carousel__edges .carousel__btn path,
-.palette-three .carousel__edges ~ .date-picker .images__date-picker-title path,
-.palette-three.images__wrapper .images__date-picker-title path {
-  fill: var(--overlay-color, #FFFFFF);
+.palette-three .carousel__edges ~ .date-picker .date-picker__title path,
+.palette-three.images__wrapper .date-picker__title path {
+  fill: var(--overlay-color, #FFFFFF) !important;
 }
 
 .palette-three .carousel__edges .carousel__dot:after {
@@ -411,8 +411,8 @@
 }
 
 .palette-three .carousel__edges .carousel__counter,
-.palette-three .carousel__edges ~ .date-picker .images__date-picker-title,
-.palette-three.images__wrapper .images__date-picker-title {
+.palette-three .carousel__edges ~ .date-picker .date-picker__title,
+.palette-three.images__wrapper .date-picker__title {
   color: var(--overlay-color, #FFFFFF);
 }
 

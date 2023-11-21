@@ -4,7 +4,7 @@ class Main {
 
     this.selector = {
       datePicker: "bq-date-picker",
-      datePickerBlock: ".date-picker",
+      datePickerBlock: ".date-picker-instance",
       footer: "footer",
       search: "#search",
       image: ".focal-image",

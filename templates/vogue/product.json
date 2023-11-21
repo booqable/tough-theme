@@ -7,10 +7,8 @@
       "block_order": [],
       "settings": {
         "color_palette": "two",
-        "padding_bottom": "none",
-        "padding_bottom_mobile": "none",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
+        "padding_top": "none",
+        "padding_top_mobile": "none",
         "show_datepicker": true
       },
       "disabled": null
