@@ -1,0 +1,391 @@
+{
+  "name": "Home",
+  "sections": {
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "d09238e1-7f5e-4bbe-b27a-cfb120a901ad"
+          },
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {
+            "product": "24a314a7-6c4d-4cb6-8863-351ed8768e42"
+          },
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {
+            "product": "8c21ee56-a3a0-4791-9459-719742b84645"
+          },
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {
+            "product": "37dbdf4e-1a4f-49d5-b469-1568cefcf91a"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450"
+      ],
+      "settings": {
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "small",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    },
+    "title_987656": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "medium",
+        "bg_text": "",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Upcoming community events",
+        "padding_bottom": "small",
+        "tag": "Events",
+        "padding_top_mobile": "medium",
+        "description": "",
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "logos": {
+      "type": "logos",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-1.png"
+          },
+          "disabled": null
+        },
+        "logo_478138": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-2.png"
+          },
+          "disabled": null
+        },
+        "logo_478148": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-3.png"
+          },
+          "disabled": null
+        },
+        "logo_478178": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-4.png"
+          },
+          "disabled": null
+        },
+        "logo_475641": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-5.png"
+          },
+          "disabled": null
+        },
+        "logo_490957": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-stellar-brand-6.png"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "logo",
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_490957",
+        "logo_475641"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "title": "Rent brick sets from these brands",
+        "text_position": "left",
+        "text_position_mobile": "center",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "large"
+      },
+      "disabled": null
+    },
+    "mosaic": {
+      "type": "mosaic",
+      "blocks": {
+        "article": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "March 23",
+            "heading": "Brick Master Competition",
+            "image": "booqable://assets/image-stellar-article-1.jpg",
+            "text": "<p>Join us for our annual Brick Master Competition!</p>"
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "November 27",
+            "heading": "Gingerbread House",
+            "image": "booqable://assets/image-stellar-article-2.png",
+            "text": "<p>Build your own Lego gingerbread house with us!</p>"
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "July 18",
+            "heading": "Princess Night",
+            "image": "booqable://assets/image-stellar-article-2.png",
+            "text": "<p>Come dressed as your favorite princess and build your dream castle with us!</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "article",
+        "article_456231",
+        "article_456232"
+      ],
+      "settings": {
+        "button_label": "See all Articles",
+        "color_palette": "one",
+        "layout": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": false
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "text": "<p>Do you want to rent an expensive LEGO set cheap and quickly and build it within a few weeks? After the great success of Lego Masters, this dream has become a reality. At BrickBox Rentals, you can choose from an extensive LEGO collection that is regularly expanded with the latest and most popular LEGO sets. Rent LEGO quickly and easily online at BrickBox Rentals, and you can start building within days at low lending costs. We do not work with reservations by date, so please feel free to extend at any time if you need more time than estimated in advance.</p>\n<h2><strong>Popular LEGO themes and sets</strong></h2>\n<p>Do you love a specific LEGO theme? We have sets of popular LEGO themes, such as&nbsp;Technic,&nbsp;Star Wars, Harry Potter, and Disney&nbsp;If you want to build multiple LEGO sets of a specific theme, you no longer have to buy them all these days. At BrickBox Rentals, you won't get exhausted by our comprehensive and growing offer.</p>\n<h3>LEGO for adults</h3>\n<p>LEGO is immensely popular among adults between 35 and 55 years old today. They have developed large, interesting building sets for this target group that have been worked out in detail. For example, think of the Millenium Falcon<a href=\"https://www.bricksverhuur.nl/lego-75192-millennium-falcon-huren.html\"></a>. This consists of no less than 7,541 building blocks, has a manual of 316 pages, and an average construction time of no less than 20 hours!</p>\n<h3>Renting Lego is fun, challenging, and educational</h3>\n<p>LEGO is not only fun and challenging to play with. It also works very relaxing and is very educational. You will train your problem-solving ability, spatial insight, constructive skills, collaboration, and imagination. Awaken your creative brain by making LEGO your hobby, and start building right away by renting a LEGO set from us today.</p>\n<h2>A popular activity for events</h2>\n<p>Building LEGO is a fun idea for various festive occasions. For example, building LEGO is a lovely activity if you have a family day, friends weekend, or staff outing. It is a group activity that ensures group binding, and it requires a certain degree of cooperation by building on one set with several people. You can also make it a match. The group that was the first to build their set wins! We rent out smaller sets for these festivities that can be built within a few hours.</p>",
+        "title": "Renting from BrickBox Rentals",
+        "padding_bottom": "small",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "72ab72b7-551b-45ba-9c4a-9f4267392e24"
+          },
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {
+            "collection": "03ebe98b-a4a3-459d-b8e9-346348696a91"
+          },
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {
+            "collection": "3d6cbe43-764d-45ac-8eb6-ceec9801925f"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542"
+      ],
+      "settings": {
+        "color_overlay": "dark",
+        "color_palette": "one",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": false
+    },
+    "title": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_url": "",
+        "padding_top": "medium",
+        "bg_text": "",
+        "button_label": "",
+        "padding_bottom_mobile": "small",
+        "title": "Popular brick sets",
+        "padding_bottom": "small",
+        "tag": "Featured",
+        "padding_top_mobile": "medium",
+        "description": "",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "text_position_mobile": "top-left",
+            "show_overlay": true,
+            "button_url_1": "booqable://products/",
+            "overlay_color": "#FFFFFF",
+            "color_overlay": "dark",
+            "button_url_2": "booqable://root/",
+            "title": "<p>Rent  brick&nbsp;<br> sets online</p>",
+            "image": "booqable://assets/image-stellar-hero.jpg",
+            "text_position": "bottom-right",
+            "overlay_opacity": "40",
+            "description": "",
+            "overlay_background": "#131314"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "height": "medium",
+        "padding_bottom_mobile": "large",
+        "effect": "slide",
+        "datepicker_title": "",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": true,
+        "color_palette": "two"
+      },
+      "disabled": null
+    },
+    "text_220018": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "text": "",
+        "title": "New Collections",
+        "padding_bottom": "small",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column_914694": {
+          "type": "column",
+          "settings": {
+            "title": "1. Choose your brick sets",
+            "text": "<p>Choose as many brick sets as you want to rent for yourself or your children.</p>",
+            "icon": "empty",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        },
+        "column_999507": {
+          "type": "column",
+          "settings": {
+            "title": "2. Select rental period",
+            "text": "<p>Select the dates and how long you would like to rent your brick sets from us.</p>",
+            "icon": "empty",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        },
+        "column_217482": {
+          "type": "column",
+          "settings": {
+            "title": "3. Book and pay online",
+            "text": "<p>Book and pay online to ensure your brick sets are reserved.</p>",
+            "icon": "empty",
+            "button_style": "secondary"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column_914694",
+        "column_999507",
+        "column_217482"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "three",
+        "padding_top": "large",
+        "padding_bottom": "large",
+        "padding_top_mobile": "large",
+        "padding_bottom_mobile": "large"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "title",
+    "products",
+    "text_220018",
+    "collections",
+    "logos",
+    "text",
+    "title_987656",
+    "mosaic",
+    "columns"
+  ]
+}
