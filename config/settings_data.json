@@ -1918,30 +1918,33 @@
       "accent_outline_2": "#FFCF03",
       "accent_outline": "#0B1A26",
       "background_2": "#FFFFFF",
+      "background_style": "none",
       "background": "#FFFFFF",
       "body_font": "martel-sans",
+      "element_design": "modern",
       "heading_font": "martel-sans",
+      "image_placeholder": "booqable://assets/image-stellar-placeholder.jpg",
       "primary_color_2": "#0B1A26",
       "primary_color": "#0B1A26",
       "secondary_color_2": "#E1E4E8",
       "secondary_color": "#4E5D78",
       "tagline_font": "martel-sans",
-      "image_placeholder": "booqable://assets/image-stellar-placeholder.jpg",
+      "tagline_size": 14,
       "sections": {
         "top-bar": {
           "type": "top-bar",
           "blocks": {},
           "block_order": [],
           "settings": {
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "show_bar": true,
-            "icon": "empty",
-            "bar_text": "<p>✔︎ Rent from just $7.50 ✔︎ Free delivery</p>",
-            "padding_bottom": "medium",
-            "padding_top_mobile": "medium",
             "bar_message": "<p>Get 15% off with code&nbsp;<b>STELLAR&nbsp;</b>at checkout.</p>",
-            "color_palette": "three"
+            "bar_text": "<p>✔︎ Rent from just $7.50 ✔︎ Free delivery</p>",
+            "color_palette": "three",
+            "icon": "empty",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
           },
           "disabled": null
         },
@@ -1950,21 +1953,21 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "sticky_header": true,
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "menu_position": "left-below",
+            "color_palette": "one",
             "custom_title": "{{ shop.name }}",
-            "show_search": true,
-            "menu_opener_mobile": "left",
             "logo": "booqable://assets/image-stellar-logo.png",
-            "menu_style": "vertical",
+            "menu": "dc1001dc-0419-48f0-952a-3fe8d8420b11",
+            "menu_opener_mobile": "left",
+            "menu_position": "left-below",
             "menu_position_mobile": "top",
+            "menu_style": "vertical",
             "padding_bottom": "small",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
             "padding_top_mobile": "medium",
             "search_placeholder": "Search",
-            "menu": "dc1001dc-0419-48f0-952a-3fe8d8420b11",
-            "color_palette": "one"
+            "show_search": true,
+            "sticky_header": true
           },
           "disabled": null
         },
@@ -2025,15 +2028,16 @@
             "menu_789459"
           ],
           "settings": {
+            "bottom_menu": "bottom-menu",
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} BrickBox Rentals. All right reserved.",
-            "padding_top": "medium",
-            "padding_bottom_mobile": "small",
+            "color_palette": "one",
             "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-stellar-logo.png",
-            "bottom_menu": "bottom-menu",
             "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
             "padding_top_mobile": "small",
-            "color_palette": "one"
+            "show_payments": true
           },
           "disabled": null
         }

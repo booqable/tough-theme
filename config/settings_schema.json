@@ -28,7 +28,8 @@
             "value": "classic",
             "label": "Classic"
           }
-        ]
+        ],
+        "default": "modern"
       },
       {
         "type": "header",
@@ -54,7 +55,8 @@
             "value": "floral",
             "label": "Floral elements"
           }
-        ]
+        ],
+        "default": "none"
       }
     ]
   },
@@ -241,6 +243,7 @@
         "label": "Tagline",
         "min": 14,
         "max": 50,
+        "default": 14,
         "info": "Min: 14, max: 50"
       }
     ]
