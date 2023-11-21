@@ -1,4 +1,4 @@
-class Map {
+class LocationMap {
   constructor(block) {
     this.block = block;
 
@@ -144,7 +144,7 @@ const initMap = (el = ".locations__wrapper") => {
   if (!nodes.length) return false;
 
   nodes.forEach(node => {
-    const maps = new Map(node);
+    const maps = new LocationMap(node);
     maps.init();
   })
 }
