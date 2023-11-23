@@ -9,21 +9,16 @@
 {% endcomment %}
 
 {% style %}
+  .payments {
+    font-size: calc(var(--social-size, 20px) + 10px);
+  }
+
   .payment {
     padding: 0 16px 0 0;
-    margin: 0 calc(-1 * (var(--social-spacing) - 4px));
+    margin: 0 calc(-1 * (var(--social-spacing, 6px) - 4px)) calc(-1 * (var(--social-spacing, 6px) - 4px));
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-  }
-
-  .payment i {
-    margin: 0 calc(var(--social-spacing) - 4px);
-  }
-
-  .payment span {
-    display: inline-flex;
-    align-items: center;
   }
 
   .payment svg {
@@ -31,54 +26,54 @@
     height: 31px;
   }
 
-  .palette-one .payment span:not([title="Bancontact"]) path {
-    fill: var(--color-primary, #0B1A26);
+  .payment i,
+  .payment span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 calc(var(--social-spacing, 6px) - 4px) calc(var(--social-spacing, 6px) - 4px);
   }
 
-  .palette-two .payment span:not([title="Bancontact"]) path {
-    fill: var(--color-primary-2, #FFFFFF);
+  .payment span:not([title="Bancontact"]) path,
+  .payment span[title="Bancontact"] .st1,
+  .payment span[title="Giropay"] path:not(.st1) {
+    fill: currentColor !important;
   }
 
-  .palette-three .payment span:not([title="Bancontact"]) path {
-    fill: var(--color-primary-3, #0B1A26);
+  .palette-one .payment span[title="Giropay"] .st1 {
+    fill: var(--background-primary, #0B1A26) !important;
   }
 
-  .palette-one .payment span[title="Bancontact"] .st1 {
-    fill: var(--color-primary, #0B1A26);
+  .palette-two .payment span[title="Giropay"] .st1 {
+    fill: var(--background-primary-2, #FFFFFF) !important;
   }
 
-  .palette-two .payment span[title="Bancontact"] .st1 {
-    fill: var(--color-primary-2, #FFFFFF);
-  }
-
-  .palette-three .payment span[title="Bancontact"] .st1 {
-    fill: var(--color-primary-3, #0B1A26);
+  .palette-three .payment span[title="Giropay"] .st1 {
+    fill: var(--background-primary-3, #0B1A26) !important;
   }
 {% endstyle %}
 
-{%- if payment_methods.size > 0 -%}
-  <div class="payment">
-    {%- for provider in payment_methods -%}
-      {%- case provider -%}
-        {%- when "paypal" -%}
-          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-        {%- when "creditcard" -%}
-          <i class="fa-brands fa-cc-visa" title="Visa"></i>
-          <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-          <i class="fa-brands fa-cc-amex" title="American Express"></i>
-        {%- when "ideal" -%}
-          <i class="fa-brands fa-ideal" title="iDEAL"></i>
-        {%- when "alipay" -%}
-          <i class="fa-brands fa-alipay" title="Alipay"></i>
-        {%- when "p24" -%}
-          {%- render "icon-p24" -%}
-        {%- when "eps" -%}
-          {%- render "icon-eps" -%}
-        {%- when "bancontact" -%}
-          {%- render "icon-bancontact" -%}
-        {%- when "giropay" -%}
-          {%- render "icon-giropay" -%}
-      {%- endcase -%}
-    {%- endfor -%}
-  </div>
-{%- endif -%}
+<div class="payment">
+  {%- for provider in payment_methods -%}
+    {%- case provider -%}
+      {%- when "paypal" -%}
+        <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+      {%- when "creditcard" -%}
+        <i class="fa-brands fa-cc-visa" title="Visa"></i>
+        <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+        <i class="fa-brands fa-cc-amex" title="American Express"></i>
+      {%- when "ideal" -%}
+        <i class="fa-brands fa-ideal" title="iDEAL"></i>
+      {%- when "alipay" -%}
+        <i class="fa-brands fa-alipay" title="Alipay"></i>
+      {%- when "p24" -%}
+        {%- render "icon-p24" -%}
+      {%- when "eps" -%}
+        {%- render "icon-eps" -%}
+      {%- when "bancontact" -%}
+        {%- render "icon-bancontact" -%}
+      {%- when "giropay" -%}
+        {%- render "icon-giropay" -%}
+    {%- endcase -%}
+  {%- endfor -%}
+</div>

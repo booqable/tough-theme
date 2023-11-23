@@ -68,10 +68,6 @@
   font-size: var(--social-size, 21px);
 }
 
-.footer__payments {
-  font-size: calc(var(--social-size, 20px) + 10px);
-}
-
 .footer__bottom-menu-list {
   display: flex;
   align-items: center;
@@ -260,7 +256,7 @@
     padding: 0 0 0 16px;
   }
 
-  .footer__payments .payment {
+  .footer__social:has(+ .footer__payments) {
     padding: 0;
   }
 
