@@ -116,6 +116,10 @@
   padding-top: 16px;
 }
 
+.hero__wrapper.section-with-date-picker .hero__container--padding-bottom {
+  padding-bottom: calc(var(--padding-bottom-mobile, 60px) + var(--date-picker-block-height, 70px));
+}
+
 .palette-one.hero__wrapper {
   color: var(--color-secondary, #4E5D78);
   background: var(--background-primary, #FFFFFF);
@@ -213,5 +217,9 @@
   .hero__date-picker--padding-bottom,
   .hero__container--padding-bottom {
     padding-bottom: var(--padding-bottom, 60px);
+  }
+
+  .hero__wrapper.section-with-date-picker .hero__container--padding-bottom {
+    padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
   }
 }
