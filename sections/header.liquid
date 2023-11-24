@@ -314,17 +314,14 @@
   </div>
 </div>
 
-{%- if sticky_header -%}
-  <script>
-    const header = document.querySelector('.header');
+<script>
+  const header = document.querySelector('.header');
+  {% if sticky_header %}
     header.classList.add('header--sticky')
-  </script>
-{%- else -%}
-  <script>
-    const header = document.querySelector('.header');
+  {% else %}
     header.classList.add('header--not-sticky')
-  </script>
-{%- endif -%}
+  {% endif %}
+</script>
 
 {% schema %}
   {
