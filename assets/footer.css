@@ -64,14 +64,6 @@
   padding: 10px 0 30px;
 }
 
-.footer__social {
-  font-size: var(--social-size, 21px);
-}
-
-.footer__payments {
-  font-size: calc(var(--social-size, 20px) + 10px);
-}
-
 .footer__bottom-menu-list {
   display: flex;
   align-items: center;
@@ -112,13 +104,11 @@
   color: var(--color-third, #0B1A2666);
 }
 
-.palette-one .footer__menu-link:hover,
-.palette-one .footer__social .social-networks__link:hover {
+.palette-one .footer__menu-link:hover {
   color: var(--color-outline-hover, #F4B841CC);
 }
 
-.palette-one .footer__menu-link:active,
-.palette-one .footer__social .social-networks__link:active {
+.palette-one .footer__menu-link:active {
   color: var(--color-outline-active, #F4B841BA);
 }
 
@@ -146,13 +136,11 @@
   color: var(--color-third-2, #FFFFFF66);
 }
 
-.palette-two .footer__menu-link:hover,
-.palette-two .footer__social .social-networks__link:hover {
+.palette-two .footer__menu-link:hover {
   color: var(--color-outline-2-hover, #F4B841CC);
 }
 
-.palette-two .footer__menu-link:active,
-.palette-two .footer__social .social-networks__link:active {
+.palette-two .footer__menu-link:active {
   color: var(--color-outline-2-active, #F4B841BA);
 }
 
@@ -180,13 +168,11 @@
   color: var(--color-third-3, #0B1A2666);
 }
 
-.palette-three .footer__menu-link:hover,
-.palette-three .footer__social .social-networks__link:hover {
+.palette-three .footer__menu-link:hover {
   color: var(--color-outline-3-hover, #0B1A26CC);
 }
 
-.palette-three .footer__menu-link:active,
-.palette-three .footer__social .social-networks__link:active {
+.palette-three .footer__menu-link:active {
   color: var(--color-outline-3-active, #0B1A26BA);
 }
 
@@ -260,7 +246,7 @@
     padding: 0 0 0 16px;
   }
 
-  .footer__payments .payment {
+  .footer__social:has(+ .footer__payments) {
     padding: 0;
   }
 

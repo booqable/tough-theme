@@ -245,14 +245,6 @@
   margin: 0 auto;
 }
 
-.menu__social {
-  font-size: var(--social-size, 21px);
-}
-
-.menu__payments {
-  font-size: calc(var(--social-size, 20px) + 10px)
-}
-
 #mobile-menu-opener:checked ~ .menu {
   pointer-events: all;
   z-index: 1;
@@ -462,14 +454,12 @@
 
 .palette-one .menu__item:hover > .menu__link,
 .palette-one .menu__dropdown-item:hover > .menu__dropdown-link,
-.palette-one .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover,
-.palette-one .menu__social .social-networks__link:hover {
+.palette-one .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover {
   color: var(--color-outline-hover, #F4B841CC);
 }
 
 .palette-one .menu__dropdown-item:active > .menu__dropdown-link,
-.palette-one .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active,
-.palette-one .menu__social .social-networks__link:active {
+.palette-one .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active{
   color: var(--color-outline-active, #F4B841BA);
 }
 
@@ -539,14 +529,12 @@
 
 .palette-two .menu__item:hover > .menu__link,
 .palette-two .menu__dropdown-item:hover > .menu__dropdown-link,
-.palette-two .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover,
-.palette-two .menu__social .social-networks__link:hover {
+.palette-two .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover {
   color: var(--color-outline-2-hover, #F4B841CC);
 }
 
 .palette-two .menu__dropdown-item:active > .menu__dropdown-link,
-.palette-two .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active,
-.palette-two .menu__social .social-networks__link:active {
+.palette-two .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active {
   color: var(--color-outline-2-active, #F4B841BA);
 }
 
@@ -616,14 +604,12 @@
 
 .palette-three .menu__item:hover > .menu__link,
 .palette-three .menu__dropdown-item:hover > .menu__dropdown-link,
-.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover,
-.palette-three .menu__social .social-networks__link:hover {
+.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:hover {
   color: var(--color-outline-3-hover, #0B1A26CC);
 }
 
 .palette-three .menu__dropdown-item:active > .menu__dropdown-link,
-.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active,
-.palette-three .menu__social .social-networks__link:active {
+.palette-three .menu__dropdown > .menu__dropdown-wrapper > .menu__dropdown-opener:active {
   color: var(--color-outline-3-active, #0B1A26BA);
 }
 
