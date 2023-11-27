@@ -102,7 +102,7 @@
     aria-label="breadcrumbs">
     <div class="breadcrumbs__container">
       {%- if label != blank and url != blank-%}
-        <a href="{{ url }}" class="breadcrumbs__link" title="{{- label -}}">
+        <a href="{{ url }}" class="breadcrumbs__link" aria-label="{{- label -}}">
           {{- label -}}
         </a>
 
@@ -110,14 +110,14 @@
       {%- endif -%}
 
       {%- if first.url -%}
-        <a href="{{ first.url }}" class="breadcrumbs__link" title="{{- first.name -}}">
+        <a href="{{ first.url }}" class="breadcrumbs__link" aria-label="{{- first.name -}}">
           {{- first.name -}}
         </a>
 
         {{- separator -}}
       {%- endif -%}
 
-      <span class="breadcrumbs__name" title="{{- product.name -}}">
+      <span class="breadcrumbs__name" aria-label="{{- product.name -}}">
         {{- product.name -}}
       </span>
     </div>

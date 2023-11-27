@@ -96,8 +96,8 @@
   >
     <div class="testimonials__container container">
       {%- if carousel -%}
-        <div class="carousel carousel__full-width carousel__pause{% if show_navigation %} carousel--controls{%- endif -%}" aria-label="Gallery">
-          <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+        <div class="carousel carousel__full-width carousel__pause{% if show_navigation %} carousel--controls{%- endif -%}" aria-role="Gallery">
+          <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}" aria-hidden="true">
           <div class="carousel__wrapper">
       {%- endif -%}
 
@@ -186,12 +186,12 @@
           </div>
 
           {%- if show_navigation -%}
-            <div class="carousel__navigation hidden" aria-label="Carousel navigation" aria-hidden="true">
-              <span class="carousel__btn prev" title="Prev slide">
+            <div class="carousel__navigation hidden" aria-role="Carousel navigation">
+              <span class="carousel__btn prev" aria-label="Prev slide">
                 Previous slide
                 {%- render 'icon-arrow-right-full' -%}
               </span>
-              <span class="carousel__btn next" title="Next slide">
+              <span class="carousel__btn next" aria-label="Next slide">
                 Next slide
                 {%- render 'icon-arrow-right-full' -%}
               </span>
@@ -199,12 +199,12 @@
           {%- endif -%}
 
           {%- if show_pagination -%}
-            <div class="carousel__pagination hidden" aria-label="Carousel pagination" aria-hidden="true">
+            <div class="carousel__pagination hidden" aria-role="Carousel pagination">
               {%- for block in blocks -%}
                 {%- assign first = forloop.first -%}
                 {%- assign index = forloop.index -%}
 
-                <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index }}">
+                <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" aria-label="Jump to slide {{ index }}">
                   Go to slide {{ index }}
                 </span>
               {%- endfor -%}
