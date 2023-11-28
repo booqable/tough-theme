@@ -6,16 +6,17 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "/collections/all",
-        "padding_top": "large",
+        "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "Featured scooters",
-        "padding_bottom": "small",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Featured scooters"
       },
       "disabled": null
     },
@@ -50,16 +51,16 @@
         "product_123450"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "none",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -94,16 +95,16 @@
         "product_166321"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "small",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -113,13 +114,13 @@
       "block_order": [],
       "settings": {
         "align": "center",
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
-        "text": "",
-        "title": "How our mobility scooter rentals work",
+        "color_palette": "two",
         "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "color_palette": "two"
+        "text": "",
+        "title": "How our mobility scooter rentals work"
       },
       "disabled": null
     },
@@ -131,18 +132,18 @@
           "settings": {
             "button_1": "",
             "button_2": "Book a scooter",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": null,
-            "overlay_color": "#FFF",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Let's find your perfect scooter</p>",
-            "image": "booqable://assets/image-square-hero-2.jpg",
-            "text_position": "center",
-            "overlay_opacity": "30",
             "description": "",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-square-hero-2.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFF",
+            "overlay_opacity": 30,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Let's find your perfect scooter</p>"
           },
           "disabled": null
         }
@@ -151,17 +152,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "small",
-        "padding_bottom_mobile": "small",
-        "effect": "slide",
+        "color_palette": "two",
+        "datepicker_position": "bottom",
         "datepicker_title": "Check availability:",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": false,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     },
@@ -171,36 +174,36 @@
         "testimonial": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-square-testimonial-1.jpg",
-            "title": "Freedom on wheels!",
             "description": "<p>I rented a mobility scooter for a week while exploring London, and it truly transformed my trip. The scooter was in great condition, and it provided me with the freedom to visit all the sights without worrying about mobility issues. The rental process was straightforward, and the staff was incredibly helpful.</p>",
+            "image": "booqable://assets/image-square-testimonial-1.jpg",
             "name": "Emily",
             "position": "London",
-            "stars": "5"
+            "stars": "5",
+            "title": "Freedom on wheels!"
           },
           "disabled": null
         },
         "testimonial_286262": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-square-testimonial-2.jpg",
-            "title": "Smooth and Convenient Mobility Solution",
             "description": "<p>I needed a reliable mobility scooter for my grandmother's visit to Edinburgh, and this rental service came to the rescue. The scooter they provided was comfortable and easy to use. It allowed her to move around with ease and enjoy her stay. </p>",
+            "image": "booqable://assets/image-square-testimonial-2.jpg",
             "name": "Sarah",
             "position": "Edinburgh",
-            "stars": "5"
+            "stars": "5",
+            "title": "Smooth and Convenient Mobility Solution"
           },
           "disabled": null
         },
         "testimonial_142074": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-square-testimonial-3.jpg",
-            "title": "A Helping Hand for Exploring the UK",
             "description": "<p>I rented a mobility scooter for a weekend getaway in Manchester, and it was a game-changer. The scooter was delivered to my hotel, and I had a blast exploring the city without any mobility limitations. The rental service was prompt, and the staff was friendly and accommodating.</p>",
+            "image": "booqable://assets/image-square-testimonial-3.jpg",
             "name": "Michael",
             "position": "Manchester",
-            "stars": "5"
+            "stars": "5",
+            "title": "A Helping Hand for Exploring the UK"
           },
           "disabled": null
         }
@@ -211,15 +214,15 @@
         "testimonial_142074"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "large",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "one",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     },
@@ -231,19 +234,18 @@
           "settings": {
             "button_1": "Search scooters",
             "button_2": "",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFF",
-            "color_overlay": "dark",
             "button_url_2": null,
-            "title": "<p>Mobility scooter<br> rental store</p>",
-            "image": "booqable://assets/image-square-hero.jpg",
-            "text_position": "top-right",
-            "overlay_opacity": "30",
             "description": "",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-square-hero.jpg",
+            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFF",
+            "overlay_opacity": "30",
+            "show_overlay": true,
+            "text_position": "top-right",
+            "text_position_mobile": "top-left",
+            "title": "<p>Mobility scooter<br> rental store</p>"
           },
           "disabled": null
         }
@@ -252,18 +254,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "medium",
-        "padding_bottom_mobile": "large",
-        "datepicker_no_background": true,
-        "effect": "slide",
+        "color_palette": "two",
+        "datepicker_position": "bottom",
         "datepicker_title": "Check availability:",
-        "pause": true,
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "two"
+        "timer": 5
       },
       "disabled": null
     },
@@ -273,32 +276,33 @@
         "column": {
           "type": "column",
           "settings": {
-            "title": "1. Choose your scooter",
-            "text": "<p>Browse our range of mobility scooters to find the perfect fit for you.</p>",
+            "button_style": "secondary",
             "icon": "empty",
-            "button_style": "secondary"
+            "image": null,
+            "text": "<p>Browse our range of mobility scooters to find the perfect fit for you.</p>",
+            "title": "1. Choose your scooter"
           },
           "disabled": null
         },
         "column_800614": {
           "type": "column",
           "settings": {
-            "title": "2. Order your mobility scooter",
-            "text": "<p>Book and pay online to secure your mobility scooter for your selected rental period.</p>",
+            "button_style": "secondary",
             "icon": "empty",
             "image": null,
-            "button_style": "secondary"
+            "text": "<p>Book and pay online to secure your mobility scooter for your selected rental period.</p>",
+            "title": "2. Order your mobility scooter"
           },
           "disabled": null
         },
         "column_917961": {
           "type": "column",
           "settings": {
-            "title": "3. Free nationwide delivery",
-            "text": "<p>We will deliver nationwide to your door, so you don't have to worry about picking it up.</p>",
+            "button_style": "secondary",
             "icon": "empty",
             "image": null,
-            "button_style": "secondary"
+            "text": "<p>We will deliver nationwide to your door, so you don't have to worry about picking it up.</p>",
+            "title": "3. Free nationwide delivery"
           },
           "disabled": null
         }

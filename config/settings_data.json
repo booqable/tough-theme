@@ -2052,15 +2052,15 @@
       "accent_outline": "#FAC730",
       "background_2": "#E6F4E5",
       "background": "#FFFFFF",
-      "body_font": "sans-serif",
-      "heading_font": "sans-sans",
+      "body_font": "Helvetica",
+      "heading_font": "Helvetica",
       "image_placeholder": "booqable://assets/image-square-placeholder.png",
       "primary_color_2": "#0B1A26",
       "primary_color": "#0B1A26",
-      "secondary_color_2": "#E1E4E8",
+      "secondary_color_2": "#B2B3B4",
       "secondary_color": "#4E5D78",
-      "tagline_font": "sans-sans",
-      "use_focal_images": true,
+      "tagline_font": "Helvetica",
+      "tagline_size": 14,
       "sections": {
         "top-bar": {
           "type": "top-bar",
@@ -2160,14 +2160,15 @@
           ],
           "settings": {
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} Scoot-Around Town. All right reserved.",
-            "padding_top": "medium",
-            "padding_bottom_mobile": "small",
+            "bottom_menu": "bottom-menu",
+            "color_palette": "two",
             "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-square-logo.png",
-            "bottom_menu": "bottom-menu",
             "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
             "padding_top_mobile": "small",
-            "color_palette": "two"
+            "show_payments": true
           },
           "disabled": null
         }
