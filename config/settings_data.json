@@ -2044,30 +2044,38 @@
       }
     },
     "square": {
-      "accent_outline_2": "#FAC730",
-      "background_2": "#E6F4E5",
-      "accent_color_2": "#0B1A26",
+      "accent_background_2": "#FAC730",
       "accent_background": "#FAC730",
-      "primary_color": "#0B1A26",
-      "use_focal_images": true,
-      "secondary_color_2": "#E1E4E8",
+      "accent_color_2": "#0B1A26",
+      "accent_color": "#0B1A26",
+      "accent_outline_2": "#FAC730",
       "accent_outline": "#FAC730",
+      "background_2": "#E6F4E5",
       "background": "#FFFFFF",
+      "body_font": "sans-serif",
+      "heading_font": "sans-sans",
+      "image_placeholder": "booqable://assets/image-square-placeholder.png",
+      "primary_color_2": "#0B1A26",
+      "primary_color": "#0B1A26",
+      "secondary_color_2": "#E1E4E8",
+      "secondary_color": "#4E5D78",
+      "tagline_font": "sans-sans",
+      "use_focal_images": true,
       "sections": {
         "top-bar": {
           "type": "top-bar",
           "blocks": {},
           "block_order": [],
           "settings": {
-            "padding_top": "medium",
-            "padding_bottom_mobile": "medium",
-            "show_bar": true,
-            "icon": "globe",
+            "bar_message": "<p>Get 15% off with code&nbsp;<b>SQUARE</b> at checkout.</p>",
             "bar_text": "<p>Free nationwide delivery</p>",
+            "color_palette": "three",
+            "icon": "globe",
+            "padding_bottom_mobile": "medium",
             "padding_bottom": "medium",
             "padding_top_mobile": "medium",
-            "bar_message": "<p>Get 15% off with code&nbsp;<b>SQUARE</b> at checkout.</p>",
-            "color_palette": "three"
+            "padding_top": "medium",
+            "show_bar": true
           },
           "disabled": null
         },
@@ -2076,21 +2084,21 @@
           "blocks": {},
           "block_order": [],
           "settings": {
-            "sticky_header": true,
-            "padding_top": "large",
-            "padding_bottom_mobile": "medium",
-            "menu_position": "left-center",
+            "color_palette": "two",
             "custom_title": "{{ shop.name }}",
-            "show_search": true,
-            "menu_opener_mobile": "left",
             "logo": "booqable://assets/image-square-logo.png",
-            "menu_style": "horizontal",
+            "menu_opener_mobile": "left",
             "menu_position_mobile": "top",
+            "menu_position": "left-center",
+            "menu_style": "horizontal",
+            "menu": "main-menu",
+            "padding_bottom_mobile": "medium",
             "padding_bottom": "large",
             "padding_top_mobile": "medium",
+            "padding_top": "large",
             "search_placeholder": "Search",
-            "menu": "main-menu",
-            "color_palette": "two"
+            "show_search": true,
+            "sticky_header": true
           },
           "disabled": null
         },
@@ -2163,12 +2171,7 @@
           },
           "disabled": null
         }
-      },
-      "accent_color": "#0B1A26",
-      "image_placeholder": "booqable://assets/image-square-placeholder.png",
-      "accent_background_2": "#FAC730",
-      "secondary_color": "#4E5D78",
-      "primary_color_2": "#0B1A26"
+      }
     }
   }
 }
