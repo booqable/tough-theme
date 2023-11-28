@@ -345,7 +345,11 @@
                         {%- endif -%}
 
                         {%- if title != blank -%}
-                          <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
+                          {%- if carousel -%}
+                            <h2 class="images__title bq-content rx-content">{{- title -}}</h2>
+                          {%- else -%}
+                            <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
+                          {%- endif -%}
                         {%- endif -%}
 
                         {%- if description != blank -%}

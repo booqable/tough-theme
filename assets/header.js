@@ -82,7 +82,7 @@ class Header {
     this.barBlocks = this.block.querySelectorAll(this.selector.barBlock);
     this.menu = this.block.querySelector(this.selector.menu);
     this.menuBottom = this.block.querySelector(this.selector.menuBottom);
-    this.menuItem = this.block.querySelector(this.selector.menuItem);
+    this.menuItem = this.menu?.querySelector(this.selector.menuItem);
     this.menuDrops = this.block.querySelectorAll(this.selector.menuDrop);
     this.menuOpener = this.block.querySelector(this.selector.menuOpener);
     this.searchOpener = this.block.querySelector(this.selector.searchOpener);
