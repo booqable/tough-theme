@@ -171,9 +171,9 @@ class Header {
   menuPosition() {
     if (!this.menuBottom) return false;
 
-    const height = this.menuItem.getBoundingClientRect().height;
+    const height = this.menuItem?.getBoundingClientRect().height;
 
-    this.setCssVar(this.cssVar.linkHeight, height);
+    if (height) this.setCssVar(this.cssVar.linkHeight, height);
   }
 
   // adding overflow:hidden when menu opened while header is not sticky on mobile
