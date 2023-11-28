@@ -120,6 +120,10 @@
   padding-bottom: calc(var(--padding-bottom-mobile, 60px) + var(--date-picker-block-height, 70px));
 }
 
+.hero__wrapper--product.section-with-date-picker .date-picker__instance {
+  position: static;
+}
+
 .palette-one.hero__wrapper {
   color: var(--color-secondary, #4E5D78);
   background: var(--background-primary, #FFFFFF);

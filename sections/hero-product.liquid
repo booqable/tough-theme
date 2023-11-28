@@ -1,14 +1,14 @@
-{{ "hero.css" | asset_url | stylesheet_tag }}
-
-{%- assign show_datepicker       = section.settings.show_datepicker -%}
-{%- assign image                 = section.settings.image -%}
-{%- assign color_palette         = section.settings.color_palette -%}
-{%- assign padding_top           = section.settings.padding_top -%}
-{%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
+{%- assign show_datepicker = section.settings.show_datepicker -%}
 
 {%- if show_datepicker -%}
+  {{ "hero.css" | asset_url | stylesheet_tag }}
+
+  {%- assign image              = section.settings.image -%}
+  {%- assign color_palette      = section.settings.color_palette -%}
+  {%- assign padding_top        = section.settings.padding_top -%}
+  {%- assign padding_top_mobile = section.settings.padding_top_mobile -%}
+
   {%- render 'background-accent', color_palette: color_palette -%}
-{%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -36,19 +36,19 @@
 {%- endcapture -%}
 {% comment %} CSS variables end {% endcomment %}
 
-<div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if show_datepicker %} section-with-date-picker{%- endif -%}" style="{{- variables | escape -}}">
-  {%- if show_datepicker -%}
+  <div class="hero__wrapper hero__wrapper--product section-with-date-picker{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     <div class="hero__date-picker date-picker{% if padding_top != blank or padding_top_mobile != blank %} hero__date-picker--padding-top{%- endif -%}">
       {%- render 'date-picker',
           key: section.key,
           color_palette: color_palette,
           background: background_accent,
           position: "bottom",
-          title: nil
+          title: nil,
+          settings: settings
       -%}
     </div>
-  {%- endif -%}
-</div>
+  </div>
+{%- endif -%}
 
 {% schema %}
   {
