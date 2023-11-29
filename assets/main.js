@@ -77,8 +77,8 @@ class Main {
     const datePickerHeight = parseInt(this.datePicker?.getBoundingClientRect().height);
     const datePickerBlockHeight = parseInt(this.datePickerBlock?.getBoundingClientRect().height);
 
-    this.setCssVar(this.cssVar.datePickerHeight, datePickerHeight);
-    this.setCssVar(this.cssVar.datePickerBlockHeight, datePickerBlockHeight);
+    if (datePickerHeight) this.setCssVar(this.cssVar.datePickerHeight, datePickerHeight);
+    if (datePickerBlockHeight) this.setCssVar(this.cssVar.datePickerBlockHeight, datePickerBlockHeight);
   }
 
   setCssVar(key, val) {
