@@ -45,6 +45,7 @@
   font-size: 46px;
   line-height: var(--line-height-xs, 1);
   font-weight: var(--font-weight-medium, 500);
+  border-radius: var(--border-radius-circle, 0);
   display: inline-flex;
   align-items: center;
   justify-content: center;

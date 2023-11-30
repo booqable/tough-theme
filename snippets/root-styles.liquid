@@ -209,5 +209,33 @@
       {%- when 'lg' -%}
         --social-spacing: 9px;
     {%- endcase -%}
+
+    {%- case settings.rounded_corners -%}
+      {%- when 'none' -%}
+        --border-radius-dynamic: 0px;
+        --border-radius-rounded: 0px;
+        --border-radius-circle: 0px;
+        --border-radius-checkbox: 0px;
+      {%- when 'sm' -%}
+        --border-radius-dynamic: 4px;
+        --border-radius-rounded: 4px;
+        --border-radius-circle: 4px;
+        --border-radius-checkbox: 4px;
+      {%- when 'md' -%}
+        --border-radius-dynamic: 8px;
+        --border-radius-rounded: 8px;
+        --border-radius-circle: 8px;
+        --border-radius-checkbox: 4px;
+      {%- when 'lg' -%}
+        --border-radius-dynamic: 16px;
+        --border-radius-rounded: 8px;
+        --border-radius-circle: 16px;
+        --border-radius-checkbox: 4px;
+      {%- when 'max' -%}
+        --border-radius-dynamic: 25px;
+        --border-radius-rounded: 8px;
+        --border-radius-circle: 50%;
+        --border-radius-checkbox: 4px;
+    {%- endcase -%}
   }
 </style>

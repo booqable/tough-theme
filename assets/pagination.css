@@ -52,6 +52,16 @@
   transform: rotate(180deg);
 }
 
+.pagination .prev {
+  border-top-left-radius: var(--border-radius-dynamic, 0);
+  border-bottom-left-radius: var(--border-radius-dynamic, 0);
+}
+
+.pagination .next {
+  border-top-right-radius: var(--border-radius-dynamic, 0);
+  border-bottom-right-radius: var(--border-radius-dynamic, 0);
+}
+
 .palette-one .pagination span {
   border-color: var(--color-border, #0B1A2626);
 }

@@ -57,6 +57,41 @@
           }
         ],
         "default": "none"
+      },
+      {
+        "type": "header",
+        "content": "Rounded corners"
+      },
+      {
+        "type": "paragraph",
+        "content": "Make rounded corners of the Date picker, buttons, input fields, etc."
+      },
+      {
+        "type": "select",
+        "id": "rounded_corners",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Medium"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          },
+          {
+            "value": "max",
+            "label": "Max"
+          }
+        ],
+        "default": "none"
       }
     ]
   },

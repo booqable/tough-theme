@@ -131,6 +131,7 @@
       "body_font": "barlow",
       "tagline_font": "barlow",
       "tagline_size": 14,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-tough-placeholder.png"
     },
     "romance": {
@@ -264,6 +265,7 @@
       "body_font": "poppins",
       "tagline_font": "dancing-script",
       "tagline_size": 47,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-romantic-placeholder.jpg"
     },
     "vogue": {
@@ -397,6 +399,7 @@
       "body_font": "poppins",
       "tagline_font": "roboto",
       "tagline_size": 47,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-fashion-placeholder.jpg"
     },
     "radical": {
@@ -424,6 +427,7 @@
       "body_font": "bai-jamjuree",
       "tagline_font": "bai-jamjuree",
       "tagline_size": 14,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-radical-placeholder.webp",
       "sections": {
         "top-bar": {
@@ -563,6 +567,7 @@
       "body_font": "barlow",
       "tagline_font": "barlow",
       "tagline_size": 14,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-endure-placeholder.jpg",
       "sections": {
         "top-bar": {
@@ -703,6 +708,7 @@
       "tagline_font": "lato",
       "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-celebrate-placeholder.jpg",
+      "rounded_corners": "none",
       "sections": {
         "top-bar": {
           "type": "top-bar",
@@ -841,6 +847,7 @@
       "body_font": "lato",
       "tagline_font": "lato",
       "tagline_size": 14,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-focus-placeholder.jpg",
       "sections": {
         "top-bar": {
@@ -978,6 +985,7 @@
       "accent_outline_3": "#131314",
       "heading_font": "Helvetica",
       "body_font": "Helvetica",
+      "rounded_corners": "none",
       "tagline_font": "Helvetica",
       "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-coastal-placeholder.jpg",
@@ -1114,6 +1122,7 @@
       "body_font": "inter",
       "tagline_font": "inter",
       "tagline_size": 14,
+      "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-utility-placeholder.jpg",
       "sections": {
         "top-bar": {
@@ -1251,6 +1260,7 @@
       "accent_outline_3": "#0B1A26",
       "heading_font": "dm-serif-display",
       "body_font": "montserrat",
+      "rounded_corners": "none",
       "tagline_font": "inter",
       "tagline_size": 14,
       "image_placeholder": "booqable://assets/image-chic-placeholder.png",
@@ -1388,6 +1398,7 @@
       "primary_color_2": "#FFFFFF",
       "primary_color_3": "#FFFFFF",
       "primary_color": "#0B1A26",
+      "rounded_corners": "none",
       "secondary_color_2": "#E1E4E8",
       "secondary_color_3": "#FFFFFF",
       "secondary_color": "#4E5D78",
@@ -1521,6 +1532,7 @@
       "heading_font": "roboto",
       "primary_color_2": "#FFFFFF",
       "primary_color": "#1A1A1A",
+      "rounded_corners": "none",
       "secondary_color_2": "#E1E4E8",
       "secondary_color": "#4E5D78",
       "tagline_font": "roboto",
@@ -1659,6 +1671,7 @@
       "primary_color": "#0B1A26",
       "primary_color_2": "#FFFFFF",
       "primary_color_3": "#0B1A26",
+      "rounded_corners": "none",
       "secondary_color_2": "#E1E4E8",
       "secondary_color_3": "#FFFFFF",
       "secondary_color": "#4E5D78",
@@ -1793,6 +1806,7 @@
       "image_placeholder": "booqable://assets/062cfbb9-48f7-5640-815b-f0535403aafa.jpg",
       "primary_color_2": "#FFFFFF",
       "primary_color": "#0B1A26",
+      "rounded_corners": "none",
       "secondary_color_2": "#E1E4E8",
       "secondary_color": "#4E5D78",
       "tagline_font": "oswald",
@@ -1926,6 +1940,7 @@
       "image_placeholder": "booqable://assets/image-stellar-placeholder.jpg",
       "primary_color_2": "#0B1A26",
       "primary_color": "#0B1A26",
+      "rounded_corners": "none",
       "secondary_color_2": "#E1E4E8",
       "secondary_color": "#4E5D78",
       "tagline_font": "martel-sans",

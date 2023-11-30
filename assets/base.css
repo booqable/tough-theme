@@ -47,9 +47,6 @@
   --line-height-lg: 1.5;
   --line-height-xl: 2;
 
-  /* Border-radius */
-  --border-radius: 0;
-
   /* Transitions */
   --animation-duration: 200ms;
   --transition-function-linear: linear;
@@ -295,7 +292,7 @@ ul{
 input,
 textarea {
   font-family: var(--font-body, sans-serif);
-  border-radius: var(--border-radius, 0);
+  border-radius: var(--border-radius-rounded, 0);
 }
 
 input:-webkit-autofill,
@@ -417,6 +414,7 @@ img {
   line-height: var(--line-height-sm, 1.2);
   color: currentColor;
   border: 1px solid transparent;
+  border-radius: var(--border-radius-dynamic, 0);
   background: none;
   cursor: pointer;
   margin-bottom: var(--button-margin-bottom, 16px);
@@ -622,7 +620,6 @@ img {
 .bq-modal *:not(label) {
   border-radius: 0 !important;
 }
-
 
 .title__wrapper--padding-top {
   padding-top: var(--padding-top-mobile, 24px);
