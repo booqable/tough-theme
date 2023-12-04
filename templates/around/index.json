@@ -6,16 +6,16 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "/collections/all",
-        "padding_top": "medium",
         "button_label": "",
-        "padding_bottom_mobile": "none",
-        "title": "Suggested strollers",
-        "padding_bottom": "none",
-        "tag": "",
-        "padding_top_mobile": "medium",
+        "button_url": "/collections/all",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Suggested strollers"
       },
       "disabled": null
     },
@@ -50,16 +50,16 @@
         "product_123450"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "medium",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -162,13 +162,13 @@
       "block_order": [],
       "settings": {
         "align": "center",
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "text": "",
-        "title": "The benefits of renting a stroller",
+        "color_palette": "one",
         "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
         "padding_top_mobile": "medium",
-        "color_palette": "one"
+        "text": "",
+        "title": "The benefits of renting a stroller"
       },
       "disabled": null
     },
@@ -177,19 +177,19 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "Button",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "left",
-        "title": "Choose a stroller you'll love",
-        "padding_bottom": "large",
-        "tag": "",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-around-side-2.jpg",
+        "color_palette": "one",
         "description": "<p>Your baby's comfort and your peace of mind are of the utmost importance when it comes to selecting a stroller, and we make it easy for you to find the perfect fit. Our diverse range of strollers offers options for every family's unique needs and preferences. </p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-around-side-2.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "",
+        "title": "Choose a stroller you'll love"
       },
       "disabled": null
     },
@@ -204,8 +204,8 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
-        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your stroller journey with us.</p>"
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your stroller journey with us.</p>",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
@@ -214,19 +214,19 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "space_height": "none",
         "button_1": "Button",
         "button_2": "Button",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
-        "title": "Why rent from us?",
-        "padding_bottom": "large",
-        "tag": "",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-around-side.jpg",
+        "color_palette": "one",
         "description": "<p>We understand that convenience and quality are paramount when it comes to ensuring a seamless and enjoyable outing with your little one. That's why we take great pride in offering a wide selection of top-notch baby strollers for rent.</p>",
-        "color_palette": "one"
+        "image": "booqable://assets/image-around-side.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "",
+        "title": "Why rent from us?"
       },
       "disabled": null
     },
@@ -276,15 +276,15 @@
         "testimonial_140932"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
+        "color_palette": "one",
         "image_position": "right",
-        "show_navigation": true,
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
         "show_pagination": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     },
@@ -296,19 +296,18 @@
           "settings": {
             "button_1": "Check out products",
             "button_2": "More info",
-            "image_mobile": "",
-            "text_position_mobile": "top-left",
-            "show_overlay": true,
             "button_url_1": "booqable://products/",
-            "overlay_color": "#FFFFFF",
-            "color_overlay": "dark",
             "button_url_2": "booqable://root/",
-            "title": "<p>Rent a Stroller</p>",
-            "image": "booqable://assets/image-around-hero.jpg",
-            "text_position": "center",
-            "overlay_opacity": 40,
             "description": "<p>Take the stress out of traveling with your baby,<br>Rent a stroller for the duration of your vacation.</p>",
-            "overlay_background": "#131314"
+            "image": "booqable://assets/image-around-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "<p>Rent a Stroller</p>"
           },
           "disabled": null
         }
@@ -317,19 +316,19 @@
         "slide"
       ],
       "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "height": "small",
-        "padding_bottom_mobile": "large",
+        "color_palette": "one",
         "datepicker_position": "bottom",
-        "effect": "slide",
         "datepicker_title": "",
+        "effect": "slide",
         "full_width": false,
-        "pause": true,
+        "height": "small",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
+        "pause": true,
         "show_datepicker": true,
-        "color_palette": "one"
+        "timer": 5
       },
       "disabled": null
     },
