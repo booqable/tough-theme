@@ -1,23 +1,24 @@
 {% style %}
   bq-cart-services {
     line-height: var(--line-height-sm, 1.2);
-    --service-checkbox-color: transparent;
-    --services-container-padding: 12px 16px 16px;
+    --services-container-background: transparent;
     --services-container-border-radius: var(--border-radius, 0);
-    --service-title-font-size: 18px;
+    --services-container-padding: 12px 16px 16px;
+    --service-checkbox-border-radius: var(--border-radius, 0);
+    --service-checkbox-color: transparent;
+    --service-checkbox-size: 20px;
     --service-name-font-size: 16px;
     --service-price-font-size: 16px;
-    --service-checkbox-border-radius: var(--border-radius, 0);
-    --service-checkbox-size: 20px;
+    --service-title-font-size: 18px;
 
     {% if color_palette == "one" %}
       {% if settings.primary_color != blank %}
         --service-checkbox-border: 1px solid var(--color-third);
-        --services-container-background: var(--color-border);
+        --services-container-border: 1px solid var(--color-border);
         --services-text-color: var(--color-primary);
       {% else %}
         --service-checkbox-border: 1px solid #0B1A2666;
-        --services-container-background: #0B1A2626;
+        --services-container-border: 1px solid #0B1A2626;
         --services-text-color: #0B1A26;
       {% endif %}
 
@@ -36,11 +37,11 @@
     {% elsif color_palette == "two" %}
       {% if settings.primary_color_2 != blank %}
         --service-checkbox-border: 1px solid var(--color-third-2);
-        --services-container-background: var(--color-border-2);
+        --services-container-border: 1px solid var(--color-border-2);
         --services-text-color: var(--color-primary-2);
       {% else %}
         --service-checkbox-border: 1px solid #FFFFFF66;
-        --services-container-background: #FFFFFF47;
+        --services-container-border: 1px solid #FFFFFF47;
         --services-text-color: #FFFFFF;
       {% endif %}
 
@@ -59,11 +60,11 @@
     {% elsif color_palette == "three" %}
       {% if settings.primary_color_3 != blank %}
         --service-checkbox-border: 1px solid var(--color-third-3);
-        --services-container-background: var(--color-border-3);
+        --services-container-border: 1px solid var(--color-border-3);
         --services-text-color: var(--color-primary-3);
       {% else %}
         --service-checkbox-border: 1px solid #0B1A2666;
-        --services-container-background: #0B1A2626;
+        --services-container-border: 1px solid #0B1A2626;
         --services-text-color: #0B1A26;
       {% endif %}
 
