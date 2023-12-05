@@ -10,6 +10,10 @@
   padding-bottom: var(--padding-bottom-mobile, 16px);
 }
 
+.date-picker-section .date-picker__component {
+  min-height: auto;
+}
+
 .palette-one.date-picker__wrapper {
   background: var(--background-primary, #FFFFFF);
   color: var(--color-primary, #0B1A26);
