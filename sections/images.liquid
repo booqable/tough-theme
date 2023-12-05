@@ -131,7 +131,8 @@
             color_palette: color_palette,
             background: background_accent,
             position: datepicker_position,
-            title: datepicker_title
+            title: datepicker_title,
+            settings: settings
         -%}
       </div>
     {%- endcapture -%}
@@ -139,8 +140,8 @@
 
   <div class="images__wrapper{% if height == "full" or height == "large" %} images__wrapper-full-height{% endif %}{% if full_width %} images__wrapper-full-width{% endif %}{% if show_datepicker and datepicker_position == "bottom" %} section-with-date-picker{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     {%- if carousel -%}
-      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker %} carousel-with-date-picker{%- endif -%}" aria-label="Gallery" data-dafault-color="{{- default_color -}}">
-        <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}">
+      <div class="carousel carousel__edges carousel__{{- effect -}}-effect{% if pause %} carousel__pause{% endif %}{% if show_datepicker and datepicker_position == "bottom" %} carousel-with-date-picker{%- endif -%}" aria-role="Gallery" data-dafault-color="{{- default_color -}}">
+        <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}" aria-hidden="true">
         <div class="carousel__wrapper">
     {%- endif -%}
 
@@ -345,7 +346,11 @@
                         {%- endif -%}
 
                         {%- if title != blank -%}
-                          <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
+                          {%- if carousel -%}
+                            <h2 class="images__title bq-content rx-content">{{- title -}}</h2>
+                          {%- else -%}
+                            <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
+                          {%- endif -%}
                         {%- endif -%}
 
                         {%- if description != blank -%}
@@ -434,23 +439,23 @@
     {%- if carousel -%}
         </div>
 
-        <div class="carousel__navigation" aria-label="Carousel navigation" aria-hidden="true">
-          <span class="carousel__btn prev" title="Prev slide">
+        <div class="carousel__navigation" aria-role="Carousel navigation">
+          <span class="carousel__btn prev" aria-label="Prev slide">
             Previous slide
             {%- render 'icon-arrow-right' -%}
           </span>
-          <span class="carousel__btn next" title="Next slide">
+          <span class="carousel__btn next" aria-label="Next slide">
             Next slide
             {%- render 'icon-arrow-right' -%}
           </span>
         </div>
 
-        <div class="carousel__pagination" aria-label="Carousel pagination" aria-hidden="true">
+        <div class="carousel__pagination" aria-role="Carousel pagination">
           {%- for block in blocks -%}
             {%- assign first = forloop.first -%}
             {%- assign index = forloop.index -%}
 
-            <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" title="Jump to slide {{ index -}}">
+            <span class="carousel__dot{% if first %} active{%- endif -%}" data-index="{{- index -}}" aria-label="Jump to slide {{ index -}}">
               Go to slide {{ index -}}
             </span>
           {%- endfor -%}

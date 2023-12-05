@@ -1,0 +1,21 @@
+.spacer__wrapper {
+  height: var(--height-mobile, 64px);
+}
+
+.palette-one.spacer__wrapper {
+  background: var(--background-primary, #FFFFFF);
+}
+
+.palette-two.spacer__wrapper {
+  background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-three.spacer__wrapper {
+  background: var(--background-primary-3, #F4B841);
+}
+
+@media (min-width: 992px) {
+  .spacer__wrapper {
+    height: var(--height, 64px);
+  }
+}

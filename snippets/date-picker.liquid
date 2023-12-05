@@ -6,7 +6,8 @@
   color_palette: "string" *required,
   background: "string" *required,
   position: "string" optional,
-  title: "string" optional
+  title: "string" optional,
+  settings: settings *required (global store settings)
 
   Usage:
 
@@ -15,7 +16,8 @@
       color_palette: color_palette,
       background: background_accent,
       position: datepicker_position,
-      title: datepicker_title
+      title: datepicker_title,
+      settings: settings
   -%}
 
 {% endcomment %}
@@ -62,7 +64,7 @@
     right: 0;
     bottom: 0;
     height: calc(var(--date-picker-height, 75px) / 2);
-    z-index: -1;
+    z-index: 0;
     background: var(--background-primary, #FFFFFF);
   }
 
