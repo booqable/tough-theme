@@ -203,7 +203,7 @@
 
 @media (min-width: 992px) {
   .images__container {
-    height: calc(var(--height, auto) - var(--header-height, 105px));
+    min-height: calc(var(--height, auto) - var(--header-height, 105px));
   }
 
   .images__container--padding-top {
@@ -265,7 +265,7 @@
   }
 
   .images__wrapper.section-with-date-picker .images__container {
-    height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 60px));
+    min-height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 60px));
   }
 
   .images__wrapper.section-with-date-picker .images__container--padding-bottom {
