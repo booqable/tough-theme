@@ -2093,7 +2093,7 @@
           "block_order": [],
           "settings": {
             "color_palette": "one",
-            "custom_title": "Stroll 'n Go",
+            "custom_title": "{{ shop.name }}",
             "logo": null,
             "menu": "main-menu",
             "menu_opener_mobile": "left",
@@ -2170,7 +2170,7 @@
             "bottom_menu": "bottom-menu",
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} Stroll 'n Go. All right reserved.",
             "color_palette": "one",
-            "custom_title": "Stroll 'n Go",
+            "custom_title": "{{ shop.name }}",
             "logo": null,
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
