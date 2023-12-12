@@ -2057,6 +2057,145 @@
           "disabled": null
         }
       }
+    },
+    "around": {
+      "accent_background_2": "#131314",
+      "accent_background_3": "#FFFFFF",
+      "accent_background": "#131314",
+      "accent_color_2": "#FFFFFF",
+      "accent_color_3": "#131314",
+      "accent_color": "#FFFFFF",
+      "accent_outline_2": "#131314",
+      "accent_outline_3": "#FFFFFF",
+      "accent_outline": "#131314",
+      "background_2": "#131314",
+      "background_3": "#FFFFFF",
+      "background_style": "none",
+      "background": "#FFFFFF",
+      "body_font": "barlow",
+      "element_design": "modern",
+      "heading_font": "barlow",
+      "image_placeholder": "booqable://assets/image-around-placeholder.png",
+      "primary_color_2": "#FFFFFF",
+      "primary_color_3": "#131314",
+      "primary_color": "#131314",
+      "secondary_color_2": "#FFFFFF",
+      "secondary_color_3": "#131314",
+      "secondary_color": "#4E5D78",
+      "tagline_font": "barlow",
+      "tagline_size": 14,
+      "sections": {
+        "top-bar": {
+          "type": "top-bar",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "bar_message": "<p>Get 15% off with code <b>AROUND</b>&nbsp;at checkout.</p>",
+            "bar_text": "<p>Call Us 24/7 +1 555 302 8549<a href=\"+1 555 302 8549\"></a></p>",
+            "color_palette": "two",
+            "icon": "phone",
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "show_bar": true
+          },
+          "disabled": null
+        },
+        "header": {
+          "type": "header",
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "color_palette": "one",
+            "custom_title": "{{ shop.name }}",
+            "logo": null,
+            "menu": "main-menu",
+            "menu_opener_mobile": "left",
+            "menu_position": "left-center",
+            "menu_position_mobile": "top",
+            "menu_style": "horizontal",
+            "padding_bottom": "small",
+            "padding_bottom_mobile": "medium",
+            "padding_top": "medium",
+            "padding_top_mobile": "medium",
+            "search_placeholder": "Search",
+            "show_search": true,
+            "sticky_header": true
+          },
+          "disabled": null
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column One",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789456": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Two",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789457": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Three",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789458": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Four",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            },
+            "menu_789459": {
+              "type": "menu",
+              "settings": {
+                "heading": "Column Five",
+                "menu": "column-1",
+                "menu_align": "left"
+              },
+              "disabled": null
+            }
+          },
+          "block_order": [
+            "menu",
+            "menu_789456",
+            "menu_789457",
+            "menu_789458",
+            "menu_789459"
+          ],
+          "settings": {
+            "bottom_menu": "bottom-menu",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Stroll 'n Go. All right reserved.",
+            "color_palette": "one",
+            "custom_title": "{{ shop.name }}",
+            "logo": null,
+            "padding_bottom": "medium",
+            "padding_bottom_mobile": "small",
+            "padding_top": "medium",
+            "padding_top_mobile": "small",
+            "show_payments": true
+          },
+          "disabled": null
+        }
+      }
     }
   }
 }
