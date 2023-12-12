@@ -141,22 +141,6 @@
       },
       "disabled": null
     },
-    "text_911380": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "left",
-        "color_palette": "one",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "none",
-        "padding_top_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "3️⃣ Return your trailer with gate key"
-      },
-      "disabled": null
-    },
     "title_215468": {
       "type": "title",
       "blocks": {},
@@ -217,22 +201,6 @@
       },
       "disabled": null
     },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "left",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "none",
-        "padding_top_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "1️⃣ Browse and book your trailer"
-      },
-      "disabled": null
-    },
     "title_390530": {
       "type": "title",
       "blocks": {},
@@ -246,6 +214,22 @@
         "padding_top_mobile": "medium",
         "tag": "Information",
         "title": "How it works"
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "medium",
+        "text": "<h3>1️⃣ Browse and book your trailer</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>2️⃣ Collect your trailer with a gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>3️⃣ Return your trailer with gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p>",
+        "title": ""
       },
       "disabled": null
     },
@@ -383,22 +367,6 @@
       },
       "disabled": null
     },
-    "text_267639": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "left",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "none",
-        "padding_top_mobile": "medium",
-        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>",
-        "title": "2️⃣ Collect your trailer with a gate key"
-      },
-      "disabled": null
-    },
     "products_347669": {
       "type": "products",
       "blocks": {
@@ -461,8 +429,6 @@
     "text-with-image",
     "title_390530",
     "text",
-    "text_267639",
-    "text_911380",
     "title_215468",
     "products_344724",
     "products_347669",
