@@ -301,7 +301,7 @@
         "padding_bottom_mobile": "large",
         "padding_top": "medium",
         "padding_top_mobile": "large",
-        "show_datepicker": true,
+        "show_datepicker": false,
         "timer": 5
       },
       "disabled": null

@@ -129,7 +129,7 @@
         "padding_top": "medium",
         "padding_top_mobile": "large",
         "pause": true,
-        "show_datepicker": true,
+        "show_datepicker": false,
         "timer": 5
       },
       "disabled": null

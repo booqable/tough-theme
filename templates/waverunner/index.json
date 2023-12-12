@@ -223,7 +223,7 @@
       ],
       "settings": {
         "color_palette": "one",
-        "datepicker_position": "bottom",
+        "datepicker_position": "in_text",
         "datepicker_title": "",
         "effect": "slide",
         "full_width": true,
