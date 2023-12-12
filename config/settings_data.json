@@ -1529,7 +1529,7 @@
       "accent_color_2": "#1A1A1A",
       "accent_color": "#1A1A1A",
       "accent_outline_2": "#FFFFFF",
-      "accent_outline": "#FFFFFF",
+      "accent_outline": "#1A1A1A",
       "background_2": "#1A1A1A",
       "background_style": "none",
       "background": "#FFFFFF",
@@ -1543,6 +1543,13 @@
       "secondary_color": "#4E5D78",
       "tagline_font": "roboto",
       "tagline_size": 14,
+      "background_3": "#1A1A1A",
+      "primary_color_3": "#FFFFFF",
+      "secondary_color_3": "#E1E4E8",
+      "accent_background_3": "#FFFFFF",
+      "accent_color_3": "#1A1A1A",
+      "accent_outline_3": "#FFFFFF",
+      "image_placeholder": "booqable://assets/image-connect-placeholder.webp",
       "sections": {
         "top-bar": {
           "type": "top-bar",
