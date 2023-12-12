@@ -1124,6 +1124,12 @@
       "tagline_size": 14,
       "rounded_corners": "none",
       "image_placeholder": "booqable://assets/image-utility-placeholder.jpg",
+      "background_3": "#1E3A8A",
+      "primary_color_3": "#FFFFFF",
+      "secondary_color_3": "#E1E4E8",
+      "accent_background_3": "#1E3A8A",
+      "accent_color_3": "#E1E4E8",
+      "accent_outline_3": "#FFFFFF",
       "sections": {
         "top-bar": {
           "type": "top-bar",
