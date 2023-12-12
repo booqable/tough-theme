@@ -207,13 +207,29 @@
       "block_order": [],
       "settings": {
         "color_palette": "one",
-        "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p><h3>1️⃣ Browse and book your trailer</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>2️⃣ Collect your trailer with a gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>3️⃣ Return your trailer with gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p>",
+        "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p>",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
         "padding_top_mobile": "medium",
         "tag": "Information",
         "title": "How it works"
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "medium",
+        "text": "<h3>1️⃣ Browse and book your trailer</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>2️⃣ Collect your trailer with a gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>3️⃣ Return your trailer with gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p>",
+        "title": ""
       },
       "disabled": null
     },
@@ -412,6 +428,7 @@
     "collections",
     "text-with-image",
     "title_390530",
+    "text",
     "title_215468",
     "products_344724",
     "products_347669",
