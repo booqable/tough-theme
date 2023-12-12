@@ -1,0 +1,470 @@
+{
+  "name": "Home",
+  "sections": {
+    "products": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123452": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123451": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123450": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_123449": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_678957": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_821059": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_677390": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_123452",
+        "product_123451",
+        "product_123450",
+        "product_123449",
+        "product_678957",
+        "product_821059",
+        "product_677390"
+      ],
+      "settings": {
+        "show_carousel": false,
+        "timer": 5,
+        "padding_top": "small",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "small",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    },
+    "products_790998": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_592975": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_538161": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        },
+        "product_821923": {
+          "type": "product",
+          "settings": {},
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product",
+        "product_592975",
+        "product_538161",
+        "product_821923"
+      ],
+      "settings": {
+        "show_carousel": true,
+        "timer": 5,
+        "padding_top": "none",
+        "padding_bottom_mobile": "medium",
+        "show_navigation": true,
+        "padding_bottom": "small",
+        "padding_top_mobile": "small",
+        "show_pagination": true,
+        "color_palette": "one",
+        "show_excerpt": true
+      },
+      "disabled": null
+    },
+    "text-with-image_126220": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "Learn more",
+        "button_2": "Button",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "left",
+        "button_url_1": "booqable://root/",
+        "title": "The ultimate driving experience",
+        "padding_bottom": "large",
+        "tag": "EXPERIENCE",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/image-apex-side-2.jpg",
+        "description": "<p>\"The Ultimate Driving Experience\" is not just a slogan at APEX AUTO; it's the very essence of our mission. We believe that every moment behind the wheel of one of our exotic cars should be a memory you'll cherish forever. Our meticulously curated fleet, featuring the most sought-after models from the world's most prestigious automakers, ensures that you'll have access to the latest in automotive engineering and design.  </p>",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "logos": {
+      "type": "logos",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-1.png"
+          },
+          "disabled": null
+        },
+        "logo_478138": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-2.png"
+          },
+          "disabled": null
+        },
+        "logo_478148": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-3.png"
+          },
+          "disabled": null
+        },
+        "logo_478178": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-4.png"
+          },
+          "disabled": null
+        },
+        "logo_478118": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-5.png"
+          },
+          "disabled": null
+        },
+        "logo_345436": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-6.png"
+          },
+          "disabled": null
+        },
+        "logo_699790": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-apex-logo-7.png"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "logo",
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_478118",
+        "logo_345436",
+        "logo_699790"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "title": "Rent exotic car brands",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": null
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "heading": "How can I rent an exotic car from your business?",
+            "content": "<p>Renting an exotic car from our business is a thrilling experience. Start by browsing our luxurious fleet of exotic cars, which includes models from prestigious brands like Lamborghini, Ferrari, and more. Once you've chosen the exotic car that suits your style and preferences, specify the rental duration, whether it's for a day, a weekend, or an entire week. Complete the rental agreement, providing necessary details, and pay the rental fee. We'll have the exotic car prepared for pickup at our rental location or arrange for delivery to your specified address. After your memorable drive, return the car, and we'll handle any required cleaning and maintenance.</p>"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "heading": "What happens if the rented exotic car experiences any damage during my rental period?",
+            "content": "<p>In the event that the rented exotic car experiences any damage during your rental period, please notify us promptly. Depending on the nature and extent of the damage, you may be responsible for covering the repair or replacement costs. It's important to review our rental agreement for specific terms and conditions regarding exotic car damage. While we understand that accidents can occur, your prompt communication is appreciated to help maintain the quality and performance of our exotic cars.</p>"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "heading": " Can I extend the rental period for an exotic car if I want to continue enjoying the luxury and thrill of driving it?",
+            "content": "<p>Yes, you can extend the rental period for an exotic car if you want to continue enjoying the luxury and thrill of driving it. Contact our team to discuss your extension needs, and we'll work with you to update the rental terms and ensure the continued availability of the exotic car. Keep in mind that the availability of specific exotic car models may vary, so it's advisable to notify us well in advance of your extension requirements to secure the desired vehicle. We're here to help you relish the experience of driving an exotic car for as long as you desire.</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_478139",
+        "item_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "one",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": null
+    },
+    "text_987650": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "title": "Frequently asked questions",
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your driving experience with us.</p>"
+      },
+      "disabled": null
+    },
+    "images_870989": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Book now",
+            "button_2": "",
+            "image_mobile": "",
+            "text_position_mobile": "center",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "",
+            "title": "<p>Join us for<br>a track day</p>",
+            "tag": "",
+            "image": "booqable://assets/image-apex-hero-2.jpg",
+            "text_position": "center",
+            "overlay_background": "#0B1A26",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 64,
+            "show_overlay": false,
+            "description": "<p>A&nbsp;thrilling invitation to embrace your inner speed enthusiast </p><p>and take your driving skills to the next level.<br></p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "full_width": true,
+        "height": "medium",
+        "padding_bottom_mobile": "large",
+        "effect": "slide",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": false,
+        "color_palette": "one"
+      },
+      "disabled": false
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "space_height": "none",
+        "button_1": "Book now",
+        "button_2": "Button",
+        "padding_top": "large",
+        "padding_bottom_mobile": "large",
+        "image_position": "right",
+        "button_url_1": "booqable://products/",
+        "title": "Why choose APEX AUTO?",
+        "padding_bottom": "large",
+        "tag": "APEX AUTO",
+        "padding_top_mobile": "large",
+        "image": "booqable://assets/image-apex-side-1.jpg",
+        "description": "<p>When it comes to fulfilling your desire for luxury and performance on the open road, APEX AUTO stands out as the ultimate choice for exotic car rentals. Our commitment to providing an unparalleled driving experience is second to none. With an impressive fleet of meticulously maintained exotic cars from renowned brands, we offer a wide array of thrilling options, from sleek sports cars to powerful supercars. </p>",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "text_259536": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "padding_top": "medium",
+        "padding_bottom_mobile": "medium",
+        "text": "",
+        "title": "What our customer say",
+        "padding_bottom": "medium",
+        "padding_top_mobile": "medium",
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>Renting a Lamborghini from this exotic car rental business was a dream come true. The roaring engine, the sleek design, and the sheer power of the car left me in awe. The staff was professional and made the entire process seamless. Can't wait to do it again!</p>",
+            "image": "booqable://assets/image-apex-testimonial.jpg",
+            "name": "Sarah H.",
+            "position": "Los Angeles",
+            "stars": 5,
+            "title": "Unforgettable Experience!"
+          },
+          "disabled": null
+        },
+        "testimonial_478139": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>I had the pleasure of renting a Ferrari from this exotic car rental business, and it was nothing short of amazing. The car was in perfect condition, and the handling was exceptional. Cruising through the scenic roads of Miami in a Ferrari was a memory I'll cherish forever.</p>",
+            "image": "booqable://assets/image-apex-testimonial.jpg",
+            "name": "Alex M.",
+            "position": "Miami",
+            "stars": "5",
+            "title": "An Absolute Thrill!"
+          },
+          "disabled": null
+        },
+        "testimonial_448015": {
+          "type": "testimonial",
+          "settings": {
+            "image": "booqable://assets/image-apex-testimonial.jpg",
+            "title": "Living the Dream!",
+            "description": "<p>Renting a McLaren from this exotic car rental business was an experience like no other. The speed, the precision, and the attention to detail in these cars are unmatched. The team was accommodating and made sure I had a blast. If you're a car enthusiast, this is the place to be!</p>",
+            "name": "James L.",
+            "position": "New York City",
+            "stars": "5"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_478139",
+        "testimonial_448015"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "padding_bottom_mobile": "medium",
+        "image_position": "right",
+        "show_navigation": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "medium",
+        "show_pagination": true,
+        "color_palette": "one"
+      },
+      "disabled": null
+    },
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "image_mobile": "",
+            "text_position_mobile": "top-left",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "title": "<p>LUXURY &amp; EXOTIC<br>CAR RENTAL</p>",
+            "image": "booqable://assets/image-apex-hero.jpg",
+            "text_position": "center",
+            "overlay_background": "#0B1A26",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": false,
+            "description": ""
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "timer": 5,
+        "padding_top": "medium",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom_mobile": "large",
+        "effect": "slide",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": true,
+        "color_palette": "one"
+      },
+      "disabled": null
+    }
+  },
+  "order": [
+    "images",
+    "products",
+    "products_790998",
+    "logos",
+    "text-with-image",
+    "text-with-image_126220",
+    "images_870989",
+    "text_259536",
+    "testimonials",
+    "text_987650",
+    "accordion"
+  ]
+}
