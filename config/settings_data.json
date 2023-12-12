@@ -733,7 +733,7 @@
           "block_order": [],
           "settings": {
             "color_palette": "one",
-            "custom_title": "Tentable",
+            "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-celebrate-logo.png",
             "menu": "c4f38b89-206d-4d8a-8f1e-bef82d120be7",
             "menu_opener_mobile": "left",
@@ -810,7 +810,7 @@
             "bottom_menu": "bottom-menu",
             "bottom_text": "{{ \"now\" | date: \"%Y\" }} Party Perfect. All right reserved.",
             "color_palette": "two",
-            "custom_title": "Tentable",
+            "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-celebrate-logo.png",
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
@@ -1428,7 +1428,7 @@
           "block_order": [],
           "settings": {
             "color_palette": "one",
-            "custom_title": "Surfside Supply Co.",
+            "custom_title": "{{ shop.name }}",
             "logo": null,
             "menu": "eda8eb53-b79d-4786-9def-2a04d123a80c",
             "menu_opener_mobile": "left",
@@ -1503,9 +1503,9 @@
           ],
           "settings": {
             "bottom_menu": "bottom-menu",
-            "bottom_text": "{{ \"now\" | date: \"%Y\" }} Surfside Supply Co. All right reserved.",
+            "bottom_text": "{{ \"now\" | date: \"%Y\" }} {{ shop.name }} All right reserved.",
             "color_palette": "one",
-            "custom_title": "Surfside Supply Co.",
+            "custom_title": "{{ shop.name }}",
             "logo": null,
             "padding_bottom": "medium",
             "padding_bottom_mobile": "small",
@@ -1835,7 +1835,7 @@
           "block_order": [],
           "settings": {
             "color_palette": "two",
-            "custom_title": "Boxable",
+            "custom_title": "{{ shop.name }}",
             "logo": "booqable://assets/image-move-logo.png",
             "menu": "d1f418d1-16f1-44bb-ad50-fe99ba8411b6",
             "menu_opener_mobile": "left",
@@ -1927,7 +1927,7 @@
     "stellar": {
       "accent_background_2": "#FFCF03",
       "accent_background": "#0B1A26",
-      "accent_color_2": "#FFFFFF",
+      "accent_color_2": "#0B1A26",
       "accent_color": "#FFFFFF",
       "accent_outline_2": "#FFCF03",
       "accent_outline": "#0B1A26",
@@ -1941,9 +1941,15 @@
       "primary_color_2": "#0B1A26",
       "primary_color": "#0B1A26",
       "rounded_corners": "none",
-      "secondary_color_2": "#E1E4E8",
+      "secondary_color_2": "#4E5D78",
       "secondary_color": "#4E5D78",
       "tagline_font": "martel-sans",
+      "background_3": "#F4B841",
+      "primary_color_3": "#0B1A26",
+      "secondary_color_3": "#FFFFFF",
+      "accent_background_3": "#0B1A26",
+      "accent_color_3": "#FFFFFF",
+      "accent_outline_3": "#0B1A26",
       "tagline_size": 14,
       "sections": {
         "top-bar": {
