@@ -158,11 +158,9 @@
       {% if settings.accent_color != blank %}
         --date-picker-icon-color: var(--color-accent);
         --date-picker-cleanstate-text-color: var(--color-accent);
-        --color-accent-foreground: var(--color-accent);
       {% else %}
         --date-picker-icon-color: #0B1A26;
         --date-picker-cleanstate-text-color: #0B1A26;
-        --color-accent-foreground: #0B1A26;
       {% endif %}
 
     {% elsif color_palette == "two" %}
@@ -193,11 +191,9 @@
       {% if settings.accent_color_2 != blank %}
         --date-picker-icon-color: var(--color-accent-2);
         --date-picker-cleanstate-text-color: var(--color-accent-2);
-        --color-accent-foreground: var(--color-accent-2);
       {% else %}
         --date-picker-icon-color: #0B1A26;
         --date-picker-cleanstate-text-color: #0B1A26;
-        --color-accent-foreground: #0B1A26;
       {% endif %}
 
     {% elsif color_palette == "three" %}
@@ -228,11 +224,9 @@
       {% if settings.accent_color_3 != blank %}
         --date-picker-icon-color: var(--color-accent-3);
         --date-picker-cleanstate-text-color: var(--color-accent-3);
-        --color-accent-foreground: var(--color-accent-3);
       {% else %}
         --date-picker-icon-color: #FFFFFF;
         --date-picker-cleanstate-text-color: #FFFFFF;
-        --color-accent-foreground: #FFFFFF;
       {% endif %}
     {%- endif -%}
   }

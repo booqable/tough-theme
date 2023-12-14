@@ -716,7 +716,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code&nbsp;<b>CELEBRATE</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\">+1 555 302 8549</a></p>",
             "color_palette": "three",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -997,7 +997,7 @@
           "settings": {
             "bar_menu": null,
             "bar_message": "<p>Get 15% off with code&nbsp;<b>COASTAL</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 555 8549\"><b>+1 555 555 8549</b></a></p>",
             "color_palette": "three",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -1137,7 +1137,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code&nbsp;<b>UTILITY</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\"><b>+1 755 555 8549</b></a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 555 8549\"><b>+1 555 555 8549</b></a></p>",
             "color_palette": "two",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -1277,7 +1277,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code&nbsp;<b>CHIC</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8649</b><a href=\"+1 755 302 8549\"></a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\"><b>+1 555 302 8549</b></a></p>",
             "color_palette": "three",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -1417,7 +1417,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code&nbsp;<b>WAVERUNNER</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <a href=\"+1 755 302 8549\">+1 755 302 8549</a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\">+1 555 302 8549</a></p>",
             "color_palette": "three",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -1557,7 +1557,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code&nbsp;<b>CONNECT</b>&nbsp;at checkout</p>",
-            "bar_text": "<p>Call Us 24/7 <b>+1 755 555 8549</b><a href=\"+1 755 302 8549\"></a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\"><b>+1 555 302 8549</b></a></p>",
             "color_palette": "one",
             "icon": "phone",
             "padding_bottom": "medium",
@@ -2110,7 +2110,7 @@
           "block_order": [],
           "settings": {
             "bar_message": "<p>Get 15% off with code <b>AROUND</b>&nbsp;at checkout.</p>",
-            "bar_text": "<p>Call Us 24/7 +1 555 302 8549<a href=\"+1 555 302 8549\"></a></p>",
+            "bar_text": "<p>Call Us 24/7 <a href=\"+1 555 302 8549\">+1 555 302 8549</a></p>",
             "color_palette": "two",
             "icon": "phone",
             "padding_bottom": "medium",

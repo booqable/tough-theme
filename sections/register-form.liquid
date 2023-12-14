@@ -65,46 +65,26 @@
 >
   <div class="account__container container">
     <h3 class="account__title text-center">
-      {%- if title != blank -%}
-        {{- title -}}
-      {%- else -%}
-        Create an account
-      {%- endif -%}
+      {{- title | default: "Create an account" -}}
     </h3>
 
     <div class="account__divider text-center">
       <span>
-        {%- if description != blank -%}
-          {{- description -}}
-        {%- else -%}
-          Already have an account?
-        {%- endif -%}
+        {{- description | default: "Already have an account?" -}}
       </span>
 
       <a class="account__link" href="{{ routes.login_url }}">
-        {%- if login_label != blank -%}
-          {{- login_label -}}
-        {%- else -%}
-          Log in
-        {%- endif -%}
+        {{- login_label | default: "Log in" -}}
       </a>
     </div>
 
     {%- form 'register' -%}
       <div class="account-fieldset__block{% if form.errors.name %} account-fieldset--error{%- endif -%}">
         <label for="user_name" class="account-fieldset__label">
-          {%- if name_label != blank -%}
-            {{- name_label -}}
-          {%- else -%}
-            Full name
-          {%- endif -%}
+          {{- name_label | default: "Full name" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if name_label != blank -%}
-              {{- name_label -}}
-            {%- else -%}
-              Full name
-            {%- endif -%}
+            {{- name_label | default: "Full name" -}}
           </span>
         </label>
 
@@ -125,18 +105,10 @@
 
       <div class="account-fieldset__block{% if form.errors.email %} account-fieldset--error{%- endif -%}">
         <label for="user_email" class="account-fieldset__label">
-          {%- if email_label != blank -%}
-            {{- email_label -}}
-          {%- else -%}
-            Email
-          {%- endif -%}
+          {{- email_label | default: "Email" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if email_label != blank -%}
-              {{- email_label -}}
-            {%- else -%}
-              Email
-            {%- endif -%}
+            {{- email_label | default: "Email" -}}
           </span>
         </label>
 
@@ -157,18 +129,10 @@
 
       <div class="account-fieldset__block{% if form.errors.password %} account-fieldset--error{%- endif -%}">
         <label for="user_password" class="account-fieldset__label">
-          {%- if password_label != blank -%}
-            {{- password_label -}}
-          {%- else -%}
-            Password
-          {%- endif -%}
+          {{- password_label | default: "Password" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if password_label != blank -%}
-              {{- password_label -}}
-            {%- else -%}
-              Password
-            {%- endif -%}
+            {{- password_label | default: "Password" -}}
           </span>
         </label>
 
@@ -187,18 +151,10 @@
 
       <div class="account-fieldset__block{% if form.errors.password_confirmation %} account-fieldset--error{%- endif -%}">
         <label for="user_password_confirmation" class="account-fieldset__label">
-          {%- if password_confirmation != blank -%}
-            {{- password_confirmation -}}
-          {%- else -%}
-            Password confirmation
-          {%- endif -%}
+          {{- password_confirmation | default: "Password confirmation" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if password_confirmation != blank -%}
-              {{- password_confirmation -}}
-            {%- else -%}
-              Password confirmation
-            {%- endif -%}
+            {{- password_confirmation | default: "Password confirmation" -}}
           </span>
         </label>
 
@@ -217,11 +173,7 @@
 
       <div class="account__type account__divider{% if form.errors.customer %} account-fieldset--error{%- endif -%}">
         <span class="account-fieldset__static-label">
-          {%- if account_type_label != blank -%}
-            {{- account_type_label -}}
-          {%- else -%}
-            Account type
-          {%- endif -%}
+          {{- account_type_label | default: "Account type" -}}
         </span>
 
         <div class="account__type-options">
@@ -235,11 +187,7 @@
               style="display: none">
 
             <label class="account-fieldset__radio-label" for="user_legal_type_person">
-              {%- if private_label != blank -%}
-                <span>{{- private_label -}}</span>
-              {%- else -%}
-                <span>Private</span>
-              {%- endif -%}
+              <span>{{- private_label | default: "Private" -}}</span>
             </label>
           </div>
 
@@ -253,11 +201,7 @@
               style="display: none">
 
             <label class="account-fieldset__radio-label" for="user_legal_type_commercial">
-              {%- if company_label != blank -%}
-                <span>{{- company_label -}}</span>
-              {%- else -%}
-                <span>Company</span>
-              {%- endif -%}
+              <span>{{- company_label | default: "Company" -}}</span>
             </label>
           </div>
         </div>
@@ -278,22 +222,14 @@
 
         <label class="account-checkbox__label" for="user_agreement_accepted">
           <span>
-            {%- if agree_label != blank -%}
-              {{- agree_label -}}
-            {%- else -%}
-              I agree to the
-            {%- endif -%}
+            {{- agree_label | default: "I agree to the" -}}
 
             <a
               class="account__link"
               href="https://booqable.com/agreement"
               target="_blank"
             >
-              {%- if agreements_label != blank -%}
-                {{- agreements_label -}}
-              {%- else -%}
-                Terms and agreements
-              {%- endif -%}
+              {{- agreements_label | default: "Terms and agreements" -}}
             </a>
           </span>
         </label>
@@ -313,11 +249,7 @@
         name="commit"
         data-disable-with="Sign up"
       >
-        {%- if signup_label != blank -%}
-          {{- signup_label -}}
-        {%- else -%}
-          Sign up
-        {%- endif -%}
+        {{- signup_label | default: "Sign up" -}}
       </button>
     {%- endform -%}
   </div>
