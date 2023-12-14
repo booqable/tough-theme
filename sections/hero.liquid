@@ -60,6 +60,8 @@
     <div class="hero__content">
       {%- if custom_title != blank -%}
         <h1 class="hero__title">{{- custom_title -}}</h1>
+      {%- elsif collection -%}
+        <h1 class="hero__title">{{- collection.title -}}</h1>
       {%- else -%}
         <h1 class="hero__title">{{- page_title -}}</h1>
       {%- endif -%}

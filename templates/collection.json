@@ -6,7 +6,7 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "custom_title": "{{ collection.title }}",
+        "custom_title": "",
         "color_palette": "two",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
