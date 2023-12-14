@@ -100,23 +100,11 @@
   {%- assign default_color = nil -%}
 
   {%- if color_palette == "one" -%}
-    {%- if settings.primary_color != blank -%}
-      {%- assign default_color = settings.primary_color -%}
-    {%- else -%}
-      {%- assign default_color = #0B1A26 -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color | default : #0B1A26 -%}
   {%- elsif color_palette == "two" -%}
-    {%- if settings.primary_color_2 != blank -%}
-      {%- assign default_color = settings.primary_color_2 -%}
-    {%- else -%}
-      {%- assign default_color = #FFFFFF -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color_2 | default : #FFFFFF -%}
   {%- elsif color_palette == "three" -%}
-    {%- if settings.primary_color_3 != blank -%}
-      {%- assign default_color = settings.primary_color_3 -%}
-    {%- else -%}
-      {%- assign default_color = #0B1A26 -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color_3 | default : #0B1A26 -%}
   {%- endif -%}
 
   {%- if show_datepicker -%}

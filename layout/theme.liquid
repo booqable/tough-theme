@@ -36,11 +36,7 @@
     <script src="{{ "header.js" | asset_url }}" defer></script>
     <script src="{{ "carousel.js" | asset_url }}" defer></script>
 
-    {%- if settings.background_3 != blank -%}
-      {%- assign background_accent = settings.background_3 -%}
-    {%- else -%}
-      {%- assign background_accent = branding_color -%}
-    {%- endif -%}
+    {%- assign background_accent = settings.background_3 | default: branding_color -%}
 
     <bq-date-picker-modal branding-color="{{- background_accent -}}"></bq-date-picker-modal>
 
