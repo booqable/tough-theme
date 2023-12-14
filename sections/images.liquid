@@ -354,7 +354,7 @@
                         {%- endif -%}
 
                         {%- if description != blank -%}
-                          <div class="images__description text-medium bq-content rx-content">{{- description | strip_html | truncate: 150, " ..." -}}</div>
+                          <div class="images__description text-medium bq-content rx-content">{{- description -}}</div>
                         {%- endif -%}
 
                         {%- if datepicker_position == "in_text" -%}
