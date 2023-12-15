@@ -2,7 +2,7 @@
 
   This snippet is using for rendering the contact form
 
-  id - id
+  id - section.key
   title - "string" optional,
   description - "string" optional,
   name - "string" optional,
@@ -24,15 +24,14 @@
       message: your_id,
       success_message: your_id,
       error_message: your_id,
-      button_label: your_id,
-      button_variables
+      button_label: your_id
   -%}
 
 {% endcomment %}
 
 {{ "form.css" | asset_url | stylesheet_tag }}
 
-<div id="{{- id -}}" class="form__inner" style="{{- button_variables | escape -}}">
+<div id="{{- id -}}" class="form__inner">
   <h2 class="form__title">
     {{- title | default: "Contact us" -}}
   </h2>

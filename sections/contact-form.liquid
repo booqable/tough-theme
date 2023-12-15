@@ -14,7 +14,6 @@
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
-{%- assign id                    = section.key -%}
 {%- assign image_placeholder     = settings.image_placeholder -%}
 {%- assign background_style      = settings.background_style -%}
 
@@ -203,7 +202,17 @@
   <div class="contact-form__container container">
     <div class="contact-form__inner{% if section.blocks.size > 0 %} contact-form__inner--grid{%- endif -%}">
       <div class="contact-form__form">
-        {%- include "form" -%}
+        {%- render "form",
+            id: section.key,
+            title: title,
+            description: description,
+            name: name,
+            email: email,
+            message: message,
+            success_message: success_message,
+            error_message: error_message,
+            button_label: button_label
+        -%}
       </div>
       {%- if section.blocks.size > 0 -%}
         {{- children -}}

@@ -93,9 +93,9 @@
   {%- endcase -%}
 {%- endcapture -%}
 
-{%- include 'variables-product-gallery' -%}
-{%- include 'variables-product-variations' -%}
-{%- include 'variables-product-quantity' -%}
+{%- render 'variables-product-gallery', color_palette: color_palette, settings: settings -%}
+{%- render 'variables-product-variations', color_palette: color_palette, settings: settings -%}
+{%- render 'variables-product-quantity', color_palette: color_palette, settings: settings -%}
 {% comment %} CSS variables end {% endcomment %}
 
 <div class="product-main__holder{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">

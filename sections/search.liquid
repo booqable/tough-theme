@@ -97,7 +97,7 @@
 
             {%- if paginate.pages > 1 -%}
               <div class="search__pagination">
-                {%- include "pagination" -%}
+                {%- render "pagination", paginate: paginate -%}
               </div>
             {%- endif -%}
           {%- endpaginate -%}

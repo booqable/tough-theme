@@ -4,7 +4,7 @@
 
   Usage:
 
-  {%- include 'payments' -%}
+  {%- render 'payments', payments: payment_methods  -%}
 
 {% endcomment %}
 
@@ -54,7 +54,7 @@
 {% endstyle %}
 
 <div class="payment">
-  {%- for provider in payment_methods -%}
+  {%- for provider in payments -%}
     {%- case provider -%}
       {%- when "paypal" -%}
         <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
