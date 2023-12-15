@@ -60,11 +60,7 @@
 >
   <div class="account__container container">
     <h3 class="account__title text-center">
-      {%- if title != blank -%}
-        {{- title -}}
-      {%- else -%}
-        Log in
-      {%- endif -%}
+      {{- title | default: "Log in" -}}
     </h3>
 
     {%- if description != blank -%}
@@ -76,18 +72,10 @@
     {%- form 'login' -%}
       <div class="account-fieldset__block">
         <label for="user_email" class="account-fieldset__label">
-          {%- if email_label != blank -%}
-            {{- email_label -}}
-          {%- else -%}
-            Email
-          {%- endif -%}
+          {{- email_label | default: "Email" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if email_label != blank -%}
-              {{- email_label -}}
-            {%- else -%}
-              Email
-            {%- endif -%}
+            {{- email_label | default: "Email" -}}
           </span>
         </label>
 
@@ -104,18 +92,10 @@
 
       <div class="account-fieldset__block account__divider--small">
         <label for="user_password" class="account-fieldset__label">
-          {%- if password_label != blank -%}
-            {{- password_label -}}
-          {%- else -%}
-            Password
-          {%- endif -%}
+          {{- password_label | default: "Password" -}}
 
           <span class="account-fieldset__label-backlight">
-            {%- if password_label != blank -%}
-              {{- password_label -}}
-            {%- else -%}
-              Password
-            {%- endif -%}
+            {{- password_label | default: "Password" -}}
           </span>
         </label>
 
@@ -131,11 +111,7 @@
 
       <div class="account__divider">
         <a href="{{ routes.new_reset_password_url }}" class="account__link">
-          {%- if reset_password_label != blank -%}
-            {{- reset_password_label -}}
-          {%- else -%}
-            Forgot your password?
-          {%- endif -%}
+          {{- reset_password_label | default: "Forgot your password?" -}}
         </a>
       </div>
 
@@ -146,9 +122,9 @@
       {%- endif -%}
 
       {%- if notice -%}
-      <div class="account__alert account__alert--info">
-        {{- notice -}}
-      </div>
+        <div class="account__alert account__alert--info">
+          {{- notice -}}
+        </div>
       {%- endif -%}
 
       <div class="account__divider">
@@ -158,30 +134,18 @@
           name="commit"
           data-disable-with="Log in"
         >
-          {%- if login_label != blank -%}
-            {{- login_label -}}
-          {%- else -%}
-            Log in
-          {%- endif -%}
+          {{- login_label | default: "Log in" -}}
         </button>
       </div>
 
       <hr class="account__separator" />
 
       <a href="{{ routes.register_url }}" class="account__button button button--outlined button--large">
-        {%- if create_account_label != blank -%}
-          {{- create_account_label -}}
-        {%- else -%}
-          Create an account
-        {%- endif -%}
+        {{- create_account_label | default: "Create an account" -}}
       </a>
 
       <a href="#!" class="account__button account__button--minimal">
-        {%- if guest_label != blank -%}
-          {{- guest_label -}}
-        {%- else -%}
-          Continue as guest
-        {%- endif -%}
+        {{- guest_label | default: "Continue as guest" -}}
       </a>
     {%- endform -%}
   </div>

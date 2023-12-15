@@ -15,7 +15,7 @@
 {%- if results_count > 0 -%}
   {%- assign show_datepicker = true -%}
 
-  {%- render 'background-accent', color_palette: color_palette -%}
+  {%- render 'background-accent', color_palette: color_palette, settings: settings -%}
 {%- endif -%}
 
 {% comment %} CSS variables start {% endcomment %}
@@ -85,11 +85,7 @@
 <div class="hero__wrapper{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if show_datepicker %} section-with-date-picker{%- endif -%}" style="{{- variables | escape -}}">
   <div class="hero__container container{% if padding_top != blank or padding_top_mobile != blank %} hero__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} hero__container--padding-bottom{%- endif -%}">
     <div class="hero__content">
-      {%- if title != blank -%}
-        <h1 class="hero__title">{{ title }}: “{{- query -}}”</h1>
-      {%- else -%}
-        <h1 class="hero__title">{{ page_title }}: “{{- query -}}”</h1>
-      {%- endif -%}
+      <h1 class="hero__title">{{ title | default: page_title }}: “{{- query -}}”</h1>
 
       {%- if results_count == 0 -%}
         {%- if message != blank -%}

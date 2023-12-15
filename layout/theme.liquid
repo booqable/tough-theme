@@ -21,17 +21,6 @@
       product: product,
       shop: shop
     %}
-
-    {%- if template == "index" -%}
-      <script>
-        // Loading the IFrame Player API code asynchronously.
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      </script>
-    {%- endif -%}
   </head>
   <body>
 
@@ -51,13 +40,8 @@
     <script src="{{ "main.js" | asset_url }}" defer></script>
     <script src="{{ "header.js" | asset_url }}" defer></script>
     <script src="{{ "carousel.js" | asset_url }}" defer></script>
-    <script src="{{ "images.js" | asset_url }}" defer></script>
 
-    {%- if settings.background_3 != blank -%}
-      {%- assign background_accent = settings.background_3 -%}
-    {%- else -%}
-      {%- assign background_accent = branding_color -%}
-    {%- endif -%}
+    {%- assign background_accent = settings.background_3 | default: branding_color -%}
 
     <bq-date-picker-modal branding-color="{{- background_accent -}}"></bq-date-picker-modal>
 

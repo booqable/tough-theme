@@ -7,25 +7,7 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 
-{%- if color_palette == "one" -%}
-  {%- if settings.accent_background != blank -%}
-    {%- assign background_accent = settings.accent_background -%}
-  {%- else -%}
-    {%- assign background_accent = branding_color -%}
-  {%- endif -%}
-{%- elsif color_palette == "two" -%}
-  {%- if settings.accent_background_2 != blank -%}
-    {%- assign background_accent = settings.accent_background_2 -%}
-  {%- else -%}
-    {%- assign background_accent = branding_color -%}
-  {%- endif -%}
-{%- elsif color_palette == "three" -%}
-  {%- if settings.accent_background_3 != blank -%}
-    {%- assign background_accent = settings.accent_background_3 -%}
-  {%- else -%}
-    {%- assign background_accent = branding_color -%}
-  {%- endif -%}
-{%- endif -%}
+{%- render 'background-accent', color_palette: color_palette, settings: settings -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}

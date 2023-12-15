@@ -24,10 +24,6 @@
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
 {%- assign padding_bottom_mobile = section.settings.padding_bottom_mobile -%}
 
-{%- if show_datepicker -%}
-  {%- render 'background-accent', color_palette: color_palette -%}
-{%- endif -%}
-
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
   {%- case padding_top -%}
@@ -97,6 +93,8 @@
 {% comment %} CSS variables end {% endcomment %}
 
 {%- if show_datepicker -%}
+  {%- render 'background-accent', color_palette: color_palette, settings: settings -%}
+
   {%- capture date_picker -%}
     <div class="split-screen__date-picker date-picker">
       {%- render 'date-picker',

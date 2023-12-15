@@ -8,33 +8,33 @@
   {%- assign padding_top        = section.settings.padding_top -%}
   {%- assign padding_top_mobile = section.settings.padding_top_mobile -%}
 
-  {%- render 'background-accent', color_palette: color_palette -%}
+  {%- render 'background-accent', color_palette: color_palette, settings: settings -%}
 
-{% comment %} CSS variables start {% endcomment %}
-{%- capture variables -%}
-  {%- case padding_top -%}
-    {%- when 'none' -%}
-      --padding-top: 0;
-    {%- when 'small' -%}
-      --padding-top: 16px;
-    {%- when 'medium' -%}
-      --padding-top: 24px;
-    {%- when 'large' -%}
-      --padding-top: 48px;
-  {%- endcase -%}
+  {% comment %} CSS variables start {% endcomment %}
+  {%- capture variables -%}
+    {%- case padding_top -%}
+      {%- when 'none' -%}
+        --padding-top: 0;
+      {%- when 'small' -%}
+        --padding-top: 16px;
+      {%- when 'medium' -%}
+        --padding-top: 24px;
+      {%- when 'large' -%}
+        --padding-top: 48px;
+    {%- endcase -%}
 
-  {%- case padding_top_mobile -%}
-    {%- when 'none' -%}
-      --padding-top-mobile: 0;
-    {%- when 'small' -%}
-      --padding-top-mobile: 16px;
-    {%- when 'medium' -%}
-      --padding-top-mobile: 24px;
-    {%- when 'large' -%}
-      --padding-top-mobile: 48px;
-  {%- endcase -%}
-{%- endcapture -%}
-{% comment %} CSS variables end {% endcomment %}
+    {%- case padding_top_mobile -%}
+      {%- when 'none' -%}
+        --padding-top-mobile: 0;
+      {%- when 'small' -%}
+        --padding-top-mobile: 16px;
+      {%- when 'medium' -%}
+        --padding-top-mobile: 24px;
+      {%- when 'large' -%}
+        --padding-top-mobile: 48px;
+    {%- endcase -%}
+  {%- endcapture -%}
+  {% comment %} CSS variables end {% endcomment %}
 
   <div class="hero__wrapper section-with-date-picker{% if color_palette != blank %} palette-{{ color_palette }}{%- endif -%}" style="{{- variables | escape -}}">
     <div class="hero__date-picker date-picker{% if padding_top != blank or padding_top_mobile != blank %} hero__date-picker--padding-top{%- endif -%}">
