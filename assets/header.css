@@ -221,10 +221,6 @@
   height: 100%;
 }
 
-.header__cart bq-mini-cart[initialized="true"] + i {
-  display: none;
-}
-
 .header__mobile-menu-opener-left .header__search-wrapper {
   right: -26px;
 }
@@ -350,22 +346,6 @@
 
 .palette-two .header__search-opener:active g {
   stroke: var(--color-outline-2-active, #F4B841BA);
-}
-
-.palette-two .header__cart .bq-icon-cart::before {
-  color: var(--color-primary-2, #FFFFFF);
-}
-
-.palette-two .bq-cart-button:hover .bq-icon-cart::before {
-  color: var(--color-outline-2-hover, #F4B841CC);
-}
-
-.palette-two .bq-cart-button:active .bq-icon-cart::before {
-  color: var(--color-outline-2-active, #F4B841BA);
-}
-
-.palette-two .bq-cart-button__line-count {
-  color: var(--color-outline-2, #F4B841) !important;
 }
 
 .palette-two .header__cart .fa-spinner-third {

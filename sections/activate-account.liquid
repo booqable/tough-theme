@@ -59,27 +59,15 @@
     </div>
 
     <h3 class="account__title text-center">
-      {%- if title != blank -%}
-        {{- title -}}
-      {%- else -%}
-        Account confirmed
-      {%- endif -%}
+      {{- title | default: 'Account confirmed' -}}
     </h3>
 
     <div class="account__description text-center">
-      {%- if description != blank -%}
-        {{- description -}}
-      {%- else -%}
-        Your account has been confirmed. You can now log in and continue using the website
-      {%- endif -%}
+      {{- description | default: 'Your account has been confirmed. You can now log in and continue using the website' -}}
     </div>
 
     <a href="{{ routes.cart_url }}" class="account__button button button--primary button--large">
-      {%- if view_cart != blank -%}
-        {{- view_cart -}}
-      {%- else -%}
-        View cart
-      {%- endif -%}
+      {{- view_cart | default: 'View cart' -}}
     </a>
   </div>
 </div>

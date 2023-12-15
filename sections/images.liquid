@@ -31,10 +31,6 @@
     {%- endfor -%}
   {%- endif -%}
 
-  {%- if show_datepicker -%}
-    {%- render 'background-accent', color_palette: color_palette -%}
-  {%- endif -%}
-
   {% comment %} CSS variables start {% endcomment %}
   {%- capture variables -%}
     {%- if carousel -%}
@@ -104,26 +100,16 @@
   {%- assign default_color = nil -%}
 
   {%- if color_palette == "one" -%}
-    {%- if settings.primary_color != blank -%}
-      {%- assign default_color = settings.primary_color -%}
-    {%- else -%}
-      {%- assign default_color = #0B1A26 -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color | default : #0B1A26 -%}
   {%- elsif color_palette == "two" -%}
-    {%- if settings.primary_color_2 != blank -%}
-      {%- assign default_color = settings.primary_color_2 -%}
-    {%- else -%}
-      {%- assign default_color = #FFFFFF -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color_2 | default : #FFFFFF -%}
   {%- elsif color_palette == "three" -%}
-    {%- if settings.primary_color_3 != blank -%}
-      {%- assign default_color = settings.primary_color_3 -%}
-    {%- else -%}
-      {%- assign default_color = #0B1A26 -%}
-    {%- endif -%}
+    {%- assign default_color = settings.primary_color_3 | default : #0B1A26 -%}
   {%- endif -%}
 
   {%- if show_datepicker -%}
+    {%- render 'background-accent', color_palette: color_palette, settings: settings -%}
+
     {%- capture date_picker -%}
       <div class="images__date-picker date-picker">
         {%- render 'date-picker',
@@ -383,8 +369,19 @@
                       {%- assign video_id   = video_drop | last | strip -%}
 
                       <div class="images__vision-wrapper{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
-                        <input id="video-{{- section.key -}}{{- block.id -}}" value="{{- video_id -}}" class="images__video-id" type="hidden" name="hidden">
-                        <div id="player-{{- section.key -}}{{- block.id -}}" class="images__video"></div>
+                        <iframe
+                          class="images__video"
+                          width="1920"
+                          height="1080"
+                          src="https://www.youtube.com/embed/{{- video_id -}}?playlist={{- video_id -}}&autoplay=1&mute=1&loop=1&controls=0&disablekb=1&fs=0&playsinline=1&enablejsapi=1&iv_load_policy=3&modestbranding=1"
+                          frameborder="0"
+                          allow="autoplay; muted; encrypted-media; fullscreen"
+                          allowfullscreen
+                          autoplay
+                          loop
+                          mute
+                          playsinline
+                        ></iframe>
                       </div>
 
                     {%- elsif video_url contains "vimeo.com" -%}

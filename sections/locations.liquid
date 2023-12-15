@@ -104,43 +104,15 @@
 
         <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}" id="{{- block.id -}}">
           <span class="tabs__heading">
-            {%- if city != blank -%}
-              {{- city -}}
-            {%- else -%}
-              Location name
-            {%- endif -%}
+            {{- city | default: "Location name" -}}
           </span>
 
           <address class="tabs__address">
-            {%- if address != blank -%}
-              {{- address -}},
-            {%- else -%}
-              Street,
-            {%- endif -%}
-
-            {% if city != blank %}
-              {{ city }},
-            {% else %}
-              City,
-            {% endif %}
-
-            {% if region != blank %}
-              {{ region }},
-            {% else %}
-              Region,
-            {% endif %}
-
-            {% if zipcode != blank %}
-              {{ zipcode }},
-            {% else %}
-              ZIP code,
-            {% endif %}
-
-            {% if country != blank %}
-              {{ country }}
-            {% else %}
-              Country
-            {% endif %}
+            {{- address | default: "Street" -}},
+            {{ city | default: "City" }},
+            {{ region | default: "Region" }},
+            {{ zipcode | default: "ZIP code" }},
+            {{ country | default: "Country" }}
           </address>
 
           {%- if label != blank and address != blank or label != blank and city != blank or label != blank and zipcode != blank or label != blank and region != blank or label != blank and country != blank -%}
