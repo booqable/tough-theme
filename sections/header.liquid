@@ -104,7 +104,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- include 'variables-mini-cart' -%}
+{%- render 'variables-mini-cart', color_palette: color_palette, settings: settings -%}
 {% comment %} CSS variables end {% endcomment %}
 
 {% comment %} Logo component {% endcomment %}
@@ -132,7 +132,7 @@
     <div class="menu__bottom">
       <div class="menu__icons">
         <div class="menu__social">
-          {%- include "socials" -%}
+          {%- render "socials", settings: settings -%}
         </div>
       </div>
     </div>

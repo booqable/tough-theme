@@ -12,8 +12,8 @@
     <script src="https://kit.fontawesome.com/ff3b3de2b5.js" crossorigin="anonymous"></script>
     {{ content_for_header }}
 
-    {% include 'fonts' %}
-    {% include 'root-styles' %}
+    {% render 'fonts', settings: settings %}
+    {% render 'root-styles', settings: settings %}
   </head>
   <body>
 
