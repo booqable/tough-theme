@@ -9,7 +9,8 @@
 
   {%- render 'accordion-block',
       blocks: blocks,
-      behavior: your_id
+      behavior: your_id,
+      section_key: section.key
   -%}
 
 {% endcomment %}
@@ -34,7 +35,7 @@
           {%- assign content = block.settings.returns -%}
       {% endcase %}
 
-      <li class="accordion-block__item" id="{{- block.id -}}">
+      <li class="accordion-block__item" id="{{- section_key -}}-{{- block.id -}}">
         {%- if heading != blank -%}
           <input
             {% if behavior == "single" %}type="radio"{% else %}type="checkbox"{% endif %}

@@ -107,7 +107,7 @@
           {%- endcapture -%}
           {% comment %} CSS variables end {% endcomment %}
 
-          <div class="numbered-blocks__item" id="{{- block.id -}}" style="{{- block_variables | escape -}}">
+          <div class="numbered-blocks__item" id="{{- section.key -}}-{{- block.id -}}" style="{{- block_variables | escape -}}">
             <div class="numbered-blocks__item-col">
               <div class="numbered-blocks__text-area">
                 <span class="numbered-blocks__index">{{- index -}}</span>

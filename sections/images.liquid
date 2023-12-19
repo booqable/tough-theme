@@ -322,6 +322,9 @@
                 <div class="carousel__inner">
             {%- endif -%}
                   <div
+                    {% if carousel == false %}
+                    id="{{- section.key -}}-{{- block.id -}}"
+                    {% endif %}
                     class="images__container container{% if padding_top != blank or padding_top_mobile != blank %} images__container--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} images__container--padding-bottom{% endif %}"
                     style="{{- text_variables | escape -}}"
                   >

@@ -102,7 +102,11 @@
         {%- assign country         = location.country -%}
         {%- assign label           = block.settings.label -%}
 
-        <li data-trigger="tab-{{- index -}}" class="tabs__trigger{% if first %} active{%- endif -%}" id="{{- block.id -}}">
+        <li
+          data-trigger="tab-{{- index -}}"
+          class="tabs__trigger{% if first %} active{%- endif -%}"
+          id="{{- section.key -}}-{{- block.id -}}"
+        >
           <span class="tabs__heading">
             {{- city | default: "Location name" -}}
           </span>
