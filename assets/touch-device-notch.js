@@ -76,3 +76,7 @@ const touchDevice = new TouchDevice(document.querySelector('html'));
 document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") touchDevice.init();
 })
+
+document.addEventListener("preview:ready", () => {
+  touchDevice.init();
+})

@@ -555,3 +555,7 @@ const initCarousel = (el = ".carousel") => {
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initCarousel();
 })
+
+document.addEventListener("preview:ready", () => {
+  initCarousel();
+})

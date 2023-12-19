@@ -373,3 +373,7 @@ const stickyHeader = new Header(document.querySelector('.header'));
 document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") stickyHeader.init();
 })
+
+document.addEventListener("preview:ready", () => {
+  stickyHeader.init();
+})
