@@ -113,10 +113,8 @@
                 <div class="carousel__item">
                   <div class="carousel__inner">
               {%- endif -%}
-                    <div 
-                      {% if carousel == false %}
+                    <div
                       id="{{- section.key -}}-{{- block.id -}}"
-                      {% endif %}
                       class="testimonials__content"
                     >
                       {%- if title != blank or description != blank -%}

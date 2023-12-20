@@ -89,8 +89,10 @@ class Carousel {
 
   events() {
     this.carouselInit();
-    this.startTimer();
-    this.pauseAutoRotate();
+    if (window.previewOptions?.mode !== 'theme_editor') {
+      this.startTimer();
+      this.pauseAutoRotate();
+    }
     this.hideControls();
     this.hidePaginationDots();
     this.setOverlay(1);
