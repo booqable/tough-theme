@@ -147,7 +147,7 @@
       {%- endif -%}
 
       {%- if shop.allow_guest_checkout and guest_checkout_url -%}
-        <a href="#!" class="account__button account__button--minimal">
+        <a href="{{ guest_checkout_url }}" class="account__button account__button--minimal">
           {{- guest_label | default: "Continue as guest" -}}
         </a>
       {%- endif -%}
