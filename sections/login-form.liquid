@@ -140,13 +140,17 @@
 
       <hr class="account__separator" />
 
-      <a href="{{ routes.register_url }}" class="account__button button button--outlined button--large">
-        {{- create_account_label | default: "Create an account" -}}
-      </a>
+      {%- if shop.allow_signup -%}
+        <a href="{{ routes.register_url }}" class="account__button button button--outlined button--large">
+          {{- create_account_label | default: "Create an account" -}}
+        </a>
+      {%- endif -%}
 
-      <a href="#!" class="account__button account__button--minimal">
-        {{- guest_label | default: "Continue as guest" -}}
-      </a>
+      {%- if shop.allow_guest_checkout and guest_checkout_url -%}
+        <a href="{{ guest_checkout_url }}" class="account__button account__button--minimal">
+          {{- guest_label | default: "Continue as guest" -}}
+        </a>
+      {%- endif -%}
     {%- endform -%}
   </div>
 </div>
