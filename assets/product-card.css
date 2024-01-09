@@ -1,8 +1,7 @@
 .product-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: max-content 1fr;
   position: relative;
-  overflow: hidden;
   min-width: 298px;
 }
 
