@@ -14,15 +14,15 @@
 }
 
 .images__container--padding-top {
-  padding-top: var(--padding-top-mobile, 40px);
+  padding-top: var(--padding-top-mobile, 0);
 }
 
 .images__container--padding-bottom {
-  padding-bottom: var(--padding-bottom-mobile, 40px);
+  padding-bottom: var(--padding-bottom-mobile, 0);
 }
 
 .images__text-area {
-  height: 100%;
+  flex: 1 1 auto;
   display: flex;
   justify-content: var(--text-justify-content-mobile, flex-start);
   align-items: var(--text-align-items-mobile, flex-start);
@@ -207,11 +207,11 @@
   }
 
   .images__container--padding-top {
-    padding-top: var(--padding-top, 60px);
+    padding-top: var(--padding-top, 0);
   }
 
   .images__container--padding-bottom {
-    padding-bottom: var(--padding-bottom, 60px);
+    padding-bottom: var(--padding-bottom, 0);
   }
 
   .images__vision-wrapper {
@@ -265,11 +265,11 @@
   }
 
   .images__wrapper.section-with-date-picker .images__container {
-    min-height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 60px));
+    min-height: calc(var(--height, auto) - var(--header-height, 105px) + var(--date-picker-block-height, 70px) + var(--padding-bottom, 0px));
   }
 
   .images__wrapper.section-with-date-picker .images__container--padding-bottom {
-    padding-bottom: calc(var(--padding-bottom, 60px) + var(--date-picker-block-height, 70px));
+    padding-bottom: calc(var(--padding-bottom, 0px) + var(--date-picker-block-height, 70px));
   }
 }
 
