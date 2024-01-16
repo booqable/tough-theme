@@ -65,10 +65,6 @@
     <div class="account__description text-center">
       {{- description | default: 'Your account has been confirmed. You can now log in and continue using the website' -}}
     </div>
-
-    <a href="{{ routes.cart_url }}" class="account__button button button--primary button--large">
-      {{- view_cart | default: 'View cart' -}}
-    </a>
   </div>
 </div>
 
@@ -119,11 +115,6 @@
       {
         "type": "header",
         "content": "Buttons settings"
-      },
-      {
-        "type": "text",
-        "id": "view_cart",
-        "label": "Cart button label"
       },
       {
         "type": "header",
