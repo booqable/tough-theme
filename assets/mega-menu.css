@@ -902,12 +902,12 @@
   }
 
   .header-menu-bottom .menu__item > .menu__dropdown-opener {
-    margin-top: 12px;
+    margin-top: var(--padding-bottom, 0px);
     margin-bottom: var(--padding-bottom, 0px);
   }
 
   .header-menu-bottom .menu__item > .menu__link {
-    padding-top: 12px;
+    padding-top: var(--padding-bottom, 0px);
     padding-bottom: var(--padding-bottom, 0px);
   }
 
@@ -953,7 +953,7 @@
   .menu-wide.mobile-menu-top .menu__item .menu__dropdown,
   .menu-wide .menu__item .menu__dropdown {
     position: absolute;
-    top: calc(var(--header-height, 73px));
+    top: var(--header-height, 73px);
     left: 50%;
     right: auto;
     width: 100vw;
@@ -961,6 +961,7 @@
     opacity: 1;
     visibility: visible;
     overflow-y: auto;
+    z-index: -1;
     transition: max-height var(--animation-duration, 200ms) var(--transition-function-ease-out),
       top var(--animation-duration, 200ms) var(--transition-function-ease-out);
   }
@@ -1104,7 +1105,7 @@
   .header--sticky .menu-wide.mobile-menu-top .menu__dropdown,
   .header--sticky .menu-wide .menu__dropdown {
     position: fixed;
-    top: calc(var(--header-height, 73px));
+    top: var(--header-height, 73px);
     left: 0;
     right: 0;
     width: 100%;
