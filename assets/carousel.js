@@ -46,10 +46,6 @@ class Carousel {
       overlay45: "--overlay-color-45"
     }
 
-    this.attr = {
-      style: "style"
-    }
-
     this.event = {
       click: "click",
       prev: "prev",
