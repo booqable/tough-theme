@@ -58,13 +58,14 @@
 }
 
 .header__logo-image {
-  max-width: 160px;
-  max-height: 40px;
+  max-height: 64px;
 }
 
 .header__nav-wrapper {
   grid-area: column-2;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .header__mobile-menu-opener-right .header__nav-wrapper {
@@ -443,15 +444,15 @@
   }
 
   .header__content-inner.header__menu-position--centered {
-    grid-template-columns: 160px 1fr 160px;
+    grid-template-columns: calc(var(--grid-item-width, 200px) + var(--grid-item-gap, 24px)) 1fr calc(var(--grid-item-width, 200px) + var(--grid-item-gap, 24px));
   }
 
   .header__logo-wrapper:not(:empty) {
-    margin-right: 33px;
+    margin-right: var(--grid-item-gap, 24px);
   }
 
   .header__links:not(:empty) {
-    margin-left: 33px;
+    margin-left: var(--grid-item-gap, 24px);
   }
 
   .header__search-wrapper {
@@ -494,11 +495,11 @@
   }
 
   .header-logo-centered .header__logo-wrapper {
-    margin: 0 33px;
+    margin: 0 var(--grid-item-gap, 24px);
   }
 
   .header-menu-bottom .header__content-inner {
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: calc(var(--grid-item-width, 200px) + var(--grid-item-gap, 24px)) 1fr;
     grid-template-areas:
       "column-1 column-3"
       "column-2 column-2";
@@ -506,7 +507,7 @@
 
   .header-menu-bottom .header__search {
     flex-grow: 1;
-    padding: 0 40px 0 20px;
+    padding: 0 20px;
     margin: 0 auto;
     max-width: 640px;
   }
@@ -547,14 +548,8 @@
     justify-content: space-between;
   }
 
-  .header-menu-bottom .header__links.header__links--with-search .header__search {
-    padding-right: 195px;
-    max-width: 795px;
-  }
-
-  .header-menu-bottom .header__links.header__links--with-search.header__links--with-cart .header__search {
-    padding-right: 141px;
-    max-width: 741px;
+  .header-menu-bottom .header__links.header__links--with-search:not(.header__links--with-cart) {
+    padding-right: calc(var(--grid-item-width, 200px) + var(--grid-item-gap, 24px));
   }
 
   .header-menu-bottom .header__nav-wrapper {
@@ -570,6 +565,12 @@
     top: 100%;
     z-index: 1;
     transform: translate(-50%, 0);
+  }
+
+  .header-menu-bottom .header__cart {
+    flex: 0 0 var(--grid-item-width, 200px);
+    margin: 0 0 0 var(--grid-item-gap, 24px);
+    justify-content: flex-end;
   }
 
   .header__mobile-menu-opener-left .header__links:not(.header__links--with-cart) .header__search-wrapper,
@@ -613,5 +614,3 @@
     background: var(--color-border-3, #0B1A2626);
   }
 }
-
-

@@ -29,38 +29,41 @@
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
+  --grid-item-gap: 24px;
+  --grid-item-width: 200px;
+
   {%- case padding_top -%}
     {%- when 'small' -%}
-      --padding-top: 12px;
+      --padding-top: 8px;
     {%- when 'medium' -%}
-      --padding-top: 16px;
+      --padding-top: 12px;
     {%- when 'large' -%}
-      --padding-top: 24px;
+      --padding-top: 20px;
   {%- endcase -%}
 
   {%- case padding_bottom -%}
     {%- when 'small' -%}
-      --padding-bottom: 12px;
+      --padding-bottom: 8px;
     {%- when 'medium' -%}
-      --padding-bottom: 16px;
+      --padding-bottom: 12px;
     {%- when 'large' -%}
-      --padding-bottom: 24px;
+      --padding-bottom: 20px;
   {%- endcase -%}
 
   {%- case padding_top_mobile -%}
     {%- when 'small' -%}
-      --padding-top-mobile: 12px;
+      --padding-top-mobile: 8px;
     {%- when 'medium' -%}
-      --padding-top-mobile: 16px;
+      --padding-top-mobile: 12px;
     {%- when 'large' -%}
       --padding-top-mobile: 20px;
   {%- endcase -%}
 
   {%- case padding_bottom_mobile -%}
     {%- when 'small' -%}
-      --padding-bottom-mobile: 12px;
+      --padding-bottom-mobile: 8px;
     {%- when 'medium' -%}
-      --padding-bottom-mobile: 16px;
+      --padding-bottom-mobile: 12px;
     {%- when 'large' -%}
       --padding-bottom-mobile: 20px;
   {%- endcase -%}
@@ -112,8 +115,8 @@
     {%- render 'image',
         image: logo,
         class: 'header__logo-image',
-        custom_width: '170',
-        custom_size: '170px',
+        custom_width: '200',
+        custom_size: '200px',
         custom_alt: shop.name
     -%}
   {%- elsif custom_title != blank -%}
