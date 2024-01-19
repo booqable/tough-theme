@@ -9,6 +9,7 @@
         "button_label": "Browse products",
         "color_palette": "two",
         "message": "No results found",
+        "overlay_opacity": 100,
         "padding_bottom": "large",
         "padding_bottom_mobile": "large",
         "padding_top": "large",

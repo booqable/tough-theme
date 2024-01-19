@@ -60,6 +60,7 @@
   left: 50%;
   top: 0;
   transform: translate(-50%, 0);
+  opacity: var(--overlay-opacity, 1);
 }
 
 .hero__vision-wrapper-overlay:after {
