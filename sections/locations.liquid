@@ -108,11 +108,25 @@
           </span>
 
           <address class="tabs__address">
-            {{- address | default: "Street" -}},
-            {{ city | default: "City" }},
-            {{ region | default: "Region" }},
-            {{ zipcode | default: "ZIP code" }},
-            {{ country | default: "Country" }}
+            {%- if address or city or region or zipcode or country -%}
+              {%- if address -%}
+                {{ address | append: ', '}}
+              {%- endif -%}
+              {%- if city -%}
+                {{ city | append: ', '}}
+              {%- endif -%}
+              {%- if region -%}
+                {{ region | append: ', '}}
+              {%- endif -%}
+              {%- if zipcode -%}
+                {{ zipcode | append: ', '}}
+              {%- endif -%}
+              {%- if country -%}
+                {{ country }}
+              {%- endif -%}
+            {%- else -%}
+              Street, City, Region, ZIP code, Country
+            {%- endif -%}
           </address>
 
           {%- if label != blank and address != blank or label != blank and city != blank or label != blank and zipcode != blank or label != blank and region != blank or label != blank and country != blank -%}
