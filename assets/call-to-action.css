@@ -78,6 +78,7 @@
   top: 0;
   bottom: -120px;
   right: 0;
+  opacity: var(--overlay-opacity, 1);
 }
 
 .cta__image-floral-wrapper {
