@@ -78,6 +78,10 @@
       </a>
     </div>
 
+    {%- if alert -%}
+      <div class="account__alert">{{- alert -}}</div>
+    {%- endif -%}
+
     {%- form 'register' -%}
       <div class="account-fieldset__block{% if form.errors.name %} account-fieldset--error{%- endif -%}">
         <label for="user_name" class="account-fieldset__label">
@@ -238,10 +242,6 @@
           {{- form.errors.agreement_accepted -}}
         </div>
       </div>
-
-      {%- if alert -%}
-        <div class="account__alert">{{- alert -}}</div>
-      {%- endif -%}
 
       <button
         type="submit"
