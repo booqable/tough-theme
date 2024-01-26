@@ -69,6 +69,18 @@
       </div>
     {%- endif -%}
 
+    {%- if alert -%}
+      <div class="account__alert account__alert--danger">
+        {{- alert -}}
+      </div>
+    {%- endif -%}
+
+    {%- if notice -%}
+      <div class="account__alert account__alert--info">
+        {{- notice -}}
+      </div>
+    {%- endif -%}
+
     {%- form 'login' -%}
       <div class="account-fieldset__block">
         <label for="user_email" class="account-fieldset__label">
@@ -114,18 +126,6 @@
           {{- reset_password_label | default: "Forgot your password?" -}}
         </a>
       </div>
-
-      {%- if alert -%}
-        <div class="account__alert account__alert--danger">
-          {{- alert -}}
-        </div>
-      {%- endif -%}
-
-      {%- if notice -%}
-        <div class="account__alert account__alert--info">
-          {{- notice -}}
-        </div>
-      {%- endif -%}
 
       <div class="account__divider">
         <button
