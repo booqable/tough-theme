@@ -31,6 +31,10 @@
     });
   };
 
-  setTimeout(setColor, 350);
+  setTimeout(setColor, 350)
+
+  document.addEventListener("preview:ready", () => {
+    setColor()
+  })
 
 </script>

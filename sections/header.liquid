@@ -317,12 +317,21 @@
 </div>
 
 <script>
-  const header = document.querySelector('.header');
-  {% if sticky_header %}
-    header.classList.add('header--sticky')
-  {% else %}
-    header.classList.add('header--not-sticky')
-  {% endif %}
+  const stickyHeader = () => {
+    const header = document.querySelector('.header');
+
+    {% if sticky_header %}
+      header.classList.add('header--sticky')
+    {% else %}
+      header.classList.add('header--not-sticky')
+    {% endif %}
+  }
+
+  stickyHeader()
+
+  document.addEventListener("preview:ready", () => {
+    stickyHeader()
+  })
 </script>
 
 {% schema %}

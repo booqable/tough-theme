@@ -368,12 +368,12 @@ class Header {
   }
 }
 
-const stickyHeader = new Header(document.querySelector('.header'));
+const initHeader = new Header(document.querySelector('.header'));
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") stickyHeader.init();
+  if (e.target.readyState === "complete") initHeader.init();
 })
 
 document.addEventListener("preview:ready", () => {
-  stickyHeader.init();
+  initHeader.init();
 })
