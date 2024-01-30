@@ -8,6 +8,7 @@
       "settings": {
         "custom_title": "",
         "color_palette": "two",
+        "overlay_opacity": 80,
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",

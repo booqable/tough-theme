@@ -66,8 +66,8 @@
       {{- description | default: 'Your account has been confirmed. You can now log in and continue using the website' -}}
     </div>
 
-    <a href="{{ routes.cart_url }}" class="account__button button button--primary button--large">
-      {{- view_cart | default: 'View cart' -}}
+    <a href="{{ routes.login_url }}" class="account__button button button--primary button--large">
+      {{- login_label | default: 'Log in' -}}
     </a>
   </div>
 </div>
@@ -122,8 +122,8 @@
       },
       {
         "type": "text",
-        "id": "view_cart",
-        "label": "Cart button label"
+        "id": "login_label",
+        "label": "Login button label"
       },
       {
         "type": "header",

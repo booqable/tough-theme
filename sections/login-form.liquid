@@ -69,6 +69,18 @@
       </div>
     {%- endif -%}
 
+    {%- if alert -%}
+      <div class="account__alert account__alert--danger">
+        {{- alert -}}
+      </div>
+    {%- endif -%}
+
+    {%- if notice -%}
+      <div class="account__alert account__alert--info">
+        {{- notice -}}
+      </div>
+    {%- endif -%}
+
     {%- form 'login' -%}
       <div class="account-fieldset__block">
         <label for="user_email" class="account-fieldset__label">
@@ -115,18 +127,6 @@
         </a>
       </div>
 
-      {%- if alert -%}
-        <div class="account__alert account__alert--danger">
-          {{- alert -}}
-        </div>
-      {%- endif -%}
-
-      {%- if notice -%}
-        <div class="account__alert account__alert--info">
-          {{- notice -}}
-        </div>
-      {%- endif -%}
-
       <div class="account__divider">
         <button
           type="submit"
@@ -140,13 +140,17 @@
 
       <hr class="account__separator" />
 
-      <a href="{{ routes.register_url }}" class="account__button button button--outlined button--large">
-        {{- create_account_label | default: "Create an account" -}}
-      </a>
+      {%- if shop.allow_signup -%}
+        <a href="{{ routes.register_url }}" class="account__button button button--outlined button--large">
+          {{- create_account_label | default: "Create an account" -}}
+        </a>
+      {%- endif -%}
 
-      <a href="#!" class="account__button account__button--minimal">
-        {{- guest_label | default: "Continue as guest" -}}
-      </a>
+      {%- if shop.allow_guest_checkout and guest_checkout_url -%}
+        <a href="{{ guest_checkout_url }}" class="account__button account__button--minimal">
+          {{- guest_label | default: "Continue as guest" -}}
+        </a>
+      {%- endif -%}
     {%- endform -%}
   </div>
 </div>

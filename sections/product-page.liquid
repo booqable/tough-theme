@@ -1,5 +1,4 @@
 {{ "product-page.css" | asset_url | stylesheet_tag }}
-{{ "accordion.css" | asset_url | stylesheet_tag }}
 
 {%- assign title                 = product.name -%}
 {%- assign description           = product.description -%}
@@ -16,8 +15,6 @@
 {%- assign show_breadcrumbs      = section.settings.show_breadcrumbs -%}
 {%- assign breadcrumbs_label     = section.settings.breadcrumbs_label -%}
 {%- assign breadcrumbs_url       = section.settings.breadcrumbs_url -%}
-{%- assign blocks                = section.blocks -%}
-{%- assign is_focal              = settings.use_focal_images -%}
 
 {%- assign label = "" -%}
 
@@ -108,7 +105,7 @@
     -%}
 
     <div class="product-main__wrapper">
-      <div class="product-main__gallery"">
+      <div class="product-main__gallery">
         {{ product | product_gallery:
           enable_thumbnails: show_thumbnails,
           enable_controls: show_controls,
@@ -145,12 +142,12 @@
             {{- product | bundle_items -}}
           </div>
 
-          <div class="product-info__availability">
+          <div class="product-main__availability">
             {{- product | product_availability -}}
             {{- product | availability_calendar -}}
           </div>
 
-          <div class="product-info__quantity">
+          <div class="product-main__quantity">
             {{- product | product_button -}}
           </div>
 

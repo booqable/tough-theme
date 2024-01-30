@@ -47,7 +47,7 @@
   margin-bottom: 6px;
 }
 
-.product-info__availability,
+.product-main__availability,
 .product-main__variation {
   padding: 0 0 32px;
 }
@@ -56,16 +56,16 @@
   display: block;
 }
 
-.product-info__availability bq-product-availability {
+.product-main__availability bq-product-availability {
   font-family: var(--font-body, sans-serif);
   font-size: 14px;
 }
 
-.product-info__availability bq-product-availability[visible="true"] {
+.product-main__availability bq-product-availability[visible="true"] {
   margin-right: 20px;
 }
 
-.product-info__availability bq-product-availability-calendar {
+.product-main__availability bq-product-availability-calendar {
   font-size: 16px;
   font-family: var(--font-body, sans-serif);
   line-height: var(--line-height-lg, 1.5);
@@ -75,7 +75,7 @@
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
-.product-info__availability bq-product-availability-calendar:hover {
+.product-main__availability bq-product-availability-calendar:hover {
   text-decoration: none !important;
 }
 

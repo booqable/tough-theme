@@ -52,8 +52,6 @@
     {%- endcase -%}
 
     {%- case padding_top -%}
-      {%- when 'none' -%}
-        --padding-top: 0;
       {%- when 'small' -%}
         --padding-top: 24px;
       {%- when 'medium' -%}
@@ -63,8 +61,6 @@
     {%- endcase -%}
 
     {%- case padding_bottom -%}
-      {%- when 'none' -%}
-        --padding-bottom: 0;
       {%- when 'small' -%}
         --padding-bottom: 24px;
       {%- when 'medium' -%}
@@ -74,8 +70,6 @@
     {%- endcase -%}
 
     {%- case padding_top_mobile -%}
-      {%- when 'none' -%}
-        --padding-top-mobile: 0;
       {%- when 'small' -%}
         --padding-top-mobile: 24px;
       {%- when 'medium' -%}
@@ -85,8 +79,6 @@
     {%- endcase -%}
 
     {%- case padding_bottom_mobile -%}
-      {%- when 'none' -%}
-        --padding-bottom-mobile: 0;
       {%- when 'small' -%}
         --padding-bottom-mobile: 24px;
       {%- when 'medium' -%}
@@ -341,7 +333,7 @@
                         {%- endif -%}
 
                         {%- if description != blank -%}
-                          <div class="images__description text-medium bq-content rx-content">{{- description | strip_html | truncate: 150, " ..." -}}</div>
+                          <div class="images__description text-medium bq-content rx-content">{{- description -}}</div>
                         {%- endif -%}
 
                         {%- if datepicker_position == "in_text" -%}
@@ -419,7 +411,7 @@
                       {%- if image_mobile != blank -%}
                         <div class="images__vision-wrapper images__vision-wrapper--mobile{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
-                            image: image,
+                            image: image_mobile,
                             loading: 'lazy',
                             class: 'images__image',
                             size: 'l'
