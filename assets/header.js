@@ -8,6 +8,7 @@ class Header {
       bar: ".top-bar",
       barBlock: ".top-bar__text",
       view: ".preview-bar__container",
+      headerInner: ".header__inner",
       headerNav: ".header__nav-wrapper",
       menu: ".menu",
       menuItem: ".menu__item",
@@ -23,13 +24,14 @@ class Header {
 
     this.classes = {
       sticky: "header--sticky",
-      notSticky: "header--not-sticky",
       opened: "header--menu-opened",
       filled: "filled"
     }
 
     this.modifier = {
       scroll: "scrolled-down",
+      sticky: "header--sticky",
+      notSticky: "header--not-sticky",
       overflow: "overflow-hidden",
       active: "active"
     }
@@ -54,6 +56,7 @@ class Header {
     this.attr = {
       href: "href",
       class: "class",
+      sticky: "data-sticky",
       style: "style"
     }
 
@@ -89,12 +92,12 @@ class Header {
     this.searchInput = this.block.querySelector(this.selector.searchInput);
     this.searchReset = this.block.querySelector(this.selector.searchReset);
     this.checkboxes = this.menu?.querySelectorAll(this.selector.checkbox);
-    this.sticky = this.block.classList.contains(this.classes.sticky);
-    this.notSticky = this.block.classList.contains(this.classes.notSticky);
+    this.headerInner = this.block.querySelector(this.selector.headerInner);
+    this.sticky = this.headerInner.getAttribute(this.attr.sticky);
   }
 
   events() {
-    this.headerFixed();
+    this.stickyHeader();
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
@@ -112,10 +115,20 @@ class Header {
     window.addEventListener("resize", this.closeMenuResize.bind(this));
   }
 
-  headerFixed() {
-    if (!this.sticky) return false;
+  stickyHeader() {
+    console.log(this.sticky);
+    let test
 
-    this.block.style.position = this.props.fixed;
+    if (this.sticky) {
+      test = "sticky"
+      this.block.classList.add(this.modifier.sticky)
+      this.block.style.position = this.props.fixed;
+    } else {
+      test = "NOT sticky"
+      this.block.classList.add(this.modifier.notSticky)
+    }
+
+    console.log(test);
   }
 
   // getting height of header and set css variables
@@ -270,7 +283,7 @@ class Header {
   addOverflow() {
     this.doc.classList.add(this.modifier.overflow);
 
-    if (!this.notSticky) return false;
+    if (this.sticky) return false;
 
     this.block.classList.add(this.classes.opened);
     this.block.style.position = this.props.fixed;
@@ -279,7 +292,7 @@ class Header {
   removeOverflow() {
     this.doc.classList.remove(this.modifier.overflow);
 
-    if (!this.notSticky) return false;
+    if (this.sticky) return false;
 
     this.block.classList.remove(this.classes.opened);
     window.scrollTo(0, 0);

@@ -297,6 +297,7 @@
 <div
   class="header__inner{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' and menu != blank %} header-menu-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
+  data-sticky="{{- sticky_header -}}"
 >
   <div class="header__content{% if padding_top != blank or padding_top_mobile != blank %} header__content--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
@@ -315,24 +316,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  const stickyHeader = () => {
-    const header = document.querySelector('.header');
-
-    {% if sticky_header %}
-      header.classList.add('header--sticky')
-    {% else %}
-      header.classList.add('header--not-sticky')
-    {% endif %}
-  }
-
-  stickyHeader()
-
-  document.addEventListener("preview:ready", () => {
-    stickyHeader()
-  })
-</script>
 
 {% schema %}
   {
