@@ -2,6 +2,14 @@
 
 {%- assign title                 = product.name -%}
 {%- assign description           = product.description -%}
+{%- assign variants              = product.variants -%}
+{%- assign variant_selector      = product | product_variations_select -%}
+{%- assign bundle_items          = product | bundle_items -%}
+{%- assign availability          = product | product_availability -%}
+{%- assign availability_calendar = product | availability_calendar -%}
+{%- assign quantity              = product | product_button -%}
+{%- assign price                 = product | product_price -%}
+{%- assign period                = product | product_price_label -%}
 {%- assign variation_label       = section.settings.variation_label -%}
 {%- assign message_label         = section.settings.message_label -%}
 {%- assign show_controls         = section.settings.show_controls -%}
@@ -117,9 +125,11 @@
           <h1 class="product-main__title">{{- title -}}</h1>
 
           <div class="product-main__price">
-            {{- product | product_price -}}
-            <span class="product-main__price-separator">/</span>
-            {{- product | product_price_label -}}
+            {%- if price and period -%}
+              {{- price -}}
+              <span class="product-main__price-separator">/</span>
+              {{- period -}}
+            {%- endif -%}
           </div>
 
           {%- if description != blank -%}
@@ -129,27 +139,21 @@
           {%- endif -%}
 
           <div class="product-main__variation">
-            {%- if product.variants.size > 1 -%}
-              <div class="product-main__variation-label">
-                {{- variation_label -}}
-              </div>
+            {%- if variants.size > 1 -%}
+              <div class="product-main__variation-label">{{- variation_label -}}</div>
 
-              <div class="product-main__variation-select">
-                {{- product | product_variations_select -}}
-              </div>
+              <div class="product-main__variation-select">{{- variant_selector -}}</div>
             {%- endif -%}
 
-            {{- product | bundle_items -}}
+            {{- bundle_items -}}
           </div>
 
           <div class="product-main__availability">
-            {{- product | product_availability -}}
-            {{- product | availability_calendar -}}
+            {{- availability -}}
+            {{- availability_calendar -}}
           </div>
 
-          <div class="product-main__quantity">
-            {{- product | product_button -}}
-          </div>
+          <div class="product-main__quantity">{{- quantity -}}</div>
 
           {%- if message_label != blank -%}
             <div class="product-main__shipping-info">
