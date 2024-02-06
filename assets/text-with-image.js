@@ -57,5 +57,9 @@ const initSpacerSection = (el = ".text-image") => {
 }
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState === "complete") initSpacerSection();
+  if (e.target.readyState === "complete") initSpacerSection()
+})
+
+document.addEventListener("preview:ready", () => {
+  initSpacerSection()
 })
