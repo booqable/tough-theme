@@ -554,6 +554,6 @@ document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initCarousel();
 })
 
-document.addEventListener("preview:ready", () => {
+document.addEventListener("turbo:render", () => {
   initCarousel();
 })

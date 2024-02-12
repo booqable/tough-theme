@@ -153,6 +153,6 @@ document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initMap();
 })
 
-document.addEventListener("preview:ready", (e) => {
+document.addEventListener("turbo:render", (e) => {
   initMap();
 })

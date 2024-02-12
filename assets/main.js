@@ -189,6 +189,6 @@ document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") main.init();
 })
 
-document.addEventListener("preview:ready", () => {
+document.addEventListener("turbo:render", () => {
   main.init();
 })

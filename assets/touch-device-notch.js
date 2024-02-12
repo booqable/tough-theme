@@ -77,6 +77,6 @@ document.addEventListener("readystatechange", (event) => {
   if (event.target.readyState === "complete") touchDevice.init();
 })
 
-document.addEventListener("preview:ready", () => {
+document.addEventListener("turbo:render", () => {
   touchDevice.init();
 })

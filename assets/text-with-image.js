@@ -60,6 +60,6 @@ document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initSpacerSection()
 })
 
-document.addEventListener("preview:ready", () => {
+document.addEventListener("turbo:render", () => {
   initSpacerSection()
 })

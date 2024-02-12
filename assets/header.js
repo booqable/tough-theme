@@ -116,19 +116,12 @@ class Header {
   }
 
   stickyHeader() {
-    console.log(this.sticky);
-    let test
-
     if (this.sticky) {
-      test = "sticky"
       this.block.classList.add(this.modifier.sticky)
       this.block.style.position = this.props.fixed;
     } else {
-      test = "NOT sticky"
       this.block.classList.add(this.modifier.notSticky)
     }
-
-    console.log(test);
   }
 
   // getting height of header and set css variables
@@ -387,6 +380,6 @@ document.addEventListener("readystatechange", (e) => {
   if (e.target.readyState === "complete") initHeader.init();
 })
 
-document.addEventListener("preview:ready", () => {
+document.addEventListener("turbo:render", () => {
   initHeader.init();
 })
