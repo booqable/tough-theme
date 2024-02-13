@@ -138,8 +138,9 @@
   margin-left: 0;
 }
 
-.account__link {
-  text-decoration: none;
+.account__agreement-opener {
+  cursor: pointer;
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
 }
 
 .account-checkbox__label {
@@ -150,11 +151,11 @@
   margin-bottom: 10px;
 }
 
-.account-checkbox__label .account__link {
+.account-checkbox__label .account__agreement-opener {
   margin-left: 4px;
 }
 
-.account-checkbox__label span {
+.account-checkbox__label > span {
   margin-left: 24px;
 }
 
@@ -188,6 +189,87 @@
   border: solid transparent;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) translate(-100%, -45%);
+}
+
+.account__agreement-modal {
+  display: block !important;
+  position: fixed;
+  top: calc(var(--header-height, 130px) + var(--header-transform, 0px));
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height, 130px) - var(--header-transform, 0px));
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
+  padding: 10px;
+  backdrop-filter: blur(5px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.account__agreement-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: calc(var(--max-width-narrow, 770px) + 60px);
+  padding: 30px;
+  margin: 0 auto;
+  display: block;
+}
+
+.account__agreement-inner {
+  border: 1px solid transparent;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--border-radius-rounded, 0);
+}
+
+.account__agreement-text {
+  display: block;
+  padding: 16px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: var(--border-radius-rounded, 0);
+}
+
+.account__agreement-closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
+}
+
+.account__agreement-closer:after,
+.account__agreement-closer:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 23%;
+  right: 23%;
+  transform: rotate(45deg);
+  height: 2px;
+}
+
+.account__agreement-closer:after {
+  transform: rotate(-45deg);
+}
+
+.account__agreement-buttons {
+  padding-top: 16px;
+  margin: 0 0 calc(-1 * var(--button-margin-bottom));
+  display: block;
+  text-align: center;
+}
+
+[id^='user_agreement_opener']:checked ~ .account__agreement-modal {
+  visibility: visible;
+  opacity: 1;
 }
 
 .account__error-message {
@@ -347,18 +429,6 @@ div.account-fieldset--error .account-fieldset__input:focus {
   border-color: var(--background-accent-active, #F4B841BA);
 }
 
-.palette-one .account__link {
-  color: var(--color-outline, #F4B841);
-}
-
-.palette-one .account__link:hover {
-  color: var(--color-outline-hover, #F4B841CC);
-}
-
-.palette-one .account__link:active {
-  color: var(--color-outline-active, #F4B841BA);
-}
-
 .palette-one .account__alert--info {
   border: 1px solid var(--color-border, #0B1A2626);
 }
@@ -367,6 +437,38 @@ div.account-fieldset--error .account-fieldset__input:focus {
 .palette-one .account-checkbox__label:before {
   border-color: var(--color-border, #0B1A2626);
   background: var(--background-primary, #FFFFFF);
+}
+
+.palette-one .account__agreement-opener {
+  color: var(--color-outline, #F4B841);
+}
+
+.palette-one .account__agreement-opener:hover {
+  color: var(--color-outline-hover, #F4B841CC);
+}
+
+.palette-one .account__agreement-opener:active {
+  color: var(--color-outline-active, #F4B841BA);
+}
+
+.palette-one .account__agreement-inner {
+  background: var(--background-primary, #FFFFFF);
+  border-color: var(--color-border, #0B1A2626);
+}
+
+.palette-one .account__agreement-closer:after,
+.palette-one .account__agreement-closer:before {
+  background: var(--color-outline, #F4B841);
+}
+
+.palette-one .account__agreement-closer:hover:after,
+.palette-one .account__agreement-closer:hover:before {
+  background: var(--color-outline-hover, #F4B841CC);
+}
+
+.palette-one .account__agreement-closeractive:after,
+.palette-one .account__agreement-closer:active:before {
+  background: var(--color-outline-active, #F4B841BA);
 }
 
 .palette-one [id^='user_legal_type']:checked + .account-fieldset__radio-label:before,
@@ -426,18 +528,6 @@ div.account-fieldset--error .account-fieldset__input:focus {
   border-color: var(--background-accent-2-active, #F4B841BA);
 }
 
-.palette-two .account__link {
-  color: var(--color-outline-2, #F4B841);
-}
-
-.palette-two .account__link:hover {
-  color: var(--color-outline-2-hover, #F4B841CC);
-}
-
-.palette-two .account__link:active {
-  color: var(--color-outline-2-active, #F4B841BA);
-}
-
 .palette-two .account__alert--info {
   border: 1px solid var(--color-border-2, #FFFFFF47);
 }
@@ -446,6 +536,38 @@ div.account-fieldset--error .account-fieldset__input:focus {
 .palette-two .account-checkbox__label:before {
   border-color: var(--color-border-2, #FFFFFF47);
   background: var(--background-primary-2, #0B1A26);
+}
+
+.palette-two .account__agreement-opener {
+  color: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .account__agreement-opener:hover {
+  color: var(--color-outline-2-hover, #F4B841CC);
+}
+
+.palette-two .account__agreement-opener:active {
+  color: var(--color-outline-2-active, #F4B841BA);
+}
+
+.palette-two .account__agreement-inner {
+  background: var(--background-primary-2, #0B1A26);
+  border-color: var(--color-border-2, #FFFFFF47);
+}
+
+.palette-two .account__agreement-closer:after,
+.palette-two .account__agreement-closer:before {
+  background: var(--color-outline-2, #F4B841);
+}
+
+.palette-two .account__agreement-closer:hover:after,
+.palette-two .account__agreement-closer:hover:before {
+  background: var(--color-outline-2-hover, #F4B841CC);
+}
+
+.palette-two .account__agreement-closeractive:after,
+.palette-two .account__agreement-closer:active:before {
+  background: var(--color-outline-2-active, #F4B841BA);
 }
 
 .palette-two [id^='user_legal_type']:checked + .account-fieldset__radio-label:before,
@@ -501,18 +623,6 @@ div.account-fieldset--error .account-fieldset__input:focus {
   border-color: var(--background-accent-3-active, #0B1A26BA);
 }
 
-.palette-three .account__link {
-  color: var(--color-outline-3, #0B1A26);
-}
-
-.palette-three .account__link:hover {
-  color: var(--color-outline-3-hover, #0B1A26CC);
-}
-
-.palette-three .account__link:active {
-  color: var(--color-outline-3-active, #0B1A26BA);
-}
-
 .palette-three .account__alert--info {
   border: 1px solid var(--color-border-3, #0B1A2626);
 }
@@ -521,6 +631,38 @@ div.account-fieldset--error .account-fieldset__input:focus {
 .palette-three .account-checkbox__label:before {
   border-color: var(--color-border-3, #0B1A2626);
   background: var(--background-primary-3, #F4B841);
+}
+
+.palette-three .account__agreement-opener {
+  color: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .account__agreement-opener:hover {
+  color: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .account__agreement-opener:active {
+  color: var(--color-outline-3-active, #0B1A26BA);
+}
+
+.palette-three .account__agreement-inner {
+  background: var(--background-primary-3, #F4B841);
+  border-color: var(--color-border-3, #0B1A2626);
+}
+
+.palette-three .account__agreement-closer:after,
+.palette-three .account__agreement-closer:before {
+  background: var(--color-outline-3, #0B1A26);
+}
+
+.palette-three .account__agreement-closer:hover:after,
+.palette-three .account__agreement-closer:hover:before {
+  background: var(--color-outline-3-hover, #0B1A26CC);
+}
+
+.palette-three .account__agreement-closeractive:after,
+.palette-three .account__agreement-closer:active:before {
+  background: var(--color-outline-3-active, #0B1A26BA);
 }
 
 .palette-three [id^='user_legal_type']:checked + .account-fieldset__radio-label:before,
@@ -545,6 +687,12 @@ div.account-fieldset--error .account-fieldset__input:focus {
   }
 }
 
+@media (min-width: 768px) {
+  .account__agreement-modal {
+    padding: 20px 50px;
+  }
+}
+
 @media screen and (min-width: 810px) {
   .account__title {
     font-size: 40px;
@@ -559,5 +707,11 @@ div.account-fieldset--error .account-fieldset__input:focus {
 
   .account--padding-bottom {
     padding-bottom: var(--padding-bottom, 40px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .account__agreement-modal {
+    padding: 50px;
   }
 }
