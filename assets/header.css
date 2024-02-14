@@ -5,8 +5,8 @@
   margin-bottom: -1px;
 }
 
-.header--menu-opened,
-.header--sticky {
+.header:is(.header--menu-opened),
+.header:has(.header--sticky) {
   top: var(--header-transform, 0px);
   left: 0;
   right: 0;

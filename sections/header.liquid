@@ -295,9 +295,8 @@
 {%- endcapture -%}
 
 <div
-  class="header__inner{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' and menu != blank %} header-menu-bottom{%- endif -%}"
+  class="header__inner{% if sticky_header %} header--sticky{% else %} header--not-sticky{% endif %}{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' and menu != blank %} header-menu-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
-  data-sticky="{{- sticky_header -}}"
 >
   <div class="header__content{% if padding_top != blank or padding_top_mobile != blank %} header__content--padding-top{% endif %}{% if padding_bottom != blank or padding_bottom_mobile != blank %} header__content--padding-bottom{%- endif -%}">
     <div class="header__container container">
