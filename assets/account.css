@@ -138,6 +138,10 @@
   margin-left: 0;
 }
 
+.account__link {
+  text-decoration: none;
+}
+
 .account__agreement-opener {
   cursor: pointer;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
@@ -151,6 +155,7 @@
   margin-bottom: 10px;
 }
 
+.account-checkbox__label .account__link,
 .account-checkbox__label .account__agreement-opener {
   margin-left: 4px;
 }
@@ -439,14 +444,17 @@ div.account-fieldset--error .account-fieldset__input:focus {
   background: var(--background-primary, #FFFFFF);
 }
 
+.palette-one .account__link,
 .palette-one .account__agreement-opener {
   color: var(--color-outline, #F4B841);
 }
 
+.palette-one .account__link:hover,
 .palette-one .account__agreement-opener:hover {
   color: var(--color-outline-hover, #F4B841CC);
 }
 
+.palette-one .account__link:active,
 .palette-one .account__agreement-opener:active {
   color: var(--color-outline-active, #F4B841BA);
 }
@@ -538,14 +546,17 @@ div.account-fieldset--error .account-fieldset__input:focus {
   background: var(--background-primary-2, #0B1A26);
 }
 
+.palette-two .account__link,
 .palette-two .account__agreement-opener {
   color: var(--color-outline-2, #F4B841);
 }
 
+.palette-two .account__link:hover,
 .palette-two .account__agreement-opener:hover {
   color: var(--color-outline-2-hover, #F4B841CC);
 }
 
+.palette-two .account__link:active,
 .palette-two .account__agreement-opener:active {
   color: var(--color-outline-2-active, #F4B841BA);
 }
@@ -633,14 +644,17 @@ div.account-fieldset--error .account-fieldset__input:focus {
   background: var(--background-primary-3, #F4B841);
 }
 
+.palette-three .account__link,
 .palette-three .account__agreement-opener {
   color: var(--color-outline-3, #0B1A26);
 }
 
+.palette-three .account__link:hover,
 .palette-three .account__agreement-opener:hover {
   color: var(--color-outline-3-hover, #0B1A26CC);
 }
 
+.palette-three .account__link:active,
 .palette-three .account__agreement-opener:active {
   color: var(--color-outline-3-active, #0B1A26BA);
 }
