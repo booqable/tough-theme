@@ -13,7 +13,8 @@
 {%- assign private_label         = section.settings.private_label -%}
 {%- assign company_label         = section.settings.company_label -%}
 {%- assign agree_label           = section.settings.agree_label -%}
-{%- assign agreements_label      = section.settings.agreements_label -%}
+{%- assign agreement_label       = section.settings.agreement_label -%}
+{%- assign accept_button_label   = section.settings.accept_button_label -%}
 {%- assign padding_top           = section.settings.padding_top -%}
 {%- assign padding_bottom        = section.settings.padding_bottom -%}
 {%- assign padding_top_mobile    = section.settings.padding_top_mobile -%}
@@ -228,13 +229,30 @@
           <span>
             {{- agree_label | default: "I agree to the" -}}
 
-            <a
-              class="account__link"
-              href="https://booqable.com/agreement"
-              target="_blank"
-            >
-              {{- agreements_label | default: "Terms and agreements" -}}
-            </a>
+            <span class="account__agreement">
+              <input type="checkbox" id="user_agreement_opener" style="display: none">
+              <label for="user_agreement_opener" class="account__agreement-opener">
+                {{- agreement_label | default: "Terms and agreements" -}}
+              </label>
+
+              <span class="account__agreement-modal bq-content rx-content" style="display: none">
+                <span class="account__agreement-content">
+                  <span class="account__agreement-inner">
+                    <label for="user_agreement_opener" class="account__agreement-closer">X</label>
+
+                    <span class="account__agreement-text">
+                      {{- form.agreement_content -}}
+
+                      <span class="account__agreement-buttons">
+                        <label class="account-checkbox__button button button--primary button--large" for="user_agreement_opener">
+                          {{ accept_button_label | default: "Agree" }}
+                        </label>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+              </span>
+            </span>
           </span>
         </label>
 
@@ -341,7 +359,7 @@
       },
       {
         "type": "text",
-        "id": "agreements_label",
+        "id": "agreement_label",
         "label": "Terms and agreements label"
       },
       {
@@ -357,6 +375,11 @@
         "type": "text",
         "id": "signup_label",
         "label": "Sign up button label"
+      },
+      {
+        "type": "text",
+        "id": "accept_button_label",
+        "label": "Accept agreement button label (in modal window)"
       },
       {
         "type": "header",
