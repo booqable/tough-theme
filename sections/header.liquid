@@ -117,7 +117,8 @@
         class: 'header__logo-image',
         custom_width: '200',
         custom_size: '200px',
-        custom_alt: shop.name
+        custom_alt: shop.name,
+        keep_type: true
     -%}
   {%- elsif custom_title != blank -%}
     <h2 class="header__logo-text">{{- custom_title -}}</h2>
