@@ -108,7 +108,7 @@
           </span>
 
           <address class="tabs__address">
-            {%- if address or city or region or zipcode or country -%}
+            {%- if address != blank or city != blank or region != blank or zipcode != blank or country != blank -%}
               {%- if address != blank -%}
                 {{ address | append: ', '}}
               {%- endif -%}
