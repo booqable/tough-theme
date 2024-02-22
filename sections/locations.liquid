@@ -109,19 +109,19 @@
 
           <address class="tabs__address">
             {%- if address or city or region or zipcode or country -%}
-              {%- if address -%}
+              {%- if address != blank -%}
                 {{ address | append: ', '}}
               {%- endif -%}
-              {%- if city -%}
+              {%- if city != blank -%}
                 {{ city | append: ', '}}
               {%- endif -%}
-              {%- if region -%}
+              {%- if region != blank -%}
                 {{ region | append: ', '}}
               {%- endif -%}
-              {%- if zipcode -%}
+              {%- if zipcode != blank -%}
                 {{ zipcode | append: ', '}}
               {%- endif -%}
-              {%- if country -%}
+              {%- if country != blank -%}
                 {{ country }}
               {%- endif -%}
             {%- else -%}
