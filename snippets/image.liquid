@@ -10,6 +10,7 @@
   custom_width: "string" optional,
   custom_size: "string" optional,
   custom_alt: "string" optional
+  keep_type: boolean optional
 
   Usage:
 
@@ -21,7 +22,8 @@
       size: 'm',              - use only this one property
       custom_width: '170',    - or these two
       custom_size: '170px',     instead of 'size' property
-      custom_alt: your_id
+      custom_alt: your_id,
+      keep_type: true         - image type will be kept (only png and jpeg)
   -%}
 
 {% endcomment %}
@@ -35,7 +37,7 @@
 
 {% comment %}
 This code ensures we load the correct image size based on its width on the screen.
-Media queries are built relative to the viewport width, so we define image size depending on expected witdh relative to the viewport.
+Media queries are built relative to the viewport width, so we define image size depending on expected width relative to the viewport.
 
 For example:
 A hero image would be approximately as wide as the whole viewport, so we would use the xxl size.
@@ -74,13 +76,14 @@ xxl - Image is as wide as the whole viewport
   {%- assign image_sizes = custom_size -%}
 {%- endif -%}
 
-
-{{- image.url | image_tag:
-  loading: loading,
-  class: class,
-  widths: image_width,
-  sizes: image_sizes,
-  focal: focal,
-  alt: alt,
-  keep_type: keep_type
--}}
+{%- if image.url != blank -%}
+  {{- image.url | image_tag:
+    loading: loading,
+    class: class,
+    widths: image_width,
+    sizes: image_sizes,
+    focal: focal,
+    alt: alt,
+    keep_type: keep_type
+  -}}
+{%- endif -%}
