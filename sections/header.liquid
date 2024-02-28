@@ -104,6 +104,12 @@
     --menu-right: 0;
     --menu-max-height: none;
   {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    --header-grid-template-columns: max-content 1fr max-content repeat({{ section.blocks.size }}, max-content);
+  {%- else %}
+    --header-grid-template-columns: max-content 1fr max-content;
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- render 'variables-mini-cart', color_palette: color_palette, settings: settings -%}
@@ -295,6 +301,16 @@
   </div>
 {%- endcapture -%}
 
+{% comment %} Apps component {% endcomment %}
+{%- capture apps -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {% when 'app' %}
+        {% include 'app' %}
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
 <div
   class="header__inner{% if color_palette != blank %} palette-{{ color_palette }}{% endif %}{% if menu_position == 'center-left' %} header-logo-centered{%- endif -%}{% if menu_position == 'left-below' and menu != blank %} header-menu-bottom{%- endif -%}"
   style="{{- variables | escape -}}"
@@ -309,6 +325,8 @@
         </div>
 
         {{- header_menu -}}
+
+        {{- apps -}}
 
         {{- header_links -}}
 
@@ -554,6 +572,11 @@
           }
         ],
         "default": "medium"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
       }
     ]
   }

@@ -120,6 +120,8 @@
               </ul>
             </div>
           {%- endif -%}
+      {% when "app" %}
+        {% include "app" %}
       {%- endcase -%}
     {%- endfor -%}
   </nav>
@@ -406,6 +408,9 @@
             "default": "left"
           }
         ]
+      },
+      {
+        "type": "@app"
       }
     ]
   }
