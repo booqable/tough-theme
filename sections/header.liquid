@@ -104,12 +104,6 @@
     --menu-right: 0;
     --menu-max-height: none;
   {%- endif -%}
-
-  {%- if section.blocks.size > 0 -%}
-    --header-grid-template-columns: max-content 1fr max-content repeat({{ section.blocks.size }}, max-content);
-  {%- else %}
-    --header-grid-template-columns: max-content 1fr max-content;
-  {%- endif -%}
 {%- endcapture -%}
 
 {%- render 'variables-mini-cart', color_palette: color_palette, settings: settings -%}
@@ -298,17 +292,14 @@
         <i class="fa-regular fa-spinner-third fa-spin"></i>
       </div>
     {%- endif -%}
-  </div>
-{%- endcapture -%}
 
-{% comment %} Apps component {% endcomment %}
-{%- capture apps -%}
-  {%- for block in section.blocks -%}
-    {%- case block.type -%}
-      {% when 'app' %}
-        {% include '@app' %}
-    {%- endcase -%}
-  {%- endfor -%}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {% when 'app' %}
+          {% include '@app' %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
 {%- endcapture -%}
 
 <div
@@ -325,8 +316,6 @@
         </div>
 
         {{- header_menu -}}
-
-        {{- apps -}}
 
         {{- header_links -}}
 

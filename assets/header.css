@@ -23,7 +23,7 @@
 
 .header__content-inner {
   display: grid;
-  grid-template-columns: var(--header-grid-template-columns);
+  grid-template-columns: max-content 1fr max-content;
   gap: 0px 8px;
   grid-template-areas:
     "column-2 column-1 column-3";
