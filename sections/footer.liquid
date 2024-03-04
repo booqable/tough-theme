@@ -179,19 +179,25 @@
 
     </div>
     <div class="footer__bottom{% if bottom_text == blank and footer_bottom_menu == blank and show_powered_by == false %} footer__bottom--copyright-hidden{%- endif -%}">
-      {%- if bottom_text != blank or footer_bottom_menu != blank or show_powered_by -%}
+      {%- if bottom_text != blank or footer_bottom_menu != blank or settings.cookie_notice_activated or show_powered_by -%}
         <div class="footer__copy">
-          {%- if bottom_text != blank or show_powered_by -%}
+          {%- if bottom_text != blank or settings.cookie_notice_activated or show_powered_by -%}
             <p>
               {%- if bottom_text != blank -%}
                 {{ bottom_text }}
               {%- endif -%}
 
-              {%- if bottom_text != blank and show_powered_by -%}
-                &nbsp;|&nbsp;
-              {%- endif -%}
+              {% if settings.cookie_notice_activated %}
+                {%- if bottom_text != blank -%}
+                  &nbsp;|&nbsp;
+                {%- endif -%}
+                <a href="{{ routes.privacy_policy_url }}">{{ section.settings.privacy_policy_link_text | escape }}</a>
+              {% endif %}
 
               {%- if show_powered_by -%}
+                {%- if bottom_text != blank or settings.cookie_notice_activated -%}
+                  &nbsp;|&nbsp;
+                {%- endif -%}
                 <a href="https://booqable.com/?source=Shop&campaign=Cart" target="_blank" aria-label="Powered by Booqable Rental Software">Powered by Booqable</a>
               {%- endif -%}
             </p>
@@ -263,6 +269,12 @@
         "id": "bottom_menu",
         "label": "Bottom menu",
         "info": "This menu located at the bottom of footer"
+      },
+      {
+        "type": "text",
+        "id": "privacy_policy_link_text",
+        "label": "Privacy policy link text",
+        "default": "Privacy policy"
       },
       {
         "type": "checkbox",
