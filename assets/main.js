@@ -68,7 +68,6 @@ class Main {
 
     window.addEventListener("resize", this.getDatePickerHeight.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
-    window.addEventListener("message", this.messagesListener.bind(this));
   }
 
   getDatePickerHeight() {
@@ -146,40 +145,6 @@ class Main {
     const focuses = document.querySelectorAll(this.selector.focus);
 
     focuses?.forEach((node) => node.removeAttribute(this.data.focus));
-  }
-
-  messagesListener({ type, data, isTrusted }) {
-    if (type !== this.params.type) return false;
-
-    if (!!data && isTrusted) {
-      this.removeFocus();
-
-      let target;
-
-      switch (data.type) {
-        case this.params.out:
-          this.removeFocus();
-          break;
-
-        case this.params.section:
-          target = document.querySelector(`#${this.params.section}-${data.id}`);
-
-          this.scrollToFocus(target);
-          break;
-
-        case this.params.block:
-          target = document.querySelector(`#${this.params.section}-${data.sectionId} #${data.id}`);
-
-          this.scrollToFocus(target);
-          break;
-
-        case this.params.footer:
-          target = this.footer;
-
-          this.scrollToFocus(target);
-          break;
-      }
-    }
   }
 }
 
