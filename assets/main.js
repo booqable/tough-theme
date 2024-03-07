@@ -68,7 +68,6 @@ class Main {
 
     window.addEventListener("resize", this.getDatePickerHeight.bind(this));
     window.addEventListener("resize", this.setResizeClass.bind(this));
-    window.addEventListener("message", this.messagesListener.bind(this));
   }
 
   getDatePickerHeight() {
@@ -130,56 +129,6 @@ class Main {
 
       image.style.opacity = 1;
     })
-  }
-
-  // scroll page to the focused element on the sidebar in the theme editor
-  scrollToFocus(target) {
-    target?.setAttribute(this.data.focus, this.params.true);
-
-    setTimeout(() => {
-      target?.scrollIntoView({ behavior: this.props.behavior, block: this.props.block });
-    }, this.timeScroll);
-  }
-
-  // remove focus from element in the theme editor
-  removeFocus() {
-    const focuses = document.querySelectorAll(this.selector.focus);
-
-    focuses?.forEach((node) => node.removeAttribute(this.data.focus));
-  }
-
-  messagesListener({ type, data, isTrusted }) {
-    if (type !== this.params.type) return false;
-
-    if (!!data && isTrusted) {
-      this.removeFocus();
-
-      let target;
-
-      switch (data.type) {
-        case this.params.out:
-          this.removeFocus();
-          break;
-
-        case this.params.section:
-          target = document.querySelector(`#${this.params.section}-${data.id}`);
-
-          this.scrollToFocus(target);
-          break;
-
-        case this.params.block:
-          target = document.querySelector(`#${this.params.section}-${data.sectionId} #${data.id}`);
-
-          this.scrollToFocus(target);
-          break;
-
-        case this.params.footer:
-          target = this.footer;
-
-          this.scrollToFocus(target);
-          break;
-      }
-    }
   }
 }
 
