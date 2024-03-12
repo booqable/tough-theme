@@ -5,10 +5,7 @@ class Main {
     this.selector = {
       datePicker: "bq-date-picker",
       datePickerBlock: ".date-picker-instance",
-      footer: "footer",
-      search: "#search",
-      image: ".focal-image",
-      focus: "[data-focus]"
+      image: ".focal-image"
     }
 
     this.modifier = {
@@ -16,24 +13,9 @@ class Main {
       resize: "resize-active"
     }
 
-    this.params = {
-      out: "out",
-      true: "true",
-      block: "block",
-      footer: "footer",
-      type: "message",
-      section: "section"
-    }
-
-    this.props = {
-      behavior: "smooth",
-      block: "center"
-    }
-
     this.data = {
       focalX: "data-focal-x",
-      focalY: "data-focal-y",
-      focus: "data-focus"
+      focalY: "data-focal-y"
     }
 
     this.cssVar = {
@@ -42,7 +24,6 @@ class Main {
     }
 
     this.time = 500;
-    this.timeScroll = 300;
     this.timer = undefined;
     this.focalImageTimeout;
   }
@@ -55,8 +36,6 @@ class Main {
   }
 
   elements() {
-    this.footer = document.querySelector(this.selector.footer);
-    this.search = document.querySelector(this.selector.search);
     this.datePicker = document.querySelector(this.selector.datePicker);
     this.datePickerBlock = document.querySelector(this.selector.datePickerBlock);
   }

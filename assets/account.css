@@ -474,7 +474,7 @@ div.account-fieldset--error .account-fieldset__input:focus {
   background: var(--color-outline-hover, #F4B841CC);
 }
 
-.palette-one .account__agreement-closeractive:after,
+.palette-one .account__agreement-closer:active:after,
 .palette-one .account__agreement-closer:active:before {
   background: var(--color-outline-active, #F4B841BA);
 }

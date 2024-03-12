@@ -3,7 +3,6 @@
 {%- if show_datepicker -%}
   {{ "hero.css" | asset_url | stylesheet_tag }}
 
-  {%- assign image              = section.settings.image -%}
   {%- assign color_palette      = section.settings.color_palette -%}
   {%- assign padding_top        = section.settings.padding_top -%}
   {%- assign padding_top_mobile = section.settings.padding_top_mobile -%}
@@ -61,11 +60,6 @@
       {
         "type": "header",
         "content": "General settings"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Background image"
       },
       {
         "type": "select",

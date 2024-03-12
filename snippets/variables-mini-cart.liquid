@@ -1,87 +1,95 @@
 {% style %}
-  bq-minicart-button {
-    --minicart-button-size: 22px;
-    --minicart-button-badge-size: 12px;
-    --minicart-button-border-radius: 50%;
-    --minicart-button-font-size: 14px;
-    --minicart-button-padding: 4px;
-    --minicart-button-hover-opacity: 1;
-    --minicart-button-transition-duration: var(--animation-duration, 200ms);
-    --minicart-button-font: var(--font-body, --minicart-font, sans-serif);
+  [data-tid="Mini cart"] {
+    --minicart-warning-color: var(--color-red);
+    --minicart-warning-background-color: var(--color-red-light);
+    --minicart-border-radius: var(--border-radius-rounded);
+    --minicart-padding: 16px;
+    --minicart-image-width: 56px;
+    --minicart-z-index: 9999;
+    --minicart-font: var(--font-body, Source Sans Pro, sans-serif);
+    --minicart-font-size: 14px;
+    --minicart-font-weight-normal: var(--font-weight-regular);
+    --minicart-font-weight-bold: var(--font-weight-semibold);
 
     {% if color_palette == "one" %}
-      {% if settings.primary_color != blank %}
-        --minicart-button-color: var(--color-primary);
-      {% else %}
-        --minicart-button-color: #0B1A26;
-      {% endif %}
-
       {% if settings.accent_background != blank %}
-        --minicart-button-accent-color: var(--background-accent);
+        --minicart-accent-color: var(--background-accent);
       {% else %}
-        --minicart-button-accent-color: #F4B841;
+        --minicart-accent-color: #F4B841;
       {% endif %}
 
       {% if settings.accent_color != blank %}
-        --minicart-button-badge-color: var(--color-accent);
+        --minicart-header-color: var(--color-accent);
       {% else %}
-        --minicart-button-badge-color: #0B1A26;
+        --minicart-header-color: #0B1A26;
       {% endif %}
 
-      {% if settings.accent_outline != blank %}
-        --minicart-button-hover-color: var(--color-outline-hover);
+      {% if settings.background != blank %}
+        --minicart-background-color: var(--background-primary);
       {% else %}
-        --minicart-button-hover-color: #F4B841CC;
+        --minicart-background-color: #FFFFFF;
+      {% endif %}
+
+      {% if settings.primary_color != blank %}
+        --minicart-typo-color: var(--color-primary);
+        --minicart-border-color: var(--color-border);
+      {% else %}
+        --minicart-typo-color: #0B1A26;
+        --minicart-border-color: #0B1A2626;
       {% endif %}
 
     {% elsif color_palette == "two" %}
-      {% if settings.primary_color_2 != blank %}
-        --minicart-button-color: var(--color-primary-2);
-      {% else %}
-        --minicart-button-color: #FFFFFF;
-      {% endif %}
-
       {% if settings.accent_background_2 != blank %}
-        --minicart-button-accent-color: var(--background-accent-2);
+        --minicart-accent-color: var(--background-accent-2);
       {% else %}
-        --minicart-button-accent-color: #F4B841;
+        --minicart-accent-color: #F4B841;
       {% endif %}
 
       {% if settings.accent_color_2 != blank %}
-        --minicart-button-badge-color: var(--color-accent-2);
+        --minicart-header-color: var(--color-accent-2);
       {% else %}
-        --minicart-button-badge-color: #FFFFFF;
+        --minicart-header-color: #0B1A26;
       {% endif %}
 
-      {% if settings.accent_outline_2 != blank %}
-        --minicart-button-hover-color: var(--color-outline-2-hover);
+      {% if settings.background_2 != blank %}
+        --minicart-background-color: var(--background-primary-2);
       {% else %}
-        --minicart-button-hover-color: #F4B841CC;
+        --minicart-background-color: #0B1A26;
+      {% endif %}
+
+      {% if settings.primary_color_2 != blank %}
+        --minicart-typo-color: var(--color-primary-2);
+        --minicart-border-color: var(--color-border-2);
+      {% else %}
+        --minicart-typo-color: #FFFFFF;
+        --minicart-border-color: #FFFFFF47;
       {% endif %}
 
     {% elsif color_palette == "three" %}
-      {% if settings.primary_color_3 != blank %}
-        --minicart-button-color: var(--color-primary-3);
-      {% else %}
-        --minicart-button-color: #0B1A26;
-      {% endif %}
-
       {% if settings.accent_background_3 != blank %}
-        --minicart-button-accent-color: var(--background-accent-3);
+        --minicart-accent-color: var(--background-accent-3);
       {% else %}
-        --minicart-button-accent-color: #0B1A26;
+        --minicart-accent-color: #0B1A26;
       {% endif %}
 
       {% if settings.accent_color_3 != blank %}
-        --minicart-button-badge-color: var(--color-accent-3);
+        --minicart-header-color: var(--color-accent-3);
       {% else %}
-        --minicart-button-badge-color: #FFFFFF;
+        --minicart-header-color: #FFFFFF;
       {% endif %}
 
-      {% if settings.accent_outline_3 != blank %}
-        --minicart-button-hover-color: var(--color-outline-3-hover);
+      {% if settings.background_3 != blank %}
+        --minicart-background-color: var(--background-primary-3);
       {% else %}
-        --minicart-button-hover-color: #0B1A26CC;
+        --minicart-background-color: #F4B841;
+      {% endif %}
+
+      {% if settings.primary_color_3 != blank %}
+        --minicart-typo-color: var(--color-primary-3);
+        --minicart-border-color: var(--color-border-3);
+      {% else %}
+        --minicart-typo-color: #0B1A26;
+        --minicart-border-color: #0B1A2626;
       {% endif %}
     {%- endif -%}
   }
