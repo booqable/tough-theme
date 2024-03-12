@@ -27,6 +27,7 @@
 
 .columns__image-wrapper {
   aspect-ratio: 16 / 9;
+  position: relative;
 }
 
 .columns__image-wrapper img {
@@ -34,6 +35,9 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .columns__icon-wrapper {
@@ -77,6 +81,12 @@
   text-transform: uppercase;
   transition: all var(--animation-duration, 200ms) var(--transition-function-ease-out);
   line-height: var(--line-height-sm, 1.2);
+  margin: 0;
+}
+
+.columns__buttons {
+  display: flex;
+  align-items: center;
 }
 
 .palette-one.columns__wrapper {
