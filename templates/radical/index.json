@@ -358,7 +358,7 @@
             "tag": "",
             "text_position": "center",
             "text_position_mobile": "center",
-            "title": "<p>The Latest Trends<br>Behind the Lens</p>"
+            "title": "The Latest Trends <br>Behind the Lens"
           },
           "disabled": null
         }
@@ -502,7 +502,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Your camera, lens,</p>\n<p>and lighting partner</p>"
+            "title": "Your camera, lens, <br>and lighting partner"
           },
           "disabled": null
         }

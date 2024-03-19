@@ -280,7 +280,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "center",
-            "title": "<p>Welcome to</p>\n<p>Party&nbsp;Perfect</p>",
+            "title": "Welcome to <br>Party&nbsp;Perfect",
             "video_url": ""
           },
           "disabled": null
