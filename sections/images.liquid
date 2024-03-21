@@ -325,9 +325,9 @@
 
                         {%- if title != blank -%}
                           {%- if carousel -%}
-                            <h2 class="images__title bq-content rx-content">{{- title -}}</h2>
+                            <h2 class="images__title">{{- title -}}</h2>
                           {%- else -%}
-                            <h1 class="images__title bq-content rx-content">{{- title -}}</h1>
+                            <h1 class="images__title">{{- title -}}</h1>
                           {%- endif -%}
                         {%- endif -%}
 
@@ -507,10 +507,11 @@
             "info": "Leave blank to hide tagline"
           },
           {
-            "type": "contentEditor",
+            "type": "text",
             "id": "title",
             "label": "Title",
-            "default": "Rent heavy equipment"
+            "default": "Rent heavy equipment",
+            "info": "For breaking lines use <br> tag"
           },
           {
             "type": "contentEditor",

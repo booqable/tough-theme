@@ -146,7 +146,7 @@
             "tag": "",
             "text_position": "center",
             "text_position_mobile": "center",
-            "title": "<p>Premium surfboard<br>rentals</p>"
+            "title": "Premium surfboard <br>rentals"
           },
           "disabled": null
         }
@@ -213,7 +213,7 @@
             "tag": "",
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Welcome on board</p>"
+            "title": "Welcome on board"
           },
           "disabled": null
         }

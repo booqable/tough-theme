@@ -19,7 +19,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Getting you moving quickly</p>"
+            "title": "Getting you moving quickly"
           },
           "disabled": null
         }
@@ -109,7 +109,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Move-in,</p>\n<p>rent out</p>"
+            "title": "Move-in, rent out"
           },
           "disabled": null
         }

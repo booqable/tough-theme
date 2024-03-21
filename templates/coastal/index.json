@@ -161,7 +161,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Pontoon&nbsp;rental</p>\n<p>by the lake</p>"
+            "title": "Pontoon rental <br>by the lake"
           },
           "disabled": null
         }
