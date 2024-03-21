@@ -4,9 +4,7 @@ class Header {
 
     this.selector = {
       body: "body",
-      link: "a",
       bar: ".top-bar",
-      barBlock: ".top-bar__text",
       view: ".preview-bar__container",
       headerNav: ".header__nav-wrapper",
       menu: ".menu",
@@ -52,8 +50,6 @@ class Header {
     }
 
     this.attr = {
-      href: "href",
-      class: "class",
       style: "style"
     }
 
@@ -79,7 +75,6 @@ class Header {
     this.body = document.querySelector(this.selector.body);
     this.preview = document.querySelector(this.selector.view);
     this.bar = this.block.querySelector(this.selector.bar);
-    this.barBlocks = this.block.querySelectorAll(this.selector.barBlock);
     this.menu = this.block.querySelector(this.selector.menu);
     this.menuBottom = this.block.querySelector(this.selector.menuBottom);
     this.menuItem = this.menu?.querySelector(this.selector.menuItem);
@@ -98,7 +93,6 @@ class Header {
     this.headerHeight();
     this.menuPosition();
     this.hoverClose();
-    this.setEmailPhone();
     this.searchAutoFill();
 
     document.addEventListener("click", this.menuOverflow.bind(this));
@@ -284,36 +278,6 @@ class Header {
     this.block.classList.remove(this.classes.opened);
     window.scrollTo(0, 0);
     this.block.removeAttribute(this.attr.style);
-  }
-
-  // convert links to allow users to send emails and call phone numbers
-  setEmailPhone() {
-    if (!this.barBlocks.length) return false;
-
-    const keepOnly = /[^a-zA-Z0-9,\-.?!@+]/g,
-          specChars = /[\()\-\s]/g,
-          phoneRegex = /(?:[-+() ]*\d){10,13}/gm,
-          emailRegex = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/;
-
-    this.barBlocks.forEach(block => {
-      const links = block.querySelectorAll(this.selector.link);
-
-      if (!links.length) return false;
-
-      links.forEach(link => {
-        let href = link.getAttribute(this.attr.href);
-        const match = href.match(phoneRegex) || href.match(emailRegex);
-
-        if (match?.length) {
-          href = match[0].replace(keepOnly, '');
-
-          if (href.match(phoneRegex)) href = `tel:${href.replaceAll(specChars, '')}`;
-          if (href.match(emailRegex)) href = `mailto:${href}`;
-
-          link.setAttribute(this.attr.href, href);
-        }
-      })
-    })
   }
 
   // set focus to the input field when opening the search popup
