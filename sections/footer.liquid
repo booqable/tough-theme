@@ -120,6 +120,8 @@
               </ul>
             </div>
           {%- endif -%}
+      {% when "app" %}
+        {% render "app", block: block, section: section %}
       {%- endcase -%}
     {%- endfor -%}
   </nav>
@@ -418,6 +420,9 @@
             "default": "left"
           }
         ]
+      },
+      {
+        "type": "@app"
       }
     ]
   }

@@ -291,6 +291,13 @@
         <i class="fa-regular fa-spinner-third fa-spin"></i>
       </div>
     {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {% when 'app' %}
+          {% render 'app', block: block, section: section %}
+      {%- endcase -%}
+    {%- endfor -%}
   </div>
 {%- endcapture -%}
 
@@ -553,6 +560,11 @@
           }
         ],
         "default": "medium"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
       }
     ]
   }
