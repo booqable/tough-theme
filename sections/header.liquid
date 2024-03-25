@@ -296,7 +296,7 @@
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {% when 'app' %}
-          {% include 'app' %}
+          {% render 'app', block: block, section: section %}
       {%- endcase -%}
     {%- endfor -%}
   </div>

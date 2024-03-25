@@ -121,7 +121,7 @@
             </div>
           {%- endif -%}
       {% when "app" %}
-        {% include "app" %}
+        {% render "app", block: block, section: section %}
       {%- endcase -%}
     {%- endfor -%}
   </nav>
