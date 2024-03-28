@@ -87,8 +87,27 @@
     }
   {% endstyle %}
 
-  {%- assign collections = product.collections -%}
-  {%- assign first = collections | first -%}
+  {%- assign collections        = product.collections -%}
+  {%- assign collections_titles = "" -%}
+  {%- assign collections_urls   = "" -%}
+
+  {%- for collection in collections -%}
+    {%- assign collection_title = collection.title -%}
+    {%- assign collection_url   = collection.url -%}
+
+    {%- unless collection_title == "All products" -%}
+      {%- assign collections_titles = collections_titles | append: collection_title | append: ", ", | split: ", " -%}
+      {%- assign collections_urls   = collections_urls | append: collection_url | append: ", ", | split: ", " -%}
+    {%- endunless -%}
+  {%- endfor -%}
+
+  {%- assign collection_title = collections_titles | first -%}
+  {%- assign collection_url   = collections_urls | first -%}
+
+  {%- if collection_title contains "Bundles" -%}
+    {%- assign collection_title = collection_title | split: ']' | last -%}
+    {%- assign collection_url   = collection_url | split: ']' | last -%}
+  {%- endif -%}
 
   {%- capture separator --%}
     <span class="breadcrumbs__separator" aria-hidden="true">
@@ -109,9 +128,9 @@
         {{- separator -}}
       {%- endif -%}
 
-      {%- if first.url -%}
-        <a href="{{ first.url }}" class="breadcrumbs__link" aria-label="{{- first.name -}}">
-          {{- first.name -}}
+      {%- if collection_url != blank and collection_title != blank -%}
+        <a href="{{ collection_url }}" class="breadcrumbs__link" aria-label="{{- collection_title -}}">
+          {{- collection_title -}}
         </a>
 
         {{- separator -}}
