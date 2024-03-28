@@ -145,7 +145,7 @@
       "block_order": [],
       "settings": {
         "button_label": "See all",
-        "button_url": "/collections/all",
+        "button_url": "booqable://product/",
         "color_palette": "one",
         "description": "",
         "padding_bottom": "none",

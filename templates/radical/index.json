@@ -6,7 +6,7 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "/collections/all",
+        "button_url": "booqable://product/",
         "padding_top": "medium",
         "button_label": "See all",
         "padding_bottom_mobile": "none",

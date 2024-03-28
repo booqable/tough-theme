@@ -40,7 +40,7 @@
       "block_order": [],
       "settings": {
         "button_label": "View all",
-        "button_url": "/collections/all",
+        "button_url": "booqable://product/",
         "color_palette": "one",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "padding_bottom": "small",
