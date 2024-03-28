@@ -98,6 +98,9 @@
     {%- unless collection_title == "All products" -%}
       {%- assign collections_titles = collections_titles | append: collection_title | append: ", ", | split: ", " -%}
       {%- assign collections_urls   = collections_urls | append: collection_url | append: ", ", | split: ", " -%}
+
+      <div class="test">{{  forloop.index }} {{ collections_titles }}</div>
+      <div class="test">{{  forloop.index }} {{ collections_urls }}</div>
     {%- endunless -%}
   {%- endfor -%}
 
