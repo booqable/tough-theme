@@ -6,8 +6,13 @@
   padding-bottom: var(--padding-bottom-mobile, 40px);
 }
 
-.products__list {
-  display: flex;
+.products__list:not(.carousel) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .palette-one.products__wrapper {
