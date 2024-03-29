@@ -18,6 +18,7 @@
   {%- assign show_excerpt          = section.settings.show_excerpt -%}
   {%- assign image_placeholder     = settings.image_placeholder -%}
   {%- assign is_focal              = settings.use_focal_images -%}
+  {%- assign items_limit           = 12 -%}
 
   {%- if collection != blank -%}
     {%- assign items = collection.items -%}
@@ -29,7 +30,7 @@
 
   {%- assign carousel = false -%}
 
-  {%- if blocks.size > 1 or collection.items_count > 1 -%}
+  {%- if blocks.size > 1 and show_carousel or collection.items_count > 1 and show_carousel -%}
     {{ "carousel.css" | asset_url | stylesheet_tag }}
 
     {%- assign carousel = true -%}
@@ -88,13 +89,13 @@
     style="{{- variables | escape -}}"
   >
     <div class="products__container container">
-      <div class="products__list{% if carousel %} carousel carousel__pause{% if show_pagination or show_navigation %} carousel--controls{% endif %}{% endif %}{% unless show_carousel %} carousel__destroy{%- endunless -%}"{% if carousel %} aria-role="Gallery"{% endif %}>
+      <div class="products__list{% if carousel %} carousel carousel__pause{% if show_pagination or show_navigation %} carousel--controls{% endif %}{%- endif -%}"{% if carousel %} aria-role="Gallery"{% endif %}>
         {%- if carousel -%}
           <input class="carousel__timer" type="hidden" name="hidden" value="{{- timer -}}" aria-hidden="true">
           <div class="carousel__wrapper">
         {%- endif -%}
 
-            {%- for item in items limit: 8 -%}
+            {%- for item in items limit: items_limit -%}
               {% case items_type %}
                 {% when "blocks" %}
                   {% assign product = item.settings.product %}
@@ -136,7 +137,7 @@
 
           {%- if show_pagination -%}
             <div class="carousel__pagination hidden" aria-role="Carousel pagination">
-              {%- for item in items limit: 8 -%}
+              {%- for item in items limit: items_limit -%}
                 {%- assign first = forloop.first -%}
                 {%- assign index = forloop.index -%}
 
@@ -339,7 +340,7 @@
         "default": "medium"
       }
     ],
-    "max_blocks": 8,
+    "max_blocks": 12,
     "blocks": [
       {
         "type": "product",
