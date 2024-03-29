@@ -205,7 +205,7 @@
             "text_position": "center",
             "text_position_mobile": "center",
             "tag": "",
-            "title": "<p>Go further with</p>\n<p>electric</p>"
+            "title": "Go further with <br>electric"
           },
           "disabled": null
         }
@@ -329,7 +329,7 @@
             "show_overlay": true,
             "text_position": "center",
             "text_position_mobile": "top-left",
-            "title": "<p>Your eco-friendly</p>\n<p>adventure awaits..</p>"
+            "title": "Your eco-friendly <br>adventure awaits.."
           },
           "disabled": null
         }

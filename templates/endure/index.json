@@ -316,7 +316,7 @@
             "show_overlay": true,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "title": "<p>Rent mountain</p>\n<p>bikes easily</p>"
+            "title": "Rent mountain <br>bikes easily"
           },
           "disabled": null
         }

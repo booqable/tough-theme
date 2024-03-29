@@ -6,23 +6,10 @@
   list-style: decimal;
 }
 
-.bq-content.rx-content:not(.images__title) {
+.bq-content.rx-content {
   font-family: var(--font-body, sans-serif);
   line-height: var(--line-height-lg, 1.5);
   font-size: inherit;
-}
-
-:is(.bq-content.rx-content):is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
-  font-family: var(--font-heading, sans-serif);
-  line-height: var(--line-height-sm, 1.2);
-}
-
-:is(.bq-content.rx-content):is(h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) * {
-  line-height: inherit;
-}
-
-:is(.bq-content.rx-content):is(h4, .h4, h5, .h5, h6, .h6) {
-  line-height: var(--line-height-md, 1.3);
 }
 
 .bq-content.rx-content h1 + *,

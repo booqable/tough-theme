@@ -344,7 +344,7 @@
             "show_overlay": true,
             "text_position": "middle-left",
             "text_position_mobile": "top-left",
-            "title": "<p>Rent trailers for personal</p>\n<p>and commercial use</p>"
+            "title": "Rent trailers for personal <br>and commercial use"
           },
           "disabled": null
         }
