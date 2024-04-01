@@ -8,7 +8,7 @@
       "settings": {
         "bg_text": "",
         "button_label": "",
-        "button_url": "/collections/all",
+        "button_url": "booqable://product/",
         "color_palette": "one",
         "description": "<p>What's chic right now?</p>",
         "padding_bottom": "small",
