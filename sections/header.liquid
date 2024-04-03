@@ -26,6 +26,7 @@
 {%- assign snapchat              = settings.social_snapchat_link -%}
 {%- assign youtube               = settings.social_youtube_link -%}
 {%- assign vimeo                 = settings.social_vimeo_link -%}
+{%- assign app = section.blocks | where: "type", "app" | first -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -248,6 +249,14 @@
               {%- endif -%}
 
             {%- endfor -%}
+
+
+            {%- if app -%}
+              <div class="header-app">
+                {% render 'app', block: app, section: section, size: "mobile" %}
+              </div>
+            {%- endif -%}
+
           </ul>
 
           {{- social_icons -}}
@@ -282,6 +291,12 @@
 {% comment %} Right side buttons component {% endcomment %}
 {%- capture header_links -%}
   <div class="header__links{% if show_search %} header__links--with-search{% endif %}{% if show_mini_cart %} header__links--with-cart{%- endif -%}">
+    {%- if app -%}
+      <div class="header-app">
+        {% render 'app', block: app, section: section, size: "desktop" %}
+      </div>
+    {%- endif -%}
+
     {%- if show_search -%}
       {{- header_search -}}
     {%- endif -%}
@@ -292,13 +307,6 @@
         <i class="fa-regular fa-spinner-third fa-spin"></i>
       </div>
     {%- endif -%}
-
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {% when 'app' %}
-          {% render 'app', block: block, section: section %}
-      {%- endcase -%}
-    {%- endfor -%}
   </div>
 {%- endcapture -%}
 

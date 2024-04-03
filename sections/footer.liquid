@@ -20,6 +20,7 @@
 {%- assign snapchat               = settings.social_snapchat_link -%}
 {%- assign youtube                = settings.social_youtube_link -%}
 {%- assign vimeo                  = settings.social_vimeo_link -%}
+{%- assign app                    = section.blocks | where: "type", "app" | first -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -120,8 +121,6 @@
               </ul>
             </div>
           {%- endif -%}
-      {% when "app" %}
-        {% render "app", block: block, section: section %}
       {%- endcase -%}
     {%- endfor -%}
   </nav>
@@ -129,8 +128,14 @@
 
 {% comment %} Payments and social component {% endcomment %}
 {%- capture footer_icons -%}
-  {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank or payment_methods.size > 0-%}
+  {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank or payment_methods.size > 0 or app != blank -%}
     <div class="footer__icons">
+      {%- if app %}
+        <div class="footer-app">
+          {% render 'app', block: app, section: section %}
+        </div>
+      {%- endif -%}
+
       {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank -%}
         <div class="footer__social">
           {%- render "socials", settings: settings -%}
@@ -142,6 +147,7 @@
           {%- render "payments", payments: payment_methods -%}
         </div>
       {%- endif -%}
+
     </div>
   {%- endif -%}
 {%- endcapture -%}
