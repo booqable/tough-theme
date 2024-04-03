@@ -154,7 +154,7 @@
             {%- if address != blank or city != blank or zipcode != blank -%}
               <div id="map-{{- block.id -}}" class="map" data-address="{{- address -}}, {{ city }}, {{ zipcode }}"></div>
 
-              {%- if icon != blank -%}
+              {%- if icon.url != blank -%}
                 <div class="map-icon" style="transform: translate(0, -100%); position: relative; z-index: -1;">
                   {%- render 'image',
                     image: icon,
