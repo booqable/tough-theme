@@ -18,8 +18,8 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "breadcrumbs_label": "",
-        "breadcrumbs_url": "collections",
+        "breadcrumbs_root_label": "",
+        "breadcrumbs_root_url": "collections",
         "infinity_scroll": true,
         "color_palette": "one",
         "message_label": "Free shipping over $50",
