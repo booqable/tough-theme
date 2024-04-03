@@ -396,7 +396,7 @@
                       </div>
 
                     {%- elsif image != blank or image_mobile != blank -%}
-                      {%- if image != blank -%}
+                      {%- if image.url != blank -%}
                         <div class="images__vision-wrapper{% if image_mobile != blank %} images__vision-wrapper--desktop{% endif %}{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image,
@@ -407,7 +407,7 @@
                         </div>
                       {%- endif -%}
 
-                      {%- if image_mobile != blank -%}
+                      {%- if image_mobile.url != blank -%}
                         <div class="images__vision-wrapper images__vision-wrapper--mobile{% if show_overlay %} images__vision-wrapper--overlay{%- endif -%}">
                           {%- render 'image',
                             image: image_mobile,

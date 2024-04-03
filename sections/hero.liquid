@@ -84,7 +84,7 @@
     </div>
   {%- endif -%}
 
-  {%- if image != blank -%}
+  {%- if image.url != blank -%}
     <div class="hero__vision{% if show_datepicker %} hero__vision--indent{%- endif -%}">
       <div class="hero__vision-wrapper">
           {%- render 'image',
