@@ -346,7 +346,7 @@
             "button_url_2": null,
             "description": "<p>Now available to rent!</p>",
             "image": "booqable://assets/image-focus-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image_mobile": "",
             "overlay_background": "#000000",
             "overlay_color": "#FFFFFF",
             "overlay_opacity": 50,

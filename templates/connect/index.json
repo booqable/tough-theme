@@ -203,7 +203,7 @@
             "button_url_2": "booqable://root/",
             "description": "<p>Superfast, low-latency internet anywhere</p>",
             "image": "booqable://assets/image-connect-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image_mobile": "",
             "overlay_background": "#131314",
             "overlay_color": "#FFFFFF",
             "overlay_opacity": "40",

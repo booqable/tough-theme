@@ -273,7 +273,7 @@
             "button_url_2": "booqable://root/",
             "description": "",
             "image": "booqable://assets/image-celebrate-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image_mobile": "",
             "overlay_opacity": "30",
             "overlay_color": "#ffffff",
             "overlay_background": "#0B1A26",

@@ -281,7 +281,7 @@
             "button_url_2": "booqable://root/",
             "description": "",
             "image": "booqable://assets/image-stellar-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image_mobile": "",
             "overlay_background": "#131314",
             "overlay_color": "#FFFFFF",
             "overlay_opacity": "40",
