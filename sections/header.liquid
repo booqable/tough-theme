@@ -26,7 +26,7 @@
 {%- assign snapchat              = settings.social_snapchat_link -%}
 {%- assign youtube               = settings.social_youtube_link -%}
 {%- assign vimeo                 = settings.social_vimeo_link -%}
-{%- assign app = section.blocks | where: "type", "app" | first -%}
+{%- assign app                   = section.blocks | where: "type", "app" | first -%}
 
 {% comment %} CSS variables start {% endcomment %}
 {%- capture variables -%}
@@ -250,13 +250,11 @@
 
             {%- endfor -%}
 
-
             {%- if app -%}
               <div class="header-app">
                 {% render 'app', block: app, section: section, size: "mobile" %}
               </div>
             {%- endif -%}
-
           </ul>
 
           {{- social_icons -}}
