@@ -337,7 +337,7 @@
             "button_url_2": null,
             "description": "",
             "image": "booqable://assets/image-utility-hero.jpg",
-            "image_mobile": "booqable://assets/image-hero-mobile.jpg",
+            "image_mobile": "",
             "overlay_background": "#131314",
             "overlay_color": "#FFFFFF",
             "overlay_opacity": "40",
