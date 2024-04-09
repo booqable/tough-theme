@@ -426,13 +426,13 @@
 
 @media (min-width: 992px) {
   .carousel__wrapper {
-    margin: 0 -32px;
-    width: calc(100% + 64px);
-    scroll-padding: 0 32px 0 0;
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    scroll-padding: 0 24px 0 0;
   }
 
   .carousel__inner {
-    padding: 0 0 0 32px;
+    padding: 0 0 0 24px;
   }
 
   .carousel__item {
@@ -441,16 +441,16 @@
   }
 
   .carousel__item:last-child {
-    min-width: calc(var(--slide-width) + 32px);
-    max-width: calc(var(--slide-width) + 32px);
+    min-width: calc(var(--slide-width) + 24px);
+    max-width: calc(var(--slide-width) + 24px);
   }
 
   .carousel__item:last-child .carousel__inner {
-    padding-right: 32px;
+    padding-right: 24px;
   }
 
   .carousel__full-width .carousel__inner {
-    padding-right: 32px;
+    padding-right: 24px;
   }
 
   .carousel__edges .carousel__item,
@@ -514,12 +514,12 @@
   }
 
   .carousel__inner {
-    padding: 0 32px 0 0;
+    padding: 0 24px 0 0;
   }
 
   .carousel__item:last-child {
-    min-width: calc(var(--slide-width) - 32px);
-    max-width: calc(var(--slide-width) - 32px);
+    min-width: calc(var(--slide-width) - 24px);
+    max-width: calc(var(--slide-width) - 24px);
   }
 
   .carousel__item:last-child .carousel__inner {

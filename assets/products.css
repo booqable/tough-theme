@@ -8,7 +8,7 @@
 
 .products__list:not(.carousel) {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));
   gap: 16px;
   margin: 0;
   padding: 0;
@@ -44,5 +44,9 @@
 
   .products__wrapper--padding-bottom {
     padding-bottom: var(--padding-bottom, 112px);
+  }
+
+  .products__list:not(.carousel) {
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
   }
 }

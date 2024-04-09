@@ -19,21 +19,26 @@
   {%- assign image_placeholder     = settings.image_placeholder -%}
   {%- assign is_focal              = settings.use_focal_images -%}
   {%- assign items_limit           = 12 -%}
+  {%- assign carousel              = false -%}
 
   {%- if collection != blank -%}
     {%- assign items = collection.items -%}
     {%- assign items_type = "collection" -%}
+
+    {%- if collection.items_count > 1 and show_carousel -%}
+      {%- assign carousel = true -%}
+    {%- endif -%}
   {%- else -%}
     {%- assign items = blocks -%}
     {%- assign items_type = "blocks" -%}
+
+    {%- if blocks.size > 1 and show_carousel -%}
+      {%- assign carousel = true -%}
+    {%- endif -%}
   {%- endif -%}
 
-  {%- assign carousel = false -%}
-
-  {%- if blocks.size > 1 and show_carousel or collection.items_count > 1 and show_carousel -%}
+  {%- if carousel -%}
     {{ "carousel.css" | asset_url | stylesheet_tag }}
-
-    {%- assign carousel = true -%}
   {%- endif -%}
 
   {% comment %} CSS variables start {% endcomment %}
