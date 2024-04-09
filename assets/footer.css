@@ -180,6 +180,10 @@
   border-top-color: var(--color-border-3, #0B1A2626);
 }
 
+.footer-app {
+  margin-left: var(--horizontal-padding, 16px);
+}
+
 @media (min-width: 992px) {
   .footer__wrapper--padding-top {
     padding-top: var(--padding-top, 0px);
