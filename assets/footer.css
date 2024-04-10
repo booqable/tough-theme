@@ -180,7 +180,7 @@
   border-top-color: var(--color-border-3, #0B1A2626);
 }
 
-.footer-app {
+.footer__app {
   margin-left: var(--horizontal-padding, 16px);
 }
 

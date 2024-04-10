@@ -131,7 +131,7 @@
   {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank or payment_methods.size > 0 or app != blank -%}
     <div class="footer__icons">
       {%- if app %}
-        <div class="footer-app">
+        <div class="footer__app">
           {% render 'app', block: app, section: section %}
         </div>
       {%- endif -%}
