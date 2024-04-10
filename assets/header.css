@@ -414,11 +414,11 @@
   color: var(--color-primary-3, #0B1A26);
 }
 
-header:has(.app-mobile) .header-app:has(.app-desktop) {
+header:has(.app-mobile) .header__app:has(.app-desktop) {
   display: none;
 }
 
-.header-app:has(.app-mobile) {
+.header__app:has(.app-mobile) {
   display: flex;
   margin: var(--padding-bottom-mobile, 16px) var(--horizontal-padding, 16px);
 }
@@ -449,15 +449,15 @@ header:has(.app-mobile) .header-app:has(.app-desktop) {
 }
 
 @media (min-width: 1100px) and (hover: hover) {
-  .header-app:has(.app-mobile) {
+  .header__app:has(.app-mobile) {
     display: none;
   }
 
-  header:has(.app-mobile) .header-app:has(.app-desktop) {
+  header:has(.app-mobile) .header__app:has(.app-desktop) {
     display: initial;
   }
 
-  .header-app:has(.app-desktop) {
+  .header__app:has(.app-desktop) {
     margin-right: var(--horizontal-padding, 16px);
   }
 
