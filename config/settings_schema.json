@@ -461,7 +461,7 @@
         "default": "This website uses cookies"
       },
       {
-        "type": "textarea",
+        "type": "text",
         "id": "cookie_notice_consent_modal_description",
         "label": "Description",
         "default": "This website collects cookies to deliver you the best possible user experience."
