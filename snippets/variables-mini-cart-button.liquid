@@ -1,13 +1,24 @@
 {% style %}
   bq-minicart-button {
-    --minicart-button-size: 22px;
+    height: 24px;
     --minicart-button-badge-size: 12px;
     --minicart-button-border-radius: 50%;
-    --minicart-button-font-size: 14px;
-    --minicart-button-padding: 4px;
-    --minicart-button-hover-opacity: 1;
-    --minicart-button-transition-duration: var(--animation-duration, 200ms);
     --minicart-button-font: var(--font-body, --minicart-font, sans-serif);
+    --minicart-button-font-size: 14px;
+    --minicart-button-hover-opacity: 1;
+    --minicart-button-outer-background: transparent;
+    --minicart-button-outer-background-hover: transparent;
+    --minicart-button-outer-border: none;
+    --minicart-button-outer-border-radius: 0;
+    --minicart-button-outer-hover-border: none;
+    --minicart-button-outer-padding: 0;
+    --minicart-button-outer-transition: none;
+    --minicart-button-padding: 4px;
+    --minicart-button-size: 22px;
+    --minicart-button-transition-property: all;
+    --minicart-button-transition-timing-function: var(--transition-function-ease-in-out);
+    --minicart-button-transition-delay: 0ms;
+    --minicart-button-transition-duration: var(--animation-duration, 200ms);
 
     {% if color_palette == "one" %}
       {% if settings.primary_color != blank %}
