@@ -62,6 +62,7 @@
 
 .header__logo-image {
   max-height: 64px;
+  max-width: 200px;
 }
 
 .header__nav-wrapper {
