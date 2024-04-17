@@ -13,6 +13,7 @@ class Header {
       menuBottom: ".header-menu-bottom",
       menuOpener: "#mobile-menu-opener",
       search: ".header__search",
+      searchForm: "#search",
       searchOpener: "#search-opener",
       searchInput: ".header__search-input",
       searchReset: ".header__search-reset",
@@ -50,7 +51,8 @@ class Header {
     }
 
     this.attr = {
-      style: "style"
+      style: "style",
+      action: "action"
     }
 
     this.params = {
@@ -80,6 +82,7 @@ class Header {
     this.menuItem = this.menu?.querySelector(this.selector.menuItem);
     this.menuDrops = this.block.querySelectorAll(this.selector.menuDrop);
     this.menuOpener = this.block.querySelector(this.selector.menuOpener);
+    this.searchForm = this.block.querySelector(this.selector.searchForm);
     this.searchOpener = this.block.querySelector(this.selector.searchOpener);
     this.searchInput = this.block.querySelector(this.selector.searchInput);
     this.searchReset = this.block.querySelector(this.selector.searchReset);
@@ -95,6 +98,7 @@ class Header {
     this.hoverClose();
     this.searchAutoFill();
 
+    document.addEventListener("submit", this.searchHandleSubmit.bind(this));
     document.addEventListener("click", this.menuOverflow.bind(this));
     document.addEventListener("click", this.closeModals.bind(this));
     document.addEventListener("click", this.searchFocus.bind(this));
@@ -322,6 +326,22 @@ class Header {
     if (!query) return false;
 
     this.searchInput.value = query;
+  }
+
+  searchHandleSubmit (e) {
+    const target = e.target;
+
+    if (target !== this.searchForm) return false;
+
+    e.preventDefault();
+
+    const value = this.searchInput.value,
+          route = this.searchForm.getAttribute(this.attr.action);
+
+    this.url.href = this.url.origin + route;
+    this.url.searchParams.set(this.params.q, value);
+
+    window.location.href = this.url.href;
   }
 
   setCssVar(key, val) {
