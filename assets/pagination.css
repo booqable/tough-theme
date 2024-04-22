@@ -72,7 +72,6 @@
   color: var(--color-secondary, #4E5D78);
 }
 
-.palette-one .pagination .deco,
 .palette-one .pagination .current {
   background: var(--background-accent, #F4B841);
   color: var(--color-accent, #0B1A26);
@@ -111,7 +110,6 @@
   color: var(--color-secondary-2, #E1E4E8);
 }
 
-.palette-two .pagination .deco,
 .palette-two .pagination .current {
   background: var(--background-accent-2, #F4B841);
   color: var(--color-accent-2, #0B1A26);
@@ -150,7 +148,6 @@
   color: var(--color-secondary-3, #FFFFFF);
 }
 
-.palette-three .pagination .deco,
 .palette-three .pagination .current {
   background: var(--background-accent-3, #0B1A26);
   color: var(--color-accent-3, #FFFFFF);
