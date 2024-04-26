@@ -26,6 +26,12 @@
         --minicart-accent-text-color: #0B1A26;
       {% endif %}
 
+      {% if settings.accent_outline != blank %}
+        --minicart-accent-outline: var(--color-outline);
+      {% else %}
+        --minicart-accent-outline: #F4B841;
+      {% endif %}
+
       {% if settings.background != blank %}
         --minicart-background-color: var(--background-primary);
       {% else %}
@@ -55,6 +61,12 @@
         --minicart-accent-text-color: #0B1A26;
       {% endif %}
 
+      {% if settings.accent_outline_2 != blank %}
+        --minicart-accent-outline: var(--color-outline-2);
+      {% else %}
+        --minicart-accent-outline: #F4B841;
+      {% endif %}
+
       {% if settings.background_2 != blank %}
         --minicart-background-color: var(--background-primary-2);
       {% else %}
@@ -82,6 +94,12 @@
       {% else %}
         --minicart-header-color: #FFFFFF;
         --minicart-accent-text-color: #FFFFFF;
+      {% endif %}
+
+      {% if settings.accent_outline_3 != blank %}
+        --minicart-accent-outline: var(--color-outline-3);
+      {% else %}
+        --minicart-accent-outline: #0B1A26;
       {% endif %}
 
       {% if settings.background_3 != blank %}
