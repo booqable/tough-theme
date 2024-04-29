@@ -831,6 +831,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   #section-header .palette-one .header__app .weglot-widget__dropdown {
     border-color: var(--color-border, #0B1A2626);
     background-color: var(--background-primary, #FFFFFF) !important;
+    box-shadow: 0 0 8px var(--color-border, #0B1A2626);
   }
 
   #section-header .palette-one .header__app .weglot-widget__dropdown:hover {
@@ -890,6 +891,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   #section-header .palette-two .header__app .weglot-widget__dropdown {
     border-color: var(--color-border-2, #FFFFFF47);
     background-color: var(--background-primary-2, #0B1A26) !important;
+    box-shadow: 0 0 8px var(--color-border-2, #FFFFFF47);
   }
 
   #section-header .palette-two .header__app .weglot-widget__dropdown:hover {
@@ -949,6 +951,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   #section-header .palette-three .header__app .weglot-widget__dropdown {
     border-color: var(--color-border-3, #0B1A2626);
     background-color: var(--background-primary-3, #F4B841) !important;
+    box-shadow: 0 0 8px var(--color-border-3, #0B1A2626);
   }
 
   #section-header .palette-three .header__app .weglot-widget__dropdown:hover {
