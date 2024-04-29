@@ -89,7 +89,7 @@
 }
 
 #section-footer .footer__app .weglot-widget__wrapper {
-  border-radius: var(--border-radius-dynamic);
+  border-radius: var(--border-radius-dynamic, 0);
   transition: all var(--animation-duration) var(--transition-function-ease-in-out);
 }
 
@@ -100,8 +100,8 @@
 #section-footer .footer__app .weglot-widget__dropdown {
   left: 50%;
   transform: translate(-50%, 0);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-rounded);
+  border: 1px solid var(--color-border, #0B1A2626);
+  border-radius: var(--border-radius-rounded, 0);
   transition: all var(--animation-duration) var(--transition-function-ease-in-out);
 }
 
@@ -205,6 +205,7 @@
 
 #section-footer .palette-one .footer__app .weglot-widget__dropdown {
   border-color: var(--color-border, #0B1A2626);
+  box-shadow: 0 0 8px var(--color-border, #0B1A2626);
 }
 
 #section-footer .palette-one .footer__app .weglot-widget__dropdown:hover {
@@ -311,6 +312,7 @@
 
 #section-footer .palette-two .footer__app .weglot-widget__dropdown {
   border-color: var(--color-border-2, #FFFFFF47);
+  box-shadow: 0 0 8px var(--color-border-2, #FFFFFF47);
 }
 
 #section-footer .palette-two .footer__app .weglot-widget__dropdown:hover {
@@ -417,6 +419,7 @@
 
 #section-footer .palette-three .footer__app .weglot-widget__dropdown {
   border-color: var(--color-border-3, #0B1A2626);
+  box-shadow: 0 0 8px var(--color-border-3, #0B1A2626);
 }
 
 #section-footer .palette-three .footer__app .weglot-widget__dropdown:hover {

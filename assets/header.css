@@ -252,7 +252,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
 }
 
 #section-header .app-mobile .weglot-widget__wrapper {
-  border-radius: var(--border-radius-dynamic);
+  border-radius: var(--border-radius-dynamic, 0);
   transition: all var(--animation-duration) var(--transition-function-ease-in-out);
 }
 
@@ -262,8 +262,8 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
 
 #section-header .app-mobile .weglot-widget__dropdown {
   left: 0;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-rounded);
+  border: 1px solid var(--color-border, #0B1A2626);
+  border-radius: var(--border-radius-rounded, 0);
   transition: all var(--animation-duration) var(--transition-function-ease-in-out);
 }
 
@@ -393,6 +393,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
 
 #section-header .palette-one .app-mobile .weglot-widget__dropdown {
   border-color: var(--color-border, #0B1A2626);
+  box-shadow: 0 0 8px var(--color-border, #0B1A2626);
 }
 
 #section-header .palette-one .app-mobile .weglot-widget__dropdown:hover {
@@ -524,6 +525,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
 
 #section-header .palette-two .app-mobile .weglot-widget__dropdown {
   border-color: var(--color-border-2, #FFFFFF47);
+  box-shadow: 0 0 8px var(--color-border-2, #FFFFFF47);
 }
 
 #section-header .palette-two .app-mobile .weglot-widget__dropdown:hover {
@@ -656,6 +658,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
 
 #section-header .palette-three .app-mobile .weglot-widget__dropdown {
   border-color: var(--color-border-3, #0B1A2626);
+  box-shadow: 0 0 8px var(--color-border-3, #0B1A2626);
 }
 
 #section-header .palette-three .app-mobile .weglot-widget__dropdown:hover {
@@ -761,7 +764,7 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   }
 
   #section-header .header__app .weglot-widget__wrapper {
-    border-radius: var(--border-radius-dynamic);
+    border-radius: var(--border-radius-dynamic, 0);
     padding: 0;
     border: none;
   }
@@ -773,17 +776,15 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   #section-header .header__app .weglot-widget__dropdown {
     left: 50%;
     transform: translate(-50%, 0);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-rounded);
+    border: 1px solid var(--color-border, #0B1A2626);
+    border-radius: var(--border-radius-rounded, 0);
     transition: all var(--animation-duration) var(--transition-function-ease-in-out);
   }
 
-  #section-header .header__app .weglot-widget__dropdown--up {
-    bottom: calc(100% + 11px);
-  }
-
+  #section-header .header__app .weglot-widget__dropdown--up,
   #section-header .header__app .weglot-widget__dropdown--down {
     top: calc(100% + 11px);
+    bottom: auto;
   }
 
   #section-header .header__app .weglot-widget__dropdown:before,
@@ -799,21 +800,14 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   }
 
   #section-header .header__app .weglot-widget__dropdown--up:before,
-  #section-header .header__app .weglot-widget__dropdown--up:after {
-    top: 100%;
-    border-width: 10px 10px 0 10px;
-  }
-
-  #section-header .header__app .weglot-widget__dropdown--up:before {
-    top: calc(100% + 1px);
-  }
-
+  #section-header .header__app .weglot-widget__dropdown--up:after,
   #section-header .header__app .weglot-widget__dropdown--down:before,
   #section-header .header__app .weglot-widget__dropdown--down:after {
     bottom: 100%;
     border-width: 0 10px 10px 10px;
   }
 
+  #section-header .header__app .weglot-widget__dropdown--up:before,
   #section-header .header__app .weglot-widget__dropdown--down:before {
     bottom: calc(100% + 1px);
   }
@@ -848,35 +842,23 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   }
 
   #section-header .palette-one .header__app .weglot-widget__dropdown--up:before,
-  #section-header .palette-one .header__app .weglot-widget__dropdown--up:after {
-    border-color: var(--background-primary, #FFFFFF) transparent transparent transparent;
-  }
-
-  #section-header .palette-one .header__app .weglot-widget__dropdown--up:before {
-    border-color: var(--color-border, #0B1A2626) transparent transparent transparent;
-  }
-
-  #section-header .palette-one .header__app .weglot-widget__dropdown--up:hover:before {
-    border-color: var(--color-outline-hover, #F4B841CC) transparent transparent transparent;
-  }
-
-  #section-header .palette-one .header__app .weglot-widget__dropdown--up:active:before {
-    border-color: var(--color-outline-active, #F4B841BA) transparent transparent transparent;
-  }
-
+  #section-header .palette-one .header__app .weglot-widget__dropdown--up:after,
   #section-header .palette-one .header__app .weglot-widget__dropdown--down:before,
   #section-header .palette-one .header__app .weglot-widget__dropdown--down:after {
     border-color: transparent transparent var(--background-primary, #FFFFFF) transparent;
   }
 
+  #section-header .palette-one .header__app .weglot-widget__dropdown--up:before,
   #section-header .palette-one .header__app .weglot-widget__dropdown--down:before {
     border-color: transparent transparent var(--color-border, #0B1A2626) transparent;
   }
 
+  #section-header .palette-one .header__app .weglot-widget__dropdown--up:hover:before,
   #section-header .palette-one .header__app .weglot-widget__dropdown--down:hover:before {
     border-color: transparent transparent var(--color-outline-hover, #F4B841CC) transparent;
   }
 
+  #section-header .palette-one .header__app .weglot-widget__dropdown--up:active:before,
   #section-header .palette-one .header__app .weglot-widget__dropdown--down:active:before {
     border-color: transparent transparent var(--color-outline-active, #F4B841BA) transparent;
   }
@@ -919,35 +901,23 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   }
 
   #section-header .palette-two .header__app .weglot-widget__dropdown--up:before,
-  #section-header .palette-two .header__app .weglot-widget__dropdown--up:after {
-    border-color: var(--background-primary-2, #0B1A26) transparent transparent transparent;
-  }
-
-  #section-header .palette-two .header__app .weglot-widget__dropdown--up:before {
-    border-color: var(--color-border-2, #FFFFFF47) transparent transparent transparent;
-  }
-
-  #section-header .palette-two .header__app .weglot-widget__dropdown--up:hover:before {
-    border-color: var(--color-outline-2-hover, #F4B841CC) transparent transparent transparent;
-  }
-
-  #section-header .palette-two .header__app .weglot-widget__dropdown--up:active:before {
-    border-color: var(--color-outline-2-active, #F4B841BA) transparent transparent transparent;
-  }
-
+  #section-header .palette-two .header__app .weglot-widget__dropdown--up:after,
   #section-header .palette-two .header__app .weglot-widget__dropdown--down:before,
   #section-header .palette-two .header__app .weglot-widget__dropdown--down:after {
     border-color: transparent transparent var(--background-primary-2, #0B1A26) transparent;
   }
 
+  #section-header .palette-two .header__app .weglot-widget__dropdown--up:before,
   #section-header .palette-two .header__app .weglot-widget__dropdown--down:before {
     border-color: transparent transparent var(--color-border-2, #FFFFFF47) transparent;
   }
 
+  #section-header .palette-two .header__app .weglot-widget__dropdown--up:hover:before,
   #section-header .palette-two .header__app .weglot-widget__dropdown--down:hover:before {
     border-color: transparent transparent var(--color-outline-2-hover, #F4B841CC) transparent;
   }
 
+  #section-header .palette-two .header__app .weglot-widget__dropdown--up:active:before,
   #section-header .palette-two .header__app .weglot-widget__dropdown--down:active:before {
     border-color: transparent transparent var(--color-outline-2-active, #F4B841BA) transparent;
   }
@@ -990,35 +960,23 @@ header:has(.app-mobile) .header__app:has(.app-desktop) {
   }
 
   #section-header .palette-three .header__app .weglot-widget__dropdown--up:before,
-  #section-header .palette-three .header__app .weglot-widget__dropdown--up:after {
-    border-color: var(--background-primary-3, #F4B841) transparent transparent transparent;
-  }
-
-  #section-header .palette-three .header__app .weglot-widget__dropdown--up:before {
-    border-color: var(--color-border-3, #0B1A2626) transparent transparent transparent;
-  }
-
-  #section-header .palette-three .header__app .weglot-widget__dropdown--up:hover:before {
-    border-color: var(--color-outline-3-hover, #0B1A26CC) transparent transparent transparent;
-  }
-
-  #section-header .palette-three .header__app .weglot-widget__dropdown--up:active:before {
-    border-color: var(--color-outline-3-active, #0B1A26BA) transparent transparent transparent;
-  }
-
+  #section-header .palette-three .header__app .weglot-widget__dropdown--up:after,
   #section-header .palette-three .header__app .weglot-widget__dropdown--down:before,
   #section-header .palette-three .header__app .weglot-widget__dropdown--down:after {
     border-color: transparent transparent var(--background-primary-3, #F4B841) transparent;
   }
 
+  #section-header .palette-three .header__app .weglot-widget__dropdown--up:before,
   #section-header .palette-three .header__app .weglot-widget__dropdown--down:before {
     border-color: transparent transparent var(--color-border-3, #0B1A2626) transparent;
   }
 
+  #section-header .palette-three .header__app .weglot-widget__dropdown--up:hover:before,
   #section-header .palette-three .header__app .weglot-widget__dropdown--down:hover:before {
     border-color: transparent transparent var(--color-outline-3-hover, #0B1A26CC) transparent;
   }
 
+  #section-header .palette-three .header__app .weglot-widget__dropdown--up:active:before,
   #section-header .palette-three .header__app .weglot-widget__dropdown--down:active:before {
     border-color: transparent transparent var(--color-outline-3-active, #0B1A26BA) transparent;
   }
