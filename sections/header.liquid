@@ -134,12 +134,6 @@
   {%- if facebook != blank or instagram != blank or twitter != blank or linkedin != blank or pinterest != blank or tiktok != blank or tumblr != blank or snapchat != blank or youtube != blank or vimeo != blank -%}
     <div class="menu__bottom">
       <div class="menu__icons">
-        {%- if app -%}
-          <div class="header__app">
-            {% render 'app', block: app, section: section, size: "mobile" %}
-          </div>
-        {%- endif -%}
-
         <div class="menu__social">
           {%- render "socials", settings: settings -%}
         </div>
@@ -254,6 +248,12 @@
               {%- endif -%}
 
             {%- endfor -%}
+
+            {%- if app -%}
+              <li class="header__app">
+                {% render 'app', block: app, section: section, size: "mobile" %}
+              </li>
+            {%- endif -%}
           </ul>
 
           {{- social_icons -}}
