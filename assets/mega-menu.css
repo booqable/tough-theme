@@ -976,6 +976,7 @@
   .menu-wide.mobile-menu-top .menu__dropdown-list,
   .menu-wide .menu__dropdown-list {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .menu-wide .menu__dropdown-item {
