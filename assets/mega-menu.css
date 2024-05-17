@@ -772,7 +772,9 @@
     min-width: 250px;
     opacity: 0;
     background: none;
-    overflow: initial;
+    max-height: calc(100vh - var(--header-height, 73px));
+    overflow-y: auto;
+    overflow-x: initial;
     transform: translate(-50%, 30px);
     transition: visibility var(--animation-duration, 200ms) var(--transition-function-linear),
       opacity var(--animation-duration, 200ms),
@@ -857,9 +859,10 @@
 
   .mobile-menu-top .menu__dropdown {
     position: absolute;
-    max-height: none;
+    max-height: calc(100vh - var(--header-height, 73px));
+    overflow-y: auto;
+    overflow-x: initial;
     padding: 0;
-    overflow: initial;
     transition: visibility var(--animation-duration, 200ms) var(--transition-function-ease-out),
       opacity var(--animation-duration, 200ms),
       transform var(--animation-duration, 200ms) var(--transition-function-ease-out);
@@ -882,6 +885,11 @@
   .mobile-menu-top .menu__dropdown .menu__dropdown {
     top: 0;
     left: 100%;
+  }
+
+  .menu__dropdown:has(.menu__dropdown-opener),
+  .mobile-menu-top .menu__dropdown:has(.menu__dropdown-opener) {
+    overflow: initial;
   }
 
   .header-menu-bottom .menu {
