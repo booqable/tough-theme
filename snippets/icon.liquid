@@ -15,18 +15,6 @@
 
 {% endcomment %}
 
-{% style %}
-  .palette-one .fa, .palette-one .far {
-    color: var(--color-primary, #0B1A26);
-  }
-  .palette-two .fa, .palette-two .far {
-    color: var(--color-primary-2, #FFFFFF);
-  }
-  .palette-three .fa, .palette-three .far {
-    color: var(--color-primary-3, #0B1A26);
-  }
-{% endstyle %}
-
 {% unless icon == "empty" %}
   <span class="icon">
     <i class="{% if style == "outline" %}far{% else %}fa{% endif %} fa-{{- icon -}}" aria-hidden="true"></i>

@@ -69,29 +69,14 @@
   background: var(--background-primary, #FFFFFF);
 }
 
-.palette-one.top-bar__wrapper .fa,
-.palette-one.top-bar__wrapper .far {
-  color: var(--color-primary, #0B1A26);
-}
-
 .palette-two.top-bar__wrapper {
   color: var(--color-primary-2, #FFFFFF);
   background: var(--background-primary-2, #0B1A26);
 }
 
-.palette-two.top-bar__wrapper .fa,
-.palette-two.top-bar__wrapper .far {
-  color: var(--color-primary-2, #FFFFFF);
-}
-
 .palette-three.top-bar__wrapper {
   color: var(--color-primary-3, #0B1A26);
   background: var(--background-primary-3, #F4B841);
-}
-
-.palette-three.top-bar__wrapper .fa,
-.palette-three.top-bar__wrapper .far {
-  color: var(--color-primary-3, #0B1A26);
 }
 
 @media (min-width: 992px) {
