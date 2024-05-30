@@ -1,6 +1,51 @@
 {
   "name": "Home",
   "sections": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Dive into the ultimate surf adventure with our diverse range <br>of high-quality surfboard rentals, offering the perfect boards </p>",
+            "image": "booqable://assets/image-waverunner-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "tag": "",
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Welcome on board"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "in_text",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
     "products": {
       "type": "products",
       "blocks": {
@@ -45,62 +90,25 @@
       },
       "disabled": null
     },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "How do I rent surfboards from your business?",
-            "content": "<p>Renting surfboards from our business is a simple process. Start by visiting our website or physical rental location to view our selection of surfboards. Choose the board that suits your skill level and preferences. You can rent surfboards by the day or week. Once you've made your selection, proceed to complete the rental agreement, providing necessary information. Pay the rental fee, and the surfboard will be ready for pickup at our rental shop or delivered to your specified location. Return the surfboard at the end of the rental period, and we'll take care of the maintenance and cleaning.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if I damage a rented surfboard while using it?",
-            "content": "<p>Accidents can happen while surfing, and we understand that. If you accidentally damage a rented surfboard, please inform us as soon as possible. Depending on the extent of the damage, you may incur additional charges. We'll assess the damage and discuss the cost with you. We strongly recommend reviewing our rental agreement for specific terms and conditions regarding damage. Our goal is to ensure you have a positive surfing experience, and we appreciate your honesty in reporting any issues.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I swap or upgrade my rented surfboard if I want to try a different one during my rental period?",
-            "content": "<p>Yes, you can swap or upgrade your rented surfboard during your rental period. If you want to try a different board or upgrade to a more advanced model, simply contact our rental shop. We'll work with you to make the exchange. Keep in mind that the availability of specific surfboard models may vary, so it's a good idea to inquire about potential swaps in advance if you have a particular board in mind. We want to ensure that you have the best surfing experience possible, and we're here to accommodate your preferences.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
-      ],
-      "settings": {
-        "behavior": "multiple",
-        "color_palette": "one",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "text_987650": {
-      "type": "text",
+    "text-with-image": {
+      "type": "text-with-image",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "align": "center",
+        "button_1": "Button",
+        "button_2": "Find out more",
+        "button_url_2": "booqable://root/",
         "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
-        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your surfing journey with us.</p>"
+        "description": "<p>Our dedication to safety and quality ensures that every rental item is in peak condition, and our friendly, knowledgeable staff is always ready to offer expert advice and assistance. We're not just a rental service; we're a community of surf enthusiasts who are here to share our love for the ocean and help you catch those perfect waves. </p>",
+        "image": "booqable://assets/image-waverunner-side-1.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Surfside Supply Co.",
+        "title": "Why Surfside Supply Co?"
       },
       "disabled": null
     },
@@ -171,70 +179,62 @@
       },
       "disabled": null
     },
-    "text-with-image": {
-      "type": "text-with-image",
+    "text_987650": {
+      "type": "text",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_1": "Button",
-        "button_2": "Find out more",
-        "button_url_2": "booqable://root/",
+        "align": "center",
         "color_palette": "one",
-        "description": "<p>Our dedication to safety and quality ensures that every rental item is in peak condition, and our friendly, knowledgeable staff is always ready to offer expert advice and assistance. We're not just a rental service; we're a community of surf enthusiasts who are here to share our love for the ocean and help you catch those perfect waves. </p>",
-        "image": "booqable://assets/image-waverunner-side-1.jpg",
-        "image_position": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Surfside Supply Co.",
-        "title": "Why Surfside Supply Co?"
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your surfing journey with us.</p>",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
-    "images": {
-      "type": "images",
+    "accordion": {
+      "type": "accordion",
       "blocks": {
-        "slide": {
-          "type": "slide",
+        "item": {
+          "type": "item",
           "settings": {
-            "button_1": "Check out products",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Dive into the ultimate surf adventure with our diverse range <br>of high-quality surfboard rentals, offering the perfect boards </p>",
-            "image": "booqable://assets/image-waverunner-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 40,
-            "show_overlay": true,
-            "tag": "",
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Welcome on board"
+            "content": "<p>Renting surfboards from our business is a simple process. Start by visiting our website or physical rental location to view our selection of surfboards. Choose the board that suits your skill level and preferences. You can rent surfboards by the day or week. Once you've made your selection, proceed to complete the rental agreement, providing necessary information. Pay the rental fee, and the surfboard will be ready for pickup at our rental shop or delivered to your specified location. Return the surfboard at the end of the rental period, and we'll take care of the maintenance and cleaning.</p>",
+            "heading": "How do I rent surfboards from your business?"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Accidents can happen while surfing, and we understand that. If you accidentally damage a rented surfboard, please inform us as soon as possible. Depending on the extent of the damage, you may incur additional charges. We'll assess the damage and discuss the cost with you. We strongly recommend reviewing our rental agreement for specific terms and conditions regarding damage. Our goal is to ensure you have a positive surfing experience, and we appreciate your honesty in reporting any issues.</p>",
+            "heading": "What happens if I damage a rented surfboard while using it?"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Yes, you can swap or upgrade your rented surfboard during your rental period. If you want to try a different board or upgrade to a more advanced model, simply contact our rental shop. We'll work with you to make the exchange. Keep in mind that the availability of specific surfboard models may vary, so it's a good idea to inquire about potential swaps in advance if you have a particular board in mind. We want to ensure that you have the best surfing experience possible, and we're here to accommodate your preferences.</p>",
+            "heading": "Can I swap or upgrade my rented surfboard if I want to try a different one during my rental period?"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "slide"
+        "item",
+        "item_478139",
+        "item_478145"
       ],
       "settings": {
+        "behavior": "multiple",
         "color_palette": "one",
-        "datepicker_position": "in_text",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": true,
-        "height": "small",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": null
     },

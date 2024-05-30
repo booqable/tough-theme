@@ -1,21 +1,107 @@
 {
   "name": "Home",
   "sections": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Unlock your creative potential and seize every moment in<br>stunning detail with our extensive selection of camera rentals.</p>",
+            "image": "booqable://assets/image-radical-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Your camera, lens, <br>and lighting partner"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection_535502": {
+          "type": "collection",
+          "settings": {
+            "collection": "4f77f034-97ba-45fc-8680-bae84921625c"
+          },
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {
+            "collection": "310f148c-75df-4242-9da3-778dd1861580"
+          },
+          "disabled": null
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "caea2e67-d470-4c8f-a285-3dc0b5e8dc20"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection_242972",
+        "collection_535502",
+        "collection"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "overlay_background": "#131314",
+        "overlay_color": "#ffffff",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_overlay": true
+      },
+      "disabled": null
+    },
     "title_987654": {
       "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
         "button_url": "booqable://product/",
-        "padding_top": "medium",
         "button_label": "See all",
-        "padding_bottom_mobile": "none",
-        "title": "New arrivals",
-        "padding_bottom": "none",
-        "tag": "Latest",
-        "padding_top_mobile": "medium",
+        "color_palette": "two",
         "description": "",
-        "color_palette": "two"
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "none",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Latest",
+        "title": "New arrivals"
       },
       "disabled": null
     },
@@ -56,35 +142,74 @@
         "product_123449"
       ],
       "settings": {
-        "show_carousel": false,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "medium",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "two",
-        "show_excerpt": true
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": false,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
-    "title_987656": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>As a professional photographer, I've had the pleasure of renting photography equipment from this photography rental business on multiple occasions. The selection of cameras, lenses, and accessories is extensive, catering to every need. The equipment is always pristine, and the rental process is straightforward.</p>",
+            "image": "booqable://assets/image-radical-testimonial-1.jpg",
+            "name": "Michael",
+            "position": "Slight Photography",
+            "stars": 5,
+            "title": "Capturing Perfection"
+          },
+          "disabled": null
+        },
+        "testimonial_478139": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>Our production company has consistently relied on this photography rental business for our equipment needs, and they've never disappointed. The range of gear available is impressive, and we appreciate the flexibility of their rental terms.</p>",
+            "image": "booqable://assets/image-radical-testimonial-2.jpg",
+            "name": "Philip",
+            "position": "Nature Photography",
+            "stars": "5",
+            "title": "Photography Equipment Rental Done Right"
+          },
+          "disabled": null
+        },
+        "testimonial_903085": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>This photography rental business has been an absolute game-changer for my wedding photography. The range of cameras, lenses, and lighting equipment they offer is extensive, allowing me to tailor my gear to the unique needs of each event.</p>",
+            "image": "booqable://assets/image-radical-testimonial-3.jpg",
+            "name": "Sarah",
+            "position": "Sarah Miller Photography",
+            "stars": "5",
+            "title": "A Photographer's Best Friend"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_478139",
+        "testimonial_903085"
+      ],
       "settings": {
-        "button_url": "booqable://root/",
+        "color_palette": "two",
+        "image_position": "right",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
         "padding_top": "medium",
-        "bg_text": "",
-        "button_label": "See all",
-        "padding_bottom_mobile": "small",
-        "title": "Latest blog posts",
-        "padding_bottom": "small",
-        "tag": "From the blog",
         "padding_top_mobile": "medium",
-        "description": "<p>Learn about photography from professionals.</p>",
-        "color_palette": "two"
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -136,56 +261,154 @@
       ],
       "settings": {
         "color_palette": "two",
-        "title": "Trusted by:",
-        "text_position": "center",
-        "text_position_mobile": "center",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
-        "padding_top_mobile": "small"
+        "padding_top_mobile": "small",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "title": "Trusted by:"
       },
       "disabled": true
     },
-    "accordion": {
-      "type": "accordion",
+    "images_870989": {
+      "type": "images",
       "blocks": {
-        "item": {
-          "type": "item",
+        "slide": {
+          "type": "slide",
           "settings": {
-            "heading": "How can I rent a camera from your business?",
-            "content": "<p>Renting a camera from our business is a straightforward process. Start by exploring our camera inventory, which includes a variety of professional cameras and accessories. Once you've chosen the camera that suits your needs, select your desired rental period, which can range from a day to several weeks. Add the camera to your cart and proceed to checkout. Provide the necessary information and payment details, and we will prepare the camera for pickup at our rental location or arrange for delivery to your specified address. When your rental period is over, return the camera, and we'll take care of any necessary maintenance and cleaning.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if I accidentally damage a rented camera during use?",
-            "content": "<p> If you accidentally damage a rented camera while using it, please notify us immediately. We understand that accidents can happen. The extent of the damage will be assessed, and you may be responsible for covering the repair or replacement costs. We recommend reviewing our rental agreement for specific terms and conditions related to camera damage. Your honesty in reporting any issues is greatly appreciated, and we're here to assist you in resolving the situation as smoothly as possible.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I extend the rental period for a camera if I need it for a longer duration than initially planned?",
-            "content": "<p>Yes, you have the option to extend the rental period for a camera if you find that you need it for a longer duration than originally planned. To do so, please contact our team to discuss your requirements and coordinate an extension. We will work with you to update the rental terms and ensure the camera's continued availability. Keep in mind that camera availability may vary, so it's advisable to let us know about your extension needs as early as possible to secure the equipment. We're committed to accommodating your changing photography needs.</p>"
+            "button_1": "Book your camera",
+            "button_2": "",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "",
+            "description": "<p>Explore the tools that top photographers and<br>content creators are using to create stunning visuals.<br></p>",
+            "image": "booqable://image-radical-background.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 64,
+            "show_overlay": true,
+            "tag": "",
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "title": "The Latest Trends <br>Behind the Lens"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
+        "slide"
       ],
       "settings": {
-        "behavior": "multiple",
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": false,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "text": "",
+        "title": "Let us explain how the whole rental process work, step by step. Keep scrolling."
+      },
+      "disabled": true
+    },
+    "numbered-blocks": {
+      "type": "numbered-blocks",
+      "blocks": {
+        "block": {
+          "type": "block",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "button_url_1": "",
+            "button_url_2": "",
+            "heading": "",
+            "image": "booqable://assets/image-fashion-step-1.jpg",
+            "image_position": "right",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
+            "text_alignment": "bottom"
+          },
+          "disabled": null
+        },
+        "block_242972": {
+          "type": "block",
+          "settings": {
+            "button_1": "",
+            "button_2": "",
+            "button_url_2": "",
+            "heading": "",
+            "image": "booqable://assets/image-fashion-step-2.jpg",
+            "image_position": "right",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
+            "text_alignment": "bottom"
+          },
+          "disabled": null
+        },
+        "block_535502": {
+          "type": "block",
+          "settings": {
+            "button_1": "",
+            "button_url_1": "",
+            "button_2": "",
+            "heading": "",
+            "image": "booqable://assets/image-fashion-step-2.jpg",
+            "image_position": "right",
+            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
+            "text_alignment": "bottom"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "block",
+        "block_242972",
+        "block_535502"
+      ],
+      "settings": {
         "color_palette": "two",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small"
+      },
+      "disabled": true
+    },
+    "title_987656": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "See all",
+        "button_url": "booqable://root/",
+        "color_palette": "two",
+        "description": "<p>Learn about photography from professionals.</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "From the blog",
+        "title": "Latest blog posts"
       },
       "disabled": null
     },
@@ -256,274 +479,51 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
-        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your photography journey with us.</p>"
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your photography journey with us.</p>",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
-    "numbered-blocks": {
-      "type": "numbered-blocks",
+    "accordion": {
+      "type": "accordion",
       "blocks": {
-        "block": {
-          "type": "block",
+        "item": {
+          "type": "item",
           "settings": {
-            "heading": "",
-            "button_1": "",
-            "button_2": "",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "image_position": "right",
-            "text_alignment": "bottom",
-            "button_url_1": "",
-            "button_url_2": "",
-            "image": "booqable://assets/image-fashion-step-1.jpg"
+            "content": "<p>Renting a camera from our business is a straightforward process. Start by exploring our camera inventory, which includes a variety of professional cameras and accessories. Once you've chosen the camera that suits your needs, select your desired rental period, which can range from a day to several weeks. Add the camera to your cart and proceed to checkout. Provide the necessary information and payment details, and we will prepare the camera for pickup at our rental location or arrange for delivery to your specified address. When your rental period is over, return the camera, and we'll take care of any necessary maintenance and cleaning.</p>",
+            "heading": "How can I rent a camera from your business?"
           },
           "disabled": null
         },
-        "block_242972": {
-          "type": "block",
+        "item_478139": {
+          "type": "item",
           "settings": {
-            "button_1": "",
-            "button_2": "",
-            "button_url_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-fashion-step-2.jpg",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
+            "content": "<p> If you accidentally damage a rented camera while using it, please notify us immediately. We understand that accidents can happen. The extent of the damage will be assessed, and you may be responsible for covering the repair or replacement costs. We recommend reviewing our rental agreement for specific terms and conditions related to camera damage. Your honesty in reporting any issues is greatly appreciated, and we're here to assist you in resolving the situation as smoothly as possible.</p>",
+            "heading": "What happens if I accidentally damage a rented camera during use?"
           },
           "disabled": null
         },
-        "block_535502": {
-          "type": "block",
+        "item_478145": {
+          "type": "item",
           "settings": {
-            "button_1": "",
-            "button_url_1": "",
-            "button_2": "",
-            "heading": "",
-            "image": "booqable://assets/image-fashion-step-2.jpg",
-            "image_position": "right",
-            "text": "Let us explain how the whole rental process work, step by step. <br>Keep scrolling.",
-            "text_alignment": "bottom"
+            "content": "<p>Yes, you have the option to extend the rental period for a camera if you find that you need it for a longer duration than originally planned. To do so, please contact our team to discuss your requirements and coordinate an extension. We will work with you to update the rental terms and ensure the camera's continued availability. Keep in mind that camera availability may vary, so it's advisable to let us know about your extension needs as early as possible to secure the equipment. We're committed to accommodating your changing photography needs.</p>",
+            "heading": "Can I extend the rental period for a camera if I need it for a longer duration than initially planned?"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "block",
-        "block_242972",
-        "block_535502"
+        "item",
+        "item_478139",
+        "item_478145"
       ],
       "settings": {
+        "behavior": "multiple",
         "color_palette": "two",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small"
-      },
-      "disabled": true
-    },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "two",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Let us explain how the whole rental process work, step by step. Keep scrolling.",
-        "text": ""
-      },
-      "disabled": true
-    },
-    "images_870989": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Book your camera",
-            "button_2": "",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "",
-            "description": "<p>Explore the tools that top photographers and<br>content creators are using to create stunning visuals.<br></p>",
-            "image": "booqable://image-radical-background.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 64,
-            "show_overlay": true,
-            "tag": "",
-            "text_position": "center",
-            "text_position_mobile": "center",
-            "title": "The Latest Trends <br>Behind the Lens"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": true,
-        "height": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": false,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial": {
-          "type": "testimonial",
-          "settings": {
-            "description": "<p>As a professional photographer, I've had the pleasure of renting photography equipment from this photography rental business on multiple occasions. The selection of cameras, lenses, and accessories is extensive, catering to every need. The equipment is always pristine, and the rental process is straightforward.</p>",
-            "image": "booqable://assets/image-radical-testimonial-1.jpg",
-            "name": "Michael",
-            "position": "Slight Photography",
-            "stars": 5,
-            "title": "Capturing Perfection"
-          },
-          "disabled": null
-        },
-        "testimonial_478139": {
-          "type": "testimonial",
-          "settings": {
-            "description": "<p>Our production company has consistently relied on this photography rental business for our equipment needs, and they've never disappointed. The range of gear available is impressive, and we appreciate the flexibility of their rental terms.</p>",
-            "image": "booqable://assets/image-radical-testimonial-2.jpg",
-            "name": "Philip",
-            "position": "Nature Photography",
-            "stars": "5",
-            "title": "Photography Equipment Rental Done Right"
-          },
-          "disabled": null
-        },
-        "testimonial_903085": {
-          "type": "testimonial",
-          "settings": {
-            "image": "booqable://assets/image-radical-testimonial-3.jpg",
-            "title": "A Photographer's Best Friend",
-            "description": "<p>This photography rental business has been an absolute game-changer for my wedding photography. The range of cameras, lenses, and lighting equipment they offer is extensive, allowing me to tailor my gear to the unique needs of each event.</p>",
-            "name": "Sarah",
-            "position": "Sarah Miller Photography",
-            "stars": "5"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "testimonial",
-        "testimonial_478139",
-        "testimonial_903085"
-      ],
-      "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
-        "image_position": "right",
-        "show_navigation": true,
-        "padding_bottom": "medium",
-        "padding_top_mobile": "medium",
-        "show_pagination": true,
-        "color_palette": "two"
-      },
-      "disabled": null
-    },
-    "collections": {
-      "type": "collections",
-      "blocks": {
-        "collection_535502": {
-          "type": "collection",
-          "settings": {
-            "collection": "4f77f034-97ba-45fc-8680-bae84921625c"
-          },
-          "disabled": null
-        },
-        "collection_242972": {
-          "type": "collection",
-          "settings": {
-            "collection": "310f148c-75df-4242-9da3-778dd1861580"
-          },
-          "disabled": null
-        },
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "caea2e67-d470-4c8f-a285-3dc0b5e8dc20"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "collection_242972",
-        "collection_535502",
-        "collection"
-      ],
-      "settings": {
-        "show_overlay": true,
-        "overlay_color": "#ffffff",
-        "overlay_background": "#131314",
-        "color_palette": "two",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium"
-      },
-      "disabled": null
-    },
-    "images": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Check out products",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Unlock your creative potential and seize every moment in<br>stunning detail with our extensive selection of camera rentals.</p>",
-            "image": "booqable://assets/image-radical-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 40,
-            "show_overlay": true,
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Your camera, lens, <br>and lighting partner"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": true,
-        "height": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
       },
       "disabled": null
     }

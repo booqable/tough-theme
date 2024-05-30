@@ -20,8 +20,8 @@
       "settings": {
         "breadcrumbs_root_label": "",
         "breadcrumbs_root_url": "collections",
-        "infinity_scroll": true,
         "color_palette": "one",
+        "infinity_scroll": true,
         "message_label": "Free shipping over $50",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",

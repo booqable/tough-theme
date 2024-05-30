@@ -8,8 +8,8 @@
           "type": "slide",
           "settings": {
             "button_1": "Check out products",
-            "button_url_1": "booqable://products/",
             "button_2": "More info",
+            "button_url_1": "booqable://products/",
             "button_url_2": "booqable://root/",
             "description": "Empower your construction endeavors with our<br> vast inventory of premium equipment rentals.",
             "image": "booqable://assets/image-tough-hero.jpg",
@@ -93,13 +93,13 @@
       ],
       "settings": {
         "color_palette": "two",
-        "title": "Trusted by the world's top companies",
-        "text_position": "left",
-        "text_position_mobile": "center",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "small",
         "padding_top": "large",
-        "padding_top_mobile": "large"
+        "padding_top_mobile": "large",
+        "text_position": "left",
+        "text_position_mobile": "center",
+        "title": "Trusted by the world's top companies"
       },
       "disabled": false
     },
@@ -154,8 +154,8 @@
       ],
       "settings": {
         "color_palette": "one",
-        "overlay_color": "#FFFFFF",
         "overlay_background": "#0B1A26",
+        "overlay_color": "#FFFFFF",
         "padding_bottom": "large",
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
@@ -170,8 +170,8 @@
       "block_order": [],
       "settings": {
         "button_1": "Book now",
-        "button_url_1": "booqable://collections/",
         "button_2": "Learn more",
+        "button_url_1": "booqable://collections/",
         "button_url_2": "booqable://root/",
         "color_palette": "two",
         "description": "From project management to equipment maintenance, safety compliance, and more, our expertise is dedicated to servicing construction businesses. Let us be your trusted partner in building your success.",
@@ -298,30 +298,30 @@
         "block": {
           "type": "block",
           "settings": {
-            "heading": "Choose your rental period",
             "button_1": "Get started",
             "button_2": "Learn more",
-            "text": "<p>Choose the dates you would like to rent construction equipment. This will allow you to see the availability of our products and if they line up with your expected dates.</p>",
-            "image_position": "right",
-            "text_alignment": "middle",
             "button_url_1": "booqable://root/",
             "button_url_2": "booqable://root/",
-            "image": "booqable://assets/image-tough-step-1.jpg"
+            "heading": "Choose your rental period",
+            "image": "booqable://assets/image-tough-step-1.jpg",
+            "image_position": "right",
+            "text": "<p>Choose the dates you would like to rent construction equipment. This will allow you to see the availability of our products and if they line up with your expected dates.</p>",
+            "text_alignment": "middle"
           },
           "disabled": null
         },
         "block_242972": {
           "type": "block",
           "settings": {
-            "heading": "Select your equipment",
             "button_1": "Select equipment",
             "button_2": "Button",
-            "text": "<p>Browse our inventory to see the products we have available and add your selected products to your cart to check out.</p>",
-            "image_position": "left",
-            "text_alignment": "middle",
             "button_url_1": "booqable://collections/",
             "button_url_2": "booqable://root/",
-            "image": "booqable://assets/image-tough-step-2.jpg"
+            "heading": "Select your equipment",
+            "image": "booqable://assets/image-tough-step-2.jpg",
+            "image_position": "left",
+            "text": "<p>Browse our inventory to see the products we have available and add your selected products to your cart to check out.</p>",
+            "text_alignment": "middle"
           },
           "disabled": null
         },
@@ -329,8 +329,8 @@
           "type": "block",
           "settings": {
             "button_1": "Book now",
-            "button_url_1": "booqable://root/",
             "button_2": "Button",
+            "button_url_1": "booqable://root/",
             "heading": "Book and pay online",
             "image": "booqable://assets/image-tough-step-3.jpg",
             "image_position": "right",
@@ -450,24 +450,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How can I rent construction equipment from {{ shop.name }}?",
-            "content": "Renting construction equipment from our business is a straightforward process. Begin by browsing our extensive inventory of construction equipment, including excavators, bulldozers, cranes, and more. Once you've selected the equipment you need for your project, submit a rental request or contact our team. We'll work with you to confirm availability, discuss rental terms, and provide you with a quote. After we've agreed on the details, we'll arrange for the equipment to be delivered to your project site. When your rental period is complete, we'll coordinate the equipment's pick-up. It's a convenient way to access the machinery you need for your construction projects."
+            "content": "Renting construction equipment from our business is a straightforward process. Begin by browsing our extensive inventory of construction equipment, including excavators, bulldozers, cranes, and more. Once you've selected the equipment you need for your project, submit a rental request or contact our team. We'll work with you to confirm availability, discuss rental terms, and provide you with a quote. After we've agreed on the details, we'll arrange for the equipment to be delivered to your project site. When your rental period is complete, we'll coordinate the equipment's pick-up. It's a convenient way to access the machinery you need for your construction projects.",
+            "heading": "How can I rent construction equipment from {{ shop.name }}?"
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "What happens if the rented equipment breaks down or requires maintenance during my rental period?",
-            "content": "In the event that the rented equipment experiences a breakdown or requires maintenance during your rental period, please contact our support team immediately. We have a dedicated service team ready to assist you. Depending on the issue and its cause, we'll arrange for repairs or replacement as needed. The repair and maintenance costs for equipment issues that are not a result of misuse or neglect will typically be covered by our business. Please refer to our rental agreement for specific terms and conditions regarding equipment breakdowns and maintenance."
+            "content": "In the event that the rented equipment experiences a breakdown or requires maintenance during your rental period, please contact our support team immediately. We have a dedicated service team ready to assist you. Depending on the issue and its cause, we'll arrange for repairs or replacement as needed. The repair and maintenance costs for equipment issues that are not a result of misuse or neglect will typically be covered by our business. Please refer to our rental agreement for specific terms and conditions regarding equipment breakdowns and maintenance.",
+            "heading": "What happens if the rented equipment breaks down or requires maintenance during my rental period?"
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "Can I extend the rental period if my construction project takes longer than expected?",
-            "content": "Yes, you have the option to extend the rental period if your construction project takes longer than initially planned. To do so, please contact our team as soon as you anticipate the need for an extension. We will work with you to arrange the necessary documentation and adjust the rental terms accordingly. Keep in mind that equipment availability may vary, so it's a good practice to notify us as soon as possible to ensure the continued availability of the equipment you need. We understand that construction schedules can change, and we're here to support your project's evolving needs."
+            "content": "Yes, you have the option to extend the rental period if your construction project takes longer than initially planned. To do so, please contact our team as soon as you anticipate the need for an extension. We will work with you to arrange the necessary documentation and adjust the rental terms accordingly. Keep in mind that equipment availability may vary, so it's a good practice to notify us as soon as possible to ensure the continued availability of the equipment you need. We understand that construction schedules can change, and we're here to support your project's evolving needs.",
+            "heading": "Can I extend the rental period if my construction project takes longer than expected?"
           },
           "disabled": null
         }
@@ -493,8 +493,8 @@
       "block_order": [],
       "settings": {
         "button_1": "Button",
-        "button_url_1": "booqable://root/",
         "button_2": "Button",
+        "button_url_1": "booqable://root/",
         "button_url_2": "booqable://root/",
         "color_palette": "three",
         "description": "Trust {{ shop.name }} to deliver the right construction equipment for your job site.",

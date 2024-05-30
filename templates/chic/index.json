@@ -1,6 +1,95 @@
 {
   "name": "Home",
   "sections": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Luxury furniture delivered to your door for days, </p>\n<p>weeks, or months. It's up to you to style your home.</p>",
+            "image": "booqable://assets/image-chic-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "tag": "",
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Rent luxury furniture <br>and feel at home"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text-with-image_738627": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "View style collections",
+        "button_2": "Button",
+        "button_url_1": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>Style your home with complete collections in Scandinavian, Countryside, and Danish styles. We offer a wide variety of complementary furniture in these styles.</p>",
+        "image": "booqable://assets/image-chic-side-1.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Style",
+        "title": "Rent by style"
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "View furniture",
+        "button_2": "Button",
+        "button_url_1": "booqable://root/",
+        "color_palette": "two",
+        "description": "<p>Browse our range of chic and stylish luxury furniture. Select pieces all in one style or mix and match to create your own unique look.</p>",
+        "image": "booqable://assets/image-chic-side-2.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Furniture",
+        "title": "Browse all furniture"
+      },
+      "disabled": null
+    },
     "title_987654": {
       "type": "title",
       "blocks": {},
@@ -88,6 +177,139 @@
       },
       "disabled": null
     },
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "text": "<p>Read what our customers have to say about their experience with our rental business.</p>",
+        "title": "Customers love our furniture"
+      },
+      "disabled": false
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>My experience with this luxury furniture rental business was nothing short of amazing. I rented some exquisite pieces to elevate the look of my home for a special event, and it transformed my living space into a palace. The quality and craftsmanship of the furniture were exceptional. The rental process was smooth, and the delivery was punctual. I felt like royalty in my own home, and I can't recommend this service enough!</p>",
+            "image": "booqable://assets/image-chic-testimonial-1.jpg",
+            "name": "Emily",
+            "position": "New York City",
+            "stars": 5,
+            "title": "Luxury Redefined: My Home, My Palace"
+          },
+          "disabled": null
+        },
+        "testimonial_478139": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>I wanted to create a lavish atmosphere for my wedding reception without breaking the bank. This luxury furniture rental service provided me with the perfect solution. The range of furniture styles and designs they offered was impressive, and the pieces were in pristine condition. It added an air of elegance to the event, and my guests were in awe of the decor. An absolute gem for anyone looking to add a touch of luxury to their special day.</p>",
+            "image": "booqable://assets/image-chic-testimonial-2.jpg",
+            "name": "Sarah",
+            "position": "Los Angeles",
+            "stars": "5",
+            "title": "Affordable Opulence for My Special Occasion"
+          },
+          "disabled": null
+        },
+        "testimonial_378990": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>When I stumbled upon this luxury furniture rental business, I was intrigued by the idea of having access to high-end furniture without the hefty price tag. I rented a couple of statement pieces to spruce up my living room, and the transformation was incredible. The customer service was impeccable, and the rental process was a breeze. Now, I can enjoy a taste of luxury in my home whenever I want.</p>",
+            "image": "booqable://assets/image-chic-testimonial-3.jpg",
+            "name": "Michelle",
+            "position": "Chicago",
+            "stars": "5",
+            "title": "A Taste of Luxury at Your Fingertips"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_478139",
+        "testimonial_378990"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "image_position": "right",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text_987650": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your furniture journey with us.</p>",
+        "title": "Frequently asked questions"
+      },
+      "disabled": null
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Renting luxury furniture from our business is a straightforward process. Start by browsing our curated collection of high-end furniture pieces, including sofas, tables, chairs, and more. Once you've selected the furniture items that match your style and needs, specify the duration of your rental, which can range from a few days to several weeks. Add the items to your cart and proceed to checkout. Provide the necessary information, and we'll arrange for the furniture to be delivered to your specified location. After your rental period is over, we'll coordinate the pickup of the furniture. We take care of any necessary cleaning and maintenance, allowing you to enjoy the elegance of luxury furniture without the commitment of ownership.</p>",
+            "heading": "How can I rent luxury furniture from your business?"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "content": "<p>In the event of accidental damage or staining of a rented luxury furniture item, please notify us promptly. Depending on the extent of the damage or staining, you may be responsible for covering the costs associated with repair or restoration. We recommend reviewing our rental agreement for specific terms and conditions related to furniture damage. While we understand that accidents can occur, your timely communication is appreciated to ensure the continued quality of our luxury furniture.</p>",
+            "heading": "What happens if I accidentally damage or stain a rented luxury furniture item?"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "content": "<p> Yes, you have the option to purchase a rented luxury furniture item if you fall in love with it during your rental period. Simply contact our team, and we'll assist you in converting your rental into a purchase. In many cases, a portion of your rental fees can be applied towards the purchase price, making it an attractive opportunity to own the luxury furniture you adore. The availability of the item for purchase may vary, so we recommend inquiring as soon as you decide you want to make it a permanent addition to your home. We're here to help you turn your rental into a lasting investment in luxury decor.</p>",
+            "heading": "Can I purchase a rented luxury furniture item if I decide I want to keep it?"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_478139",
+        "item_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "one",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
+      },
+      "disabled": false
+    },
     "logos": {
       "type": "logos",
       "blocks": {
@@ -145,228 +367,6 @@
         "title": "Featured in"
       },
       "disabled": false
-    },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "How can I rent luxury furniture from your business?",
-            "content": "<p>Renting luxury furniture from our business is a straightforward process. Start by browsing our curated collection of high-end furniture pieces, including sofas, tables, chairs, and more. Once you've selected the furniture items that match your style and needs, specify the duration of your rental, which can range from a few days to several weeks. Add the items to your cart and proceed to checkout. Provide the necessary information, and we'll arrange for the furniture to be delivered to your specified location. After your rental period is over, we'll coordinate the pickup of the furniture. We take care of any necessary cleaning and maintenance, allowing you to enjoy the elegance of luxury furniture without the commitment of ownership.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if I accidentally damage or stain a rented luxury furniture item?",
-            "content": "<p>In the event of accidental damage or staining of a rented luxury furniture item, please notify us promptly. Depending on the extent of the damage or staining, you may be responsible for covering the costs associated with repair or restoration. We recommend reviewing our rental agreement for specific terms and conditions related to furniture damage. While we understand that accidents can occur, your timely communication is appreciated to ensure the continued quality of our luxury furniture.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I purchase a rented luxury furniture item if I decide I want to keep it?",
-            "content": "<p> Yes, you have the option to purchase a rented luxury furniture item if you fall in love with it during your rental period. Simply contact our team, and we'll assist you in converting your rental into a purchase. In many cases, a portion of your rental fees can be applied towards the purchase price, making it an attractive opportunity to own the luxury furniture you adore. The availability of the item for purchase may vary, so we recommend inquiring as soon as you decide you want to make it a permanent addition to your home. We're here to help you turn your rental into a lasting investment in luxury decor.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
-      ],
-      "settings": {
-        "behavior": "multiple",
-        "color_palette": "one",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": false
-    },
-    "text-with-image_738627": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "View style collections",
-        "button_2": "Button",
-        "button_url_1": "booqable://root/",
-        "color_palette": "one",
-        "description": "<p>Style your home with complete collections in Scandinavian, Countryside, and Danish styles. We offer a wide variety of complementary furniture in these styles.</p>",
-        "image": "booqable://assets/image-chic-side-1.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Style",
-        "title": "Rent by style"
-      },
-      "disabled": null
-    },
-    "text_987650": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
-        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your furniture journey with us.</p>"
-      },
-      "disabled": null
-    },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "two",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "title": "Customers love our furniture",
-        "text": "<p>Read what our customers have to say about their experience with our rental business.</p>"
-      },
-      "disabled": false
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "View furniture",
-        "button_2": "Button",
-        "button_url_1": "booqable://root/",
-        "color_palette": "two",
-        "description": "<p>Browse our range of chic and stylish luxury furniture. Select pieces all in one style or mix and match to create your own unique look.</p>",
-        "image": "booqable://assets/image-chic-side-2.jpg",
-        "image_position": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Furniture",
-        "title": "Browse all furniture"
-      },
-      "disabled": null
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial": {
-          "type": "testimonial",
-          "settings": {
-            "description": "<p>My experience with this luxury furniture rental business was nothing short of amazing. I rented some exquisite pieces to elevate the look of my home for a special event, and it transformed my living space into a palace. The quality and craftsmanship of the furniture were exceptional. The rental process was smooth, and the delivery was punctual. I felt like royalty in my own home, and I can't recommend this service enough!</p>",
-            "image": "booqable://assets/image-chic-testimonial-1.jpg",
-            "name": "Emily",
-            "position": "New York City",
-            "stars": 5,
-            "title": "Luxury Redefined: My Home, My Palace"
-          },
-          "disabled": null
-        },
-        "testimonial_478139": {
-          "type": "testimonial",
-          "settings": {
-            "description": "<p>I wanted to create a lavish atmosphere for my wedding reception without breaking the bank. This luxury furniture rental service provided me with the perfect solution. The range of furniture styles and designs they offered was impressive, and the pieces were in pristine condition. It added an air of elegance to the event, and my guests were in awe of the decor. An absolute gem for anyone looking to add a touch of luxury to their special day.</p>",
-            "image": "booqable://assets/image-chic-testimonial-2.jpg",
-            "name": "Sarah",
-            "position": "Los Angeles",
-            "stars": "5",
-            "title": "Affordable Opulence for My Special Occasion"
-          },
-          "disabled": null
-        },
-        "testimonial_378990": {
-          "type": "testimonial",
-          "settings": {
-            "image": "booqable://assets/image-chic-testimonial-3.jpg",
-            "title": "A Taste of Luxury at Your Fingertips",
-            "description": "<p>When I stumbled upon this luxury furniture rental business, I was intrigued by the idea of having access to high-end furniture without the hefty price tag. I rented a couple of statement pieces to spruce up my living room, and the transformation was incredible. The customer service was impeccable, and the rental process was a breeze. Now, I can enjoy a taste of luxury in my home whenever I want.</p>",
-            "name": "Michelle",
-            "position": "Chicago",
-            "stars": "5"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "testimonial",
-        "testimonial_478139",
-        "testimonial_378990"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "image_position": "right",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "show_navigation": true,
-        "show_pagination": true,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "images": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Check out products",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Luxury furniture delivered to your door for days, </p>\n<p>weeks, or months. It's up to you to style your home.</p>",
-            "image": "booqable://assets/image-chic-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 40,
-            "show_overlay": true,
-            "tag": "",
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Rent luxury furniture <br>and feel at home"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": true,
-        "height": "medium",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
-      },
-      "disabled": null
     }
   },
   "order": [

@@ -6,9 +6,9 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "title": "Privacy policy",
+        "align": "left",
         "text": "<p>Cookie policy by Booqable, 2024</p><p>Booqable collects cookies to deliver you the best possible user experience.</p>",
-        "align": "left"
+        "title": "Privacy policy"
       },
       "disabled": null
     },
@@ -21,9 +21,9 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "title": "How and why we use cookies",
+        "align": "left",
         "text": "<p>Use this page to explain what data you collect, with which techniques and why you collect this data.</p>",
-        "align": "left"
+        "title": "How and why we use cookies"
       },
       "disabled": null
     }

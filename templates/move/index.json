@@ -1,95 +1,6 @@
 {
   "name": "Home",
   "sections": {
-    "images_848774": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Order now",
-            "button_2": "",
-            "button_url_1": "booqable://root/",
-            "description": "",
-            "image": "booqable://assets/image-move-hero-2.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFF",
-            "overlay_opacity": "40",
-            "show_overlay": true,
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Getting you moving quickly"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "datepicker_position": "bottom",
-        "datepicker_title": "Check availability:",
-        "effect": "slide",
-        "full_width": true,
-        "height": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": false,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "text-with-image_510414": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "View packages",
-        "button_2": "Get in touch",
-        "button_url_1": "booqable://root/",
-        "button_url_2": "booqable://root/",
-        "color_palette": "one",
-        "description": "<p>Whether you're planning a major household relocation or a small-scale move, our versatile boxes and expert solutions are tailored to meet your specific requirements. Our extensive range of box sizes and packing accessories ensures that you can easily customize your order to suit the scale of your move. </p>",
-        "image": "booqable://assets/image-move-side-2.jpg",
-        "image_position": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Get started",
-        "title": "For big and small removals"
-      },
-      "disabled": null
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Learn more",
-        "button_2": "",
-        "button_url_1": "booqable://root/",
-        "button_url_2": "booqable://root/",
-        "color_palette": "one",
-        "description": "<p>We understand that the process of relocating can be a daunting task, and that's why we're here to simplify it for you. Our high-quality, eco-friendly boxes are designed to make packing and transporting your belongings a breeze. </p>",
-        "image": "booqable://assets/image-move-side-1.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Moving boxes",
-        "title": "Make moving easier"
-      },
-      "disabled": false
-    },
     "images": {
       "type": "images",
       "blocks": {
@@ -134,46 +45,92 @@
       },
       "disabled": null
     },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Learn more",
+        "button_2": "",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>We understand that the process of relocating can be a daunting task, and that's why we're here to simplify it for you. Our high-quality, eco-friendly boxes are designed to make packing and transporting your belongings a breeze. </p>",
+        "image": "booqable://assets/image-move-side-1.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Moving boxes",
+        "title": "Make moving easier"
+      },
+      "disabled": false
+    },
+    "text-with-image_510414": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "View packages",
+        "button_2": "Get in touch",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>Whether you're planning a major household relocation or a small-scale move, our versatile boxes and expert solutions are tailored to meet your specific requirements. Our extensive range of box sizes and packing accessories ensures that you can easily customize your order to suit the scale of your move. </p>",
+        "image": "booqable://assets/image-move-side-2.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Get started",
+        "title": "For big and small removals"
+      },
+      "disabled": null
+    },
     "columns": {
       "type": "columns",
       "blocks": {
         "column": {
           "type": "column",
           "settings": {
-            "title": "Step 1: Order your boxes",
-            "text": "<p>Browse our website, select your rental period, and book the boxes you require.</p>",
+            "button_style": "secondary",
             "icon": "plus",
-            "button_style": "secondary"
+            "text": "<p>Browse our website, select your rental period, and book the boxes you require.</p>",
+            "title": "Step 1: Order your boxes"
           },
           "disabled": null
         },
         "column_714659": {
           "type": "column",
           "settings": {
-            "title": "Step 2: We deliver your boxes",
-            "text": "<p>We will deliver your boxes to your door on the start date  you select.</p>",
+            "button_style": "secondary",
             "icon": "envelope",
-            "button_style": "secondary"
+            "text": "<p>We will deliver your boxes to your door on the start date  you select.</p>",
+            "title": "Step 2: We deliver your boxes"
           },
           "disabled": null
         },
         "column_987110": {
           "type": "column",
           "settings": {
-            "title": "Step 3: Move your stuff",
-            "text": "<p>Move all your stuff with ease over your rental period.</p>",
+            "button_style": "secondary",
             "icon": "map-marker",
-            "button_style": "secondary"
+            "text": "<p>Move all your stuff with ease over your rental period.</p>",
+            "title": "Step 3: Move your stuff"
           },
           "disabled": null
         },
         "column_669937": {
           "type": "column",
           "settings": {
-            "title": "Step 4: We pick up your boxes",
-            "text": "<p>We will pick up your moving boxes from your door on your selected end date.</p>",
+            "button_style": "secondary",
             "icon": "minus",
-            "button_style": "secondary"
+            "text": "<p>We will pick up your moving boxes from your door on your selected end date.</p>",
+            "title": "Step 4: We pick up your boxes"
           },
           "disabled": null
         }
@@ -187,10 +144,53 @@
       "settings": {
         "color_palette": "one",
         "grid": "two",
-        "padding_top": "large",
         "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
+      },
+      "disabled": null
+    },
+    "images_848774": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Order now",
+            "button_2": "",
+            "button_url_1": "booqable://root/",
+            "description": "",
+            "image": "booqable://assets/image-move-hero-2.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Getting you moving quickly"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "datepicker_position": "bottom",
+        "datepicker_title": "Check availability:",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
         "padding_top_mobile": "large",
-        "padding_bottom_mobile": "large"
+        "pause": true,
+        "show_datepicker": false,
+        "timer": 5
       },
       "disabled": null
     }

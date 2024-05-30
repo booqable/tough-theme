@@ -1,6 +1,207 @@
 {
   "name": "Home",
   "sections": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Take the stress out of traveling with your baby,<br>Rent a stroller for the duration of your vacation.</p>",
+            "image": "booqable://assets/image-around-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Rent a Stroller"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": false,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "color_palette": "one",
+        "description": "<p>We understand that convenience and quality are paramount when it comes to ensuring a seamless and enjoyable outing with your little one. That's why we take great pride in offering a wide selection of top-notch baby strollers for rent.</p>",
+        "image": "booqable://assets/image-around-side.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "",
+        "title": "Why rent from us?"
+      },
+      "disabled": null
+    },
+    "text_305660": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "center",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "medium",
+        "text": "",
+        "title": "The benefits of renting a stroller"
+      },
+      "disabled": null
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "plus",
+            "text": "<p>Renting is much more affordable than purchasing, especially when your baby is growing.</p>",
+            "title": "Save money"
+          },
+          "disabled": null
+        },
+        "column_365404": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "plus",
+            "text": "<p>By renting from us at your destination, you don't need to travel with a stroller.</p>",
+            "title": "Travel with less"
+          },
+          "disabled": null
+        },
+        "column_159772": {
+          "type": "column",
+          "settings": {
+            "button_style": "secondary",
+            "icon": "plus",
+            "text": "<p>All our strollers are of the highest quality, so you can be sure they're durable.</p>",
+            "title": "High-quality"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column",
+        "column_365404",
+        "column_159772"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "three",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
+      },
+      "disabled": null
+    },
+    "text-with-image_742675": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Button",
+        "button_2": "Button",
+        "color_palette": "one",
+        "description": "<p>Your baby's comfort and your peace of mind are of the utmost importance when it comes to selecting a stroller, and we make it easy for you to find the perfect fit. Our diverse range of strollers offers options for every family's unique needs and preferences. </p>",
+        "image": "booqable://assets/image-around-side-2.jpg",
+        "image_position": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "",
+        "title": "Choose a stroller you'll love"
+      },
+      "disabled": null
+    },
+    "logos": {
+      "type": "logos",
+      "blocks": {
+        "logo_478118": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-around-logo-1.png"
+          },
+          "disabled": null
+        },
+        "logo_478138": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-around-logo-2.png"
+          },
+          "disabled": null
+        },
+        "logo_478148": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-around-logo-3.png"
+          },
+          "disabled": null
+        },
+        "logo_478178": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-around-logo-4.png"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_478118"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "title": "Rent strollers from:"
+      },
+      "disabled": false
+    },
     "title_987654": {
       "type": "title",
       "blocks": {},
@@ -63,173 +264,6 @@
       },
       "disabled": null
     },
-    "logos": {
-      "type": "logos",
-      "blocks": {
-        "logo_478118": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-around-logo-1.png"
-          },
-          "disabled": null
-        },
-        "logo_478138": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-around-logo-2.png"
-          },
-          "disabled": null
-        },
-        "logo_478148": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-around-logo-3.png"
-          },
-          "disabled": null
-        },
-        "logo_478178": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-around-logo-4.png"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "logo_478138",
-        "logo_478148",
-        "logo_478178",
-        "logo_478118"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "title": "Rent strollers from:",
-        "text_position": "center",
-        "text_position_mobile": "center",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": false
-    },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "How can I rent a stroller from your website?",
-            "content": "<p>Renting a stroller from our website is a hassle-free process. Begin by browsing our selection of strollers, which includes options for various ages and needs. Once you've chosen the stroller that suits your requirements, specify the rental duration, whether you need it for a few days or several weeks. Add the stroller to your cart and proceed to the checkout. Provide the necessary information, and we will arrange for the stroller to be delivered to your specified location. When your rental period is over, you can return the stroller using the provided shipping label. We handle cleaning and maintenance, allowing you to enjoy the convenience of a stroller without the burden of ownership.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if the rented stroller gets damaged during my use?",
-            "content": "<p>If the rented stroller sustains any damage during your use, please notify us as soon as possible. Depending on the nature and extent of the damage, you may be responsible for covering the repair or replacement costs. We recommend reviewing our rental agreement for specific terms and conditions regarding stroller damage. Your prompt reporting of any issues is greatly appreciated and helps us maintain the quality of our rental strollers.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I extend the rental period for a stroller if I need it for a longer duration than originally planned?",
-            "content": "<p>Yes, you have the option to extend the rental period for a stroller if you find that you need it for a longer duration than initially intended. Contact our team to discuss your needs and arrange for an extension. We'll work with you to update the rental terms and ensure the continued availability of the stroller. Keep in mind that stroller availability may vary, so it's advisable to notify us of your extension needs as early as possible to secure the equipment. We understand that circumstances can change, and we're here to support your evolving stroller requirements.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
-      ],
-      "settings": {
-        "behavior": "multiple",
-        "color_palette": "one",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "text_305660": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "medium",
-        "text": "",
-        "title": "The benefits of renting a stroller"
-      },
-      "disabled": null
-    },
-    "text-with-image_742675": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Button",
-        "button_2": "Button",
-        "color_palette": "one",
-        "description": "<p>Your baby's comfort and your peace of mind are of the utmost importance when it comes to selecting a stroller, and we make it easy for you to find the perfect fit. Our diverse range of strollers offers options for every family's unique needs and preferences. </p>",
-        "image": "booqable://assets/image-around-side-2.jpg",
-        "image_position": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "",
-        "title": "Choose a stroller you'll love"
-      },
-      "disabled": null
-    },
-    "text_987650": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "center",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your stroller journey with us.</p>",
-        "title": "Frequently asked questions"
-      },
-      "disabled": null
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Button",
-        "button_2": "Button",
-        "color_palette": "one",
-        "description": "<p>We understand that convenience and quality are paramount when it comes to ensuring a seamless and enjoyable outing with your little one. That's why we take great pride in offering a wide selection of top-notch baby strollers for rent.</p>",
-        "image": "booqable://assets/image-around-side.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "",
-        "title": "Why rent from us?"
-      },
-      "disabled": null
-    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -288,96 +322,62 @@
       },
       "disabled": null
     },
-    "images": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Check out products",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Take the stress out of traveling with your baby,<br>Rent a stroller for the duration of your vacation.</p>",
-            "image": "booqable://assets/image-around-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 40,
-            "show_overlay": true,
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Rent a Stroller"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
+    "text_987650": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
       "settings": {
+        "align": "center",
         "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": false,
-        "height": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
         "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
+        "padding_top_mobile": "medium",
+        "text": "<p>Explore the FAQs to ensure you're well-prepared to embark on your stroller journey with us.</p>",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
-    "columns": {
-      "type": "columns",
+    "accordion": {
+      "type": "accordion",
       "blocks": {
-        "column": {
-          "type": "column",
+        "item": {
+          "type": "item",
           "settings": {
-            "title": "Save money",
-            "text": "<p>Renting is much more affordable than purchasing, especially when your baby is growing.</p>",
-            "icon": "plus",
-            "button_style": "secondary"
+            "content": "<p>Renting a stroller from our website is a hassle-free process. Begin by browsing our selection of strollers, which includes options for various ages and needs. Once you've chosen the stroller that suits your requirements, specify the rental duration, whether you need it for a few days or several weeks. Add the stroller to your cart and proceed to the checkout. Provide the necessary information, and we will arrange for the stroller to be delivered to your specified location. When your rental period is over, you can return the stroller using the provided shipping label. We handle cleaning and maintenance, allowing you to enjoy the convenience of a stroller without the burden of ownership.</p>",
+            "heading": "How can I rent a stroller from your website?"
           },
           "disabled": null
         },
-        "column_365404": {
-          "type": "column",
+        "item_478139": {
+          "type": "item",
           "settings": {
-            "title": "Travel with less",
-            "text": "<p>By renting from us at your destination, you don't need to travel with a stroller.</p>",
-            "icon": "plus",
-            "button_style": "secondary"
+            "content": "<p>If the rented stroller sustains any damage during your use, please notify us as soon as possible. Depending on the nature and extent of the damage, you may be responsible for covering the repair or replacement costs. We recommend reviewing our rental agreement for specific terms and conditions regarding stroller damage. Your prompt reporting of any issues is greatly appreciated and helps us maintain the quality of our rental strollers.</p>",
+            "heading": "What happens if the rented stroller gets damaged during my use?"
           },
           "disabled": null
         },
-        "column_159772": {
-          "type": "column",
+        "item_478145": {
+          "type": "item",
           "settings": {
-            "title": "High-quality",
-            "text": "<p>All our strollers are of the highest quality, so you can be sure they're durable.</p>",
-            "icon": "plus",
-            "button_style": "secondary"
+            "content": "<p>Yes, you have the option to extend the rental period for a stroller if you find that you need it for a longer duration than initially intended. Contact our team to discuss your needs and arrange for an extension. We'll work with you to update the rental terms and ensure the continued availability of the stroller. Keep in mind that stroller availability may vary, so it's advisable to notify us of your extension needs as early as possible to secure the equipment. We understand that circumstances can change, and we're here to support your evolving stroller requirements.</p>",
+            "heading": "Can I extend the rental period for a stroller if I need it for a longer duration than originally planned?"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "column",
-        "column_365404",
-        "column_159772"
+        "item",
+        "item_478139",
+        "item_478145"
       ],
       "settings": {
+        "behavior": "multiple",
         "color_palette": "one",
-        "grid": "three",
-        "padding_top": "large",
-        "padding_bottom": "large",
-        "padding_top_mobile": "large",
-        "padding_bottom_mobile": "large"
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": null
     }

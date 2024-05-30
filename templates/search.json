@@ -36,8 +36,8 @@
       ],
       "settings": {
         "color_palette": "one",
-        "limit": 6,
         "grid": "three",
+        "limit": 6,
         "mobile_toggler": "Menu",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",

@@ -6,13 +6,13 @@
       "blocks": {},
       "block_order": [],
       "settings": {
+        "button_label": "Back to home",
         "color_palette": "two",
         "description": "Sorry, there's <b>nothing here</b>",
-        "button_label": "Back to home",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium"
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": null
     }

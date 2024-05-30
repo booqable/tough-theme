@@ -1,55 +1,45 @@
 {
   "name": "Home",
   "sections": {
-    "products": {
-      "type": "products",
+    "images": {
+      "type": "images",
       "blocks": {
-        "product_259117": {
-          "type": "product",
+        "slide": {
+          "type": "slide",
           "settings": {
-            "product": "6fbed42f-e420-400c-bb86-915adc959df6"
-          },
-          "disabled": null
-        },
-        "product_432371": {
-          "type": "product",
-          "settings": {
-            "product": "9f6c153a-b6c4-48ce-8eea-6fcca75e6187"
-          },
-          "disabled": null
-        },
-        "product_710215": {
-          "type": "product",
-          "settings": {
-            "product": "171dd621-df29-4b5e-b986-cdeee992dc8e"
-          },
-          "disabled": null
-        },
-        "product_169358": {
-          "type": "product",
-          "settings": {
-            "product": "340c4daf-7f58-4c5c-88fb-f655262d0810"
+            "button_1": "Book now",
+            "button_2": "",
+            "button_url_1": "booqable://collections/mountain-bikes",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Explore the trails </p>\n<p>with our selection of mountain bikes</p>\n<p>and accessories</p>",
+            "image": "booqable://assets/image-endure-hero.jpg",
+            "image_mobile": null,
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 60,
+            "show_overlay": true,
+            "text_position": "middle-left",
+            "text_position_mobile": "top-left",
+            "title": "Rent mountain <br>bikes easily"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "product_710215",
-        "product_259117",
-        "product_432371",
-        "product_169358"
+        "slide"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "small",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "none",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
-        "color_palette": "one",
-        "show_excerpt": true
+        "color_palette": "two",
+        "datepicker_position": "bottom",
+        "effect": "slide",
+        "full_width": true,
+        "height": "large",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -108,173 +98,14 @@
         "logo_103890"
       ],
       "settings": {
-        "text_position_mobile": "center",
-        "padding_top": "large",
-        "padding_bottom_mobile": "small",
-        "title": "We stock the world's favorite cycling brands",
+        "color_palette": "one",
         "padding_bottom": "medium",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
         "padding_top_mobile": "large",
         "text_position": "left",
-        "color_palette": "one"
-      },
-      "disabled": null
-    },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "What types of mountain bikes do you offer for rent?",
-            "content": "<p>We offer various mountain bikes to suit your riding preferences, including hardtail and full-suspension models. You can choose from various sizes, frame materials, and features, ensuring you find the perfect bike for your adventure.</p>"
-          },
-          "disabled": null
-        },
-        "item_645425": {
-          "type": "item",
-          "settings": {
-            "heading": "How much does it cost to rent a mountain bike, and what's included in the rental fee?",
-            "content": "<p>Our rental rates vary depending on the type of bike and rental duration. Prices typically start at $XX per hour or $XX per day. Each rental includes a helmet, basic repair kit, and a trail map. We also offer optional add-ons such as protective gear or guided tours for an additional cost.</p>"
-          },
-          "disabled": null
-        },
-        "item_423342": {
-          "type": "item",
-          "settings": {
-            "heading": "Where can I pick up and drop off the rented mountain bike?",
-            "content": "<p>You can pick up your rented mountain bike at our main rental location in British Colombia. We also offer delivery services to certain popular trailheads in the area. When returning the bike, you can drop it off at the exact location or arrange a drop-off at a designated spot, depending on your preference.</p>"
-          },
-          "disabled": null
-        },
-        "item_264890": {
-          "type": "item",
-          "settings": {
-            "heading": "Do I need to make a reservation in advance?",
-            "content": "<p>While walk-in rentals are available, we highly recommend making a reservation in advance, especially during peak riding seasons. Reserving a bike ensures that you'll have the specific model and size you desire, and it expedites the rental process on the day of your ride.</p>"
-          },
-          "disabled": null
-        },
-        "item_345626": {
-          "type": "item",
-          "settings": {
-            "heading": "Are there any age or skill level restrictions for renting a mountain bike?",
-            "content": "<p>We welcome riders of various skill levels and ages. However, we require riders under 18 to have a parent or guardian sign a waiver. For safety reasons, we recommend that riders have prior experience with mountain biking, especially when renting full-suspension bikes or attempting more challenging trails. If you're a beginner, consider signing up for one of our guided tours or take advantage of our trail recommendations to ensure a safe and enjoyable ride.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_645425",
-        "item_423342",
-        "item_264890",
-        "item_345626"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "behavior": "multiple",
-        "padding_top": "small",
-        "padding_bottom": "large",
-        "padding_top_mobile": "medium",
-        "padding_bottom_mobile": "medium"
-      },
-      "disabled": null
-    },
-    "title_200149": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "padding_top": "medium",
-        "bg_text": "FAQs",
-        "padding_bottom_mobile": "small",
-        "title": "Frequently asked questions",
-        "padding_bottom": "small",
-        "tag": "FAQs",
-        "padding_top_mobile": "medium",
-        "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your fashion journey with us.</p>",
-        "color_palette": "two"
-      },
-      "disabled": null
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "space_height": "none",
-        "button_1": "Learn more",
-        "button_2": "",
-        "padding_top": "large",
-        "padding_bottom_mobile": "large",
-        "image_position": "right",
-        "button_url_1": "booqable://pages/trails",
-        "button_url_2": "booqable://root/",
-        "title": "Take on the trails with GPS",
-        "padding_bottom": "large",
-        "tag": "Trails",
-        "padding_top_mobile": "large",
-        "image": "booqable://assets/image-endure-explore.jpg",
-        "description": "<p>Explore the trails with confidence using &nbsp;GPS with our mountain bikes.  Discover detailed trail maps and real-time location tracking to ensure a memorable and worry-free ride through the wilderness. Don't just ride the trails – conquer them with precision and ease.</p>",
-        "color_palette": "two"
-      },
-      "disabled": null
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial": {
-          "type": "testimonial",
-          "settings": {
-            "image": "booqable://assets/image-endure-testimonial-1.jpg",
-            "title": "An Epic Ride Through the Wilderness!",
-            "description": "<p>Renting a mountain bike from this place was the highlight of my trip to British Columbia. The bikes were in excellent condition, the staff was super friendly and knowledgeable, and the trails were breathtaking. I can't wait to return for another adventure!</p>",
-            "name": " Sarah Thompson",
-            "position": "Vancouver, Canada",
-            "stars": "5"
-          },
-          "disabled": null
-        },
-        "testimonial_976457": {
-          "type": "testimonial",
-          "settings": {
-            "image": "booqable://assets/image-endure-testimonial-2.jpg",
-            "title": "Unforgettable Mountain Biking Experience",
-            "description": "<p>My friends and I had an amazing time renting mountain bikes from this rental business in BC. The bikes were top-notch, the prices were reasonable, and the trails were exhilarating. We'll be back for more adrenaline-pumping rides!</p>",
-            "name": "Mark Davis",
-            "position": "Victoria, Canada",
-            "stars": "5"
-          },
-          "disabled": null
-        },
-        "testimonial_467828": {
-          "type": "testimonial",
-          "settings": {
-            "image": "booqable://assets/image-endure-testimonial-3.jpg",
-            "title": "The Best Bike Rental!",
-            "description": "<p>I can't recommend this mountain bike rental business enough. The bikes were well-maintained, and the staff went out of their way to provide us with trail suggestions and maps. We had a blast exploring British Columbia's stunning wilderness on two wheels!</p>",
-            "name": "Emily Miller",
-            "position": "Kelowna, Canada",
-            "stars": "5"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "testimonial",
-        "testimonial_976457",
-        "testimonial_467828"
-      ],
-      "settings": {
-        "timer": 5,
-        "padding_top": "medium",
-        "padding_bottom_mobile": "medium",
-        "image_position": "left",
-        "show_navigation": true,
-        "padding_bottom": "medium",
-        "padding_top_mobile": "medium",
-        "show_pagination": true,
-        "color_palette": "one"
+        "text_position_mobile": "center",
+        "title": "We stock the world's favorite cycling brands"
       },
       "disabled": null
     },
@@ -283,117 +114,69 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "button_url": "",
-        "padding_top": "medium",
         "bg_text": "",
         "button_label": "",
-        "padding_bottom_mobile": "small",
-        "title": "How will you explore the trails?",
-        "padding_bottom": "small",
-        "tag": "Choose your bike",
-        "padding_top_mobile": "medium",
+        "button_url": "",
+        "color_palette": "one",
         "description": "",
-        "color_palette": "one"
-      },
-      "disabled": null
-    },
-    "images": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "Book now",
-            "button_2": "",
-            "button_url_1": "booqable://collections/mountain-bikes",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Explore the trails </p>\n<p>with our selection of mountain bikes</p>\n<p>and accessories</p>",
-            "image": "booqable://assets/image-endure-hero.jpg",
-            "image_mobile": null,
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 60,
-            "show_overlay": true,
-            "text_position": "middle-left",
-            "text_position_mobile": "top-left",
-            "title": "Rent mountain <br>bikes easily"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "datepicker_position": "bottom",
-        "effect": "slide",
-        "full_width": true,
-        "height": "large",
-        "pause": true,
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
         "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "timer": 5
+        "padding_top_mobile": "medium",
+        "tag": "Choose your bike",
+        "title": "How will you explore the trails?"
       },
       "disabled": null
     },
-    "columns": {
-      "type": "columns",
+    "products": {
+      "type": "products",
       "blocks": {
-        "column": {
-          "type": "column",
+        "product_259117": {
+          "type": "product",
           "settings": {
-            "title": "Smith Creek",
-            "text": "<p>Thrilling downhill descents, rock gardens, and stunning vistas define this adrenaline-pumping mountain biking destination.</p>",
-            "icon": "phone",
-            "image": "booqable://assets/image-endure-column-1.jpg",
-            "button_label": "Learn more",
-            "button_url": "booqable://pages/trails",
-            "button_style": "secondary"
+            "product": "6fbed42f-e420-400c-bb86-915adc959df6"
           },
           "disabled": null
         },
-        "column_280121": {
-          "type": "column",
+        "product_432371": {
+          "type": "product",
           "settings": {
-            "title": "Seven Summit Ridge",
-            "text": "<p>Challenge your skills on seven unique summits, offering epic views and heart-pounding descents for all riders.</p>",
-            "icon": "phone",
-            "image": "booqable://assets/image-endure-column-2.jpg",
-            "button_label": "Learn more",
-            "button_url": "booqable://pages/trails",
-            "button_style": "secondary"
+            "product": "9f6c153a-b6c4-48ce-8eea-6fcca75e6187"
           },
           "disabled": null
         },
-        "column_634020": {
-          "type": "column",
+        "product_710215": {
+          "type": "product",
           "settings": {
-            "title": "Kettle Valley",
-            "text": "<p>Meander through the historic railway, crossing trestles, tunnels, and vineyards on this scenic and diverse trail.</p>",
-            "icon": "phone",
-            "image": "booqable://assets/image-endure-column-3.jpg",
-            "button_label": "Learn more",
-            "button_url": "booqable://pages/trails",
-            "button_style": "secondary"
+            "product": "171dd621-df29-4b5e-b986-cdeee992dc8e"
+          },
+          "disabled": null
+        },
+        "product_169358": {
+          "type": "product",
+          "settings": {
+            "product": "340c4daf-7f58-4c5c-88fb-f655262d0810"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "column",
-        "column_280121",
-        "column_634020"
+        "product_710215",
+        "product_259117",
+        "product_432371",
+        "product_169358"
       ],
       "settings": {
         "color_palette": "one",
-        "grid": "three",
-        "padding_top": "large",
-        "padding_bottom": "large",
-        "padding_top_mobile": "large",
-        "padding_bottom_mobile": "large"
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
       },
       "disabled": null
     },
@@ -436,16 +219,233 @@
         "product_639295"
       ],
       "settings": {
-        "show_carousel": true,
-        "timer": 5,
-        "padding_top": "none",
-        "padding_bottom_mobile": "medium",
-        "show_navigation": true,
-        "padding_bottom": "large",
-        "padding_top_mobile": "small",
-        "show_pagination": true,
         "color_palette": "one",
-        "show_excerpt": true
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Learn more",
+        "button_2": "",
+        "button_url_1": "booqable://pages/trails",
+        "button_url_2": "booqable://root/",
+        "color_palette": "two",
+        "description": "<p>Explore the trails with confidence using &nbsp;GPS with our mountain bikes.  Discover detailed trail maps and real-time location tracking to ensure a memorable and worry-free ride through the wilderness. Don't just ride the trails – conquer them with precision and ease.</p>",
+        "image": "booqable://assets/image-endure-explore.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Trails",
+        "title": "Take on the trails with GPS"
+      },
+      "disabled": null
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column": {
+          "type": "column",
+          "settings": {
+            "button_label": "Learn more",
+            "button_style": "secondary",
+            "button_url": "booqable://pages/trails",
+            "icon": "phone",
+            "image": "booqable://assets/image-endure-column-1.jpg",
+            "text": "<p>Thrilling downhill descents, rock gardens, and stunning vistas define this adrenaline-pumping mountain biking destination.</p>",
+            "title": "Smith Creek"
+          },
+          "disabled": null
+        },
+        "column_280121": {
+          "type": "column",
+          "settings": {
+            "button_label": "Learn more",
+            "button_style": "secondary",
+            "button_url": "booqable://pages/trails",
+            "icon": "phone",
+            "image": "booqable://assets/image-endure-column-2.jpg",
+            "text": "<p>Challenge your skills on seven unique summits, offering epic views and heart-pounding descents for all riders.</p>",
+            "title": "Seven Summit Ridge"
+          },
+          "disabled": null
+        },
+        "column_634020": {
+          "type": "column",
+          "settings": {
+            "button_label": "Learn more",
+            "button_style": "secondary",
+            "button_url": "booqable://pages/trails",
+            "icon": "phone",
+            "image": "booqable://assets/image-endure-column-3.jpg",
+            "text": "<p>Meander through the historic railway, crossing trestles, tunnels, and vineyards on this scenic and diverse trail.</p>",
+            "title": "Kettle Valley"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column",
+        "column_280121",
+        "column_634020"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "three",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
+      },
+      "disabled": null
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>Renting a mountain bike from this place was the highlight of my trip to British Columbia. The bikes were in excellent condition, the staff was super friendly and knowledgeable, and the trails were breathtaking. I can't wait to return for another adventure!</p>",
+            "image": "booqable://assets/image-endure-testimonial-1.jpg",
+            "name": " Sarah Thompson",
+            "position": "Vancouver, Canada",
+            "stars": "5",
+            "title": "An Epic Ride Through the Wilderness!"
+          },
+          "disabled": null
+        },
+        "testimonial_976457": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>My friends and I had an amazing time renting mountain bikes from this rental business in BC. The bikes were top-notch, the prices were reasonable, and the trails were exhilarating. We'll be back for more adrenaline-pumping rides!</p>",
+            "image": "booqable://assets/image-endure-testimonial-2.jpg",
+            "name": "Mark Davis",
+            "position": "Victoria, Canada",
+            "stars": "5",
+            "title": "Unforgettable Mountain Biking Experience"
+          },
+          "disabled": null
+        },
+        "testimonial_467828": {
+          "type": "testimonial",
+          "settings": {
+            "description": "<p>I can't recommend this mountain bike rental business enough. The bikes were well-maintained, and the staff went out of their way to provide us with trail suggestions and maps. We had a blast exploring British Columbia's stunning wilderness on two wheels!</p>",
+            "image": "booqable://assets/image-endure-testimonial-3.jpg",
+            "name": "Emily Miller",
+            "position": "Kelowna, Canada",
+            "stars": "5",
+            "title": "The Best Bike Rental!"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "testimonial",
+        "testimonial_976457",
+        "testimonial_467828"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "image_position": "left",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "title_200149": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "FAQs",
+        "color_palette": "two",
+        "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your fashion journey with us.</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "FAQs",
+        "title": "Frequently asked questions"
+      },
+      "disabled": null
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "content": "<p>We offer various mountain bikes to suit your riding preferences, including hardtail and full-suspension models. You can choose from various sizes, frame materials, and features, ensuring you find the perfect bike for your adventure.</p>",
+            "heading": "What types of mountain bikes do you offer for rent?"
+          },
+          "disabled": null
+        },
+        "item_645425": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Our rental rates vary depending on the type of bike and rental duration. Prices typically start at $XX per hour or $XX per day. Each rental includes a helmet, basic repair kit, and a trail map. We also offer optional add-ons such as protective gear or guided tours for an additional cost.</p>",
+            "heading": "How much does it cost to rent a mountain bike, and what's included in the rental fee?"
+          },
+          "disabled": null
+        },
+        "item_423342": {
+          "type": "item",
+          "settings": {
+            "content": "<p>You can pick up your rented mountain bike at our main rental location in British Colombia. We also offer delivery services to certain popular trailheads in the area. When returning the bike, you can drop it off at the exact location or arrange a drop-off at a designated spot, depending on your preference.</p>",
+            "heading": "Where can I pick up and drop off the rented mountain bike?"
+          },
+          "disabled": null
+        },
+        "item_264890": {
+          "type": "item",
+          "settings": {
+            "content": "<p>While walk-in rentals are available, we highly recommend making a reservation in advance, especially during peak riding seasons. Reserving a bike ensures that you'll have the specific model and size you desire, and it expedites the rental process on the day of your ride.</p>",
+            "heading": "Do I need to make a reservation in advance?"
+          },
+          "disabled": null
+        },
+        "item_345626": {
+          "type": "item",
+          "settings": {
+            "content": "<p>We welcome riders of various skill levels and ages. However, we require riders under 18 to have a parent or guardian sign a waiver. For safety reasons, we recommend that riders have prior experience with mountain biking, especially when renting full-suspension bikes or attempting more challenging trails. If you're a beginner, consider signing up for one of our guided tours or take advantage of our trail recommendations to ensure a safe and enjoyable ride.</p>",
+            "heading": "Are there any age or skill level restrictions for renting a mountain bike?"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_645425",
+        "item_423342",
+        "item_264890",
+        "item_345626"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "two",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "medium"
       },
       "disabled": null
     }

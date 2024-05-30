@@ -1,7 +1,51 @@
 {
   "name": "Home",
   "sections": {
-    "title_774184": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "More info",
+            "button_2": "",
+            "button_url_1": "booqable://collections/",
+            "button_url_2": null,
+            "description": "<p>Now available to rent!</p>",
+            "image": "booqable://assets/image-focus-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#000000",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 50,
+            "show_overlay": true,
+            "text_position": "bottom-left",
+            "text_position_mobile": "top-left",
+            "title": "RED Dragon-X 8K"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "Check availability",
+        "effect": "slide",
+        "full_width": true,
+        "height": "large",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "title_821472": {
       "type": "title",
       "blocks": {},
       "block_order": [],
@@ -10,13 +54,84 @@
         "button_label": "",
         "button_url": "",
         "color_palette": "one",
-        "description": "<p>Find us wherever you are</p>",
-        "padding_bottom": "medium",
+        "description": "",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Featured",
+        "title": "Popular cameras"
+      },
+      "disabled": null
+    },
+    "products_208735": {
+      "type": "products",
+      "blocks": {
+        "product": {
+          "type": "product",
+          "settings": {
+            "product": "4b8703b5-509c-4131-aa19-7d49000b32b0"
+          },
+          "disabled": null
+        },
+        "product_403891": {
+          "type": "product",
+          "settings": {
+            "product": "2d415d95-ee9a-4fc4-a488-2f368ccc2ed8"
+          },
+          "disabled": null
+        },
+        "product_578042": {
+          "type": "product",
+          "settings": {
+            "product": "f367f7bf-67a4-4cda-a245-792b59c47c40"
+          },
+          "disabled": null
+        },
+        "product_247995": {
+          "type": "product",
+          "settings": {
+            "product": "bc70a616-c768-40ee-94c4-318f3591ffb5"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "product_578042",
+        "product_247995",
+        "product",
+        "product_403891"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "title": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
+        "color_palette": "one",
+        "description": "",
+        "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
-        "padding_top_mobile": "medium",
-        "tag": "Locations",
-        "title": "Visit our 3 locations across New York"
+        "padding_top_mobile": "small",
+        "tag": "Featured",
+        "title": "New equipment"
       },
       "disabled": null
     },
@@ -65,32 +180,55 @@
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small",
-        "show_navigation": true,
-        "show_pagination": true,
         "show_carousel": true,
         "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
         "timer": 5
       },
       "disabled": null
     },
-    "title_987655": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "one",
-        "description": "<p>Rated 4.8 stars based on 749 reviews</p>",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "tag": "",
-        "title": "What our customers say"
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "bf705733-c027-45a2-988d-615e42188422"
+          },
+          "disabled": null
+        },
+        "collection_783512": {
+          "type": "collection",
+          "settings": {
+            "collection": "e8addc4b-57e4-4fa0-9ae8-ddf0a256210e"
+          },
+          "disabled": null
+        },
+        "collection_705107": {
+          "type": "collection",
+          "settings": {
+            "collection": "e03337a4-ad28-4d1d-99e5-cbf893acbe1c"
+          },
+          "disabled": null
+        }
       },
-      "disabled": false
+      "block_order": [
+        "collection",
+        "collection_783512",
+        "collection_705107"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "overlay_background": "#000000",
+        "overlay_color": "#FFFFFF",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_overlay": true
+      },
+      "disabled": null
     },
     "title_987656": {
       "type": "title",
@@ -108,6 +246,60 @@
         "padding_top_mobile": "medium",
         "tag": "Blog",
         "title": "Daily shooter"
+      },
+      "disabled": false
+    },
+    "mosaic": {
+      "type": "mosaic",
+      "blocks": {
+        "article": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Tip & Tricks",
+            "heading": "Night Time Shoots",
+            "image": "booqable://assets/image-focus-article-1.jpg",
+            "text": "<p>How to get the best shots in low-light environments.</p>"
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Reviews",
+            "heading": "Sliders vs Gimbles",
+            "image": "booqable://assets/image-focus-article-2.jpg",
+            "text": "<p>Which is best for you? Sliders or GImbles?</p>"
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_tag": "Reviews",
+            "heading": "Sony vs Canon",
+            "image": "booqable://assets/image-focus-article-3.jpg",
+            "text": "<p>Which is the best point and shooter brand?</p>"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "article",
+        "article_456231",
+        "article_456232"
+      ],
+      "settings": {
+        "button_label": "See all Articles",
+        "color_palette": "one",
+        "layout": "left",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": false
     },
@@ -161,57 +353,22 @@
       },
       "disabled": null
     },
-    "mosaic": {
-      "type": "mosaic",
-      "blocks": {
-        "article": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_btn_url": "booqable://root/",
-            "article_tag": "Tip & Tricks",
-            "heading": "Night Time Shoots",
-            "image": "booqable://assets/image-focus-article-1.jpg",
-            "text": "<p>How to get the best shots in low-light environments.</p>"
-          },
-          "disabled": null
-        },
-        "article_456231": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_tag": "Reviews",
-            "heading": "Sliders vs Gimbles",
-            "image": "booqable://assets/image-focus-article-2.jpg",
-            "text": "<p>Which is best for you? Sliders or GImbles?</p>"
-          },
-          "disabled": null
-        },
-        "article_456232": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_tag": "Reviews",
-            "heading": "Sony vs Canon",
-            "image": "booqable://assets/image-focus-article-3.jpg",
-            "text": "<p>Which is the best point and shooter brand?</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "article",
-        "article_456231",
-        "article_456232"
-      ],
+    "title_987655": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
       "settings": {
-        "button_label": "See all Articles",
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
         "color_palette": "one",
-        "layout": "left",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
+        "description": "<p>Rated 4.8 stars based on 749 reviews</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "tag": "",
+        "title": "What our customers say"
       },
       "disabled": false
     },
@@ -273,49 +430,7 @@
       },
       "disabled": null
     },
-    "collections": {
-      "type": "collections",
-      "blocks": {
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "bf705733-c027-45a2-988d-615e42188422"
-          },
-          "disabled": null
-        },
-        "collection_783512": {
-          "type": "collection",
-          "settings": {
-            "collection": "e8addc4b-57e4-4fa0-9ae8-ddf0a256210e"
-          },
-          "disabled": null
-        },
-        "collection_705107": {
-          "type": "collection",
-          "settings": {
-            "collection": "e03337a4-ad28-4d1d-99e5-cbf893acbe1c"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "collection",
-        "collection_783512",
-        "collection_705107"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "overlay_color": "#FFFFFF",
-        "overlay_background": "#000000",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
-        "show_overlay": true
-      },
-      "disabled": null
-    },
-    "title": {
+    "title_774184": {
       "type": "title",
       "blocks": {},
       "block_order": [],
@@ -324,109 +439,13 @@
         "button_label": "",
         "button_url": "",
         "color_palette": "one",
-        "description": "",
-        "padding_bottom": "small",
+        "description": "<p>Find us wherever you are</p>",
+        "padding_bottom": "medium",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
-        "padding_top_mobile": "small",
-        "tag": "Featured",
-        "title": "New equipment"
-      },
-      "disabled": null
-    },
-    "images": {
-      "type": "images",
-      "blocks": {
-        "slide": {
-          "type": "slide",
-          "settings": {
-            "button_1": "More info",
-            "button_2": "",
-            "button_url_1": "booqable://collections/",
-            "button_url_2": null,
-            "description": "<p>Now available to rent!</p>",
-            "image": "booqable://assets/image-focus-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#000000",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 50,
-            "show_overlay": true,
-            "text_position": "bottom-left",
-            "text_position_mobile": "top-left",
-            "title": "RED Dragon-X 8K"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "slide"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "Check availability",
-        "effect": "slide",
-        "full_width": true,
-        "height": "large",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "products_208735": {
-      "type": "products",
-      "blocks": {
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "4b8703b5-509c-4131-aa19-7d49000b32b0"
-          },
-          "disabled": null
-        },
-        "product_403891": {
-          "type": "product",
-          "settings": {
-            "product": "2d415d95-ee9a-4fc4-a488-2f368ccc2ed8"
-          },
-          "disabled": null
-        },
-        "product_578042": {
-          "type": "product",
-          "settings": {
-            "product": "f367f7bf-67a4-4cda-a245-792b59c47c40"
-          },
-          "disabled": null
-        },
-        "product_247995": {
-          "type": "product",
-          "settings": {
-            "product": "bc70a616-c768-40ee-94c4-318f3591ffb5"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "product_578042",
-        "product_247995",
-        "product",
-        "product_403891"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
-        "show_carousel": true,
-        "show_excerpt": true,
-        "show_navigation": true,
-        "show_pagination": true,
-        "timer": 5
+        "padding_top_mobile": "medium",
+        "tag": "Locations",
+        "title": "Visit our 3 locations across New York"
       },
       "disabled": null
     },
@@ -478,26 +497,8 @@
         "padding_top_mobile": "large"
       },
       "disabled": false
-    },
-    "title_821472": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "",
-        "button_label": "",
-        "button_url": "",
-        "color_palette": "one",
-        "description": "",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "Featured",
-        "title": "Popular cameras"
-      },
-      "disabled": null
     }
+
   },
   "order": [
     "images",
