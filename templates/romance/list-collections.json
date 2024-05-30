@@ -6,9 +6,9 @@
       "blocks": {},
       "block_order": [],
       "settings": {
+        "color_palette": "two",
         "custom_description": "Lorem ipsum dolor sit amet.",
         "custom_title": "Collections",
-        "color_palette": "two",
         "overlay_opacity": 80,
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
@@ -21,10 +21,10 @@
     "list-collections": {
       "type": "list-collections",
       "settings": {
-        "limit": 8,
         "color_palette": "one",
-        "overlay_color": "#FFFFFF",
+        "limit": 8,
         "overlay_background": "#231905",
+        "overlay_color": "#FFFFFF",
         "padding_bottom": "small",
         "padding_bottom_mobile": "large",
         "padding_top": "small",

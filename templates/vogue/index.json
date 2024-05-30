@@ -8,8 +8,8 @@
           "type": "slide",
           "settings": {
             "button_1": "Check out products",
-            "button_url_1": "booqable://products/",
             "button_2": "More info",
+            "button_url_1": "booqable://products/",
             "button_url_2": "booqable://root/",
             "description": "Unleash your inner fashionista with an<br/>array of stunning rental options for every occasion.",
             "image": "booqable://assets/image-fashion-hero.png",
@@ -45,64 +45,6 @@
       },
       "disabled": null
     },
-    "logos": {
-      "type": "logos",
-      "blocks": {
-        "logo": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-1-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478138": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-2-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478148": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-3-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478178": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-1-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478118": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-3-black.png"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "logo",
-        "logo_478138",
-        "logo_478148",
-        "logo_478178",
-        "logo_478118"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "title": "Trusted by:",
-        "text_position": "center",
-        "text_position_mobile": "center",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": false
-    },
     "collections": {
       "type": "collections",
       "blocks": {
@@ -129,8 +71,8 @@
       ],
       "settings": {
         "color_palette": "one",
-        "overlay_color": "#FFFFFF",
         "overlay_background": "#222222",
+        "overlay_color": "#FFFFFF",
         "padding_bottom": "small",
         "padding_bottom_mobile": "large",
         "padding_top": "medium",
@@ -253,17 +195,75 @@
         "testimonial_3"
       ],
       "settings": {
-        "show_navigation": true,
-        "show_pagination": true,
         "color_palette": "two",
         "image_position": "right",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
         "timer": 5
       },
       "disabled": null
+    },
+    "logos": {
+      "type": "logos",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478138": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-2-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478148": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478178": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478118": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3-black.png"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "logo",
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_478118"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "title": "Trusted by:"
+      },
+      "disabled": false
     },
     "images_870989": {
       "type": "images",
@@ -272,8 +272,8 @@
           "type": "slide",
           "settings": {
             "button_1": "Shop our products",
-            "button_url_1": "booqable://products/",
             "button_2": "",
+            "button_url_1": "booqable://products/",
             "button_url_2": "",
             "description": "From viral sensations to groundbreaking innovations, this is your hub for discovering what's buzzing in the world right now.",
             "image": "booqable://assets/image-fashion-clothes.png",
@@ -396,8 +396,8 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "title": "Frequently asked questions",
-        "text": "Explore the FAQs to ensure you're well-prepared to embark on your fashion journey with us."
+        "text": "Explore the FAQs to ensure you're well-prepared to embark on your fashion journey with us.",
+        "title": "Frequently asked questions"
       },
       "disabled": null
     },
@@ -407,24 +407,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How does the rental process work?",
-            "content": "Our fashion rental process is simple and convenient. First, browse our extensive collection of designer clothing and accessories. Once you've found the perfect item, select your rental duration, ranging from a few days to several weeks. Add the item to your cart and proceed to checkout. We'll ship the item to your doorstep, and you can enjoy wearing it for the specified rental period. When you're done, return it using the prepaid shipping label provided. We take care of cleaning and maintenance so you can sit back, relax, and enjoy the latest fashion trends without the commitment of buying"
+            "content": "Our fashion rental process is simple and convenient. First, browse our extensive collection of designer clothing and accessories. Once you've found the perfect item, select your rental duration, ranging from a few days to several weeks. Add the item to your cart and proceed to checkout. We'll ship the item to your doorstep, and you can enjoy wearing it for the specified rental period. When you're done, return it using the prepaid shipping label provided. We take care of cleaning and maintenance so you can sit back, relax, and enjoy the latest fashion trends without the commitment of buying",
+            "heading": "How does the rental process work?"
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "What happens if I damage or stain a rented item?",
-            "content": "Accidents can happen, and we understand that. Please notify us immediately if you accidentally damage or stain. We have a dedicated team to assess and handle such situations. Depending on the damage or stain extent, you may incur additional charges, which will be communicated to you. We strongly recommend reviewing our rental agreement for specific terms and conditions regarding damage and stains. We take great care to maintain the quality of our items, so we appreciate your honesty and timely reporting of any issues."
+            "content": "Accidents can happen, and we understand that. Please notify us immediately if you accidentally damage or stain. We have a dedicated team to assess and handle such situations. Depending on the damage or stain extent, you may incur additional charges, which will be communicated to you. We strongly recommend reviewing our rental agreement for specific terms and conditions regarding damage and stains. We take great care to maintain the quality of our items, so we appreciate your honesty and timely reporting of any issues.",
+            "heading": "What happens if I damage or stain a rented item?"
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "Can I purchase a rented item if I fall in love with it?",
-            "content": "Absolutely! If you rent an item and find that you can't bear to part with it, you can purchase it. Contact our customer support team, and they will assist you in converting your rental into a purchase. In most cases, a portion of your rental fees can be applied toward the purchase price, making it an even better deal. Just keep in mind that the item's availability for purchase may vary, so it's a good idea to inquire as soon as you decide to keep it."
+            "content": "Absolutely! If you rent an item and find that you can't bear to part with it, you can purchase it. Contact our customer support team, and they will assist you in converting your rental into a purchase. In most cases, a portion of your rental fees can be applied toward the purchase price, making it an even better deal. Just keep in mind that the item's availability for purchase may vary, so it's a good idea to inquire as soon as you decide to keep it.",
+            "heading": "Can I purchase a rented item if I fall in love with it?"
           },
           "disabled": null
         }

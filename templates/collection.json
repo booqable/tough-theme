@@ -6,8 +6,8 @@
       "blocks": {},
       "block_order": [],
       "settings": {
-        "custom_title": "",
         "color_palette": "two",
+        "custom_title": "",
         "overlay_opacity": 80,
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",

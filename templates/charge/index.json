@@ -1,6 +1,50 @@
 {
   "name": "Home",
   "sections": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Book your e-bike",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "<p>Rent your e-bike from EcoRide and prepare to start your adventure</p>",
+            "image": "booqable://assets/image-charge-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": 40,
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "top-left",
+            "title": "Your eco-friendly <br>adventure awaits.."
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "",
+        "effect": "slide",
+        "full_width": true,
+        "height": "small",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
+        "show_datepicker": true,
+        "timer": 5
+      },
+      "disabled": null
+    },
     "title_987654": {
       "type": "title",
       "blocks": {},
@@ -80,108 +124,11 @@
         "padding_bottom_mobile": "medium",
         "padding_top": "small",
         "padding_top_mobile": "small",
-        "show_navigation": true,
-        "show_pagination": true,
         "show_carousel": false,
         "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
         "timer": 5
-      },
-      "disabled": null
-    },
-    "title_987656": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "",
-        "button_label": "See all",
-        "button_url": null,
-        "color_palette": "one",
-        "description": "<p>Read our latest e-bike advice</p>",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "medium",
-        "padding_top_mobile": "medium",
-        "tag": "Blog",
-        "title": "From the blog"
-      },
-      "disabled": null
-    },
-    "text-with-image_754675": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "Learn more",
-        "button_2": "Button",
-        "button_url_1": "booqable://root/",
-        "color_palette": "one",
-        "description": "<p>We stock only the most durable e-bikes, so you don't have any surprises on your ride. Whether you want to through the city or hit the gravel, these e-bikes can take it.</p>",
-        "image": "booqable://assets/image-charge-side-2.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Durability",
-        "title": "Ready for everything you can throw at them"
-      },
-      "disabled": null
-    },
-    "mosaic": {
-      "type": "mosaic",
-      "blocks": {
-        "article": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_btn_url": "booqable://root/",
-            "article_tag": "Guide",
-            "heading": "Tips for Exploring Downtown with E-Bike Rentals",
-            "image": "booqable://assets/image-charge-article-1.jpg",
-            "text": "<p>Packed with practical advice, this guide offers valuable tips for those looking to explore city centers using electric bicycles.</p>"
-          },
-          "disabled": null
-        },
-        "article_456231": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_btn_url": "booqable://root/",
-            "article_tag": "Guide",
-            "heading": "The Ultimate Guide to E-Bike Rentals for Urban Explorers",
-            "image": "booqable://assets/image-charge-article-2.jpg",
-            "text": "<p>This comprehensive guide covers everything from choosing the right e-bike for your needs to finding the best rental services in your area.</p>"
-          },
-          "disabled": null
-        },
-        "article_456232": {
-          "type": "article",
-          "settings": {
-            "article_btn": "Read more",
-            "article_btn_url": "booqable://root/",
-            "article_tag": "Guide",
-            "heading": "How E-Bike Rentals are Changing the Way We Travel",
-            "image": "booqable://assets/image-charge-article-3.jpg",
-            "text": "<p>This article delves into the exciting world of electric bicycle rentals, showcasing how they are transforming the way we explore new destinations. </p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "article",
-        "article_456231",
-        "article_456232"
-      ],
-      "settings": {
-        "button_label": "See all",
-        "color_palette": "one",
-        "layout": "small",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
       },
       "disabled": null
     },
@@ -252,6 +199,28 @@
       },
       "disabled": null
     },
+    "text-with-image_754675": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "Learn more",
+        "button_2": "Button",
+        "button_url_1": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>We stock only the most durable e-bikes, so you don't have any surprises on your ride. Whether you want to through the city or hit the gravel, these e-bikes can take it.</p>",
+        "image": "booqable://assets/image-charge-side-2.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Durability",
+        "title": "Ready for everything you can throw at them"
+      },
+      "disabled": null
+    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -310,47 +279,78 @@
       },
       "disabled": null
     },
-    "images": {
-      "type": "images",
+    "title_987656": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "",
+        "button_label": "See all",
+        "button_url": null,
+        "color_palette": "one",
+        "description": "<p>Read our latest e-bike advice</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "medium",
+        "padding_top_mobile": "medium",
+        "tag": "Blog",
+        "title": "From the blog"
+      },
+      "disabled": null
+    },
+    "mosaic": {
+      "type": "mosaic",
       "blocks": {
-        "slide": {
-          "type": "slide",
+        "article": {
+          "type": "article",
           "settings": {
-            "button_1": "Book your e-bike",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "<p>Rent your e-bike from EcoRide and prepare to start your adventure</p>",
-            "image": "booqable://assets/image-charge-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": 40,
-            "show_overlay": true,
-            "text_position": "center",
-            "text_position_mobile": "top-left",
-            "title": "Your eco-friendly <br>adventure awaits.."
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "Tips for Exploring Downtown with E-Bike Rentals",
+            "image": "booqable://assets/image-charge-article-1.jpg",
+            "text": "<p>Packed with practical advice, this guide offers valuable tips for those looking to explore city centers using electric bicycles.</p>"
+          },
+          "disabled": null
+        },
+        "article_456231": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "The Ultimate Guide to E-Bike Rentals for Urban Explorers",
+            "image": "booqable://assets/image-charge-article-2.jpg",
+            "text": "<p>This comprehensive guide covers everything from choosing the right e-bike for your needs to finding the best rental services in your area.</p>"
+          },
+          "disabled": null
+        },
+        "article_456232": {
+          "type": "article",
+          "settings": {
+            "article_btn": "Read more",
+            "article_btn_url": "booqable://root/",
+            "article_tag": "Guide",
+            "heading": "How E-Bike Rentals are Changing the Way We Travel",
+            "image": "booqable://assets/image-charge-article-3.jpg",
+            "text": "<p>This article delves into the exciting world of electric bicycle rentals, showcasing how they are transforming the way we explore new destinations. </p>"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "slide"
+        "article",
+        "article_456231",
+        "article_456232"
       ],
       "settings": {
+        "button_label": "See all",
         "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "",
-        "effect": "slide",
-        "full_width": true,
-        "height": "small",
+        "layout": "small",
         "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
-        "show_datepicker": true,
-        "timer": 5
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": null
     }

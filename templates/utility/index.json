@@ -1,71 +1,44 @@
 {
   "name": "Home",
   "sections": {
-    "title_987650": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "bg_text": "FAQ",
-        "color_palette": "two",
-        "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your trailer journey with us.</p>",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "",
-        "title": "Frequently asked questions"
-      },
-      "disabled": null
-    },
-    "products_344724": {
-      "type": "products",
+    "images": {
+      "type": "images",
       "blocks": {
-        "product": {
-          "type": "product",
+        "slide": {
+          "type": "slide",
           "settings": {
-            "product": "a5bacc58-6421-4b57-96b6-87c4760dd26e"
-          },
-          "disabled": null
-        },
-        "product_735080": {
-          "type": "product",
-          "settings": {
-            "product": "f791b3ad-17c9-4f75-8994-aec38a5989bb"
-          },
-          "disabled": null
-        },
-        "product_329451": {
-          "type": "product",
-          "settings": {
-            "product": "232b5f3b-a7a0-4c75-bb64-57fc47a01de8"
-          },
-          "disabled": null
-        },
-        "product_143849": {
-          "type": "product",
-          "settings": {
-            "product": "77002e81-af6b-4ca6-bf0c-65d538244767"
+            "button_1": "View trailers",
+            "button_2": "",
+            "button_url_1": "booqable://products/",
+            "button_url_2": null,
+            "description": "",
+            "image": "booqable://assets/image-utility-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#131314",
+            "overlay_color": "#FFFFFF",
+            "overlay_opacity": "40",
+            "show_overlay": true,
+            "text_position": "middle-left",
+            "text_position_mobile": "top-left",
+            "title": "Rent trailers for personal <br>and commercial use"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "product",
-        "product_735080",
-        "product_329451",
-        "product_143849"
+        "slide"
       ],
       "settings": {
-        "color_palette": "one",
-        "padding_bottom": "none",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
-        "show_carousel": true,
-        "show_excerpt": true,
-        "show_navigation": true,
-        "show_pagination": true,
+        "color_palette": "two",
+        "datepicker_position": "bottom",
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "pause": true,
         "timer": 5
       },
       "disabled": null
@@ -141,118 +114,22 @@
       },
       "disabled": null
     },
-    "title_215468": {
+    "title": {
       "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "Accessories",
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
         "color_palette": "one",
         "description": "",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "padding_top": "large",
-        "padding_top_mobile": "medium",
-        "tag": "Accessories",
-        "title": "Featured accessories"
-      },
-      "disabled": null
-    },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "How can I rent a trailer from your business?",
-            "content": "<p>Renting a trailer from our business is a straightforward process. Start by browsing our trailer inventory, which includes various types such as utility trailers, enclosed trailers, and more. Once you've selected the trailer that suits your needs, specify your desired rental period and provide the necessary information. We'll prepare the trailer for pickup at our rental location or arrange for delivery to your specified address. You can also choose any additional accessories or equipment you might need for your towing requirements. When your rental period is complete, return the trailer to our rental location or arrange for pickup, and we'll ensure it's properly maintained for the next renter.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if I encounter issues or damages to the rented trailer during my use?",
-            "content": "<p>If you encounter any issues or damages to the rented trailer during your use, please notify us promptly. We understand that unexpected situations can arise. Depending on the nature and extent of the issue or damage, we will assess and determine the necessary course of action. You may be responsible for repair or replacement costs, so it's advisable to review our rental agreement for specific terms and conditions related to trailer damages. Your prompt communication is appreciated, as it helps us maintain the quality of our rental equipment.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I extend the rental period for a trailer if I need it for a longer duration than initially planned?",
-            "content": "<p>Yes, you can extend the rental period for a trailer if you require it for a longer duration than initially planned. To do so, please contact our team to discuss your needs and arrange for an extension. We will work with you to update the rental terms and ensure the continued availability of the trailer. Keep in mind that trailer availability may vary, so it's best to notify us about your extension needs as early as possible to secure the equipment. We're committed to accommodating your changing towing requirements.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
-      ],
-      "settings": {
-        "behavior": "multiple",
-        "color_palette": "two",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": null
-    },
-    "title_390530": {
-      "type": "title",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "color_palette": "one",
-        "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p>",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
         "padding_top": "small",
         "padding_top_mobile": "medium",
-        "tag": "Information",
-        "title": "How it works"
-      },
-      "disabled": null
-    },
-    "text": {
-      "type": "text",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "align": "left",
-        "color_palette": "one",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "none",
-        "padding_top_mobile": "medium",
-        "text": "<h3>1️⃣ Browse and book your trailer</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>2️⃣ Collect your trailer with a gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>3️⃣ Return your trailer with gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p>",
-        "title": ""
-      },
-      "disabled": null
-    },
-    "text-with-image": {
-      "type": "text-with-image",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "button_1": "",
-        "button_2": "",
-        "button_url_1": "booqable://root/",
-        "button_url_2": "booqable://root/",
-        "color_palette": "one",
-        "description": "<p>With a proud history spanning over 25 years, our commitment to excellence and unwavering dedication to customer satisfaction has made us a trusted name in the world of trailer rentals. Throughout this time, we've honed our expertise, refined our selection, and cultivated a reputation for reliability and quality that is second to none. </p>",
-        "image": "booqable://assets/image-utility-side.jpg",
-        "image_position": "right",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "large",
-        "padding_top": "large",
-        "padding_top_mobile": "large",
-        "space_height": "none",
-        "tag": "Trailers",
-        "title": "Providing trailer rentals for over 25 years"
+        "tag": "",
+        "title": "Explore all trailers"
       },
       "disabled": false
     },
@@ -306,63 +183,126 @@
       },
       "disabled": false
     },
-    "title": {
+    "text-with-image": {
+      "type": "text-with-image",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "button_1": "",
+        "button_2": "",
+        "button_url_1": "booqable://root/",
+        "button_url_2": "booqable://root/",
+        "color_palette": "one",
+        "description": "<p>With a proud history spanning over 25 years, our commitment to excellence and unwavering dedication to customer satisfaction has made us a trusted name in the world of trailer rentals. Throughout this time, we've honed our expertise, refined our selection, and cultivated a reputation for reliability and quality that is second to none. </p>",
+        "image": "booqable://assets/image-utility-side.jpg",
+        "image_position": "right",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large",
+        "space_height": "none",
+        "tag": "Trailers",
+        "title": "Providing trailer rentals for over 25 years"
+      },
+      "disabled": false
+    },
+    "title_390530": {
       "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "",
-        "button_label": "",
-        "button_url": "",
         "color_palette": "one",
-        "description": "",
+        "description": "<p>Whether you need to rent a trailer for private or commercial use, renting from Trailerable is easy.</p>",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
         "padding_top": "small",
         "padding_top_mobile": "medium",
-        "tag": "",
-        "title": "Explore all trailers"
+        "tag": "Information",
+        "title": "How it works"
       },
-      "disabled": false
+      "disabled": null
     },
-    "images": {
-      "type": "images",
+    "text": {
+      "type": "text",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "align": "left",
+        "color_palette": "one",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "none",
+        "padding_top_mobile": "medium",
+        "text": "<h3>1️⃣ Browse and book your trailer</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>2️⃣ Collect your trailer with a gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p> <h3>3️⃣ Return your trailer with gate key</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<p>",
+        "title": ""
+      },
+      "disabled": null
+    },
+    "title_215468": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "Accessories",
+        "color_palette": "one",
+        "description": "",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "Accessories",
+        "title": "Featured accessories"
+      },
+      "disabled": null
+    },
+    "products_344724": {
+      "type": "products",
       "blocks": {
-        "slide": {
-          "type": "slide",
+        "product": {
+          "type": "product",
           "settings": {
-            "button_1": "View trailers",
-            "button_2": "",
-            "button_url_1": "booqable://products/",
-            "button_url_2": null,
-            "description": "",
-            "image": "booqable://assets/image-utility-hero.jpg",
-            "image_mobile": "",
-            "overlay_background": "#131314",
-            "overlay_color": "#FFFFFF",
-            "overlay_opacity": "40",
-            "show_overlay": true,
-            "text_position": "middle-left",
-            "text_position_mobile": "top-left",
-            "title": "Rent trailers for personal <br>and commercial use"
+            "product": "a5bacc58-6421-4b57-96b6-87c4760dd26e"
+          },
+          "disabled": null
+        },
+        "product_735080": {
+          "type": "product",
+          "settings": {
+            "product": "f791b3ad-17c9-4f75-8994-aec38a5989bb"
+          },
+          "disabled": null
+        },
+        "product_329451": {
+          "type": "product",
+          "settings": {
+            "product": "232b5f3b-a7a0-4c75-bb64-57fc47a01de8"
+          },
+          "disabled": null
+        },
+        "product_143849": {
+          "type": "product",
+          "settings": {
+            "product": "77002e81-af6b-4ca6-bf0c-65d538244767"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "slide"
+        "product",
+        "product_735080",
+        "product_329451",
+        "product_143849"
       ],
       "settings": {
-        "color_palette": "two",
-        "datepicker_position": "bottom",
-        "effect": "slide",
-        "full_width": true,
-        "height": "medium",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "pause": true,
+        "color_palette": "one",
+        "padding_bottom": "none",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_carousel": true,
+        "show_excerpt": true,
+        "show_navigation": true,
+        "show_pagination": true,
         "timer": 5
       },
       "disabled": null
@@ -416,6 +356,66 @@
         "show_navigation": true,
         "show_pagination": true,
         "timer": 5
+      },
+      "disabled": null
+    },
+    "title_987650": {
+      "type": "title",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "bg_text": "FAQ",
+        "color_palette": "two",
+        "description": "<p>Explore the FAQs to ensure you're well-prepared to embark on your trailer journey with us.</p>",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "large",
+        "padding_top_mobile": "medium",
+        "tag": "",
+        "title": "Frequently asked questions"
+      },
+      "disabled": null
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "item": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Renting a trailer from our business is a straightforward process. Start by browsing our trailer inventory, which includes various types such as utility trailers, enclosed trailers, and more. Once you've selected the trailer that suits your needs, specify your desired rental period and provide the necessary information. We'll prepare the trailer for pickup at our rental location or arrange for delivery to your specified address. You can also choose any additional accessories or equipment you might need for your towing requirements. When your rental period is complete, return the trailer to our rental location or arrange for pickup, and we'll ensure it's properly maintained for the next renter.</p>",
+            "heading": "How can I rent a trailer from your business?"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "content": "<p>If you encounter any issues or damages to the rented trailer during your use, please notify us promptly. We understand that unexpected situations can arise. Depending on the nature and extent of the issue or damage, we will assess and determine the necessary course of action. You may be responsible for repair or replacement costs, so it's advisable to review our rental agreement for specific terms and conditions related to trailer damages. Your prompt communication is appreciated, as it helps us maintain the quality of our rental equipment.</p>",
+            "heading": "What happens if I encounter issues or damages to the rented trailer during my use?"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Yes, you can extend the rental period for a trailer if you require it for a longer duration than initially planned. To do so, please contact our team to discuss your needs and arrange for an extension. We will work with you to update the rental terms and ensure the continued availability of the trailer. Keep in mind that trailer availability may vary, so it's best to notify us about your extension needs as early as possible to secure the equipment. We're committed to accommodating your changing towing requirements.</p>",
+            "heading": "Can I extend the rental period for a trailer if I need it for a longer duration than initially planned?"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "item",
+        "item_478139",
+        "item_478145"
+      ],
+      "settings": {
+        "behavior": "multiple",
+        "color_palette": "two",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": null
     }

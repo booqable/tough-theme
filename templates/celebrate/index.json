@@ -1,22 +1,119 @@
 {
   "name": "Home",
   "sections": {
-    "title_987650": {
+    "images": {
+      "type": "images",
+      "blocks": {
+        "slide": {
+          "type": "slide",
+          "settings": {
+            "button_1": "Check out products",
+            "button_2": "More info",
+            "button_url_1": "booqable://products/",
+            "button_url_2": "booqable://root/",
+            "description": "",
+            "image": "booqable://assets/image-celebrate-hero.jpg",
+            "image_mobile": "",
+            "overlay_background": "#0B1A26",
+            "overlay_color": "#ffffff",
+            "overlay_opacity": "30",
+            "show_overlay": true,
+            "text_position": "center",
+            "text_position_mobile": "center",
+            "title": "Welcome to <br>Party&nbsp;Perfect",
+            "video_url": ""
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "slide"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "datepicker_position": "bottom",
+        "datepicker_title": "Check availability",
+        "effect": "slide",
+        "full_width": true,
+        "height": "medium",
+        "pause": true,
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "large",
+        "padding_top": "medium",
+        "padding_top_mobile": "large",
+        "show_datepicker": false,
+        "timer": 5
+      },
+      "disabled": null
+    },
+    "title": {
       "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "FAQ",
+        "bg_text": "",
+        "button_label": "",
+        "button_url": "",
         "color_palette": "two",
-        "description": "<p>Explore the FAQs to ensure you're well-prepared to book your party gear with us.</p>",
+        "description": "",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "padding_top": "large",
+        "padding_top": "medium",
         "padding_top_mobile": "medium",
         "tag": "",
-        "title": "Frequently asked questions"
+        "title": "Discover our party rental products"
       },
-      "disabled": false
+      "disabled": null
+    },
+    "collections": {
+      "type": "collections",
+      "blocks": {
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "4ff9bc7e-9715-4d83-a279-2ed0fe70789a"
+          },
+          "disabled": null
+        },
+        "collection_242972": {
+          "type": "collection",
+          "settings": {
+            "collection": "9698e750-540e-45b2-805b-023c1c1ca6ba"
+          },
+          "disabled": null
+        },
+        "collection_242542": {
+          "type": "collection",
+          "settings": {
+            "collection": "301446c6-6ce4-406e-907e-38abccd69434"
+          },
+          "disabled": null
+        },
+        "collection_535502": {
+          "type": "collection",
+          "settings": {
+            "collection": "dd14010f-d796-4325-aeb5-1a7e5bce0030"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "collection",
+        "collection_242972",
+        "collection_242542",
+        "collection_535502"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "overlay_background": "#0B1A26",
+        "overlay_color": "#FFFFFF",
+        "padding_bottom": "medium",
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "show_overlay": true
+      },
+      "disabled": null
     },
     "collections_144283": {
       "type": "collections",
@@ -68,49 +165,6 @@
       },
       "disabled": null
     },
-    "accordion": {
-      "type": "accordion",
-      "blocks": {
-        "item": {
-          "type": "item",
-          "settings": {
-            "heading": "How can I rent party supplies from your business?",
-            "content": "<p>Renting party supplies from our business is a convenient process. Start by browsing our extensive inventory of party rental items, including tables, chairs, linens, decorations, and more. Once you've selected the items you need for your event, add them to your cart and proceed to checkout. Specify the date of your event and delivery location, and we'll arrange for the items to be delivered to your doorstep or event venue. After your event, simply pack up the items and use the provided return label to send them back to us. We'll take care of cleaning and maintenance, so you can focus on enjoying your party.</p>"
-          },
-          "disabled": null
-        },
-        "item_478139": {
-          "type": "item",
-          "settings": {
-            "heading": "What happens if party rental items get damaged or stained during my event?",
-            "content": "<p>In the event that party rental items are damaged or stained during your event, please inform us as soon as possible. Our team will assess the extent of the damage or staining, and you may be charged for any necessary repairs or replacements. We recommend reviewing our rental agreement for specific terms and conditions related to damage and stains. We understand that accidents can happen, and we appreciate your timely reporting of any issues to help us ensure the quality of our rental items.</p>"
-          },
-          "disabled": null
-        },
-        "item_478145": {
-          "type": "item",
-          "settings": {
-            "heading": "Can I make last-minute additions or changes to my party rental order?",
-            "content": "<p>Yes, you can make last-minute additions or changes to your party rental order, subject to item availability. If you realize you need additional items or want to modify your order, please contact our team as soon as possible. We'll do our best to accommodate your requests and update your order accordingly. Keep in mind that last-minute changes are subject to availability, so it's a good practice to reach out to us well in advance of your event to ensure that we can meet your requirements. We're here to help you create the perfect party setup.</p>"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "item",
-        "item_478139",
-        "item_478145"
-      ],
-      "settings": {
-        "behavior": "multiple",
-        "color_palette": "two",
-        "padding_bottom": "large",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": false
-    },
     "text-with-image": {
       "type": "text-with-image",
       "blocks": {},
@@ -131,6 +185,64 @@
         "space_height": "none",
         "tag": "",
         "title": "For every party big or small"
+      },
+      "disabled": false
+    },
+    "columns": {
+      "type": "columns",
+      "blocks": {
+        "column": {
+          "type": "column",
+          "settings": {
+            "button_label": "Book now",
+            "button_style": "primary",
+            "button_url": "booqable://root/",
+            "icon": "phone",
+            "image": "booqable://assets/image-celebrate-column-1.jpg",
+            "text": "<p>Elegant, romantic, timeless. We provide all you need for the perfect wedding day, from decor to seating.</p>",
+            "title": "Weddings"
+          },
+          "disabled": null
+        },
+        "column_365922": {
+          "type": "column",
+          "settings": {
+            "button_label": "Book now",
+            "button_style": "primary",
+            "button_url": "booqable://root/",
+            "icon": "phone",
+            "image": "booqable://assets/image-celebrate-column-2.jpg",
+            "text": "<p>Fun, vibrant, unforgettable. Make your birthday celebration extraordinary with our party rentals and decorations.</p>",
+            "title": "Birthdays"
+          },
+          "disabled": null
+        },
+        "column_784015": {
+          "type": "column",
+          "settings": {
+            "button_label": "Book now",
+            "button_style": "primary",
+            "button_url": "booqable://root/",
+            "icon": "phone",
+            "image": "booqable://assets/image-celebrate-column-3.jpg",
+            "text": "<p>Versatile, seamless, memorable. Elevate any event with our extensive range of rental options and expert service.</p>",
+            "title": "Events"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "column",
+        "column_365922",
+        "column_784015"
+      ],
+      "settings": {
+        "color_palette": "one",
+        "grid": "three",
+        "padding_bottom": "large",
+        "padding_bottom_mobile": "large",
+        "padding_top": "large",
+        "padding_top_mobile": "large"
       },
       "disabled": false
     },
@@ -192,175 +304,63 @@
       },
       "disabled": false
     },
-    "collections": {
-      "type": "collections",
-      "blocks": {
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "4ff9bc7e-9715-4d83-a279-2ed0fe70789a"
-          },
-          "disabled": null
-        },
-        "collection_242972": {
-          "type": "collection",
-          "settings": {
-            "collection": "9698e750-540e-45b2-805b-023c1c1ca6ba"
-          },
-          "disabled": null
-        },
-        "collection_242542": {
-          "type": "collection",
-          "settings": {
-            "collection": "301446c6-6ce4-406e-907e-38abccd69434"
-          },
-          "disabled": null
-        },
-        "collection_535502": {
-          "type": "collection",
-          "settings": {
-            "collection": "dd14010f-d796-4325-aeb5-1a7e5bce0030"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "collection",
-        "collection_242972",
-        "collection_242542",
-        "collection_535502"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "overlay_background": "#0B1A26",
-        "overlay_color": "#FFFFFF",
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "medium",
-        "padding_top": "small",
-        "padding_top_mobile": "small",
-        "show_overlay": true
-      },
-      "disabled": null
-    },
-    "title": {
+    "title_987650": {
       "type": "title",
       "blocks": {},
       "block_order": [],
       "settings": {
-        "bg_text": "",
-        "button_label": "",
-        "button_url": "",
+        "bg_text": "FAQ",
         "color_palette": "two",
-        "description": "",
+        "description": "<p>Explore the FAQs to ensure you're well-prepared to book your party gear with us.</p>",
         "padding_bottom": "small",
         "padding_bottom_mobile": "small",
-        "padding_top": "medium",
+        "padding_top": "large",
         "padding_top_mobile": "medium",
         "tag": "",
-        "title": "Discover our party rental products"
+        "title": "Frequently asked questions"
       },
-      "disabled": null
+      "disabled": false
     },
-    "images": {
-      "type": "images",
+    "accordion": {
+      "type": "accordion",
       "blocks": {
-        "slide": {
-          "type": "slide",
+        "item": {
+          "type": "item",
           "settings": {
-            "button_1": "Check out products",
-            "button_2": "More info",
-            "button_url_1": "booqable://products/",
-            "button_url_2": "booqable://root/",
-            "description": "",
-            "image": "booqable://assets/image-celebrate-hero.jpg",
-            "image_mobile": "",
-            "overlay_opacity": "30",
-            "overlay_color": "#ffffff",
-            "overlay_background": "#0B1A26",
-            "show_overlay": true,
-            "text_position": "center",
-            "text_position_mobile": "center",
-            "title": "Welcome to <br>Party&nbsp;Perfect",
-            "video_url": ""
+            "content": "<p>Renting party supplies from our business is a convenient process. Start by browsing our extensive inventory of party rental items, including tables, chairs, linens, decorations, and more. Once you've selected the items you need for your event, add them to your cart and proceed to checkout. Specify the date of your event and delivery location, and we'll arrange for the items to be delivered to your doorstep or event venue. After your event, simply pack up the items and use the provided return label to send them back to us. We'll take care of cleaning and maintenance, so you can focus on enjoying your party.</p>",
+            "heading": "How can I rent party supplies from your business?"
+          },
+          "disabled": null
+        },
+        "item_478139": {
+          "type": "item",
+          "settings": {
+            "content": "<p>In the event that party rental items are damaged or stained during your event, please inform us as soon as possible. Our team will assess the extent of the damage or staining, and you may be charged for any necessary repairs or replacements. We recommend reviewing our rental agreement for specific terms and conditions related to damage and stains. We understand that accidents can happen, and we appreciate your timely reporting of any issues to help us ensure the quality of our rental items.</p>",
+            "heading": "What happens if party rental items get damaged or stained during my event?"
+          },
+          "disabled": null
+        },
+        "item_478145": {
+          "type": "item",
+          "settings": {
+            "content": "<p>Yes, you can make last-minute additions or changes to your party rental order, subject to item availability. If you realize you need additional items or want to modify your order, please contact our team as soon as possible. We'll do our best to accommodate your requests and update your order accordingly. Keep in mind that last-minute changes are subject to availability, so it's a good practice to reach out to us well in advance of your event to ensure that we can meet your requirements. We're here to help you create the perfect party setup.</p>",
+            "heading": "Can I make last-minute additions or changes to my party rental order?"
           },
           "disabled": null
         }
       },
       "block_order": [
-        "slide"
+        "item",
+        "item_478139",
+        "item_478145"
       ],
       "settings": {
-        "color_palette": "one",
-        "datepicker_position": "bottom",
-        "datepicker_title": "Check availability",
-        "effect": "slide",
-        "full_width": true,
-        "height": "medium",
-        "pause": true,
-        "padding_bottom": "medium",
-        "padding_bottom_mobile": "large",
-        "padding_top": "medium",
-        "padding_top_mobile": "large",
-        "show_datepicker": false,
-        "timer": 5
-      },
-      "disabled": null
-    },
-    "columns": {
-      "type": "columns",
-      "blocks": {
-        "column": {
-          "type": "column",
-          "settings": {
-            "button_label": "Book now",
-            "button_style": "primary",
-            "button_url": "booqable://root/",
-            "icon": "phone",
-            "image": "booqable://assets/image-celebrate-column-1.jpg",
-            "text": "<p>Elegant, romantic, timeless. We provide all you need for the perfect wedding day, from decor to seating.</p>",
-            "title": "Weddings"
-          },
-          "disabled": null
-        },
-        "column_365922": {
-          "type": "column",
-          "settings": {
-            "button_label": "Book now",
-            "button_style": "primary",
-            "button_url": "booqable://root/",
-            "icon": "phone",
-            "image": "booqable://assets/image-celebrate-column-2.jpg",
-            "text": "<p>Fun, vibrant, unforgettable. Make your birthday celebration extraordinary with our party rentals and decorations.</p>",
-            "title": "Birthdays"
-          },
-          "disabled": null
-        },
-        "column_784015": {
-          "type": "column",
-          "settings": {
-            "button_label": "Book now",
-            "button_style": "primary",
-            "button_url": "booqable://root/",
-            "icon": "phone",
-            "image": "booqable://assets/image-celebrate-column-3.jpg",
-            "text": "<p>Versatile, seamless, memorable. Elevate any event with our extensive range of rental options and expert service.</p>",
-            "title": "Events"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "column",
-        "column_365922",
-        "column_784015"
-      ],
-      "settings": {
-        "color_palette": "one",
-        "grid": "three",
-        "padding_top": "large",
+        "behavior": "multiple",
+        "color_palette": "two",
         "padding_bottom": "large",
-        "padding_top_mobile": "large",
-        "padding_bottom_mobile": "large"
+        "padding_bottom_mobile": "medium",
+        "padding_top": "small",
+        "padding_top_mobile": "small"
       },
       "disabled": false
     }

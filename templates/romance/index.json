@@ -8,8 +8,8 @@
           "type": "slide",
           "settings": {
             "button_1": "Check out products",
-            "button_url_1": "booqable://products/",
             "button_2": "More info",
+            "button_url_1": "booqable://products/",
             "button_url_2": "booqable://root/",
             "description": "Transform your event into an unforgettable experience<br>with our extensive selection of high-quality decor rentals.",
             "image": "booqable://assets/image-romantic-hero.jpeg",
@@ -45,64 +45,6 @@
       },
       "disabled": null
     },
-    "logos": {
-      "type": "logos",
-      "blocks": {
-        "logo": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-1-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478138": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-2-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478148": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-3-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478178": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-1-black.png"
-          },
-          "disabled": null
-        },
-        "logo_478118": {
-          "type": "logo",
-          "settings": {
-            "image": "booqable://assets/image-partner-logo-3-black.png"
-          },
-          "disabled": null
-        }
-      },
-      "block_order": [
-        "logo",
-        "logo_478138",
-        "logo_478148",
-        "logo_478178",
-        "logo_478118"
-      ],
-      "settings": {
-        "color_palette": "two",
-        "title": "Trusted by:",
-        "text_position": "center",
-        "text_position_mobile": "center",
-        "padding_bottom": "small",
-        "padding_bottom_mobile": "small",
-        "padding_top": "small",
-        "padding_top_mobile": "small"
-      },
-      "disabled": false
-    },
     "collections": {
       "type": "collections",
       "blocks": {
@@ -129,8 +71,8 @@
       ],
       "settings": {
         "color_palette": "one",
-        "overlay_color": "#FFFFFF",
         "overlay_background": "#231905",
+        "overlay_color": "#FFFFFF",
         "padding_bottom": "small",
         "padding_bottom_mobile": "large",
         "padding_top": "medium",
@@ -255,12 +197,12 @@
         "testimonial_675383": {
           "type": "testimonial",
           "settings": {
-            "image": "booqable://assets/image-romantic-testimonials.jpg",
-            "title": "The Secret to Our Dream Wedding",
             "description": "<p>Our wedding was a dream come true, thanks to this event decor rental business. Their selection of wedding decor and accessories helped us create a day that was uniquely 'us'. Their team's expertise and support ensured that every detail was perfect.</p>",
+            "image": "booqable://assets/image-romantic-testimonials.jpg",
             "name": "Rebecca",
             "position": "Chicago",
-            "stars": "5"
+            "stars": "5",
+            "title": "The Secret to Our Dream Wedding"
           },
           "disabled": null
         }
@@ -271,17 +213,75 @@
         "testimonial_675383"
       ],
       "settings": {
-        "show_navigation": true,
-        "show_pagination": true,
         "color_palette": "one",
         "image_position": "right",
         "padding_bottom": "medium",
         "padding_bottom_mobile": "medium",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
+        "show_navigation": true,
+        "show_pagination": true,
         "timer": 5
       },
       "disabled": null
+    },
+    "logos": {
+      "type": "logos",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478138": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-2-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478148": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478178": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-1-black.png"
+          },
+          "disabled": null
+        },
+        "logo_478118": {
+          "type": "logo",
+          "settings": {
+            "image": "booqable://assets/image-partner-logo-3-black.png"
+          },
+          "disabled": null
+        }
+      },
+      "block_order": [
+        "logo",
+        "logo_478138",
+        "logo_478148",
+        "logo_478178",
+        "logo_478118"
+      ],
+      "settings": {
+        "color_palette": "two",
+        "padding_bottom": "small",
+        "padding_bottom_mobile": "small",
+        "padding_top": "small",
+        "padding_top_mobile": "small",
+        "text_position": "center",
+        "text_position_mobile": "center",
+        "title": "Trusted by:"
+      },
+      "disabled": false
     },
     "images_870989": {
       "type": "images",
@@ -290,8 +290,8 @@
           "type": "slide",
           "settings": {
             "button_1": "Shop our products",
-            "button_url_1": "booqable://products/",
             "button_2": "",
+            "button_url_1": "booqable://products/",
             "button_url_2": "",
             "description": "Make a lasting impression at your special event with a podium<br> table designed to add prestige and functionality to your ceremony.",
             "image": "booqable://assets/image-romantic-ceremony.png",
@@ -414,8 +414,8 @@
         "padding_bottom_mobile": "small",
         "padding_top": "medium",
         "padding_top_mobile": "medium",
-        "title": "FREQUENTLY ASKED QUESTIONS",
-        "text": "Explore the FAQs to ensure you're well-prepared to embark on your event journey with us."
+        "text": "Explore the FAQs to ensure you're well-prepared to embark on your event journey with us.",
+        "title": "FREQUENTLY ASKED QUESTIONS"
       },
       "disabled": null
     },
@@ -425,24 +425,24 @@
         "item": {
           "type": "item",
           "settings": {
-            "heading": "How do I rent event decor from {{ shop.name }}?",
-            "content": "Renting event decor from us is a straightforward process. Start by browsing our wide selection of event decor items, including centerpieces, lighting, table linens, and more. Once you've chosen the items that match your event's style and theme, add them to your cart and proceed to checkout. Specify the date of your event, and we will deliver the decor to your chosen location. After your event, simply pack the items back into their original packaging and use the provided return label to send them back to us. It's a hassle-free way to elevate your event's atmosphere with our beautiful decor."
+            "content": "Renting event decor from us is a straightforward process. Start by browsing our wide selection of event decor items, including centerpieces, lighting, table linens, and more. Once you've chosen the items that match your event's style and theme, add them to your cart and proceed to checkout. Specify the date of your event, and we will deliver the decor to your chosen location. After your event, simply pack the items back into their original packaging and use the provided return label to send them back to us. It's a hassle-free way to elevate your event's atmosphere with our beautiful decor.",
+            "heading": "How do I rent event decor from {{ shop.name }}?"
           },
           "disabled": null
         },
         "item_478139": {
           "type": "item",
           "settings": {
-            "heading": "What if I need assistance with decor setup and arrangement at my event?",
-            "content": "We understand that setting up event decor can be a challenge. That's why we offer optional setup and arrangement services for your convenience. During the checkout process, you can choose to add our professional setup service. Our experienced team will ensure that the decor is placed and arranged according to your preferences, saving you time and effort. This service is available for an additional fee, and you can discuss your specific requirements with our team to create a customized setup plan."
+            "content": "We understand that setting up event decor can be a challenge. That's why we offer optional setup and arrangement services for your convenience. During the checkout process, you can choose to add our professional setup service. Our experienced team will ensure that the decor is placed and arranged according to your preferences, saving you time and effort. This service is available for an additional fee, and you can discuss your specific requirements with our team to create a customized setup plan.",
+            "heading": "What if I need assistance with decor setup and arrangement at my event?"
           },
           "disabled": null
         },
         "item_478145": {
           "type": "item",
           "settings": {
-            "heading": "Is it possible to view the event decor items in person before renting them?",
-            "content": "Yes, you can view our event decor items in person before making a rental decision. We encourage you to schedule an appointment to visit our showroom and see the decor up close. This is a great opportunity to get a better sense of how the items will look at your event and discuss any questions or customization options with our staff. Our showroom visits are by appointment only to ensure that we can provide you with personalized attention and guidance. Contact us to schedule your visit and take the first step toward creating a stunning event decor setup."
+            "content": "Yes, you can view our event decor items in person before making a rental decision. We encourage you to schedule an appointment to visit our showroom and see the decor up close. This is a great opportunity to get a better sense of how the items will look at your event and discuss any questions or customization options with our staff. Our showroom visits are by appointment only to ensure that we can provide you with personalized attention and guidance. Contact us to schedule your visit and take the first step toward creating a stunning event decor setup.",
+            "heading": "Is it possible to view the event decor items in person before renting them?"
           },
           "disabled": null
         }
