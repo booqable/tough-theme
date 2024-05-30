@@ -3,8 +3,8 @@
 {%- assign title                 = section.settings.title -%}
 {%- assign description           = section.settings.description -%}
 {%- assign color_palette         = section.settings.color_palette -%}
-{%- assign login_label           = section.settings.login_label -%}
-{%- assign signup_label          = section.settings.signup_label -%}
+{%- assign button_login_label    = section.settings.button_login_label -%}
+{%- assign button_signup_label   = section.settings.button_signup_label -%}
 {%- assign name_label            = section.settings.name_label -%}
 {%- assign email_label           = section.settings.email_label -%}
 {%- assign password_label        = section.settings.password_label -%}
@@ -75,7 +75,7 @@
       </span>
 
       <a class="account__link" href="{{ routes.login_url }}">
-        {{- login_label | default: "Log in" -}}
+        {{- button_login_label | default: "Log in" -}}
       </a>
     </div>
 
@@ -267,7 +267,7 @@
         name="commit"
         data-disable-with="Sign up"
       >
-        {{- signup_label | default: "Sign up" -}}
+        {{- button_signup_label | default: "Sign up" -}}
       </button>
     {%- endform -%}
   </div>
@@ -366,12 +366,12 @@
       },
       {
         "type": "text",
-        "id": "login_label",
+        "id": "button_login_label",
         "label": "Log in button label"
       },
       {
         "type": "text",
-        "id": "signup_label",
+        "id": "button_signup_label",
         "label": "Sign up button label"
       },
       {
