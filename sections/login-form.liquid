@@ -5,7 +5,7 @@
 {%- assign color_palette         = section.settings.color_palette -%}
 {%- assign email_label           = section.settings.email_label -%}
 {%- assign password_label        = section.settings.password_label -%}
-{%- assign login_label           = section.settings.login_label -%}
+{%- assign button_login_label    = section.settings.button_login_label -%}
 {%- assign create_account_label  = section.settings.create_account_label -%}
 {%- assign reset_password_label  = section.settings.reset_password_label -%}
 {%- assign guest_label           = section.settings.guest_label -%}
@@ -134,7 +134,7 @@
           name="commit"
           data-disable-with="Log in"
         >
-          {{- login_label | default: "Log in" -}}
+          {{- button_login_label | default: "Log in" -}}
         </button>
       </div>
 
@@ -214,7 +214,7 @@
       },
       {
         "type": "text",
-        "id": "login_label",
+        "id": "button_login_label",
         "label": "Log in button label"
       },
       {
