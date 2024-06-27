@@ -1,5 +1,6 @@
 <script>
   const setColor = () => {
+    console.log('set color')
     const nodes = document.querySelectorAll('.section-with-date-picker'),
           body = document.querySelector('body');
 
@@ -13,10 +14,14 @@
               second = 'palette-two',
               third = 'palette-three';
 
+        console.log(children)
+
         children.forEach(child => {
           const isFirst = child.classList.contains(first),
                 isSecond = child.classList.contains(second),
                 isThird = child.classList.contains(third);
+
+          console.log({ child, isFirst, isSecond, isThird })
 
           return isFirst ? target.classList.add(first)
               : isSecond ? target.classList.add(second)
